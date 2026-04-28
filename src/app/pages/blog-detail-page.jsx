@@ -1,0 +1,282 @@
+import React from 'react';
+import { useParams, Link } from 'react-router';
+import { motion } from 'motion/react';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { FooterSection } from '../components/footer-section';
+
+// Assets from 1920WLight-22-2100.tsx
+import imgSimonKadula8Gr6BObQloiUnsplash1 from "../../assets/e1dcc9e435ab91cb6be407673593b96ed5fd1213.png";
+import imgRoboticArmPlacingChipCircuitBoard1 from "../../assets/44f0628d039c5c4462b35e023fd207b769c6c4bb.png";
+import imgAuthorImage from "../../assets/d1986fe5d6cbb1975d0b296dceae5f38409b5f54.png";
+import imgVector from "../../assets/bd8e69885427a49b2b47477a2091c568af8d612c.png";
+import imgBrettJordanAfbBhcXeEiUnsplash1 from "../../assets/160918d3c1ae836f98580b56793925e5366b310a.png";
+import imgIcon from "../../assets/2372b9fca56ab7b15568aca9e51b649f887db747.png";
+import imgVictorUoIiVYka3VyUnsplash1 from "../../assets/d13ce970613ef8a883efa59e168e7ec2c548ae6a.png";
+import imgFuturisticTechnologyConcept1 from "../../assets/590501c6813c5415ccfadb50476ec414a3dccddb.png";
+import imgImage from "../../assets/2f8c3a2c8eca26d65de115305cf49c0c2f3513ea.png";
+
+// SVGs
+import { imgDivFramerYVnZo, imgDivFramerFoIvU, imgGroup, imgGroup1, imgGroup2, imgDivFramerIu4QG1, imgDivFramerIu4QG3, imgDivFramerIu4QG4 } from "../../imports/svg-7bw06";
+import svgPaths from "../../imports/svg-4h9mwqx04v";
+
+const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
+  <motion.div 
+    className="bg-white rounded-[7px] p-6 flex flex-col gap-6 relative group cursor-pointer"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+  >
+    <div className="flex justify-end h-[120px]">
+      <div className="w-[110px] h-full rounded-[7px] overflow-hidden">
+        <ImageWithFallback src={image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+      </div>
+    </div>
+    
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center gap-1.5 opacity-50">
+        <span className="font-['Geist'] font-semibold text-[11px] text-black uppercase tracking-wider">Written by:</span>
+        <span className="font-['Geist'] font-semibold text-[11px] text-black uppercase tracking-wider">{author}</span>
+      </div>
+      <h3 className="font-['Geist'] font-medium text-[20px] text-black leading-tight">
+        {title}
+      </h3>
+      <div className="bg-black w-[45px] h-[45px] rounded-[6px] flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+        <ImageWithFallback src={imgIcon} className="w-[20px] h-[20px] invert" />
+      </div>
+    </div>
+
+    {/* Small tag icon at top left */}
+    <div className="absolute top-5 left-5 opacity-40">
+       <div className="w-5 h-5 bg-black" style={{ maskImage: `url('${imgDivFramerIu4QG4}')`, maskSize: 'contain' }} />
+    </div>
+  </motion.div>
+);
+
+ const BlogDetailPage = () => {
+  const { slug } = useParams();
+
+  return (
+    <div className="w-full flex flex-col items-center">
+      {/* Header Info */}
+      <section className="pt-[180px] pb-[80px] px-6 text-center max-w-[1260px] w-full flex flex-col items-center gap-10">
+        <div className="flex gap-[5px] items-center justify-center">
+          <div className="backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)] flex gap-[5px] items-center justify-center px-[13px] py-[6px] rounded-[30px]">
+            <div className="w-[13px] h-[13px] bg-white" style={{ maskImage: `url('${imgDivFramerYVnZo}')`, maskSize: 'contain' }} />
+            <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">Jul 23, 2025</span>
+          </div>
+          <div className="backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)] flex gap-[5px] items-center justify-center px-[13px] py-[6px] rounded-[30px]">
+            <div className="w-[13px] h-[13px] bg-white" style={{ maskImage: `url('${imgDivFramerFoIvU}')`, maskSize: 'contain' }} />
+            <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">Manufacturing</span>
+          </div>
+        </div>
+
+        <h1 className="font-['Geist'] font-medium text-[40px] md:text-[60px] text-center text-white tracking-[-0.4px] max-w-[1000px] leading-tight">
+          How smart manufacturing is transforming production efficiency
+        </h1>
+
+        <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-center text-white/70 uppercase tracking-widest max-w-[800px]">
+          Real-time intelligence, predictive systems, and automation are redefining how industries operate.
+        </p>
+      </section>
+
+      {/* Main Image */}
+      <section className="px-6 w-full max-w-[1260px] mb-20">
+        <div className="aspect-[1260/681] rounded-[7px] overflow-hidden">
+          <ImageWithFallback src={imgSimonKadula8Gr6BObQloiUnsplash1} className="w-full h-full object-cover" />
+        </div>
+      </section>
+
+      {/* Blog Content */}
+      <section className="px-6 w-full max-w-[850px] flex flex-col gap-12 mb-32">
+        <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
+          <p>
+            Smart manufacturing is no longer a future concept—it is actively reshaping production environments through connected systems, data-driven insights, and intelligent automation. By integrating IoT, AI, and advanced analytics, manufacturers can monitor operations in real time, reduce inefficiencies, and make faster, more informed decisions.
+          </p>
+          <p>
+            With greater visibility across the production lifecycle, organisations can identify bottlenecks, optimise resource usage, and ensure consistent output quality while minimising downtime.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-6">
+          <h2 className="font-['Geist'] font-medium text-[24px] md:text-[28px] text-white tracking-tight">
+            We move industries forward with intelligent systems.
+          </h2>
+          <p className="text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
+            Modern manufacturing ecosystems rely on seamless data flow between machines, systems, and people. Smart solutions enable predictive maintenance, automated workflows, and energy optimization—ensuring operations run efficiently without unnecessary disruptions.
+          </p>
+        </div>
+
+        <div className="pl-6 border-l-2 border-white/20">
+          <blockquote className="font-['Playfair_Display'] italic text-[24px] md:text-[32px] text-white leading-tight">
+            “Smart manufacturing is not just about automation—it’s about creating connected systems that continuously learn, adapt, and improve performance.”
+          </blockquote>
+        </div>
+
+        <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
+          <p>
+            By leveraging digital technologies, businesses can transition from reactive processes to proactive strategies, improving both operational efficiency and long-term scalability.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-8">
+          <h2 className="font-['Geist'] font-medium text-[24px] md:text-[28px] text-white tracking-tight">
+            How intelligent systems improve production efficiency
+          </h2>
+          <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
+            <p>Smart manufacturing introduces a range of capabilities that directly impact performance:</p>
+            <ul className="list-disc pl-6 flex flex-col gap-4">
+              <li>Real-time monitoring: Gain instant visibility into machine performance and production metrics</li>
+              <li>Predictive maintenance: Detect potential failures before they impact operations</li>
+              <li>Process automation: Reduce manual intervention and increase consistency</li>
+              <li>Energy optimisation: Track and manage energy consumption across facilities</li>
+              <li>Data-driven decisions: Use analytics to continuously improve workflows</li>
+            </ul>
+            <p>These capabilities not only reduce operational costs but also enhance productivity and reliability across the entire production chain.</p>
+          </div>
+        </div>
+
+        {/* Second Image */}
+        <div className="aspect-[1260/681] rounded-[7px] overflow-hidden my-10">
+          <ImageWithFallback src={imgRoboticArmPlacingChipCircuitBoard1} className="w-full h-full object-cover" />
+        </div>
+
+        <div className="flex flex-col gap-8">
+          <h2 className="font-['Geist'] font-medium text-[24px] md:text-[28px] text-white tracking-tight">
+            Building future-ready manufacturing environments
+          </h2>
+          <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
+            <p>
+              To fully realize the benefits of smart manufacturing, organizations must adopt integrated platforms that connect data, systems, and processes. Solutions like manufacturing intelligence platforms, energy monitoring systems, and pipeline safety technologies enable a unified approach to industrial operations.
+            </p>
+            <p>
+              As industries evolve, the ability to adapt quickly and operate efficiently will define long-term success. Smart manufacturing provides the foundation for that transformation—combining technology, data, and strategy to drive measurable impact.
+            </p>
+          </div>
+        </div>
+
+        {/* Author Details */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-12 border-t border-white/10">
+           <div className="flex items-center gap-4">
+              <div className="w-[60px] h-[60px] rounded-[7px] overflow-hidden">
+                <ImageWithFallback src={imgAuthorImage} className="w-full h-full object-cover" />
+              </div>
+              <div className="flex flex-col">
+                 <span className="font-['Geist'] text-[12px] text-white/50 uppercase tracking-widest">Written by:</span>
+                 <span className="font-['Geist'] text-[16px] text-white uppercase font-medium">Flowtech Team</span>
+              </div>
+           </div>
+           
+           <div className="flex items-center gap-6">
+              <span className="font-['Geist'] text-[14px] text-white/50 uppercase tracking-widest">Let's keep in touch</span>
+              <div className="flex gap-4">
+                 {[imgGroup, imgGroup1, imgGroup2].map((icon, i) => (
+                    <div key={i} className="w-5 h-5 bg-white/80 hover:bg-white transition-colors cursor-pointer" style={{ maskImage: `url('${icon}')`, maskSize: 'contain' }} />
+                 ))}
+              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* Related Posts */}
+      <section className="w-full bg-white/5 py-32 px-6 flex flex-col items-center">
+         <div className="max-w-[1260px] w-full">
+            <div className="flex flex-col gap-6 items-center text-center mb-20">
+               <div className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit">
+                 <div className="w-4 h-4 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG3}')`, maskSize: 'contain' }} />
+                 <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">latest news</span>
+               </div>
+               <h2 className="flex flex-col gap-2">
+                 <span className="font-['Geist'] font-medium text-[44px] text-white leading-tight">Latest industry <span className="font-['Playfair_Display'] italic text-white/70">trends and</span></span>
+                 <span className="font-['Playfair_Display'] italic font-normal text-[44px] text-white/80 leading-tight">expert <span className="font-['Geist'] font-medium not-italic text-white">insights from our team</span></span>
+               </h2>
+               <div className="mt-4">
+                  <button className="bg-[#001ca9] px-8 py-3 rounded-full text-white font-['Geist'] font-semibold text-[14px] uppercase tracking-widest hover:bg-blue-600 transition-colors shadow-[0_7px_80px_-12px_rgba(17,15,223,1)]">
+                    See all news
+                  </button>
+               </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <BlogCard 
+                title="The future of energy monitoring and sustainable operations"
+                image={imgBrettJordanAfbBhcXeEiUnsplash1}
+              />
+              <BlogCard 
+                title="Enhancing pipeline safety with real-time fiber optic sensing"
+                image={imgVictorUoIiVYka3VyUnsplash1}
+              />
+              <BlogCard 
+                title="Real-time monitoring: the future of industrial operations"
+                image={imgFuturisticTechnologyConcept1}
+              />
+            </div>
+         </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="w-full max-w-[1260px] px-6 py-40 flex flex-col lg:flex-row gap-20 items-center">
+        <div className="flex-1 relative">
+           <div className="aspect-[364/470] max-w-[364px] rounded-[7px] overflow-hidden relative group">
+             <ImageWithFallback src={imgImage} className="w-full h-full object-cover" />
+             <div className="absolute inset-0 bg-black/30" />
+             
+             <div className="absolute bottom-6 left-6 text-left">
+                <div className="flex items-center gap-2">
+                  <span className="font-['Geist'] font-medium text-[23px] text-white">Daniel</span>
+                  <span className="font-['Playfair_Display'] text-[23px] text-white/80">Hartmann</span>
+                </div>
+                <p className="font-['Geist'] text-[14px] text-white/80 uppercase">founder of Flowtech</p>
+             </div>
+
+             <div className="absolute inset-0 flex items-center justify-center">
+                <button className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                   <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[15px] border-l-white border-b-[10px] border-b-transparent ml-1" />
+                </button>
+             </div>
+           </div>
+        </div>
+
+        <div className="flex-1 flex flex-col gap-8">
+           <div className="flex flex-col gap-4">
+              <h2 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[44px] text-transparent tracking-tight leading-tight">
+                Insights that matter.
+              </h2>
+              <p className="font-['Playfair_Display'] italic text-[44px] text-white/80 leading-none">Early Access.</p>
+           </div>
+           
+           <p className="font-['Geist'] text-white/70 text-[16px] leading-relaxed max-w-[480px] uppercase">
+             STAY UPDATED WITH THE LATEST IN INDUSTRIAL AUTOMATION, ENERGY MANAGEMENT, AND REAL-WORLD CASE STUDIES FROM FLOWTECH
+           </p>
+
+           <form className="flex flex-col gap-4 w-full max-w-[400px]">
+              <div className="flex flex-col gap-2">
+                <label className="font-['Geist'] font-semibold text-[11px] text-white/50 uppercase tracking-widest">Name</label>
+                <input 
+                  type="text" 
+                  placeholder="John Doe"
+                  className="bg-white/5 border border-white/10 rounded-md p-4 text-white focus:outline-none focus:border-blue-500 transition-colors uppercase"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="font-['Geist'] font-semibold text-[11px] text-white/50 uppercase tracking-widest">Email Address</label>
+                <input 
+                  type="email" 
+                  placeholder="hello@flowtech.com"
+                  className="bg-white/5 border border-white/10 rounded-md p-4 text-white focus:outline-none focus:border-blue-500 transition-colors uppercase"
+                />
+              </div>
+              <button 
+                type="submit"
+                className="bg-[#001ca9] hover:bg-blue-600 px-8 py-4 rounded-md text-white font-['Geist'] font-semibold text-[14px] uppercase tracking-widest transition-colors mt-4"
+              >
+                SUBSCRIBE
+              </button>
+           </form>
+        </div>
+      </section>
+
+      <FooterSection />
+    </div>
+  );
+};
+export default BlogDetailPage;
