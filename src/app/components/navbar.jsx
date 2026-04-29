@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import svgPaths from "../../imports/svg-w7xqzyo252";
 import { ServicesDropdown } from './services-dropdown';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const onNavigate = useNavigate();
 
   return (
     <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] md:w-[calc(100%-64px)] max-w-[1260px] z-50">

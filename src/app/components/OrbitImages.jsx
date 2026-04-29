@@ -122,7 +122,6 @@ export default function OrbitImages({
   centerContent,
   responsive = false,
 }) {
-  console.log(images)
   const containerRef = useRef(null);
   const [scale, setScale] = useState(1);
 
@@ -185,13 +184,16 @@ export default function OrbitImages({
   const containerHeight = responsive ? 'auto' : (typeof height === 'number' ? height : (typeof width === 'number' ? width : 'auto'));
 
   const items = images.map((src, index) => (
-    <img
-      key={src}
-      src={src}
-      alt={`${altPrefix} ${index + 1}`}
-      draggable={false}
-      className="w-full h-full object-contain w-[100px]"
-    />
+    <div key={index} style={{ width: itemSize, height: itemSize }} className="rounded-full overflow-hidden">
+      <img
+        key={src}
+        src={src}
+        alt={`${altPrefix} ${index + 1}`}
+        draggable={false}
+        borderRadius="50%"
+        className="w-full h-full object-contain w-[100px]"
+      />
+    </div>
   ));
 
   return (

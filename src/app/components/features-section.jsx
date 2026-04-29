@@ -10,6 +10,10 @@ import imgIcon from "../../assets/41ff2d725380255d23878aa7c6fb39c5f6bd3adc.png";
 import imgIcon1 from "../../assets/798b5019ccb03e7937fe35631b20dcdefae3cefc.png";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDivFramerIu4QG2, imgDiv, imgDiv1, imgDiv2, imgDiv3, imgDiv4, imgDiv5, imgDiv6, imgDiv7 } from "../../imports/svg-4ugef";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import image1 from "../../assets/services/image 1.png";
+import image2 from "../../assets/services/image 2.png";
+import image3 from "../../assets/services/image 3.png";
+import image4 from "../../assets/services/image 4.png";
 
 const services = [
   {
@@ -20,6 +24,7 @@ const services = [
       "Transform shop floor operations with real-time data integration, monitoring, and intelligent dashboards. Leverage predictive analytics to reduce downtime, optimise production, and improve quality.",
     img: imgRectangle,
     link: null,
+    hoverImg: image2,
   },
   {
     id: 2,
@@ -29,6 +34,7 @@ const services = [
       "Real-time energy monitoring that tracks consumption across utilities, equipment, and sites through a centralized dashboard.",
     img: img3DGraphComputerIllustration1,
     link: "/services/energy-monitoring",
+    hoverImg: image1,
   },
   {
     id: 3,
@@ -38,6 +44,7 @@ const services = [
       "Turn complex data into actionable insights with advanced analytics, real-time dashboards, and predictive modelling.",
     img: imgRectangle1,
     link: null,
+    hoverImg: image4,
   },
   {
     id: 4,
@@ -47,6 +54,7 @@ const services = [
       "Monitor pipelines in real time using distributed fiber optic sensing to detect leaks, temperature changes, and intrusions across long distances.",
     img: imgRectangle2,
     link: null,
+    hoverImg: image3,
   },
 ];
 
@@ -220,19 +228,116 @@ function TitleWrapCard({ title, subtitle }) {
 
 // card Views
 
+// function ServiceCard({ item }) {
+//   const Wrapper = item.link ? Link : "div";
+
+//   return (
+//     <Wrapper
+//       to={item.link || undefined}
+//       className="content-stretch flex flex-col gap-[10px] items-center justify-center overflow-clip relative w-full max-w-[560px] mx-auto group"
+//     >
+//       <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] overflow-clip relative rounded-[7px] aspect-square w-full">
+
+//         {/* Image */}
+//         <div className="absolute inset-[-5%] overflow-clip">
+//           <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-500">
+//             <ImageWithFallback
+//               src={item.img}
+//               alt=""
+//               className="w-full h-full object-cover"
+//             />
+//           </div>
+
+//           {/* Overlay Content */}
+//           <Frame1 description={item.description} />
+//         </div>
+//       </div>
+
+//       <TitleWrapCard title={item.title} subtitle={item.subtitle} />
+//     </Wrapper>
+//   );
+// }
+
+// function ServiceCard({ item }) {
+//   const Wrapper = item.link ? Link : "div";
+
+//   return (
+//     <Wrapper
+//       to={item.link || undefined}
+//       className="content-stretch flex flex-col gap-[10px] items-center justify-center relative w-full max-w-[560px] mx-auto group"
+//     >
+//       <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] aspect-square w-full overflow-hidden">
+
+//         {/* Image Container */}
+//         <div className="absolute inset-[-5%]">
+
+//           {/* Default Image */}
+//           <div className="absolute inset-0 transition-all duration-500 group-hover:scale-110">
+//             <ImageWithFallback
+//               src={item.img}
+//               alt=""
+//               className="w-full h-full object-cover"
+//             />
+//           </div>
+
+//           {/* Hover Image */}
+//           {item.hoverImg && (
+//             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-110">
+//               <ImageWithFallback
+//                 src={item.hoverImg}
+//                 alt=""
+//                 className="w-full h-full object-cover"
+//               />
+//             </div>
+//           )}
+
+//           {/* Overlay Content */}
+//           <Frame1 description={item.description} />
+//         </div>
+//       </div>
+
+//       <TitleWrapCard title={item.title} subtitle={item.subtitle} />
+//     </Wrapper>
+//   );
+// }
+
+
+import { useState, useEffect } from "react";
+
 function ServiceCard({ item }) {
   const Wrapper = item.link ? Link : "div";
+
+  const [isMobile, setIsMobile] = useState(false);
+  const [mobileHover, setMobileHover] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   return (
     <Wrapper
       to={item.link || undefined}
-      className="content-stretch flex flex-col gap-[10px] items-center justify-center overflow-clip relative w-full max-w-[560px] mx-auto group"
+      className="content-stretch flex flex-col gap-[10px] items-center justify-center relative w-full max-w-[560px] mx-auto group"
     >
-      <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] overflow-clip relative rounded-[7px] aspect-square w-full">
+      <div
+        className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] aspect-square w-full overflow-hidden"
+        onClick={() => {
+          if (isMobile) setMobileHover((prev) => !prev);
+        }}
+      >
+        <div className="absolute inset-[-5%]">
 
-        {/* Image */}
-        <div className="absolute inset-[-5%] overflow-clip">
-          <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-500">
+          {/* Default Image */}
+          <div
+            className={`
+              absolute inset-0 transition-all duration-500
+              ${!isMobile ? "group-hover:scale-110" : ""}
+              ${mobileHover ? "opacity-0" : "opacity-100"}
+            `}
+          >
             <ImageWithFallback
               src={item.img}
               alt=""
@@ -240,7 +345,23 @@ function ServiceCard({ item }) {
             />
           </div>
 
-          {/* Overlay Content */}
+          {/* Hover Image */}
+          {item.hoverImg && (
+            <div
+              className={`
+                absolute inset-0 transition-all duration-500
+                ${!isMobile ? "group-hover:opacity-100 group-hover:scale-110" : ""}
+                ${mobileHover ? "opacity-100 scale-110" : "opacity-0"}
+              `}
+            >
+              <ImageWithFallback
+                src={item.hoverImg}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+
           <Frame1 description={item.description} />
         </div>
       </div>
@@ -250,6 +371,7 @@ function ServiceCard({ item }) {
   );
 }
 
+// export default ServiceCard;
 
 export default function WorkCardWrap() {
   return (

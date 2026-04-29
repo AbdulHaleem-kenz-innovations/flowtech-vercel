@@ -1,18 +1,17 @@
 import React, { useEffect } from "react";
 import { createBrowserRouter, Outlet, useLocation } from "react-router";
-import { Background } from "./app/components/background";
-import { Navbar } from "./app/components/navbar";
 // import { Background } from "./components/background";
-// import { Navbar } from "./components/navbar";
-// import { HomePage } from "./pages/home-page";
-// import { ServicePage } from "./pages/service-page";
-// import { IndustriesPage } from "./pages/industries-page";
-// import { InsightsPage } from "./pages/insights-page";
-// import { BlogDetailPage } from "./pages/blog-detail-page";
-// import { AboutPage } from "./pages/about-page";
-// import { CareersPage } from "./pages/careers-page";
-// import { ProductsPage } from "./pages/products-page";
-// import { ContactPage } from "./pages/contact-page";
+import { Navbar } from "./app/components/navbar";
+import { HomePage } from "./app/pages/home-page";
+import Background from "./app/components/background";
+import ServicePage from "./app/pages/service-page";
+import IndustriesPage from "./app/pages/industries-page";
+import AboutPage from "./app/pages/about-page";
+import CareersPage from "./app/pages/careers-page";
+import InsightsPage from "./app/pages/insights-page";
+import BlogDetailPage from "./app/pages/blog-detail-page";
+import ProductsPage from "./app/pages/products-page";
+import ContactPage from "./app/pages/contact-page";
 
 
 const Root = () => {
@@ -38,48 +37,48 @@ export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
-    // children: [
-    //   {
-    //     index: true,
-    //     Component: HomePage,
-    //   },
-    //   {
-    //     path: "services/:serviceId",
-    //     Component: ServicePage,
-    //   },
-    //   {
-    //     path: "industries",
-    //     Component: IndustriesPage,
-    //   },
-    //   {
-    //     path: "about",
-    //     Component: AboutPage,
-    //   },
-    //   {
-    //     path: "careers",
-    //     Component: CareersPage,
-    //   },
-    //   {
-    //     path: "insights",
-    //     children: [
-    //       {
-    //         index: true,
-    //         Component: InsightsPage,
-    //       },
-    //       {
-    //         path: ":slug",
-    //         Component: BlogDetailPage,
-    //       },
-    //     ],
-    //   },
-    //   {
-    //     path: "products",
-    //     Component: ProductsPage,
-    //   },
-    //   {
-    //     path: "contact",
-    //     Component: ContactPage,
-    //   },
-    // ],
+    children: [
+      {
+        index: true,
+        Component: HomePage,
+      },
+      {
+        path: "services/:serviceId",
+        Component: ServicePage,
+      },
+      {
+        path: "industries",
+        Component: IndustriesPage,
+      },
+      {
+        path: "about",
+        Component: AboutPage,
+      },
+      {
+        path: "careers",
+        Component: CareersPage,
+      },
+      {
+        path: "insights",
+        children: [
+          {
+            index: true,
+            Component: InsightsPage,
+          },
+          {
+            path: ":slug",
+            Component: BlogDetailPage,
+          },
+        ],
+      },
+      {
+        path: "products",
+        Component: ProductsPage,
+      },
+      {
+        path: "contact",
+        Component: ContactPage,
+      },
+    ],
   },
 ]);

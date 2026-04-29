@@ -5,19 +5,34 @@ import { imgDivFramerIu4QG } from "../../imports/svg-bx13w";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import OrbitImages from './OrbitImages';
 
+import image1 from "../../assets/brand-images/image 1.png";
+import image2 from "../../assets/brand-images/image 2.png";
+import image3 from "../../assets/brand-images/image 3.png";
+import image4 from "../../assets/brand-images/image 4.png";
+import image5 from "../../assets/brand-images/image 5.png";
+import image6 from "../../assets/brand-images/image 6.png";
+import image7 from "../../assets/brand-images/image 7.png";
+import image8 from "../../assets/brand-images/image 8.png";
+import image9 from "../../assets/brand-images/image 9.png";
+import image10 from "../../assets/brand-images/image 10.png";
+import image11 from "../../assets/brand-images/image 11.png";
+import image12 from "../../assets/brand-images/image 12.png";
+import image13 from "../../assets/brand-images/image 13.png";
+
 const images1 = [
-  "https://picsum.photos/300/300?grayscale&random=1",
-  "https://picsum.photos/300/300?grayscale&random=2",
-  "https://picsum.photos/300/300?grayscale&random=3",
-  "https://picsum.photos/300/300?grayscale&random=4",
-  "https://picsum.photos/300/300?grayscale&random=5",
-  "https://picsum.photos/300/300?grayscale&random=6",
-  "https://picsum.photos/300/300?grayscale&random=1",
-  "https://picsum.photos/300/300?grayscale&random=2",
-  "https://picsum.photos/300/300?grayscale&random=3",
-  "https://picsum.photos/300/300?grayscale&random=4",
-  "https://picsum.photos/300/300?grayscale&random=5",
-  "https://picsum.photos/300/300?grayscale&random=6",
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+  image10,
+  image11,
+  image12,
+  image13
 ];
 
 function Component2W5TYAp7Kvu2COjxLNhiNawYuSvg() {
@@ -265,14 +280,14 @@ function Container() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setRadius(160);//110
-        setItemSize(40);
+        setRadius(0);//110
+        setItemSize(0);
       } else if (window.innerWidth < 1024) {
         setRadius(200);//160
         setItemSize(55);
       } else {
         setRadius(600);
-        setItemSize(70);
+        setItemSize(100);
       }
     };
 
@@ -282,8 +297,8 @@ function Container() {
   }, []);
   return (
     <div className="backdrop-blur-[25px] bg-gradient-to-t from-[rgba(17,15,223,0.5)] h-[600px] md:h-[778.591px] overflow-hidden relative rounded-2xl md:rounded-[20px] to-[rgba(17,15,223,0)] w-full max-w-[1260px]" data-name="Container">
-      <div className="absolute aspect-[1106/1134] bottom-[-20%] md:bottom-[-386.56px] left-[5%] right-[5%] opacity-40 md:opacity-100" data-name="Image Wrap 1">
-        <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute aspect-[1106/1134] bottom-[-20%] md:bottom-[-386.56px] left-[5%] right-[5%] opacity-40 md:opacity-100 " data-name="Image Wrap 1">
+        <div className="absolute inset-0 flex items-center justify-center ">
           <OrbitImages
             images={images1}
             shape="circle"
@@ -294,15 +309,28 @@ function Container() {
             responsive={true}
             direction="normal"
             fill
-            showPath
+            showPath={false}
             paused={false}
           />
         </div>
       </div>
-      <Shape />
-      <DivFramerIu4QGMaskGroup />
-      <DivFramerIu4QGMaskGroup1 />
-      <ContentWrapper />
+    <div
+  className="
+    absolute 
+    top-0 md:top-[106px]
+    left-0 right-0
+    w-full h-full
+    md:aspect-[1106/1134]
+    opacity-60 md:opacity-100
+    flex flex-col items-center justify-center
+    z-10
+  "
+>
+  <Shape />
+  <DivFramerIu4QGMaskGroup />
+  <DivFramerIu4QGMaskGroup1 />
+  <ContentWrapper />
+</div>
     </div>
   );
 }
@@ -314,3 +342,6 @@ export const RotationCardSection = () => {
     </section>
   );
 }
+
+
+

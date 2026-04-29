@@ -30,6 +30,7 @@ import imgImage6 from "../../assets/d1986fe5d6cbb1975d0b296dceae5f38409b5f54.png
 // SVGs
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgSection } from "../../imports/svg-2r94c";
 import svgPaths from "../../imports/svg-4lq27j1spe";
+import { RotationCardSection } from '../components/rotation-card-section';
 
 const TeamCard = ({ name, role, image, socialIcons = [imgVector, imgVector1, imgVector2, imgVector3] }) => (
   <motion.div
@@ -286,8 +287,8 @@ const ValueCard = ({ title, description, icon }) => (
       </section>
 
       {/* Industrial Power Section */}
-      <section className="w-full h-[800px] mb-[150px] relative overflow-hidden">
-        <RotationCard />
+      <section className="w-full h-[1000px] mb-[150px] relative overflow-hidden">
+        <RotationCardSection />
       </section>
 
       {/* Newsletter Section */}

@@ -3,8 +3,9 @@ import imgHEroImage from "../../assets/48517710623739daa711816a992836288eaf350d.
 import imgImage from "../../assets/14a520dccf727ce258eeb22631612c2347519bfe.png";
 import { imgDivFramerIu4QG } from "../../imports/svg-hryyo";
 import { ImageWithFallback } from './figma/ImageWithFallback';
-
+import { motion, useScroll, useTransform } from "framer-motion";
 export const HeroSection = () => {
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 md:pt-40 md:pb-32 px-6 md:px-8 overflow-hidden ">
       <div className="max-w-[1260px] w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center z-10 pb-100">
@@ -72,7 +73,7 @@ export const HeroSection = () => {
           className="w-full h-full object-contain"
         />
       </div> */}
-      <div className="absolute bottom-[0%] left-10 md:left-[10%] 
+      {/* <div className="absolute bottom-[0%] left-10 md:left-[10%] 
   w-[120px] md:w-[300px] 
   h-[120px] md:h-[540px] 
   rotate-290 md:rotate-[290deg] 
@@ -84,14 +85,23 @@ export const HeroSection = () => {
           alt=""
           className="w-full h-full object-contain"
         />
-      </div>
-      {/* <div className="absolute bottom-[-5%] md:bottom-[-10%] left-[-10%] md:left-[10%] w-[200px] md:w-[300px] h-[200px] md:h-[300px] blur-[2px] opacity-40 md:opacity-60 pointer-events-none animate-bounce">
+      </div> */}
+      <div className="group absolute bottom-[0%] left-20 md:left-[10%] 
+  w-[120px] md:w-[300px] 
+  h-[120px] md:h-[540px] 
+  rotate-[290deg] 
+  opacity-70 md:opacity-100 
+  transition-transform duration-300 ease-out
+  hover:rotate-[300deg] 
+  active:rotate-[270deg]">
+
         <ImageWithFallback
           src={imgImage}
           alt=""
-          className="w-full h-full object-contain  "
+          className="w-full h-full object-contain"
         />
-      </div> */}
+      </div>
+
     </section>
   );
 };
