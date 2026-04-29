@@ -10,6 +10,7 @@ import imgIcon from "../../assets/41ff2d725380255d23878aa7c6fb39c5f6bd3adc.png";
 import imgIcon1 from "../../assets/798b5019ccb03e7937fe35631b20dcdefae3cefc.png";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDivFramerIu4QG2, imgDiv, imgDiv1, imgDiv2, imgDiv3, imgDiv4, imgDiv5, imgDiv6, imgDiv7 } from "../../imports/svg-4ugef";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 const services = [
   {
@@ -430,11 +431,13 @@ function VideoSection() {
 
 export const FeaturesSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
       <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[20px] items-center justify-center relative" data-name="Features">
         <ContainerServices />
         <VideoSection />
       </div>
     </section>
+    </ScrollFadeIn>
   );
 }

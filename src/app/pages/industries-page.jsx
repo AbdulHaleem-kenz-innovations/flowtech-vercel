@@ -20,6 +20,7 @@ import imgScreenshot20260420At30329Pm1 from "../../assets/5c7764e5d6b12c3141895d
 
 // SVGs
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-8em4t";
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 const HeroSection = () => {
   const images = [
@@ -162,6 +163,7 @@ const ContentSection = () => {
 
       {/* Cards */}
       <div className="w-full flex flex-col items-center gap-6">
+        <ScrollFadeIn>
         <IndustryCard
           title="Manufacturing"
           icon={() => (
@@ -179,7 +181,9 @@ const ContentSection = () => {
           ]}
           outcome="Improved efficiency, reduced downtime, and data-driven production control."
         />
-
+        </ScrollFadeIn>
+           
+          <ScrollFadeIn>
         <IndustryCard
           title="Energy & Utilities"
           icon={() => (
@@ -197,7 +201,9 @@ const ContentSection = () => {
           ]}
           outcome="Reduced energy costs, improved efficiency, and better sustainability management."
         />
+        </ScrollFadeIn>
 
+          <ScrollFadeIn>
         <IndustryCard
           title="Pipelines"
           icon={() => (
@@ -215,6 +221,7 @@ const ContentSection = () => {
           ]}
           outcome="Enhanced safety, faster response times, and reduced operational risks."
         />
+        </ScrollFadeIn>
       </div>
 
       {/* Connect Button */}
@@ -228,8 +235,10 @@ const ContentSection = () => {
 export const IndustriesPage = () => {
   return (
     <div className="w-full flex flex-col">
+      <ScrollFadeIn>
       <HeroSection />
       <ContentSection />
+      </ScrollFadeIn>
       <div className="w-full">
         <ContactSection />
         <RotationCardSection />

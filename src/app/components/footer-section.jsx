@@ -12,6 +12,7 @@ import imgIcon2 from "../../assets/51ffed27f8563ca2ad8315deb10fabefcc04a9bc.png"
 import imgIcon3 from "../../assets/0a5aa46c4dced89013f2a2a5b9b8353e09cd6368.png";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-z9wjn";
 import svgFooterPaths from "../../imports/svg-2m2zf95hf3";
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 const Logo = () => (
   <div className="h-[44px] w-[49px] relative shrink-0">
@@ -93,6 +94,7 @@ const ContactBox = () => (
 
 export const FooterSection = () => {
   return (
+    <ScrollFadeIn>
     <footer className="w-full pt-16 md:pt-32 pb-12 px-6 md:px-8 relative overflow-hidden bg-transparent border-t border-white/5 mt-20">
       <div className="max-w-[1260px] mx-auto flex flex-col gap-16 md:gap-24 relative z-10">
         
@@ -175,5 +177,6 @@ export const FooterSection = () => {
         </div>
       </div>
     </footer>
+    </ScrollFadeIn>
   );
 };

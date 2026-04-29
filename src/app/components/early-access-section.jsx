@@ -2,6 +2,7 @@ import React from 'react';
 import svgPaths from "../../imports/svg-3wmufn4arv";
 import imgImage from "../../assets/2f8c3a2c8eca26d65de115305cf49c0c2f3513ea.png";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function Image() {
   return (
@@ -242,8 +243,13 @@ function Container() {
 
 export const EarlyAccessSection = () => {
   return (
+     <ScrollFadeIn>
     <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-16 md:py-[120px] relative w-full" data-name="Early Access Section">
+    
       <Container />
+      
     </section>
+    </ScrollFadeIn>
+    
   );
 }

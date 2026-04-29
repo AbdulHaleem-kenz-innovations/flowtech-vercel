@@ -309,6 +309,7 @@ function ContentWrapper() {
 // }
 
 import { useEffect, useRef, useState } from "react";
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function VrImage() {
   const ref = useRef(null);
@@ -423,10 +424,12 @@ function VrImage() {
 export default VrImage;
 export const CtaSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
       <div className="max-w-[1260px] w-full flex flex-col items-center relative" data-name="CTA">
         <VrImage />
       </div>
     </section>
+    </ScrollFadeIn>
   );
 }

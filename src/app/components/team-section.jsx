@@ -77,6 +77,7 @@ const members = [
 
 
 import React, { useState } from "react";
+import ScrollFadeIn from "../../components/ScrollFadeIn";
 
 const TeamGallery = ({ members }) => {
   const [selected, setSelected] = useState(members[0]);
@@ -92,18 +93,26 @@ const TeamGallery = ({ members }) => {
             onClick={() => setSelected(member)}
             className={`relative aspect-square rounded-xl overflow-hidden group border transition-all duration-300
             ${selected.id === member.id
-                ? "border-white scale-[1.03]"
-                : "border-white/10 hover:border-white/40"
+                ? "border-white"
+                : "border-white/10"
               }`}
           >
             <img
               src={member.image}
               alt={member.name}
-              className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              className={`w-full h-full object-cover transition duration-500
+              ${selected.id === member.id
+                  ? "scale-110"
+                  : "group-hover:scale-110"
+                }`}
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition" />
+            <div className={`absolute inset-0 transition duration-300
+            ${selected.id === member.id
+                ? "bg-black/20"
+                : "bg-black/40 group-hover:bg-black/20"
+              }`} />
 
             {/* Plus icon */}
             <div className="absolute top-2 right-2 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center text-white text-sm">
@@ -153,10 +162,12 @@ const TeamGallery = ({ members }) => {
 /* 🔹 Section Wrapper */
 export function TeamSection() {
   return (
+    <ScrollFadeIn>
     <section className="w-full flex justify-center py-16 md:py-[120px] px-6 md:px-8 ">
       <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-20">
         <TeamGallery members={members} />
       </div>
     </section>
+    </ScrollFadeIn>
   );
 }

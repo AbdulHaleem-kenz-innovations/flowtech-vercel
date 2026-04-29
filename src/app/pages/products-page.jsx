@@ -236,4 +236,4 @@ const ProductCard = ({ number, title, description, vectorPath }) => (
     </div>
   );
 };
-export default ProductsPage;
+export default ProductsPage

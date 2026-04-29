@@ -5,6 +5,7 @@ import imgVector1 from "../../assets/c5871f97ee8804575fa98ffe2a3b6affd22b5cee.pn
 import imgImage from "../../assets/28664606051f8506026c69bed106cd92d3ebbb23.png";
 import imgImage1 from "../../assets/e09f50796c0c219089d5e485139d5e1a48d9d1d2.png";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function OmYb20Xx2MTnlMbaSnLEmaqisAuMp() {
   return <div className="h-[300px] md:h-[400px] shrink-0 w-full bg-white/5 animate-pulse" data-name="omYB20xx2MTnlMbaSnLEmaqisAU.mp4" />;
@@ -634,6 +635,7 @@ function AboutCardAlignStretch() {
 
 export const AboutSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="relative w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
       <div className="max-w-[1260px] w-full">
         <div className="content-stretch flex flex-wrap gap-[15px] items-center justify-center relative size-full" data-name="About section">
@@ -643,5 +645,6 @@ export const AboutSection = () => {
         </div>
       </div>
     </section>
+    </ScrollFadeIn>
   );
 }

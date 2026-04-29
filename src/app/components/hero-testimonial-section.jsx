@@ -4,6 +4,7 @@ import imgImage2 from "../../assets/13a5123d147560e0b029827bd35b00c4ff90b646.png
 import imgStar from "../../assets/4ae90066ce736d93921e8efb9fccf9d15d69f41b.png";
 import imgImage1 from "../../assets/66a6c590d9a3e3624c6c7830890ce0029158f939.png";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function StarRating() {
   return (
@@ -42,6 +43,7 @@ function QuoteSection() {
 
 export const HeroTestimonialSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="w-full flex justify-center py-16 md:py-20 px-6 md:px-8 overflow-hidden">
       <div className="max-w-[1260px] w-full aspect-[1/1.2] sm:aspect-[1260/630] relative rounded-[7px] overflow-hidden group">
         {/* Background Main Image */}
@@ -69,5 +71,6 @@ export const HeroTestimonialSection = () => {
         </div>
       </div>
     </section>
+    </ScrollFadeIn>
   );
 };

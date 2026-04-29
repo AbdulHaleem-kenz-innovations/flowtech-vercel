@@ -30,6 +30,7 @@ import imgImage6 from "../../assets/d1986fe5d6cbb1975d0b296dceae5f38409b5f54.png
 // SVGs
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgSection } from "../../imports/svg-2r94c";
 import svgPaths from "../../imports/svg-4lq27j1spe";
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 const TeamCard = ({ name, role, image, socialIcons = [imgVector, imgVector1, imgVector2, imgVector3] }) => (
   <motion.div
@@ -89,6 +90,7 @@ const ValueCard = ({ title, description, icon }) => (
     <div className="w-full flex flex-col items-center">
 
       {/* Hero Section */}
+      <ScrollFadeIn>
       <section className="pt-[200px] pb-[100px] px-6 w-full max-w-[1260px] mx-auto relative flex flex-col items-center">
         <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-10 md:p-[100px] w-full relative overflow-hidden">
           {/* Decorative icons */}
@@ -136,9 +138,11 @@ const ValueCard = ({ title, description, icon }) => (
           </div>
         </div>
       </section>
+      </ScrollFadeIn>
 
       {/* Company Overview Section */}
       <section className="px-6 w-full max-w-[1260px] mx-auto mb-[150px]">
+        <ScrollFadeIn>
         <div className="flex flex-col lg:flex-row gap-[25px]">
           <div className="flex-1 backdrop-blur-[10px] bg-white/5 rounded-[7px] overflow-hidden min-h-[500px] relative border border-white/10">
             <div className="absolute inset-0 flex flex-col items-center justify-center p-10">
@@ -181,10 +185,12 @@ const ValueCard = ({ title, description, icon }) => (
             </div>
           </div>
         </div>
+        </ScrollFadeIn>
       </section>
 
       {/* Core Values Section */}
       <section className="px-6 w-full max-w-[1260px] mx-auto mb-[150px]">
+        <ScrollFadeIn>
         <div className="flex flex-col gap-[39px]">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
             <h2 className="flex flex-wrap items-center gap-x-3">
@@ -250,10 +256,12 @@ const ValueCard = ({ title, description, icon }) => (
           <div className="absolute bottom-5 left-5 opacity-40 size-5 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain' }} />
           <div className="absolute bottom-5 right-5 opacity-40 size-5 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain' }} />
         </div>
+        </ScrollFadeIn>
       </section>
 
       {/* Our Team Section */}
       <section className="px-6 w-full max-w-[1260px] mx-auto mb-[150px]">
+        <ScrollFadeIn>
         <div className="flex flex-col gap-20">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 md:gap-10">
             <div className="flex flex-col gap-4 md:gap-6 w-full lg:max-w-[320px]">
@@ -283,15 +291,20 @@ const ValueCard = ({ title, description, icon }) => (
             <TeamCard name="Amina Al-Harbi" role="PRODUCT SPECIALIST" image={imgImage6} />
           </div>
         </div>
+        </ScrollFadeIn>
       </section>
 
       {/* Industrial Power Section */}
       <section className="w-full h-[800px] mb-[150px] relative overflow-hidden">
+        <ScrollFadeIn>
         <RotationCard />
+        </ScrollFadeIn>
       </section>
 
       {/* Newsletter Section */}
+      <ScrollFadeIn>
       <NewsletterSection />
+      </ScrollFadeIn>
 
       <FooterSection />
     </div>

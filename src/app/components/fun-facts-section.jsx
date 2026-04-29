@@ -4,6 +4,7 @@ import imgShape from "../../assets/f19f21e1f2c9ee024d3ff5ca5b50f3a45ab6ca42.png"
 import imgImage from "../../assets/f705064a5036bcff4084cea6f6b248091c682da8.png";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDiv, imgDiv1, imgDiv2, imgDiv3, imgDiv4, imgDiv5, imgDiv6, imgDiv7 } from "../../imports/svg-sbzl0";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function DivFramerIu4QGMaskGroup() {
   return (
@@ -209,6 +210,7 @@ function CardHours() {
 
 export const FunFactsSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
       <div className="max-w-[1260px] w-full flex flex-col gap-16 md:gap-[80px] items-center justify-center relative" data-name="Fun Facts">
         <SectionContent />
@@ -232,5 +234,6 @@ export const FunFactsSection = () => {
         </div>
       </div>
     </section>
+    </ScrollFadeIn>
   );
 }

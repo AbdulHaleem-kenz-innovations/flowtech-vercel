@@ -5,6 +5,7 @@ import imgIcon from "../../assets/1ce5d810fda22f060edc1f55d9b938c472fc4c96.png";
 import imgImage from "../../assets/49208a0f068229058add6f6c6c1d9a3f7c59ffa5.png";
 import { imgDivFramerIu4QG } from "../../imports/svg-dmk14";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function DivFramerIu4QGMaskGroup() {
   return (
@@ -235,8 +236,10 @@ function Container() {
 
 export const ContactSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="w-full flex items-center justify-center px-6 md:px-[30px] py-16 md:py-[150px] relative overflow-hidden" data-name="Form section">
       <Container />
     </section>
+    </ScrollFadeIn>
   );
 }

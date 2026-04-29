@@ -9,6 +9,7 @@ import imgIntegrationLogo5 from "../../assets/576cf38c77f18fadd7383fe7122cacc120
 import { imgDivFramerIu4QG } from "../../imports/svg-aiype";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import OrbitImages from './OrbitImages';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 const images1 = [
   "https://picsum.photos/300/300?grayscale&random=1",
@@ -247,7 +248,8 @@ export const EcosystemSection = () => {
   }, []);
 
   return (
-    <section className="w-full flex justify-center py-16 md:py-32 px-4 sm:px-6 md:px-8 overflow-hidden bg-black/100">
+    <ScrollFadeIn>
+    <section className="w-full flex justify-center py-16 md:py-32 px-4 sm:px-6 md:px-8 overflow-hidden ">
 
       <div className="max-w-[1260px] w-full flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-[120px] items-center relative">
 
@@ -341,5 +343,6 @@ export const EcosystemSection = () => {
         </div>
       </div>
     </section>
+    </ScrollFadeIn>
   );
 };

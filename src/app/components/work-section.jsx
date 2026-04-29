@@ -5,6 +5,7 @@ import imgImage3 from "../../assets/ac6be543e6c2dd18fd3ec6d2c2879f0a8e7d1575.png
 import imgHomePage011 from "../../assets/46e850a6ceee651d955294f33b48fc6dd587cffd.png";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDivFramerIu4QG2 } from "../../imports/svg-emg7m";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function DivFramerIu4QGMaskGroup() {
   return (
@@ -187,6 +188,7 @@ function KenvoiceLogo() {
 
 export const WorkSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="w-full flex justify-center py-16 md:py-24 px-6 md:px-8">
       <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[64px] items-center justify-center relative" data-name="Work">
         <HeaderArea />
@@ -230,5 +232,6 @@ export const WorkSection = () => {
         </button>
       </div>
     </section>
+    </ScrollFadeIn>
   );
 }

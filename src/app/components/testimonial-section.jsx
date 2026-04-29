@@ -6,6 +6,7 @@ import imgImage1 from "../../assets/17cf5bc71490f3c19acec485a65053458454bed7.png
 import imgImage2 from "../../assets/6aac6e50972325bf714b38089a03d3afd0bf55af.png";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-emb3x";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function PlusIcon({ size = 16, className = "" }) {
   return (
@@ -56,6 +57,7 @@ const TestimonialCard = ({ rating, name, role, quote, image, isCentered = false 
 
 export const TestimonialSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="w-full flex justify-center py-16 md:py-24 px-6 md:px-8 overflow-hidden">
       <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-16 relative">
         {/* Header Section */}
@@ -103,5 +105,6 @@ export const TestimonialSection = () => {
         </div>
       </div>
     </section>
+    </ScrollFadeIn>
   );
 };

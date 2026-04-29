@@ -1,3 +1,4 @@
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 import LogoLoop from './LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 
@@ -17,6 +18,8 @@ const imageLogos = [
 
 export const BrandSection = () => {
   return (
+    <>
+    <ScrollFadeIn>
     <div
       className="py-12 md:py-16 flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-8 text-center md:text-left"
       style={{ maxWidth: "1200px", margin: "0 auto" }}
@@ -42,5 +45,7 @@ export const BrandSection = () => {
         />
       </div>
     </div>
+    </ScrollFadeIn>
+    </>
   );
 };

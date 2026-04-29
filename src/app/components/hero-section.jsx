@@ -3,9 +3,11 @@ import imgHEroImage from "../../assets/48517710623739daa711816a992836288eaf350d.
 import imgImage from "../../assets/14a520dccf727ce258eeb22631612c2347519bfe.png";
 import { imgDivFramerIu4QG } from "../../imports/svg-hryyo";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 export const HeroSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 md:pt-40 md:pb-32 px-6 md:px-8 overflow-hidden ">
       <div className="max-w-[1260px] w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center z-10 pb-100">
 
@@ -93,6 +95,7 @@ export const HeroSection = () => {
         />
       </div> */}
     </section>
+     </ScrollFadeIn>
   );
 };
 

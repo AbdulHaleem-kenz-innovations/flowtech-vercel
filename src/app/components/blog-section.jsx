@@ -4,6 +4,7 @@ import imgIcon from "../../assets/cd44ba461e228e68fc6699cbb24da2b40ffa0111.png";
 import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../../assets/12f90a2a24f7e3315caa72708e6722575a13d825.png";
 import { imgDivFramerIu4QG, imgDivFramerYVnZo, imgDivFramerFoIvU, imgDivFramerIu4QG1 } from "../../imports/svg-h8bas";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function PlusIcon({ size = 16, className = "" }) {
   return (
@@ -63,6 +64,7 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
 
 export const BlogSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="w-full flex justify-center py-20 md:py-[200px] px-6 md:px-8 bg-transparent">
       <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-20 items-center">
         {/* Header Section */}
@@ -112,5 +114,6 @@ export const BlogSection = () => {
         </div>
       </div>
     </section>
+    </ScrollFadeIn>
   );
 };

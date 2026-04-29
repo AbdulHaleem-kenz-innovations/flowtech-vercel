@@ -4,6 +4,7 @@ import imgImageWrap1 from "../../assets/ecddb26aa177edd71427467de9bf23fb1c9fcf37
 import { imgDivFramerIu4QG } from "../../imports/svg-bx13w";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import OrbitImages from './OrbitImages';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 const images1 = [
   "https://picsum.photos/300/300?grayscale&random=1",
@@ -309,8 +310,10 @@ function Container() {
 
 export const RotationCardSection = () => {
   return (
-    <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-20 md:py-[150px] relative w-full" data-name="Rotation card section">
-      <Container />
-    </section>
+    <ScrollFadeIn>
+      <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-20 md:py-[150px] relative w-full" data-name="Rotation card section">
+        <Container />
+      </section>
+    </ScrollFadeIn>
   );
 }

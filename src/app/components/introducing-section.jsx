@@ -7,6 +7,7 @@ import imgImage4 from "../../assets/a5da9837d04c1f6e98c1c7fd56a5d508ff2b1170.png
 import imgImage5 from "../../assets/b695d7219dbe15bacb682a0df03b4d343585e4d0.png";
 import { imgDivFramerIu4QG } from "../../imports/svg-7zyoe";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function DivFramerIu4QGMaskGroup() {
   return (
@@ -256,6 +257,7 @@ function ImageWrapper() {
 
 export const IntroducingSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="w-full flex justify-center py-12 md:py-24 px-6 md:px-8">
       <div className="max-w-[1260px] w-full flex items-center justify-center relative" data-name="Introducing Section">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-[78px] items-center lg:items-start max-w-[1260px] relative w-full">
@@ -264,5 +266,6 @@ export const IntroducingSection = () => {
         </div>
       </div>
     </section>
+    </ScrollFadeIn>
   );
 }
