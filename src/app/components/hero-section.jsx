@@ -86,7 +86,7 @@ export const HeroSection = () => {
           className="w-full h-full object-contain"
         />
       </div> */}
-      <div className="group absolute bottom-[0%] left-20 md:left-[10%] 
+      <div className="group absolute bottom-[0%] left-20 md:left-[14%] 
   w-[120px] md:w-[300px] 
   h-[120px] md:h-[540px] 
   rotate-[290deg] 

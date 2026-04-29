@@ -66,7 +66,38 @@ const TextAreaField = ({ label, placeholder }) => (
   </div>
 );
 
- const ContactPage = () => {
+const ContactPage = () => {
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const faqs = [
+    {
+      q: "What solutions does Flowtech offer?",
+      a: "WE SPECIALIZE IN MANUFACTURING INTELLIGENCE, ENERGY MONITORING SYSTEMS, PIPELINE SAFETY (DFOS), AI ANALYTICS, CLOUD PLATFORMS, AND ENTERPRISE SOLUTIONS",
+    },
+    {
+      q: "How do you design the right solution?",
+      a: "We analyze your requirements and tailor solutions accordingly.",
+    },
+    {
+      q: "How long does implementation take?",
+      a: "Typically 2–6 weeks depending on complexity.",
+    },
+    {
+      q: "Do you work across different industries?",
+      a: "Yes, including manufacturing, energy, and enterprise sectors.",
+    },
+    {
+      q: "What does your pricing model look like?",
+      a: "Flexible pricing based on project scope and needs.",
+    },
+    {
+      q: "What makes Flowtech different?",
+      a: "Strong domain expertise combined with modern technology.",
+    },
+  ];
+
+
   return (
     <div className="w-full flex flex-col items-center pt-32 pb-20">
       {/* Hero Section */}
@@ -215,124 +246,94 @@ const TextAreaField = ({ label, placeholder }) => (
 
       {/* FAQ Section */}
       {/* FAQ Section */}
-      <section className="relative shrink-0 w-full mb-40" data-name="FAQ Section">
-        <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
-          <div className="content-stretch flex items-center justify-center px-[30px] relative size-full">
-            <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] content-stretch flex flex-col lg:flex-row items-start justify-between max-w-[1260px] overflow-clip px-[20px] lg:px-[60px] py-[60px] lg:py-[105px] relative rounded-[7px] shrink-0 w-full" data-name="Container">
-              {/* Corner Accents */}
-              <div className="absolute left-[20px] size-[24px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
-                <div className="absolute bg-white left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] opacity-40 size-[24px] top-0" style={{ maskImage: `url('${imgIcon1}')` }} />
-              </div>
-              <div className="absolute bottom-[20px] left-[20px] size-[24px]" data-name="div.framer-IU4qG:mask-group">
-                <div className="absolute bg-white bottom-0 left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] opacity-40 size-[24px]" style={{ maskImage: `url('${imgIcon1}')` }} />
-              </div>
-              <div className="absolute bottom-[20px] right-[20px] size-[24px]" data-name="div.framer-IU4qG:mask-group">
-                <div className="absolute bg-white bottom-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] opacity-40 right-0 size-[24px]" style={{ maskImage: `url('${imgIcon1}')` }} />
-              </div>
-              <div className="absolute right-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
-                <div className="absolute bg-white mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[20px_20px] opacity-40 right-0 size-[20px] top-0" style={{ maskImage: `url('${imgIcon4}')` }} />
-              </div>
+      <section className="w-full mb-20 md:mb-40 px-4">
+        <div className="max-w-[1260px] mx-auto backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] rounded-xl p-6 md:p-12 flex flex-col lg:flex-row gap-10">
 
-              {/* Left Column - Content Wrapper */}
-              <div className="content-stretch flex flex-col gap-[40px] items-start max-w-[410px] relative shrink-0 w-full lg:w-[410px]" data-name="Content Wrapper">
-                <div className="content-stretch flex flex-col gap-[20.01px] items-start justify-center relative shrink-0 w-full" data-name="TItle Wrap">
-                  <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="div.framer-s60mz6-container">
-                    <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] content-stretch flex gap-[5px] items-center justify-center overflow-clip pl-[7px] pr-[11px] py-[5px] relative rounded-[5px] shrink-0">
-                      <div className="relative shrink-0 size-[16px]">
-                        <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-white left-1/2 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[16px_16px] size-[16px] top-1/2" style={{ maskImage: `url('${imgIcon2}')` }} />
-                      </div>
-                      <div className="h-[17.59px] relative shrink-0 w-[22px]">
-                        <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 pb-[0.59px] right-0 top-[calc(50%-0.5px)]">
-                          <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-                            <p className="leading-[17.6px]">FAQ</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="content-stretch flex flex-col items-start justify-center pb-[0.01px] relative shrink-0 w-full" data-name="Heading Wrap">
-                    <div className="h-[48.41px] mb-[-0.01px] relative shrink-0 w-full">
-                      <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 right-0 top-[calc(50%-0.7px)]">
-                        <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-88.8591deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>
-                          <p className="leading-[48.4px]">Frequently Asked</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="h-[48.41px] mb-[-0.01px] relative shrink-0 w-full">
-                      <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 right-0 top-[calc(50%-0.7px)]">
-                        <div className="flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[0] relative shrink-0 text-[#d9d9d9] text-[32px] md:text-[44px] tracking-[-0.4px] whitespace-nowrap">
-                          <p className="leading-[48.4px]">Question</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0 w-full" data-name="Text Wrap">
-                  <div className="content-stretch flex flex-col items-start justify-center opacity-70 relative shrink-0 w-full">
-                    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-                      <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[16px] md:text-[18px] text-white uppercase w-full whitespace-pre-wrap">
-                        <p className="leading-[27px] mb-0">{`Got questions? We’ve got answers. Here’s `}</p>
-                        <p className="leading-[27px] mb-0">{`everything you need to know about `}</p>
-                        <p className="leading-[27px]">working with us</p>
-                      </div>
-                    </div>
-                  </div>
-                  <button className="relative rounded-[800px] shrink-0 group" data-name="Hero Button">
-                    <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[800px]" style={{ backgroundImage: "linear-gradient(57.0631deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }} />
-                    <div className="content-stretch flex items-center justify-center overflow-clip px-[22px] py-[13px] relative rounded-[inherit] size-full z-10">
-                      <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-fit">
-                        <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full">
-                          <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-white tracking-[0.5px] uppercase whitespace-nowrap">
-                            <p className="leading-[19.6px] text-[14px]">get in touch</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px] shadow-[0px_7px_80px_-12px_#110fdf] group-hover:opacity-80 transition-opacity" />
-                  </button>
-                </div>
-              </div>
+          {/* LEFT CONTENT */}
+          <div className="w-full lg:w-[40%] flex flex-col gap-6">
+            <div>
+              <span className="text-xs uppercase text-white opacity-70">
+                FAQ
+              </span>
 
-              {/* Right Column - FAQ Lists */}
-              <div className="content-stretch flex items-center justify-center lg:max-w-[640px] lg:pl-[32px] relative shrink-0 w-full lg:w-[640px] mt-12 lg:mt-0" data-name="FAQ Lists">
-                <div className="content-stretch flex flex-col gap-[5px] items-center justify-center relative shrink-0 w-full">
-                  {[
-                    { q: "What solutions does Flowtech offer?", a: "WE SPECIALIZE IN MANUFACTURING INTELLIGENCE, ENERGY MONITORING SYSTEMS, PIPELINE SAFETY (DFOS), AI ANALYTICS, CLOUD PLATFORMS, AND ENTERPRISE SOLUTIONS" },
-                    { q: "How do you design the right solution?", a: "" },
-                    { q: "How long does implementation take?", a: "" },
-                    { q: "Do you work across different industries?", a: "" },
-                    { q: "What does your pricing model look like?", a: "" },
-                    { q: "What makes Flowtech different?", a: "" }
-                  ].map((item, idx) => (
-                    <div key={idx} className={`backdrop-blur-[10px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] shrink-0 w-full ${idx === 0 ? 'bg-[rgba(255,255,255,0.05)] backdrop-blur-[20px]' : ''}`}>
-                      <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
-                        <div className={`content-stretch flex flex-col items-center justify-center px-[20px] py-[24px] relative size-full ${idx === 0 ? 'gap-[35.205px]' : ''}`}>
-                          <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
-                            <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative">
-                              <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-                                <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[18px] md:text-[20px] text-white w-full">
-                                  <p className="leading-[28px]">{item.q}</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="relative shrink-0 size-[24px]">
-                              <div className="-translate-y-1/2 absolute bg-white left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] size-[24px] top-1/2" style={{ maskImage: `url('${idx === 0 ? imgIcon3 : imgIcon1}')` }} />
-                            </div>
-                          </div>
-                          {idx === 0 && (
-                            <div className="content-stretch flex flex-col items-start opacity-75 pb-[0.605px] relative shrink-0 w-full">
-                              <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[16px] text-white uppercase w-full">
-                                <p className="leading-[22.4px]">{item.a}</p>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <h2 className="text-2xl md:text-4xl text-white font-medium">
+                Frequently Asked
+              </h2>
+
+              <h3 className="text-2xl md:text-4xl text-gray-300 italic">
+                Questions
+              </h3>
             </div>
+
+            <p className="text-white opacity-70 text-sm md:text-base leading-relaxed">
+              Got questions? We’ve got answers. Here’s everything you need to know about working with us.
+            </p>
+
+            <button className="w-fit px-5 py-3 rounded-full bg-gradient-to-r from-blue-800 to-blue-500 text-white text-sm uppercase">
+              Get in touch
+            </button>
+          </div>
+
+          {/* RIGHT FAQ */}
+          <div className="w-full lg:w-[60%] flex flex-col gap-3">
+            {faqs.map((item, idx) => {
+              const isOpen = activeIndex === idx;
+
+              return (
+                <div
+                  key={idx}
+                  className={`
+              rounded-lg bg-white/5 backdrop-blur-md
+              transition-all duration-300
+              ${isOpen ? "bg-white/10" : ""}
+            `}
+                >
+                  {/* BUTTON (better than div for accessibility) */}
+                  <button
+                    onClick={() =>
+                      setActiveIndex(isOpen ? null : idx)
+                    }
+                    className="w-full text-left p-5 flex items-center justify-between gap-4"
+                    aria-expanded={isOpen}
+                  >
+                    {/* Question */}
+                    <p className="text-white text-[16px] md:text-[18px] leading-[26px]">
+                      {item.q}
+                    </p>
+
+                    {/* PRO ICON (+ → – with animation) */}
+                    <div className="relative w-5 h-5 flex items-center justify-center shrink-0">
+
+                      {/* Horizontal line */}
+                      <span className="absolute w-4 h-[2px] bg-white rounded transition-all duration-300" />
+
+                      {/* Vertical line */}
+                      <span
+                        className={`
+                    absolute h-4 w-[2px] bg-white rounded
+                    transition-all duration-300
+                    ${isOpen ? "scale-y-0 opacity-0" : "scale-y-100 opacity-100"}
+                  `}
+                      />
+                    </div>
+                  </button>
+
+                  {/* ANSWER (smooth height animation) */}
+                  <div
+                    className={`
+                grid transition-all duration-300 ease-in-out
+                ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}
+              `}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 text-white/80 text-sm md:text-base uppercase leading-relaxed">
+                        {item.a}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

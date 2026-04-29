@@ -52,6 +52,9 @@ export const Navbar = () => {
           <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Industries</Link>
           <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Products</Link>
           <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Insights</Link>
+          <Link to="/insights/blogs" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Blogs</Link>
+          <Link to="/careers" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Careers</Link>
+          <Link to="/contact" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Contact Us</Link>
         </div>
 
         {/* Right Section */}
@@ -85,6 +88,9 @@ export const Navbar = () => {
             <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Industries</Link>
             <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Products</Link>
             <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Insights</Link>
+            <Link to="/insights/blogs" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Blogs</Link>
+            <Link to="/careers" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Careers</Link>
+            <Link to="/contact" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Contact</Link>
             <Link
               to="/contact"
               className="sm:hidden w-full bg-gradient-to-tr from-[#001ca9] to-[#046ce4] py-4 rounded-xl text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase text-center"
