@@ -174,37 +174,51 @@ function TextWrap() {
   );
 }
 
+// function ContentWrapper() {
+//   return (
+//     <div className="content-stretch flex flex-col gap-10 md:gap-[52px] items-start justify-center max-w-[500px] relative shrink-0 w-full md:w-[500px]" data-name="Content Wrapper">
+//       <TitleWrap />
+//       <TextWrap />
+//     </div>
+//   );
+// }
+
 function ContentWrapper() {
   return (
-    <div className="content-stretch flex flex-col gap-10 md:gap-[52px] items-start justify-center max-w-[500px] relative shrink-0 w-full md:w-[500px]" data-name="Content Wrapper">
+    <div
+      className="
+        content-stretch flex flex-col gap-10 md:gap-[52px]
+        items-start justify-center
+        max-w-[500px] w-full md:w-[500px]
+
+        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+
+        /* 📱 Mobile: always visible */
+        translate-y-0 opacity-100
+
+        /* 💻 Desktop: start slightly below */
+        md:translate-y-10 md:opacity-80
+
+        /* 💻 Hover: move up */
+        md:group-hover:translate-y-0
+        md:group-hover:opacity-100
+      "
+    >
       <TitleWrap />
       <TextWrap />
     </div>
   );
 }
 
-// function VrImage() {
-//   return (
-//     <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] md:h-auto lg:h-[691px] overflow-clip relative rounded-[7px] shrink-0 w-full flex flex-col lg:flex-row items-center p-8 md:p-12 lg:p-0" data-name="Vr image">
-//       <DivFramerIu4QGMaskGroup />
-//       <DivFramerIu4QGMaskGroup1 />
-//       <Shape />
-//       <div className="flex flex-col lg:flex-row gap-12 lg:gap-[100px] items-center relative z-10 lg:pl-[60px] w-full">
-//         <ContentWrapper />
-//         <div className="aspect-[600/641] content-stretch flex flex-col items-start justify-center overflow-clip relative shrink-0 w-full lg:w-[600px]" data-name="Image">
-//            <ImageWithFallback alt="" className="w-full h-full object-cover rounded-[7px] md:rounded-none" src={imgImage} />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 
-// import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // function VrImage() {
 //   const ref = useRef(null);
 //   const [visible, setVisible] = useState(false);
+//   const [offset, setOffset] = useState(0);
 
+//   // 👇 Scroll reveal
 //   useEffect(() => {
 //     const observer = new IntersectionObserver(
 //       ([entry]) => {
@@ -219,10 +233,40 @@ function ContentWrapper() {
 //     return () => observer.disconnect();
 //   }, []);
 
+//   // 👇 Parallax scroll
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       if (!ref.current) return;
+
+//       const rect = ref.current.getBoundingClientRect();
+//       const windowHeight = window.innerHeight;
+
+//       const progress = rect.top / windowHeight;
+
+//       // 👇 control strength here (-20 to -60 best)
+//       setOffset(progress * -50);
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
 //   return (
 //     <div
 //       ref={ref}
-//       className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] md:h-auto lg:h-[691px] overflow-hidden relative rounded-[7px] w-full flex flex-col lg:flex-row items-center p-8 md:p-12 lg:p-0"
+//       className="
+//         backdrop-blur-[25px] 
+//         bg-[rgba(255,255,255,0.05)] 
+//         md:h-auto lg:h-[691px] 
+//         overflow-hidden 
+//         relative 
+//         rounded-[7px] 
+//         w-full 
+//         flex flex-col lg:flex-row 
+//         items-center 
+//         p-8 md:p-12 lg:p-0 
+//         group
+//       "
 //       data-name="Vr image"
 //     >
 //       {/* Background Shapes */}
@@ -238,17 +282,32 @@ function ContentWrapper() {
 
 //         {/* Image Section */}
 //         <div
-//           className="aspect-[600/641] relative w-full lg:w-[600px] overflow-hidden rounded-[7px]"
-//           data-name="Image"
+//           className="
+//             aspect-[600/641] 
+//             relative 
+//             w-full lg:w-[600px] 
+//             overflow-hidden 
+//             rounded-[7px]
+//           "
 //         >
-//           {/* 👇 SCROLL ANIMATION APPLIED HERE */}
+//           {/* 👇 Animation Layer */}
 //           <div
+//             style={{
+//               transform: `translateY(${offset}px)`
+//             }}
 //             className={`
 //               w-full h-full origin-bottom-right
 //               transition-all duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+
+//               /* Scroll reveal */
 //               ${visible
-//                 ? "scale-100 opacity-100 translate-y-0"
-//                 : "scale-0 opacity-0 translate-y-10"}
+//                 ? "scale-50 opacity-100 translate-x-40 translate-y-40"
+//                 : "scale-75 opacity-0 translate-x-10 translate-y-10"}
+
+//               /* Hover effect */
+//               group-hover:translate-x-[-10px]
+//               group-hover:translate-y-[-10px]
+//               group-hover:scale-[1.03]
 //             `}
 //           >
 //             <ImageWithFallback
@@ -264,18 +323,27 @@ function ContentWrapper() {
 //   );
 // }
 
-// import { useEffect, useRef, useState } from "react";
 
 // function VrImage() {
 //   const ref = useRef(null);
 //   const [visible, setVisible] = useState(false);
+//   const [offset, setOffset] = useState(0);
 
+//   // 👇 detect mobile
+//   const [isMobile, setIsMobile] = useState(false);
+
+//   useEffect(() => {
+//     const check = () => setIsMobile(window.innerWidth < 768);
+//     check();
+//     window.addEventListener("resize", check);
+//     return () => window.removeEventListener("resize", check);
+//   }, []);
+
+//   // 👇 Scroll reveal
 //   useEffect(() => {
 //     const observer = new IntersectionObserver(
 //       ([entry]) => {
-//         if (entry.isIntersecting) {
-//           setVisible(true);
-//         }
+//         if (entry.isIntersecting) setVisible(true);
 //       },
 //       { threshold: 0.4 }
 //     );
@@ -284,31 +352,84 @@ function ContentWrapper() {
 //     return () => observer.disconnect();
 //   }, []);
 
+//   // 👇 Parallax (disable on mobile)
+//   useEffect(() => {
+//     if (isMobile) return;
+
+//     const handleScroll = () => {
+//       if (!ref.current) return;
+
+//       const rect = ref.current.getBoundingClientRect();
+//       const windowHeight = window.innerHeight;
+//       const progress = rect.top / windowHeight;
+
+//       setOffset(progress * -50);
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, [isMobile]);
+
 //   return (
 //     <div
 //       ref={ref}
-//       className="relative w-full overflow-hidden rounded-[10px]"
+//       className="
+//         backdrop-blur-[25px] 
+//         bg-[rgba(255,255,255,0.05)] 
+//         relative rounded-[7px] w-full 
+//         flex flex-col lg:flex-row items-center 
+//         p-6 md:p-10 lg:p-0 
+//         overflow-hidden group
+//       "
 //     >
-//       {/* Image */}
-//       <div
-//         className={`
-//           transition-all duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-//           ${visible
-//             ? "scale-100 opacity-100 translate-y-0"
-//             : "scale-80 opacity-0 translate-y-10"}
-//         `}
-//       >
-//         <img
-//           src={imgImage}
-//           className="w-full h-full object-cover"
-//           alt=""
-//         />
+//       {/* Background Shapes */}
+//       <DivFramerIu4QGMaskGroup />
+//       <DivFramerIu4QGMaskGroup1 />
+//       <Shape />
+
+//       <div className="flex flex-col lg:flex-row gap-8 lg:gap-[100px] items-center relative z-10 lg:pl-[60px] w-full">
+
+//         {/* Left Content */}
+//         <ContentWrapper />
+
+//         {/* Image */}
+//         <div className="aspect-[600/641] w-full lg:w-[600px] relative overflow-hidden rounded-[7px]">
+//           <div
+//             style={{
+//               transform: isMobile ? "none" : `translateY(${offset}px)`
+//             }}
+//             className={`
+//               w-full h-full origin-bottom-right
+//               transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+
+//               ${
+//                 isMobile
+//                   ? "scale-100 opacity-100 translate-x-0 translate-y-0"
+//                   : visible
+//                   ? "scale-90 opacity-100 translate-x-70 translate-y-80"
+//                   : "scale-110 opacity-0 translate-x-0 translate-y-0"
+//               }
+
+//               // /* hover only desktop */
+//               md:group-hover:translate-x-[-10px]
+//               md:group-hover:translate-y-[-10px]
+//               md:group-hover:scale-[1.03]
+//             `}
+//           >
+//             <ImageWithFallback
+//               alt=""
+//               src={imgImage}
+//               className="w-full h-full object-cover rounded-[7px]"
+//             />
+//           </div>
+//         </div>
+
 //       </div>
 //     </div>
 //   );
 // }
 
-import { useEffect, useRef, useState } from "react";
+// import { useEffect, useRef, useState } from "react";
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function VrImage() {
@@ -316,13 +437,24 @@ function VrImage() {
   const [visible, setVisible] = useState(false);
   const [offset, setOffset] = useState(0);
 
+  const [isMobile, setIsMobile] = useState(false);
+  const [animationDone, setAnimationDone] = useState(false);
+
+  // 👉 simulate hover on mobile
+  const [mobileHover, setMobileHover] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   // 👇 Scroll reveal
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        }
+        if (entry.isIntersecting) setVisible(true);
       },
       { threshold: 0.4 }
     );
@@ -331,87 +463,85 @@ function VrImage() {
     return () => observer.disconnect();
   }, []);
 
-  // 👇 Parallax scroll
+  // 👇 Enable hover after animation
   useEffect(() => {
+    if (visible) {
+      const timer = setTimeout(() => setAnimationDone(true), 1200);
+      return () => clearTimeout(timer);
+    }
+  }, [visible]);
+
+  // 👇 Parallax (keep for mobile optional — you can disable if laggy)
+  useEffect(() => {
+    if (isMobile) return;
+
     const handleScroll = () => {
       if (!ref.current) return;
 
       const rect = ref.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-
       const progress = rect.top / windowHeight;
 
-      // 👇 control strength here (-20 to -60 best)
       setOffset(progress * -50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMobile]);
 
   return (
     <div
       ref={ref}
-      className="
-        backdrop-blur-[25px] 
-        bg-[rgba(255,255,255,0.05)] 
-        md:h-auto lg:h-[691px] 
-        overflow-hidden 
-        relative 
-        rounded-[7px] 
-        w-full 
-        flex flex-col lg:flex-row 
-        items-center 
-        p-8 md:p-12 lg:p-0 
-        group
-      "
-      data-name="Vr image"
+      className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] w-full flex flex-col lg:flex-row items-center p-6 md:p-10 lg:p-0 overflow-hidden group"
     >
-      {/* Background Shapes */}
       <DivFramerIu4QGMaskGroup />
       <DivFramerIu4QGMaskGroup1 />
       <Shape />
 
-      {/* Content */}
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-[100px] items-center relative z-10 lg:pl-[60px] w-full">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-[100px] items-center relative z-10 lg:pl-[60px] w-full">
 
-        {/* Left Content */}
         <ContentWrapper />
 
-        {/* Image Section */}
+        {/* Image */}
         <div
-          className="
-            aspect-[600/641] 
-            relative 
-            w-full lg:w-[600px] 
-            overflow-hidden 
-            rounded-[7px]
-          "
+          className="aspect-[600/641] w-full lg:w-[600px] relative overflow-hidden rounded-[7px]"
+          onClick={() => {
+            if (isMobile && animationDone) {
+              setMobileHover((prev) => !prev);
+            }
+          }}
         >
-          {/* 👇 Animation Layer */}
           <div
             style={{
-              transform: `translateY(${offset}px)`
+              transform: isMobile ? "none" : `translateY(${offset}px)`
             }}
             className={`
               w-full h-full origin-bottom-right
-              transition-all duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+              transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
 
-              /* Scroll reveal */
-              ${visible
-                ? "scale-100 opacity-100 translate-x-0 translate-y-0"
-                : "scale-75 opacity-0 translate-x-10 translate-y-10"}
+              ${isMobile
+                ? "scale-100 opacity-100"
+                : visible
+                  ? "scale-90 opacity-100 translate-x-70 translate-y-80"
+                  : "scale-110 opacity-0"
+              }
 
-              /* Hover effect */
-              group-hover:translate-x-[-10px]
-              group-hover:translate-y-[-10px]
-              group-hover:scale-[1.03]
+              ${animationDone &&
+              (isMobile
+                ? mobileHover &&
+                "translate-x-[-10px] translate-y-[-10px] scale-[1.03]"
+                : `
+                    md:translate-x-[-10px]
+                    md:translate-y-[-10px]
+                    md:scale-[1]
+                  `)
+              }
             `}
           >
             <ImageWithFallback
               alt=""
               src={imgImage}
-              className="w-full h-full object-cover rounded-[7px] md:rounded-none"
+              className="w-full h-full object-cover rounded-[7px]"
             />
           </div>
         </div>
@@ -421,7 +551,7 @@ function VrImage() {
   );
 }
 
-export default VrImage;
+
 export const CtaSection = () => {
   return (
     <ScrollFadeIn>

@@ -5,7 +5,9 @@ import { imgDivFramerIu4QG } from "../../imports/svg-hryyo";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 
+import { motion, useScroll, useTransform } from "framer-motion";
 export const HeroSection = () => {
+
   return (
     <ScrollFadeIn>
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 md:pt-40 md:pb-32 px-6 md:px-8 overflow-hidden ">
@@ -74,7 +76,7 @@ export const HeroSection = () => {
           className="w-full h-full object-contain"
         />
       </div> */}
-      <div className="absolute bottom-[0%] left-10 md:left-[10%] 
+      {/* <div className="absolute bottom-[0%] left-10 md:left-[10%] 
   w-[120px] md:w-[300px] 
   h-[120px] md:h-[540px] 
   rotate-290 md:rotate-[290deg] 
@@ -86,14 +88,23 @@ export const HeroSection = () => {
           alt=""
           className="w-full h-full object-contain"
         />
-      </div>
-      {/* <div className="absolute bottom-[-5%] md:bottom-[-10%] left-[-10%] md:left-[10%] w-[200px] md:w-[300px] h-[200px] md:h-[300px] blur-[2px] opacity-40 md:opacity-60 pointer-events-none animate-bounce">
+      </div> */}
+      <div className="group absolute bottom-[0%] left-20 md:left-[10%] 
+  w-[120px] md:w-[300px] 
+  h-[120px] md:h-[540px] 
+  rotate-[290deg] 
+  opacity-70 md:opacity-100 
+  transition-transform duration-300 ease-out
+  hover:rotate-[300deg] 
+  active:rotate-[270deg]">
+
         <ImageWithFallback
           src={imgImage}
           alt=""
-          className="w-full h-full object-contain  "
+          className="w-full h-full object-contain"
         />
-      </div> */}
+      </div>
+
     </section>
      </ScrollFadeIn>
   );

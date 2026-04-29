@@ -12,6 +12,8 @@ import imgMKwvaNgcAkQmHyt5Z49Ijjsm1VuPng from "../../assets/0975ee902333fa4c0ff7
 import { imgDivFramerIu4QG } from "../../imports/svg-j4boa";
 import svgPaths from "../../imports/svg-uaeahmmqlr";
 import Background from '../components/background';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { Scroll } from 'lucide-react';
 
 const ProductCard = ({ number, title, description, vectorPath }) => (
   <div className="relative w-full h-[429px] group" data-name="Product card 4">
@@ -77,6 +79,7 @@ const ProductCard = ({ number, title, description, vectorPath }) => (
       <Background />
       <div className="relative z-10 w-full flex flex-col items-center">
         {/* Hero Section */}
+        <ScrollFadeIn>
         <section className="pt-[200px] pb-[100px] px-6 text-center max-w-[1260px] w-full flex flex-col items-center gap-10">
           <motion.div
             className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit"
@@ -110,6 +113,7 @@ const ProductCard = ({ number, title, description, vectorPath }) => (
             POWERING ENTERPRISES WITH AI-DRIVEN PLATFORMS THAT AUTOMATE PROCESSES, IMPROVE DECISION-MAKING, AND DRIVE OPERATIONAL EFFICIENCY
           </motion.p>
         </section>
+       
 
         {/* Product Grid */}
         <section className="px-6 w-full max-w-[1260px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-40">
@@ -223,17 +227,30 @@ const ProductCard = ({ number, title, description, vectorPath }) => (
             </motion.div>
           </div>
         </section>
+         </ScrollFadeIn>
+
+         <section className="w-full h-[1000px] mb-[150px] relative overflow-hidden">
+        <ScrollFadeIn>
+        <RotationCardSection />
+        </ScrollFadeIn>
+      </section>
+<ScrollFadeIn>
+      {/* Newsletter Section */}
+      <EarlyAccessSection />
+
+      <FooterSection />
+      </ScrollFadeIn>
 
         {/* Industries Section */}
-        <RotationCardSection />
+        {/* <RotationCardSection /> */}
 
         {/* Newsletter Section */}
-        <EarlyAccessSection />
+        {/* <EarlyAccessSection /> */}
 
         {/* Footer */}
-        <FooterSection />
+        {/* <FooterSection /> */}
       </div>
     </div>
   );
 };
-export default ProductsPage
+export default ProductsPage;

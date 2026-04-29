@@ -20,11 +20,13 @@ import imgImage from "../../assets/2f8c3a2c8eca26d65de115305cf49c0c2f3513ea.png"
 // SVGs
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDivFramerYVnZo, imgDivFramer1K87S } from "../../imports/svg-m7nqb";
 import { imgDivFramerIu4QG as imgPlusIcon, imgDivFramerYVnZo as imgCalendarIcon, imgDivFramer1K87S as imgArrowRightIcon } from "../../imports/svg-9bxc3";
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
  const InsightsPage = () => {
   return (
     <div className="w-full flex flex-col items-center">
       {/* Hero Section */}
+      <ScrollFadeIn>
       <section className="pt-[140px] md:pt-[200px] pb-[60px] md:pb-[100px] px-6 text-center max-w-[1260px] w-full flex flex-col items-center gap-10">
         <div className="flex flex-col gap-[20px] items-center justify-center relative w-full">
           {/* Title Wrap */}
@@ -79,8 +81,10 @@ import { imgDivFramerIu4QG as imgPlusIcon, imgDivFramerYVnZo as imgCalendarIcon,
           </motion.div>
         </div>
       </section>
+      </ScrollFadeIn>
 
       {/* Filter Tabs & Search */}
+      <ScrollFadeIn>
       <section className="px-6 w-full max-w-[1260px] flex flex-col gap-10 md:gap-16 items-start justify-center mt-12 md:mt-20">
         {/* Categories Header */}
         <div className="flex flex-col md:flex-row gap-6 items-center justify-between w-full">
@@ -205,9 +209,44 @@ import { imgDivFramerIu4QG as imgPlusIcon, imgDivFramerYVnZo as imgCalendarIcon,
                           {post.title}
                         </h3>
                       </div>
-                      <div className="bg-black p-3 rounded-lg w-fit group-hover:bg-[#046ce4] transition-colors">
+                      <div className="group inline-flex items-center cursor-pointer overflow-hidden">
+  <div className="bg-black p-3 rounded-lg flex items-center gap-2
+                  group-hover:bg-[#046ce4]
+                  transition-all duration-300 ease-in-out">
+
+    {/* Text (hidden initially) */}
+    <span className="
+      text-white whitespace-nowrap
+      max-w-0 opacity-0
+      -translate-x-2
+      group-hover:max-w-[80px]
+      group-hover:opacity-100
+      group-hover:translate-x-0
+      transition-all duration-300 ease-in-out
+    ">
+      view
+    </span>
+
+    {/* Arrow (always visible, but slides) */}
+    <div
+      className="
+        size-5 bg-white shrink-0
+        transition-all duration-300 ease-in-out
+        group-hover:translate-x-1
+      "
+      style={{
+        maskImage: `url('${imgIcon}')`,
+        maskSize: 'contain',
+        WebkitMaskImage: `url('${imgIcon}')`,
+        WebkitMaskSize: 'contain',
+      }}
+    />
+
+  </div>
+</div>
+                      {/* <div className="bg-black p-3 rounded-lg w-fit group-hover:bg-[#046ce4] transition-colors">
                         <div className="size-5 bg-white" style={{ maskImage: `url('${imgIcon}')`, maskSize: 'contain' }} />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </Link>
@@ -224,9 +263,12 @@ import { imgDivFramerIu4QG as imgPlusIcon, imgDivFramerYVnZo as imgCalendarIcon,
           </div>
         </div>
       </section>
+      </ScrollFadeIn>
 
       {/* Newsletter Section */}
+      <ScrollFadeIn>
       <NewsletterSection />
+      </ScrollFadeIn>
 
       <FooterSection />
     </div>
