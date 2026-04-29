@@ -66,7 +66,7 @@ export const router = createBrowserRouter([
             Component: InsightsPage,
           },
           {
-            path: ":slug",
+            path: ":blogs",
             Component: BlogDetailPage,
           },
         ],
