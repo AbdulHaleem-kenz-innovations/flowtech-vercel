@@ -251,14 +251,14 @@ export const Navbar = () => {
 
 
       {/* Outer CTA Button - only visible on desktop (lg+) where hamburger is gone */}
-      < div className="fixed top-5 lg:top-13 right-8 lg:right-15 z-50 hidden lg:block" >
+      {/* < div className="fixed top-5 lg:top-13 right-8 lg:right-15 z-50 hidden lg:block" >
         <Link
           to="/contact"
           className="bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-9 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase hover:opacity-90 transition-opacity"
         >
           LET'S CONNECT
         </Link>
-      </div >
+      </div > */}
     </>
   );
 };

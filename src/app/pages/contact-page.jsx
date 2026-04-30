@@ -68,7 +68,7 @@ const TextAreaField = ({ label, placeholder }) => (
 
 const ContactPage = () => {
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const faqs = [
     {
