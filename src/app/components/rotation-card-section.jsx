@@ -183,7 +183,7 @@ function WeCraftBoldFutureReadyBrandsThatBreakThroughTheNoiseReadyToStandOutAndL
 function PFramerText() {
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-white text-[12px] md:text-[14px] tracking-[0.5px] uppercase whitespace-nowrap">
+      <div className="flex flex-col  font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-white text-[12px] md:text-[14px] tracking-[0.5px] uppercase whitespace-nowrap">
         <p className="leading-[19.6px]">Let’s talk</p>
       </div>
     </div>
@@ -315,8 +315,8 @@ function Container() {
           />
         </div>
       </div>
-    <div
-  className="
+      <div
+        className="
     absolute 
     top-0 md:top-[106px]
     left-0 right-0
@@ -326,27 +326,41 @@ function Container() {
     flex flex-col items-center justify-center
     z-10
   "
->
-  <Shape />
-  <DivFramerIu4QGMaskGroup />
-  <DivFramerIu4QGMaskGroup1 />
-  <ContentWrapper />
-</div>
-<div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[10%] z-[8] overflow-hidden">
+      >
+        <Shape />
+        <DivFramerIu4QGMaskGroup />
+        <DivFramerIu4QGMaskGroup1 />
+        <ContentWrapper />
+      </div>
+      {/* Soft atmospheric base */}
   
-  {/* Soft atmospheric base */}
-  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/90 to-transparent backdrop-blur-2xl" />
+      {/* <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[10%] z-[8] overflow-hidden">
 
-  {/* Blue energy glow (blends with your card) */}
-  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f8f]/50 via-[#0a0f8f]/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/90 to-transparent backdrop-blur-2xl" />
 
-  {/* Compressed fog bloom */}
-  <div className="absolute -bottom-[40%] left-1/2 -translate-x-1/2 w-[140%] h-[200%] 
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f8f]/50 via-[#0a0f8f]/20 to-transparent" />
+
+        <div className="absolute -bottom-[40%] left-1/2 -translate-x-1/2 w-[140%] h-[200%] 
     bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.45),rgba(255,255,255,0.15)_40%,transparent_70%)] 
     blur-2xl opacity-80" />
 
-</div>
+      </div> */}
+
+      <div className="
+      mt-170
+  w-[1259px] 
+  h-[100px] 
+   border border-black/20 
+  bg-white/0.2 
+  backdrop-blur-[7.5px]
+  opacity-40
+  rounded-2xl
+  ">
+      </div>
+
     </div>
+
+
   );
 }
 
