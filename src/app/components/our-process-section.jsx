@@ -25,31 +25,31 @@ const steps = [
 export const OurProcessSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="relative w-full  py-20">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <section className="relative w-full  py-20">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-        {/* ✅ LEFT SIDE (STICKY) */}
-        <div className="lg:sticky lg:top-40 h-fit">
-          <p className="text-sm text-white/60 mb-3">OUR PROCESS</p>
+          {/* ✅ LEFT SIDE (STICKY) */}
+          <div className="lg:sticky lg:top-40 h-fit">
+            <p className="text-sm text-white/60 mb-3">OUR PROCESS</p>
 
-          <h2 className="text-4xl md:text-5xl text-white font-semibold leading-tight">
-            Our <span className="italic text-white/70">four-step</span> process
-          </h2>
+            <h2 className="text-4xl md:text-5xl text-white font-semibold leading-tight">
+              Our <span className="italic text-white/70">four-step</span> process
+            </h2>
 
-          <p className="text-white/60 mt-4 max-w-md">
-            Ensuring every solution is scalable, data-driven, and built to deliver real impact.
-          </p>
+            <p className="text-white/60 mt-4 max-w-md">
+              Ensuring every solution is scalable, data-driven, and built to deliver real impact.
+            </p>
 
-          <button
-  className="relative cursor-pointer overflow-hidden mt-6 px-6 py-3 rounded-full text-white font-['Geist'] font-medium text-sm tracking-[0.3px] bg-gradient-to-tr from-blue-700 to-blue-500 transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 glare-btn"
->
-  SCHEDULE A CONSULTATION
-</button>
-        </div>
+            <button
+              className="relative cursor-pointer overflow-hidden mt-6 px-6 py-3 rounded-full text-white font-['Geist'] font-medium text-sm tracking-[0.3px] bg-gradient-to-tr from-blue-700 to-blue-500 transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 glare-btn"
+              >
+              SCHEDULE A CONSULTATION
+            </button>
+          </div>
 
         {/* ✅ RIGHT SIDE (SCROLLING CARDS) */}
         <div className="flex flex-col gap-10">
-  
+
           {steps.map((item, i) => (
             <div
               key={i}
@@ -92,6 +92,6 @@ export const OurProcessSection = () => {
 
       </div>
     </section>
-    </ScrollFadeIn>
+    </ScrollFadeIn >
   );
 };

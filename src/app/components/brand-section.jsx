@@ -18,39 +18,38 @@ const imageLogos = [
   { src: img1, alt: "Company 1", href: "https://company1.com" },
   { src: img2, alt: "Company 2", href: "https://company2.com" },
   { src: img3, alt: "Company 3", href: "https://company3.com" },
-   { src: img4, alt: "Company 4", href: "https://company4.com" },
+  { src: img4, alt: "Company 4", href: "https://company4.com" },
 ];
 
 export const BrandSection = () => {
   return (
     <>
-    <ScrollFadeIn>
-    <div
-      className="py-12 md:py-16 flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-8 text-center md:text-left"
-      style={{ maxWidth: "1200px", margin: "0 auto" }}
-    >
-      {/* TEXT */}
-      <div className="font-['Geist'] text-[14px] md:text-[16px] text-white uppercase">
-        TRUSTED BY LEADING ENTERPRISES:
-      </div>
+      <ScrollFadeIn>
+        <div
+          className="py-12 md:py-16 flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-8 text-center md:text-left"
+          style={{ maxWidth: "1200px", margin: "0 auto" }}
+        >
+          {/* TEXT */}
+          <div className="font-['Geist'] text-[14px] md:text-[16px] text-white uppercase">
+            TRUSTED BY LEADING ENTERPRISES:
+          </div>
 
-      {/* LOGOS */}
-      <div className="w-full md:flex-1 relative overflow-hidden h-[100px] md:h-[120px] flex items-center justify-center">
-        <LogoLoop
-          logos={imageLogos}
-          speed={100}
-          direction="left"
-          logoHeight={40}
-          gap={40} // 👈 slightly smaller gap for mobile
-          hoverSpeed={0}
-          scaleOnHover
-          fadeOut
-          fadeOutColor="black"
-          ariaLabel="Technology partners"
-        />
-      </div>
-    </div>
-    </ScrollFadeIn>
+          {/* LOGOS */}
+          <div className="w-full md:flex-1 relative overflow-hidden h-[100px] md:h-[120px] flex items-center justify-center">
+            <LogoLoop
+              logos={imageLogos}
+              speed={100}
+              direction="left"
+              logoHeight={40}
+              gap={40} // 👈 slightly smaller gap for mobile
+              hoverSpeed={90}
+              fadeOut
+              fadeOutColor="black"
+              ariaLabel="Technology partners"
+            />
+          </div>
+        </div>
+      </ScrollFadeIn>
     </>
   );
 };

@@ -29,7 +29,9 @@ export const HomePage = () => {
       <FunFactsSection />
       <WorkSection />
       <CtaSection />
+      {/* Focus component add in browser when scrolling auto sticky */}
       <OurProcessSection />
+
       <EcosystemSection />
       <TestimonialSection />
       <HeroTestimonialSection />

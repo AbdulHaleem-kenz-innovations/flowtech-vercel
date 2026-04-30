@@ -317,14 +317,14 @@ function Container() {
       </div>
       <div
         className="
-    absolute 
-    top-0 md:top-[106px]
-    left-0 right-0
-    w-full h-full
-    md:aspect-[1106/1134]
-    opacity-60 md:opacity-100
-    flex flex-col items-center justify-center
-    z-10
+        absolute 
+        top-0 md:top-[106px]
+        left-0 right-0
+        w-full h-full
+        md:aspect-[1106/1134]
+        opacity-60 md:opacity-100
+        flex flex-col items-center justify-center
+        z-10
   "
       >
         <Shape />
@@ -333,29 +333,17 @@ function Container() {
         <ContentWrapper />
       </div>
       {/* Soft atmospheric base */}
-  
-      {/* <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[10%] z-[8] overflow-hidden">
-
-        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/90 to-transparent backdrop-blur-2xl" />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f8f]/50 via-[#0a0f8f]/20 to-transparent" />
-
-        <div className="absolute -bottom-[40%] left-1/2 -translate-x-1/2 w-[140%] h-[200%] 
-    bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.45),rgba(255,255,255,0.15)_40%,transparent_70%)] 
-    blur-2xl opacity-80" />
-
-      </div> */}
 
       <div className="
-      mt-170
-  w-[1259px] 
-  h-[100px] 
-   border border-black/20 
-  bg-white/0.2 
-  backdrop-blur-[7.5px]
-  opacity-40
-  rounded-2xl
-  ">
+        mt-170
+        w-[1259px] 
+        h-[100px] 
+         border border-black/20 
+        bg-white/0.2 
+        backdrop-blur-[7.5px]
+        opacity-40
+        rounded-2xl
+        ">
       </div>
 
     </div>
