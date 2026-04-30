@@ -53,21 +53,21 @@ const members = [
     socials: ["GitHub", "LinkedIn"],
   },
   {
-    id: 4,
+    id: 6,
     name: "Emma Rodriguez",
     role: "Product Manager",
     image: imgTeamImage6,
     socials: ["IG", "LinkedIn"],
   },
   {
-    id: 5,
+    id: 7,
     name: "Liam Patel",
     role: "Backend Engineer",
     image: imgTeamImage4,
     socials: ["GitHub", "LinkedIn"],
   },
   {
-    id: 6,
+    id: 8,
     name: "Noah Smith",
     role: "UX Researcher",
     image: imgTeamImage5,
@@ -78,20 +78,21 @@ const members = [
 
 import React, { useState } from "react";
 import ScrollFadeIn from "../../components/ScrollFadeIn";
+import { PlusIcon } from "lucide-react";
 
 const TeamGallery = ({ members }) => {
   const [selected, setSelected] = useState(members[0]);
 
   return (
-    <div className=" grid grid-cols-1 lg:grid-cols-2 gap-20">
+    <div className=" grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-5">
 
       {/* 🔹 LEFT GRID */}
-      <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 gap-3 sm:gap-4">
         {members.map((member) => (
           <button
             key={member.id}
             onClick={() => setSelected(member)}
-            className={`relative aspect-square rounded-xl overflow-hidden group border transition-all duration-300
+            className={`relative h-[160px] sm:h-[200px] rounded-xl overflow-hidden group border transition-all duration-300
             ${selected.id === member.id
                 ? "border-white"
                 : "border-white/10"
@@ -165,6 +166,27 @@ export function TeamSection() {
     <ScrollFadeIn>
     <section className="w-full flex justify-center py-16 md:py-[120px] px-6 md:px-8 ">
       <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-20">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+          <div className="flex flex-col gap-5 items-start">
+            <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] flex gap-[5px] items-center px-[11px] py-[5px] rounded-[5px]">
+              <PlusIcon size={16} />
+              <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">Team Member</span>
+            </div>
+            <div className="flex items-center">
+              <span className="bg-clip-text font-['Geist'] font-medium text-[40px] md:text-[60px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(268.918deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>Our&nbsp;</span>
+              <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[40px] md:text-[60px] tracking-[-0.4px] leading-tight">team</span>
+            </div>
+          </div>
+          <div className="max-w-[400px] opacity-70">
+            <p className="font-['Geist'] font-normal text-[14px] md:text-[16px] text-white uppercase leading-[1.4] md:leading-[22.4px]">
+              FROM ENGINEERS TO DATA EXPERTS, OUR TEAM BUILDS SCALABLE, INTELLIGENT SOLUTIONS THAT DRIVE REAL-WORLD IMPACT ACROSS INDUSTRIES
+            </p>
+          </div>
+          <button className="w-full sm:w-fit px-6 py-3 rounded-full font-['Geist'] font-medium text-[14px] text-white tracking-[0.5px] uppercase transition-all hover:scale-105 active:scale-95" 
+                  style={{ backgroundImage: "linear-gradient(65.2885deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
+            Join us
+          </button>
+        </div>
         <TeamGallery members={members} />
       </div>
     </section>

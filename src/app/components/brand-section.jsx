@@ -1,6 +1,10 @@
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 import LogoLoop from './LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
+import img1 from "../../assets/img1.png";
+import img2 from "../../assets/img2.png";
+import img3 from "../../assets/img3.png";
+import img4 from "../../assets/img4.png";
 
 const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev" },
@@ -11,9 +15,10 @@ const techLogos = [
 
 // Alternative with image sources
 const imageLogos = [
-  { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
-  { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
-  { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
+  { src: img1, alt: "Company 1", href: "https://company1.com" },
+  { src: img2, alt: "Company 2", href: "https://company2.com" },
+  { src: img3, alt: "Company 3", href: "https://company3.com" },
+   { src: img4, alt: "Company 4", href: "https://company4.com" },
 ];
 
 export const BrandSection = () => {
@@ -32,7 +37,7 @@ export const BrandSection = () => {
       {/* LOGOS */}
       <div className="w-full md:flex-1 relative overflow-hidden h-[100px] md:h-[120px] flex items-center justify-center">
         <LogoLoop
-          logos={techLogos}
+          logos={imageLogos}
           speed={100}
           direction="left"
           logoHeight={40}

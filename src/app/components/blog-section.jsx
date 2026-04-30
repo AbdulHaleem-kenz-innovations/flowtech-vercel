@@ -53,8 +53,41 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
               {title}
             </h3>
           </div>
-          <div className="bg-white p-2 md:p-3 rounded-[6.4px] transition-transform group-hover:translate-x-2">
-            <ImageWithFallback src={imgIcon} alt="arrow" className="size-[16px] md:size-[20px]" />
+          <div className=" p-2 md:p-2 rounded-[6.4px] transition-transform group-hover:translate-x-2">
+            {/* <ImageWithFallback src={imgIcon} alt="arrow" className="size-[16px] md:size-[20px]" /> */}
+            <div className="bg-black p-3 rounded-lg flex items-center gap-2
+                  group-hover:bg-[#046ce4]
+                  transition-all duration-300 ease-in-out">
+
+    {/* Text (hidden initially) */}
+    <span className="
+      text-white whitespace-nowrap
+      max-w-0 opacity-0
+      -translate-x-2
+      group-hover:max-w-[80px]
+      group-hover:opacity-100
+      group-hover:translate-x-0
+      transition-all duration-300 ease-in-out
+    ">
+      view
+    </span>
+
+    {/* Arrow (always visible, but slides) */}
+    <div
+      className="
+        size-5 bg-white shrink-0
+        transition-all duration-300 ease-in-out
+        group-hover:translate-x-1
+      "
+      style={{
+        maskImage: `url('${imgIcon}')`,
+        maskSize: 'contain',
+        WebkitMaskImage: `url('${imgIcon}')`,
+        WebkitMaskSize: 'contain',
+      }}
+    />
+
+  </div>
           </div>
         </div>
       </div>

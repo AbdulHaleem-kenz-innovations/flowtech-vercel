@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import svgPaths from "../../imports/svg-60x66umvnj";
 import imgMKwvaNgcAkQmHyt5Z49Ijjsm1VuPng from "../../assets/0975ee902333fa4c0ff75503ee2b2d45bc2017cd.png";
 import imgImage3 from "../../assets/ac6be543e6c2dd18fd3ec6d2c2879f0a8e7d1575.png";
@@ -6,6 +6,12 @@ import imgHomePage011 from "../../assets/46e850a6ceee651d955294f33b48fc6dd587cff
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDivFramerIu4QG2 } from "../../imports/svg-emg7m";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import productimg1 from "../../assets/products-img1.png";
+import productimg2 from "../../assets/products-img2.png";
+import productimg3 from "../../assets/products-img3.png";
+import normalimg1 from "../../assets/normal-img1.png";
+import normalimg2 from "../../assets/normal-img2.png";
+import normalimg3 from "../../assets/normal-img3.png";
 
 function DivFramerIu4QGMaskGroup() {
   return (
@@ -127,50 +133,30 @@ function HeaderArea() {
   );
 }
 
-function ProductCard({ number, title, description, image, isCustomImage = false }) {
+function ProductCard({ number, title, description, image, normalImage, hoverImage, isCustomImage = false }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="backdrop-blur-[10px] bg-[#1e1e1e] h-[400px] md:h-[429px] overflow-clip relative rounded-[7px] w-full max-w-[400px] mx-auto" data-name="Product Card">
-      <div className="absolute content-stretch flex flex-col gap-[10px] items-start justify-center left-[25px] overflow-clip right-[25px] top-[25px] z-10" data-name="Title">
-        <div className="content-stretch flex flex-col items-start justify-center opacity-33 relative shrink-0 w-[25px]">
-          <div className="flex flex-col font-['Playfair_Display'] font-normal justify-center leading-[0] relative shrink-0 text-[20px] md:text-[23px] text-white whitespace-nowrap">
-            <p className="leading-[25.3px]">{number}</p>
-          </div>
-        </div>
-        <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-          {title}
-        </div>
+    <div 
+      className="relative rounded-[7px] w-full max-w-[400px] mx-auto h-[400px] md:h-[429px] overflow-clip"
+      data-name="Product Card"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Normal Image View */}
+      <div 
+        className="absolute inset-0 rounded-[7px] overflow-clip transition-opacity duration-300 flex items-center justify-center"
+        style={{ opacity: isHovered ? 0 : 1 }}
+      >
+        <ImageWithFallback alt="" className="w-full h-full object-cover" src={normalImage} />
       </div>
 
-      {/* Background Shape */}
-      <div className="absolute flex items-center justify-center inset-0 opacity-20 pointer-events-none" style={{ containerType: "size" }}>
-        <div className="flex-none h-[400px] rotate-[172deg] w-[400px]">
-          <ImageWithFallback alt="" className="size-full object-contain" src={imgMKwvaNgcAkQmHyt5Z49Ijjsm1VuPng} />
-        </div>
-      </div>
-
-      {/* Center Image */}
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[150px] md:h-[171px] left-1/2 top-1/2 w-[170px] md:w-[195px] flex items-center justify-center overflow-hidden" data-name="Vector">
-        {!isCustomImage ? (
-          <ImageWithFallback alt="" className="max-h-full max-w-full object-contain" src={image} />
-        ) : (
-          number === "02" ? (
-            <ImageWithFallback alt="" className="h-full scale-[1.2] object-contain" src={imgImage3} />
-          ) : (
-            <ImageWithFallback alt="" className="h-full scale-[1.5] object-contain" src={imgHomePage011} />
-          )
-        )}
-      </div>
-
-      {/* Corner Icon */}
-      <div className="absolute right-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
-        <div className="absolute bg-white mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 right-0 size-full top-0" style={{ maskImage: `url('${imgDivFramerIu4QG1}')` }} />
-      </div>
-
-      {/* Description */}
-      <div className="absolute bottom-[25px] left-[25px] opacity-75 right-[25px]" data-name="Description">
-        <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[16px] text-white uppercase w-full">
-          <p className="leading-[1.4] md:leading-[22.4px]">{description}</p>
-        </div>
+      {/* Hover Image View */}
+      <div 
+        className="absolute inset-0 rounded-[7px] overflow-clip transition-opacity duration-300 flex items-center justify-center"
+        style={{ opacity: isHovered ? 1 : 0 }}
+      >
+        <ImageWithFallback alt="" className="w-full h-full object-cover" src={hoverImage} />
       </div>
     </div>
   );
@@ -200,17 +186,23 @@ export const WorkSection = () => {
               title={<KenvoiceLogo />}
               description="STREAMLINE INVOICING AND FINANCIAL OPERATIONS WITH AUTOMATED BILLING, REAL-TIME TRACKING, AND SMART REPORTING."
               image={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 195 171'%3E%3Cpath d='${svgPaths.pda184c0}' fill='%23959595'/%3E%3C/svg%3E`}
+              normalImage={normalimg1}
+              hoverImage={productimg1}
             />
             <ProductCard
               number="02"
               title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">Smart IDP</p>}
               description="AUTOMATE DOCUMENT PROCESSING USING AI TO EXTRACT, VALIDATE, AND ORGANISE DATA FROM COMPLEX BUSINESS DOCUMENTS."
+              normalImage={normalimg2}
+              hoverImage={productimg2}
               isCustomImage={true}
             />
             <ProductCard
               number="03"
               title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">AI BizzApp</p>}
               description="BUILD AND DEPLOY CUSTOM AI-POWERED BUSINESS APPLICATIONS TO AUTOMATE WORKFLOWS AND IMPROVE PRODUCTIVITY."
+              normalImage={normalimg3}
+              hoverImage={productimg3}
               isCustomImage={true}
             />
           </div>

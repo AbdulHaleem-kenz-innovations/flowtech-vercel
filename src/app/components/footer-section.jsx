@@ -99,8 +99,8 @@ export const FooterSection = () => {
       <div className="max-w-[1260px] mx-auto flex flex-col gap-16 md:gap-24 relative z-10">
         
         {/* Background Pattern */}
-        <div className="absolute bottom-[-10%] left-0 right-0 h-[300px] pointer-events-none -z-10 opacity-20">
-          <ImageWithFallback alt="" className="size-full object-cover" src={imgGroup31} />
+        <div className="absolute bottom-[-25%] left-0 right-0 h-[300px] pointer-events-none -z-10">
+          <ImageWithFallback alt="" className=" object-cover" src={imgGroup31} />
         </div>
 
         {/* Top Section */}

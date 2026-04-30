@@ -162,8 +162,7 @@ export const Navbar = () => {
         <div className="flex items-end gap-4">
           <Link
             to="/contact"
-            className="hidden sm:block bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-4 md:px-6 py-2 md:py-3 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase hover:opacity-90 transition-opacity"
-          >
+            className="hidden sm:block bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-4 md:px-6 py-2 md:py-3 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase hover:opacity-90 transition-opacity">
             LET'S CONNECT
           </Link>
 

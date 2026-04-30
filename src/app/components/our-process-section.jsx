@@ -1,6 +1,7 @@
 // 
 
 import React from "react";
+import ScrollFadeIn from "../../components/ScrollFadeIn";
 
 const steps = [
   {
@@ -23,6 +24,7 @@ const steps = [
 
 export const OurProcessSection = () => {
   return (
+    <ScrollFadeIn>
     <section className="relative w-full  py-20">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
 
@@ -88,5 +90,6 @@ export const OurProcessSection = () => {
 
       </div>
     </section>
+    </ScrollFadeIn>
   );
 };
