@@ -129,33 +129,33 @@ function CardFact() {
               </div>
             </div>
           </div>
-          
+
           <div className="content-stretch flex flex-col gap-[15px] md:gap-[10px] items-start justify-center relative shrink-0 w-full z-10  100" data-name="Title Wrap">
             <div className="content-stretch flex flex-col items-start relative shrink-0">
-               <div className="backdrop-blur-[20px] bg-black content-stretch flex flex-col items-center justify-center pb-[6px] pt-[5px] px-[12px] relative rounded-[30px] shrink-0">
-                  <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-[44px]">
-                    <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full">
-                      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-                        <p className="leading-[17.6px]">fact 01</p>
-                      </div>
+              <div className="backdrop-blur-[20px] bg-black content-stretch flex flex-col items-center justify-center pb-[6px] pt-[5px] px-[12px] relative rounded-[30px] shrink-0">
+                <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-[44px]">
+                  <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full">
+                    <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+                      <p className="leading-[17.6px]">fact 01</p>
                     </div>
                   </div>
-               </div>
+                </div>
+              </div>
             </div>
             <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full">
-               <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-full">
-                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-                    <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[20px] md:text-[23px] text-black tracking-[-0.4px] w-full" style={{ backgroundImage: "linear-gradient(-85.5893deg, rgba(0, 0, 0, 0.4) 5%, rgb(0, 0, 0) 50%)" }}>
-                      <p className="text-black">
-                        <span className="leading-[1.2]">{`Flowtech’s intelligent platforms and `}</span>
-                        <span className="font-['Playfair_Display'] font-normal italic leading-[1.2] text-black tracking-[-0.4px]">industrial solutions</span>
-                        <span className="leading-[1.2]">{` help enterprises reduce downtime and `}</span>
-                        <span className="font-['Playfair_Display'] font-normal italic leading-[1.2] text-black tracking-[-0.4px]">improve efficiency</span>
-                        <span className="leading-[1.2]">{` across operations`}</span>
-                      </p>
-                    </div>
+              <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-full">
+                <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
+                  <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[20px] md:text-[23px] text-black tracking-[-0.4px] w-full" style={{ backgroundImage: "linear-gradient(-85.5893deg, rgba(0, 0, 0, 0.4) 5%, rgb(0, 0, 0) 50%)" }}>
+                    <p className="text-black">
+                      <span className="leading-[1.2]">{`Flowtech’s intelligent platforms and `}</span>
+                      <span className="font-['Playfair_Display'] font-normal italic leading-[1.2] text-black tracking-[-0.4px]">industrial solutions</span>
+                      <span className="leading-[1.2]">{` help enterprises reduce downtime and `}</span>
+                      <span className="font-['Playfair_Display'] font-normal italic leading-[1.2] text-black tracking-[-0.4px]">improve efficiency</span>
+                      <span className="leading-[1.2]">{` across operations`}</span>
+                    </p>
                   </div>
-               </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -166,7 +166,7 @@ function CardFact() {
               </div>
             </div>
             <div className="content-stretch flex flex-col items-start relative shrink-0 w-full sm:w-auto">
-               <button className="relative rounded-[800px] shrink-0 cursor-pointer w-full sm:w-auto overflow-hidden group" style={{ backgroundImage: "linear-gradient(58.1582deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
+              {/* <button className="relative rounded-[800px] shrink-0 cursor-pointer w-full sm:w-auto overflow-hidden group" style={{ backgroundImage: "linear-gradient(58.1582deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
                   <div className="content-stretch flex items-center justify-center overflow-clip px-8 md:px-[22px] py-4 md:py-[13px] relative rounded-[inherit] size-full group-hover:brightness-110 transition-all">
                     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 cta-shine-primary">
                       <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full">
@@ -177,7 +177,12 @@ function CardFact() {
                     </div>
                   </div>
                   <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px]" />
-               </button>
+               </button> */}
+              <button
+                className="relative cursor-pointer overflow-hidden w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 glare-btn"
+              >
+                GET STARTED
+              </button>
             </div>
           </div>
         </div>
@@ -211,29 +216,29 @@ function CardHours() {
 export const FunFactsSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
-      <div className="max-w-[1260px] w-full flex flex-col gap-16 md:gap-[80px] items-center justify-center relative" data-name="Fun Facts">
-        <SectionContent />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-[15px]  items-start justify-center relative shrink-0 w-full" data-name="Fun Facts Card Wrapper">
-          {/* Left Column */}
-          <div className="content-stretch flex flex-col gap-6 md:gap-[15px] items-center justify-center w-full max-w-[436px] mx-auto">
-            <CardImpact />
-            <VideoPreview />
-          </div>
-          {/* Middle Column */}
-          <div className="content-stretch flex items-start justify-center relative self-stretch shrink-0 w-full max-w-[436px] mx-auto">
-            <CardFact />
-          </div>
-          {/* Right Column */}
-          <div className="content-stretch flex flex-col gap-6 md:gap-[15px] items-center justify-center w-full max-w-[436px] mx-auto h-full">
-            <div className="content-stretch flex-[1_0_0] items-center justify-center overflow-clip relative rounded-[7px] w-full aspect-square sm:aspect-video lg:aspect-auto">
-              <ImageWithFallback alt="" className="absolute inset-0 size-full object-cover" src={imgImage} />
+      <section className="w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
+        <div className="max-w-[1260px] w-full flex flex-col gap-16 md:gap-[80px] items-center justify-center relative" data-name="Fun Facts">
+          <SectionContent />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-[15px]  items-start justify-center relative shrink-0 w-full" data-name="Fun Facts Card Wrapper">
+            {/* Left Column */}
+            <div className="content-stretch flex flex-col gap-6 md:gap-[15px] items-center justify-center w-full max-w-[436px] mx-auto">
+              <CardImpact />
+              <VideoPreview />
             </div>
-            <CardHours />
+            {/* Middle Column */}
+            <div className="content-stretch flex items-start justify-center relative self-stretch shrink-0 w-full max-w-[436px] mx-auto">
+              <CardFact />
+            </div>
+            {/* Right Column */}
+            <div className="content-stretch flex flex-col gap-6 md:gap-[15px] items-center justify-center w-full max-w-[436px] mx-auto h-full">
+              <div className="content-stretch flex-[1_0_0] items-center justify-center overflow-clip relative rounded-[7px] w-full aspect-square sm:aspect-video lg:aspect-auto">
+                <ImageWithFallback alt="" className="absolute inset-0 size-full object-cover" src={imgImage} />
+              </div>
+              <CardHours />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </ScrollFadeIn>
   );
 }

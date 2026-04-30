@@ -182,10 +182,15 @@ export function TeamSection() {
               FROM ENGINEERS TO DATA EXPERTS, OUR TEAM BUILDS SCALABLE, INTELLIGENT SOLUTIONS THAT DRIVE REAL-WORLD IMPACT ACROSS INDUSTRIES
             </p>
           </div>
-          <button className="w-full sm:w-fit px-6 py-3 rounded-full font-['Geist'] font-medium text-[14px] text-white tracking-[0.5px] uppercase transition-all hover:scale-105 active:scale-95" 
+          {/* <button className="w-full sm:w-fit px-6 py-3 rounded-full font-['Geist'] font-medium text-[14px] text-white tracking-[0.5px] uppercase transition-all hover:scale-105 active:scale-95" 
                   style={{ backgroundImage: "linear-gradient(65.2885deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
             Join us
-          </button>
+          </button> */}
+          <button
+  className="relative cursor-pointer overflow-hidden w-full sm:w-fit px-6 py-3 rounded-full font-['Geist'] font-medium text-sm text-white tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 glare-btn"
+>
+  JOIN US
+</button>
         </div>
         <TeamGallery members={members} />
       </div>

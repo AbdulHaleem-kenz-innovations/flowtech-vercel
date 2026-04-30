@@ -150,18 +150,23 @@ function TellUsWhatYouNeedWellHandleTheRestFromStrategyToExecution() {
 
 function GetStartedButton() {
   return (
-    <button className="relative rounded-[800px] shrink-0 cursor-pointer hover:scale-105 active:scale-95 transition-transform w-full sm:w-auto overflow-hidden group" style={{ backgroundImage: "linear-gradient(58.1582deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }} data-name="Hero Button">
-      <div className="content-stretch flex items-center justify-center overflow-clip px-8 md:px-[22px] py-4 md:py-[13px] relative rounded-[inherit] size-full group-hover:brightness-110 transition-all">
-        <div className="content-stretch flex flex-col items-start justify-center relative shrink-0">
-          <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full">
-            <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
-              <p className="leading-[19.6px]">Get Started</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px]" />
-    </button>
+    // <button className="relative rounded-[800px] shrink-0 cursor-pointer hover:scale-105 active:scale-95 transition-transform w-full sm:w-auto overflow-hidden group" style={{ backgroundImage: "linear-gradient(58.1582deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }} data-name="Hero Button">
+    //   <div className="content-stretch flex items-center justify-center overflow-clip px-8 md:px-[22px] py-4 md:py-[13px] relative rounded-[inherit] size-full group-hover:brightness-110 transition-all">
+    //     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0">
+    //       <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full">
+    //         <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
+    //           <p className="leading-[19.6px]">Get Started</p>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px]" />
+    // </button>
+    <button
+  className="relative cursor-pointer overflow-hidden w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 glare-btn"
+>
+  GET STARTED
+</button>
   );
 }
 

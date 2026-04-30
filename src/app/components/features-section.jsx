@@ -438,7 +438,7 @@ function DivFramer13M6KicContainer() {
   const onNavigate = useNavigate()
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="div.framer-13m6kic-container">
-      <button className="relative rounded-[800px] shrink-0 cursor-pointer hover:scale-105 transition-transform" style={{ backgroundImage: "linear-gradient(50.1214deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }} data-name="Hero Button">
+      {/* <button className="relative rounded-[800px] shrink-0 cursor-pointer hover:scale-105 transition-transform" style={{ backgroundImage: "linear-gradient(50.1214deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }} data-name="Hero Button">
         <div className="content-stretch flex items-center justify-center overflow-clip px-8 md:px-[22px] py-4 md:py-[13px] relative rounded-[inherit] size-full">
           <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 cta-shine cta-shine-primary">
             <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full ">
@@ -449,6 +449,12 @@ function DivFramer13M6KicContainer() {
           </div>
         </div>
         <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px]" />
+      </button> */}
+      <button
+        onClick={() => onNavigate("/services/manufacturing")}
+        className="relative cursor-pointer overflow-hidden w-full sm:w-fit px-8 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 active:scale-95 glare-btn"
+      >
+        VIEW ALL SERVICES
       </button>
     </div>
   );
@@ -554,12 +560,12 @@ function VideoSection() {
 export const FeaturesSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
-      <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[20px] items-center justify-center relative" data-name="Features">
-        <ContainerServices />
-        <VideoSection />
-      </div>
-    </section>
+      <section className="w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
+        <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[20px] items-center justify-center relative" data-name="Features">
+          <ContainerServices />
+          <VideoSection />
+        </div>
+      </section>
     </ScrollFadeIn>
   );
 }

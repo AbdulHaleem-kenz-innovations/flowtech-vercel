@@ -62,9 +62,9 @@ export const HeroSection = () => {
             </p>
 
             {/* CTA */}
-            <button className="w-full sm:w-fit bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-8 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs tracking-wider uppercase hover:scale-105 active:scale-95 transition-all">
-              EXPLORE SOLUTIONS
-            </button>
+             <button className="relative cursor-pointer overflow-hidden w-full sm:w-fit bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-8 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs tracking-wider uppercase transition-all duration-300 hover:scale-105 active:scale-95 glare-btn">
+  EXPLORE SOLUTIONS
+</button>
           </div>
 
           {/* Right Content (Sphere) */}

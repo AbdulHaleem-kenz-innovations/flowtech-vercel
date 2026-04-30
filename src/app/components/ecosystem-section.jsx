@@ -267,14 +267,19 @@ export const EcosystemSection = () => {
             </p>
           </div>
 
-          <button className="relative rounded-full w-full sm:w-fit cursor-pointer overflow-hidden group bg-gradient-to-r from-blue-800 to-blue-500">
+          {/* <button className="relative rounded-full w-full sm:w-fit cursor-pointer overflow-hidden group bg-gradient-to-r from-blue-800 to-blue-500">
             <div className="px-6 md:px-8 py-3 md:py-4 relative z-10 group-hover:scale-105 transition-transform">
               <span className="font-['Geist'] text-[12px] md:text-[14px] text-white uppercase tracking-wide">
                 BECOME A PARTNER
               </span>
             </div>
             <div className="absolute inset-0 border border-white/20 rounded-full pointer-events-none" />
-          </button>
+          </button> */}
+          <button
+  className="relative cursor-pointer overflow-hidden w-full sm:w-fit px-6 md:px-8 py-3 md:py-4 rounded-full border border-white/20 text-white font-['Geist'] text-xs md:text-sm uppercase tracking-wide bg-gradient-to-r from-blue-800 to-blue-500 transition-all duration-300 hover:scale-105 active:scale-95 glare-btn"
+>
+  BECOME A PARTNER
+</button>
         </div>
 
         {/* RIGHT ORBIT VISUAL */}

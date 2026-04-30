@@ -137,14 +137,14 @@ function ProductCard({ number, title, description, image, normalImage, hoverImag
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
+    <div
       className="relative rounded-[7px] w-full max-w-[400px] mx-auto h-[400px] md:h-[429px] overflow-clip"
       data-name="Product Card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Normal Image View */}
-      <div 
+      <div
         className="absolute inset-0 rounded-[7px] overflow-clip transition-opacity duration-300 flex items-center justify-center"
         style={{ opacity: isHovered ? 0 : 1 }}
       >
@@ -152,7 +152,7 @@ function ProductCard({ number, title, description, image, normalImage, hoverImag
       </div>
 
       {/* Hover Image View */}
-      <div 
+      <div
         className="absolute inset-0 rounded-[7px] overflow-clip transition-opacity duration-300 flex items-center justify-center"
         style={{ opacity: isHovered ? 1 : 0 }}
       >
@@ -175,55 +175,60 @@ function KenvoiceLogo() {
 export const WorkSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-16 md:py-24 px-6 md:px-8">
-      <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[64px] items-center justify-center relative" data-name="Work">
-        <HeaderArea />
+      <section className="w-full flex justify-center py-16 md:py-24 px-6 md:px-8">
+        <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[64px] items-center justify-center relative" data-name="Work">
+          <HeaderArea />
 
-        <div className="w-full relative">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-[15px] w-full">
-            <ProductCard
-              number="01"
-              title={<KenvoiceLogo />}
-              description="STREAMLINE INVOICING AND FINANCIAL OPERATIONS WITH AUTOMATED BILLING, REAL-TIME TRACKING, AND SMART REPORTING."
-              image={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 195 171'%3E%3Cpath d='${svgPaths.pda184c0}' fill='%23959595'/%3E%3C/svg%3E`}
-              normalImage={normalimg1}
-              hoverImage={productimg1}
-            />
-            <ProductCard
-              number="02"
-              title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">Smart IDP</p>}
-              description="AUTOMATE DOCUMENT PROCESSING USING AI TO EXTRACT, VALIDATE, AND ORGANISE DATA FROM COMPLEX BUSINESS DOCUMENTS."
-              normalImage={normalimg2}
-              hoverImage={productimg2}
-              isCustomImage={true}
-            />
-            <ProductCard
-              number="03"
-              title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">AI BizzApp</p>}
-              description="BUILD AND DEPLOY CUSTOM AI-POWERED BUSINESS APPLICATIONS TO AUTOMATE WORKFLOWS AND IMPROVE PRODUCTIVITY."
-              normalImage={normalimg3}
-              hoverImage={productimg3}
-              isCustomImage={true}
-            />
+          <div className="w-full relative">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-[15px] w-full">
+              <ProductCard
+                number="01"
+                title={<KenvoiceLogo />}
+                description="STREAMLINE INVOICING AND FINANCIAL OPERATIONS WITH AUTOMATED BILLING, REAL-TIME TRACKING, AND SMART REPORTING."
+                image={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 195 171'%3E%3Cpath d='${svgPaths.pda184c0}' fill='%23959595'/%3E%3C/svg%3E`}
+                normalImage={normalimg1}
+                hoverImage={productimg1}
+              />
+              <ProductCard
+                number="02"
+                title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">Smart IDP</p>}
+                description="AUTOMATE DOCUMENT PROCESSING USING AI TO EXTRACT, VALIDATE, AND ORGANISE DATA FROM COMPLEX BUSINESS DOCUMENTS."
+                normalImage={normalimg2}
+                hoverImage={productimg2}
+                isCustomImage={true}
+              />
+              <ProductCard
+                number="03"
+                title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">AI BizzApp</p>}
+                description="BUILD AND DEPLOY CUSTOM AI-POWERED BUSINESS APPLICATIONS TO AUTOMATE WORKFLOWS AND IMPROVE PRODUCTIVITY."
+                normalImage={normalimg3}
+                hoverImage={productimg3}
+                isCustomImage={true}
+              />
+            </div>
+
+            {/* Decorative Corner Icons for the Container */}
+            <div className="absolute -left-3 md:-left-5 -top-3 md:-top-5"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
+            <div className="absolute -right-3 md:-right-5 -top-3 md:-top-5 rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
+            <div className="absolute -left-3 md:-left-5 -bottom-3 md:-bottom-5 -rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
+            <div className="absolute -right-3 md:-right-5 -bottom-3 md:-bottom-5 rotate-180"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
           </div>
 
-          {/* Decorative Corner Icons for the Container */}
-          <div className="absolute -left-3 md:-left-5 -top-3 md:-top-5"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
-          <div className="absolute -right-3 md:-right-5 -top-3 md:-top-5 rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
-          <div className="absolute -left-3 md:-left-5 -bottom-3 md:-bottom-5 -rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
-          <div className="absolute -right-3 md:-right-5 -bottom-3 md:-bottom-5 rotate-180"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
-        </div>
-
-        <button className="relative rounded-[800px] shrink-0 cursor-pointer hover:scale-105 active:scale-95 transition-transform" style={{ backgroundImage: "linear-gradient(63.4165deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
+          {/* <button className="relative rounded-[800px] shrink-0 cursor-pointer hover:scale-105 active:scale-95 transition-transform" style={{ backgroundImage: "linear-gradient(63.4165deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
           <div className="content-stretch flex items-center justify-center overflow-clip px-10 md:px-[40px] py-4 md:py-[13px] relative rounded-[inherit] size-full">
             <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
               <p className="leading-[19.6px]">View All</p>
             </div>
           </div>
           <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px]" />
-        </button>
-      </div>
-    </section>
+        </button> */}
+          <button
+            className="relative cursor-pointer overflow-hidden px-7 py-3 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 active:scale-95 glare-btn"
+          >
+            VIEW ALL
+          </button>
+        </div>
+      </section>
     </ScrollFadeIn>
   );
 }

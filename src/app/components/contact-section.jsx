@@ -209,10 +209,16 @@ function FormWrapper() {
             I have read and agree to the <span className="text-[#110fdf] font-semibold cursor-pointer">Terms and Conditions</span>
           </label>
         </div>
+        <button
+  type="submit"
+  className="relative cursor-pointer overflow-hidden w-full py-4 rounded-full text-white font-['Geist'] font-medium text-sm uppercase tracking-wider bg-gradient-to-r from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-[1.02] hover:brightness-110 active:scale-[0.98] glare-btn"
+>
+  SEND MESSAGE
+</button>
 
-        <button type="submit" className="w-full bg-gradient-to-r from-[#001ca9] to-[#046ce4] py-4 rounded-full text-white font-['Geist:Medium'] text-[14px] uppercase tracking-wider hover:scale-[1.02] active:scale-[0.98] transition-all">
+        {/* <button type="submit" className="w-full bg-gradient-to-r from-[#001ca9] to-[#046ce4] py-4 rounded-full text-white font-['Geist:Medium'] text-[14px] uppercase tracking-wider hover:scale-[1.02] active:scale-[0.98] transition-all">
           Send Message
-        </button>
+        </button> */}
       </form>
     </div>
   );

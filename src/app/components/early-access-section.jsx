@@ -209,12 +209,18 @@ function FormFramer1B3R0N() {
             <input className="w-full bg-transparent outline-none font-['Geist:Regular'] text-[16px] text-white placeholder:text-white/40" placeholder="hello@email.com" type="email" />
          </div>
       </div>
-      <button type="submit" className="w-full relative rounded-full shrink-0 cursor-pointer overflow-hidden group py-4" style={{ backgroundImage: "linear-gradient(60.4285deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
+      {/* <button type="submit" className="w-full relative rounded-full shrink-0 cursor-pointer overflow-hidden group py-4" style={{ backgroundImage: "linear-gradient(60.4285deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
         <div className="relative z-10 flex items-center justify-center group-hover:scale-105 transition-transform">
            <span className="font-['Geist:Medium'] font-medium text-white text-[14px] tracking-[0.5px] uppercase">Subscribe</span>
         </div>
         <div aria-hidden="true" className="absolute border border-white/20 border-solid inset-0 pointer-events-none rounded-full" />
-      </button>
+      </button> */}
+      <button
+  type="submit"
+  className="glare-btn cursor-pointer relative overflow-hidden w-full py-4 rounded-full border border-white/20 font-['Geist'] font-medium text-sm text-white tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95"
+>
+  SUBSCRIBE
+</button>
     </form>
   );
 }

@@ -40,9 +40,11 @@ export const OurProcessSection = () => {
             Ensuring every solution is scalable, data-driven, and built to deliver real impact.
           </p>
 
-          <button className="mt-6 px-6 py-3 bg-blue-600 rounded-full text-white">
-            Schedule a Consultation
-          </button>
+          <button
+  className="relative cursor-pointer overflow-hidden mt-6 px-6 py-3 rounded-full text-white font-['Geist'] font-medium text-sm tracking-[0.3px] bg-gradient-to-tr from-blue-700 to-blue-500 transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 glare-btn"
+>
+  SCHEDULE A CONSULTATION
+</button>
         </div>
 
         {/* ✅ RIGHT SIDE (SCROLLING CARDS) */}

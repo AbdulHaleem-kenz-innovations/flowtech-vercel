@@ -166,12 +166,17 @@ export const FooterSection = () => {
             </div>
             
             <Link to="/contact" className="w-full sm:w-auto">
-              <button className="relative w-full sm:w-auto rounded-full px-8 py-3.5 group overflow-hidden bg-gradient-to-r from-[#001ca9] to-[#046ce4] border border-white/20">
+              {/* <button className="relative w-full sm:w-auto rounded-full px-8 py-3.5 group overflow-hidden bg-gradient-to-r from-[#001ca9] to-[#046ce4] border border-white/20">
                 <span className="relative z-10 font-['Geist'] font-medium text-[13px] text-white tracking-widest uppercase group-hover:scale-105 block transition-transform text-center">
                   Need help?
                 </span>
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </button>
+              </button> */}
+              <button
+  className="glare-btn cursor-pointer relative overflow-hidden w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 font-['Geist'] font-medium text-sm text-white tracking-widest uppercase bg-gradient-to-r from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95"
+>
+  NEED HELP?
+</button>
             </Link>
           </div>
         </div>
