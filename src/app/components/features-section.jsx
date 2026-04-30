@@ -342,7 +342,7 @@ function ServiceCard({ item }) {
             <ImageWithFallback
               src={item.img}
               alt=""
-              className="w-full h-full "
+              className="w-full h-full object-cover"
             />
           </div>
 

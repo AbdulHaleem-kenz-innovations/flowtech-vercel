@@ -22,7 +22,7 @@ const Root = () => {
   }, [pathname]);
 
   return (
-    <main className="relative min-h-screen bg-black text-white selection:bg-blue-500/30 overflow-x-hidden">
+    <main className="relative min-h-screen bg-black text-white selection:bg-blue-500/30 ">
       <Background />
       <Navbar />
       <div className="relative z-10">
