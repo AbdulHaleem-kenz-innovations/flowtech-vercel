@@ -9,69 +9,35 @@ import { FooterSection } from '../components/footer-section';
 
 // Assets for Products Page
 import imgMKwvaNgcAkQmHyt5Z49Ijjsm1VuPng from "../../assets/0975ee902333fa4c0ff75503ee2b2d45bc2017cd.png";
+import imgProduct1 from "../../assets/product1.png";
+import imgProduct2 from "../../assets/product2.png";
+import imgProduct3 from "../../assets/product3.png";
+import normalproduct1 from "../../assets/normal-prd1.png";
+import normalproduct2 from "../../assets/normal-prd2.png";
+import normalproduct3 from "../../assets/normal-prd3.png";
 import { imgDivFramerIu4QG } from "../../imports/svg-j4boa";
 import svgPaths from "../../imports/svg-uaeahmmqlr";
 import Background from '../components/background';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 import { Scroll } from 'lucide-react';
 
-const ProductCard = ({ number, title, description, vectorPath }) => (
-  <div className="relative w-full h-[429px] group" data-name="Product card 4">
-    <div className="absolute inset-0 backdrop-blur-[10px] bg-[#1e1e1e] overflow-clip rounded-[7px] border border-white/5 transition-all duration-500 group-hover:bg-[#252525]">
-      {/* Background Ellipses */}
-      <div className="-translate-x-1/2 absolute left-[calc(50%-180px)] size-[232px] top-[299px] opacity-20">
-        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
-          <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.05" />
-        </svg>
-      </div>
-      <div className="-translate-x-1/2 absolute left-[calc(50%+135.5px)] size-[197px] top-[410px] opacity-20">
-        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
-          <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.05" />
-        </svg>
-      </div>
-
-      {/* Title & Number */}
-      <div className="absolute left-[25px] top-[40px] flex flex-col gap-[10px] z-10">
-        <div className="opacity-33">
-          <p className="font-['Playfair_Display'] font-normal text-[23px] text-white leading-[25.3px]">{number}</p>
-        </div>
-        <div className="capitalize">
-          <p className="font-['Geist'] font-semibold text-[24px] text-white leading-[27px]">{title}</p>
-        </div>
-      </div>
-
-      {/* Plus Icon */}
-      <div className="absolute right-[20px] top-[20px] size-[20px] z-10">
-        <div
-          className="absolute bg-white mask-alpha mask-intersect opacity-40 size-[20px]"
-          style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }}
-        />
-      </div>
-
-      {/* Central Visual (Logo/Vector) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        {/* Background Shape (Rotated) */}
-        <div className="absolute w-[400px] h-[400px] opacity-25 rotate-[172deg]">
-          <ImageWithFallback src={imgMKwvaNgcAkQmHyt5Z49Ijjsm1VuPng} className="w-full h-full object-contain" />
-        </div>
-
-        {/* Central Vector Logo */}
-        <div className="relative w-[195px] h-[171px] z-10 transform transition-transform duration-700 group-hover:scale-110">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 195.334 171">
-            <path d={vectorPath} fill="#959595" className="transition-colors duration-500 group-hover:fill-white" />
-          </svg>
-        </div>
-      </div>
-
-      {/* Description */}
-      <div className="absolute bottom-[35px] left-[25px] right-[25px] opacity-75 z-10">
-        <p className="font-['Geist'] font-normal text-[16px] text-white uppercase leading-[22.4px]">
-          {description}
-        </p>
-      </div>
-    </div>
-  </div>
-);
+const products = [
+  {
+    description: "STREAMLINE INVOICING AND FINANCIAL OPERATIONS WITH AUTOMATED BILLING, REAL-TIME TRACKING, AND SMART REPORTING.",
+    defaultImage: normalproduct1,
+    hoverImage: imgProduct1,
+  },
+  {
+    description: "AUTOMATE DOCUMENT PROCESSING USING AI TO EXTRACT, VALIDATE, AND ORGANIZE DATA FROM COMPLEX BUSINESS DOCUMENTS.",
+    defaultImage: normalproduct2,
+    hoverImage: imgProduct2,
+  },
+  {
+    description: "BUILD AND DEPLOY CUSTOM AI-POWERED BUSINESS APPLICATIONS TO AUTOMATE WORKFLOWS AND IMPROVE PRODUCTIVITY.",
+    defaultImage: normalproduct3,
+    hoverImage: imgProduct3,
+  },
+];
 
  const ProductsPage = () => {
   return (
@@ -115,26 +81,32 @@ const ProductCard = ({ number, title, description, vectorPath }) => (
         </section>
        
 
-        {/* Product Grid */}
-        <section className="px-6 w-full max-w-[1260px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-40">
-          <ProductCard
-            number="01"
-            title="Kenvoice"
-            description="STREAMLINE INVOICING AND FINANCIAL OPERATIONS WITH AUTOMATED BILLING, REAL-TIME TRACKING, AND SMART REPORTING."
-            vectorPath={svgPaths.pda184c0}
-          />
-          <ProductCard
-            number="02"
-            title="Smart IDP"
-            description="AUTOMATE DOCUMENT PROCESSING USING AI TO EXTRACT, VALIDATE, AND ORGANIZE DATA FROM COMPLEX BUSINESS DOCUMENTS."
-            vectorPath={svgPaths.pda184c0} // Using same visual language as per design pattern
-          />
-          <ProductCard
-            number="03"
-            title="AI BizzApp"
-            description="BUILD AND DEPLOY CUSTOM AI-POWERED BUSINESS APPLICATIONS TO AUTOMATE WORKFLOWS AND IMPROVE PRODUCTIVITY."
-            vectorPath={svgPaths.pda184c0} // Using same visual language as per design pattern
-          />
+        {/* Product Grid - Zig Zag Layout */}
+        <section className="px-6 w-full max-w-[1260px] flex flex-col gap-10 mb-40">
+          {products.map((product, index) => (
+            <ScrollFadeIn key={index}>
+              <div className={`flex flex-col lg:flex-row gap-6 items-stretch group ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+                {/* Description Side */}
+                <div className="flex-1 backdrop-blur-[15px] bg-white/5 border border-white/10 p-8 md:p-12 rounded-[20px] flex items-center transition-all duration-500 group-hover:bg-white/[0.08]">
+                  <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white/80 uppercase leading-relaxed tracking-wider">
+                    {product.description}
+                  </p>
+                </div>
+                {/* Image Side */}
+                <div className="flex-1 rounded-[20px] overflow-hidden min-h-[300px] lg:h-[400px] relative">
+                  {/* Default Image (Desktop only, hidden on hover) */}
+                  <div className="absolute inset-0 transition-opacity duration-700 opacity-100 group-hover:lg:opacity-0 hidden lg:block">
+                    <ImageWithFallback src={product.defaultImage} className="w-full h-full object-fit" />
+                  </div>
+                  
+                  {/* Hover Image (Visible on Mobile by default, and Desktop on hover) */}
+                  <div className="absolute inset-0 transition-opacity duration-700 opacity-100 lg:opacity-0 group-hover:lg:opacity-100">
+                    <ImageWithFallback src={product.hoverImage} className="w-full h-full object-fit" />
+                  </div>
+                </div>
+              </div>
+            </ScrollFadeIn>
+          ))}
         </section>
 
         {/* Form Section */}

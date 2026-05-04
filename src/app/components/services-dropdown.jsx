@@ -9,17 +9,17 @@ import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../../assets/12f90a2a24f7e3315caa
 
 const services = [
   {
-    name: "Manufacturing Intelligence (MI)",
+    name: "Manufacturing Intelligence",
     href: "/services/manufacturing",
     image: imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg
   },
   {
-    name: "Energy Monitoring System (EMS)",
+    name: "Energy Monitoring System",
     href: "/services/energy-monitoring",
     image: "https://images.unsplash.com/photo-1768839727824-28d6f0dcd1d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbmVyZ3klMjBtb25pdG9yaW5nJTIwcG93ZXIlMjBncmlkJTIwc29sYXIlMjBwYW5lbHxlbnwxfHx8fDE3NzY3NjQ0MDV8MA&ixlib=rb-4.1.0&q=80&w=1080"
   },
   {
-    name: "Pipeline Safety (DFOS)",
+    name: "Pipeline Safety",
     href: "/services/pipeline-safety",
     image: "https://images.unsplash.com/photo-1673423601254-776e7a40afe0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvaWwlMjBnYXMlMjBwaXBlbGluZSUyMGluZnJhc3RydWN0dXJlJTIwaW5kdXN0cmlhbCUyMHNlbnNvcnxlbnwxfHx8fDE3NzY3NjQ0MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
   },
