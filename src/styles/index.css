@@ -54,3 +54,20 @@
     left: 125%;
   }
 }
+
+@keyframes scrollVertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-scroll-vertical {
+  animation: scrollVertical var(--scroll-speed, 30s) linear infinite;
+}
+
+.pause-hover:hover .animate-scroll-vertical {
+  animation-play-state: paused;
+}

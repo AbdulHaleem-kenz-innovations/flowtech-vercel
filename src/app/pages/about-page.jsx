@@ -146,19 +146,31 @@ const AboutPage = () => {
       <section className="px-6 w-full max-w-[1260px] mx-auto mb-[150px]">
         <ScrollFadeIn>
           <div className="flex flex-col lg:flex-row gap-[25px]">
-            <div className="flex-1 backdrop-blur-[10px] bg-white/5 rounded-[7px] overflow-hidden min-h-[500px] relative border border-white/10">
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-10">
-                <div className="w-full space-y-4">
-                  <div className="w-full h-[420px] rounded-[7px] overflow-hidden">
-                    <ImageWithFallback src={imgImage} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="w-full h-[420px] rounded-[7px] overflow-hidden">
-                    <ImageWithFallback src={imgImage1} className="w-full h-full object-cover" />
-                  </div>
+            <div className="flex-1 backdrop-blur-[10px] bg-white/5 rounded-[7px] overflow-hidden h-[600px] relative border border-white/10 group pause-hover">
+              {/* Vertical Scroll Container */}
+              <div className="absolute inset-0 p-10 overflow-hidden">
+                <div 
+                  className="w-full space-y-4 animate-scroll-vertical"
+                  style={{ '--scroll-speed': '40s' }}
+                >
+                  {[...Array(2)].map((_, i) => (
+                    <React.Fragment key={i}>
+                      {[imgImage, imgImage1, imgImage3, imgImage4, imgImage5, imgImage6].map((img, index) => (
+                        <div key={`${i}-${index}`} className="w-full h-[420px] rounded-[7px] overflow-hidden">
+                          <ImageWithFallback src={img} className="w-full h-full object-cover" />
+                        </div>
+                      ))}
+                    </React.Fragment>
+                  ))}
                 </div>
               </div>
+
+              {/* Glass / Fading Overlays */}
+              <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-md z-10 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/80 to-transparent backdrop-blur-md z-10 pointer-events-none" />
+
               {/* Mask image for the fade effect from figma */}
-              <div className="absolute inset-0 pointer-events-none opacity-50" style={{ maskImage: `url('${imgSection}')`, maskSize: 'cover' }} />
+              <div className="absolute inset-0 pointer-events-none opacity-50 z-20" style={{ maskImage: `url('${imgSection}')`, maskSize: 'cover' }} />
             </div>
 
             <div className="flex-1 backdrop-blur-[10px] bg-white/5 rounded-[7px] p-6 md:p-12 flex flex-col justify-between border border-white/10 relative overflow-hidden">

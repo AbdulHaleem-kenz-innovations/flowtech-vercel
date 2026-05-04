@@ -10,6 +10,7 @@ import imgImage2 from "../../assets/13a5123d147560e0b029827bd35b00c4ff90b646.png
 import imgIcon from "../../assets/bb249576ee094c05f7af1474e71aa3d161406f33.png";
 import imgIcon1 from "../../assets/e877d7ed814f22a39abcf45085d45b28a8273357.png";
 import { imgDivFramerIu4QG } from "../../imports/svg-wzgzr";
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 const serviceData = {
   'manufacturing': {
@@ -72,6 +73,7 @@ function TopSection({ data }) {
   return (
     <section className="flex flex-col gap-16 md:gap-32 items-center text-center pt-32 md:pt-60 px-6 overflow-hidden">
       {/* Title Area */}
+      <ScrollFadeIn>
       <div className="max-w-[1222px] w-full flex flex-col gap-8 items-center">
         <div
           className="bg-clip-text flex flex-col font-['Geist'] font-medium text-[40px] sm:text-[72px] md:text-[100px] text-transparent tracking-[-0.4px] leading-[1.1]"
@@ -83,9 +85,11 @@ function TopSection({ data }) {
           <p className="leading-relaxed">{data.description}</p>
         </div>
       </div>
+      </ScrollFadeIn>
 
       <div className="max-w-[1260px] w-full flex flex-col gap-20 md:gap-[80px]">
         {/* Intro Section: Text & Image */}
+        <ScrollFadeIn>
         <div className="flex flex-col lg:flex-row gap-6 items-stretch">
           {/* Category Wrap */}
           <div className="backdrop-blur-[25px] bg-white/10 flex-1 p-8 md:p-[50px] rounded-[7px] flex flex-col gap-10 text-left relative overflow-hidden">
@@ -120,13 +124,17 @@ function TopSection({ data }) {
             <ImageWithFallback alt="Service Graph" className="absolute inset-0 size-full object-cover" src={img3DGraphComputerIllustration1} />
           </div>
         </div>
+        </ScrollFadeIn>
 
         {/* Category Image Wrap - Full Width */}
+        <ScrollFadeIn>
         <div className="w-full aspect-video md:aspect-[1260/630] rounded-[7px] overflow-hidden relative">
           <ImageWithFallback alt="Service Dashboard" className="absolute inset-0 size-full object-cover" src={img3DGraphComputerIllustration1} />
         </div>
 
         {/* Solution Section: Image & Text */}
+        </ScrollFadeIn>
+        <ScrollFadeIn>
         <div className="flex flex-col lg:flex-row gap-6 items-stretch h-auto lg:h-[650px]">
           <div className="flex-1 h-full rounded-[7px] overflow-hidden min-h-[400px] w-full relative">
             <ImageWithFallback alt="Interface" className="absolute inset-0 size-full object-cover" src={imgImage2} />
@@ -144,12 +152,14 @@ function TopSection({ data }) {
             </div>
           </div>
         </div>
-
+        </ScrollFadeIn>
+        <ScrollFadeIn>
         {/* Full width Image */}
         <div className="w-full aspect-video md:aspect-[1260/630] rounded-[7px] overflow-hidden relative mt-12 md:mt-20">
           <ImageWithFallback alt="Service Visualization" className="absolute inset-0 size-full object-cover" src={img3DGraphComputerIllustration1} />
         </div>
-
+        </ScrollFadeIn>
+        <ScrollFadeIn>
         {/* Final Thoughts Section */}
         <div className="flex flex-col lg:flex-row gap-6 items-stretch h-auto lg:h-[646px] mt-12 md:mt-20">
           <div className="backdrop-blur-[25px] bg-white/10 flex-1 p-8 md:p-[50px] rounded-[7px] flex flex-col gap-10 text-left h-full">
@@ -189,6 +199,7 @@ function TopSection({ data }) {
             <ImageWithFallback alt="Interface" className="absolute inset-0 size-full object-cover" src={imgImage2} />
           </div>
         </div>
+        </ScrollFadeIn>
       </div>
     </section>
   );
