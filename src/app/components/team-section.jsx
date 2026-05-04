@@ -92,7 +92,7 @@ const TeamGallery = ({ members }) => {
           <button
             key={member.id}
             onClick={() => setSelected(member)}
-            className={`relative h-[160px] sm:h-[200px] rounded-xl overflow-hidden group border transition-all duration-300
+            className={`relative h-[160px] sm:h-[250px] rounded-xl overflow-hidden group border transition-all duration-300
             ${selected.id === member.id
                 ? "border-white"
                 : "border-white/10"
@@ -125,12 +125,12 @@ const TeamGallery = ({ members }) => {
 
       {/* 🔹 RIGHT FEATURED */}
       <div className="relative rounded-2xl overflow-hidden
-                      aspect-[3/4] lg:aspect-auto ">
+                      aspect-[3/4] lg:aspect-auto   max-w-full">
 
         <img
           src={selected.image}
           alt={selected.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-500 scale-110"
         />
 
         {/* Info Card */}
@@ -164,37 +164,46 @@ const TeamGallery = ({ members }) => {
 export function TeamSection() {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-16 md:py-[120px] px-6 md:px-8 ">
-      <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-20">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
-          <div className="flex flex-col gap-5 items-start">
-            <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] flex gap-[5px] items-center px-[11px] py-[5px] rounded-[5px]">
-              <PlusIcon size={16} />
-              <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">Team Member</span>
+      <section className="w-full flex justify-center py-60 md:py-[200px] px-6 md:px-8 ">
+        <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-20">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+            <div className="flex flex-col gap-5 items-start">
+              <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] flex gap-[5px] items-center px-[11px] py-[5px] rounded-[5px]">
+                <PlusIcon size={16} />
+                <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">Team Member</span>
+              </div>
+              <div className="flex items-center">
+                <span className="bg-clip-text font-['Geist'] font-medium text-[40px] md:text-[60px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(268.918deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>Our&nbsp;</span>
+                <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[40px] md:text-[60px] tracking-[-0.4px] leading-tight">team</span>
+              </div>
             </div>
-            <div className="flex items-center">
-              <span className="bg-clip-text font-['Geist'] font-medium text-[40px] md:text-[60px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(268.918deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>Our&nbsp;</span>
-              <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[40px] md:text-[60px] tracking-[-0.4px] leading-tight">team</span>
+            <div className="max-w-[400px] opacity-70">
+              <p className="font-['Geist'] font-normal text-[14px] md:text-[16px] text-white uppercase leading-[1.4] md:leading-[22.4px]">
+                FROM ENGINEERS TO DATA EXPERTS, OUR TEAM BUILDS SCALABLE, INTELLIGENT SOLUTIONS THAT DRIVE REAL-WORLD IMPACT ACROSS INDUSTRIES
+              </p>
             </div>
+            <button
+              className="relative overflow-hidden
+                   flex items-center justify-center
+                   w-full sm:w-fit
+                   px-8 py-4
+                   rounded-full
+                   bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+                   border border-white/20
+                   text-white uppercase whitespace-nowrap
+                   font-['Geist'] text-[16px]
+                   cursor-pointer
+                   transition-all duration-300 
+                   hover:scale-105 active:scale-95 
+                   glare-btn
+"
+            >
+              JOIN US
+            </button>
           </div>
-          <div className="max-w-[400px] opacity-70">
-            <p className="font-['Geist'] font-normal text-[14px] md:text-[16px] text-white uppercase leading-[1.4] md:leading-[22.4px]">
-              FROM ENGINEERS TO DATA EXPERTS, OUR TEAM BUILDS SCALABLE, INTELLIGENT SOLUTIONS THAT DRIVE REAL-WORLD IMPACT ACROSS INDUSTRIES
-            </p>
-          </div>
-          {/* <button className="w-full sm:w-fit px-6 py-3 rounded-full font-['Geist'] font-medium text-[14px] text-white tracking-[0.5px] uppercase transition-all hover:scale-105 active:scale-95" 
-                  style={{ backgroundImage: "linear-gradient(65.2885deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
-            Join us
-          </button> */}
-          <button
-  className="relative cursor-pointer overflow-hidden w-full sm:w-fit px-6 py-3 rounded-full font-['Geist'] font-medium text-sm text-white tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 glare-btn"
->
-  JOIN US
-</button>
+          <TeamGallery members={members} />
         </div>
-        <TeamGallery members={members} />
-      </div>
-    </section>
+      </section>
     </ScrollFadeIn>
   );
 }

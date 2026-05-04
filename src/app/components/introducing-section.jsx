@@ -258,7 +258,7 @@ function ImageWrapper() {
 export const IntroducingSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-12 md:py-24 px-6 md:px-8">
+    <section className="w-full flex justify-center py-12 md:py-20 px-6 md:px-8">
       <div className="max-w-[1260px] w-full flex items-center justify-center relative" data-name="Introducing Section">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-[78px] items-center lg:items-start max-w-[1260px] relative w-full">
           <ContentWrapper />

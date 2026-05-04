@@ -4,8 +4,9 @@ import imgImage from "../../assets/14a520dccf727ce258eeb22631612c2347519bfe.png"
 import { imgDivFramerIu4QG } from "../../imports/svg-hryyo";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
-
 import { motion, useScroll, useTransform } from "framer-motion";
+import KenSpinner from './KenSpinner';
+
 export const HeroSection = () => {
 
   const [rotation, setRotation] = useState(290);
@@ -24,7 +25,7 @@ export const HeroSection = () => {
 
   return (
     <ScrollFadeIn>
-      <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 md:pt-40 md:pb-32 px-6 md:px-8 overflow-hidden ">
+      <section className="relative min-h-screen flex items-center justify-center pt-32 md:pt-60 md:pb-32 px-6 md:px-8 overflow-hidden ">
         <div className="max-w-[1260px] w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center z-10 pb-100">
 
           {/* Left Content */}
@@ -62,12 +63,29 @@ export const HeroSection = () => {
             </p>
 
             {/* CTA */}
-             <button className="relative cursor-pointer overflow-hidden w-full sm:w-fit bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-8 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs tracking-wider uppercase transition-all duration-300 hover:scale-105 active:scale-95 glare-btn">
-  EXPLORE SOLUTIONS
-</button>
+
+            <button className="
+              relative overflow-hidden
+              flex items-center justify-center
+              w-full sm:w-fit
+              px-8 py-4
+              rounded-full
+              bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+              border border-white/20
+              text-white uppercase whitespace-nowrap
+              font-['Geist'] text-[16px]
+              cursor-pointer
+              transition-all duration-300 
+              hover:scale-105 active:scale-95 
+              glare-btn
+            ">
+
+              EXPLORE SOLUTIONS
+            </button>
           </div>
 
           {/* Right Content (Sphere) */}
+
           <div className="relative flex justify-center items-center order-first lg:order-last">
             <div className="relative w-full aspect-square max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[550px] ">
               <ImageWithFallback
@@ -84,10 +102,9 @@ export const HeroSection = () => {
 
         {/* Floating Elements (Bottom Sphere) */}
 
-
         <div
           className="
-        absolute bottom-[0%] left-20 md:left-[20%]
+        absolute bottom-[0%] left-20 top-240 md:top-180 md:left-[20%]
         w-[120px] md:w-[300px]
         h-[120px] md:h-[540px]
         opacity-70 md:opacity-100

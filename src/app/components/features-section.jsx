@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router';
 import imgRectangle from "../../assets/281158e8c678fde7e51a36a31c1553d4e710d208.png";
-import img3DGraphComputerIllustration1 from "../../assets/d82205b1a88245914ba5dea196b6e44a35245bb8.png";
+// import img3DGraphComputerIllustration1 from "../../assets/d82205b1a88245914ba5dea196b6e44a35245bb8.png";
+import img3DGraphComputerIllustration1 from "../../assets/3d-graph-computer-illustration 1 (1).png";
 import imgRectangle1 from "../../assets/c78c44b955a51258030be19e23842e29465b7545.png";
 import imgRectangle2 from "../../assets/ed6ab4e2d6429f0d554d61b64ceec65f98cbdf2e.png";
 import imgFrame1139 from "../../assets/c4ae983d71bcd81ac6bc3423a3f716a541328ebf.png";
@@ -167,7 +168,7 @@ function Frame1({ description }) {
       className="
         absolute bottom-4 left-4 right-4 md:left-[27.98px] md:w-[560px]
         backdrop-blur-[25px] bg-black/40 md:bg-[rgba(255,255,255,0.05)]
-        bg-gradient-to-r from-blue-500 to-blue-700
+        bg-gradient-to-r from-[#5aa9e6] via-[#3b82f6] to-[#1e3a8a] text-white p-6 rounded-lg
         rounded-[7px] p-5 md:p-6 flex items-center z-20
 
         transition-all duration-500 ease-out
@@ -226,81 +227,6 @@ function TitleWrapCard({ title, subtitle }) {
   );
 }
 
-// card Views
-
-// function ServiceCard({ item }) {
-//   const Wrapper = item.link ? Link : "div";
-
-//   return (
-//     <Wrapper
-//       to={item.link || undefined}
-//       className="content-stretch flex flex-col gap-[10px] items-center justify-center overflow-clip relative w-full max-w-[560px] mx-auto group"
-//     >
-//       <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] overflow-clip relative rounded-[7px] aspect-square w-full">
-
-//         {/* Image */}
-//         <div className="absolute inset-[-5%] overflow-clip">
-//           <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-500">
-//             <ImageWithFallback
-//               src={item.img}
-//               alt=""
-//               className="w-full h-full object-cover"
-//             />
-//           </div>
-
-//           {/* Overlay Content */}
-//           <Frame1 description={item.description} />
-//         </div>
-//       </div>
-
-//       <TitleWrapCard title={item.title} subtitle={item.subtitle} />
-//     </Wrapper>
-//   );
-// }
-
-// function ServiceCard({ item }) {
-//   const Wrapper = item.link ? Link : "div";
-
-//   return (
-//     <Wrapper
-//       to={item.link || undefined}
-//       className="content-stretch flex flex-col gap-[10px] items-center justify-center relative w-full max-w-[560px] mx-auto group"
-//     >
-//       <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] aspect-square w-full overflow-hidden">
-
-//         {/* Image Container */}
-//         <div className="absolute inset-[-5%]">
-
-//           {/* Default Image */}
-//           <div className="absolute inset-0 transition-all duration-500 group-hover:scale-110">
-//             <ImageWithFallback
-//               src={item.img}
-//               alt=""
-//               className="w-full h-full object-cover"
-//             />
-//           </div>
-
-//           {/* Hover Image */}
-//           {item.hoverImg && (
-//             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-110">
-//               <ImageWithFallback
-//                 src={item.hoverImg}
-//                 alt=""
-//                 className="w-full h-full object-cover"
-//               />
-//             </div>
-//           )}
-
-//           {/* Overlay Content */}
-//           <Frame1 description={item.description} />
-//         </div>
-//       </div>
-
-//       <TitleWrapCard title={item.title} subtitle={item.subtitle} />
-//     </Wrapper>
-//   );
-// }
-
 
 import { useState, useEffect } from "react";
 import ScrollFadeIn from '../../components/ScrollFadeIn';
@@ -342,7 +268,7 @@ function ServiceCard({ item }) {
             <ImageWithFallback
               src={item.img}
               alt=""
-              className="w-full h-full object-cover"
+              className=" w-[1200px] object-cover"
             />
           </div>
 
@@ -351,14 +277,14 @@ function ServiceCard({ item }) {
             <div
               className={`
                 absolute inset-0 transition-all duration-500
-                ${!isMobile ? "group-hover:opacity-100 group-hover:scale-110" : ""}
+                ${!isMobile ? "group-hover:opacity-100 group-hover:scale-100" : ""}
                 ${mobileHover ? "opacity-100 scale-110" : "opacity-0"}
               `}
             >
               <ImageWithFallback
                 src={item.hoverImg}
                 alt=""
-                className="w-full h-full object-cover"
+                className="w-[1200px] object-cover"
               />
             </div>
           )}
@@ -384,76 +310,25 @@ export default function WorkCardWrap() {
   );
 }
 
-
-// function WorkCardWrap() {
-//   return (
-//     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[40px] md:gap-[15px] w-full" data-name="Work Card Wrap">
-//       {/* Card 1 */}
-//       <div className="content-stretch flex flex-col gap-[10px] items-center justify-center overflow-clip relative w-full max-w-[560px] mx-auto" data-name="Service card 1">
-//         <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] overflow-clip group-hover:scale-110  relative rounded-[7px] shrink-0 aspect-square w-full" data-name="Image Wrap">
-//           <Image src={imgRectangle}>
-//             <Frame1 description="Transform shop floor operations with real-time data integration, monitoring, and intelligent dashboards. Leverage predictive analytics to reduce downtime, optimise production, and improve quality." />
-//           </Image>
-//         </div>
-//         <TitleWrapCard title="Manufacturing Intelligence" subtitle="REAL-TIME ANALYTICS, DASHBOARDS" />
-//       </div>
-
-//       {/* Card 2 - Energy Monitoring System */}
-//       <Link to="/services/energy-monitoring" className="content-stretch flex flex-col gap-[10px] items-center justify-center overflow-clip relative w-full max-w-[560px] mx-auto group">
-//         <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] overflow-clip relative rounded-[7px] shrink-0 aspect-square w-full" data-name="Image Wrap">
-//           <div className="absolute inset-[-5%] overflow-clip" data-name="Image">
-//             <div className="-translate-x-1/2 -translate-y-1/2 absolute h-full left-1/2 top-1/2 w-full group-hover:scale-110 transition-transform duration-500" data-name="3d-graph-computer-illustration 1">
-//               <ImageWithFallback alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img3DGraphComputerIllustration1} />
-//             </div>
-//             <Frame1 description="Real-time energy monitoring that tracks consumption across utilities, equipment, and sites through a centralized dashboard." />
-//           </div>
-//         </div>
-//         <TitleWrapCard title="Energy Monitoring Systems" subtitle="ENERGY, SUSTAINABILITY" />
-//       </Link>
-
-//       {/* Card 3 */}
-//       <div className="content-stretch flex flex-col gap-[10px] items-center justify-center overflow-clip relative w-full max-w-[560px] mx-auto" data-name="Service card 6">
-//         <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] overflow-clip relative  rounded-[7px] shrink-0 aspect-square w-full" data-name="Image Wrap">
-//           <Image src={imgRectangle1} className="group-hover:scale-110 ">
-//             <Frame1 description="Turn complex data into actionable insights with advanced analytics, real-time dashboards, and predictive modelling." />
-//           </Image>
-//         </div>
-//         <TitleWrapCard title="Manufacturing Intelligence" subtitle="REAL-TIME ANALYTICS, DASHBOARDS" />
-//       </div>
-
-//       {/* Card 4 */}
-//       <div className="content-stretch flex flex-col gap-[10px] items-center justify-center overflow-clip relative w-full max-w-[560px] mx-auto" data-name="Service card 5">
-//         <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] overflow-clip relative rounded-[7px] shrink-0 aspect-square w-full" data-name="Image Wrap">
-//           <Image src={imgRectangle2}>
-//             <Frame1 description="Monitor pipelines in real time using distributed fiber optic sensing to detect leaks, temperature changes, and intrusions across long distances." />
-//           </Image>
-//         </div>
-//         <TitleWrapCard title="Manufacturing Intelligence" subtitle="REAL-TIME ANALYTICS, DASHBOARDS" />
-//       </div>
-//     </div>
-//   );
-// }
-
 function DivFramer13M6KicContainer() {
   const onNavigate = useNavigate()
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="div.framer-13m6kic-container">
-      {/* <button className="relative rounded-[800px] shrink-0 cursor-pointer hover:scale-105 transition-transform" style={{ backgroundImage: "linear-gradient(50.1214deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }} data-name="Hero Button">
-        <div className="content-stretch flex items-center justify-center overflow-clip px-8 md:px-[22px] py-4 md:py-[13px] relative rounded-[inherit] size-full">
-          <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 cta-shine cta-shine-primary">
-            <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full ">
-              <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
-                <p className="leading-[19.6px] " onClick={() => onNavigate("/services/manufacturing")}>view all SERVICES</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px]" />
-      </button> */}
       <button
         onClick={() => onNavigate("/services/manufacturing")}
-        className="relative cursor-pointer overflow-hidden w-full sm:w-fit px-8 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 active:scale-95 glare-btn"
-      >
+        className=" relative overflow-hidden
+                     flex items-center justify-center
+                     w-full sm:w-fit
+                     px-8 py-4
+                     rounded-full
+                     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+                     border border-white/20
+                     text-white uppercase whitespace-nowrap
+                     font-['Geist'] text-[16px]
+                     cursor-pointer
+                     transition-all duration-300 
+                     hover:scale-105 active:scale-95 
+                     glare-btn">
         VIEW ALL SERVICES
       </button>
     </div>
@@ -560,7 +435,7 @@ function VideoSection() {
 export const FeaturesSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
+      <section className="w-full flex justify-center py-16 md:py-80 px-6 md:px-8">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[20px] items-center justify-center relative" data-name="Features">
           <ContainerServices />
           <VideoSection />

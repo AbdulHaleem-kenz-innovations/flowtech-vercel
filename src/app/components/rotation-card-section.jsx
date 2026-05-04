@@ -182,9 +182,9 @@ function WeCraftBoldFutureReadyBrandsThatBreakThroughTheNoiseReadyToStandOutAndL
 
 function PFramerText() {
   return (
-    <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col  font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-white text-[12px] md:text-[14px] tracking-[0.5px] uppercase whitespace-nowrap">
-        <p className="leading-[19.6px]">Let’s talk</p>
+    <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text ">
+      <div className="flex flex-col  font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-white text-[12px] md:text-[14px] tracking-[0.5px]  uppercase whitespace-nowrap ">
+        <p className="leading-[19.6px] ml-[20px] mt-[4px] ">Let’s talk</p>
       </div>
     </div>
   );
@@ -215,7 +215,7 @@ function PFramerText1() {
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#035fda] text-[12px] md:text-[14px] tracking-[0.5px] uppercase whitespace-nowrap">
-        <p className="leading-[19.6px]">See Our SOLUTIONS</p>
+        <p className="leading-[19.6px] mt-[4px]">See Our SOLUTIONS</p>
       </div>
     </div>
   );
@@ -272,6 +272,97 @@ function ContentWrapper() {
   );
 }
 
+function HeroSection() {
+  return (
+    <section className="
+      w-full min-h-screen
+      flex items-center justify-center
+      text-center
+      px-5 md:px-10
+      mb-20 md:mb-[100px]
+    ">
+
+      {/* 🔷 Background overlay (grid style) */}
+      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:40px_40px]" />
+
+      {/* 🔵 Content */}
+      <div className="relative z-10 max-w-4xl w-full flex flex-col items-center gap-6 md:gap-8">
+
+        {/* Logo */}
+        <div className="text-white font-semibold tracking-widest text-sm md:text-base">
+          <img src="../../assets/" alt="" /> FLOWTECH
+        </div>
+
+        {/* Heading */}
+        <h1 className="
+          text-white font-semibold
+          text-3xl sm:text-4xl md:text-6xl
+          leading-tight
+        ">
+          We power industries.
+          <br />
+          <span className="italic font-light text-white/80">
+            You’re up next.
+          </span>
+        </h1>
+
+        {/* Description */}
+        <p className="
+          text-white/70
+          text-sm md:text-base
+          max-w-2xl
+          leading-relaxed
+        ">
+          WE BUILD INTELLIGENT, DATA-DRIVEN SOLUTIONS THAT OPTIMIZE
+          OPERATIONS, IMPROVE SAFETY, AND DRIVE SCALABLE GROWTH
+          ACROSS INDUSTRIES
+        </p>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 mt-4">
+
+          {/* Primary */}
+          <button className="
+           relative overflow-hidden
+  flex items-center justify-center
+  w-full sm:w-fit
+  px-8 py-4
+  rounded-full
+  bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+  border border-white/20
+  text-white uppercase whitespace-nowrap
+  font-['Geist'] text-[16px]
+  cursor-pointer
+  transition-all duration-300 
+  hover:scale-105 active:scale-95 
+  glare-btn
+
+          ">
+            LET’S TALK
+          </button>
+
+          {/* Secondary */}
+          <button className="
+                relative overflow-hidden
+            px-6 md:px-8 py-3 md:py-4
+            rounded-full
+            text-blue-700 text-sm font-medium uppercase tracking-wide
+            bg-white
+            cursor-pointer
+              transition-all duration-300 
+  hover:scale-105 active:scale-95 
+  glare-btn
+          ">
+            SEE OUR SOLUTIONS
+          </button>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 function Container() {
 
   const [radius, setRadius] = useState(200);
@@ -298,7 +389,7 @@ function Container() {
   }, []);
   return (
     <div className="backdrop-blur-[25px] bg-gradient-to-t from-[rgba(17,15,223,0.5)] h-[600px] md:h-[778.591px] overflow-hidden relative rounded-2xl md:rounded-[20px] to-[rgba(17,15,223,0)] w-full max-w-[1260px]" data-name="Container">
-      <div className="absolute aspect-[1106/1134] bottom-[-20%] md:bottom-[-386.56px] left-[5%] right-[5%] opacity-40 md:opacity-100 " data-name="Image Wrap 1">
+      <div className="absolute aspect-[1106/1134] bottom-[-20%] md:bottom-[-386.56px] left-[5%] right-[5%] opacity-40 md:opacity-100" data-name="Image Wrap 1">
         <div className="absolute inset-0 flex items-center justify-center ">
           <OrbitImages
             images={images1}
@@ -306,7 +397,7 @@ function Container() {
             radius={radius}
             itemSize={itemSize}
             rotation={-4}
-            duration={12}
+            duration={40}
             responsive={true}
             direction="normal"
             fill
@@ -330,7 +421,8 @@ function Container() {
         <Shape />
         <DivFramerIu4QGMaskGroup />
         <DivFramerIu4QGMaskGroup1 />
-        <ContentWrapper />
+        <HeroSection />
+        {/* <ContentWrapper /> */}
       </div>
       {/* Soft atmospheric base */}
 
@@ -355,7 +447,7 @@ function Container() {
 export const RotationCardSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-20 md:py-[150px] relative w-full" data-name="Rotation card section">
+      <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-20 md:py-[0px] relative w-full" data-name="Rotation card section">
         <Container />
       </section>
     </ScrollFadeIn>

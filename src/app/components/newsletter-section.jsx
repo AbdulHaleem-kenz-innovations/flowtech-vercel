@@ -57,7 +57,19 @@ export const NewsletterSection = () => {
             </div>
             <button 
               type="submit"
-              className="bg-[#001ca9] hover:bg-blue-600 px-8 py-4 rounded-md text-white font-['Geist'] font-semibold text-[14px] uppercase tracking-widest transition-colors mt-4"
+              className="relative overflow-hidden
+              flex items-center justify-center
+              w-full sm:w-auto
+              px-6 py-3
+              rounded-full
+              bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+              border border-white/20
+              text-white uppercase whitespace-nowrap
+              font-['Geist'] text-[16px]
+              cursor-pointer
+              transition-all duration-300 
+              hover:scale-105 active:scale-95 
+              glare-btn"
             >
               SUBSCRIBE
             </button>

@@ -175,7 +175,7 @@ function KenvoiceLogo() {
 export const WorkSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center py-16 md:py-24 px-6 md:px-8">
+      <section className="w-full flex justify-center py-16 md:py-80 px-6 md:px-8">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[64px] items-center justify-center relative" data-name="Work">
           <HeaderArea />
 
@@ -223,7 +223,20 @@ export const WorkSection = () => {
           <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px]" />
         </button> */}
           <button
-            className="relative cursor-pointer overflow-hidden px-7 py-3 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 active:scale-95 glare-btn"
+            className="relative overflow-hidden
+  flex items-center justify-center
+  w-full sm:w-fit
+  px-8 py-4
+  rounded-full
+  bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+  border border-white/20
+  text-white uppercase whitespace-nowrap
+  font-['Geist'] text-[16px]
+  cursor-pointer
+  transition-all duration-300 
+  hover:scale-105 active:scale-95 
+  glare-btn
+"
           >
             VIEW ALL
           </button>

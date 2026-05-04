@@ -256,7 +256,7 @@ import ScrollFadeIn from '../../components/ScrollFadeIn';
             {/* Load More Button */}
             <div className="flex justify-center w-full">
               <button className="relative px-10 py-4 rounded-full overflow-hidden group cursor-pointer transition-transform hover:scale-105 shadow-[0_10px_40px_-10px_rgba(17,15,223,0.5)]">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#001ca9] to-[#046ce4]" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 active:scale-95 glare-btn" />
                 <span className="relative z-10 font-['Geist'] font-medium text-white uppercase tracking-widest text-sm">Load More</span>
               </button>
             </div>

@@ -250,7 +250,7 @@ function Container() {
 export const EarlyAccessSection = () => {
   return (
      <ScrollFadeIn>
-    <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-16 md:py-[120px] relative w-full" data-name="Early Access Section">
+    <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-16 md:py-[220px] relative w-full" data-name="Early Access Section">
     
       <Container />
       

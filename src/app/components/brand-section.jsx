@@ -5,6 +5,7 @@ import img1 from "../../assets/img1.png";
 import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
 import img4 from "../../assets/img4.png";
+import KenSpinner from './KenSpinner';
 
 const techLogos = [
   { node: <SiReact />, title: "React", href: "https://react.dev" },
@@ -22,11 +23,12 @@ const imageLogos = [
 ];
 
 export const BrandSection = () => {
+  
   return (
     <>
       <ScrollFadeIn>
         <div
-          className="py-12 md:py-16 flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-8 text-center md:text-left"
+          className="py-12 md:py-50 flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-8 text-center md:text-left"
           style={{ maxWidth: "1200px", margin: "0 auto" }}
         >
           {/* TEXT */}
@@ -36,6 +38,7 @@ export const BrandSection = () => {
 
           {/* LOGOS */}
           <div className="w-full md:flex-1 relative overflow-hidden h-[100px] md:h-[120px] flex items-center justify-center">
+            {/* <KenSpinner /> */}
             <LogoLoop
               logos={imageLogos}
               speed={100}

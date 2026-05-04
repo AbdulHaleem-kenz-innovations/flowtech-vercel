@@ -13,6 +13,7 @@ import imgIcon3 from "../../assets/0a5aa46c4dced89013f2a2a5b9b8353e09cd6368.png"
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-z9wjn";
 import svgFooterPaths from "../../imports/svg-2m2zf95hf3";
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { MapPin, MapPinned } from 'lucide-react';
 
 const Logo = () => (
   <div className="h-[44px] w-[49px] relative shrink-0">
@@ -37,9 +38,9 @@ const Logo = () => (
 const NavBadge = ({ label }) => (
   <div className="backdrop-blur-[20px] bg-white/10 flex gap-2 items-center px-3 py-1.5 rounded-[5px] w-fit">
     <div className="size-4 relative">
-      <div 
-        className="absolute inset-0 bg-white mask-alpha" 
-        style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} 
+      <div
+        className="absolute inset-0 bg-white mask-alpha"
+        style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }}
       />
     </div>
     <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-widest uppercase">
@@ -80,7 +81,8 @@ const ContactBox = () => (
         </span>
       </div>
       <span className="font-['Geist'] text-[16px] md:text-[18px] text-black/70 uppercase">
-        +1 800 - 1236 789
+        {/* +1 800 - 1236 789 */}
+        +966 55 877 1132
       </span>
     </div>
 
@@ -95,93 +97,109 @@ const ContactBox = () => (
 export const FooterSection = () => {
   return (
     <ScrollFadeIn>
-    <footer className="w-full pt-16 md:pt-32 pb-12 px-6 md:px-8 relative overflow-hidden bg-transparent border-t border-white/5 mt-20">
-      <div className="max-w-[1260px] mx-auto flex flex-col gap-16 md:gap-24 relative z-10">
-        
-        {/* Background Pattern */}
-        <div className="absolute bottom-[-25%] left-0 right-0 h-[300px] pointer-events-none -z-10">
-          <ImageWithFallback alt="" className=" object-cover" src={imgGroup31} />
-        </div>
+      <footer className="w-full pt-12 md:pt-1 px-6 md:px-8 relative overflow-hidden bg-transparent border-t border-white/5 mt-20">
+        <div className="max-w-[1260px] mx-auto flex flex-col gap-16 md:gap-24 relative z-10">
 
-        {/* Top Section */}
-        <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-20">
-          <div className="flex flex-col md:flex-row gap-12 md:gap-20 lg:gap-24 flex-1">
-            <div className="flex flex-col gap-6">
-              <Logo />
-              <p className="font-['Geist'] text-[14px] text-white/40 max-w-[200px] uppercase leading-relaxed">
-                Empowering industries through data, AI, and intelligent systems.
+          {/* Background Pattern */}
+          <div className="absolute bottom-[-25%] left-0 right-0 h-[300px] pointer-events-none -z-10">
+            <ImageWithFallback alt="" className=" object-cover" src={imgGroup31} />
+          </div>
+
+          {/* Top Section */}
+          <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-20">
+            <div className="flex flex-col md:flex-row gap-12 md:gap-20 lg:gap-24 flex-1">
+              <div className="flex flex-col gap-6">
+                <Logo />
+                <p className="font-['Geist'] text-[14px] text-white/40 max-w-[200px] uppercase leading-relaxed">
+                  Empowering industries through data, AI, and intelligent systems.
+                </p>
+                <div className="font-['Geist'] text-[13px] sm:text-[14px] text-white/40 max-w-[220px] sm:max-w-[260px] uppercase leading-relaxed space-y-1">
+
+                  <MapPinned className="w-8 h-8 mt-[2px]" />
+                  <div className="flex items-start gap-2">
+                    <div>
+                      <div>Flow Technology General Contracting Co,</div>
+                      <div>P.O. Box 32655</div>
+                      <div>
+                        Adh Dhahran Al Jubail Br. Rd,<br />
+                        Al Badi Dst. Al Qatif<br />
+                        Kingdom of Saudi Arabia
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-12 flex-1">
+                <div className="flex flex-col gap-6">
+                  <NavBadge label="company" />
+                  <nav className="flex flex-col gap-2">
+                    <NavLink label="Home" to="/" />
+                    <NavLink label="About" to="/about" />
+                    <NavLink label="Services" to="/services/energy-monitoring" />
+                    <NavLink label="Products" to="/products" />
+                    <NavLink label="Careers" to="/careers" />
+                    <NavLink label="Industries" to="/industries" />
+                  </nav>
+                </div>
+
+                <div className="flex flex-col gap-6">
+                  <NavBadge label="info" />
+                  <nav className="flex flex-col gap-2">
+                    <NavLink label="Our team" to="/about" />
+                    <NavLink label="Insights" to="/insights" />
+                    <NavLink label="Contact" to="/contact" />
+                  </nav>
+                </div>
+
+                <div className="flex flex-col gap-6">
+                  <NavBadge label="EXTRA" />
+                  <nav className="flex flex-col gap-2">
+                    <NavLink label="Privacy policy" to="/" />
+                    <NavLink label="Terms of use" to="/" />
+                  </nav>
+                </div>
+              </div>
+            </div>
+
+            <ContactBox />
+          </div>
+
+          {/* Bottom Section */}
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-10 pt-10 border-t border-white/10">
+            <div className="max-w-[700px] text-center lg:text-left">
+              <p className="font-['Geist'] text-[12px] md:text-[14px] text-white/30 uppercase leading-relaxed tracking-wider">
+                © FLOWTECH, 2025. ALL RIGHTS RESERVED. FLOWTECH IS A TECHNOLOGY COMPANY SPECIALISING IN INDUSTRIAL AUTOMATION, AI SOLUTIONS, AND ENERGY MANAGEMENT. DESIGNED FOR THE FUTURE OF OPERATIONS.
               </p>
             </div>
-            
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-12 flex-1">
-              <div className="flex flex-col gap-6">
-                <NavBadge label="company" />
-                <nav className="flex flex-col gap-2">
-                  <NavLink label="Home" to="/" />
-                  <NavLink label="About" to="/about" />
-                  <NavLink label="Services" to="/services/energy-monitoring" />
-                  <NavLink label="Products" to="/products" />
-                  <NavLink label="Careers" to="/careers" />
-                  <NavLink label="Industries" to="/industries" />
-                </nav>
-              </div>
-              
-              <div className="flex flex-col gap-6">
-                <NavBadge label="info" />
-                <nav className="flex flex-col gap-2">
-                  <NavLink label="Our team" to="/about" />
-                  <NavLink label="Insights" to="/insights" />
-                  <NavLink label="Contact" to="/contact" />
-                </nav>
+
+            <div className="flex flex-col sm:flex-row items-center gap-8 w-full sm:w-auto">
+              <div className="flex gap-6 justify-center">
+                {[imgIcon, imgIcon1, imgIcon2, imgIcon3].map((icon, index) => (
+                  <Link key={index} to="/" className="size-5 opacity-40 hover:opacity-100 transition-opacity">
+                    <ImageWithFallback alt="" className="size-full object-contain" src={icon} />
+                  </Link>
+                ))}
               </div>
 
-              <div className="flex flex-col gap-6">
-                <NavBadge label="EXTRA" />
-                <nav className="flex flex-col gap-2">
-                  <NavLink label="Privacy policy" to="/" />
-                  <NavLink label="Terms of use" to="/" />
-                </nav>
-              </div>
-            </div>
-          </div>
-          
-          <ContactBox />
-        </div>
-
-        {/* Bottom Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-10 pt-10 border-t border-white/10">
-          <div className="max-w-[700px] text-center lg:text-left">
-            <p className="font-['Geist'] text-[12px] md:text-[14px] text-white/30 uppercase leading-relaxed tracking-wider">
-              © FLOWTECH, 2025. ALL RIGHTS RESERVED. FLOWTECH IS A TECHNOLOGY COMPANY SPECIALISING IN INDUSTRIAL AUTOMATION, AI SOLUTIONS, AND ENERGY MANAGEMENT. DESIGNED FOR THE FUTURE OF OPERATIONS.
-            </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row items-center gap-8 w-full sm:w-auto">
-            <div className="flex gap-6 justify-center">
-              {[imgIcon, imgIcon1, imgIcon2, imgIcon3].map((icon, index) => (
-                <Link key={index} to="/" className="size-5 opacity-40 hover:opacity-100 transition-opacity">
-                  <ImageWithFallback alt="" className="size-full object-contain" src={icon} />
-                </Link>
-              ))}
-            </div>
-            
-            <Link to="/contact" className="w-full sm:w-auto">
-              {/* <button className="relative w-full sm:w-auto rounded-full px-8 py-3.5 group overflow-hidden bg-gradient-to-r from-[#001ca9] to-[#046ce4] border border-white/20">
+              <Link to="/contact" className="w-full sm:w-auto">
+                {/* <button className="relative w-full sm:w-auto rounded-full px-8 py-3.5 group overflow-hidden bg-gradient-to-r from-[#001ca9] to-[#046ce4] border border-white/20">
                 <span className="relative z-10 font-['Geist'] font-medium text-[13px] text-white tracking-widest uppercase group-hover:scale-105 block transition-transform text-center">
                   Need help?
                 </span>
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               </button> */}
-              <button
-  className="glare-btn cursor-pointer relative overflow-hidden w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 font-['Geist'] font-medium text-sm text-white tracking-widest uppercase bg-gradient-to-r from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95"
->
-  NEED HELP?
-</button>
-            </Link>
+                <button
+                  className="glare-btn cursor-pointer relative overflow-hidden w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 font-['Geist'] font-medium text-sm text-white tracking-widest uppercase bg-gradient-to-r from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95"
+                >
+                  NEED HELP?
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
     </ScrollFadeIn>
   );
 };

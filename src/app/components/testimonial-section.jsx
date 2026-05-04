@@ -58,7 +58,7 @@ const TestimonialCard = ({ rating, name, role, quote, image, isCentered = false 
 export const TestimonialSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-16 md:py-24 px-6 md:px-8 overflow-hidden">
+    <section className="w-full flex justify-center py-16 md:py-60 px-6 md:px-8 overflow-hidden">
       <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-16 relative">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">

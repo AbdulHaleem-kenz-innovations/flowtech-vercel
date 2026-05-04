@@ -210,11 +210,11 @@ function FormWrapper() {
           </label>
         </div>
         <button
-  type="submit"
-  className="relative cursor-pointer overflow-hidden w-full py-4 rounded-full text-white font-['Geist'] font-medium text-sm uppercase tracking-wider bg-gradient-to-r from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-[1.02] hover:brightness-110 active:scale-[0.98] glare-btn"
->
-  SEND MESSAGE
-</button>
+          type="submit"
+          className="relative cursor-pointer overflow-hidden w-full py-4 rounded-full text-white font-['Geist'] font-medium text-sm uppercase tracking-wider bg-gradient-to-r from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-[1.02] hover:brightness-110 active:scale-[0.98] glare-btn"
+        >
+          SEND MESSAGE
+        </button>
 
         {/* <button type="submit" className="w-full bg-gradient-to-r from-[#001ca9] to-[#046ce4] py-4 rounded-full text-white font-['Geist:Medium'] text-[14px] uppercase tracking-wider hover:scale-[1.02] active:scale-[0.98] transition-all">
           Send Message
@@ -243,9 +243,9 @@ function Container() {
 export const ContactSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex items-center justify-center px-6 md:px-[30px] py-16 md:py-[150px] relative overflow-hidden" data-name="Form section">
-      <Container />
-    </section>
+      <section className="w-full flex items-center justify-center px-6 md:px-[30px] py-16 md:py-[220px] relative overflow-hidden" data-name="Form section">
+        <Container />
+      </section>
     </ScrollFadeIn>
   );
 }

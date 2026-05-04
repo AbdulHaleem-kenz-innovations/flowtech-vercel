@@ -150,23 +150,12 @@ function TellUsWhatYouNeedWellHandleTheRestFromStrategyToExecution() {
 
 function GetStartedButton() {
   return (
-    // <button className="relative rounded-[800px] shrink-0 cursor-pointer hover:scale-105 active:scale-95 transition-transform w-full sm:w-auto overflow-hidden group" style={{ backgroundImage: "linear-gradient(58.1582deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }} data-name="Hero Button">
-    //   <div className="content-stretch flex items-center justify-center overflow-clip px-8 md:px-[22px] py-4 md:py-[13px] relative rounded-[inherit] size-full group-hover:brightness-110 transition-all">
-    //     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0">
-    //       <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full">
-    //         <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
-    //           <p className="leading-[19.6px]">Get Started</p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    //   <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px]" />
-    // </button>
+
     <button
-  className="relative cursor-pointer overflow-hidden w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 glare-btn"
->
-  GET STARTED
-</button>
+      className="relative cursor-pointer overflow-hidden w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 glare-btn"
+    >
+      GET STARTED
+    </button>
   );
 }
 
@@ -179,34 +168,18 @@ function TextWrap() {
   );
 }
 
-// function ContentWrapper() {
-//   return (
-//     <div className="content-stretch flex flex-col gap-10 md:gap-[52px] items-start justify-center max-w-[500px] relative shrink-0 w-full md:w-[500px]" data-name="Content Wrapper">
-//       <TitleWrap />
-//       <TextWrap />
-//     </div>
-//   );
-// }
 
 function ContentWrapper() {
   return (
     <div
       className="
-        content-stretch flex flex-col gap-10 md:gap-[52px]
-        items-start justify-center
+        flex flex-col gap-10 md:gap-[52px]
+        items-center justify-center
         max-w-[500px] w-full md:w-[500px]
 
         transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
 
-        /* 📱 Mobile: always visible */
         translate-y-0 opacity-100
-
-        /* 💻 Desktop: start slightly below */
-        md:translate-y-10 md:opacity-80
-
-        /* 💻 Hover: move up */
-        md:group-hover:translate-y-0
-        md:group-hover:opacity-100
       "
     >
       <TitleWrap />
@@ -218,223 +191,6 @@ function ContentWrapper() {
 
 import { useEffect, useRef, useState } from "react";
 
-// function VrImage() {
-//   const ref = useRef(null);
-//   const [visible, setVisible] = useState(false);
-//   const [offset, setOffset] = useState(0);
-
-//   // 👇 Scroll reveal
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       ([entry]) => {
-//         if (entry.isIntersecting) {
-//           setVisible(true);
-//         }
-//       },
-//       { threshold: 0.4 }
-//     );
-
-//     if (ref.current) observer.observe(ref.current);
-//     return () => observer.disconnect();
-//   }, []);
-
-//   // 👇 Parallax scroll
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       if (!ref.current) return;
-
-//       const rect = ref.current.getBoundingClientRect();
-//       const windowHeight = window.innerHeight;
-
-//       const progress = rect.top / windowHeight;
-
-//       // 👇 control strength here (-20 to -60 best)
-//       setOffset(progress * -50);
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <div
-//       ref={ref}
-//       className="
-//         backdrop-blur-[25px] 
-//         bg-[rgba(255,255,255,0.05)] 
-//         md:h-auto lg:h-[691px] 
-//         overflow-hidden 
-//         relative 
-//         rounded-[7px] 
-//         w-full 
-//         flex flex-col lg:flex-row 
-//         items-center 
-//         p-8 md:p-12 lg:p-0 
-//         group
-//       "
-//       data-name="Vr image"
-//     >
-//       {/* Background Shapes */}
-//       <DivFramerIu4QGMaskGroup />
-//       <DivFramerIu4QGMaskGroup1 />
-//       <Shape />
-
-//       {/* Content */}
-//       <div className="flex flex-col lg:flex-row gap-12 lg:gap-[100px] items-center relative z-10 lg:pl-[60px] w-full">
-
-//         {/* Left Content */}
-//         <ContentWrapper />
-
-//         {/* Image Section */}
-//         <div
-//           className="
-//             aspect-[600/641] 
-//             relative 
-//             w-full lg:w-[600px] 
-//             overflow-hidden 
-//             rounded-[7px]
-//           "
-//         >
-//           {/* 👇 Animation Layer */}
-//           <div
-//             style={{
-//               transform: `translateY(${offset}px)`
-//             }}
-//             className={`
-//               w-full h-full origin-bottom-right
-//               transition-all duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-
-//               /* Scroll reveal */
-//               ${visible
-//                 ? "scale-50 opacity-100 translate-x-40 translate-y-40"
-//                 : "scale-75 opacity-0 translate-x-10 translate-y-10"}
-
-//               /* Hover effect */
-//               group-hover:translate-x-[-10px]
-//               group-hover:translate-y-[-10px]
-//               group-hover:scale-[1.03]
-//             `}
-//           >
-//             <ImageWithFallback
-//               alt=""
-//               src={imgImage}
-//               className="w-full h-full object-cover rounded-[7px] md:rounded-none"
-//             />
-//           </div>
-//         </div>
-
-//       </div>
-//     </div>
-//   );
-// }
-
-
-// function VrImage() {
-//   const ref = useRef(null);
-//   const [visible, setVisible] = useState(false);
-//   const [offset, setOffset] = useState(0);
-
-//   // 👇 detect mobile
-//   const [isMobile, setIsMobile] = useState(false);
-
-//   useEffect(() => {
-//     const check = () => setIsMobile(window.innerWidth < 768);
-//     check();
-//     window.addEventListener("resize", check);
-//     return () => window.removeEventListener("resize", check);
-//   }, []);
-
-//   // 👇 Scroll reveal
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       ([entry]) => {
-//         if (entry.isIntersecting) setVisible(true);
-//       },
-//       { threshold: 0.4 }
-//     );
-
-//     if (ref.current) observer.observe(ref.current);
-//     return () => observer.disconnect();
-//   }, []);
-
-//   // 👇 Parallax (disable on mobile)
-//   useEffect(() => {
-//     if (isMobile) return;
-
-//     const handleScroll = () => {
-//       if (!ref.current) return;
-
-//       const rect = ref.current.getBoundingClientRect();
-//       const windowHeight = window.innerHeight;
-//       const progress = rect.top / windowHeight;
-
-//       setOffset(progress * -50);
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, [isMobile]);
-
-//   return (
-//     <div
-//       ref={ref}
-//       className="
-//         backdrop-blur-[25px] 
-//         bg-[rgba(255,255,255,0.05)] 
-//         relative rounded-[7px] w-full 
-//         flex flex-col lg:flex-row items-center 
-//         p-6 md:p-10 lg:p-0 
-//         overflow-hidden group
-//       "
-//     >
-//       {/* Background Shapes */}
-//       <DivFramerIu4QGMaskGroup />
-//       <DivFramerIu4QGMaskGroup1 />
-//       <Shape />
-
-//       <div className="flex flex-col lg:flex-row gap-8 lg:gap-[100px] items-center relative z-10 lg:pl-[60px] w-full">
-
-//         {/* Left Content */}
-//         <ContentWrapper />
-
-//         {/* Image */}
-//         <div className="aspect-[600/641] w-full lg:w-[600px] relative overflow-hidden rounded-[7px]">
-//           <div
-//             style={{
-//               transform: isMobile ? "none" : `translateY(${offset}px)`
-//             }}
-//             className={`
-//               w-full h-full origin-bottom-right
-//               transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-
-//               ${
-//                 isMobile
-//                   ? "scale-100 opacity-100 translate-x-0 translate-y-0"
-//                   : visible
-//                   ? "scale-90 opacity-100 translate-x-70 translate-y-80"
-//                   : "scale-110 opacity-0 translate-x-0 translate-y-0"
-//               }
-
-//               // /* hover only desktop */
-//               md:group-hover:translate-x-[-10px]
-//               md:group-hover:translate-y-[-10px]
-//               md:group-hover:scale-[1.03]
-//             `}
-//           >
-//             <ImageWithFallback
-//               alt=""
-//               src={imgImage}
-//               className="w-full h-full object-cover rounded-[7px]"
-//             />
-//           </div>
-//         </div>
-
-//       </div>
-//     </div>
-//   );
-// }
-
-// import { useEffect, useRef, useState } from "react";
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function VrImage() {
@@ -527,7 +283,7 @@ function VrImage() {
               ${isMobile
                 ? "scale-100 opacity-100"
                 : visible
-                  ? "scale-90 opacity-100 translate-x-70 translate-y-80"
+                  ? "scale-90 opacity-100 translate-x-20 translate-y-30"
                   : "scale-110 opacity-0"
               }
 
@@ -560,11 +316,11 @@ function VrImage() {
 export const CtaSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
-      <div className="max-w-[1260px] w-full flex flex-col items-center relative" data-name="CTA">
-        <VrImage />
-      </div>
-    </section>
+      <section className="w-full flex justify-center py-16 md:py-30 px-6 md:px-8">
+        <div className="max-w-[1260px] w-full flex flex-col items-center relative" data-name="CTA">
+          <VrImage />
+        </div>
+      </section>
     </ScrollFadeIn>
   );
 }

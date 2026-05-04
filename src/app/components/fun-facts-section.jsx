@@ -179,7 +179,20 @@ function CardFact() {
                   <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px]" />
                </button> */}
               <button
-                className="relative cursor-pointer overflow-hidden w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 glare-btn"
+                className="relative overflow-hidden
+  flex items-center justify-center
+  w-full sm:w-fit
+  px-8 py-4
+  rounded-full
+  bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+  border border-white/20
+  text-white uppercase whitespace-nowrap
+  font-['Geist'] text-[16px]
+  cursor-pointer
+  transition-all duration-300 
+  hover:scale-105 active:scale-95 
+  glare-btn
+"
               >
                 GET STARTED
               </button>
