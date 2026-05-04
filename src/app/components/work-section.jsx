@@ -138,7 +138,7 @@ function ProductCard({ number, title, description, image, normalImage, hoverImag
 
   return (
     <div
-      className="relative rounded-[7px] w-full max-w-[400px] mx-auto h-[400px] md:h-[429px] overflow-clip"
+      className="relative rounded-[7px] w-full max-w-[400px]  mx-auto h-[400px] md:h-[429px] overflow-clip"
       data-name="Product Card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -148,7 +148,7 @@ function ProductCard({ number, title, description, image, normalImage, hoverImag
         className="absolute inset-0 rounded-[7px] overflow-clip transition-opacity duration-300 flex items-center justify-center"
         style={{ opacity: isHovered ? 0 : 1 }}
       >
-        <ImageWithFallback alt="" className="w-full h-full object-cover" src={normalImage} />
+        <ImageWithFallback alt="" className="w-full h-full object-cover" src={!isHovered && hoverImage ? hoverImage : normalImage} />
       </div>
 
       {/* Hover Image View */}
@@ -175,12 +175,14 @@ function KenvoiceLogo() {
 export const WorkSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center py-16 md:py-80 px-6 md:px-8">
-        <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[64px] items-center justify-center relative" data-name="Work">
+      <section className="w-full flex justify-center py-16 md:py-60 px-6 md:px-8 ">
+        <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[64px] items-center justify-center p-6 md:py-30 relative  backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] content-stretch " data-name="Work ">
+          <div className="absolute -left-3 md:left-[20px] -top-3 md:top-[20px]"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
+          <div className="absolute -right-3 md:-right-[-20px] -top-3 md:-top-[-20px] rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
           <HeaderArea />
 
-          <div className="w-full relative">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-[15px] w-full">
+          <div className="w-full relative  flex flex-col gap-12 md:gap-[64px] items-center justify-center" data-name="Product Card Container">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-[24px] w-full">
               <ProductCard
                 number="01"
                 title={<KenvoiceLogo />}
@@ -208,38 +210,28 @@ export const WorkSection = () => {
             </div>
 
             {/* Decorative Corner Icons for the Container */}
-            <div className="absolute -left-3 md:-left-5 -top-3 md:-top-5"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
-            <div className="absolute -right-3 md:-right-5 -top-3 md:-top-5 rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
-            <div className="absolute -left-3 md:-left-5 -bottom-3 md:-bottom-5 -rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
-            <div className="absolute -right-3 md:-right-5 -bottom-3 md:-bottom-5 rotate-180"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
-          </div>
 
-          {/* <button className="relative rounded-[800px] shrink-0 cursor-pointer hover:scale-105 active:scale-95 transition-transform" style={{ backgroundImage: "linear-gradient(63.4165deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
-          <div className="content-stretch flex items-center justify-center overflow-clip px-10 md:px-[40px] py-4 md:py-[13px] relative rounded-[inherit] size-full">
-            <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
-              <p className="leading-[19.6px]">View All</p>
-            </div>
-          </div>
-          <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px]" />
-        </button> */}
-          <button
-            className="relative overflow-hidden
-  flex items-center justify-center
-  w-full sm:w-fit
-  px-8 py-4
-  rounded-full
-  bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-  border border-white/20
-  text-white uppercase whitespace-nowrap
-  font-['Geist'] text-[16px]
-  cursor-pointer
-  transition-all duration-300 
-  hover:scale-105 active:scale-95 
-  glare-btn
+            <button
+              className="relative overflow-hidden
+                 flex items-center justify-center
+                 w-full sm:w-auto
+                 px-6 py-3
+                 rounded-full
+                 bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+                 border border-white/20
+                 text-white uppercase whitespace-nowrap
+                 font-['Geist'] text-[16px]
+                 cursor-pointer
+                 transition-all duration-300 
+                 hover:scale-105 active:scale-95 
+                 glare-btn
 "
-          >
-            VIEW ALL
-          </button>
+            >
+              VIEW ALL
+            </button>
+          </div>
+          <div className="absolute -left-3 md:left-[20px] -bottom-3 md:-bottom-[-20px] -rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
+          <div className="absolute -right-3 md:-right-[-20px] -bottom-3 md:-bottom-[-20px] rotate-180"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
         </div>
       </section>
     </ScrollFadeIn>

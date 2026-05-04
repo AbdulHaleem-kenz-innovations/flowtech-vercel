@@ -135,7 +135,7 @@ export const EcosystemSection = () => {
 
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center  overflow-hidden py-16 md:py-10 ">
+      <section className="w-full flex justify-center  overflow-hidden py-0 md:py-0 px-4 sm:px-6 md:px-8 ">
         {/* //py-16 md:py-32 px-4 sm:px-6 md:px-8 */}
 
         <div className="max-w-[1260px] w-full flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-[120px] items-center relative">

@@ -23,16 +23,16 @@ const imageLogos = [
 ];
 
 export const BrandSection = () => {
-  
+
   return (
     <>
       <ScrollFadeIn>
         <div
-          className="py-12 md:py-50 flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-8 text-center md:text-left"
+          className="py-40 md:py-40 flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-8 text-center md:text-left"
           style={{ maxWidth: "1200px", margin: "0 auto" }}
         >
           {/* TEXT */}
-          <div className="font-['Geist'] text-[14px] md:text-[16px] text-white uppercase">
+          <div className="font-['Geist'] text-[14px] md:text-[16px] text-white uppercase mb-12 md:mb-0 tracking-[0.18px]">
             TRUSTED BY LEADING ENTERPRISES:
           </div>
 
@@ -41,12 +41,13 @@ export const BrandSection = () => {
             {/* <KenSpinner /> */}
             <LogoLoop
               logos={imageLogos}
-              speed={100}
+              speed={40}
               direction="left"
-              logoHeight={40}
-              gap={40} // 👈 slightly smaller gap for mobile
-              hoverSpeed={90}
-              fadeOut
+              logoHeight={60}
+              gap={100} // 👈 slightly smaller gap for mobile
+              hoverSpeed={0}
+              fadeOut={100}
+              pauseOnHover={false}
               fadeOutColor="black"
               ariaLabel="Technology partners"
             />

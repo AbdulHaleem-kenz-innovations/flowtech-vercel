@@ -167,8 +167,8 @@ function Frame1({ description }) {
     <div
       className="
         absolute bottom-4 left-4 right-4 md:left-[27.98px] md:w-[560px]
-        backdrop-blur-[25px] bg-black/40 md:bg-[rgba(255,255,255,0.05)]
-        bg-gradient-to-r from-[#5aa9e6] via-[#3b82f6] to-[#1e3a8a] text-white p-6 rounded-lg
+        backdrop-blur-[25px]  md:bg-[rgba(255,255,255,0.05)]
+         p-6 rounded-lg
         rounded-[7px] p-5 md:p-6 flex items-center z-20
 
         transition-all duration-500 ease-out
@@ -250,7 +250,7 @@ function ServiceCard({ item }) {
       className="content-stretch flex flex-col gap-[10px] items-center justify-center relative w-full max-w-[560px] mx-auto group"
     >
       <div
-        className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] aspect-square w-full overflow-hidden"
+        className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] content-stretch relative rounded-[7px] aspect-square w-full overflow-hidden"
         onClick={() => {
           if (isMobile) setMobileHover((prev) => !prev);
         }}
@@ -266,7 +266,7 @@ function ServiceCard({ item }) {
             `}
           >
             <ImageWithFallback
-              src={item.img}
+              src={isMobile && item.hoverImg ? item.hoverImg : item.img}
               alt=""
               className=" w-[1200px] object-cover"
             />
@@ -300,6 +300,47 @@ function ServiceCard({ item }) {
 
 // export default ServiceCard;
 
+// function ServiceCard({ item }) {
+//   const Wrapper = item.link ? Link : "div";
+
+//   return (
+//     <Wrapper
+//       to={item.link || undefined}
+//       className="flex flex-col gap-[10px] items-center justify-center relative w-full max-w-[560px] mx-auto group"
+//     >
+//       <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] aspect-square w-full overflow-hidden">
+
+//         <div className="absolute inset-[-5%]">
+
+//           {/* ✅ Default Image (always visible on mobile) */}
+//           <div className="absolute inset-0 transition-all duration-500 group-hover:scale-110">
+//             <ImageWithFallback
+//               src={item.img}
+//               alt=""
+//               className="w-full h-full object-cover"
+//             />
+//           </div>
+
+//           {/* ✅ Hover Image (ONLY desktop hover) */}
+//           {item.hoverImg && (
+//             <div className="absolute inset-0 opacity-0 scale-100 transition-all duration-500 group-hover:opacity-100 group-hover:scale-110">
+//               <ImageWithFallback
+//                 src={item.hoverImg}
+//                 alt=""
+//                 className="w-full h-full object-cover"
+//               />
+//             </div>
+//           )}
+
+//           <Frame1 description={item.description} />
+//         </div>
+//       </div>
+
+//       <TitleWrapCard title={item.title} subtitle={item.subtitle} />
+//     </Wrapper>
+//   );
+// }
+
 export default function WorkCardWrap() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[40px] md:gap-[15px] w-full">
@@ -318,8 +359,8 @@ function DivFramer13M6KicContainer() {
         onClick={() => onNavigate("/services/manufacturing")}
         className=" relative overflow-hidden
                      flex items-center justify-center
-                     w-full sm:w-fit
-                     px-8 py-4
+                     w-full sm:w-fill
+                     px-6 py-3
                      rounded-full
                      bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
                      border border-white/20
@@ -435,7 +476,7 @@ function VideoSection() {
 export const FeaturesSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center py-16 md:py-80 px-6 md:px-8">
+      <section className="w-full flex justify-center py-30 md:py-60 px-6 md:px-8">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[20px] items-center justify-center relative" data-name="Features">
           <ContainerServices />
           <VideoSection />

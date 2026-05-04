@@ -216,40 +216,121 @@ function VerticalBorder() {
 
 function Card() {
   return (
-    <div className="-translate-y-1/2 absolute backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)] h-[250px] md:h-[309px] left-[-0.24px] right-[0.24px] rounded-[6px] top-[calc(50%-70px)] md:top-[calc(50%-90.53px)]" data-name="Card">
-      <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-[15px] top-[calc(50%-100px)] md:top-[calc(50%-128.7px)]">
+    <div
+      className="
+        backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)]
+        rounded-[6px]
+
+        /* ✅ MOBILE */
+        relative w-full px-4 py-5 h-[250px]
+
+        /* ✅ DESKTOP (original exact) */
+        md:absolute md:-translate-y-1/2
+        md:h-[309px]
+        md:left-[-0.24px] md:right-[0.24px]
+        md:top-[calc(50%-90.53px)]
+      "
+    >
+      {/* Badge */}
+      <div
+        className="
+          mb-3
+
+          /* desktop exact */
+          md:absolute md:-translate-y-1/2
+          md:left-[15px]
+          md:top-[calc(50%-128.7px)]
+        "
+      >
         <DefaultBadge />
       </div>
-      <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-[15px] right-[19px] top-[calc(50%-30px)] md:top-[calc(50%-36.91px)]">
-        <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[18px] md:text-[23px] text-white tracking-[-0.4px] w-full">
-          <p className="leading-[1.2] md:leading-[25.99px]">Data-driven systems enhance performance and support smarter decisions.</p>
-        </div>
+
+      {/* Text */}
+      <div
+        className="
+          /* mobile */
+          
+          /* desktop exact */
+          md:absolute md:-translate-y-1/2
+          md:left-[15px] md:right-[19px]
+          md:top-[calc(50%-36.91px)]
+        "
+      >
+        <p className="font-['Geist'] font-medium text-white text-[16px] md:text-[23px] leading-[1.4] md:leading-[25.99px] tracking-[-0.4px]">
+          Data-driven systems enhance performance and support smarter decisions.
+        </p>
       </div>
+
       <VerticalBorder />
     </div>
   );
 }
 
+
 function ImageWrapper() {
   return (
-    <div className="h-[400px] md:h-[546.57px] max-w-[682px] overflow-clip relative shrink-0 w-full md:w-[682px]" data-name="Image Wrapper">
-      {/* Floating Card UI */}
-      <div className="-translate-y-1/2 absolute h-full left-0 overflow-clip right-[40%] md:right-[443px] top-1/2 z-10" data-name="Card Wrap">
+    <div
+      className="
+        relative w-full max-w-[682px] mx-auto
+
+        /* ✅ MOBILE */
+        flex flex-col gap-4
+
+        /* ✅ DESKTOP (original exact) */
+        md:block md:h-[546.57px]
+      "
+    >
+      {/* 🔹 CARD + SMALL IMAGE WRAP */}
+      <div
+        className="
+          order-1
+
+          /* desktop exact */
+          md:absolute md:h-full
+          md:left-0 md:right-[443px]
+          md:top-62 md:-translate-y-1/2
+          md:z-10
+        "
+      >
         <Card />
-        <div className="-translate-x-1/2 -translate-y-1/2 absolute content-stretch flex flex-col items-start justify-center left-1/2 rounded-[7px] top-[calc(50%+140px)] md:top-[calc(50%+176.29px)] w-[180px] md:w-[239px]">
-           <ImageWithFallback alt="" className="h-[150px] md:h-[193.98px] rounded-[7px] object-cover w-full" src={imgImage4} />
+
+        {/* Small Image */}
+        <div
+          className="
+            /* ✅ MOBILE */
+            mt-4 mx-auto w-[360px]
+
+            /* ✅ DESKTOP (original exact) */
+            md:absolute md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2
+            md:top-[calc(50%+176.29px)]
+            md:w-[240px]
+          "
+        >
+          <ImageWithFallback
+            alt=""
+            src={imgImage4}
+            className="w-full  h-[140px] md:h-[193.98px] object-cover rounded-[7px]"
+          />
         </div>
       </div>
-      
-      {/* Large Featured Image */}
-      <div className="absolute content-stretch flex inset-[0_0_0_20%] md:inset-[0_0_0_254px] items-start justify-center">
-        <div className="h-full max-w-[429px] relative rounded-[7px] shrink-0 w-full">
-          <div className="flex flex-row items-center justify-center max-w-[inherit] overflow-clip rounded-[inherit] size-full">
-             <div className="content-stretch flex items-center justify-center max-w-[inherit] pt-[30px] relative size-full">
-                <ImageWithFallback alt="" className="h-full rounded-[7px] object-cover w-full" src={imgImage5} />
-             </div>
-          </div>
-        </div>
+
+      {/* 🔹 MAIN IMAGE */}
+      <div
+        className="
+          order-2
+
+          /* ✅ MOBILE */
+          w-200px h-[260px]  rounded-[7px] overflow-hidden
+
+          /* ✅ DESKTOP (original exact) */
+          md:absolute md:inset-[0_0_0_254px] md:h-full
+        "
+      >
+        <ImageWithFallback
+          alt=""
+          src={imgImage5}
+          className="w-full h-full object-cover"
+        />
       </div>
     </div>
   );
@@ -258,7 +339,7 @@ function ImageWrapper() {
 export const IntroducingSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-12 md:py-20 px-6 md:px-8">
+    <section className="w-full flex justify-center py- md:py-0 px-6 md:px-8">
       <div className="max-w-[1260px] w-full flex items-center justify-center relative" data-name="Introducing Section">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-[78px] items-center lg:items-start max-w-[1260px] relative w-full">
           <ContentWrapper />

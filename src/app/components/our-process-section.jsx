@@ -4,6 +4,7 @@ import React from "react";
 import ScrollFadeIn from "../../components/ScrollFadeIn";
 import { sub } from "date-fns";
 import { PlusIcon } from "lucide-react";
+import clsx from "clsx";
 
 const steps = [
   {
@@ -39,7 +40,7 @@ const Badge = () => (
 export const OurProcessSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="relative w-full  py-60">
+      <section className="relative w-full  py-20 md:py-60 ">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
 
           {/* ✅ LEFT SIDE (STICKY) */}
@@ -61,8 +62,8 @@ export const OurProcessSection = () => {
             <button
               className="relative overflow-hidden
   flex items-center justify-center
-  w-full sm:w-fit
-  px-8 py-4
+  w-full sm:w-auto
+ px-6 xl:px-9 py-3 xl:py-4
   rounded-full
   bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
   border border-white/20
@@ -83,17 +84,10 @@ export const OurProcessSection = () => {
             {steps.map((item, i) => (
               <div
                 key={i}
-                className="
-      relative rounded-[7px]
-      p-5 md:p-8
-      min-h-[260px] md:min-h-[340px]
-
-      backdrop-blur-[20px]
-      bg-[rgba(255,255,255,0.07)]
-      border border-[rgba(255,255,255,0.05)]
-
-      transition-all duration-300
-    "
+                className={clsx(
+                  "relative rounded-[7px] p-5 md:p-8 min-h-[260px] md:min-h-[300px] backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] border border-[rgba(255,255,255,0.05)] transition-all duration-300",
+                  i === 3 && "bg-blue-500/30"
+                )}
               >
                 {/* 🔵 Top Glow */}
                 <div className="absolute inset-0 rounded-[7px] bg-blue-500/10 blur-2xl opacity-20 pointer-events-none" />

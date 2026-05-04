@@ -447,7 +447,7 @@ function Container() {
 export const RotationCardSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-20 md:py-[0px] relative w-full" data-name="Rotation card section">
+      <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-0 md:py-[180px] relative w-full" data-name="Rotation card section">
         <Container />
       </section>
     </ScrollFadeIn>

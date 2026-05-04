@@ -98,7 +98,7 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
 export const BlogSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-20 md:py-[160px] px-6 md:px-8 bg-transparent">
+    <section className="w-full flex justify-center py-0 md:py-[280px] px-6 md:px-8 bg-transparent">
       <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-20 items-center">
         {/* Header Section */}
         <div className="flex flex-col gap-5 items-center text-center max-w-[700px]">

@@ -283,17 +283,17 @@ function VrImage() {
               ${isMobile
                 ? "scale-100 opacity-100"
                 : visible
-                  ? "scale-90 opacity-100 translate-x-20 translate-y-30"
-                  : "scale-110 opacity-0"
+                  ? "scale-70 opacity-100 translate-x-20 translate-y-30"
+                  : "scale-70 opacity-0"
               }
 
               ${animationDone &&
               (isMobile
                 ? mobileHover &&
-                "translate-x-[-10px] translate-y-[-10px] scale-[1.03]"
+                "translate-x-[-20px] translate-y-[-20px] scale-[1]"
                 : `
                     md:translate-x-[-10px]
-                    md:translate-y-[-10px]
+                    md:translate-y-[40px]
                     md:scale-[1]
                   `)
               }
@@ -316,7 +316,7 @@ function VrImage() {
 export const CtaSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center py-16 md:py-30 px-6 md:px-8">
+      <section className="w-full flex justify-center py-16 md:py-0 px-6 md:px-8">
         <div className="max-w-[1260px] w-full flex flex-col items-center relative" data-name="CTA">
           <VrImage />
         </div>

@@ -198,16 +198,16 @@ function FormFramer1B3R0N() {
   return (
     <form className="content-stretch flex flex-col gap-4 md:gap-[14px] items-start relative shrink-0 w-full" onSubmit={(e) => e.preventDefault()}>
       <div className="w-full flex flex-col gap-1.5">
-         <label className="font-['Geist:SemiBold'] text-[10px] text-white/60 uppercase">Name</label>
-         <div className="backdrop-blur-[2.5px] bg-white/10 rounded-[7px] p-4">
-            <input className="w-full bg-transparent outline-none font-['Geist:Regular'] text-[16px] text-white placeholder:text-white/40" placeholder="John Doe" />
-         </div>
+        <label className="font-['Geist:SemiBold'] text-[10px] text-white/60 uppercase">Name</label>
+        <div className="backdrop-blur-[2.5px] bg-white/10 rounded-[7px] p-4">
+          <input className="w-full bg-transparent outline-none font-['Geist:Regular'] text-[16px] text-white placeholder:text-white/40" placeholder="John Doe" />
+        </div>
       </div>
       <div className="w-full flex flex-col gap-1.5">
-         <label className="font-['Geist:SemiBold'] text-[10px] text-white/60 uppercase">Email Address</label>
-         <div className="backdrop-blur-[2.5px] bg-white/10 rounded-[7px] p-4">
-            <input className="w-full bg-transparent outline-none font-['Geist:Regular'] text-[16px] text-white placeholder:text-white/40" placeholder="hello@email.com" type="email" />
-         </div>
+        <label className="font-['Geist:SemiBold'] text-[10px] text-white/60 uppercase">Email Address</label>
+        <div className="backdrop-blur-[2.5px] bg-white/10 rounded-[7px] p-4">
+          <input className="w-full bg-transparent outline-none font-['Geist:Regular'] text-[16px] text-white placeholder:text-white/40" placeholder="hello@email.com" type="email" />
+        </div>
       </div>
       {/* <button type="submit" className="w-full relative rounded-full shrink-0 cursor-pointer overflow-hidden group py-4" style={{ backgroundImage: "linear-gradient(60.4285deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
         <div className="relative z-10 flex items-center justify-center group-hover:scale-105 transition-transform">
@@ -216,11 +216,11 @@ function FormFramer1B3R0N() {
         <div aria-hidden="true" className="absolute border border-white/20 border-solid inset-0 pointer-events-none rounded-full" />
       </button> */}
       <button
-  type="submit"
-  className="glare-btn cursor-pointer relative overflow-hidden w-full py-4 rounded-full border border-white/20 font-['Geist'] font-medium text-sm text-white tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95"
->
-  SUBSCRIBE
-</button>
+        type="submit"
+        className="glare-btn cursor-pointer relative overflow-hidden w-full py-4 rounded-full border border-white/20 font-['Geist'] font-medium text-sm text-white tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95"
+      >
+        SUBSCRIBE
+      </button>
     </form>
   );
 }
@@ -249,13 +249,11 @@ function Container() {
 
 export const EarlyAccessSection = () => {
   return (
-     <ScrollFadeIn>
-    <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-16 md:py-[220px] relative w-full" data-name="Early Access Section">
-    
-      <Container />
-      
-    </section>
+    <ScrollFadeIn>
+      <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-20 md:py-[80px] relative w-full" data-name="Early Access Section">
+        <Container />
+      </section>
     </ScrollFadeIn>
-    
+
   );
 }

@@ -321,9 +321,9 @@ export const Navbar = () => {
             <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Industries</Link>
             <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Products</Link>
             <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Insights</Link>
-            <Link to="/insights/blogs" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Blogs</Link>
+            {/*   <Link to="/insights/blogs" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Blogs</Link>
             <Link to="/careers" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Careers</Link>
-            <Link to="/contact" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Contact Us</Link>
+            <Link to="/contact" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Contact Us</Link> */}
           </div>
 
           {/* Right Section — CTA (md only) + Hamburger */}
@@ -357,10 +357,10 @@ export const Navbar = () => {
               <Link to="/#services" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Services</Link>
               <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Industries</Link>
               <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Products</Link>
-              <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Insights</Link>
+              {/* <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Insights</Link>
               <Link to="/insights/blogs" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Blogs</Link>
               <Link to="/careers" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Careers</Link>
-              <Link to="/contact" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Contact Us</Link>
+              <Link to="/contact" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Contact Us</Link> */}
               <Link
                 to="/contact"
                 className="w-full bg-gradient-to-tr from-[#001ca9] to-[#046ce4] py-4 rounded-xl text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase text-center mt-2"

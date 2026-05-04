@@ -243,7 +243,7 @@ function Container() {
 export const ContactSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex items-center justify-center px-6 md:px-[30px] py-16 md:py-[220px] relative overflow-hidden" data-name="Form section">
+      <section className="w-full flex items-center justify-center px-6 md:px-[30px] py-30 md:py-[40px] relative overflow-hidden" data-name="Form section">
         <Container />
       </section>
     </ScrollFadeIn>

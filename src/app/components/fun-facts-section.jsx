@@ -76,7 +76,7 @@ function SectionContent() {
 
 function CardImpact() {
   return (
-    <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] relative rounded-[7px] shrink-0 w-full" data-name="Card 01">
+    <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] shrink-0 w-full" data-name="Card 01">
       <div className="flex flex-col justify-center size-full">
         <div className="content-stretch flex flex-col gap-[40px] md:gap-[51.205px] items-start justify-center pb-[25px] pt-[24px] px-[25px] relative size-full">
           <div className="content-stretch flex flex-col items-start opacity-70 pb-[0.95px] relative shrink-0 w-full" data-name="Heading 3 → 75% faster">
@@ -166,23 +166,11 @@ function CardFact() {
               </div>
             </div>
             <div className="content-stretch flex flex-col items-start relative shrink-0 w-full sm:w-auto">
-              {/* <button className="relative rounded-[800px] shrink-0 cursor-pointer w-full sm:w-auto overflow-hidden group" style={{ backgroundImage: "linear-gradient(58.1582deg, rgb(0, 28, 169) 0%, rgb(4, 108, 228) 100%)" }}>
-                  <div className="content-stretch flex items-center justify-center overflow-clip px-8 md:px-[22px] py-4 md:py-[13px] relative rounded-[inherit] size-full group-hover:brightness-110 transition-all">
-                    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 cta-shine-primary">
-                      <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full">
-                        <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
-                          <p className="leading-[19.6px] cta-shine ">Get started</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[800px]" />
-               </button> */}
               <button
                 className="relative overflow-hidden
   flex items-center justify-center
-  w-full sm:w-fit
-  px-8 py-4
+  w-full sm:w-auto
+  px-6 py-3
   rounded-full
   bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
   border border-white/20
@@ -206,16 +194,16 @@ function CardFact() {
 
 function CardHours() {
   return (
-    <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] relative rounded-[7px] shrink-0 w-full" data-name="Card 01">
+    <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] shrink-0 w-full" data-name="Card 01">
       <div className="flex flex-col justify-center size-full">
         <div className="content-stretch flex flex-col gap-10 md:gap-[52px] items-start justify-center pb-[25px] pt-[24px] px-[25px] relative size-full">
           <div className="content-stretch flex flex-col items-end opacity-70 pb-[0.95px] relative shrink-0 w-full">
-            <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[24px] md:text-[28px] text-right text-white tracking-[-0.4px] uppercase whitespace-nowrap">
+            <div className="flex flex-col font-['Geist']  font-normal justify-center leading-[0] relative shrink-0 text-[24px] md:text-[28px] text-right text-white tracking-[-0.4px] uppercase whitespace-nowrap">
               <p className="leading-[1.2]">50+ hours</p>
             </div>
           </div>
-          <div className="h-auto md:h-[44.81px] opacity-75 relative shrink-0 w-full text-right">
-            <p className="font-['Geist'] font-normal text-[14px] md:text-[16px] text-white uppercase leading-[1.4] md:leading-[22.4px]">HOURS SAVED MONTHLY THROUGH AUTOMATION, PREDICTIVE MAINTENANCE, AND PROCESS OPTIMIZATION</p>
+          <div className="h-auto md:h-[44.81px] opacity-75 relative shrink-0 w-full text-right mb-8">
+            <p className="font-['Geist'] font-normal text-[14px] md:text-[16px] text-white  uppercase leading-[1.4] md:leading-[22.4px]">HOURS SAVED MONTHLY THROUGH AUTOMATION, PREDICTIVE MAINTENANCE, AND PROCESS OPTIMIZATION</p>
           </div>
           <div className="absolute left-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
             <div className="absolute bg-white left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 size-full top-0" style={{ maskImage: `url('${imgDivFramerIu4QG1}')` }} />
@@ -229,10 +217,10 @@ function CardHours() {
 export const FunFactsSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
+      <section className="w-full flex justify-center py-16 md:py-0 px-6 md:px-8">
         <div className="max-w-[1260px] w-full flex flex-col gap-16 md:gap-[80px] items-center justify-center relative" data-name="Fun Facts">
           <SectionContent />
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-[15px]  items-start justify-center relative shrink-0 w-full" data-name="Fun Facts Card Wrapper">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-[34px]  items-start justify-center relative shrink-0 w-full" data-name="Fun Facts Card Wrapper">
             {/* Left Column */}
             <div className="content-stretch flex flex-col gap-6 md:gap-[15px] items-center justify-center w-full max-w-[436px] mx-auto">
               <CardImpact />

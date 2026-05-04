@@ -34,14 +34,14 @@ const TestimonialCard = ({ rating, name, role, quote, image, isCentered = false 
           <span className="font-['Geist'] font-normal text-[16px] md:text-[20px] text-white/30 leading-none mb-1 md:mb-2">/5</span>
         </div>
         <StarRating />
-      </div>
+      </div>  
       <div className="size-[80px] md:size-[110px] rounded-[7px] overflow-hidden">
         <ImageWithFallback alt={name} className="size-full object-cover" src={image} />
       </div>
     </div>
     
     <div className="flex flex-col gap-[17px]">
-      <p className="font-['Geist'] font-medium text-[20px] md:text-[23px] text-white tracking-[-0.4px] leading-tight">
+      <p className="font-['Geist'] font-medium text-[20px] md:text-[23px] text-white tracking-[-0.4px] leading-tight line-clamp-3">
         “{quote}”
       </p>
       <div className="flex flex-col opacity-80 uppercase font-['Geist'] font-normal text-[12px] md:text-[14px] text-white tracking-tight">
@@ -50,15 +50,15 @@ const TestimonialCard = ({ rating, name, role, quote, image, isCentered = false 
       </div>
     </div>
 
-    <PlusIcon size={16} className="absolute left-[15px] top-[15px] md:left-[20px] md:top-[20px] opacity-40 md:size-[20px]" />
-    <PlusIcon size={16} className="absolute right-[15px] bottom-[15px] md:right-[20px] md:bottom-[20px] opacity-40 md:size-[20px]" />
+       <PlusIcon size={16} className="absolute left-[15px] top-[15px] md:left-[324px] md:top-[30px] opacity-40 md:size-[20px]" />
+    <PlusIcon size={16} className="absolute right-[15px] bottom-[15px] md:right-[20px] md:top-[-350px] opacity-40 md:size-[20px]" />
   </div>
 );
 
 export const TestimonialSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-16 md:py-60 px-6 md:px-8 overflow-hidden">
+    <section className="w-full flex justify-center py-10 md:py-0 px-6 md:px-8 overflow-hidden">
       <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-16 relative">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">

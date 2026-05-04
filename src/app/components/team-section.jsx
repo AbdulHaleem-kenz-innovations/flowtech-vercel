@@ -164,7 +164,7 @@ const TeamGallery = ({ members }) => {
 export function TeamSection() {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center py-60 md:py-[200px] px-6 md:px-8 ">
+      <section className="w-full flex justify-center py-40 md:py-[0px] px-6 md:px-8 ">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-20">
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
             <div className="flex flex-col gap-5 items-start">

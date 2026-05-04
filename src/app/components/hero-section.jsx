@@ -105,8 +105,8 @@ export const HeroSection = () => {
         <div
           className="
         absolute bottom-[0%] left-20 top-240 md:top-180 md:left-[20%]
-        w-[120px] md:w-[300px]
-        h-[120px] md:h-[540px]
+        w-[160px] md:w-[300px]
+        h-[160px] md:h-[540px]
         opacity-70 md:opacity-100
         transition-transform duration-100 ease-out
       "

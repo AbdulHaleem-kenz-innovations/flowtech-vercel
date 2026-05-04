@@ -636,7 +636,7 @@ function AboutCardAlignStretch() {
 export const AboutSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="relative w-full flex justify-center py-16 md:py-20 px-6 md:px-8">
+    <section className="relative w-full flex justify-center py-0 md:py-0 px-6 md:px-8">
       <div className="max-w-[1260px] w-full">
         <div className="content-stretch flex flex-wrap gap-[15px] items-center justify-center relative size-full" data-name="About section">
           <IntegrationCard />
