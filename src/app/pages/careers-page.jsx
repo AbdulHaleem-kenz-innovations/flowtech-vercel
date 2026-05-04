@@ -17,6 +17,7 @@ import imgIcon3 from "../../assets/51ffed27f8563ca2ad8315deb10fabefcc04a9bc.png"
 import imgIcon4 from "../../assets/0a5aa46c4dced89013f2a2a5b9b8353e09cd6368.png";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-0ayib";
 import { FooterSection } from '../components/footer-section';
+import { NewsletterSection } from '../components/newsletter-section';
 
 const HeroSection = () => (
   <section className="w-full max-w-[1260px] mx-auto pt-[200px] pb-[100px] px-6 flex flex-col items-center gap-10 text-center relative z-10">
@@ -52,9 +53,22 @@ const HeroSection = () => (
       JOIN FLOWTECH AND WORK ON REAL-WORLD SYSTEMS POWERED BY DATA, AI, AND ADVANCED MONITORING TECHNOLOGIES ACROSS INDUSTRIES.
     </motion.p>
     
-    <button className="bg-gradient-to-r from-[#001ca9] to-[#046ce4] px-10 py-4 rounded-full text-white font-['Geist'] text-[14px] uppercase tracking-widest shadow-[0_7px_80px_-12px_rgba(17,15,223,1)] self-center mt-4">
-      View Open Roles
-    </button>
+       <button className="     relative overflow-hidden
+              flex items-center justify-center
+              w-full sm:w-auto
+              px-8 py-4
+              rounded-full
+              bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+              border border-white/20
+              text-white uppercase whitespace-nowrap
+              font-['Geist'] text-[16px]
+              cursor-pointer
+              transition-all duration-300 
+              hover:scale-105 active:scale-95 
+              glare-btn
+">
+                  View Open Roles
+                </button>
   </section>
 );
 
@@ -83,7 +97,7 @@ const WhyJoinSection = () => (
         <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-10 flex flex-col justify-between">
           <div className="flex flex-col gap-8">
             <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit">
-              <div className="size-4 bg-white">
+              <div className="size-4">
                 <ImageWithFallback src={imgIcon} className="size-full object-contain" />
               </div>
               <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">Our vision</span>
@@ -271,7 +285,8 @@ export const CareersPage = () => {
       <HeroSection />
       <WhyJoinSection />
       <JobOpenings />
-      <InsightsSection />
+      {/* <InsightsSection /> */}
+      <NewsletterSection />
       <FooterSection />
     </div>
   );

@@ -14,27 +14,27 @@ import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 const serviceData = {
   'manufacturing': {
-    title: 'Manufacturing Intelligence (MI)',
+    title: 'Manufacturing Intelligence',
     description: 'Advanced data-driven insights to monitor production, optimise quality, and drive industrial excellence.',
-    intro: 'Manufacturing Intelligence (MI) enables real-time visibility into production processes across machines, lines, and plants. It integrates data from PLC and SCADA systems into a centralized platform, helping organizations monitor, analyze, and optimize manufacturing performance.',
+    intro: 'Manufacturing Intelligence enables real-time visibility into production processes across machines, lines, and plants. It integrates data from PLC and SCADA systems into a centralized platform, helping organizations monitor, analyze, and optimize manufacturing performance.',
     technology: 'Industrial IoT, AI/ML, Edge Computing',
     concept: 'Data-Driven Production, Predictive Quality',
     industry: 'Automotive, Consumer Goods, Heavy Industry',
     solution: 'We deliver an advanced manufacturing intelligence platform designed to optimize production cycles, reduce waste, and improve product quality. Real-time machine monitoring and predictive maintenance identify issues before they occur, while automated reporting ensures compliance and operational transparency.'
   },
   'energy-monitoring': {
-    title: 'Energy Monitoring System (EMS)',
+    title: 'Energy Monitoring System',
     description: 'Real-time energy intelligence to monitor consumption, optimise efficiency, and drive sustainable operations.',
-    intro: 'Energy Monitoring System (EMS) enables real-time visibility into energy consumption across equipment, utilities, and facilities. It integrates data from sensors and meters into a centralized platform, helping organizations monitor, analyze, and optimize energy usage.',
+    intro: 'Energy Monitoring System  enables real-time visibility into energy consumption across equipment, utilities, and facilities. It integrates data from sensors and meters into a centralized platform, helping organizations monitor, analyze, and optimize energy usage.',
     technology: 'IoT Sensors, Edge Devices, Cloud Analytics',
     concept: 'Real-time Monitoring, Energy Intelligence Platform',
     industry: 'Utilities, Manufacturing, Industrial Enterprises',
     solution: 'We deliver an advanced energy monitoring system designed to optimize consumption, reduce operational costs, and improve efficiency. Real-time data acquisition and intelligent analytics provide complete visibility into energy usage, while automated alerts help identify anomalies and prevent losses.'
   },
   'pipeline-safety': {
-    title: 'Pipeline Safety (DFOS)',
+    title: 'Pipeline Safety',
     description: 'Distributed fiber optic sensing for real-time pipeline monitoring, leak detection, and infrastructure security.',
-    intro: 'Pipeline Safety solutions utilize Distributed Fiber Optic Sensing (DFOS) technology to provide continuous, real-time monitoring of critical pipeline infrastructure. It detects leaks, third-party interference, and structural changes with unmatched precision.',
+    intro: 'Pipeline Safety solutions utilize Distributed Fiber Optic Sensing technology to provide continuous, real-time monitoring of critical pipeline infrastructure. It detects leaks, third-party interference, and structural changes with unmatched precision.',
     technology: 'DFOS, Acoustic Sensing, Thermal Analysis',
     concept: 'Infrastructure Integrity, Leak Detection',
     industry: 'Oil & Gas, Water Distribution, Mining',
@@ -174,7 +174,7 @@ function TopSection({ data }) {
               <p>Our {data.title} plays a critical role in optimizing operations, helping organizations reduce costs while improving efficiency and sustainability across global facilities.</p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-8 items-start mt-auto pt-8 border-t border-white/10">
+            <div className="flex flex-col sm:flex-row gap-8 items-start  pt-8 border-t border-white/10">
               <div className="flex flex-col gap-4 flex-1">
                 <div className="flex gap-2 items-center">
                   <div className="size-[18px]">

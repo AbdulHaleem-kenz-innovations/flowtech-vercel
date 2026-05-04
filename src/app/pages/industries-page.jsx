@@ -144,22 +144,53 @@ const IndustryCard = ({ title, intro, image, capabilities, outcome, icon: IconCo
 
 const ContentSection = () => {
   return (
-    <section className="flex flex-col items-center px-6 py-12 md:py-20 gap-16 md:gap-20">
+    <section className="flex flex-col items-center px-6 py-12 md:py-20 gap-16 md:gap-10">
       {/* Section Header */}
-      <div className="max-w-[1260px] w-full flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10 mb-6 md:mb-10">
-        <div className="flex flex-col gap-6">
+      {/* <div className="max-w-[1260px] w-full flex flex-col lg:flex-row items-start lg:items-end justify-center gap-10 mb-6 md:mb-10">
+        <div className="flex flex-col gap-6 items-start">
           <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit border border-white/10">
             <div className="size-[16px] bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain' }} />
             <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">CORE Industries</span>
           </div>
           <h2 className="bg-clip-text bg-gradient-to-l from-white/40 to-white font-['Geist'] font-medium text-[40px] md:text-[60px] text-transparent tracking-tight leading-tight">Industries</h2>
         </div>
-        <div className="max-w-[420px] opacity-70">
+        <div className="max-w-[420px] opacity-70 ">
           <p className="font-['Geist'] text-white text-[14px] md:text-[16px] uppercase leading-relaxed">
             FROM DATA TO INFRASTRUCTURE, WE DELIVER END-TO-END DIGITAL AND INDUSTRIAL SOLUTIONS BUILT FOR SCALE AND IMPACT
           </p>
         </div>
-      </div>
+      </div> */}
+  
+  <div className="relative max-w-[1260px] w-full flex flex-col lg:flex-row items-start lg:items-end gap-10 mb-6 md:mb-10">
+
+  {/* Left content */}
+  <div className="flex flex-col gap-6 items-start z-10">
+    <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit border border-white/10">
+      <div
+        className="size-[16px] bg-white"
+        style={{
+          maskImage: `url('${imgDivFramerIu4QG}')`,
+          maskSize: 'contain'
+        }}
+      />
+      <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">
+        CORE Industries
+      </span>
+    </div>
+
+    <h2 className="bg-clip-text bg-gradient-to-l from-white/40 to-white font-['Geist'] font-medium text-[40px] md:text-[60px] text-transparent tracking-tight leading-tight">
+      Industries
+    </h2>
+  </div>
+
+  {/* Centered paragraph */}
+  <div className="max-w-[420px] opacity-70 mx-auto lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:bottom-0">
+    <p className="font-['Geist'] text-white text-[14px] md:text-[16px] uppercase leading-relaxed text-center">
+      FROM DATA TO INFRASTRUCTURE, WE DELIVER END-TO-END DIGITAL AND INDUSTRIAL SOLUTIONS BUILT FOR SCALE AND IMPACT
+    </p>
+  </div>
+
+</div>
 
       {/* Cards */}
       <div className="w-full flex flex-col items-center gap-6">
@@ -167,9 +198,9 @@ const ContentSection = () => {
         <IndustryCard
           title="Manufacturing"
           icon={() => (
-            <svg viewBox="0 0 24 24" className="size-full fill-current">
-              <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
-            </svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M3.31258 17.5001V15.0001H5.89591L3.77091 8.04179C3.39591 7.83346 3.08703 7.5279 2.84425 7.12513C2.60147 6.72235 2.4798 6.29179 2.47925 5.83346C2.47925 5.13901 2.7223 4.54874 3.20841 4.06263C3.69453 3.57651 4.2848 3.33346 4.97925 3.33346C5.52091 3.33346 6.00369 3.48985 6.42758 3.80263C6.85147 4.1154 7.14647 4.51457 7.31258 5.00013H9.97925V4.16679C9.97925 3.93068 10.0592 3.7329 10.2192 3.57346C10.3792 3.41401 10.577 3.33401 10.8126 3.33346C10.9376 3.33346 11.0592 3.36124 11.1776 3.41679C11.2959 3.47235 11.3965 3.55568 11.4792 3.66679L12.8959 2.33346C13.0209 2.20846 13.1704 2.12846 13.3442 2.09346C13.5181 2.05846 13.6881 2.0829 13.8542 2.16679L17.1042 3.66679C17.2709 3.75013 17.3856 3.87179 17.4484 4.03179C17.5112 4.19179 17.5076 4.3479 17.4376 4.50013C17.3542 4.66679 17.2329 4.77457 17.0734 4.82346C16.914 4.87235 16.7576 4.86179 16.6042 4.79179L13.6042 3.41679L11.6459 5.25013V6.41679L13.6042 8.20846L16.6042 6.83346C16.757 6.76401 16.9167 6.75707 17.0834 6.81263C17.2501 6.86818 17.3681 6.97235 17.4376 7.12513C17.5209 7.29179 17.5279 7.45151 17.4584 7.60429C17.389 7.75707 17.2709 7.87513 17.1042 7.95846L13.8542 9.50013C13.6876 9.58346 13.5176 9.60763 13.3442 9.57263C13.1709 9.53763 13.0215 9.4579 12.8959 9.33346L11.4792 8.00013C11.3959 8.08346 11.2954 8.15985 11.1776 8.22929C11.0598 8.29874 10.9381 8.33346 10.8126 8.33346C10.5765 8.33346 10.3787 8.25374 10.2192 8.09429C10.0598 7.93485 9.9798 7.73679 9.97925 7.50013V6.66679H7.31258C7.27091 6.7779 7.22591 6.88207 7.17758 6.97929C7.12925 7.07651 7.06314 7.18068 6.97925 7.29179L11.1459 15.0001H14.1459V17.5001H3.31258ZM5.57341 6.42679C5.73286 6.26735 5.81258 6.06957 5.81258 5.83346C5.81258 5.59735 5.73286 5.39957 5.57341 5.24013C5.41397 5.08068 5.21591 5.00068 4.97925 5.00013C4.74258 4.99957 4.5448 5.07957 4.38591 5.24013C4.22703 5.40068 4.14703 5.59846 4.14591 5.83346C4.1448 6.06846 4.2248 6.26651 4.38591 6.42763C4.54703 6.58874 4.7448 6.66846 4.97925 6.66679C5.21369 6.66513 5.41175 6.58512 5.57341 6.42679Z" fill="white"/>
+</svg>
           )}
           intro="Flowtech’s Manufacturing Intelligence solution enables complete visibility across production lines, helping teams optimise performance, reduce downtime, and improve decision-making through real-time dashboards and analytics."
           image={imgLalitKumarHpPmiduLdc0Unsplash1}
@@ -187,9 +218,9 @@ const ContentSection = () => {
         <IndustryCard
           title="Energy & Utilities"
           icon={() => (
-            <svg viewBox="0 0 24 24" className="size-full fill-current">
-              <path d="M7,2V5H10V11L7,22H10V14L13,22H16V16L19,22H22L15,2H12V5H9V2H7M11,16V22H14V16H11Z" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M9.02075 13.6042L12.8541 10.1875C12.9791 10.0764 13.0138 9.94449 12.9583 9.79171C12.9027 9.63893 12.7916 9.54865 12.6249 9.52087L9.62492 9.22921L11.4166 6.75004C11.4583 6.6806 11.4827 6.61449 11.4899 6.55171C11.4971 6.48893 11.4727 6.43004 11.4166 6.37504C11.361 6.3056 11.2916 6.27449 11.2083 6.28171C11.1249 6.28893 11.0485 6.32004 10.9791 6.37504L7.16659 9.79171C7.04159 9.90282 7.00686 10.0348 7.06242 10.1875C7.11797 10.3403 7.22909 10.4306 7.39575 10.4584L10.3958 10.75L8.58325 13.2292C8.54159 13.2987 8.52075 13.3645 8.52075 13.4267C8.52075 13.4889 8.54853 13.5481 8.60408 13.6042C8.65964 13.6603 8.72575 13.6881 8.80242 13.6875C8.87909 13.687 8.95186 13.6592 9.02075 13.6042ZM9.99992 16.6667C9.22214 16.6667 8.48964 16.545 7.80242 16.3017C7.1152 16.0584 6.48659 15.7148 5.91659 15.2709L4.77075 16.4167C4.68742 16.5 4.59381 16.5625 4.48992 16.6042C4.38603 16.6459 4.27825 16.6667 4.16659 16.6667C3.93047 16.6667 3.7327 16.5867 3.57325 16.4267C3.41381 16.2667 3.33381 16.0689 3.33325 15.8334C3.33325 15.7223 3.35409 15.6148 3.39575 15.5109C3.43742 15.407 3.49992 15.3131 3.58325 15.2292L4.72909 14.0834C4.28464 13.5139 3.94103 12.8856 3.69825 12.1984C3.45547 11.5112 3.33381 10.7784 3.33325 10C3.33325 8.13893 3.97909 6.56254 5.27075 5.27087C6.56242 3.97921 8.13881 3.33337 9.99992 3.33337H16.6666V10C16.6666 11.8612 16.0208 13.4375 14.7291 14.7292C13.4374 16.0209 11.861 16.6667 9.99992 16.6667Z" fill="white"/>
+</svg>
           )}
           intro="The Energy Monitoring System (EMS) provides real-time visibility into energy usage, enabling organizations to track consumption, identify inefficiencies, and optimize performance across facilities."
           image={imgAmericanPublicPowerAssociationTwF1stZFz8Unsplash1}
@@ -225,7 +256,21 @@ const ContentSection = () => {
       </div>
 
       {/* Connect Button */}
-      <button className="bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-10 md:px-12 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase hover:scale-105 transition-transform mt-10">
+     <button className="
+              relative overflow-hidden
+              flex items-center justify-center
+              w-full sm:w-fit
+              px-8 py-4
+              rounded-full
+              bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+              border border-white/20
+              text-white uppercase whitespace-nowrap
+              font-['Geist'] text-[16px]
+              cursor-pointer
+              transition-all duration-300 
+              hover:scale-105 active:scale-95 
+              glare-btn
+            ">
         Connect US
       </button>
     </section>

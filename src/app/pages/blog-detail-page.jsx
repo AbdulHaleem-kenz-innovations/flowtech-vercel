@@ -14,10 +14,12 @@ import imgIcon from "../../assets/2372b9fca56ab7b15568aca9e51b649f887db747.png";
 import imgVictorUoIiVYka3VyUnsplash1 from "../../assets/d13ce970613ef8a883efa59e168e7ec2c548ae6a.png";
 import imgFuturisticTechnologyConcept1 from "../../assets/590501c6813c5415ccfadb50476ec414a3dccddb.png";
 import imgImage from "../../assets/2f8c3a2c8eca26d65de115305cf49c0c2f3513ea.png";
+import { Twitter, Instagram, Slack, Github } from 'lucide-react';
 
 // SVGs
 import { imgDivFramerYVnZo, imgDivFramerFoIvU, imgGroup, imgGroup1, imgGroup2, imgDivFramerIu4QG1, imgDivFramerIu4QG3, imgDivFramerIu4QG4 } from "../../imports/svg-7bw06";
 import svgPaths from "../../imports/svg-4h9mwqx04v";
+import { NewsletterSection } from '../components/newsletter-section';
 
 const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
   <motion.div 
@@ -40,9 +42,27 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
       <h3 className="font-['Geist'] font-medium text-[20px] text-black leading-tight">
         {title}
       </h3>
-      <div className="bg-black w-[45px] h-[45px] rounded-[6px] flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-        <ImageWithFallback src={imgIcon} className="w-[20px] h-[20px] invert" />
-      </div>
+        <div className="group inline-flex items-center cursor-pointer overflow-hidden">
+                              <div className="bg-black p-3 rounded-lg flex items-center gap-2 group-hover:bg-[#046ce4] transition-all duration-300 ease-in-out">
+      
+                                {/* Text (hidden initially) */}
+                                <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                                  view
+                                </span>
+      
+                                {/* Arrow (always visible, but slides) */}
+                                <div
+                                  className="size-5 bg-white shrink-0 transition-all duration-300 ease-in-out group-hover:translate-x-1"
+                                  style={{
+                                    maskImage: `url('${imgIcon}')`,
+                                    maskSize: 'contain',
+                                    WebkitMaskImage: `url('${imgIcon}')`,
+                                    WebkitMaskSize: 'contain',
+                                  }}
+                                />
+      
+                              </div>
+                            </div>
     </div>
 
     {/* Small tag icon at top left */}
@@ -54,6 +74,12 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
 
  const BlogDetailPage = () => {
   const { slug } = useParams();
+  const socialIcons = [
+  { Icon: Twitter, href: "#", label: "X (Twitter)" },
+  { Icon: Instagram, href: "#", label: "Instagram" },
+  { Icon: Slack, href: "#", label: "Slack" },
+  { Icon: Github, href: "#", label: "GitHub" },
+];
 
   return (
     <div className="w-full flex flex-col items-center">
@@ -166,14 +192,32 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
               </div>
            </div>
            
-           <div className="flex items-center gap-6">
+           {/* <div className="flex items-center gap-6">
               <span className="font-['Geist'] text-[14px] text-white/50 uppercase tracking-widest">Let's keep in touch</span>
               <div className="flex gap-4">
                  {[imgGroup, imgGroup1, imgGroup2].map((icon, i) => (
-                    <div key={i} className="w-5 h-5 bg-white/80 hover:bg-white transition-colors cursor-pointer" style={{ maskImage: `url('${icon}')`, maskSize: 'contain' }} />
+                    <div key={i} className="w-5 h-5 bg-white/10 hover:bg-white transition-colors cursor-pointer" style={{ maskImage: `url('${icon}')`, maskSize: 'contain' }} />
                  ))}
               </div>
-           </div>
+           </div> */}
+        <div className="flex items-center gap-6">
+  <span className="font-['Geist'] text-[14px] text-white/50 uppercase tracking-widest">
+    Let's keep in touch
+  </span>
+
+  <div className="flex gap-3">
+    {socialIcons.map(({ Icon, href, label }) => (
+      <a
+        key={label}
+        href={href}
+        className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all duration-300"
+        aria-label={label}
+      >
+        <Icon size={18} />
+      </a>
+    ))}
+  </div>
+</div>
         </div>
       </section>
 
@@ -190,9 +234,22 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
                  <span className="font-['Playfair_Display'] italic font-normal text-[44px] text-white/80 leading-tight">expert <span className="font-['Geist'] font-medium not-italic text-white">insights from our team</span></span>
                </h2>
                <div className="mt-4">
-                  <button className="bg-[#001ca9] px-8 py-3 rounded-full text-white font-['Geist'] font-semibold text-[14px] uppercase tracking-widest hover:bg-blue-600 transition-colors shadow-[0_7px_80px_-12px_rgba(17,15,223,1)]">
-                    See all news
-                  </button>
+                     <button className="     relative overflow-hidden
+              flex items-center justify-center
+              w-full sm:w-auto
+              px-8 py-4
+              rounded-full
+              bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+              border border-white/20
+              text-white uppercase whitespace-nowrap
+              font-['Geist'] text-[16px]
+              cursor-pointer
+              transition-all duration-300 
+              hover:scale-105 active:scale-95 
+              glare-btn
+">
+                  See All News
+                </button>
                </div>
             </div>
 
@@ -214,66 +271,8 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
       </section>
 
       {/* Newsletter Section */}
-      <section className="w-full max-w-[1260px] px-6 py-40 flex flex-col lg:flex-row gap-20 items-center">
-        <div className="flex-1 relative">
-           <div className="aspect-[364/470] max-w-[364px] rounded-[7px] overflow-hidden relative group">
-             <ImageWithFallback src={imgImage} className="w-full h-full object-cover" />
-             <div className="absolute inset-0 bg-black/30" />
-             
-             <div className="absolute bottom-6 left-6 text-left">
-                <div className="flex items-center gap-2">
-                  <span className="font-['Geist'] font-medium text-[23px] text-white">Daniel</span>
-                  <span className="font-['Playfair_Display'] text-[23px] text-white/80">Hartmann</span>
-                </div>
-                <p className="font-['Geist'] text-[14px] text-white/80 uppercase">founder of Flowtech</p>
-             </div>
 
-             <div className="absolute inset-0 flex items-center justify-center">
-                <button className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                   <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[15px] border-l-white border-b-[10px] border-b-transparent ml-1" />
-                </button>
-             </div>
-           </div>
-        </div>
-
-        <div className="flex-1 flex flex-col gap-8">
-           <div className="flex flex-col gap-4">
-              <h2 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[44px] text-transparent tracking-tight leading-tight">
-                Insights that matter.
-              </h2>
-              <p className="font-['Playfair_Display'] italic text-[44px] text-white/80 leading-none">Early Access.</p>
-           </div>
-           
-           <p className="font-['Geist'] text-white/70 text-[16px] leading-relaxed max-w-[480px] uppercase">
-             STAY UPDATED WITH THE LATEST IN INDUSTRIAL AUTOMATION, ENERGY MANAGEMENT, AND REAL-WORLD CASE STUDIES FROM FLOWTECH
-           </p>
-
-           <form className="flex flex-col gap-4 w-full max-w-[400px]">
-              <div className="flex flex-col gap-2">
-                <label className="font-['Geist'] font-semibold text-[11px] text-white/50 uppercase tracking-widest">Name</label>
-                <input 
-                  type="text" 
-                  placeholder="John Doe"
-                  className="bg-white/5 border border-white/10 rounded-md p-4 text-white focus:outline-none focus:border-blue-500 transition-colors uppercase"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-['Geist'] font-semibold text-[11px] text-white/50 uppercase tracking-widest">Email Address</label>
-                <input 
-                  type="email" 
-                  placeholder="hello@flowtech.com"
-                  className="bg-white/5 border border-white/10 rounded-md p-4 text-white focus:outline-none focus:border-blue-500 transition-colors uppercase"
-                />
-              </div>
-              <button 
-                type="submit"
-                className="bg-[#001ca9] hover:bg-blue-600 px-8 py-4 rounded-md text-white font-['Geist'] font-semibold text-[14px] uppercase tracking-widest transition-colors mt-4"
-              >
-                SUBSCRIBE
-              </button>
-           </form>
-        </div>
-      </section>
+        <NewsletterSection />
 
       <FooterSection />
     </div>
