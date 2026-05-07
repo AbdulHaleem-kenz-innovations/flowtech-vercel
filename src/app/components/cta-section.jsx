@@ -152,7 +152,24 @@ function GetStartedButton() {
   return (
 
     <button
-      className="relative cursor-pointer overflow-hidden w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95 glare-btn"
+      className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn"
     >
       GET STARTED
     </button>
@@ -199,7 +216,6 @@ function VrImage() {
   const [offset, setOffset] = useState(0);
 
   const [isMobile, setIsMobile] = useState(false);
-  const [animationDone, setAnimationDone] = useState(false);
 
   // 👉 simulate hover on mobile
   const [mobileHover, setMobileHover] = useState(false);
@@ -224,13 +240,6 @@ function VrImage() {
     return () => observer.disconnect();
   }, []);
 
-  // 👇 Enable hover after animation
-  useEffect(() => {
-    if (visible) {
-      const timer = setTimeout(() => setAnimationDone(true), 1200);
-      return () => clearTimeout(timer);
-    }
-  }, [visible]);
 
   // 👇 Parallax (keep for mobile optional — you can disable if laggy)
   useEffect(() => {
@@ -253,7 +262,7 @@ function VrImage() {
   return (
     <div
       ref={ref}
-      className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] w-full flex flex-col lg:flex-row items-center p-6 md:p-10 lg:p-0 overflow-hidden group"
+      className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] w-full flex flex-col lg:flex-row items-center pt-12 px-6 pb-0 md:p-10 lg:p-0 overflow-hidden group"
     >
       <DivFramerIu4QGMaskGroup />
       <DivFramerIu4QGMaskGroup1 />
@@ -267,7 +276,7 @@ function VrImage() {
         <div
           className="aspect-[600/641] w-full lg:w-[600px] relative overflow-hidden rounded-[7px]"
           onClick={() => {
-            if (isMobile && animationDone) {
+            if (isMobile) {
               setMobileHover((prev) => !prev);
             }
           }}
@@ -280,23 +289,13 @@ function VrImage() {
               w-full h-full origin-bottom-right
               transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
 
-              ${isMobile
-                ? "scale-100 opacity-100"
-                : visible
-                  ? "scale-70 opacity-100 translate-x-20 translate-y-30"
-                  : "scale-70 opacity-0"
-              }
+              ${visible ? "opacity-100" : "opacity-0"}
+              
+              /* Desktop Final Position (Big by Default) */
+              md:translate-x-[-10px] md:translate-y-[40px] md:scale-100
 
-              ${animationDone &&
-              (isMobile
-                ? mobileHover &&
-                "translate-x-[-20px] translate-y-[-20px] scale-[1]"
-                : `
-                    md:translate-x-[-10px]
-                    md:translate-y-[40px]
-                    md:scale-[1]
-                  `)
-              }
+              /* Mobile Interaction */
+              ${isMobile && mobileHover ? "translate-x-[-20px] translate-y-[-20px]" : ""}
             `}
           >
             <ImageWithFallback
@@ -316,7 +315,7 @@ function VrImage() {
 export const CtaSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center py-16 md:py-0 px-6 md:px-8">
+      <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8">
         <div className="max-w-[1260px] w-full flex flex-col items-center relative" data-name="CTA">
           <VrImage />
         </div>

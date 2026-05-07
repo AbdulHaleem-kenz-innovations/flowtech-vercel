@@ -192,7 +192,24 @@ const products = [
                   <input type="checkbox" id="terms" className="w-4 h-4" />
                   <label htmlFor="terms" className="font-['Geist'] text-[12px] text-black/60">I have read and agree to the Terms and Conditions</label>
                 </div>
-                <button className="bg-[#001ca9] py-4 rounded-full text-white font-['Geist'] font-semibold text-[14px] uppercase tracking-widest hover:bg-blue-800 transition-colors">
+                <button className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn">
                   Send Message
                 </button>
               </form>

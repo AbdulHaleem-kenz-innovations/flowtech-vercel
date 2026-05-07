@@ -166,7 +166,7 @@ function Frame1({ description }) {
   return (
     <div
       className="
-        absolute bottom-4 left-4 right-4 md:left-[27.98px] md:w-[560px]
+        absolute bottom-4 left-4 right-4 md:left-[27.98px] md:right-[27.98px]
         backdrop-blur-[25px]  md:bg-[rgba(255,255,255,0.05)]
          p-6 rounded-lg
         rounded-[7px] p-5 md:p-6 flex items-center z-20
@@ -255,39 +255,21 @@ function ServiceCard({ item }) {
           if (isMobile) setMobileHover((prev) => !prev);
         }}
       >
-        <div className="absolute inset-[-5%]">
-
-          {/* Default Image */}
+        <div className="absolute inset-0">
+          {/* Main Image with Hover Scale */}
           <div
             className={`
-              absolute inset-0 transition-all duration-500
+              absolute inset-0 transition-transform duration-700 ease-out
               ${!isMobile ? "group-hover:scale-110" : ""}
-              ${mobileHover ? "opacity-0" : "opacity-100"}
+              ${isMobile && mobileHover ? "scale-110" : "scale-100"}
             `}
           >
             <ImageWithFallback
-              src={isMobile && item.hoverImg ? item.hoverImg : item.img}
-              alt=""
-              className=" w-[1200px] object-cover"
+              src={item.hoverImg || item.img}
+              alt={item.title}
+              className="w-full h-full object-cover"
             />
           </div>
-
-          {/* Hover Image */}
-          {item.hoverImg && (
-            <div
-              className={`
-                absolute inset-0 transition-all duration-500
-                ${!isMobile ? "group-hover:opacity-100 group-hover:scale-100" : ""}
-                ${mobileHover ? "opacity-100 scale-110" : "opacity-0"}
-              `}
-            >
-              <ImageWithFallback
-                src={item.hoverImg}
-                alt=""
-                className="w-[1200px] object-cover"
-              />
-            </div>
-          )}
 
           <Frame1 description={item.description} />
         </div>
@@ -357,19 +339,24 @@ function DivFramer13M6KicContainer() {
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="div.framer-13m6kic-container">
       <button
         onClick={() => onNavigate("/services/manufacturing")}
-        className=" relative overflow-hidden
-                     flex items-center justify-center
-                     w-full sm:w-fill
-                     px-6 py-3
-                     rounded-full
-                     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-                     border border-white/20
-                     text-white uppercase whitespace-nowrap
-                     font-['Geist'] text-[16px]
-                     cursor-pointer
-                     transition-all duration-300 
-                     hover:scale-105 active:scale-95 
-                     glare-btn">
+        className="  relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn">
         VIEW ALL SERVICES
       </button>
     </div>
@@ -393,7 +380,7 @@ function DivFramerIu4QGMaskGroupSmall() {
   );
 }
 
-function ContainerServices() {
+export function ContainerServices() {
   return (
     <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] content-stretch flex flex-col gap-12 md:gap-[80px] items-center justify-center max-w-[1260px] px-6 md:px-[63px] py-16 md:py-[100px] relative rounded-[7px] shrink-0 w-full" data-name="Container">
       <ContentWrapper />
@@ -476,7 +463,7 @@ function VideoSection() {
 export const FeaturesSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center py-30 md:py-60 px-6 md:px-8">
+      <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[20px] items-center justify-center relative" data-name="Features">
           <ContainerServices />
           <VideoSection />

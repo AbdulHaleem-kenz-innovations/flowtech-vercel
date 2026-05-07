@@ -146,9 +146,9 @@ const AboutPage = () => {
       <section className="px-6 w-full max-w-[1310px] mx-auto mb-[150px]">
         <ScrollFadeIn>
           <div className="flex flex-col lg:flex-row gap-[25px]">
-            <div className="flex-1 backdrop-blur-[10px] bg-white/5 rounded-[7px] overflow-hidden h-[650px] relative border border-white/10 group pause-hover">
+            {/* <div className="flex-1 backdrop-blur-[10px] bg-white/5 rounded-[7px] overflow-hidden h-[650px] relative border border-white/10 group"> */}
               {/* Vertical Scroll Container */}
-              <div className="absolute inset-0 p-10 overflow-hidden">
+              {/* <div className="absolute inset-0 p-10 overflow-hidden">
                 <div
                   className="w-full space-y-4 animate-scroll-vertical"
                   style={{ '--scroll-speed': '40s' }}
@@ -163,18 +163,84 @@ const AboutPage = () => {
                     </React.Fragment>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Glass / Fading Overlays */}
-              {/* <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-md z-10 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/80 to-transparent backdrop-blur-md z-10 pointer-events-none" /> */}
-              <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/80 via-black/70 to-transparent backdrop-blur-[2px] z-10 pointer-events-none" />
+              {/* <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/50 via-black/10 to-transparent backdrop-blur-[2px] z-10 pointer-events-none" /> */}
 
-              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/80 via-black/70 to-transparent backdrop-blur-[2px] z-10 pointer-events-none" />
+              {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 via-black/10 to-transparent backdrop-blur-[2px] z-10 pointer-events-none" /> */}
 
               {/* Mask image for the fade effect from figma */}
-              <div className="absolute inset-0 pointer-events-none opacity-50 z-20" style={{ maskImage: `url('${imgSection}')`, maskSize: 'cover' }} />
+              {/* <div className="absolute inset-0 pointer-events-none opacity-50 z-20" style={{ maskImage: `url('${imgSection}')`, maskSize: 'cover' }} /> */}
+            {/* </div> */}
+
+           <div className="flex-1 bg-white/5 rounded-[7px] overflow-hidden h-[650px] relative border border-white/10 group">
+  
+  {/* Vertical Scroll Container */}
+  <div className="absolute inset-0 p-10 overflow-hidden">
+    <div
+      className="w-full space-y-4 animate-scroll-vertical"
+      style={{ '--scroll-speed': '40s' }}
+    >
+      {[...Array(2)].map((_, i) => (
+        <React.Fragment key={i}>
+          {[imgImage, imgImage1, imgImage3, imgImage4, imgImage5, imgImage6].map((img, index) => (
+            <div key={`${i}-${index}`} className="w-full h-[420px] rounded-[7px] overflow-hidden">
+              <ImageWithFallback src={img} className="w-full h-full object-cover" />
             </div>
+          ))}
+        </React.Fragment>
+      ))}
+    </div>
+  </div>
+
+  {/* ✅ TOP PROGRESSIVE BLUR */}
+  <div
+    className="absolute top-0 left-0 right-0 h-24 backdrop-blur-[10px] pointer-events-none z-10"
+    style={{
+      maskImage: `linear-gradient(
+        to bottom,
+        black 0%,
+        rgba(0,0,0,0.6) 40%,
+        rgba(0,0,0,0.2) 70%,
+        transparent 100%
+      )`,
+      WebkitMaskImage: `linear-gradient(
+        to bottom,
+        black 0%,
+        rgba(0,0,0,0.6) 40%,
+        rgba(0,0,0,0.2) 70%,
+        transparent 100%
+      )`
+    }}
+  />
+
+  {/* ✅ BOTTOM PROGRESSIVE BLUR */}
+  <div
+    className="absolute bottom-0 left-0 right-0 h-24 backdrop-blur-[10px] pointer-events-none z-10"
+    style={{
+      maskImage: `linear-gradient(
+        to top,
+        black 0%,
+        rgba(0,0,0,0.6) 40%,
+        rgba(0,0,0,0.2) 70%,
+        transparent 100%
+      )`,
+      WebkitMaskImage: `linear-gradient(
+        to top,
+        black 0%,
+        rgba(0,0,0,0.6) 40%,
+        rgba(0,0,0,0.2) 70%,
+        transparent 100%
+      )`
+    }}
+  />
+
+  {/* Optional dark fade (no blur) */}
+  <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/40 to-transparent z-20 pointer-events-none" />
+  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/40 to-transparent z-20 pointer-events-none" />
+
+</div>
 
             <div className="flex-1 backdrop-blur-[10px] bg-white/5 rounded-[7px] p-6 md:p-12 flex flex-col justify-between border border-white/10 relative overflow-hidden">
               {/* Decorative Background Shape */}
@@ -215,19 +281,24 @@ const AboutPage = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-10 md:mt-12 relative z-10">
-                <button className="     relative overflow-hidden
-              flex items-center justify-center
-              w-full sm:w-auto
-              px-8 py-4
-              rounded-full
-              bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-              border border-white/20
-              text-white uppercase whitespace-nowrap
-              font-['Geist'] text-[16px]
-              cursor-pointer
-              transition-all duration-300 
-              hover:scale-105 active:scale-95 
-              glare-btn
+                <button className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn
 ">
                   Meet the team
                 </button>
@@ -291,19 +362,24 @@ const AboutPage = () => {
                   <p className="text-white/70 font-['Geist'] text-[12px] md:text-[14px] uppercase tracking-wide mt-1">FEEL FREE TO REACH OUT IF YOU NEED HELP WITH OUR SOLUTIONS</p>
                 </div>
               </div>
-              <button className="   relative overflow-hidden
-              flex items-center justify-center
-              w-full sm:w-fit
-              px-6 py-3
-              rounded-full
-              bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-              border border-white/20
-              text-white uppercase whitespace-nowrap
-              font-['Geist'] text-[16px]
-              cursor-pointer
-              transition-all duration-300 
-              hover:scale-105 active:scale-95 
-              glare-btn
+              <button className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn
 ">
                 Contact us
               </button>
@@ -342,19 +418,24 @@ const AboutPage = () => {
               <p className="max-w-[450px] lg:max-w-[345px] text-white/70 font-['Geist'] text-[14px] md:text-[16px] uppercase leading-relaxed">
                 FROM INDUSTRIAL SYSTEMS TO ENTERPRISE SOLUTIONS, OUR TEAM DRIVES INNOVATION AND IMPACT ACROSS EVERY DEPLOYMENT
               </p>
-              <button className="   relative overflow-hidden
-              flex items-center justify-center
-              w-full sm:w-auto
-              px-6 py-3
-              rounded-full
-              bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-              border border-white/20
-              text-white uppercase whitespace-nowrap
-              font-['Geist'] text-[16px]
-              cursor-pointer
-              transition-all duration-300 
-              hover:scale-105 active:scale-95 
-              glare-btn
+              <button className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn
 ">
                 Join us
               </button>

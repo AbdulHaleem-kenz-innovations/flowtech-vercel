@@ -105,7 +105,7 @@ const InsightsPage = () => {
               {['ALL', 'MANUFACTURING', 'ENERGY', 'PIPELINE'].map((cat, i) => (
                 <button
                   key={cat}
-                  className={`px-5 md:px-6 py-2.5 md:py-3 rounded-full text-[12px] md:text-[14px] font-['Geist'] font-medium uppercase tracking-wider transition-all cursor-pointer
+                  className={`px-5 backdrop-blur-[25px] md:px-6 py-2.5 md:py-3 rounded-full text-[12px] md:text-[14px] font-['Geist'] font-medium uppercase tracking-wider transition-all cursor-pointer
         ${i === 0
                       ? "bg-gradient-to-r from-[#001ca9] to-[#046ce4] text-white shadow-[0_7px_40px_-10px_rgba(17,15,223,0.6)]"
                       : "bg-white/5 text-white/70 hover:bg-white/10 border border-white/10"
@@ -149,7 +149,11 @@ const InsightsPage = () => {
                         </h3>
                       </div>
                       <div className="group inline-flex items-center cursor-pointer overflow-hidden">
-                        <div className="bg-black p-3 rounded-lg flex items-center gap-2 group-hover:bg-[#046ce4] transition-all duration-300 ease-in-out">
+                        <div className="bg-black p-3 rounded-lg flex items-center gap-2
+                                          transition-all duration-300 ease-in-out
+                                          group-hover:bg-gradient-to-tr
+                                          group-hover:from-[#001ca9]
+                                          group-hover:to-[#046ce4]">
 
                           {/* Text (hidden initially) */}
                           <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
@@ -169,9 +173,6 @@ const InsightsPage = () => {
 
                         </div>
                       </div>
-                      {/* <div className="bg-black p-3 rounded-lg w-fit group-hover:bg-[#046ce4] transition-colors">
-                        <div className="size-5 bg-white" style={{ maskImage: `url('${imgIcon}')`, maskSize: 'contain' }} />
-                      </div> */}
                     </div>
                   </div>
                 </Link>
@@ -206,7 +207,11 @@ const InsightsPage = () => {
                       </h2>
                     </div>
                     <div className="group inline-flex items-center cursor-pointer overflow-hidden">
-                      <div className="bg-white p-3 rounded-lg flex items-center gap-2 group-hover:bg-[#046ce4] transition-all duration-300 ease-in-out">
+                      <div className="bg-white p-3 rounded-lg flex items-center gap-2
+                                          transition-all duration-300 ease-in-out
+                                          group-hover:bg-gradient-to-tr
+                                          group-hover:from-[#001ca9]
+                                          group-hover:to-[#046ce4]">
 
                         {/* Text (hidden initially) */}
                         <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
@@ -215,7 +220,7 @@ const InsightsPage = () => {
 
                         {/* Arrow (always visible, but slides) */}
                         <div
-                          className="size-5 bg-black  shrink-0 transition-all duration-300 ease-in-out group-hover:translate-x-1"
+                          className="size-5 bg-black group-hover:bg-white shrink-0 transition-all duration-300 ease-in-out group-hover:translate-x-1"
                           style={{
                             maskImage: `url('${imgIcon}')`,
                             maskSize: 'contain',
@@ -262,7 +267,11 @@ const InsightsPage = () => {
                           </h3>
                         </div>
                         <div className="group inline-flex items-center cursor-pointer overflow-hidden">
-                          <div className="bg-black p-3 rounded-lg flex items-center gap-2 group-hover:bg-[#046ce4] transition-all duration-300 ease-in-out">
+                          <div className="bg-black p-3 rounded-lg flex items-center gap-2
+                                          transition-all duration-300 ease-in-out
+                                          group-hover:bg-gradient-to-tr
+                                          group-hover:from-[#001ca9]
+                                          group-hover:to-[#046ce4]">
 
                             {/* Text (hidden initially) */}
                             <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
@@ -279,7 +288,6 @@ const InsightsPage = () => {
                                 WebkitMaskSize: 'contain',
                               }}
                             />
-
                           </div>
                         </div>
                         {/* <div className="bg-black p-3 rounded-lg w-fit group-hover:bg-[#046ce4] transition-colors">

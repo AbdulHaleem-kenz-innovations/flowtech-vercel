@@ -49,7 +49,7 @@ function Badge() {
     <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] content-stretch flex gap-[5px] items-center justify-center overflow-clip pl-[7px] pr-[11px] py-[5px] relative rounded-[5px] shrink-0 w-[95px] md:w-[102px]">
       <PlusIcon />
       <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-        <p className="leading-[17.6px]">PRODUCTS</p>
+        <p className="leading-[17.6px]">PARTNERS</p>
       </div>
     </div>
   );
@@ -135,7 +135,7 @@ export const EcosystemSection = () => {
 
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center  overflow-hidden py-0 md:py-0 px-4 sm:px-6 md:px-8 ">
+      <section className="w-full flex justify-center  overflow-hidden py-10 md:py-16 px-4 sm:px-6 md:px-8 ">
         {/* //py-16 md:py-32 px-4 sm:px-6 md:px-8 */}
 
         <div className="max-w-[1260px] w-full flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-[120px] items-center relative">
@@ -154,19 +154,24 @@ export const EcosystemSection = () => {
               </p>
             </div>
             <button
-              className="relative overflow-hidden
-  flex items-center justify-center
-  w-full sm:w-fit
-  px-8 py-4
-  rounded-full
-  bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-  border border-white/20
-  text-white uppercase whitespace-nowrap
-  font-['Geist'] text-[16px]
-  cursor-pointer
-  transition-all duration-300 
-  hover:scale-105 active:scale-95 
-  glare-btn
+              className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn
 "
             >
               BECOME A PARTNER

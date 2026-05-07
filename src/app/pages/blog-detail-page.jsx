@@ -222,7 +222,7 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
       </section>
 
       {/* Related Posts */}
-      <section className="w-full bg-white/5 py-32 px-6 flex flex-col items-center">
+      <section className="w-full  py-16 px-6 flex flex-col items-center">
          <div className="max-w-[1260px] w-full">
             <div className="flex flex-col gap-6 items-center text-center mb-20">
                <div className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit">

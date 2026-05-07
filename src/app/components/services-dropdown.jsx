@@ -40,6 +40,65 @@ const services = [
   }
 ];
 
+//PERVIOUS CODE
+// export const ServicesDropdown = ({ isOpen, onClose }) => {
+//   const [hoveredIndex, setHoveredIndex] = useState(0);
+
+//   return (
+//     <AnimatePresence>
+//       {isOpen && (
+//         <motion.div
+//           initial={{ opacity: 0, y: -20, scale: 0.95 }}
+//           animate={{ opacity: 1, y: 0, scale: 1 }}
+//           exit={{ opacity: 0, y: -20, scale: 0.95 }}
+//           transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+//           className="absolute top-[calc(100%+16px)] left-0 w-[640px] h-[400px] z-50 pointer-events-auto"
+//           onMouseLeave={onClose}
+//         >
+//           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-[20px]" />
+//           <div className="backdrop-blur-[25px] bg-black/80 border border-white/20 rounded-[20px] size-full overflow-hidden flex shadow-2xl">
+//             {/* Left Side: Services List */}
+//             <div className="flex-1 p-8 flex flex-col justify-center gap-4">
+//               {services.map((service, index) => (
+//                 <Link
+//                   key={service.name}
+//                   to={service.href}
+//                   className={`font-['Geist'] font-semibold text-[18px] transition-colors duration-200 capitalize text-left leading-[27px]
+//                     ${hoveredIndex === index ? 'text-white' : 'text-white/75 hover:text-white/90'}`}
+//                   onMouseEnter={() => setHoveredIndex(index)}
+//                   onClick={onClose}
+//                 >
+//                   {service.name}
+//                 </Link>
+//               ))}
+//             </div>
+
+//             {/* Right Side: Dynamic Image */}
+//             <div className="w-[300px] m-4 relative overflow-hidden rounded-[15px]">
+//               <AnimatePresence mode="wait">
+//                 <motion.div
+//                   key={hoveredIndex}
+//                   initial={{ opacity: 0, scale: 1.1 }}
+//                   animate={{ opacity: 1, scale: 1 }}
+//                   exit={{ opacity: 0, scale: 1.1 }}
+//                   transition={{ duration: 0.4 }}
+//                   className="absolute inset-0"
+//                 >
+//                   <ImageWithFallback
+//                     src={services[hoveredIndex].image}
+//                     className="w-full h-full object-cover"
+//                   />
+//                   <div className="absolute inset-0 bg-black/10" />
+//                 </motion.div>
+//               </AnimatePresence>
+//             </div>
+//           </div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   );
+// };
+
 export const ServicesDropdown = ({ isOpen, onClose }) => {
   const [hoveredIndex, setHoveredIndex] = useState(0);
 
@@ -54,41 +113,57 @@ export const ServicesDropdown = ({ isOpen, onClose }) => {
           className="absolute top-[calc(100%+16px)] left-0 w-[640px] h-[400px] z-50 pointer-events-auto"
           onMouseLeave={onClose}
         >
-          <div className="backdrop-blur-[25px] bg-black/80 border border-white/20 rounded-[20px] size-full overflow-hidden flex shadow-2xl">
-            {/* Left Side: Services List */}
-            <div className="flex-1 p-8 flex flex-col justify-center gap-4">
-              {services.map((service, index) => (
-                <Link
-                  key={service.name}
-                  to={service.href}
-                  className={`font-['Geist'] font-semibold text-[18px] transition-colors duration-200 capitalize text-left leading-[27px]
-                    ${hoveredIndex === index ? 'text-white' : 'text-white/75 hover:text-white/90'}`}
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onClick={onClose}
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
+          {/* REPLACE your current div with this */}
+          <div className="relative backdrop-blur-[25px] size-full overflow-hidden rounded-[20px] shadow-2xl">
+            {/* Blur background layer */}
+            <div
+              className="absolute inset-0 -m-[30px] bg-cover bg-center blur-[25px]"
+              style={{
+                backgroundImage: `url(${services[hoveredIndex].image})`,
+                backgroundSize: 'cover'
+              }}
+            />
 
-            {/* Right Side: Dynamic Image */}
-            <div className="w-[300px] m-4 relative overflow-hidden rounded-[15px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={hoveredIndex}
-                  initial={{ opacity: 0, scale: 1.1 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.1 }}
-                  transition={{ duration: 0.4 }}
-                  className="absolute inset-0"
-                >
-                  <ImageWithFallback 
-                    src={services[hoveredIndex].image} 
-                    className="w-full h-full object-cover" 
-                  />
-                  <div className="absolute inset-0 bg-black/10" />
-                </motion.div>
-              </AnimatePresence>
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black/40" />
+
+            {/* Content container */}
+            <div className="relative z-10 size-full flex bg-white/5">
+              {/* Left Side: Services List */}
+              <div className="flex-1 p-8 flex flex-col justify-center gap-4">
+                {services.map((service, index) => (
+                  <Link
+                    key={service.name}
+                    to={service.href}
+                    className={`font-['Geist'] font-semibold text-[18px] transition-colors duration-200 capitalize text-left leading-[27px]
+                      ${hoveredIndex === index ? 'text-white' : 'text-white/75 hover:text-white/90'}`}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onClick={onClose}
+                  >
+                    {service.name}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Right Side: Dynamic Image */}
+              <div className="w-[300px] m-4 relative overflow-hidden rounded-[15px]">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={hoveredIndex}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.1 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute inset-0"
+                  >
+                    <ImageWithFallback
+                      src={services[hoveredIndex].image}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/10" />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </div>
           </div>
         </motion.div>

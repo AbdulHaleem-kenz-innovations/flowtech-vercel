@@ -990,16 +990,35 @@ export const LogoLoop = memo(
     );
 
     return (
+      // <div
+      //   ref={containerRef}
+      //   className={rootClasses}
+      //   style={containerStyle}
+      //   role="region"
+      //   aria-label={ariaLabel}
+      //   onMouseEnter={handleMouseEnter}
+      //   onMouseLeave={handleMouseLeave}
+      // >
       <div
-        ref={containerRef}
-        className={rootClasses}
-        style={containerStyle}
-        role="region"
-        aria-label={ariaLabel}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {fadeOut && (
+  ref={containerRef}
+  className={rootClasses}
+  style={{
+    ...containerStyle,
+    ...(fadeOut && !isVertical && {
+      WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+      maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+    }),
+    ...(fadeOut && isVertical && {
+      WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+      maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+    }),
+  }}
+  role="region"
+  aria-label={ariaLabel}
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+>
+        {/* {fadeOut && (
           <>
             {isVertical ? (
               <>
@@ -1041,7 +1060,7 @@ export const LogoLoop = memo(
               </>
             )}
           </>
-        )}
+        )} */}
 
         <div
           className={cx(

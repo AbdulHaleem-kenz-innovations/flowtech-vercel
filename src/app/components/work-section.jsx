@@ -138,23 +138,24 @@ function ProductCard({ number, title, description, image, normalImage, hoverImag
 
   return (
     <div
-      className="relative rounded-[7px] w-full max-w-[400px]  mx-auto h-[400px] md:h-[429px] overflow-clip"
+      className="relative rounded-[7px] w-full   mx-auto h-[400px] md:h-[429px] overflow-clip"
+       style={{ aspectRatio: '4/4' }}
       data-name="Product Card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Normal Image View */}
+      {/* Normal Image View (Desktop only, default visible, hidden on hover) */}
       <div
-        className="absolute inset-0 rounded-[7px] overflow-clip transition-opacity duration-300 flex items-center justify-center"
+        className="hidden md:flex absolute inset-0 rounded-[7px] overflow-clip transition-opacity duration-300 items-center justify-center z-10"
         style={{ opacity: isHovered ? 0 : 1 }}
       >
-        <ImageWithFallback alt="" className="w-full h-full object-cover" src={!isHovered && hoverImage ? hoverImage : normalImage} />
+        <ImageWithFallback alt="" className="w-full h-full object-cover" src={normalImage} />
       </div>
 
-      {/* Hover Image View */}
+      {/* Hover Image View (Default on Mobile, revealed/faded in on Desktop hover) */}
       <div
-        className="absolute inset-0 rounded-[7px] overflow-clip transition-opacity duration-300 flex items-center justify-center"
-        style={{ opacity: isHovered ? 1 : 0 }}
+        className="absolute inset-0 rounded-[7px] overflow-clip transition-opacity duration-300 flex items-center justify-center opacity-100 md:opacity-0"
+        style={isHovered ? { opacity: 1 } : {}}
       >
         <ImageWithFallback alt="" className="w-full h-full object-cover" src={hoverImage} />
       </div>
@@ -175,7 +176,7 @@ function KenvoiceLogo() {
 export const WorkSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center py-16 md:py-60 px-6 md:px-8 ">
+      <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8 ">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[64px] items-center justify-center p-6 md:py-30 relative  backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] content-stretch " data-name="Work ">
           <div className="absolute -left-3 md:left-[20px] -top-3 md:top-[20px]"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
           <div className="absolute -right-3 md:-right-[-20px] -top-3 md:-top-[-20px] rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
@@ -212,19 +213,24 @@ export const WorkSection = () => {
             {/* Decorative Corner Icons for the Container */}
 
             <button
-              className="relative overflow-hidden
-                 flex items-center justify-center
-                 w-full sm:w-auto
-                 px-6 py-3
-                 rounded-full
-                 bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-                 border border-white/20
-                 text-white uppercase whitespace-nowrap
-                 font-['Geist'] text-[16px]
-                 cursor-pointer
-                 transition-all duration-300 
-                 hover:scale-105 active:scale-95 
-                 glare-btn
+              className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn
 "
             >
               VIEW ALL

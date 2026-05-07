@@ -39,7 +39,7 @@ function Integration() {
 
 function Default() {
   return (
-    <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.03)] content-stretch flex flex-col items-center justify-center pb-[6px] pt-[5px] px-[12px] relative rounded-[30px] shrink-0" data-name="Default">
+    <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.03)] content-stretch flex flex-col items-center justify-center pb-[6px] pt-[5px] px-[12px] relative rounded-[30px] shrink-0" data-name="Default">
       <Integration />
     </div>
   );
@@ -449,7 +449,10 @@ function AuthorInformation() {
 
 function TestimonialCard() {
   return (
-    <div className="backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)] h-full max-w-[436px] relative rounded-[6px] shrink-0 w-full sm:w-[436px]" data-name="Testimonial Card">
+    <div
+      className="backdrop-blur-md border border-white/20 rounded-2xl h-full max-w-[436px] relative shrink-0 w-full sm:w-[436px]"
+      data-name="Testimonial Card"
+    >
       <div className="content-stretch flex flex-col gap-[60px] md:gap-[153px] items-start max-w-[inherit] p-[20px] md:p-[30px] relative size-full">
         <WorkingWithThemWasAGameChangerTheyBroughtClarityToOurMessagingAndGaveUsABrandWereTrulyProudOf />
         <AuthorInformation />
@@ -636,15 +639,15 @@ function AboutCardAlignStretch() {
 export const AboutSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="relative w-full flex justify-center py-0 md:py-0 px-6 md:px-8">
-      <div className="max-w-[1260px] w-full">
-        <div className="content-stretch flex flex-wrap gap-[15px] items-center justify-center relative size-full" data-name="About section">
-          <IntegrationCard />
-          <TestimonialCardAlignStretch />
-          <AboutCardAlignStretch />
+      <section className="relative w-full flex justify-center py-10 md:py-16 px-6 md:px-8 -mt-40">
+        <div className="max-w-[1260px] w-full">
+          <div className="content-stretch flex flex-wrap gap-[15px] items-center justify-center relative size-full" data-name="About section">
+            <IntegrationCard />
+            <TestimonialCardAlignStretch />
+            <AboutCardAlignStretch />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </ScrollFadeIn>
   );
 }

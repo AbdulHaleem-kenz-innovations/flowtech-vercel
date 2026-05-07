@@ -25,7 +25,7 @@ export const HeroSection = () => {
 
   return (
     <ScrollFadeIn>
-      <section className="relative min-h-screen flex items-center justify-center pt-32 md:pt-60 md:pb-32 px-6 md:px-8 overflow-hidden ">
+      <section className="relative min-h-screen flex items-center justify-center pt-32 md:pt-50 md:pb-2 px-6 md:px-8 overflow-hidden ">
         <div className="max-w-[1260px] w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center z-10 pb-100">
 
           {/* Left Content */}
@@ -64,22 +64,28 @@ export const HeroSection = () => {
 
             {/* CTA */}
 
-            <button className="
-              relative overflow-hidden
-              flex items-center justify-center
-              w-full sm:w-fit
-              px-8 py-4
-              rounded-full
-              bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-              border border-white/20
-              text-white uppercase whitespace-nowrap
-              font-['Geist'] text-[16px]
-              cursor-pointer
-              transition-all duration-300 
-              hover:scale-105 active:scale-95 
-              glare-btn
-            ">
+            <button
+              className="
+    relative overflow-hidden
+    flex items-center justify-center
 
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn
+  "
+            >
               EXPLORE SOLUTIONS
             </button>
           </div>
@@ -104,7 +110,7 @@ export const HeroSection = () => {
 
         <div
           className="
-        absolute bottom-[0%] left-20 top-240 md:top-180 md:left-[20%]
+        absolute bottom-[0%] left-20 top-200 md:top-180 md:left-[20%]
         w-[160px] md:w-[300px]
         h-[160px] md:h-[540px]
         opacity-70 md:opacity-100
@@ -114,11 +120,13 @@ export const HeroSection = () => {
             transform: `rotate(${rotation}deg)`,
           }}
         >
-          <img
-            src={imgImage}
-            alt=""
-            className="w-full h-full object-contain"
-          />
+          <div>
+            <img
+              src={imgImage}
+              alt=""
+              className="w-[70%] h-[70%] object-contain"
+            />
+          </div>
         </div>
 
       </section>

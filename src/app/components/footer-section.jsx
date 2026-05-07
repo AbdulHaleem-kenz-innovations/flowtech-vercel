@@ -56,48 +56,65 @@ const NavLink = ({ label, to = "/" }) => (
 );
 
 const ContactBox = () => (
-  <div className="bg-white p-8 md:p-12 rounded-[7px] w-full lg:max-w-[387px] flex flex-col gap-8 md:gap-10 relative">
-    <div className="flex flex-col gap-3 items-center text-center">
+  <div className="bg-white p-6 md:p-8 lg:p-10 rounded-[24px] w-full lg:max-w-[387px] flex flex-col gap-6 md:gap-8 relative border border-black/5 shadow-2xl">
+    <div className="flex flex-col gap-2 items-center text-center">
       <div className="bg-[#2df9a7]/15 px-3 py-1 rounded-full flex gap-2 items-center">
         <div className="size-3">
           <ImageWithFallback src={imgImage} alt="" className="size-full object-contain" />
         </div>
-        <span className="font-['Geist'] font-semibold text-[#0f9101] text-[10px] tracking-wider uppercase">
+        <span className="font-['Geist'] font-bold text-[#0f9101] text-[10px] tracking-[0.1em] uppercase">
           email us
         </span>
       </div>
-      <span className="font-['Geist'] text-[16px] md:text-[18px] text-black/70 uppercase break-all">
+      <span className="font-['Geist'] text-[15px] md:text-[16px] text-black font-medium break-all">
         hello@flowtech.com
       </span>
     </div>
 
-    <div className="flex flex-col gap-3 items-center text-center">
+    <div className="flex flex-col gap-2 items-center text-center">
       <div className="bg-[#2d6ef9]/15 px-3 py-1 rounded-full flex gap-2 items-center">
         <div className="size-3">
           <ImageWithFallback src={imgImage1} alt="" className="size-full object-contain" />
         </div>
-        <span className="font-['Geist'] font-semibold text-[#110fdf] text-[10px] tracking-wider uppercase">
+        <span className="font-['Geist'] font-bold text-[#110fdf] text-[10px] tracking-[0.1em] uppercase">
           call us
         </span>
       </div>
-      <span className="font-['Geist'] text-[16px] md:text-[18px] text-black/70 uppercase">
-        {/* +1 800 - 1236 789 */}
+      <span className="font-['Geist'] text-[15px] md:text-[16px] text-black font-medium">
         +966 55 877 1132
       </span>
     </div>
 
+    <div className="flex flex-col gap-3 items-center text-center">
+      <div className="bg-[#8b5cf6]/15 px-3 py-1 rounded-full flex gap-2 items-center">
+        <div className="size-3 flex items-center justify-center">
+          <MapPinned className="size-full text-[#7c3aed]" />
+        </div>
+        <span className="font-['Geist'] font-bold text-[#7c3aed] text-[10px] tracking-[0.1em] uppercase">
+          Our Location
+        </span>
+      </div>
+      <div className="font-['Geist'] text-[12px] md:text-[13px] text-black/70 leading-snug max-w-[280px]">
+        <div className="font-bold text-black mb-0.5">Flow Technology General Contracting Co,</div>
+        <div className="opacity-80">P.O. Box 32655, Adh Dhahran Al Jubail Br. Rd,</div>
+        <div className="opacity-80">
+          Al Badi Dst. Al Qatif, KSA
+        </div>
+      </div>
+    </div>
+
     {/* Decorative corners */}
-    <div className="absolute bottom-5 left-5 size-5 bg-black/20" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
-    <div className="absolute left-5 top-5 size-5 bg-black/20" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
-    <div className="absolute bottom-5 right-5 size-5 bg-black/20" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
-    <div className="absolute right-5 top-5 size-5 bg-black/20" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
+    <div className="absolute bottom-4 left-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
+    <div className="absolute left-4 top-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
+    <div className="absolute bottom-4 right-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
+    <div className="absolute right-4 top-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
   </div>
 );
 
 export const FooterSection = () => {
   return (
     <ScrollFadeIn>
-      <footer className="w-full pt-12 md:pt-1 px-6 md:px-8 relative overflow-hidden bg-transparent border-t border-white/5 mt-20">
+      <footer className="w-full  px-6 md:px-8 relative overflow-hidden bg-transparent border-t border-white/5">
         <div className="max-w-[1260px] mx-auto flex flex-col gap-16 md:gap-24 relative z-10">
 
           {/* Background Pattern */}
@@ -115,7 +132,7 @@ export const FooterSection = () => {
                 </p>
                 <div className="font-['Geist'] text-[13px] sm:text-[14px] text-white/40 max-w-[220px] sm:max-w-[260px] uppercase leading-relaxed space-y-1">
 
-                  <MapPinned className="w-8 h-8 mt-[2px]" />
+                  {/* <MapPinned className="w-8 h-8 mt-[2px]" />
                   <div className="flex items-start gap-2">
                     <div>
                       <div>Flow Technology General Contracting Co,</div>
@@ -126,7 +143,7 @@ export const FooterSection = () => {
                         Kingdom of Saudi Arabia
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                 </div>
               </div>
@@ -191,7 +208,24 @@ export const FooterSection = () => {
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               </button> */}
                 <button
-                  className="glare-btn cursor-pointer relative overflow-hidden w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 font-['Geist'] font-medium text-sm text-white tracking-widest uppercase bg-gradient-to-r from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95"
+                  className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn"
                 >
                   NEED HELP?
                 </button>

@@ -184,34 +184,51 @@ function FormWrapper() {
           <span className="font-['Geist:SemiBold'] font-semibold text-[10px] text-[#0f9101] uppercase tracking-wide">get in touch</span>
         </div>
         <div className="flex flex-wrap gap-x-2 items-center">
-          <span className="bg-clip-text font-['Geist:Medium'] font-medium text-[20px] md:text-[23px] text-black/40" style={{ backgroundImage: "linear-gradient(-88.8998deg, rgba(0, 0, 0, 0.4) 5%, rgb(0, 0, 0) 50%)" }}>Have a</span>
+          <span className="bg-clip-text font-['Geist'] font-medium text-[20px] md:text-[23px] text-black/40" style={{ backgroundImage: "linear-gradient(-88.8998deg, rgba(0, 0, 0, 0.4) 5%, rgb(0, 0, 0) 50%)" }}>Have a</span>
           <span className="font-['Playfair_Display'] italic text-[20px] md:text-[23px] text-black/60">solution in mind?</span>
         </div>
       </div>
 
       <form className="content-stretch flex flex-col gap-4 items-center justify-center relative shrink-0 w-full" onSubmit={(e) => e.preventDefault()}>
         <div className="w-full flex flex-col gap-1.5">
-          <label className="font-['Geist:SemiBold'] text-[10px] text-black/60 uppercase">Name</label>
-          <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist:Medium'] text-[16px] text-black placeholder:text-black/30" placeholder="John Doe" />
+          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">Name</label>
+          <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30" placeholder="John Doe" />
         </div>
         <div className="w-full flex flex-col gap-1.5">
-          <label className="font-['Geist:SemiBold'] text-[10px] text-black/60 uppercase">Email Address*</label>
-          <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist:Medium'] text-[16px] text-black placeholder:text-black/30" placeholder="hello@website.com" type="email" />
+          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">Email Address*</label>
+          <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30" placeholder="hello@website.com" type="email" />
         </div>
         <div className="w-full flex flex-col gap-1.5">
-          <label className="font-['Geist:SemiBold'] text-[10px] text-black/60 uppercase">message</label>
-          <textarea className="w-full bg-[#f5f5f5] rounded-[7px] p-4 h-[100px] outline-none font-['Geist:Medium'] text-[16px] text-black placeholder:text-black/30 resize-none" placeholder="Tell us about your requirements" />
+          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">message</label>
+          <textarea className="w-full bg-[#f5f5f5] rounded-[7px] p-4 h-[100px] outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30 resize-none" placeholder="Tell us about your requirements" />
         </div>
 
         <div className="flex gap-3 items-start w-full py-2">
           <input type="checkbox" className="mt-1" id="terms" />
-          <label htmlFor="terms" className="font-['Geist:Medium'] text-[13px] text-black/60 leading-tight">
+          <label htmlFor="terms" className="font-['Geist'] text-[13px] text-black/60 leading-tight">
             I have read and agree to the <span className="text-[#110fdf] font-semibold cursor-pointer">Terms and Conditions</span>
           </label>
         </div>
         <button
           type="submit"
-          className="relative cursor-pointer overflow-hidden w-full py-4 rounded-full text-white font-['Geist'] font-medium text-sm uppercase tracking-wider bg-gradient-to-r from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-[1.02] hover:brightness-110 active:scale-[0.98] glare-btn"
+          className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn"
         >
           SEND MESSAGE
         </button>
@@ -224,9 +241,9 @@ function FormWrapper() {
   );
 }
 
-function Container() {
+export function Container() {
   return (
-    <div className="bg-gradient-to-b content-stretch flex flex-col lg:flex-row from-[#110fdf] to-blue-900/50 items-center justify-between max-w-[1260px] overflow-hidden px-8 md:px-[60px] py-16 md:py-[100px] relative rounded-2xl md:rounded-[7px] w-full gap-16 md:gap-20" data-name="Container">
+    <div className="bg-gradient-to-b backdrop-blur-[25px] content-stretch flex flex-col lg:flex-row from-[#110fdf] to-blue-900/50 items-center justify-between max-w-[1260px] overflow-hidden px-8 md:px-[60px] py-16 md:py-[100px] relative rounded-2xl md:rounded-[7px] w-full gap-16 md:gap-20" data-name="Container">
       <DivFramerIu4QGMaskGroup />
       <DivFramerIu4QGMaskGroup1 />
       <Shape />
@@ -243,7 +260,7 @@ function Container() {
 export const ContactSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex items-center justify-center px-6 md:px-[30px] py-30 md:py-[40px] relative overflow-hidden" data-name="Form section">
+      <section className="w-full flex items-center justify-center px-6 md:px-[30px] py-10 md:py-16 relative overflow-hidden" data-name="Form section">
         <Container />
       </section>
     </ScrollFadeIn>

@@ -12,6 +12,7 @@ import InsightsPage from "./app/pages/insights-page";
 import BlogDetailPage from "./app/pages/blog-detail-page";
 import ProductsPage from "./app/pages/products-page";
 import ContactPage from "./app/pages/contact-page";
+import Services from "./app/pages/Services";  
 
 
 const Root = () => {
@@ -22,13 +23,12 @@ const Root = () => {
   }, [pathname]);
 
   return (
-    <main className="relative min-h-screen bg-black text-white selection:bg-blue-500/30 ">
+    <main className="relative min-h-screen bg-black text-white selection:bg-blue-500/10 flex flex-col">
       <Background />
       <Navbar />
-      <div className="relative z-10">
+      <div className="relative z-10 flex-grow">
         <Outlet />
       </div>
-      <div className="h-[10vh] md:h-[20vh]" />
     </main>
   );
 };
@@ -45,6 +45,10 @@ export const router = createBrowserRouter([
       {
         path: "services/:serviceId",
         Component: ServicePage,
+      },
+      {
+        path: "services",
+        Component: Services,
       },
       {
         path: "industries",

@@ -44,7 +44,7 @@ function QuoteSection() {
 export const HeroTestimonialSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-0 md:py-60 px-6 md:px-8 overflow-hidden">
+    <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8 overflow-hidden -mt-20">
       <div className="max-w-[1260px] w-full aspect-[1/1.2] sm:aspect-[1260/630] relative rounded-[7px] overflow-hidden group">
         {/* Background Main Image */}
         <div className="absolute inset-0 bg-[#3d2a45]">

@@ -140,8 +140,8 @@ function ImageWrap() {
 
 function H2FramerText() {
   return (
-    <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="h2.framer-text">
-      <div className="bg-clip-text flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.8153deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
+    <div className="content-stretch flex items-start justify-start relative shrink-0" data-name="h2.framer-text">
+      <div className="bg-clip-text flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-start leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-left tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.8153deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
         <p>Insights that matter.</p>
       </div>
     </div>
@@ -217,7 +217,24 @@ function FormFramer1B3R0N() {
       </button> */}
       <button
         type="submit"
-        className="glare-btn cursor-pointer relative overflow-hidden w-full py-4 rounded-full border border-white/20 font-['Geist'] font-medium text-sm text-white tracking-[0.5px] uppercase bg-gradient-to-tr from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95"
+        className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn"
       >
         SUBSCRIBE
       </button>
@@ -250,7 +267,7 @@ function Container() {
 export const EarlyAccessSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-20 md:py-[80px] relative w-full" data-name="Early Access Section">
+      <section className="content-stretch flex items-center justify-center px-6 md:px-[30px] py-10 md:py-16 relative w-full" data-name="Early Access Section">
         <Container />
       </section>
     </ScrollFadeIn>

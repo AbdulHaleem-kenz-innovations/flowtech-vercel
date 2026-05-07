@@ -74,6 +74,7 @@ const HeroSection = () => (
 
 const WhyJoinSection = () => (
   <section className="w-full max-w-[1260px] mx-auto py-[100px] px-6 relative z-10">
+     <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-10 flex flex-col justify-between">
     <div className="flex flex-col gap-16">
       <div className="flex flex-col md:flex-row justify-between items-end gap-10">
         <div className="flex flex-col gap-6">
@@ -124,6 +125,7 @@ const WhyJoinSection = () => (
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px] items-center">
+         <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-10 flex h-full flex-col justify-between">
         <div className="flex flex-col gap-6 order-2 md:order-1">
           <h3 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[32px] text-transparent tracking-tight">
             Different Minds, One Vision
@@ -131,6 +133,7 @@ const WhyJoinSection = () => (
           <p className="text-white/70 font-['Geist'] text-[20px] leading-relaxed uppercase">
             Our team brings together engineers, analysts, and problem-solvers building intelligent systems for real-world industries. We value ownership, collaboration, and the belief that impactful solutions come from strong thinking. Here, you’ll learn, build, and grow with people shaping the future of operations.
           </p>
+        </div>
         </div>
         <div className="h-[500px] rounded-[7px] overflow-hidden order-1 md:order-2 border border-white/10">
           <ImageWithFallback src={imgGoldenPawnChessMoveOutFromLineDifferentThinkingLeadingChangeDisruptionUniqueConceptBy3DRender1} className="size-full object-cover" />
@@ -141,6 +144,7 @@ const WhyJoinSection = () => (
         <div className="h-[500px] rounded-[7px] overflow-hidden border border-white/10">
           <ImageWithFallback src={imgBusinessHandshakeContract1} className="size-full object-cover" />
         </div>
+         <div className="backdrop-blur-[25px] h-full bg-white/5 border border-white/10 rounded-[7px] p-10 flex flex-col justify-center">
         <div className="flex flex-col gap-6">
           <h3 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[32px] text-transparent tracking-tight">
             Work That Leaves a Mark
@@ -149,7 +153,9 @@ const WhyJoinSection = () => (
             We don’t just build technology—we deliver systems that transform how industries operate. You’ll work on solutions you can point to and say, “I helped build that.”
           </p>
         </div>
+        </div>
       </div>
+    </div>
     </div>
   </section>
 );
@@ -191,7 +197,7 @@ const JobOpenings = () => (
                 <svg className="size-5 shrink-0" viewBox="0 0 20 20" fill="white">
                   <path d={svgPaths.p9ebcb80} />
                 </svg>
-                <span className="font-['Geist'] font-semibold text-[16px] text-white uppercase tracking-wide">
+                <span className="font-['Geist'] font-semibold text-[14px] text-white uppercase tracking-wide">
                   {benefit}
                 </span>
               </div>
@@ -210,10 +216,10 @@ const JobOpenings = () => (
             <div key={i} className="backdrop-blur-[25px] bg-white/10 border border-white/10 rounded-[7px] p-6 group cursor-pointer hover:bg-white/20 transition-colors">
               <div className="flex justify-between items-center">
                 <div className="flex flex-col gap-2">
-                  <h4 className="font-['Geist'] font-medium text-[24px] md:text-[32px] text-white leading-tight tracking-tight">
+                  <h4 className="font-['Geist'] font-medium text-[24px] md:text-[20px] text-white leading-tight tracking-tight">
                     {job.title}
                   </h4>
-                  <p className="text-white/60 font-['Geist'] text-[18px] md:text-[22px] uppercase">
+                  <p className="text-white/60 font-['Geist'] text-[18px] md:text-[15px] uppercase">
                     {job.loc}
                   </p>
                 </div>

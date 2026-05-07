@@ -167,19 +167,24 @@ function CardFact() {
             </div>
             <div className="content-stretch flex flex-col items-start relative shrink-0 w-full sm:w-auto">
               <button
-                className="relative overflow-hidden
-  flex items-center justify-center
-  w-full sm:w-auto
-  px-6 py-3
-  rounded-full
-  bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-  border border-white/20
-  text-white uppercase whitespace-nowrap
-  font-['Geist'] text-[16px]
-  cursor-pointer
-  transition-all duration-300 
-  hover:scale-105 active:scale-95 
-  glare-btn
+                className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn
 "
               >
                 GET STARTED
@@ -217,7 +222,7 @@ function CardHours() {
 export const FunFactsSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center py-16 md:py-0 px-6 md:px-8">
+      <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8">
         <div className="max-w-[1260px] w-full flex flex-col gap-16 md:gap-[80px] items-center justify-center relative" data-name="Fun Facts">
           <SectionContent />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-[34px]  items-start justify-center relative shrink-0 w-full" data-name="Fun Facts Card Wrapper">

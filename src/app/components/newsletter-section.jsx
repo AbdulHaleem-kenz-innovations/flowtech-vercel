@@ -4,7 +4,7 @@ import imgImage from "../../assets/2f8c3a2c8eca26d65de115305cf49c0c2f3513ea.png"
 
 export const NewsletterSection = () => {
   return (
-    <section className="w-full max-w-[1260px] px-6 mb-40 flex flex-col lg:flex-row gap-20 items-center mx-auto">
+    <section className="w-full max-w-[1260px] px-6 py-10 md:py-16 flex flex-col lg:flex-row gap-20 items-center mx-auto">
       <div className="flex-1 relative">
          <div className="aspect-[364/470] max-w-[364px] rounded-[7px] overflow-hidden relative group">
            <ImageWithFallback src={imgImage} className="w-full h-full object-cover" />
@@ -57,19 +57,24 @@ export const NewsletterSection = () => {
             </div>
             <button 
               type="submit"
-              className="relative overflow-hidden
-              flex items-center justify-center
-              w-full sm:w-auto
-              px-6 py-3
-              rounded-full
-              bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-              border border-white/20
-              text-white uppercase whitespace-nowrap
-              font-['Geist'] text-[16px]
-              cursor-pointer
-              transition-all duration-300 
-              hover:scale-105 active:scale-95 
-              glare-btn"
+              className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn"
             >
               SUBSCRIBE
             </button>

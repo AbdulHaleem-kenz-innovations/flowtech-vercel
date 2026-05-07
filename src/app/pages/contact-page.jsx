@@ -19,6 +19,7 @@ import { imgDivFramerIu4QG as imgIcon1, imgDivFramerIu4QG1 as imgIcon2, imgDivFr
 import { imgDivFramerIu4QG as imgPlusIcon, imgDivFramerIu4QG1 as imgPlusLargeIcon, imgGroup as imgSquareIcon } from "../../imports/svg-o5wm7";
 import { imgDivFramerIu4QG, imgDivFramerJJpra } from "../../imports/svg-ot74f";
 import { NewsletterSection } from '../components/newsletter-section';
+import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 // --- Form Components ---
 
@@ -130,119 +131,6 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Grid Layout Section */}
-      {/* <section className="w-full max-w-[1260px] px-6 mb-40 overflow-visible">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-5 items-start justify-center w-full" data-name="Content Wrapper"> */}
-
-          {/* Left Column - Lists */}
-          {/* <div className="flex flex-col gap-5 items-center justify-center lg:max-w-[305px] w-full" data-name="Lists">
-            <div className="backdrop-blur-[10px] bg-white/10 border border-white/10 rounded-xl overflow-hidden w-full" data-name="Card">
-              <div className="p-6 md:p-8 flex flex-col gap-12 min-h-[300px] justify-between">
-                <div className="flex flex-col gap-6">
-                  <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-full w-fit">
-                    <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-widest uppercase">hire us</span>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <h5 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[23px] text-transparent tracking-tight leading-tight">
-                      Have an industrial challenge?
-                    </h5>
-                    <p className="font-['Playfair_Display'] italic font-normal text-[23px] text-white/70 tracking-tight leading-tight">
-                      We’ll solve it.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-4 opacity-60">
-                  <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white uppercase tracking-wider hover:text-white transition-colors cursor-pointer">
-                    info@flowtech.com
-                  </p>
-                  <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white uppercase tracking-wider hover:text-white transition-colors cursor-pointer">
-                    +1 345 000 678
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-xl overflow-hidden w-full h-[250px] md:h-[292px]">
-              <ImageWithFallback alt="" className="w-full h-full object-cover" src={imgImage} />
-            </div>
-          </div> */}
-
-          {/* Center Column - Form Wrapper */}
-          {/* <div className="bg-white flex flex-col gap-8 items-start justify-center lg:max-w-[610px] w-full p-6 md:p-10 lg:p-12 rounded-xl" data-name="Form Wrapper">
-            <div className="flex flex-col gap-6 w-full">
-              <div className="bg-[#2df9a7]/10 px-4 py-2 rounded-full w-fit flex items-center gap-2">
-                <div className="size-3 bg-[#0f9101]" style={{ maskImage: `url('${imgImage1}')`, maskSize: 'contain' }} />
-                <span className="font-['Geist'] font-semibold text-[11px] text-[#0f9101] tracking-widest uppercase">get in touch</span>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-x-2">
-                <h5 className="bg-clip-text bg-gradient-to-r from-black to-black/60 font-['Geist'] font-medium text-[23px] text-transparent tracking-tight">
-                  Have a
-                </h5>
-                <p className="font-['Playfair_Display'] italic font-normal text-[23px] text-black/60 tracking-tight">
-                  project in mind?
-                </p>
-              </div>
-            </div>
-
-            <form className="flex flex-col gap-5 w-full">
-              <InputField label="Name" placeholder="John Doe" />
-              <InputField label="Email Address*" placeholder="hello@website.com" type="email" />
-              <InputField label="Company*" placeholder="Company name" />
-              <TextAreaField label="Message" placeholder="Your message" />
-
-              <div className="flex items-start gap-3 py-2">
-                <div className="relative size-5 shrink-0 mt-0.5">
-                  <input type="checkbox" className="absolute inset-0 opacity-0 cursor-pointer z-10 peer" />
-                  <div className="absolute inset-0 border-2 border-neutral-300 rounded-sm peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-all" />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 peer-checked:opacity-100 pointer-events-none">
-                    <svg className="size-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="4">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                </div>
-                <p className="font-['Geist'] font-medium text-[13px] md:text-[14px] text-black/70 leading-relaxed">
-                  I have read and agree to the <span className="text-blue-700 font-semibold cursor-pointer hover:underline">Terms and Conditions</span>
-                </p>
-              </div>
-
-              <button className="relative rounded-full overflow-hidden w-full h-14 group shadow-lg shadow-blue-900/20">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-500 transition-opacity group-hover:opacity-90" />
-                <span className="relative z-10 font-['Geist'] font-semibold text-[14px] text-white tracking-widest uppercase">Send message</span>
-              </button>
-            </form>
-          </div> */}
-
-          {/* Right Column - Support Cards */}
-          {/* <div className="flex flex-col gap-5 items-center justify-center lg:max-w-[305px] w-full" data-name="Lists">
-            <div className="rounded-xl overflow-hidden w-full h-[250px] md:h-[292px]">
-              <ImageWithFallback alt="" className="w-full h-full object-cover" src={imgImage2} />
-            </div>
-
-            <div className="backdrop-blur-[10px] bg-white/10 border border-white/10 rounded-xl overflow-hidden w-full" data-name="Card">
-              <div className="p-6 md:p-8 flex flex-col gap-10 min-h-[300px] justify-between">
-                <div className="flex flex-col gap-6">
-                  <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-full w-fit">
-                    <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-widest uppercase">SUPPORT</span>
-                  </div>
-                  <h5 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[23px] text-transparent tracking-tight leading-tight">
-                    Solutions that power efficiency and performance
-                  </h5>
-                </div>
-
-                <div className="flex flex-col gap-3.5 border-l border-white/10 pl-4 py-1">
-                  <div className="backdrop-blur-sm bg-white/15 h-3 rounded-full w-[25%]" />
-                  <div className="backdrop-blur-sm bg-white/15 h-3 rounded-full w-[55%]" />
-                  <div className="backdrop-blur-sm bg-white/15 h-3 rounded-full w-[80%]" />
-                  <div className="bg-white h-3 rounded-full w-full" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section> */}
 
       <section className="w-full max-w-[1260px] px-6 mb-40 overflow-visible">
   <div className="flex flex-col lg:flex-row gap-8 lg:gap-5 items-stretch w-full" data-name="Content Wrapper">
@@ -358,6 +246,7 @@ const ContactPage = () => {
 </section>
 
       {/* FAQ Section */}
+      <ScrollFadeIn>
       <section className="w-full mb-20 md:mb-40 px-4">
         <div className="max-w-[1260px] mx-auto backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] rounded-xl p-6 md:p-12 flex flex-col lg:flex-row gap-10">
 
@@ -462,6 +351,7 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
+      </ScrollFadeIn>
 
       {/* Testimonials Section */}
       {/* Testimonials Section */}

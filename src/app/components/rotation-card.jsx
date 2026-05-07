@@ -75,10 +75,28 @@ export default function RotationCard() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center mt-4">
-          <button className="w-full sm:w-fit bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-10 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-[14px] uppercase tracking-widest hover:scale-105 transition-transform">
+          <button className=" relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn">
             Let’s talk
           </button>
-          <button className="w-full sm:w-fit bg-white px-10 py-4 rounded-full text-[#035fda] font-['Geist'] font-medium text-[14px] uppercase tracking-widest hover:bg-white/90 transition-colors">
+          <button className="w-full w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px] bg-white px-10 py-4 rounded-full text-[#035fda] font-['Geist'] font-medium text-[14px] uppercase tracking-widest hover:bg-white/90 transition-colors">
             Our SOLUTIONS
           </button>
         </div>

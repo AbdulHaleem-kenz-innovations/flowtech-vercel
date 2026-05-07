@@ -24,32 +24,35 @@ import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 const HeroSection = () => {
   const images = [
-    { src: imgScreenshot20260420At25442Pm2, className: "absolute top-0 left-[10%] w-[20%] md:w-[15%] aspect-[3/4] rounded-2xl blur-[4px] opacity-30 md:opacity-40" },
-    { src: imgScreenshot20260420At25442Pm5, className: "absolute top-[5%] right-[10%] md:right-[15%] w-[20%] md:w-[15%] aspect-[3/4] rounded-2xl blur-[4px] opacity-30 md:opacity-40" },
-    { src: imgScreenshot20260420At25442Pm4, className: "absolute top-[20%] right-[-5%] md:right-[2%] w-[20%] md:w-[15%] aspect-[3/4] rounded-2xl blur-[4px] opacity-30 md:opacity-40 hidden sm:block" },
-    { src: imgScreenshot20260420At25442Pm1, className: "absolute bottom-[10%] left-[-5%] md:left-[2%] w-[20%] md:w-[15%] aspect-[3/4] rounded-2xl blur-[4px] opacity-30 md:opacity-40 hidden sm:block" },
-    { src: imgScreenshot20260420At30329Pm1, className: "absolute bottom-[5%] left-[20%] md:left-[25%] w-[20%] md:w-[15%] aspect-[3/4] rounded-2xl blur-[4px] opacity-30 md:opacity-40" },
-    { src: imgScreenshot20260420At25442Pm3, className: "absolute bottom-[10%] right-[20%] md:right-[25%] w-[20%] md:w-[15%] aspect-[3/4] rounded-2xl blur-[4px] opacity-30 md:opacity-40" },
-    { src: imgScreenshot20260420At30549Pm1, className: "absolute bottom-[20%] right-[-5%] md:right-[10%] w-[20%] md:w-[15%] aspect-[3/4] rounded-2xl blur-[4px] opacity-30 md:opacity-40 hidden sm:block" },
+    { src: imgScreenshot20260420At25442Pm2, className: "absolute top-[8%] left-[2%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
+    { src: imgScreenshot20260420At25442Pm5, className: "absolute top-[2%] left-[68%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
+    { src: imgScreenshot20260420At25442Pm4, className: "absolute top-[12%] right-[1%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
+    { src: imgScreenshot20260420At25442Pm1, className: "absolute bottom-[8%] left-[-2%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
+    { src: imgScreenshot20260420At30329Pm1, className: "absolute top-[2%] left-[28%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
+    { src: imgScreenshot20260420At25442Pm3, className: "absolute bottom-[8%] right-[-2%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
+     { src: imgScreenshot20260420At30549Pm1, className: "absolute bottom-[-10%] left-[20%] md:right-[10%] w-[20%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px]" },
   ];
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden min-h-[700px] md:min-h-[800px] flex items-center">
+      {/* Central Blue Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[60%] bg-[#046ce4]/30 rounded-full blur-[100px] md:blur-[140px] pointer-events-none -z-1" />
+
       {/* Background Floating Images */}
       {images.map((img, i) => (
         <motion.div
           key={i}
           className={img.className}
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 0.4, y: 0 }}
-          transition={{ duration: 1, delay: i * 0.1 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: i * 0.15 }}
         >
           <ImageWithFallback src={img.src} className="size-full object-cover rounded-[inherit]" />
         </motion.div>
       ))}
 
       {/* Hero Content */}
-      <section className="relative z-10 pt-[160px] md:pt-[200px] pb-[80px] md:pb-[100px] px-6 text-center max-w-[1260px] mx-auto flex flex-col items-center gap-8 md:gap-10">
+      <section className="relative z-10 pt-[120px] md:pt-[140px] pb-[80px] md:pb-[100px] px-6 text-center max-w-[1260px] mx-auto flex flex-col items-center gap-8 md:gap-10">
         <motion.div
           className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit"
           initial={{ opacity: 0, y: 10 }}
@@ -118,9 +121,9 @@ const IndustryCard = ({ title, intro, image, capabilities, outcome, icon: IconCo
           {capabilities.map((cap, i) => (
             <div key={i} className="flex gap-3 items-center">
               <div className="size-[16px] text-white/60">
-                <svg viewBox="0 0 15 19" className="size-full fill-current">
-                  <path d="M7.5 0L15 9.5H10.5L13.5 19L0 9.5H4.5L7.5 0Z" />
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0268 1.1331C11.5535 0.501432 12.5793 0.933098 12.496 1.75143L11.9077 7.49976H16.6668C16.8252 7.49982 16.9802 7.545 17.1138 7.62999C17.2474 7.71499 17.3541 7.83629 17.4212 7.97969C17.4884 8.12309 17.5133 8.28265 17.493 8.4397C17.4728 8.59674 17.4082 8.74476 17.3068 8.86643L8.97351 18.8664C8.44684 19.4981 7.42101 19.0664 7.50434 18.2481L8.09268 12.4998H3.33351C3.17516 12.4997 3.02011 12.4545 2.88651 12.3695C2.75291 12.2845 2.64629 12.1632 2.57914 12.0198C2.51199 11.8764 2.48708 11.7169 2.50733 11.5598C2.52759 11.4028 2.59217 11.2548 2.69351 11.1331L11.0268 1.1331Z" fill="white"/>
+</svg>
               </div>
               <span className="font-['Geist'] font-semibold text-[14px] md:text-[16px] text-white uppercase tracking-wide">{cap}</span>
             </div>
@@ -236,14 +239,21 @@ const ContentSection = () => {
 
           <ScrollFadeIn>
         <IndustryCard
-          title="Pipelines"
+          title="Oil & Gas"
           icon={() => (
-            <svg viewBox="0 0 24 24" className="size-full fill-current">
-              <path d="M12,2L4.5,20.29L5.21,21L12,18L18.79,21L19.5,20.29L12,2Z" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <g clip-path="url(#clip0_937_1568)">
+    <path d="M12.0004 10.9333L13.3337 18.6666H15.3337C16.0004 18.6666 16.0004 19.9999 15.3337 19.9999H4.66706C4.00039 19.9999 4.00039 18.6666 4.66706 18.6666H6.66706L8.00039 10.9333C9.33373 11.8399 10.6671 11.8399 12.0004 10.9333ZM11.2004 15.9999H8.80039L8.40039 18.6666H11.6004L11.2004 15.9999ZM10.6671 12.3333H9.33373L9.00039 14.6666H11.0004L10.6671 12.3333ZM13.0004 8.83992C12.9737 9.33325 12.7471 10.1199 12.3337 10.5333L17.3337 12.5066V19.5066C17.3337 20.1733 18.6671 20.1733 18.6671 19.5066V12.9999C19.6671 13.3333 20.3337 11.5999 19.3337 11.2666L13.0004 8.83992ZM4.66706 1.33325C0.000392273 1.33325 -1.33294 12.6666 1.66706 12.6666C2.66706 12.6666 4.32039 7.46659 4.32039 7.46659L7.00039 8.46659C7.00039 7.91992 7.33373 7.17325 7.69373 6.78659L4.94706 5.74659C4.94706 5.74659 6.00039 2.46659 6.00039 1.99992C6.00039 1.66659 5.33373 1.33325 4.66706 1.33325ZM10.0004 10.6666C11.1737 10.6666 12.0004 9.83992 12.0004 8.66659C12.0004 7.50659 11.1737 6.66659 10.0004 6.66659C8.84039 6.66659 8.00039 7.51992 8.00039 8.69325C8.00039 9.85325 8.84039 10.6666 10.0004 10.6666Z" fill="white"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_937_1568">
+      <rect width="20" height="20" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
           )}
           intro="Flowtech’s Pipeline Safety solution uses distributed fiber optic sensing (DFOS) to detect leaks, intrusions, and anomalies in real-time, ensuring operational safety and minimizing risks."
-          image={img1S32PRd3OwUHmTftJi70Y6SFfcMPng}
+          image={imgScreenshot20260420At25442Pm3}
           capabilities={[
             "Real-time leak detection",
             "Intrusion monitoring",
@@ -257,19 +267,24 @@ const ContentSection = () => {
 
       {/* Connect Button */}
      <button className="
-              relative overflow-hidden
-              flex items-center justify-center
-              w-full sm:w-fit
-              px-8 py-4
-              rounded-full
-              bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-              border border-white/20
-              text-white uppercase whitespace-nowrap
-              font-['Geist'] text-[16px]
-              cursor-pointer
-              transition-all duration-300 
-              hover:scale-105 active:scale-95 
-              glare-btn
+               relative overflow-hidden
+    flex items-center justify-center
+
+    w-fit mx-auto sm:mx-0   /* 👈 key change */
+
+    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+    text-[13px] sm:text-[14px] md:text-[16px]
+
+    rounded-full
+    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+    border border-white/20
+    text-white uppercase whitespace-nowrap
+    font-['Geist']
+
+    cursor-pointer
+    transition-all duration-300 
+    hover:scale-105 active:scale-95 
+    glare-btn
             ">
         Connect US
       </button>
