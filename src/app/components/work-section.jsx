@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import svgPaths from "../../imports/svg-60x66umvnj";
-import imgMKwvaNgcAkQmHyt5Z49Ijjsm1VuPng from "../../assets/0975ee902333fa4c0ff75503ee2b2d45bc2017cd.png";
-import imgImage3 from "../../assets/ac6be543e6c2dd18fd3ec6d2c2879f0a8e7d1575.png";
-import imgHomePage011 from "../../assets/46e850a6ceee651d955294f33b48fc6dd587cffd.png";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDivFramerIu4QG2 } from "../../imports/svg-emg7m";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
@@ -138,26 +135,44 @@ function ProductCard({ number, title, description, image, normalImage, hoverImag
 
   return (
     <div
-      className="relative rounded-[7px] w-full   mx-auto h-[400px] md:h-[429px] overflow-clip"
-       style={{ aspectRatio: '4/4' }}
+      className="relative rounded-[7px] w-full mx-auto overflow-hidden bg-[#1a1a1a]"
+      style={{ aspectRatio: '4/4' }}
       data-name="Product Card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Normal Image View (Desktop only, default visible, hidden on hover) */}
       <div
-        className="hidden md:flex absolute inset-0 rounded-[7px] overflow-clip transition-opacity duration-300 items-center justify-center z-10"
-        style={{ opacity: isHovered ? 0 : 1 }}
+        className="hidden md:flex absolute inset-0 rounded-[7px] overflow-hidden transition-opacity duration-300 items-center justify-center z-10"
+        style={{ opacity: isHovered ? 0 : 1, padding:'0', margin:'0' }}
       >
-        <ImageWithFallback alt="" className="w-full h-full object-cover" src={normalImage} />
+       <ImageWithFallback
+    alt=""
+    style={{
+      display: 'block',
+      width: '100%',
+      height: 'auto',
+      margin: '0 -1px', // kills any sub-pixel side gaps
+    }}
+    src={normalImage}
+  />
       </div>
 
       {/* Hover Image View (Default on Mobile, revealed/faded in on Desktop hover) */}
       <div
-        className="absolute inset-0 rounded-[7px] overflow-clip transition-opacity duration-300 flex items-center justify-center opacity-100 md:opacity-0"
+        className="absolute inset-0 rounded-[7px] overflow-hidden transition-opacity duration-300 flex items-center justify-center opacity-100 md:opacity-0"
         style={isHovered ? { opacity: 1 } : {}}
       >
-        <ImageWithFallback alt="" className="w-full h-full object-cover" src={hoverImage} />
+       <ImageWithFallback
+    alt=""
+    style={{
+      display: 'block',
+      width: '100%',
+      height: 'auto',
+      margin: '0 -1px', // kills any sub-pixel side gaps
+    }}
+    src={hoverImage}
+  />
       </div>
     </div>
   );

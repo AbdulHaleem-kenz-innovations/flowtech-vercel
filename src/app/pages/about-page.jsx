@@ -92,7 +92,7 @@ const AboutPage = () => {
 
       {/* Hero Section */}
       <ScrollFadeIn>
-        <section className="pt-[200px] pb-[100px] px-6 w-full max-w-[1260px] mx-auto relative flex flex-col items-center">
+        <section className="pt-[200px] mb-[150px] px-6 w-full max-w-[1260px] mx-auto relative flex flex-col items-center">
           <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-10 md:p-[100px] w-full relative overflow-hidden">
             {/* Decorative icons */}
             <div className="absolute top-5 left-5 opacity-40 size-5 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain' }} />
@@ -401,7 +401,7 @@ const AboutPage = () => {
 
       {/* Our Team Section */}
 
-      <section className="px-6 w-full max-w-[1310px] mx-auto mb-[150px]">
+      <section className="px-6 w-full max-w-[1310px] mx-auto mb-[86px]">
         <ScrollFadeIn>
           <div className="flex flex-col gap-20">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 md:gap-10">
@@ -455,7 +455,7 @@ const AboutPage = () => {
 
 
       {/* Industrial Power Section */}
-      <section className="w-full h-[1000px] mb-[8px] relative overflow-hidden">
+      <section className="w-full mb-[22px] relative overflow-hidden">
         <ScrollFadeIn>
           <RotationCardSection />
         </ScrollFadeIn>

@@ -349,7 +349,7 @@ function Card() {
 
 function IntegrationCard() {
   return (
-    <div className="content-stretch flex flex-col items-center justify-center max-w-[396px] overflow-clip relative rounded-[6px] shrink-0 w-full sm:w-[396px]" data-name="Integration Card">
+    <div className="content-stretch flex backdrop-blur-[25px] flex-col items-center justify-center max-w-[396px] overflow-clip relative rounded-[6px] shrink-0 w-full sm:w-[396px]" data-name="Integration Card">
       <DivFramerXw3IahContainer />
       <div className="absolute bg-black inset-0 opacity-40" data-name="Overlay" />
       <Card />

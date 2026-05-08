@@ -10,6 +10,7 @@ import ScrollFadeIn from '../../components/ScrollFadeIn';
 import serviceHero from "../../assets/serviceHero.jpg"
 import { ContainerServices } from '../components/features-section';
 import { NewsletterSection } from '../components/newsletter-section';
+import {servicesData} from '../../lib/servicesData'
 
 const HeroSection = () => {
   return (
@@ -58,7 +59,7 @@ const Services = () => {
 
        <div className="w-full flex justify-center pt-20 md:pt-32 px-6 md:px-8">
       <div className="max-w-[1260px] w-full flex flex-col gap-20 md:gap-32 items-center justify-center relative" data-name="Features">
-              <ContainerServices />
+              <ContainerServices services={servicesData} />
               <Container />
               {/* <RotationCardSection /> */}
               <RotationalContainer/>

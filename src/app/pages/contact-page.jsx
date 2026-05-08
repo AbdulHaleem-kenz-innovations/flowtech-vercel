@@ -101,9 +101,9 @@ const ContactPage = () => {
 
 
   return (
-    <div className="w-full flex flex-col items-center pt-32 pb-20">
+    <div className="w-full flex flex-col items-center pt-[200px]">
       {/* Hero Section */}
-      <section className="flex flex-col gap-6 md:gap-[18px] items-center justify-center relative w-full max-w-[1260px] px-6 mb-20 md:mb-32" data-name="Section Content">
+      <section className="flex flex-col gap-6 md:gap-[18px] items-center justify-center relative w-full max-w-[1260px] px-6 mb-[150px]" data-name="Section Content">
         <div className="flex flex-col items-start relative" data-name="div.framer-1cde5fk-container">
           <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 flex gap-2 items-center justify-center px-4 py-1.5 relative rounded-full" data-name="Default">
             <div className="relative size-4" data-name="div.framer-IU4qG:mask-group">
@@ -132,7 +132,7 @@ const ContactPage = () => {
       </section>
 
 
-      <section className="w-full max-w-[1260px] px-6 mb-40 overflow-visible">
+      <section className="w-full max-w-[1260px] px-6 mb-[150px] overflow-visible">
   <div className="flex flex-col lg:flex-row gap-8 lg:gap-5 items-stretch w-full" data-name="Content Wrapper">
 
     {/* Left Column - Lists */}
@@ -247,7 +247,7 @@ const ContactPage = () => {
 
       {/* FAQ Section */}
       <ScrollFadeIn>
-      <section className="w-full mb-20 md:mb-40 px-4">
+      <section className="w-full mb-[150px] px-4">
         <div className="max-w-[1260px] mx-auto backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] rounded-xl p-6 md:p-12 flex flex-col lg:flex-row gap-10">
 
           {/* LEFT CONTENT */}
@@ -355,7 +355,7 @@ const ContactPage = () => {
 
       {/* Testimonials Section */}
       {/* Testimonials Section */}
-      <section className="w-full max-w-[1260px] px-6 py-40 border-t border-white/5">
+      <section className="w-full max-w-[1260px] px-6 mb-[86px] border-t border-white/5">
         <div className="content-stretch flex items-end overflow-clip relative shrink-0 w-full mb-20" data-name="Content Wrapper">
           <div className="content-stretch flex flex-col lg:flex-row items-end justify-between w-full relative shrink-0" data-name="Title Wrap">
             <div className="content-stretch flex flex-col gap-[20.01px] items-start justify-center max-w-[320px] overflow-clip relative shrink-0 w-full lg:w-[320px]" data-name="Title">
@@ -454,7 +454,9 @@ const ContactPage = () => {
 
 
       {/* Insights Section */}
-     <NewsletterSection/>
+      <div className="w-full mb-[86px]">
+        <NewsletterSection/>
+      </div>
 
       {/* Footer */}
       <FooterSection />

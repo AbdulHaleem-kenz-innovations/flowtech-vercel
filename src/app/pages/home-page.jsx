@@ -17,6 +17,7 @@ import { ContactSection } from '../components/contact-section';
 import { RotationCardSection } from '../components/rotation-card-section';
 import { EarlyAccessSection } from '../components/early-access-section';
 import { FooterSection } from '../components/footer-section';
+import { NewsletterSection } from '../components/newsletter-section';
 
 export const HomePage = () => {
   return (
@@ -37,7 +38,8 @@ export const HomePage = () => {
       <BlogSection />
       <ContactSection />
       <RotationCardSection />
-      <EarlyAccessSection />
+      {/* <EarlyAccessSection /> */}
+      <NewsletterSection/>
       <FooterSection />
     </>
   );

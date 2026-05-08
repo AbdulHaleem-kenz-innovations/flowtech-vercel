@@ -8,16 +8,16 @@ const Background = () => {
   return (
     <div className="fixed inset-0 z-0 bg-black overflow-hidden pointer-events-none">
       {/* Top Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] h-[100%] bg-blue-600/70 blur-[100px] md:blur-[150px] rounded-[100%] -translate-y-1/2" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] h-[100%] bg-blue-600/90 blur-[100px] md:blur-[150px] rounded-[100%] -translate-y-1/2" />
 
       {/* Background Image */}
-      <div className="absolute inset-0 opacity-30 md:opacity-40">
+      <div className="absolute inset-0 opacity-100 md:opacity-40">
         <ImageWithFallback
           src={imgPakg9GDq53Lni9Opq2ONPx1Qv9IJpg}
           alt=""
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/20" />
+        {/* <div className="absolute inset-0 bg-black/20" /> */}
       </div>
 
       {/* Radial Gradient Overlay */}

@@ -1,4 +1,14 @@
-// import React from 'react';
+import React, { useState } from "react";
+import { 
+  Instagram, 
+  Twitter, 
+  Github, 
+  Linkedin, 
+  Dribbble, 
+  PlusIcon 
+} from "lucide-react";
+import ScrollFadeIn from "../../components/ScrollFadeIn";
+import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-34ssx";
 import imgTeamImage from "../../assets/25593f754374bc769956c2480da019422fc09dd7.png";
 import imgTeamImage1 from "../../assets/28664606051f8506026c69bed106cd92d3ebbb23.png";
 import imgTeamImage2 from "../../assets/a85c1f3a6e2999097b681b0543e4f8c40a594808.png";
@@ -10,7 +20,6 @@ import imgVector from "../../assets/7f8f7db1b24bd3f3db04f6c6928d30f25bc8e3f5.png
 import imgVector1 from "../../assets/f9904e1428f23b9e83ae11dd28353beb0bbd42fc.png";
 import imgVector2 from "../../assets/52dbe64cfeea740ffa579ab7ca8d3b864a141982.png";
 import imgVector3 from "../../assets/8359590f5a074bbac33ab163e573171201184996.png";
-import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-34ssx";
 
 
 
@@ -20,21 +29,21 @@ const members = [
     name: "Marcus Leclerc",
     role: "Chief Technology Officer",
     image: imgTeamImage,
-    socials: ["IG", "X", "Dribbble"],
+    socials: [Instagram, Twitter, Dribbble],
   },
   {
     id: 2,
     name: "Sophia Chen",
     role: "UI Designer",
     image: imgTeamImage1,
-    socials: ["IG", "X"],
+    socials: [Instagram, Twitter],
   },
   {
     id: 3,
     name: "David Kim",
     role: "Frontend Developer",
     image: imgTeamImage6,
-    socials: ["GitHub", "X"],
+    socials: [Github, Twitter],
   },
 
   // ✅ Added 3 more
@@ -43,42 +52,40 @@ const members = [
     name: "Emma Rodriguez",
     role: "Product Manager",
     image: imgTeamImage6,
-    socials: ["IG", "LinkedIn"],
+    socials: [Instagram, Linkedin],
   },
   {
     id: 5,
     name: "Liam Patel",
     role: "Backend Engineer",
     image: imgTeamImage4,
-    socials: ["GitHub", "LinkedIn"],
+    socials: [Github, Linkedin],
   },
   {
     id: 6,
     name: "Emma Rodriguez",
     role: "Product Manager",
     image: imgTeamImage6,
-    socials: ["IG", "LinkedIn"],
+    socials: [Instagram, Linkedin],
   },
   {
     id: 7,
     name: "Liam Patel",
     role: "Backend Engineer",
     image: imgTeamImage4,
-    socials: ["GitHub", "LinkedIn"],
+    socials: [Github, Linkedin],
   },
   {
     id: 8,
     name: "Noah Smith",
     role: "UX Researcher",
     image: imgTeamImage5,
-    socials: ["IG", "Dribbble"],
+    socials: [Instagram, Dribbble],
   },
 ];
 
 
-import React, { useState } from "react";
-import ScrollFadeIn from "../../components/ScrollFadeIn";
-import { PlusIcon } from "lucide-react";
+
 
 const TeamGallery = ({ members }) => {
   const [selected, setSelected] = useState(members[0]);
@@ -144,13 +151,13 @@ const TeamGallery = ({ members }) => {
           </p>
 
           {/* Socials */}
-          <div className="flex gap-3 mt-2 text-gray-500 text-sm">
-            {selected.socials?.map((icon, i) => (
+          <div className="flex gap-4 mt-3 text-gray-500">
+            {selected.socials?.map((Icon, i) => (
               <span
                 key={i}
-                className="hover:text-black cursor-pointer transition"
+                className="hover:text-black cursor-pointer transition-colors"
               >
-                {icon}
+                <Icon size={18} />
               </span>
             ))}
           </div>

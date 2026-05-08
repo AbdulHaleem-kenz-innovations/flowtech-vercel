@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import whiteimg from "../../assets/white-img.avif"
+import bgimgblur from "../../assets/bgimgblur.png"
 
 // Main image from Figma
 // import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "figma:asset/12f90a2a24f7e3315caa72708e6722575a13d825.png";
@@ -30,12 +32,12 @@ const services = [
   },
   {
     name: "Cloud & Data Platforms",
-    href: "/services/cloud-data",
+    href: "/services/cloud-services",
     image: "https://images.unsplash.com/photo-1667984390553-7f439e6ae401?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZyUyMHNlcnZlciUyMHJvb20lMjBkYXRhJTIwcGxhdGZvcm18ZW58MXx8fHwxNzc2NzY0NDA1fDA&ixlib=rb-4.1.0&q=80&w=1080"
   },
   {
-    name: "SAP & Oracle Solutions",
-    href: "/services/sap-oracle",
+    name: "SAP Services",
+    href: "/services/sap-services",
     image: "https://images.unsplash.com/photo-1662947774668-e2ca450802df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwc29mdHdhcmUlMjBzYXAlMjBvcmFjbGUlMjBidXNpbmVzcyUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NzY3NjQ0MDV8MA&ixlib=rb-4.1.0&q=80&w=1080"
   }
 ];
@@ -99,6 +101,154 @@ const services = [
 //   );
 // };
 
+// export const ServicesDropdown = ({ isOpen, onClose }) => {
+//   const [hoveredIndex, setHoveredIndex] = useState(0);
+
+//   // Use a static background image that never changes
+//   const staticBackgroundImage = "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1200"; // Replace with your preferred static image
+
+//   return (
+//     <AnimatePresence>
+//       {isOpen && (
+//         <motion.div
+//           initial={{ opacity: 0, y: -20, scale: 0.95 }}
+//           animate={{ opacity: 1, y: 0, scale: 1 }}
+//           exit={{ opacity: 0, y: -20, scale: 0.95 }}
+//           transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+//           className="absolute top-[calc(100%+16px)] left-0 w-[640px] h-[400px] z-50 pointer-events-auto"
+//           onMouseLeave={onClose}
+//         >
+//           <div className="relative size-full overflow-hidden rounded-[20px] shadow-2xl">
+//             {/* STATIC Blur background layer - DOES NOT CHANGE on hover */}
+//             <div 
+//               className="absolute inset-0 -m-[30px] bg-cover bg-center blur-[25px]"
+//               style={{ 
+//                 backgroundImage: `url(${staticBackgroundImage})`,
+//                 backgroundSize: 'cover'
+//               }}
+//             />
+            
+//             {/* Dark overlay - keeps the blur consistent */}
+//             <div className="absolute inset-0 bg-black/50" />
+            
+//             {/* Content container */}
+//             <div className="relative z-10 size-full flex bg-white/5 backdrop-blur-[25px]">
+//               {/* Left Side: Services List */}
+//               <div className="flex-1 p-8 flex flex-col justify-center gap-4">
+//                 {services.map((service, index) => (
+//                   <Link
+//                     key={service.name}
+//                     to={service.href}
+//                     className={`font-['Geist'] font-semibold text-[18px] transition-colors duration-200 capitalize text-left leading-[27px]
+//                       ${hoveredIndex === index ? 'text-white' : 'text-white/75 hover:text-white/90'}`}
+//                     onMouseEnter={() => setHoveredIndex(index)}
+//                     onClick={onClose}
+//                   >
+//                     {service.name}
+//                   </Link>
+//                 ))}
+//               </div>
+
+//               {/* Right Side: Dynamic Image (this still changes on hover) */}
+//               <div className="w-[300px] m-4 relative overflow-hidden rounded-[15px]">
+//                 <AnimatePresence mode="wait">
+//                   <motion.div
+//                     key={hoveredIndex}
+//                     initial={{ opacity: 0, scale: 1.1 }}
+//                     animate={{ opacity: 1, scale: 1 }}
+//                     exit={{ opacity: 0, scale: 1.1 }}
+//                     transition={{ duration: 0.4 }}
+//                     className="absolute inset-0"
+//                   >
+//                     <ImageWithFallback 
+//                       src={services[hoveredIndex].image} 
+//                       className="w-full h-full object-cover" 
+//                     />
+//                     <div className="absolute inset-0 bg-black/10" />
+//                   </motion.div>
+//                 </AnimatePresence>
+//               </div>
+//             </div>
+//           </div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   );
+// };
+
+// export const ServicesDropdown = ({ isOpen, onClose }) => {
+//   const [hoveredIndex, setHoveredIndex] = useState(0);
+
+//   return (
+//     <AnimatePresence>
+//       {isOpen && (
+//         <motion.div
+//           initial={{ opacity: 0, y: -20, scale: 0.95 }}
+//           animate={{ opacity: 1, y: 0, scale: 1 }}
+//           exit={{ opacity: 0, y: -20, scale: 0.95 }}
+//           transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+//           className="absolute top-[calc(100%+16px)] left-0 w-[640px] h-[400px] z-50 pointer-events-auto"
+//           onMouseLeave={onClose}
+//         >
+//           {/* Glass container using whiteimg as blur source */}
+//           <div className="relative size-full overflow-hidden rounded-[20px] shadow-2xl">
+//             {/* White image as blur background - opacity 0.1 via tailwind */}
+//             <div 
+//               className="absolute inset-0 -m-[30px] bg-cover bg-center backdrop-blur-[25px] opacity-10"
+//               style={{ 
+//                 backgroundImage: `url(${whiteimg})`,
+//                 backgroundSize: 'cover'
+//               }}
+//             />
+            
+//             {/* Subtle dark overlay for depth */}
+//             <div className="absolute inset-0 bg-black/30" />
+            
+//             {/* Content container - matches navbar glass effect */}
+//             <div className="relative z-10 size-full flex backdrop-blur-[25px] bg-white/5">
+//               {/* Left Side: Services List */}
+//               <div className="flex-1 p-8 flex flex-col justify-center gap-4">
+//                 {services.map((service, index) => (
+//                   <Link
+//                     key={service.name}
+//                     to={service.href}
+//                     className={`font-['Geist'] font-semibold text-[18px] transition-colors duration-200 capitalize text-left leading-[27px]
+//                       ${hoveredIndex === index ? 'text-white' : 'text-white/75 hover:text-white/90'}`}
+//                     onMouseEnter={() => setHoveredIndex(index)}
+//                     onClick={onClose}
+//                   >
+//                     {service.name}
+//                   </Link>
+//                 ))}
+//               </div>
+
+//               {/* Right Side: Dynamic Image */}
+//               <div className="w-[300px] m-4 relative overflow-hidden rounded-[15px]">
+//                 <AnimatePresence mode="wait">
+//                   <motion.div
+//                     key={hoveredIndex}
+//                     initial={{ opacity: 0, scale: 1.1 }}
+//                     animate={{ opacity: 1, scale: 1 }}
+//                     exit={{ opacity: 0, scale: 1.1 }}
+//                     transition={{ duration: 0.4 }}
+//                     className="absolute inset-0"
+//                   >
+//                     <ImageWithFallback 
+//                       src={services[hoveredIndex].image} 
+//                       className="w-full h-full object-cover" 
+//                     />
+//                     <div className="absolute inset-0 bg-black/10" />
+//                   </motion.div>
+//                 </AnimatePresence>
+//               </div>
+//             </div>
+//           </div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   );
+// };
+
 export const ServicesDropdown = ({ isOpen, onClose }) => {
   const [hoveredIndex, setHoveredIndex] = useState(0);
 
@@ -117,9 +267,11 @@ export const ServicesDropdown = ({ isOpen, onClose }) => {
           <div className="relative backdrop-blur-[25px] size-full overflow-hidden rounded-[20px] shadow-2xl">
             {/* Blur background layer */}
             <div
-              className="absolute inset-0 -m-[30px] bg-cover bg-center blur-[25px]"
+              className="absolute inset-0 -m-[30px] bg-cover bg-center blur-[25px] "
               style={{
                 backgroundImage: `url(${services[hoveredIndex].image})`,
+                // backgroundImage: `url(${whiteimg})`,
+                // backgroundImage: `url(${bgimgblur})`,
                 backgroundSize: 'cover'
               }}
             />

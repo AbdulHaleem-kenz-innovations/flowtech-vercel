@@ -1,63 +1,11 @@
-import React from 'react';
 import { Link, useNavigate } from 'react-router';
-import imgRectangle from "../../assets/281158e8c678fde7e51a36a31c1553d4e710d208.png";
-// import img3DGraphComputerIllustration1 from "../../assets/d82205b1a88245914ba5dea196b6e44a35245bb8.png";
-import img3DGraphComputerIllustration1 from "../../assets/3d-graph-computer-illustration 1 (1).png";
-import imgRectangle1 from "../../assets/c78c44b955a51258030be19e23842e29465b7545.png";
-import imgRectangle2 from "../../assets/ed6ab4e2d6429f0d554d61b64ceec65f98cbdf2e.png";
 import imgFrame1139 from "../../assets/c4ae983d71bcd81ac6bc3423a3f716a541328ebf.png";
 import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../../assets/12f90a2a24f7e3315caa72708e6722575a13d825.png";
 import imgIcon from "../../assets/41ff2d725380255d23878aa7c6fb39c5f6bd3adc.png";
 import imgIcon1 from "../../assets/798b5019ccb03e7937fe35631b20dcdefae3cefc.png";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDivFramerIu4QG2, imgDiv, imgDiv1, imgDiv2, imgDiv3, imgDiv4, imgDiv5, imgDiv6, imgDiv7 } from "../../imports/svg-4ugef";
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import image1 from "../../assets/services/image 1.png";
-import image2 from "../../assets/services/image 2.png";
-import image3 from "../../assets/services/image 3.png";
-import image4 from "../../assets/services/image 4.png";
-
-const services = [
-  {
-    id: 1,
-    title: "Manufacturing Intelligence",
-    subtitle: "REAL-TIME ANALYTICS, DASHBOARDS",
-    description:
-      "Transform shop floor operations with real-time data integration, monitoring, and intelligent dashboards. Leverage predictive analytics to reduce downtime, optimise production, and improve quality.",
-    img: imgRectangle,
-    link: null,
-    hoverImg: image2,
-  },
-  {
-    id: 2,
-    title: "Energy Monitoring Systems",
-    subtitle: "ENERGY, SUSTAINABILITY",
-    description:
-      "Real-time energy monitoring that tracks consumption across utilities, equipment, and sites through a centralized dashboard.",
-    img: img3DGraphComputerIllustration1,
-    link: "/services/energy-monitoring",
-    hoverImg: image1,
-  },
-  {
-    id: 3,
-    title: "Manufacturing Intelligence",
-    subtitle: "REAL-TIME ANALYTICS, DASHBOARDS",
-    description:
-      "Turn complex data into actionable insights with advanced analytics, real-time dashboards, and predictive modelling.",
-    img: imgRectangle1,
-    link: null,
-    hoverImg: image4,
-  },
-  {
-    id: 4,
-    title: "Manufacturing Intelligence",
-    subtitle: "REAL-TIME ANALYTICS, DASHBOARDS",
-    description:
-      "Monitor pipelines in real time using distributed fiber optic sensing to detect leaks, temperature changes, and intrusions across long distances.",
-    img: imgRectangle2,
-    link: null,
-    hoverImg: image3,
-  },
-];
+import { servicesData } from "../../lib/servicesData";
 
 function DivFramerIu4QGMaskGroup() {
   return (
@@ -191,8 +139,6 @@ function Frame1({ description }) {
   );
 }
 
-
-
 function Image({ src, children }) {
   return (
     <div className="absolute inset-[-5%] overflow-clip" data-name="Image">
@@ -226,7 +172,6 @@ function TitleWrapCard({ title, subtitle }) {
     </div>
   );
 }
-
 
 import { useState, useEffect } from "react";
 import ScrollFadeIn from '../../components/ScrollFadeIn';
@@ -280,50 +225,7 @@ function ServiceCard({ item }) {
   );
 }
 
-// export default ServiceCard;
-
-// function ServiceCard({ item }) {
-//   const Wrapper = item.link ? Link : "div";
-
-//   return (
-//     <Wrapper
-//       to={item.link || undefined}
-//       className="flex flex-col gap-[10px] items-center justify-center relative w-full max-w-[560px] mx-auto group"
-//     >
-//       <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] aspect-square w-full overflow-hidden">
-
-//         <div className="absolute inset-[-5%]">
-
-//           {/* ✅ Default Image (always visible on mobile) */}
-//           <div className="absolute inset-0 transition-all duration-500 group-hover:scale-110">
-//             <ImageWithFallback
-//               src={item.img}
-//               alt=""
-//               className="w-full h-full object-cover"
-//             />
-//           </div>
-
-//           {/* ✅ Hover Image (ONLY desktop hover) */}
-//           {item.hoverImg && (
-//             <div className="absolute inset-0 opacity-0 scale-100 transition-all duration-500 group-hover:opacity-100 group-hover:scale-110">
-//               <ImageWithFallback
-//                 src={item.hoverImg}
-//                 alt=""
-//                 className="w-full h-full object-cover"
-//               />
-//             </div>
-//           )}
-
-//           <Frame1 description={item.description} />
-//         </div>
-//       </div>
-
-//       <TitleWrapCard title={item.title} subtitle={item.subtitle} />
-//     </Wrapper>
-//   );
-// }
-
-export default function WorkCardWrap() {
+ function WorkCardWrap({ services }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[40px] md:gap-[15px] w-full">
       {services.map((item) => (
@@ -363,10 +265,10 @@ function DivFramer13M6KicContainer() {
   );
 }
 
-function WorkCardWrapper() {
+ function WorkCardWrapper({ services }) {
   return (
     <div className="content-stretch flex flex-col gap-12 md:gap-[50px] items-center justify-center overflow-clip relative shrink-0 w-full" data-name="Work Card Wrapper">
-      <WorkCardWrap />
+      <WorkCardWrap services={services} />
       <DivFramer13M6KicContainer />
     </div>
   );
@@ -380,11 +282,11 @@ function DivFramerIu4QGMaskGroupSmall() {
   );
 }
 
-export function ContainerServices() {
+export function ContainerServices({ services }) {
   return (
     <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] content-stretch flex flex-col gap-12 md:gap-[80px] items-center justify-center max-w-[1260px] px-6 md:px-[63px] py-16 md:py-[100px] relative rounded-[7px] shrink-0 w-full" data-name="Container">
       <ContentWrapper />
-      <WorkCardWrapper />
+      <WorkCardWrapper services={services} />
       {/* Floating Gear */}
       <div className="absolute h-[150px] md:h-[273.493px] right-[-10px] md:right-[-19.75px] top-[-10px] md:top-[-14.76px] w-[140px] md:w-[265.865px] opacity-30 md:opacity-100">
         <ImageWithFallback alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full animate-[spin_20s_linear_infinite]" src={imgFrame1139} />
@@ -465,7 +367,7 @@ export const FeaturesSection = () => {
     <ScrollFadeIn>
       <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[20px] items-center justify-center relative" data-name="Features">
-          <ContainerServices />
+          <ContainerServices services={servicesData.slice(0, 4)} />
           <VideoSection />
         </div>
       </section>
