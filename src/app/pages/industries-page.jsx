@@ -52,7 +52,7 @@ const HeroSection = () => {
       ))}
 
       {/* Hero Content */}
-      <section className="relative z-10 pt-[120px] md:pt-[140px] pb-[80px] md:pb-[100px] px-6 text-center max-w-[1260px] mx-auto flex flex-col items-center gap-8 md:gap-10">
+      <section className="relative z-10 pt-[120px] md:pt-[140px] pb-10 md:pb-[100px] px-6 text-center max-w-[1260px] mx-auto flex flex-col items-center gap-8 md:gap-10">
         <motion.div
           className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit"
           initial={{ opacity: 0, y: 10 }}
@@ -147,27 +147,12 @@ const IndustryCard = ({ title, intro, image, capabilities, outcome, icon: IconCo
 
 const ContentSection = () => {
   return (
-    <section className="flex flex-col items-center px-6 py-12 md:py-20 gap-16 md:gap-10">
-      {/* Section Header */}
-      {/* <div className="max-w-[1260px] w-full flex flex-col lg:flex-row items-start lg:items-end justify-center gap-10 mb-6 md:mb-10">
-        <div className="flex flex-col gap-6 items-start">
-          <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit border border-white/10">
-            <div className="size-[16px] bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain' }} />
-            <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">CORE Industries</span>
-          </div>
-          <h2 className="bg-clip-text bg-gradient-to-l from-white/40 to-white font-['Geist'] font-medium text-[40px] md:text-[60px] text-transparent tracking-tight leading-tight">Industries</h2>
-        </div>
-        <div className="max-w-[420px] opacity-70 ">
-          <p className="font-['Geist'] text-white text-[14px] md:text-[16px] uppercase leading-relaxed">
-            FROM DATA TO INFRASTRUCTURE, WE DELIVER END-TO-END DIGITAL AND INDUSTRIAL SOLUTIONS BUILT FOR SCALE AND IMPACT
-          </p>
-        </div>
-      </div> */}
-  
-  <div className="relative max-w-[1260px] w-full flex flex-col lg:flex-row items-start lg:items-end gap-10 mb-6 md:mb-10">
+    <section className="flex flex-col items-center px-6 py-10 md:py-20 gap-10">
+      
+  <div className="relative max-w-[1260px] w-full flex flex-col lg:flex-row items-start lg:items-end gap-7 mb-6 md:mb-10">
 
   {/* Left content */}
-  <div className="flex flex-col gap-6 items-start z-10">
+  <div className="flex flex-col gap-6 items-start justify-between z-10">
     <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit border border-white/10">
       <div
         className="size-[16px] bg-white"
@@ -186,9 +171,9 @@ const ContentSection = () => {
     </h2>
   </div>
 
-  {/* Centered paragraph */}
-  <div className="max-w-[420px] opacity-70 mx-auto lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:bottom-0">
-    <p className="font-['Geist'] text-white text-[14px] md:text-[16px] uppercase leading-relaxed text-center">
+  {/* Right aligned paragraph */}
+  <div className="max-w-[420px] opacity-70 ml-auto lg:absolute lg:right-0 lg:bottom-0">
+    <p className="font-['Geist'] text-white text-[14px] md:text-[16px] uppercase leading-relaxed md:text-right">
       FROM DATA TO INFRASTRUCTURE, WE DELIVER END-TO-END DIGITAL AND INDUSTRIAL SOLUTIONS BUILT FOR SCALE AND IMPACT
     </p>
   </div>
@@ -196,7 +181,7 @@ const ContentSection = () => {
 </div>
 
       {/* Cards */}
-      <div className="w-full flex flex-col items-center gap-6">
+      <div className="w-full -mt-10 flex flex-col items-center justify-center">
         <ScrollFadeIn>
         <IndustryCard
           title="Manufacturing"
@@ -268,7 +253,7 @@ const ContentSection = () => {
       {/* Connect Button */}
      <button className="
                relative overflow-hidden
-    flex items-center justify-center
+    flex items-center justify-center -mt-10
 
     w-fit mx-auto sm:mx-0   /* 👈 key change */
 
@@ -286,7 +271,7 @@ const ContentSection = () => {
     hover:scale-105 active:scale-95 
     glare-btn
             ">
-        Connect US
+        Contact US
       </button>
     </section>
   );

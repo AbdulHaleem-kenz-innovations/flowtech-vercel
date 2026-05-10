@@ -46,7 +46,7 @@ const products = [
       <div className="relative z-10 w-full flex flex-col items-center">
         {/* Hero Section */}
         <ScrollFadeIn>
-        <section className="pt-[200px] pb-[100px] px-6 text-center max-w-[1260px] w-full flex flex-col items-center gap-10">
+        <section className="pt-[140px] md:pt-[200px] pb-10 md:pb-[100px] px-6 text-center max-w-[1260px] w-full flex flex-col items-center gap-10">
           <motion.div
             className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit"
             initial={{ opacity: 0, y: 10 }}
@@ -82,7 +82,7 @@ const products = [
        
 
         {/* Product Grid - Zig Zag Layout */}
-        <section className="px-6 w-full max-w-[1260px] flex flex-col gap-10 mb-40">
+        <section className="px-6 w-full max-w-[1260px] flex flex-col gap-10 mb-20 md:mb-40">
           {products.map((product, index) => (
             <ScrollFadeIn key={index}>
               <div className={`flex flex-col lg:flex-row gap-6 items-stretch group ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
@@ -110,7 +110,7 @@ const products = [
         </section>
 
         {/* Form Section */}
-        <section className="w-full max-w-[1260px] px-6 py-40 flex flex-col lg:flex-row gap-20">
+        <section className="w-full max-w-[1260px] px-6 py-20 md:py-40 flex flex-col lg:flex-row gap-20">
           <div className="flex-1 flex flex-col gap-12">
             <div className="flex flex-col gap-6">
               <h2 className="flex flex-col">
@@ -218,7 +218,7 @@ const products = [
         </section>
          </ScrollFadeIn>
 
-         <section className="w-full h-[1000px] mb-[150px] relative overflow-hidden">
+         <section className="w-full h-[400px] md:h-[1000px] mb-[80px] md:mb-[150px] relative overflow-hidden">
         <ScrollFadeIn>
         <RotationCardSection />
         </ScrollFadeIn>

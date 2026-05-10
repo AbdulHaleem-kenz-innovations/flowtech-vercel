@@ -27,7 +27,7 @@ const InsightsPage = () => {
     <div className="w-full flex flex-col items-center">
       {/* Hero Section */}
       <ScrollFadeIn>
-        <section className="pt-[140px] md:pt-[200px] pb-[60px] md:pb-[100px] px-6 text-center max-w-[1260px] w-full flex flex-col items-center gap-10">
+        <section className="pt-[140px] md:pt-[200px]  md:pb-[100px] px-6 text-center max-w-[1260px] w-full flex flex-col items-center gap-10">
           <div className="flex flex-col gap-[20px] items-center justify-center relative w-full">
             {/* Title Wrap */}
             <div className="flex flex-col gap-[20px] items-center justify-center relative w-full">
@@ -54,12 +54,12 @@ const InsightsPage = () => {
               >
                 <h1 className="flex flex-col items-center gap-1 md:gap-2 text-center">
                   <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent tracking-[-0.04em] leading-[1.1]">
-                    Latest industry trends and
+                    Latest industry trends and expert
                   </span>
                   <span className="flex flex-wrap items-center justify-center gap-x-4">
-                    <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent tracking-[-0.04em] leading-[1.1]">
+                    {/* <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent tracking-[-0.04em] leading-[1.1]">
                       expert
-                    </span>
+                    </span> */}
                     <span className="font-['Playfair_Display'] italic font-normal text-[36px] sm:text-[48px] md:text-[60px] text-white/70 tracking-[-0.04em] leading-[1.1]">
                       insights from our team
                     </span>
@@ -85,7 +85,7 @@ const InsightsPage = () => {
 
       {/* Filter Tabs & Search */}
       <ScrollFadeIn>
-        <section className="px-6 w-full max-w-[1260px] flex flex-col gap-10 md:gap-16 items-start justify-center mt-12 md:mt-20">
+        <section className="px-6 w-full max-w-[1260px] flex flex-col gap-10 md:gap-16 items-start justify-center mt-12 md:mt-5">
           {/* Categories Header */}
 
           <div className="flex flex-col md:flex-row gap-6 items-center justify-center w-full text-center">
@@ -157,7 +157,7 @@ const InsightsPage = () => {
 
                           {/* Text (hidden initially) */}
                           <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                            view
+                            VIEW
                           </span>
 
                           {/* Arrow (always visible, but slides) */}
@@ -181,7 +181,7 @@ const InsightsPage = () => {
 
             {/* Featured Full Width Post */}
             <Link to="/insights/optimizing-energy-consumption-with-intelligent-monitoring-systems" className="w-full group">
-              <div className="relative min-h-[500px] md:h-[600px] w-full overflow-hidden rounded-xl">
+              <div className="relative min-h-[300px] md:h-[600px] w-full overflow-hidden rounded-xl">
                 <div className="absolute inset-0">
                   <ImageWithFallback src={imgRemoteControlSoundSettingsFromTablet1} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
@@ -215,7 +215,7 @@ const InsightsPage = () => {
 
                         {/* Text (hidden initially) */}
                         <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                          view
+                          VIEW
                         </span>
 
                         {/* Arrow (always visible, but slides) */}
@@ -275,7 +275,7 @@ const InsightsPage = () => {
 
                             {/* Text (hidden initially) */}
                             <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                              view
+                              VIEW
                             </span>
 
                             {/* Arrow (always visible, but slides) */}

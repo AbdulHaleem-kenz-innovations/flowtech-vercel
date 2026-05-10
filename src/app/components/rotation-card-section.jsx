@@ -430,7 +430,7 @@ export function RotationalContainer() {
         left-0 right-0
         w-full h-full
         md:aspect-[1106/1134]
-        opacity-60 md:opacity-100
+        opacity-100 md:opacity-100
         flex flex-col items-center justify-center
         z-10"
       >

@@ -43,7 +43,7 @@ function Badge() {
 
 function HeadingWrap() {
   return (
-    <div className="flex flex-wrap gap-x-2 gap-y-1 items-center justify-center relative shrink-0 w-full" data-name="Heading Wrap">
+    <div className="flex flex-wrap gap-x-2 gap-y-1 items-start md:items-center justify-start md:justify-center relative shrink-0 w-full" data-name="Heading Wrap">
       <div className="h-auto relative shrink-0 w-auto" data-name="Proven results,">
         <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-88.8627deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)" }}>
           <p className="leading-[1.1]">{`Proven results, `}</p>
@@ -60,14 +60,14 @@ function HeadingWrap() {
 
 function SectionContent() {
   return (
-    <div className="content-stretch flex flex-col gap-6 md:gap-[22px] items-center justify-center max-w-[580px] relative shrink-0 w-full" data-name="Section Content">
-      <div className="content-stretch flex flex-col gap-[18px] items-center justify-center relative shrink-0 w-full" data-name="Title Wrap">
+    <div className="content-stretch flex flex-col gap-6 md:gap-[22px] items-start md:items-center justify-start md:justify-center self-start md:self-auto max-w-[580px] relative shrink-0 w-full" data-name="Section Content">
+      <div className="content-stretch flex flex-col gap-[18px] items-start md:items-center justify-start md:justify-center relative shrink-0 w-full" data-name="Title Wrap">
         <div className="content-stretch flex flex-col items-start relative shrink-0">
           <Badge />
         </div>
         <HeadingWrap />
       </div>
-      <div className="h-auto opacity-70 relative shrink-0 w-full text-center px-4" data-name="Proven results for every project, with a focus on design and functionality">
+      <div className="h-auto opacity-70 relative shrink-0 w-full text-left md:text-center md:px-4" data-name="Proven results for every project, with a focus on design and functionality">
         <p className="font-['Geist'] font-normal text-[14px] md:text-[18px] text-white uppercase leading-[1.4] md:leading-[27px]">DELIVERING MEASURABLE RESULTS ACROSS INDUSTRIES THROUGH DATA, AI, AND INTELLIGENT SYSTEMS</p>
       </div>
     </div>
@@ -207,7 +207,7 @@ function CardHours() {
               <p className="leading-[1.2]">50+ hours</p>
             </div>
           </div>
-          <div className="h-auto md:h-[44.81px] opacity-75 relative shrink-0 w-full text-right mb-8">
+          <div className="h-auto md:h-[44.81px] opacity-75 relative shrink-0 w-full text-left mb-8">
             <p className="font-['Geist'] font-normal text-[14px] md:text-[16px] text-white  uppercase leading-[1.4] md:leading-[22.4px]">HOURS SAVED MONTHLY THROUGH AUTOMATION, PREDICTIVE MAINTENANCE, AND PROCESS OPTIMIZATION</p>
           </div>
           <div className="absolute left-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">

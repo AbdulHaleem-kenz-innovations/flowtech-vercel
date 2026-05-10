@@ -5,6 +5,7 @@ import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../../assets/12f90a2a24f7e3315caa
 import { imgDivFramerIu4QG, imgDivFramerYVnZo, imgDivFramerFoIvU, imgDivFramerIu4QG1 } from "../../imports/svg-h8bas";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { Link } from 'react-router';
 
 function PlusIcon({ size = 16, className = "" }) {
   return (
@@ -48,7 +49,7 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
           </div>
           <PlusIcon size={18} className="opacity-40 md:size-[20px]" />
         </div>
-
+         <Link to={`/insights`} >
         <div className="flex flex-col gap-4 md:gap-5 items-start">
           <div className="flex flex-col gap-2 md:gap-3">
             <div className="flex gap-1 items-center opacity-50 font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white uppercase">
@@ -78,7 +79,7 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
       group-hover:translate-x-0
       transition-all duration-300 ease-in-out
     ">
-                view
+                VIEW
               </span>
 
               {/* Arrow (always visible, but slides) */}
@@ -99,6 +100,7 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
             </div>
           </div>
         </div>
+        </Link>
       </div>
     </div>
   );
@@ -110,20 +112,20 @@ export const BlogSection = () => {
       <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8 bg-transparent">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-20 items-center">
           {/* Header Section */}
-          <div className="flex flex-col gap-5 items-center text-center max-w-[700px]">
+          <div className="flex flex-col gap-5 items-start md:items-center text-left md:text-center self-start md:self-auto max-w-[700px]">
             <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] flex gap-[5px] items-center px-[11px] py-[5px] rounded-[5px]">
               <PlusIcon size={16} />
               <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">Recent News</span>
             </div>
 
-            <h2 className="flex flex-col items-center">
+            <h2 className="flex flex-col items-start md:items-center">
               <span className="bg-clip-text font-['Geist'] font-medium text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight"
-                style={{ backgroundImage: "linear-gradient(91.1511deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>Latest industry trends and</span>
-              <div className="flex flex-wrap gap-x-2 items-center justify-center">
-                <span className="bg-clip-text font-['Geist'] font-medium text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight"
+                style={{ backgroundImage: "linear-gradient(91.1511deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>Latest industry trends and experts</span>
+              <div className="flex flex-wrap gap-x-2 items-start md:items-center justify-start md:justify-center">
+                {/* <span className="bg-clip-text font-['Geist'] font-medium text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight"
                   style={{ backgroundImage: "linear-gradient(91.1032deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
                   expert
-                </span>
+                </span> */}
                 <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[32px] sm:text-[40px] md:text-[44px] tracking-[-0.4px] leading-tight">
                   insights from our team
                 </span>

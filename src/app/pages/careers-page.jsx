@@ -20,7 +20,7 @@ import { FooterSection } from '../components/footer-section';
 import { NewsletterSection } from '../components/newsletter-section';
 
 const HeroSection = () => (
-  <section className="w-full max-w-[1260px] mx-auto pt-[200px] mb-[110px] px-6 flex flex-col items-center gap-10 text-center relative z-10">
+  <section className="w-full max-w-[1260px] mx-auto pt-[140px] md:pt-[200px] mb-[80px] md:mb-[110px] px-6 flex flex-col items-center gap-10 text-center relative z-10">
     <motion.div 
       className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit"
       initial={{ opacity: 0, y: 10 }}
@@ -31,15 +31,15 @@ const HeroSection = () => (
     </motion.div>
 
     <motion.h1 
-      className="flex flex-col gap-2"
+      className="flex flex-col gap-1 md:gap-2"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1 }}
     >
-      <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[48px] md:text-[60px] text-transparent tracking-tight leading-[1.1]">
+      <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[32px] sm:text-[48px] md:text-[60px] text-transparent tracking-tight leading-[1.1]">
         Build the future.
       </span>
-      <span className="font-['Playfair_Display'] italic font-normal text-[48px] md:text-[60px] text-white/70 tracking-tight leading-[1.1]">
+      <span className="font-['Playfair_Display'] italic font-normal text-[32px] sm:text-[48px] md:text-[60px] text-white/70 tracking-tight leading-[1.1]">
         Industrial intelligence.
       </span>
     </motion.h1>
@@ -73,9 +73,9 @@ const HeroSection = () => (
 );
 
 const WhyJoinSection = () => (
-  <section className="w-full max-w-[1260px] mx-auto mb-[150px] px-6 relative z-10">
-     <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-10 flex flex-col justify-between">
-    <div className="flex flex-col gap-[150px]">
+  <section className="w-full max-w-[1260px] mx-auto mb-[80px] md:mb-[150px] px-6 relative z-10">
+     <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-6 md:p-10 flex flex-col justify-between">
+    <div className="flex flex-col gap-10">
       <div className="flex flex-col md:flex-row justify-between items-end gap-10">
         <div className="flex flex-col gap-6">
            <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit">
@@ -86,16 +86,16 @@ const WhyJoinSection = () => (
             Why join Flowtech
           </h2>
         </div>
-        <p className="max-w-[420px] text-white font-['Geist'] text-[16px] uppercase leading-relaxed text-right">
+        <p className="max-w-[420px] text-white font-['Geist'] text-[16px] uppercase leading-relaxed text-left">
           We solve complex operational challenges across manufacturing, energy, and infrastructure—creating real impact at scale.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[15px]">
-        <div className="h-[500px] rounded-[7px] overflow-hidden relative border border-white/10">
+        <div className="h-[300px] md:h-[500px] rounded-[7px] overflow-hidden relative border border-white/10">
           <ImageWithFallback src={imgGroupSuccessfulBusinessPeople1} className="size-full object-cover" />
         </div>
-        <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-10 flex flex-col justify-between">
+        <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-6 md:p-10 flex flex-col justify-between">
           <div className="flex flex-col gap-8">
             <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit">
               <div className="size-4">
@@ -125,31 +125,31 @@ const WhyJoinSection = () => (
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px] items-center">
-         <div className=" rounded-[7px] p-10 flex h-full flex-col justify-between">
+         <div className=" rounded-[7px] p-6 md:p-10 flex h-full flex-col justify-between">
         <div className="flex flex-col gap-6 order-2 md:order-1">
-          <h3 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[32px] text-transparent tracking-tight">
+          <h3 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[24px] md:text-[32px] text-transparent tracking-tight">
             Different Minds, One Vision
           </h3>
-          <p className="text-white/70 font-['Geist'] text-[20px] leading-relaxed uppercase">
+          <p className="text-white/70 font-['Geist'] text-[16px] md:text-[20px] leading-relaxed uppercase">
             Our team brings together engineers, analysts, and problem-solvers building intelligent systems for real-world industries. We value ownership, collaboration, and the belief that impactful solutions come from strong thinking. Here, you’ll learn, build, and grow with people shaping the future of operations.
           </p>
         </div>
         </div>
-        <div className="h-[500px] rounded-[7px] overflow-hidden order-1 md:order-2 border border-white/10">
+        <div className="h-[300px] md:h-[500px] rounded-[7px] overflow-hidden order-1 md:order-2 border border-white/10">
           <ImageWithFallback src={imgGoldenPawnChessMoveOutFromLineDifferentThinkingLeadingChangeDisruptionUniqueConceptBy3DRender1} className="size-full object-cover" />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px] items-center">
-        <div className="h-[500px] rounded-[7px] overflow-hidden border border-white/10">
+        <div className="h-[300px] md:h-[500px] rounded-[7px] overflow-hidden border border-white/10">
           <ImageWithFallback src={imgBusinessHandshakeContract1} className="size-full object-cover" />
         </div>
-         <div className=" h-full rounded-[7px] p-10 flex flex-col justify-center">
+         <div className=" h-full rounded-[7px] p-6 md:p-10 flex flex-col justify-center">
         <div className="flex flex-col gap-6">
-          <h3 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[32px] text-transparent tracking-tight">
+          <h3 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[24px] md:text-[32px] text-transparent tracking-tight">
             Work That Leaves a Mark
           </h3>
-          <p className="text-white/70 font-['Geist'] text-[20px] leading-relaxed uppercase">
+          <p className="text-white/70 font-['Geist'] text-[16px] md:text-[20px] leading-relaxed uppercase">
             We don’t just build technology—we deliver systems that transform how industries operate. You’ll work on solutions you can point to and say, “I helped build that.”
           </p>
         </div>
@@ -161,19 +161,19 @@ const WhyJoinSection = () => (
 );
 
 const JobOpenings = () => (
-  <section className="w-full max-w-[1260px] mx-auto mb-[86px] px-6 relative z-10">
-    <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-10 md:p-16 flex flex-col gap-20">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-10">
+  <section className="w-full max-w-[1260px] mx-auto mb-16 md:mb-[86px] px-6 relative z-10">
+    <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-6 md:p-16 flex flex-col gap-12 md:gap-20">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
         <div className="flex flex-col gap-6">
           <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit">
             <div className="size-4 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain' }} />
             <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">Careers</span>
           </div>
-          <h2 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[60px] text-transparent leading-tight">
+          <h2 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] md:text-[60px] text-transparent leading-tight">
             Job openings
           </h2>
         </div>
-        <p className="max-w-[420px] text-white/70 font-['Geist'] text-[16px] uppercase leading-relaxed text-right">
+        <p className="max-w-[420px] text-white/70 font-['Geist'] text-[16px] uppercase leading-relaxed text-left">
           We’re always looking for driven people to build and scale impactful solutions.
         </p>
       </div>
@@ -216,10 +216,10 @@ const JobOpenings = () => (
             <div key={i} className="backdrop-blur-[25px] bg-white/10 border border-white/10 rounded-[7px] p-6 group cursor-pointer hover:bg-white/20 transition-colors">
               <div className="flex justify-between items-center">
                 <div className="flex flex-col gap-2">
-                  <h4 className="font-['Geist'] font-medium text-[24px] md:text-[20px] text-white leading-tight tracking-tight">
+                  <h4 className="font-['Geist'] font-medium text-[18px] md:text-[24px] text-white leading-tight tracking-tight">
                     {job.title}
                   </h4>
-                  <p className="text-white/60 font-['Geist'] text-[18px] md:text-[15px] uppercase">
+                  <p className="text-white/60 font-['Geist'] text-[14px] md:text-[18px] uppercase">
                     {job.loc}
                   </p>
                 </div>
@@ -238,7 +238,7 @@ const JobOpenings = () => (
 );
 
 const InsightsSection = () => (
-  <section className="w-full max-w-[1260px] mx-auto mb-[150px] px-6 relative z-10">
+  <section className="w-full max-w-[1260px] mx-auto mb-[80px] md:mb-[150px] px-6 relative z-10">
      <div className="flex flex-col lg:flex-row gap-16 items-center">
         <div className="w-full lg:w-[364px] aspect-[364/470] rounded-[7px] overflow-hidden relative border border-white/10 group">
            <ImageWithFallback src={imgImage} className="size-full object-cover group-hover:scale-105 transition-transform duration-700" />

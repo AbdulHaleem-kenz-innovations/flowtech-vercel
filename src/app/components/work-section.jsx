@@ -55,8 +55,8 @@ function DivFramer1IzgjdsContainer() {
 
 function H2FramerText() {
   return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="h2.framer-text">
-      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.4672deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
+    <div className="content-stretch flex flex-col items-start md:items-center relative shrink-0 w-full" data-name="h2.framer-text">
+      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-left md:text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.4672deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
         <p className="leading-[1.1]">Intelligent products.</p>
       </div>
     </div>
@@ -73,8 +73,8 @@ function InnovationPoweredBy() {
 
 function H2FramerText1() {
   return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="h2.framer-text">
-      <div className="bg-clip-text flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1354deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
+    <div className="content-stretch flex flex-col items-start md:items-center relative shrink-0 w-full" data-name="h2.framer-text">
+      <div className="bg-clip-text flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-left md:text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1354deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
         <p className="leading-[1.1]">Built for scale.</p>
       </div>
     </div>
@@ -91,7 +91,7 @@ function AdaptiveIntelligence() {
 
 function HeadingWrap() {
   return (
-    <div className="content-stretch flex flex-col gap-[4px] items-center justify-center relative shrink-0 w-full" data-name="Heading Wrap">
+    <div className="content-stretch flex flex-col gap-[4px] items-start md:items-center justify-start md:justify-center relative shrink-0 w-full" data-name="Heading Wrap">
       <InnovationPoweredBy />
       <AdaptiveIntelligence />
     </div>
@@ -100,7 +100,7 @@ function HeadingWrap() {
 
 function TitleWrap() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full" data-name="Title Wrap">
+    <div className="content-stretch flex flex-col gap-[16px] items-start md:items-center justify-start md:justify-center relative shrink-0 w-full" data-name="Title Wrap">
       <DivFramer1IzgjdsContainer />
       <HeadingWrap />
     </div>
@@ -110,9 +110,9 @@ function TitleWrap() {
 function Description() {
   return (
     <div className="relative shrink-0 w-full">
-      <div className="flex flex-row items-center justify-center size-full">
-        <div className="content-stretch flex items-center justify-center p-[10px] relative size-full">
-          <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[18px] text-center text-white uppercase w-full max-w-[780px]">
+      <div className="flex flex-row items-center justify-start md:justify-center size-full">
+        <div className="content-stretch flex items-start md:items-center justify-start md:justify-center md:p-[10px] relative size-full">
+          <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[18px] text-left md:text-center text-white uppercase w-full max-w-[780px]">
             <p className="leading-[1.4] md:leading-[27px]">POWERING ENTERPRISES WITH AI-DRIVEN PLATFORMS THAT AUTOMATE PROCESSES, IMPROVE DECISION-MAKING, AND DRIVE OPERATIONAL EFFICIENCY</p>
           </div>
         </div>
@@ -123,7 +123,7 @@ function Description() {
 
 function HeaderArea() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[16px] items-start md:items-center self-start md:self-auto relative shrink-0 w-full">
       <TitleWrap />
       <Description />
     </div>
@@ -136,7 +136,7 @@ function ProductCard({ number, title, description, image, normalImage, hoverImag
   return (
     <div
       className="relative rounded-[7px] w-full mx-auto overflow-hidden bg-[#1a1a1a]"
-      style={{ aspectRatio: '4/4' }}
+      style={{ aspectRatio: '3.7/4' }}
       data-name="Product Card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

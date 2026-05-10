@@ -612,7 +612,7 @@ function LineWrapper() {
 
 function Card1() {
   return (
-    <div className="absolute bg-[rgba(255,255,255,0.3)] bottom-[15px] content-stretch flex flex-col gap-[15px] md:gap-[20px] items-center justify-center left-[10%] md:left-[22.98%] max-w-[290px] px-[20px] md:px-[24px] py-[20px] md:py-[25px] right-[5%] md:right-[3.79%] rounded-[6px]" data-name="Card">
+    <div className="backdrop-blur-[25px] bg-white/5 absolute bg-[rgba(255,255,255,0.3)] bottom-[15px] content-stretch flex flex-col gap-[15px] md:gap-[20px] items-center justify-center left-[10%] md:left-[22.98%] max-w-[290px] px-[20px] md:px-[24px] py-[20px] md:py-[25px] right-[5%] md:right-[3.79%] rounded-[6px]" data-name="Card">
       <TextWrapper />
       <LineWrapper />
     </div>
@@ -639,7 +639,7 @@ function AboutCardAlignStretch() {
 export const AboutSection = () => {
   return (
     <ScrollFadeIn>
-      <section className="relative w-full flex justify-center py-10 md:py-16 px-6 md:px-8 -mt-40">
+      <section className="relative w-full flex justify-center py-10 md:py-16 px-6 md:px-8 -mt-70 md:-mt-60">
         <div className="max-w-[1260px] w-full">
           <div className="content-stretch flex flex-wrap gap-[15px] items-center justify-center relative size-full" data-name="About section">
             <IntegrationCard />

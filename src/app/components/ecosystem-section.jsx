@@ -106,7 +106,7 @@ export const EcosystemSection = () => {
     const width = window.innerWidth;
 
     if (width < 640) {
-      return { radius: 600, itemSize: 38 }; // ✅ mobile tuned
+      return { radius: 630, itemSize: 38 }; // ✅ mobile tuned
     } else if (width < 1024) {
       return { radius: 300, itemSize: 50 }; // ✅ tablet
     } else {
@@ -141,9 +141,9 @@ export const EcosystemSection = () => {
         <div className="max-w-[1260px] w-full flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-[120px] items-center relative">
 
           {/* LEFT CONTENT */}
-          <div className="w-full lg:w-[500px] flex flex-col gap-6 md:gap-8 text-center lg:text-left items-center lg:items-start">
+          <div className="w-full lg:w-[500px] flex flex-col gap-6 md:gap-8 text-left items-start">
 
-            <div className="flex flex-col gap-4 md:gap-5 items-center lg:items-start">
+            <div className="flex flex-col gap-4 md:gap-5 items-start">
               <Badge />
               <Heading />
             </div>
@@ -157,7 +157,7 @@ export const EcosystemSection = () => {
               className=" relative overflow-hidden
     flex items-center justify-center
 
-    w-fit mx-auto sm:mx-0   /* 👈 key change */
+    w-full   /* 👈 key change */
 
     px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
     text-[13px] sm:text-[14px] md:text-[16px]
@@ -179,7 +179,7 @@ export const EcosystemSection = () => {
           </div>
 
           {/* RIGHT ORBIT VISUAL */}
-          <div className="w-full h-[420px] sm:h-[520px] md:h-[600px] flex items-center justify-center relative ">
+          <div className="w-full h-[320px] sm:h-[520px] md:h-[600px] flex items-center justify-center relative ">
 
             {/* CENTER LOGO */}
             <LogoItem

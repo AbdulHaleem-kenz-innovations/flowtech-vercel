@@ -276,7 +276,7 @@ const ServiceDetailsModal = ({ isOpen, onClose, data }) => {
               </div>
               <button
                 onClick={onClose}
-                className="size-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-white/20 transition-colors text-white"
+                className="size-10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors text-white"
               >
                 <X className="size-6" />
               </button>
@@ -305,7 +305,7 @@ const ServiceDetailsModal = ({ isOpen, onClose, data }) => {
 
 function TopSection({ data, onReadMore }) {
   return (
-    <section className="flex flex-col gap-16 md:gap-32 items-center text-center pt-32 md:pt-60 px-6 overflow-hidden">
+    <section className="flex flex-col gap-10 md:gap-32 items-center text-center pt-24 md:pt-60 px-6 overflow-hidden">
       {/* Title Area */}
       <ScrollFadeIn>
         <div className="max-w-[1222px] w-full flex flex-col gap-8 items-center">
@@ -321,7 +321,7 @@ function TopSection({ data, onReadMore }) {
         </div>
       </ScrollFadeIn>
 
-      <div className="max-w-[1260px] w-full flex flex-col gap-20 md:gap-[20px]">
+      <div className="max-w-[1260px] w-full flex flex-col gap-5 md:gap-[20px]">
         {/* Intro Section: Text & Image */}
         <ScrollFadeIn>
           <div className="flex flex-col lg:flex-row gap-6 items-stretch">
@@ -373,7 +373,7 @@ function TopSection({ data, onReadMore }) {
             <div className="flex-1 h-full rounded-[7px] overflow-hidden min-h-[400px] w-full relative">
               <ImageWithFallback alt="Interface" className="absolute inset-0 size-full object-cover" src={imgImage2} />
             </div>
-            <div className="backdrop-blur-[25px] bg-white/10 flex-1 p-8 md:p-[50px] rounded-[7px] flex flex-col text-left h-full">
+            <div className="backdrop-blur-[25px] bg-white/10 flex-1 p-8 md:p-[50px] rounded-[7px] flex flex-col gap-10 text-left h-full">
 
               {/* Badge */}
               <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-full flex gap-2 items-center w-fit">
@@ -414,7 +414,7 @@ function TopSection({ data, onReadMore }) {
         <ScrollFadeIn>
           {/* Final Thoughts Section */}
           <div className="flex flex-col lg:flex-row gap-6 items-stretch h-auto lg:h-[646px]">
-            <div className="backdrop-blur-[25px] bg-white/10 flex-1 p-8 md:p-[50px] rounded-[7px] flex flex-col text-left h-full">
+            <div className="backdrop-blur-[25px] gap-10 bg-white/10 flex-1 p-8 md:p-[50px] rounded-[7px] flex flex-col text-left h-full">
 
               {/* Top Badge */}
               <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-full flex gap-2 items-center w-fit">
@@ -495,7 +495,7 @@ function TopSection({ data, onReadMore }) {
           </ScrollFadeIn>
         {/* Read More Section */}
         <ScrollFadeIn>
-          <div className="flex justify-center md:mt-20">
+          <div className="flex justify-center md:mt-10 ">
               <button
               onClick={onReadMore}
               className="
@@ -548,7 +548,7 @@ export const ServicePage = () => {
         data={detailedService} 
       />
 
-      <div className="w-full mt-16 md:mt-20">
+      <div className="w-full mt-10 md:mt-20">
         <ContactSection />
         <RotationCardSection />
         <BlogSection />

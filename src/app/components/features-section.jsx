@@ -104,7 +104,7 @@ function ContentWrapper() {
   return (
     <div className="content-stretch flex items-start sm:items-end justify-between overflow-clip relative shrink-0 w-full" data-name="Content Wrapper">
       <TitleWrap />
-      <Component2025 />
+      {/* <Component2025 /> */}
     </div>
   );
 }
@@ -235,16 +235,17 @@ function ServiceCard({ item }) {
   );
 }
 
-function DivFramer13M6KicContainer() {
+function DivFramer13M6KicContainer({ serviceButton }) {
   const onNavigate = useNavigate()
+    if (!serviceButton) return null;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="div.framer-13m6kic-container">
       <button
-        onClick={() => onNavigate("/services/manufacturing")}
+        onClick={() => onNavigate(serviceButton.link)}
         className="  relative overflow-hidden
     flex items-center justify-center
 
-    w-fit mx-auto sm:mx-0   /* 👈 key change */
+    w-fit mx-auto sm:mx-0  
 
     px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
     text-[13px] sm:text-[14px] md:text-[16px]
@@ -259,17 +260,17 @@ function DivFramer13M6KicContainer() {
     transition-all duration-300 
     hover:scale-105 active:scale-95 
     glare-btn">
-        VIEW ALL SERVICES
+         View All Services
       </button>
     </div>
   );
 }
 
- function WorkCardWrapper({ services }) {
+ function WorkCardWrapper({ services, serviceButton }) {
   return (
     <div className="content-stretch flex flex-col gap-12 md:gap-[50px] items-center justify-center overflow-clip relative shrink-0 w-full" data-name="Work Card Wrapper">
       <WorkCardWrap services={services} />
-      <DivFramer13M6KicContainer />
+      <DivFramer13M6KicContainer serviceButton={serviceButton} />
     </div>
   );
 }
@@ -282,13 +283,13 @@ function DivFramerIu4QGMaskGroupSmall() {
   );
 }
 
-export function ContainerServices({ services }) {
+export function ContainerServices({ services, serviceButton }) {
   return (
     <div className="backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] content-stretch flex flex-col gap-12 md:gap-[80px] items-center justify-center max-w-[1260px] px-6 md:px-[63px] py-16 md:py-[100px] relative rounded-[7px] shrink-0 w-full" data-name="Container">
       <ContentWrapper />
-      <WorkCardWrapper services={services} />
+      <WorkCardWrapper services={services} serviceButton={serviceButton} />
       {/* Floating Gear */}
-      <div className="absolute h-[150px] md:h-[273.493px] right-[-10px] md:right-[-19.75px] top-[-10px] md:top-[-14.76px] w-[140px] md:w-[265.865px] opacity-30 md:opacity-100">
+      <div className="max-[1100px]:hidden absolute h-[150px] md:h-[273.493px] right-[-10px] md:right-[-19.75px] top-[-10px] md:top-[-14.76px] w-[140px] md:w-[265.865px] opacity-30 md:opacity-100">
         <ImageWithFallback alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full animate-[spin_20s_linear_infinite]" src={imgFrame1139} />
       </div>
       {/* Corner Icons */}
@@ -367,7 +368,10 @@ export const FeaturesSection = () => {
     <ScrollFadeIn>
       <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[20px] items-center justify-center relative" data-name="Features">
-          <ContainerServices services={servicesData.slice(0, 4)} />
+          <ContainerServices services={servicesData.slice(0, 4)}  serviceButton={{
+    // text: "VIEW ALL SERVICES",
+    link: "/services"
+  }} />
           <VideoSection />
         </div>
       </section>

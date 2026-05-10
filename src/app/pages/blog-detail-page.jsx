@@ -43,25 +43,30 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
         {title}
       </h3>
         <div className="group inline-flex items-center cursor-pointer overflow-hidden">
-                              <div className="bg-black p-3 rounded-lg flex items-center gap-2 group-hover:bg-[#046ce4] transition-all duration-300 ease-in-out">
-      
-                                {/* Text (hidden initially) */}
-                                <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                                  view
-                                </span>
-      
-                                {/* Arrow (always visible, but slides) */}
-                                <div
-                                  className="size-5 bg-white shrink-0 transition-all duration-300 ease-in-out group-hover:translate-x-1"
-                                  style={{
-                                    maskImage: `url('${imgIcon}')`,
-                                    maskSize: 'contain',
-                                    WebkitMaskImage: `url('${imgIcon}')`,
-                                    WebkitMaskSize: 'contain',
-                                  }}
-                                />
-      
-                              </div>
+                           <div className="group inline-flex items-center cursor-pointer overflow-hidden">
+                                                     <div className="bg-black p-3 rounded-lg flex items-center gap-2
+                                                                     transition-all duration-300 ease-in-out
+                                                                     group-hover:bg-gradient-to-tr
+                                                                     group-hover:from-[#001ca9]
+                                                                     group-hover:to-[#046ce4]">
+                           
+                                                       {/* Text (hidden initially) */}
+                                                       <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
+                                                         VIEW
+                                                       </span>
+                           
+                                                       {/* Arrow (always visible, but slides) */}
+                                                       <div
+                                                         className="size-5 bg-white shrink-0 transition-all duration-300 ease-in-out group-hover:translate-x-1"
+                                                         style={{
+                                                           maskImage: `url('${imgIcon}')`,
+                                                           maskSize: 'contain',
+                                                           WebkitMaskImage: `url('${imgIcon}')`,
+                                                           WebkitMaskSize: 'contain',
+                                                         }}
+                                                       />
+                                                     </div>
+                                                   </div>
                             </div>
     </div>
 
@@ -96,7 +101,7 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
           </div>
         </div>
 
-        <h1 className="font-['Geist'] font-medium text-[40px] md:text-[60px] text-center text-white tracking-[-0.4px] max-w-[1000px] leading-tight">
+        <h1 className="font-['Geist'] font-medium text-[30px] md:text-[60px] text-center text-white tracking-[-0.4px] max-w-[1000px] leading-tight">
           How smart manufacturing is transforming production efficiency
         </h1>
 
@@ -106,7 +111,7 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
       </section>
 
       {/* Main Image */}
-      <section className="px-6 w-full max-w-[1260px] mb-20">
+      <section className="px-6 w-full max-w-[1260px] mb-10 md:mb-20">
         <div className="aspect-[1260/681] rounded-[7px] overflow-hidden">
           <ImageWithFallback src={imgSimonKadula8Gr6BObQloiUnsplash1} className="w-full h-full object-cover" />
         </div>
@@ -162,7 +167,7 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
         </div>
 
         {/* Second Image */}
-        <div className="aspect-[1260/681] rounded-[7px] overflow-hidden my-10">
+        <div className="aspect-[1260/681] rounded-[7px] overflow-hidden">
           <ImageWithFallback src={imgRoboticArmPlacingChipCircuitBoard1} className="w-full h-full object-cover" />
         </div>
 
@@ -222,7 +227,7 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
       </section>
 
       {/* Related Posts */}
-      <section className="w-full  py-16 px-6 flex flex-col items-center">
+      <section className="w-full -mt-25 py-16 px-6 flex flex-col items-center">
          <div className="max-w-[1260px] w-full">
             <div className="flex flex-col gap-6 items-center text-center mb-20">
                <div className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit">

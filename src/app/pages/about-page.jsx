@@ -40,7 +40,7 @@ const TeamCard = ({ name, role, image, socialIcons = [imgVector, imgVector1, img
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
   >
-    <div className="h-[497px] rounded-[7px] overflow-hidden relative">
+    <div className="h-[350px] md:h-[497px] rounded-[7px] overflow-hidden relative">
       <ImageWithFallback src={image} className="absolute inset-0 object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -92,7 +92,7 @@ const AboutPage = () => {
 
       {/* Hero Section */}
       <ScrollFadeIn>
-        <section className="pt-[200px] mb-[150px] px-6 w-full max-w-[1260px] mx-auto relative flex flex-col items-center">
+        <section className="pt-[140px] md:pt-[200px] mb-[80px] md:mb-[150px] px-6 w-full max-w-[1260px] mx-auto relative flex flex-col items-center">
           <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-10 md:p-[100px] w-full relative overflow-hidden">
             {/* Decorative icons */}
             <div className="absolute top-5 left-5 opacity-40 size-5 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain' }} />
@@ -143,7 +143,7 @@ const AboutPage = () => {
 
       {/* Company Overview Section */}
 
-      <section className="px-6 w-full max-w-[1310px] mx-auto mb-[150px]">
+      <section className="px-6 w-full max-w-[1310px] mx-auto mb-[80px] md:mb-[150px]">
         <ScrollFadeIn>
           <div className="flex flex-col lg:flex-row gap-[25px]">
             {/* <div className="flex-1 backdrop-blur-[10px] bg-white/5 rounded-[7px] overflow-hidden h-[650px] relative border border-white/10 group"> */}
@@ -156,7 +156,7 @@ const AboutPage = () => {
                   {[...Array(2)].map((_, i) => (
                     <React.Fragment key={i}>
                       {[imgImage, imgImage1, imgImage3, imgImage4, imgImage5, imgImage6].map((img, index) => (
-                        <div key={`${i}-${index}`} className="w-full h-[420px] rounded-[7px] overflow-hidden">
+                        <div key={`${i}-${index}`} className="w-full h-[250px] md:h-[420px] rounded-[7px] overflow-hidden">
                           <ImageWithFallback src={img} className="w-full h-full object-cover" />
                         </div>
                       ))}
@@ -174,7 +174,7 @@ const AboutPage = () => {
               {/* <div className="absolute inset-0 pointer-events-none opacity-50 z-20" style={{ maskImage: `url('${imgSection}')`, maskSize: 'cover' }} /> */}
             {/* </div> */}
 
-           <div className="flex-1 bg-white/5 rounded-[7px] overflow-hidden h-[650px] relative border border-white/10 group">
+           <div className="flex-1 bg-white/5 rounded-[7px] overflow-hidden h-[400px] md:h-[650px] relative border border-white/10 group">
   
   {/* Vertical Scroll Container */}
   <div className="absolute inset-0 p-10 overflow-hidden">
@@ -311,7 +311,7 @@ const AboutPage = () => {
 
 
       {/* Core Values Section */}
-      <section className="px-6 w-full max-w-[1310px] mx-auto mb-[150px]">
+      <section className="px-6 w-full max-w-[1310px] mx-auto mb-[80px] md:mb-[150px]">
         <ScrollFadeIn>
           <div className="flex flex-col gap-[39px]">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
@@ -387,7 +387,7 @@ const AboutPage = () => {
           </div>
 
           {/* Industrial Image */}
-          <div className="mt-[100px] h-[630px] rounded-[7px] overflow-hidden relative group">
+          <div className="mt-16 md:mt-[100px] h-[300px] md:h-[630px] rounded-[7px] overflow-hidden relative group">
             <ImageWithFallback src={imgFuturisticTechnologyConcept11} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
             <div className="absolute inset-0 bg-black/20" />
             {/* Decorative icons at corners */}
@@ -401,7 +401,7 @@ const AboutPage = () => {
 
       {/* Our Team Section */}
 
-      <section className="px-6 w-full max-w-[1310px] mx-auto mb-[86px]">
+      <section className="px-6 w-full max-w-[1310px] mx-auto mb-[80px]">
         <ScrollFadeIn>
           <div className="flex flex-col gap-20">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 md:gap-10">

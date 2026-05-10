@@ -389,7 +389,7 @@
 // };
 
 //DAWARR BHAI CODE
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 import { Link, useLocation } from 'react-router';
 import svgPaths from "../../imports/svg-w7xqzyo252";
 import { ServicesDropdown } from './services-dropdown';
@@ -398,6 +398,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const { pathname } = useLocation();
+  const servicesAnchorRef = useRef(null);
 
   const isActive = (path) => {
     if (path === '/') return pathname === '/';
@@ -436,18 +437,30 @@ export const Navbar = () => {
         <div className="hidden lg:flex items-center gap-8">
           <Link to="/" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/') ? 'text-white' : 'text-white/75 hover:text-white'}`}>Home</Link>
           <Link to="/about" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/about') ? 'text-white' : 'text-white/75 hover:text-white'}`}>About</Link>
-          <div className="flex items-center gap-1  group cursor-pointer relative"
+            {/* Services trigger — attach the ref here */}
+          <div
+            ref={servicesAnchorRef}                        // ← attach ref
+            className="flex items-center gap-1 group cursor-pointer relative"
             onMouseEnter={() => setIsServicesOpen(true)}
             onMouseLeave={() => setIsServicesOpen(false)}
           >
-            <Link to="/services" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/services') ? 'text-white' : 'text-white/75 group-hover:text-white'}`}>Services</Link>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={`opacity-70 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''} ${isActive('/services') ? 'opacity-100' : ''}`}>
+            <Link
+              to="/services"
+              className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/services') ? 'text-white' : 'text-white/75 group-hover:text-white'}`}
+            >
+              Services
+            </Link>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+              className={`opacity-70 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''} ${isActive('/services') ? 'opacity-100' : ''}`}
+            >
               <path d="M4 6L8 10L12 6" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33" />
             </svg>
 
+            {/* Dropdown is now portalled to document.body — pass anchorRef */}
             <ServicesDropdown
               isOpen={isServicesOpen}
               onClose={() => setIsServicesOpen(false)}
+              anchorRef={servicesAnchorRef}               // ← pass ref
             />
           </div>
           <Link to="/industries" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/industries') ? 'text-white' : 'text-white/75 hover:text-white'}`}>Industries</Link>

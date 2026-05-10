@@ -20,6 +20,7 @@ import { imgDivFramerIu4QG as imgPlusIcon, imgDivFramerIu4QG1 as imgPlusLargeIco
 import { imgDivFramerIu4QG, imgDivFramerJJpra } from "../../imports/svg-ot74f";
 import { NewsletterSection } from '../components/newsletter-section';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { TestimonialSection } from '../components/testimonial-section';
 
 // --- Form Components ---
 
@@ -103,7 +104,8 @@ const ContactPage = () => {
   return (
     <div className="w-full flex flex-col items-center pt-[200px]">
       {/* Hero Section */}
-      <section className="flex flex-col gap-6 md:gap-[18px] items-center justify-center relative w-full max-w-[1260px] px-6 mb-[150px]" data-name="Section Content">
+      <ScrollFadeIn>
+      <section className="flex flex-col gap-6 md:gap-[18px] items-center justify-center relative w-full max-w-[1260px] px-6 md:mb-[150px] mb-[80px]" data-name="Section Content">
         <div className="flex flex-col items-start relative" data-name="div.framer-1cde5fk-container">
           <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 flex gap-2 items-center justify-center px-4 py-1.5 relative rounded-full" data-name="Default">
             <div className="relative size-4" data-name="div.framer-IU4qG:mask-group">
@@ -130,9 +132,10 @@ const ContactPage = () => {
           </p>
         </div>
       </section>
+      </ScrollFadeIn>
 
-
-      <section className="w-full max-w-[1260px] px-6 mb-[150px] overflow-visible">
+<ScrollFadeIn>
+      <section className="w-full max-w-[1260px] px-6 md:mb-[150px] mb-[80px] overflow-visible">
   <div className="flex flex-col lg:flex-row gap-8 lg:gap-5 items-stretch w-full" data-name="Content Wrapper">
 
     {/* Left Column - Lists */}
@@ -244,10 +247,11 @@ const ContactPage = () => {
 
   </div>
 </section>
+</ScrollFadeIn>
 
       {/* FAQ Section */}
       <ScrollFadeIn>
-      <section className="w-full mb-[150px] px-4">
+      <section className="w-full md:mb-[150px] mb-[80px] px-4">
         <div className="max-w-[1260px] mx-auto backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] rounded-xl p-6 md:p-12 flex flex-col lg:flex-row gap-10">
 
           {/* LEFT CONTENT */}
@@ -354,105 +358,7 @@ const ContactPage = () => {
       </ScrollFadeIn>
 
       {/* Testimonials Section */}
-      {/* Testimonials Section */}
-      <section className="w-full max-w-[1260px] px-6 mb-[86px] border-t border-white/5">
-        <div className="content-stretch flex items-end overflow-clip relative shrink-0 w-full mb-20" data-name="Content Wrapper">
-          <div className="content-stretch flex flex-col lg:flex-row items-end justify-between w-full relative shrink-0" data-name="Title Wrap">
-            <div className="content-stretch flex flex-col gap-[20.01px] items-start justify-center max-w-[320px] overflow-clip relative shrink-0 w-full lg:w-[320px]" data-name="Title">
-              <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="div.framer-q32ytv-container">
-                <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] content-stretch flex gap-[5px] items-center justify-center overflow-clip pl-[7px] pr-[11px] py-[5px] relative rounded-[5px] shrink-0" data-name="Default">
-                  <div className="relative shrink-0 size-[16px]" data-name="div.framer-IU4qG:mask-group">
-                    <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-white left-1/2 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[16px_16px] size-[16px] top-1/2" style={{ maskImage: `url('${imgPlusIcon}')` }} data-name="div.framer-IU4qG" />
-                  </div>
-                  <div className="h-[17.59px] relative shrink-0 w-[89.14px]">
-                    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 pb-[0.59px] right-0 top-[calc(50%-0.5px)]">
-                      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-                        <p className="leading-[17.6px]">client stories</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="content-stretch flex items-center relative shrink-0 w-full" data-name="Heading Wrap">
-                <div className="h-[48.41px] relative shrink-0 w-[117.33px]">
-                  <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 right-0 top-[calc(50%-0.7px)]">
-                    <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(268.908deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>
-                      <p className="leading-[48.4px]">{`What `}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="h-[48.41px] relative shrink-0 w-[185.39px]">
-                  <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 right-0 top-[calc(50%-0.7px)]">
-                    <div className="bg-clip-text bg-gradient-to-r flex flex-col font-['Playfair_Display'] font-normal from-[#d9d9d9] from-[49%] italic justify-center leading-[0] relative shrink-0 text-[44px] text-[transparent] to-[rgba(255,255,255,0.6)] tracking-[-0.4px] whitespace-nowrap">
-                      <p className="leading-[48.4px]">they think</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="h-[67.22px] max-w-[417px] opacity-70 relative shrink-0 w-full lg:w-[417px] mt-8 lg:mt-0">
-              <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 right-0 top-[calc(50%-0.7px)]">
-                <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[16px] text-white uppercase w-full">
-                  <p className="leading-[22.4px]">FROM INDUSTRIAL PLANTS TO GLOBAL ENTERPRISES, WE’VE DELIVERED INTELLIGENT SOLUTIONS. SEE HOW FLOWTECH DRIVES REAL IMPACT.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
-          {[
-            { rating: "5.0", image: imgImage3, name: "Julian Meyer", title: "OPERATIONS HEAD, MANUFACTURING GROUP", text: "“Flowtech transformed our operations end-to-end. From deployment to optimisation, everything was seamless.”" },
-            { rating: "3.9", image: imgImage4, name: "amanda more", title: "ENERGY MANAGER, INDUSTRIAL PLANT", text: "“Their energy monitoring solution helped us cut costs significantly. The insights are clear, actionable, and easy to scale across multiple facilities.”" },
-            { rating: "4.7", image: imgImage5, name: "alan reeds", title: "DIRECTOR, INFRASTRUCTURE SOLUTIONS", text: "“Highly reliable and technically strong team. Flowtech feels like a true partner, helping us improve safety and efficiency.”" }
-          ].map((item, idx) => (
-            <div key={idx} className="backdrop-blur-[15px] bg-[rgba(255,255,255,0.05)] relative rounded-[7px] shrink-0 w-full h-full" data-name="Testimonial Card">
-              <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
-                <div className="content-stretch flex flex-col gap-[64px] items-center justify-center pb-[30px] pl-[30px] pr-[20px] pt-[20px] relative size-full min-h-[400px]">
-                  <div className="relative shrink-0 w-full" data-name="Header Wrap">
-                    <div className="flex items-end justify-between w-full">
-                      <div className="flex flex-col gap-[2px]">
-                        <div className="flex items-end">
-                          <span className="font-['Geist'] font-normal text-[50px] text-white uppercase leading-none">{item.rating}</span>
-                          <span className="font-['Geist'] font-normal text-[20px] text-white/30 mb-2">/5</span>
-                        </div>
-                        <div className="flex gap-[3px]">
-                          {[...Array(5)].map((_, i) => (
-                            <div key={i} className="size-[16px] relative">
-                              <ImageWithFallback src={imgStar} className="size-full" />
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="size-[110px] rounded-[7px] overflow-hidden">
-                        <ImageWithFallback src={item.image} className="size-full object-cover" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="content-stretch flex flex-col gap-[17px] items-start justify-center overflow-clip relative shrink-0 w-full" data-name="Author Details">
-                    <div className="flex flex-col font-['Geist'] font-medium text-[23px] text-white tracking-[-0.4px] leading-[25.99px]">
-                      <p>{item.text}</p>
-                    </div>
-                    <div className="flex flex-col gap-px opacity-80">
-                      <span className="font-['Geist'] font-normal text-[14px] text-white uppercase tracking-tight">{item.name}</span>
-                      <span className="font-['Geist'] font-normal text-[14px] text-white/70 uppercase tracking-tight">{item.title}</span>
-                    </div>
-                  </div>
-                  {/* Decorative Accents */}
-                  <div className="absolute left-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
-                    <div className="absolute bg-white left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[20px_20px] opacity-40 size-[20px] top-0" style={{ maskImage: `url('${imgPlusLargeIcon}')` }} />
-                  </div>
-                  <div className="absolute bottom-[20px] right-[20px] size-[20px]" data-name="div.framer-IU4qG:mask-group">
-                    <div className="absolute bg-white bottom-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[20px_20px] opacity-40 right-0 size-[20px]" style={{ maskImage: `url('${imgPlusLargeIcon}')` }} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-
+      <TestimonialSection/>
       {/* Insights Section */}
       <div className="w-full mb-[86px]">
         <NewsletterSection/>
