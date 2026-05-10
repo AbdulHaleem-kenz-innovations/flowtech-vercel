@@ -181,7 +181,7 @@ const InsightsPage = () => {
 
             {/* Featured Full Width Post */}
             <Link to="/insights/optimizing-energy-consumption-with-intelligent-monitoring-systems" className="w-full group">
-              <div className="relative min-h-[300px] md:h-[600px] w-full overflow-hidden rounded-xl">
+              <div className="relative min-h-[400px] md:h-[600px] w-full overflow-hidden rounded-xl">
                 <div className="absolute inset-0">
                   <ImageWithFallback src={imgRemoteControlSoundSettingsFromTablet1} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
@@ -231,9 +231,6 @@ const InsightsPage = () => {
 
                       </div>
                     </div>
-                    {/* <div className="bg-white p-4 rounded-lg w-fit group-hover:bg-[#046ce4] transition-colors">
-                      <div className="size-6 bg-black group-hover:bg-white" style={{ maskImage: `url('${imgArrowRightIcon}')`, maskSize: 'contain' }} />
-                    </div> */}
                   </div>
                 </div>
               </div>
