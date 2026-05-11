@@ -578,27 +578,29 @@ export const Navbar = () => {
                       </Link>
                     </motion.div>
                   ))}
+
+                  {/* Let's Connect CTA - Moved here */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                    className="pt-6"
+                  >
+                    <Link
+                      to="/contact"
+                      className="w-full bg-gradient-to-tr from-[#001ca9] to-[#046ce4] py-4 rounded-xl text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase text-center flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      LET'S CONNECT
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </Link>
+                  </motion.div>
                 </div>
 
-                {/* Footer Link / CTA */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                  className="mt-auto pt-8 border-t border-white/10"
-                >
-                  <Link
-                    to="/contact"
-                    className="w-full bg-gradient-to-tr from-[#001ca9] to-[#046ce4] py-4 rounded-xl text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase text-center flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    LET'S CONNECT
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </Link>
-                </motion.div>
+
               </motion.div>
             </>
           )}
