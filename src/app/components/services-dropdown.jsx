@@ -143,13 +143,13 @@ const services = [
 
 export const ServicesDropdown = ({ isOpen, onClose, anchorRef }) => {
   const [hoveredIndex, setHoveredIndex] = useState(0);
-  const [position, setPosition] = useState({ top: 0, left: 50 });
+  const [position, setPosition] = useState({ top: 0 });
 
   useEffect(() => {
     const calculate = () => {
       if (!anchorRef?.current) return;
       const rect = anchorRef.current.getBoundingClientRect();
-      setPosition({ top: rect.bottom + 16, left: rect.left });
+      setPosition({ top: rect.bottom + 25 });
     };
 
     calculate();
@@ -165,17 +165,17 @@ export const ServicesDropdown = ({ isOpen, onClose, anchorRef }) => {
     <div
       style={{
         position: 'fixed',
-        top: position.top - 16,
-        left: position.left,
+        top: position.top - 25,
+        left: '50%',
         width: 640,
-        paddingTop: 16,
+        paddingTop: 25,
         zIndex: 9999,
         // Toggle visibility without unmounting
         opacity: isOpen ? 1 : 0.001,
         pointerEvents: isOpen ? 'auto' : 'none',
         visibility: isOpen ? 'visible' : 'hidden',
-        transition: 'opacity 0.25s cubic-bezier(0.23, 1, 0.32, 1)',
-        transform: isOpen ? 'translateY(0) scale(1)' : 'translateY(-12px) scale(0.97)',
+        transition: 'opacity 0.25s cubic-bezier(0.23, 1, 0.32, 1), transform 0.25s cubic-bezier(0.23, 1, 0.32, 1)',
+        transform: isOpen ? 'translateX(-50%) translateY(0) scale(1)' : 'translateX(-50%) translateY(-12px) scale(0.97)',
       }}
       onMouseLeave={onClose}
     >
