@@ -232,22 +232,27 @@ export const HeroSection = () => {
         </div>
 
         {/* Floating Elements (Bottom Sphere/Spear) */}
-        <div
-          className="
-            absolute bottom-[0%] left-[1%] top-200 md:top-180 md:left-[4%]
-            w-[160px] md:w-[300px]
-            h-[160px] md:h-[540px]
-            opacity-70 md:opacity-100
-          "
-          style={{
-            transform: `rotate(${rotation}deg)`,
-          }}
-        >
-          <img
-            src={imgImage}
-            alt=""
-            className="w-[70%] h-[70%] object-contain"
-          />
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="relative max-w-[1260px] mx-auto h-full w-full">
+            <div
+              className="
+                absolute bottom-[0%] left-[6%] md:left-[1%] top-200 md:top-180
+                w-[160px] md:w-[300px]
+                h-[160px] md:h-[540px]
+                opacity-70 md:opacity-100
+                pointer-events-auto
+              "
+              style={{
+                transform: `rotate(${rotation}deg)`,
+              }}
+            >
+              <img
+                src={imgImage}
+                alt=""
+                className="w-[70%] h-[70%] object-contain"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </ScrollFadeIn>

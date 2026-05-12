@@ -90,14 +90,14 @@ const HeroSection = () => {
 };
 
 const IndustryCard = ({ title, intro, image, capabilities, outcome, icon: IconComponent }) => (
-  <div className="flex flex-col lg:flex-row gap-6 w-full max-w-[1260px] mb-6">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-[1260px] mb-6">
     {/* Image Side */}
-    <div className="flex-1 rounded-[7px] overflow-hidden min-h-[350px] md:min-h-[400px] lg:min-h-[620px] relative border border-white/10">
+    <div className="rounded-[7px] overflow-hidden min-h-[350px] md:min-h-[400px] lg:min-h-[620px] relative border border-white/10">
       <ImageWithFallback src={image} className="absolute inset-0 size-full object-cover" />
     </div>
 
     {/* Content Side */}
-    <div className="flex-1 backdrop-blur-[25px] bg-white/10 p-6 md:p-12 rounded-[7px] flex flex-col gap-8 md:gap-10 text-left border border-white/5">
+    <div className="backdrop-blur-[25px] bg-white/10 p-6 md:p-12 rounded-[7px] flex flex-col gap-8 md:gap-10 text-left border border-white/5">
       {/* Category Header */}
       <div className="flex flex-col gap-6">
         <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-md flex gap-2 items-center w-fit border border-white/10">

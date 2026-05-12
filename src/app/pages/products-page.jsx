@@ -107,7 +107,7 @@ const products = [
                   className="flex-1 rounded-[20px] overflow-hidden min-h-[300px] lg:h-[400px] relative cursor-pointer block group/img"
                 >
                   {/* Gradient Overlay for Text Readability */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-transparent transition-opacity duration-500 z-10" />
+                  <div className="absolute inset-0 backdrop-blur-[15px] bg-white/5 border border-white/10" />
 
                   {/* Default Image (Desktop only, hidden on hover) */}
                   <div className="absolute inset-0 transition-opacity duration-700 opacity-100 group-hover:lg:opacity-0 hidden lg:block">
@@ -131,6 +131,31 @@ const products = [
                   <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white/80 uppercase leading-relaxed tracking-wider">
                     {product.description}
                   </p>
+
+                  <a
+                    href={product.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      relative overflow-hidden
+                      flex items-center justify-center
+                      w-fit
+                      px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+                      text-[13px] sm:text-[14px] md:text-[16px]
+                      rounded-full
+                      bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+                      border border-white/20
+                      text-white uppercase whitespace-nowrap
+                      font-['Geist']
+                      cursor-pointer
+                      transition-all duration-300 
+                      hover:scale-105 active:scale-95 
+                      glare-btn
+                      mt-auto
+                    "
+                  >
+                    VIEW WEBSITE
+                  </a>
                 </div>
               </div>
             </ScrollFadeIn>
