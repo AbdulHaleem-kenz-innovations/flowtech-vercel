@@ -55,7 +55,7 @@ const products = [
  const ProductsPage = () => {
   return (
     <div className="w-full flex flex-col items-center">
-      <Background />
+      {/* <Background /> */}
       <div className="relative z-10 w-full flex flex-col items-center">
         {/* Hero Section */}
         <ScrollFadeIn>
