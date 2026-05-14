@@ -220,6 +220,7 @@ export const EcosystemSection = () => {
                 pathColor="rgba(255, 255, 255, 0.1)"
                 showPath={true}
                 paused={false}
+                useGlassContainer={true}
               />
             </div>
 
@@ -238,6 +239,7 @@ export const EcosystemSection = () => {
                 fill
                 showPath={true}
                 paused={false}
+                 useGlassContainer={true}
               />
             </div>
 

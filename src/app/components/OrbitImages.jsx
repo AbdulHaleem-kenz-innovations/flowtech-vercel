@@ -121,6 +121,9 @@ export default function OrbitImages({
   paused = false,
   centerContent,
   responsive = false,
+  useGlassContainer = false,
+   glassClassName = '',
+  imageClassName = '',
 }) {
   const containerRef = useRef(null);
   const [scale, setScale] = useState(1);
@@ -183,18 +186,66 @@ export default function OrbitImages({
   const containerWidth = responsive ? '100%' : (typeof width === 'number' ? width : '100%');
   const containerHeight = responsive ? 'auto' : (typeof height === 'number' ? height : (typeof width === 'number' ? width : 'auto'));
 
+  // const items = images.map((src, index) => (
+  //   <div key={index} style={{ width: itemSize, height: itemSize }} className="rounded-full overflow-hidden">
+  //     <img
+  //       key={src}
+  //       src={src}
+  //       alt={`${altPrefix} ${index + 1}`}
+  //       draggable={false}
+  //       borderRadius="50%"
+  //       className="w-full h-full object-contain w-[100px] "
+  //     />
+  //   </div>
+  // ));
+
+
   const items = images.map((src, index) => (
-    <div key={index} style={{ width: itemSize, height: itemSize }} className="rounded-full overflow-hidden">
-      <img
-        key={src}
-        src={src}
-        alt={`${altPrefix} ${index + 1}`}
-        draggable={false}
-        borderRadius="50%"
-        className="w-full h-full object-contain w-[100px] "
-      />
-    </div>
-  ));
+  <div
+    key={index}
+    style={{
+      width: itemSize,
+      height: itemSize,
+    }}
+    className={`
+      rounded-full
+      overflow-hidden
+      flex items-center justify-center
+      relative
+
+      ${
+        useGlassContainer
+          ? `
+            backdrop-blur-[20px]
+            bg-[rgba(255,255,255,0.05)]
+            border border-white/10
+            shadow-[0_0_1px_rgba(255,255,255,0.2)]
+          `
+          : ''
+      }
+
+      ${glassClassName}
+    `}
+  >
+    <img
+      src={src}
+      alt={`${altPrefix} ${index + 1}`}
+      draggable={false}
+      className={`
+        object-contain
+        relative z-[1]
+
+        ${
+          useGlassContainer
+            ? 'w-[55%] h-[55%]'
+            : 'w-full h-full'
+        }
+
+        ${imageClassName}
+      `}
+    />
+  </div>
+));
 
   return (
     <div
