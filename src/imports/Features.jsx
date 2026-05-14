@@ -7,6 +7,8 @@ import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../assets/12f90a2a24f7e3315caa727
 import imgIcon from "../assets/41ff2d725380255d23878aa7c6fb39c5f6bd3adc.png";
 import imgIcon1 from "../assets/798b5019ccb03e7937fe35631b20dcdefae3cefc.png";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDivFramerIu4QG2, imgDiv, imgDiv1, imgDiv2, imgDiv3, imgDiv4, imgDiv5, imgDiv6, imgDiv7 } from "./svg-4ugef";
+import { useLanguage } from '../context/LanguageContext';
+import { langData } from '../langData/data';
 
 function DivFramerIu4QGMaskGroup() {
   return (
@@ -17,10 +19,12 @@ function DivFramerIu4QGMaskGroup() {
 }
 
 function PFramerText() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 pb-[0.59px] right-0 top-[calc(50%-0.5px)]" data-name="p.framer-text">
+    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start start-0 pb-[0.59px] end-0 top-[calc(50%-0.5px)]" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:SemiBold',sans-serif] font-semibold justify-center leading-[0] relative shrink-0 text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-        <p className="leading-[17.6px]">CORE SERVICES</p>
+        <p className="leading-[17.6px]">{t.core_services}</p>
       </div>
     </div>
   );
@@ -52,10 +56,12 @@ function DivFramerWgfo5JContainer() {
 }
 
 function Heading2Projects() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 2 → Projects">
       <div className="bg-clip-text bg-gradient-to-l flex flex-col font-['Geist:Medium',sans-serif] font-medium from-[5%] from-[rgba(255,255,255,0.4)] justify-center leading-[0] relative shrink-0 text-[60px] text-[transparent] to-1/2 to-white tracking-[-0.4px] whitespace-nowrap">
-        <p className="leading-[66px]">Services</p>
+        <p className="leading-[66px]">{t.services_title}</p>
       </div>
     </div>
   );
@@ -71,10 +77,12 @@ function Title() {
 }
 
 function PFramerText1() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 right-0 top-[calc(50%-0.7px)]" data-name="p.framer-text">
+    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start start-0 end-0 top-[calc(50%-0.7px)]" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[16px] text-white uppercase w-[418px]">
-        <p className="leading-[22.4px]">FROM DATA TO INFRASTRUCTURE, WE DELIVER END-TO-END DIGITAL AND INDUSTRIAL SOLUTIONS BUILT FOR SCALE AND IMPACT</p>
+        <p className="leading-[22.4px]">{t.services_description}</p>
       </div>
     </div>
   );
@@ -111,13 +119,13 @@ function ContentWrapper() {
 }
 
 function Frame1() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="absolute backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] bottom-[-123.53px] h-[142px] left-[27.98px] rounded-[7px] w-[560px]">
-      <div className="-translate-y-1/2 absolute flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] left-[20px] text-[20px] text-white top-[71px] w-[518px]">
+    <div className="absolute backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] bottom-[-123.53px] h-[142px] start-[27.98px] rounded-[7px] w-[560px]">
+      <div className="-translate-y-1/2 absolute flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] start-[20px] text-[20px] text-white top-[71px] w-[518px]">
         <p className="leading-[normal]">
-          Transform shop floor operations with real-time data integration, monitoring, and intelligent dashboards.
-          <br aria-hidden="true" />
-          Leverage predictive analytics to reduce downtime, optimise production, and improve quality.
+          {t.services[1].description}
         </p>
       </div>
     </div>
@@ -127,7 +135,7 @@ function Frame1() {
 function Image() {
   return (
     <div className="absolute inset-[-5%] overflow-clip" data-name="Image">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[561px] left-[calc(50%+0.25px)] top-[calc(50%+0.75px)] w-[576px]" data-name="Rectangle">
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[561px] start-[calc(50%+0.25px)] top-[calc(50%+0.75px)] w-[576px]" data-name="Rectangle">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle} />
       </div>
       <Frame1 />
@@ -144,10 +152,12 @@ function ImageWrap() {
 }
 
 function PFramerText2() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-white whitespace-nowrap">
-        <p className="leading-[20px]">Manufacturing Intelligence</p>
+        <p className="leading-[20px]">{t.services[1].title}</p>
       </div>
     </div>
   );
@@ -162,10 +172,12 @@ function Heading3BoldMoves() {
 }
 
 function PFramerText3() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 right-[0.48px] top-[calc(50%-0.7px)]" data-name="p.framer-text">
+    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start start-0 end-[0.48px] top-[calc(50%-0.7px)]" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[14px] text-white uppercase whitespace-nowrap">
-        <p className="leading-[22.4px]">REAL-TIME ANALYTICS, DASHBOARDS</p>
+        <p className="leading-[22.4px]">{t.services[1].subtitle}</p>
       </div>
     </div>
   );
@@ -193,10 +205,12 @@ function TitleWrap1() {
 }
 
 function Frame2() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="absolute backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] bottom-[-123.53px] h-[142px] left-[27.98px] rounded-[7px] w-[560px]">
-      <div className="-translate-y-1/2 absolute flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] left-[20px] text-[20px] text-white top-[71px] w-[518px]">
-        <p className="leading-[normal]">Real-time energy monitoring that tracks consumption across utilities, equipment, and sites through a centralized dashboard.</p>
+    <div className="absolute backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] bottom-[-123.53px] h-[142px] start-[27.98px] rounded-[7px] w-[560px]">
+      <div className="-translate-y-1/2 absolute flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] start-[20px] text-[20px] text-white top-[71px] w-[518px]">
+        <p className="leading-[normal]">{t.services[2].description}</p>
       </div>
     </div>
   );
@@ -205,7 +219,7 @@ function Frame2() {
 function Image1() {
   return (
     <div className="absolute inset-[-5%] overflow-clip" data-name="Image">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[561px] left-[calc(50%+40.25px)] top-[calc(50%+0.75px)] w-[982px]" data-name="3d-graph-computer-illustration 1">
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[561px] start-[calc(50%+40.25px)] top-[calc(50%+0.75px)] w-[982px]" data-name="3d-graph-computer-illustration 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img3DGraphComputerIllustration1} />
       </div>
       <Frame2 />
@@ -222,10 +236,12 @@ function ImageWrap1() {
 }
 
 function PFramerText4() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-white whitespace-nowrap">
-        <p className="leading-[20px]">Energy Monitoring Systems</p>
+        <p className="leading-[20px]">{t.services[2].title}</p>
       </div>
     </div>
   );
@@ -240,10 +256,12 @@ function Heading3BoldMoves1() {
 }
 
 function PFramerText5() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 right-0 top-[calc(50%-0.7px)]" data-name="p.framer-text">
+    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start start-0 end-0 top-[calc(50%-0.7px)]" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[14px] text-white uppercase whitespace-nowrap">
-        <p className="leading-[22.4px]">ENERGY, SUSTAINABILITY</p>
+        <p className="leading-[22.4px]">{t.services[2].subtitle}</p>
       </div>
     </div>
   );
@@ -271,10 +289,12 @@ function TitleWrap2() {
 }
 
 function Frame3() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="absolute backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] bottom-[-123.53px] h-[142px] left-[27.98px] rounded-[7px] w-[560px]">
-      <div className="-translate-y-1/2 absolute flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] left-[20px] text-[20px] text-white top-[71px] w-[518px]">
-        <p className="leading-[normal]">Turn complex data into actionable insights with advanced analytics, real-time dashboards, and predictive modelling.</p>
+    <div className="absolute backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] bottom-[-123.53px] h-[142px] start-[27.98px] rounded-[7px] w-[560px]">
+      <div className="-translate-y-1/2 absolute flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] start-[20px] text-[20px] text-white top-[71px] w-[518px]">
+        <p className="leading-[normal]">{t.services[3].description}</p>
       </div>
     </div>
   );
@@ -283,7 +303,7 @@ function Frame3() {
 function Image2() {
   return (
     <div className="absolute inset-[-5%] overflow-clip" data-name="Image">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[561px] left-[calc(50%+0.25px)] top-[calc(50%-0.25px)] w-[574px]" data-name="Rectangle">
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[561px] start-[calc(50%+0.25px)] top-[calc(50%-0.25px)] w-[574px]" data-name="Rectangle">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle1} />
       </div>
       <Frame3 />
@@ -300,10 +320,12 @@ function ImageWrap2() {
 }
 
 function PFramerText6() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-white whitespace-nowrap">
-        <p className="leading-[20px]">Manufacturing Intelligence</p>
+        <p className="leading-[20px]">{t.services[3].title}</p>
       </div>
     </div>
   );
@@ -318,10 +340,12 @@ function Heading3BoldMoves2() {
 }
 
 function PFramerText7() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 right-[0.48px] top-[calc(50%-0.7px)]" data-name="p.framer-text">
+    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start start-0 end-[0.48px] top-[calc(50%-0.7px)]" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[14px] text-white uppercase whitespace-nowrap">
-        <p className="leading-[22.4px]">REAL-TIME ANALYTICS, DASHBOARDS</p>
+        <p className="leading-[22.4px]">{t.services[3].subtitle}</p>
       </div>
     </div>
   );
@@ -349,10 +373,12 @@ function TitleWrap3() {
 }
 
 function Frame4() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="absolute backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] bottom-[-123.53px] h-[142px] left-[27.98px] rounded-[7px] w-[560px]">
-      <div className="-translate-y-1/2 absolute flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] left-[20px] text-[20px] text-white top-[71px] w-[518px]">
-        <p className="leading-[normal]">Monitor pipelines in real time using distributed fiber optic sensing to detect leaks, temperature changes, and intrusions across long distances.</p>
+    <div className="absolute backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] bottom-[-123.53px] h-[142px] start-[27.98px] rounded-[7px] w-[560px]">
+      <div className="-translate-y-1/2 absolute flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] start-[20px] text-[20px] text-white top-[71px] w-[518px]">
+        <p className="leading-[normal]">{t.services[4].description}</p>
       </div>
     </div>
   );
@@ -361,7 +387,7 @@ function Frame4() {
 function Image3() {
   return (
     <div className="absolute inset-[-5%] overflow-clip" data-name="Image">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[561px] left-[calc(50%+0.25px)] top-[calc(50%+0.75px)] w-[576px]" data-name="Rectangle">
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[561px] start-[calc(50%+0.25px)] top-[calc(50%+0.75px)] w-[576px]" data-name="Rectangle">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle2} />
       </div>
       <Frame4 />
@@ -378,10 +404,12 @@ function ImageWrap3() {
 }
 
 function PFramerText8() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[20px] text-white whitespace-nowrap">
-        <p className="leading-[20px]">Manufacturing Intelligence</p>
+        <p className="leading-[20px]">{t.services[4].title}</p>
       </div>
     </div>
   );
@@ -396,10 +424,12 @@ function Heading3BoldMoves3() {
 }
 
 function PFramerText9() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 right-[0.48px] top-[calc(50%-0.7px)]" data-name="p.framer-text">
+    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start start-0 end-[0.48px] top-[calc(50%-0.7px)]" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:Regular',sans-serif] font-normal justify-center leading-[0] relative shrink-0 text-[14px] text-white uppercase whitespace-nowrap">
-        <p className="leading-[22.4px]">REAL-TIME ANALYTICS, DASHBOARDS</p>
+        <p className="leading-[22.4px]">{t.services[4].subtitle}</p>
       </div>
     </div>
   );
@@ -450,10 +480,12 @@ function WorkCardWrap() {
 }
 
 function PFramerText10() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
-        <p className="leading-[19.6px]">view all SERVICES</p>
+        <p className="leading-[19.6px]">{t.view_all_services}</p>
       </div>
     </div>
   );
@@ -491,7 +523,7 @@ function WorkCardWrapper() {
 
 function Frame() {
   return (
-    <div className="absolute h-[273.493px] right-[-19.75px] top-[-14.76px] w-[265.865px]">
+    <div className="absolute h-[273.493px] end-[-19.75px] top-[-14.76px] w-[265.865px]">
       <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFrame1139} />
     </div>
   );
@@ -499,32 +531,32 @@ function Frame() {
 
 function DivFramerIu4QGMaskGroup1() {
   return (
-    <div className="absolute left-[20px] size-[24px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
-      <div className="absolute bg-white left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] opacity-40 size-[24px] top-0" style={{ maskImage: `url('${imgDivFramerIu4QG1}')` }} data-name="div.framer-IU4qG" />
+    <div className="absolute start-[20px] size-[24px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
+      <div className="absolute bg-white start-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] opacity-40 size-[24px] top-0" style={{ maskImage: `url('${imgDivFramerIu4QG1}')` }} data-name="div.framer-IU4qG" />
     </div>
   );
 }
 
 function DivFramerIu4QGMaskGroup2() {
   return (
-    <div className="absolute bottom-[20.11px] left-[20px] size-[24px]" data-name="div.framer-IU4qG:mask-group">
-      <div className="absolute bg-white bottom-0 left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] opacity-40 size-[24px]" style={{ maskImage: `url('${imgDivFramerIu4QG1}')` }} data-name="div.framer-IU4qG" />
+    <div className="absolute bottom-[20.11px] start-[20px] size-[24px]" data-name="div.framer-IU4qG:mask-group">
+      <div className="absolute bg-white bottom-0 start-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] opacity-40 size-[24px]" style={{ maskImage: `url('${imgDivFramerIu4QG1}')` }} data-name="div.framer-IU4qG" />
     </div>
   );
 }
 
 function DivFramerIu4QGMaskGroup3() {
   return (
-    <div className="absolute bottom-[20.11px] right-[20px] size-[24px]" data-name="div.framer-IU4qG:mask-group">
-      <div className="absolute bg-white bottom-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] opacity-40 right-0 size-[24px]" style={{ maskImage: `url('${imgDivFramerIu4QG1}')` }} data-name="div.framer-IU4qG" />
+    <div className="absolute bottom-[20.11px] end-[20px] size-[24px]" data-name="div.framer-IU4qG:mask-group">
+      <div className="absolute bg-white bottom-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[24px_24px] opacity-40 end-0 size-[24px]" style={{ maskImage: `url('${imgDivFramerIu4QG1}')` }} data-name="div.framer-IU4qG" />
     </div>
   );
 }
 
 function DivFramerIu4QGMaskGroup4() {
   return (
-    <div className="absolute right-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
-      <div className="absolute bg-white mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[20px_20px] opacity-40 right-0 size-[20px] top-0" style={{ maskImage: `url('${imgDivFramerIu4QG2}')` }} data-name="div.framer-IU4qG" />
+    <div className="absolute end-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
+      <div className="absolute bg-white mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-[20px_20px] opacity-40 end-0 size-[20px] top-0" style={{ maskImage: `url('${imgDivFramerIu4QG2}')` }} data-name="div.framer-IU4qG" />
     </div>
   );
 }
@@ -545,10 +577,10 @@ function Container1() {
 
 function EvkKKiT34ZFcqnJwjmciV1OT2CuJpg() {
   return (
-    <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[694.44px] left-[calc(50%-0.24px)] top-[calc(50%+0.48px)] w-[1276.593px]" data-name="EvkKKiT34zFcqnJwjmciV1oT2CU.jpg">
+    <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[694.44px] start-[calc(50%-0.24px)] top-[calc(50%+0.48px)] w-[1276.593px]" data-name="EvkKKiT34zFcqnJwjmciV1oT2CU.jpg">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 overflow-hidden">
-          <img alt="" className="absolute h-[103.4%] left-0 max-w-none top-[-1.7%] w-full" src={imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg} />
+          <img alt="" className="absolute h-[103.4%] start-0 max-w-none top-[-1.7%] w-full" src={imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg} />
         </div>
         <div className="absolute bg-[rgba(21,21,21,0.1)] inset-0" />
       </div>
@@ -597,11 +629,13 @@ function ImageWrap4() {
 }
 
 function H5FramerText() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="h5.framer-text">
       <div className="bg-clip-text flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[23px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-87.6189deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)" }}>
-        <p className="leading-[25.99px] mb-0 whitespace-pre">{`Our expertise, `}</p>
-        <p className="leading-[25.99px] whitespace-pre">in data analysis.</p>
+        <p className="leading-[25.99px] mb-0 whitespace-pre">{t.video_expertise_p1}</p>
+        <p className="leading-[25.99px] whitespace-pre">{t.video_expertise_p2}</p>
       </div>
     </div>
   );
@@ -609,7 +643,7 @@ function H5FramerText() {
 
 function OurExpertiseInFocus() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start justify-center left-[85.79%] max-w-[145px] right-[2.7%] top-[28px]" data-name="Our expertise, in focus.">
+    <div className="absolute content-stretch flex flex-col items-start justify-center start-[85.79%] max-w-[145px] end-[2.7%] top-[28px]" data-name="Our expertise, in focus.">
       <H5FramerText />
     </div>
   );
@@ -617,9 +651,9 @@ function OurExpertiseInFocus() {
 
 function Icon() {
   return (
-    <div className="absolute inset-0 rounded-br-[30px] rounded-tr-[30px]" data-name="Icon">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-br-[30px] rounded-tr-[30px]">
-        <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgIcon} />
+    <div className="absolute inset-0 rounded-be-[30px] rounded-te-[30px]" data-name="Icon">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-be-[30px] rounded-te-[30px]">
+        <img alt="" className="absolute start-0 max-w-none size-full top-0" src={imgIcon} />
       </div>
     </div>
   );
@@ -637,7 +671,7 @@ function PFramerText11() {
 
 function Component414Min() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start justify-center right-[20.95px] top-[9px] w-[47px]" data-name="4:14 min">
+    <div className="absolute content-stretch flex flex-col items-start justify-center end-[20.95px] top-[9px] w-[47px]" data-name="4:14 min">
       <PFramerText11 />
     </div>
   );
@@ -645,7 +679,7 @@ function Component414Min() {
 
 function Time() {
   return (
-    <div className="absolute backdrop-blur-[20px] bottom-[40px] h-[38px] left-0 rounded-br-[30px] rounded-tr-[30px] w-[105px]" data-name="Time">
+    <div className="absolute backdrop-blur-[20px] bottom-[40px] h-[38px] start-0 rounded-be-[30px] rounded-te-[30px] w-[105px]" data-name="Time">
       <Icon />
       <Component414Min />
     </div>
@@ -656,7 +690,7 @@ function Icon1() {
   return (
     <div className="flex-[1_0_0] min-h-px relative w-full" data-name="Icon">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgIcon1} />
+        <img alt="" className="absolute start-0 max-w-none size-full top-0" src={imgIcon1} />
       </div>
     </div>
   );
@@ -687,10 +721,12 @@ function VideoButton() {
 }
 
 function H4FramerText() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.95px] relative shrink-0 w-full" data-name="h4.framer-text">
       <div className="flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[28px] text-white tracking-[-0.4px] whitespace-nowrap">
-        <p className="leading-[29.96px]">View Video</p>
+        <p className="leading-[29.96px]">{t.view_video}</p>
       </div>
     </div>
   );
@@ -715,7 +751,7 @@ function VideoButtonText() {
 
 function Default1() {
   return (
-    <div className="absolute content-stretch flex h-[630px] items-center justify-center left-0 overflow-clip right-0 top-0" data-name="Default">
+    <div className="absolute content-stretch flex h-[630px] items-center justify-center start-0 overflow-clip end-0 top-0" data-name="Default">
       <ImageWrap4 />
       <OurExpertiseInFocus />
       <Time />

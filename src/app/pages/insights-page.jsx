@@ -3,8 +3,9 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { FooterSection } from '../components/footer-section';
-
 import { NewsletterSection } from '../components/newsletter-section';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
 // Assets from InsightPage.tsx
 import imgSimonKadula8Gr6BObQloiUnsplash1 from "../../assets/e1dcc9e435ab91cb6be407673593b96ed5fd1213.png";
@@ -23,8 +24,11 @@ import { imgDivFramerIu4QG as imgPlusIcon, imgDivFramerYVnZo as imgCalendarIcon,
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 const InsightsPage = () => {
+  const { language } = useLanguage();
+  const isRtl = language === 'AR';
+  const t = langData[language.toLowerCase()].insights_page;
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Hero Section */}
       <ScrollFadeIn>
         <section className="pt-[140px] md:pt-[200px]  md:pb-[100px] px-6 text-center max-w-[1260px] w-full flex flex-col items-center gap-10">
@@ -41,7 +45,7 @@ const InsightsPage = () => {
                   <div className="absolute inset-0 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
                 </div>
                 <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">
-                  latest news
+                  {t.hero.badge}
                 </span>
               </motion.div>
 
@@ -54,14 +58,11 @@ const InsightsPage = () => {
               >
                 <h1 className="flex flex-col items-center gap-1 md:gap-2 text-center">
                   <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent tracking-[-0.04em] leading-[1.1]">
-                    Latest industry trends and expert
+                    {t.hero.title_p1}
                   </span>
                   <span className="flex flex-wrap items-center justify-center gap-x-4">
-                    {/* <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent tracking-[-0.04em] leading-[1.1]">
-                      expert
-                    </span> */}
                     <span className="font-['Playfair_Display'] italic font-normal text-[36px] sm:text-[48px] md:text-[60px] text-white/70 tracking-[-0.04em] leading-[1.1]">
-                      insights from our team
+                      {t.hero.title_italic}
                     </span>
                   </span>
                 </h1>
@@ -76,7 +77,7 @@ const InsightsPage = () => {
               transition={{ delay: 0.2 }}
             >
               <p className="font-['Geist'] font-normal text-[14px] md:text-[18px] text-center text-white uppercase tracking-wider leading-relaxed">
-                STAY UPDATED WITH THE LATEST IN INDUSTRIAL AUTOMATION, ENERGY MANAGEMENT, AND AI-DRIVEN SOLUTIONS
+                {t.hero.description}
               </p>
             </motion.div>
           </div>
@@ -93,25 +94,30 @@ const InsightsPage = () => {
             {/* Title */}
             <div className="flex items-center gap-2 opacity-80 justify-center">
               <span className="font-['Geist'] font-medium text-[20px] md:text-[23px] text-white tracking-tight">
-                Search
+                {t.search.title}
               </span>
               <span className="font-['Playfair_Display'] italic font-normal text-[20px] md:text-[23px] text-white tracking-tight">
-                by categories
+                {t.search.by_categories}
               </span>
             </div>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-2 md:gap-3 items-center justify-center">
-              {['ALL', 'MANUFACTURING', 'ENERGY', 'PIPELINE'].map((cat, i) => (
+              {[ 
+                { id: 'ALL', label: t.categories.all },
+                { id: 'MANUFACTURING', label: t.categories.manufacturing },
+                { id: 'ENERGY', label: t.categories.energy },
+                { id: 'PIPELINE', label: t.categories.pipeline }
+              ].map((cat, i) => (
                 <button
-                  key={cat}
+                  key={cat.id}
                   className={`px-5 backdrop-blur-[25px] md:px-6 py-2.5 md:py-3 rounded-full text-[12px] md:text-[14px] font-['Geist'] font-medium uppercase tracking-wider transition-all cursor-pointer
         ${i === 0
                       ? "bg-gradient-to-r from-[#001ca9] to-[#046ce4] text-white shadow-[0_7px_40px_-10px_rgba(17,15,223,0.6)]"
                       : "bg-white/5 text-white/70 hover:bg-white/10 border border-white/10"
                     }`}
                 >
-                  {cat}
+                  {cat.label}
                 </button>
               ))}
             </div>
@@ -123,9 +129,9 @@ const InsightsPage = () => {
             {/* Top Grid: 3 Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 w-full">
               {[
-                { title: "How smart manufacturing is transforming production efficiency", img: imgSimonKadula8Gr6BObQloiUnsplash1, slug: "how-smart-manufacturing-is-transforming-production-efficiency" },
-                { title: "The future of energy monitoring and sustainable operations", img: imgBrettJordanAfbBhcXeEiUnsplash1, slug: "the-future-of-energy-monitoring" },
-                { title: "Enhancing pipeline safety with real-time fiber optic sensing", img: imgVictorUoIiVYka3VyUnsplash1, slug: "enhancing-pipeline-safety" }
+                { title: t.posts[0].title, img: imgSimonKadula8Gr6BObQloiUnsplash1, slug: "how-smart-manufacturing-is-transforming-production-efficiency" },
+                { title: t.posts[1].title, img: imgBrettJordanAfbBhcXeEiUnsplash1, slug: "the-future-of-energy-monitoring" },
+                { title: t.posts[2].title, img: imgVictorUoIiVYka3VyUnsplash1, slug: "enhancing-pipeline-safety" }
               ].map((post, idx) => (
                 <Link key={idx} to={`/insights/${post.slug}`} className="group flex flex-col bg-white rounded-xl overflow-hidden shadow-xl transition-all hover:-translate-y-1">
                   <div className="p-6 md:p-8 flex flex-col h-full justify-between gap-12 relative min-h-[360px]">
@@ -141,8 +147,8 @@ const InsightsPage = () => {
                     <div className="flex flex-col gap-6">
                       <div className="flex flex-col gap-3">
                         <div className="flex items-center gap-1.5 opacity-50">
-                          <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">WRITTEN BY:</span>
-                          <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">FLOWTECH TEAM</span>
+                          <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.written_by}</span>
+                          <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.team_name}</span>
                         </div>
                         <h3 className="font-['Geist'] font-medium text-[20px] text-black leading-tight">
                           {post.title}
@@ -156,13 +162,13 @@ const InsightsPage = () => {
                                           group-hover:to-[#046ce4]">
 
                           {/* Text (hidden initially) */}
-                          <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                            VIEW
+                          <span className={`text-white whitespace-nowrap max-w-0 opacity-0 ${isRtl ? 'translate-x-2' : '-translate-x-2'} group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out`}>
+                            {t.ui.view_cta}
                           </span>
 
                           {/* Arrow (always visible, but slides) */}
                           <div
-                            className="size-5 bg-white shrink-0 transition-all duration-300 ease-in-out group-hover:translate-x-1"
+                            className={`size-5 bg-white shrink-0 transition-all duration-300 ease-in-out ${isRtl ? 'group-hover:-translate-x-1 scale-x-[-1]' : 'group-hover:translate-x-1'}`}
                             style={{
                               maskImage: `url('${imgIcon}')`,
                               maskSize: 'contain',
@@ -199,11 +205,11 @@ const InsightsPage = () => {
                   <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div className="flex flex-col gap-4 max-w-[700px]">
                       <div className="flex items-center gap-2 opacity-60">
-                        <span className="font-['Geist'] font-medium text-[12px] text-white uppercase">WRITTEN BY:</span>
-                        <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">FLOWTECH TEAM</span>
+                        <span className="font-['Geist'] font-medium text-[12px] text-white uppercase">{t.ui.written_by}</span>
+                        <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">{t.ui.team_name}</span>
                       </div>
                       <h2 className="font-['Geist'] font-medium text-[28px] md:text-[36px] text-white leading-tight">
-                        Optimising energy consumption with intelligent monitoring systems
+                        {t.posts[3].title}
                       </h2>
                     </div>
                     <div className="group inline-flex items-center cursor-pointer overflow-hidden">
@@ -214,13 +220,13 @@ const InsightsPage = () => {
                                           group-hover:to-[#046ce4]">
 
                         {/* Text (hidden initially) */}
-                        <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                          VIEW
+                        <span className={`text-white whitespace-nowrap max-w-0 opacity-0 ${isRtl ? 'translate-x-2' : '-translate-x-2'} group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out`}>
+                          {t.ui.view_cta}
                         </span>
 
                         {/* Arrow (always visible, but slides) */}
                         <div
-                          className="size-5 bg-black group-hover:bg-white shrink-0 transition-all duration-300 ease-in-out group-hover:translate-x-1"
+                          className={`size-5 bg-black group-hover:bg-white shrink-0 transition-all duration-300 ease-in-out ${isRtl ? 'group-hover:-translate-x-1 scale-x-[-1]' : 'group-hover:translate-x-1'}`}
                           style={{
                             maskImage: `url('${imgIcon}')`,
                             maskSize: 'contain',
@@ -240,9 +246,9 @@ const InsightsPage = () => {
             <div className="flex flex-col gap-10 md:gap-16 w-full pb-10">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 w-full">
                 {[
-                  { title: "Predictive maintenance: reducing downtime with real-time insights", img: imgCarMechanicWearingWhiteUniformStandHoldingWrench1, slug: "predictive-maintenance" },
-                  { title: "How data-driven analytics improves industrial decision-making", img: imgRepresentationUserExperienceInterfaceDesign1, slug: "data-driven-analytics" },
-                  { title: "Real-time monitoring: the future of industrial operations", img: imgFuturisticTechnologyConcept1, slug: "real-time-monitoring" }
+                  { title: t.posts[4].title, img: imgCarMechanicWearingWhiteUniformStandHoldingWrench1, slug: "predictive-maintenance" },
+                  { title: t.posts[5].title, img: imgRepresentationUserExperienceInterfaceDesign1, slug: "data-driven-analytics" },
+                  { title: t.posts[6].title, img: imgFuturisticTechnologyConcept1, slug: "real-time-monitoring" }
                 ].map((post, idx) => (
                   <Link key={idx} to={`/insights/${post.slug}`} className="group flex flex-col bg-white rounded-xl overflow-hidden shadow-xl transition-all hover:-translate-y-1">
                     <div className="p-6 md:p-8 flex flex-col h-full justify-between gap-12 relative min-h-[360px]">
@@ -256,8 +262,8 @@ const InsightsPage = () => {
                       <div className="flex flex-col gap-6">
                         <div className="flex flex-col gap-3">
                           <div className="flex items-center gap-1.5 opacity-50">
-                            <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">WRITTEN BY:</span>
-                            <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">FLOWTECH TEAM</span>
+                            <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.written_by}</span>
+                            <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.team_name}</span>
                           </div>
                           <h3 className="font-['Geist'] font-medium text-[20px] text-black leading-tight">
                             {post.title}
@@ -271,13 +277,13 @@ const InsightsPage = () => {
                                           group-hover:to-[#046ce4]">
 
                             {/* Text (hidden initially) */}
-                            <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                              VIEW
+                            <span className={`text-white whitespace-nowrap max-w-0 opacity-0 ${isRtl ? 'translate-x-2' : '-translate-x-2'} group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out`}>
+                              {t.ui.view_cta}
                             </span>
 
                             {/* Arrow (always visible, but slides) */}
                             <div
-                              className="size-5 bg-white shrink-0 transition-all duration-300 ease-in-out group-hover:translate-x-1"
+                              className={`size-5 bg-white shrink-0 transition-all duration-300 ease-in-out ${isRtl ? 'group-hover:-translate-x-1 scale-x-[-1]' : 'group-hover:translate-x-1'}`}
                               style={{
                                 maskImage: `url('${imgIcon}')`,
                                 maskSize: 'contain',
@@ -287,9 +293,6 @@ const InsightsPage = () => {
                             />
                           </div>
                         </div>
-                        {/* <div className="bg-black p-3 rounded-lg w-fit group-hover:bg-[#046ce4] transition-colors">
-                        <div className="size-5 bg-white" style={{ maskImage: `url('${imgIcon}')`, maskSize: 'contain' }} />
-                      </div> */}
                       </div>
                     </div>
                   </Link>
@@ -300,7 +303,7 @@ const InsightsPage = () => {
               <div className="flex justify-center w-full">
                 <button className="relative px-10 py-4 rounded-full overflow-hidden group cursor-pointer transition-transform hover:scale-105 shadow-[0_10px_40px_-10px_rgba(17,15,223,0.5)]">
                   <div className="absolute inset-0 bg-gradient-to-r from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 active:scale-95 glare-btn" />
-                  <span className="relative z-10 font-['Geist'] font-medium text-white uppercase tracking-widest text-sm">Load More</span>
+                  <span className="relative z-10 font-['Geist'] font-medium text-white uppercase tracking-widest text-sm">{t.ui.load_more}</span>
                 </button>
               </div>
             </div>

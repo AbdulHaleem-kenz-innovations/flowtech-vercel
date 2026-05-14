@@ -1,6 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
 // Assets
 import imgImage from "../../assets/49208a0f068229058add6f6c6c1d9a3f7c59ffa5.png";
@@ -55,70 +56,80 @@ const NavLink = ({ label, to = "/" }) => (
   </Link>
 );
 
-const ContactBox = () => (
-  <div className="bg-white p-6 md:p-8 lg:p-10 rounded-[24px] w-full lg:max-w-[387px] flex flex-col gap-6 md:gap-8 relative border border-black/5 shadow-2xl">
-    <div className="flex flex-col gap-2 items-center text-center">
-      <div className="bg-[#2df9a7]/15 px-3 py-1 rounded-full flex gap-2 items-center">
-        <div className="size-3">
-          <ImageWithFallback src={imgImage} alt="" className="size-full object-contain" />
+const ContactBox = () => {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].footer_section;
+
+  return (
+    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-[24px] w-full lg:max-w-[387px] flex flex-col gap-6 md:gap-8 relative border border-black/5 shadow-2xl">
+      <div className="flex flex-col gap-2 items-center text-center">
+        <div className="bg-[#2df9a7]/15 px-3 py-1 rounded-full flex gap-2 items-center">
+          <div className="size-3">
+            <ImageWithFallback src={imgImage} alt="" className="size-full object-contain" />
+          </div>
+          <span className="font-['Geist'] font-bold text-[#0f9101] text-[10px] tracking-[0.1em] uppercase">
+            {t.email_us}
+          </span>
         </div>
-        <span className="font-['Geist'] font-bold text-[#0f9101] text-[10px] tracking-[0.1em] uppercase">
-          email us
+        <span className="font-['Geist'] text-[15px] md:text-[16px] text-black font-medium break-all">
+          hello@flowtech.com
         </span>
       </div>
-      <span className="font-['Geist'] text-[15px] md:text-[16px] text-black font-medium break-all">
-        hello@flowtech.com
-      </span>
-    </div>
 
-    <div className="flex flex-col gap-2 items-center text-center">
-      <div className="bg-[#2d6ef9]/15 px-3 py-1 rounded-full flex gap-2 items-center">
-        <div className="size-3">
-          <ImageWithFallback src={imgImage1} alt="" className="size-full object-contain" />
+      <div className="flex flex-col gap-2 items-center text-center">
+        <div className="bg-[#2d6ef9]/15 px-3 py-1 rounded-full flex gap-2 items-center">
+          <div className="size-3">
+            <ImageWithFallback src={imgImage1} alt="" className="size-full object-contain" />
+          </div>
+          <span className="font-['Geist'] font-bold text-[#110fdf] text-[10px] tracking-[0.1em] uppercase">
+            {t.call_us}
+          </span>
         </div>
-        <span className="font-['Geist'] font-bold text-[#110fdf] text-[10px] tracking-[0.1em] uppercase">
-          call us
+        <span className="font-['Geist'] text-[15px] md:text-[16px] text-black font-medium" dir="ltr">
+          +966 55 877 1132
         </span>
       </div>
-      <span className="font-['Geist'] text-[15px] md:text-[16px] text-black font-medium">
-        +966 55 877 1132
-      </span>
-    </div>
 
-    <div className="flex flex-col gap-3 items-center text-center">
-      <div className="bg-[#8b5cf6]/15 px-3 py-1 rounded-full flex gap-2 items-center">
-        <div className="size-3 flex items-center justify-center">
-          <MapPinned className="size-full text-[#7c3aed]" />
+      <div className="flex flex-col gap-3 items-center text-center">
+        <div className="bg-[#8b5cf6]/15 px-3 py-1 rounded-full flex gap-2 items-center">
+          <div className="size-3 flex items-center justify-center">
+            <MapPinned className="size-full text-[#7c3aed]" />
+          </div>
+          <span className="font-['Geist'] font-bold text-[#7c3aed] text-[10px] tracking-[0.1em] uppercase">
+            {t.our_location}
+          </span>
         </div>
-        <span className="font-['Geist'] font-bold text-[#7c3aed] text-[10px] tracking-[0.1em] uppercase">
-          Our Location
-        </span>
-      </div>
-      <div className="font-['Geist'] text-[12px] md:text-[13px] text-black/70 leading-snug max-w-[280px]">
-        <div className="font-bold text-black mb-0.5">Flow Technology General Contracting Co,</div>
-        <div className="opacity-80">P.O. Box 32655, Adh Dhahran Al Jubail Br. Rd,</div>
-        <div className="opacity-80">
-          Al Badi Dst. Al Qatif, KSA
+        <div className="font-['Geist'] text-[12px] md:text-[13px] text-black/70 leading-snug max-w-[280px]">
+          <div className="font-bold text-black mb-0.5">{t.address_title}</div>
+          <div className="opacity-80">{t.address_p1}</div>
+          <div className="opacity-80">
+            {t.address_p2}
+          </div>
         </div>
       </div>
-    </div>
 
-    {/* Decorative corners */}
-    <div className="absolute bottom-4 left-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
-    <div className="absolute left-4 top-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
-    <div className="absolute bottom-4 right-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
-    <div className="absolute right-4 top-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
-  </div>
-);
+      {/* Decorative corners */}
+      <div className="absolute bottom-4 start-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
+      <div className="absolute start-4 top-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
+      <div className="absolute bottom-4 end-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
+      <div className="absolute end-4 top-4 size-5 bg-black/10" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
+    </div>
+  );
+};
 
 export const FooterSection = () => {
+  const { language } = useLanguage();
+  const isRtl = language === 'AR';
+  const t = langData[language.toLowerCase()].footer_section;
+  const nav = langData[language.toLowerCase()].navbar;
+
   return (
     <ScrollFadeIn>
-      <footer className="w-full  px-6 md:px-8 relative overflow-hidden bg-transparent border-t border-white/5">
+      <footer className="w-full  px-6 md:px-8 relative overflow-hidden bg-transparent border-t border-white/5" dir={isRtl ? 'rtl' : 'ltr'}>
         <div className="max-w-[1260px] mx-auto flex flex-col gap-16 md:gap-24 relative z-10">
 
           {/* Background Pattern */}
-          <div className="absolute bottom-[-25%] left-0 right-0 h-[300px] pointer-events-none -z-10">
+          <div className="absolute bottom-[-25%] inset-x-0 h-[300px] pointer-events-none -z-10">
             <ImageWithFallback alt="" className=" object-cover" src={imgGroup31} />
           </div>
 
@@ -128,53 +139,39 @@ export const FooterSection = () => {
               <div className="flex flex-col gap-6">
                 <Logo />
                 <p className="font-['Geist'] text-[14px] text-white/40 max-w-[200px] uppercase leading-relaxed">
-                  Empowering industries through data, AI, and intelligent systems.
+                  {t.tagline}
                 </p>
                 <div className="font-['Geist'] text-[13px] sm:text-[14px] text-white/40 max-w-[220px] sm:max-w-[260px] uppercase leading-relaxed space-y-1">
-
-                  {/* <MapPinned className="w-8 h-8 mt-[2px]" />
-                  <div className="flex items-start gap-2">
-                    <div>
-                      <div>Flow Technology General Contracting Co,</div>
-                      <div>P.O. Box 32655</div>
-                      <div>
-                        Adh Dhahran Al Jubail Br. Rd,<br />
-                        Al Badi Dst. Al Qatif<br />
-                        Kingdom of Saudi Arabia
-                      </div>
-                    </div>
-                  </div> */}
-
                 </div>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-12 flex-1">
                 <div className="flex flex-col gap-6">
-                  <NavBadge label="company" />
+                  <NavBadge label={t.company} />
                   <nav className="flex flex-col gap-2">
-                    <NavLink label="Home" to="/" />
-                    <NavLink label="About" to="/about" />
-                    <NavLink label="Services" to="/services/energy-monitoring" />
-                    <NavLink label="Products" to="/products" />
-                    <NavLink label="Careers" to="/careers" />
-                    <NavLink label="Industries" to="/industries" />
+                    <NavLink label={nav.home} to="/" />
+                    <NavLink label={nav.about} to="/about" />
+                    <NavLink label={nav.services} to="/services/energy-monitoring" />
+                    <NavLink label={nav.products} to="/products" />
+                    <NavLink label={t.careers} to="/careers" />
+                    <NavLink label={nav.industries} to="/industries" />
                   </nav>
                 </div>
 
                 <div className="flex flex-col gap-6">
-                  <NavBadge label="info" />
+                  <NavBadge label={t.info} />
                   <nav className="flex flex-col gap-2">
-                    <NavLink label="Our team" to="/about" />
-                    <NavLink label="Insights" to="/insights" />
-                    <NavLink label="Contact" to="/contact" />
+                    <NavLink label={t.our_team} to="/about" />
+                    <NavLink label={nav.insights} to="/insights" />
+                    <NavLink label={nav.connect} to="/contact" />
                   </nav>
                 </div>
 
                 <div className="flex flex-col gap-6">
-                  <NavBadge label="EXTRA" />
+                  <NavBadge label={t.extra} />
                   <nav className="flex flex-col gap-2">
-                    <NavLink label="Privacy policy" to="/" />
-                    <NavLink label="Terms of use" to="/" />
+                    <NavLink label={t.privacy} to="/" />
+                    <NavLink label={t.terms} to="/" />
                   </nav>
                 </div>
               </div>
@@ -185,28 +182,22 @@ export const FooterSection = () => {
 
           {/* Bottom Section */}
           <div className="flex flex-col lg:flex-row justify-between items-center gap-10 pt-10 border-t border-white/10">
-            <div className="max-w-[700px] text-center lg:text-left">
+            <div className="max-w-[700px] text-center lg:text-start">
               <p className="font-['Geist'] text-[12px] md:text-[14px] text-white/30 uppercase leading-relaxed tracking-wider">
-                © FLOWTECH, 2025. ALL RIGHTS RESERVED. FLOWTECH IS A TECHNOLOGY COMPANY SPECIALISING IN INDUSTRIAL AUTOMATION, AI SOLUTIONS, AND ENERGY MANAGEMENT. DESIGNED FOR THE FUTURE OF OPERATIONS.
+                {t.copyright}
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-8 w-full sm:w-auto">
               <div className="flex gap-6 justify-center">
-                {[imgIcon, imgIcon1, imgIcon2, imgIcon3].map((icon, index) => (
+                {[imgIcon, imgIcon1, imgIcon2, imgIcon3].map((icon, index) => (icon && (
                   <Link key={index} to="/" className="size-5 opacity-40 hover:opacity-100 transition-opacity">
                     <ImageWithFallback alt="" className="size-full object-contain" src={icon} />
                   </Link>
-                ))}
+                )))}
               </div>
 
               <Link to="/contact" className="w-full sm:w-auto">
-                {/* <button className="relative w-full sm:w-auto rounded-full px-8 py-3.5 group overflow-hidden bg-gradient-to-r from-[#001ca9] to-[#046ce4] border border-white/20">
-                <span className="relative z-10 font-['Geist'] font-medium text-[13px] text-white tracking-widest uppercase group-hover:scale-105 block transition-transform text-center">
-                  Need help?
-                </span>
-                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </button> */}
                 <button
                   className=" relative overflow-hidden
     flex items-center justify-center
@@ -227,7 +218,7 @@ export const FooterSection = () => {
     hover:scale-105 active:scale-95 
     glare-btn"
                 >
-                  NEED HELP?
+                  {t.need_help}
                 </button>
               </Link>
             </div>

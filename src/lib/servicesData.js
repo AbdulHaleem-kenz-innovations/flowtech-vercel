@@ -2,10 +2,18 @@ import imgRectangle from "../assets/281158e8c678fde7e51a36a31c1553d4e710d208.png
 import img3DGraphComputerIllustration1 from "../assets/3d-graph-computer-illustration 1 (1).png";
 import imgRectangle1 from "../assets/c78c44b955a51258030be19e23842e29465b7545.png";
 import imgRectangle2 from "../assets/ed6ab4e2d6429f0d554d61b64ceec65f98cbdf2e.png";
-import image1 from "../assets/services/image 1.png";
-import image2 from "../assets/services/image 2.png";
-import image3 from "../assets/services/image 3.png";
-import image4 from "../assets/services/image 4.png";
+// import image1 from "../assets/services/image 1.png";
+// import image2 from "../assets/services/image 2.png";
+// import image3 from "../assets/services/image 3.png";
+// import image4 from "../assets/services/image 4.png";
+import image1 from "../assets/service-images/Analytics/1.jpeg";
+import image2 from "../assets/service-images/EMS/1.jpeg";
+import image3 from "../assets/service-images/Pipelines/1.jpeg";
+import image4 from "../assets/service-images/Cloud/1.jpeg";
+import image5 from "../assets/service-images/Ai-Analytics/1.jpeg";
+import image6 from "../assets/service-images/SAP/1.jpeg";
+import image7 from "../assets/service-images/Oracle/1.jpeg";
+import image8 from "../assets/service-images/MES/1.jpeg";
 
 export const servicesData = [
     {
@@ -16,7 +24,7 @@ export const servicesData = [
             "Transform shop floor operations with real-time data integration, monitoring, and intelligent dashboards. Leverage predictive analytics to reduce downtime, optimise production, and improve quality.",
         img: imgRectangle,
         link: "/services/analytics",
-        hoverImg: image2,
+        hoverImg: image1,
     },
     {
         id: 2,
@@ -26,7 +34,7 @@ export const servicesData = [
             "Real-time energy monitoring that tracks consumption across utilities, equipment, and sites through a centralized dashboard.",
         img: img3DGraphComputerIllustration1,
         link: "/services/energy-monitoring",
-        hoverImg: image1,
+        hoverImg: image2,
     },
     {
         id: 3,
@@ -36,7 +44,7 @@ export const servicesData = [
             "Turn complex data into actionable insights with advanced analytics, real-time dashboards, and predictive modelling.",
         img: imgRectangle1,
         link: "/services/pipeline-safety",
-        hoverImg: image4,
+        hoverImg: image3,
     },
     {
         id: 4,
@@ -46,7 +54,7 @@ export const servicesData = [
             "Monitor pipelines in real time using distributed fiber optic sensing to detect leaks, temperature changes, and intrusions across long distances.",
         img: imgRectangle2,
         link: "/services/cloud-services",
-        hoverImg: image3,
+        hoverImg: image4,
     },
     {
         id: 5,
@@ -56,7 +64,7 @@ export const servicesData = [
             "Transform shop floor operations with real-time data integration, monitoring, and intelligent dashboards. Leverage predictive analytics to reduce downtime, optimise production, and improve quality.",
         img: imgRectangle,
         link: "/services/ai-analytics",
-        hoverImg: image2,
+        hoverImg: image5,
     },
     {
         id: 6,
@@ -66,7 +74,7 @@ export const servicesData = [
             "Real-time energy monitoring that tracks consumption across utilities, equipment, and sites through a centralized dashboard.",
         img: img3DGraphComputerIllustration1,
         link: "/services/sap-services",
-        hoverImg: image1,
+        hoverImg: image6,
     },
     {
         id: 7,
@@ -76,7 +84,7 @@ export const servicesData = [
             "Turn complex data into actionable insights with advanced analytics, real-time dashboards, and predictive modelling.",
         img: imgRectangle1,
         link: "/services/oracle-services",
-        hoverImg: image4,
+        hoverImg: image7,
     },
     {
         id: 8,
@@ -86,7 +94,7 @@ export const servicesData = [
             "Monitor pipelines in real time using distributed fiber optic sensing to detect leaks, temperature changes, and intrusions across long distances.",
         img: imgRectangle2,
         link: "/services/manufacturing",
-        hoverImg: image3,
+        hoverImg: image8,
     },
 ];
 

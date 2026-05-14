@@ -191,7 +191,7 @@ export default function OrbitImages({
         alt={`${altPrefix} ${index + 1}`}
         draggable={false}
         borderRadius="50%"
-        className="w-full h-full object-contain w-[100px]"
+        className="w-full h-full object-contain w-[100px] "
       />
     </div>
   ));
@@ -199,6 +199,7 @@ export default function OrbitImages({
   return (
     <div
       ref={containerRef}
+       dir="ltr" 
       className={`relative mx-auto ${className}`}
       style={{
         width: containerWidth,
@@ -212,7 +213,7 @@ export default function OrbitImages({
         style={{
           width: responsive ? baseWidth : '100%',
           height: responsive ? baseWidth : '100%',
-          transform: responsive ? `translate(-50%, -50%) scale(${scale})` : undefined,
+          transform: `translate(-50%, -50%) scale(${responsive ? scale : 1})`,
           transformOrigin: 'center center',
         }}
       >

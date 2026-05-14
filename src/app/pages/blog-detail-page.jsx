@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { FooterSection } from '../components/footer-section';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
 // Assets from 1920WLight-22-2100.tsx
 import imgSimonKadula8Gr6BObQloiUnsplash1 from "../../assets/e1dcc9e435ab91cb6be407673593b96ed5fd1213.png";
@@ -21,9 +23,9 @@ import { imgDivFramerYVnZo, imgDivFramerFoIvU, imgGroup, imgGroup1, imgGroup2, i
 import svgPaths from "../../imports/svg-4h9mwqx04v";
 import { NewsletterSection } from '../components/newsletter-section';
 
-const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
-  <motion.div 
-    className="bg-white rounded-[7px] p-6 flex flex-col gap-6 relative group cursor-pointer"
+const BlogCard = ({ title, image, author = "FLOWTECH TEAM", isRtl, t }) => (
+  <motion.div
+    className="bg-white rounded-[7px] p-6 flex flex-col gap-6 relative group cursor-pointer text-start"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -33,80 +35,83 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
         <ImageWithFallback src={image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
       </div>
     </div>
-    
+
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-1.5 opacity-50">
-        <span className="font-['Geist'] font-semibold text-[11px] text-black uppercase tracking-wider">Written by:</span>
+        <span className="font-['Geist'] font-semibold text-[11px] text-black uppercase tracking-wider">{t.author.label}</span>
         <span className="font-['Geist'] font-semibold text-[11px] text-black uppercase tracking-wider">{author}</span>
       </div>
       <h3 className="font-['Geist'] font-medium text-[20px] text-black leading-tight">
         {title}
       </h3>
-        <div className="group inline-flex items-center cursor-pointer overflow-hidden">
-                           <div className="group inline-flex items-center cursor-pointer overflow-hidden">
-                                                     <div className="bg-black p-3 rounded-lg flex items-center gap-2
-                                                                     transition-all duration-300 ease-in-out
-                                                                     group-hover:bg-gradient-to-tr
-                                                                     group-hover:from-[#001ca9]
-                                                                     group-hover:to-[#046ce4]">
-                           
-                                                       {/* Text (hidden initially) */}
-                                                       <span className="text-white whitespace-nowrap max-w-0 opacity-0 -translate-x-2 group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out">
-                                                         VIEW
-                                                       </span>
-                           
-                                                       {/* Arrow (always visible, but slides) */}
-                                                       <div
-                                                         className="size-5 bg-white shrink-0 transition-all duration-300 ease-in-out group-hover:translate-x-1"
-                                                         style={{
-                                                           maskImage: `url('${imgIcon}')`,
-                                                           maskSize: 'contain',
-                                                           WebkitMaskImage: `url('${imgIcon}')`,
-                                                           WebkitMaskSize: 'contain',
-                                                         }}
-                                                       />
-                                                     </div>
-                                                   </div>
-                            </div>
+      <div className="group inline-flex items-center cursor-pointer overflow-hidden">
+        <div className="bg-black p-3 rounded-lg flex items-center gap-2
+                                                           transition-all duration-300 ease-in-out
+                                                           group-hover:bg-gradient-to-tr
+                                                           group-hover:from-[#001ca9]
+                                                           group-hover:to-[#046ce4]">
+
+          {/* Text (hidden initially) */}
+          <span className={`text-white whitespace-nowrap max-w-0 opacity-0 ${isRtl ? 'translate-x-2' : '-translate-x-2'} group-hover:max-w-[80px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-in-out`}>
+            {t.ui.view_cta}
+          </span>
+
+          {/* Arrow (always visible, but slides) */}
+          <div
+            className={`size-5 bg-white shrink-0 transition-all duration-300 ease-in-out ${isRtl ? 'group-hover:-translate-x-1 scale-x-[-1]' : 'group-hover:translate-x-1'}`}
+            style={{
+              maskImage: `url('${imgIcon}')`,
+              maskSize: 'contain',
+              WebkitMaskImage: `url('${imgIcon}')`,
+              WebkitMaskSize: 'contain',
+            }}
+          />
+        </div>
+      </div>
     </div>
 
     {/* Small tag icon at top left */}
-    <div className="absolute top-5 left-5 opacity-40">
-       <div className="w-5 h-5 bg-black" style={{ maskImage: `url('${imgDivFramerIu4QG4}')`, maskSize: 'contain' }} />
+    <div className="absolute top-5 start-5 opacity-40">
+      <div className="w-5 h-5 bg-black" style={{ maskImage: `url('${imgDivFramerIu4QG4}')`, maskSize: 'contain' }} />
     </div>
   </motion.div>
 );
 
- const BlogDetailPage = () => {
+const BlogDetailPage = () => {
   const { slug } = useParams();
+  const { language } = useLanguage();
+  const isRtl = language === 'AR';
+  const t = langData[language.toLowerCase()].blog_detail;
+  const insightsT = langData[language.toLowerCase()].insights_page;
+  
   const socialIcons = [
-  { Icon: Twitter, href: "#", label: "X (Twitter)" },
-  { Icon: Instagram, href: "#", label: "Instagram" },
-  { Icon: Slack, href: "#", label: "Slack" },
-  { Icon: Github, href: "#", label: "GitHub" },
-];
+    { Icon: Twitter, href: "#", label: "X (Twitter)" },
+    { Icon: Instagram, href: "#", label: "Instagram" },
+    { Icon: Slack, href: "#", label: "Slack" },
+    { Icon: Github, href: "#", label: "GitHub" },
+  ];
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Header Info */}
       <section className="pt-[180px] pb-[80px] px-6 text-center max-w-[1260px] w-full flex flex-col items-center gap-10">
         <div className="flex gap-[5px] items-center justify-center">
           <div className="backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)] flex gap-[5px] items-center justify-center px-[13px] py-[6px] rounded-[30px]">
             <div className="w-[13px] h-[13px] bg-white" style={{ maskImage: `url('${imgDivFramerYVnZo}')`, maskSize: 'contain' }} />
-            <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">Jul 23, 2025</span>
+            <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">{t.meta.date}</span>
           </div>
           <div className="backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)] flex gap-[5px] items-center justify-center px-[13px] py-[6px] rounded-[30px]">
             <div className="w-[13px] h-[13px] bg-white" style={{ maskImage: `url('${imgDivFramerFoIvU}')`, maskSize: 'contain' }} />
-            <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">Manufacturing</span>
+            <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">{t.meta.category}</span>
           </div>
         </div>
 
         <h1 className="font-['Geist'] font-medium text-[30px] md:text-[60px] text-center text-white tracking-[-0.4px] max-w-[1000px] leading-tight">
-          How smart manufacturing is transforming production efficiency
+          {t.title}
         </h1>
 
         <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-center text-white/70 uppercase tracking-widest max-w-[800px]">
-          Real-time intelligence, predictive systems, and automation are redefining how industries operate.
+          {t.subtitle}
         </p>
       </section>
 
@@ -119,50 +124,42 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
 
       {/* Blog Content */}
       <section className="px-6 w-full max-w-[850px] flex flex-col gap-12 mb-32">
-        <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
-          <p>
-            Smart manufacturing is no longer a future concept—it is actively reshaping production environments through connected systems, data-driven insights, and intelligent automation. By integrating IoT, AI, and advanced analytics, manufacturers can monitor operations in real time, reduce inefficiencies, and make faster, more informed decisions.
-          </p>
-          <p>
-            With greater visibility across the production lifecycle, organisations can identify bottlenecks, optimise resource usage, and ensure consistent output quality while minimising downtime.
-          </p>
+        <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist'] text-start">
+          <p>{t.content.p1}</p>
+          <p>{t.content.p2}</p>
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 text-start">
           <h2 className="font-['Geist'] font-medium text-[24px] md:text-[28px] text-white tracking-tight">
-            We move industries forward with intelligent systems.
+            {t.content.h2_1}
           </h2>
           <p className="text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
-            Modern manufacturing ecosystems rely on seamless data flow between machines, systems, and people. Smart solutions enable predictive maintenance, automated workflows, and energy optimization—ensuring operations run efficiently without unnecessary disruptions.
+            {t.content.p3}
           </p>
         </div>
 
-        <div className="pl-6 border-l-2 border-white/20">
+        <div className="ps-6 border-s-2 border-white/20 text-start">
           <blockquote className="font-['Playfair_Display'] italic text-[24px] md:text-[32px] text-white leading-tight">
-            “Smart manufacturing is not just about automation—it’s about creating connected systems that continuously learn, adapt, and improve performance.”
+            “{t.content.quote}”
           </blockquote>
         </div>
 
-        <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
-          <p>
-            By leveraging digital technologies, businesses can transition from reactive processes to proactive strategies, improving both operational efficiency and long-term scalability.
-          </p>
+        <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist'] text-start">
+          <p>{t.content.p4}</p>
         </div>
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 text-start">
           <h2 className="font-['Geist'] font-medium text-[24px] md:text-[28px] text-white tracking-tight">
-            How intelligent systems improve production efficiency
+            {t.content.h2_2}
           </h2>
           <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
-            <p>Smart manufacturing introduces a range of capabilities that directly impact performance:</p>
-            <ul className="list-disc pl-6 flex flex-col gap-4">
-              <li>Real-time monitoring: Gain instant visibility into machine performance and production metrics</li>
-              <li>Predictive maintenance: Detect potential failures before they impact operations</li>
-              <li>Process automation: Reduce manual intervention and increase consistency</li>
-              <li>Energy optimisation: Track and manage energy consumption across facilities</li>
-              <li>Data-driven decisions: Use analytics to continuously improve workflows</li>
+            <p>{t.content.p5}</p>
+            <ul className="list-disc ps-6 flex flex-col gap-4">
+              {t.content.list.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
             </ul>
-            <p>These capabilities not only reduce operational costs but also enhance productivity and reliability across the entire production chain.</p>
+            <p>{t.content.p6}</p>
           </div>
         </div>
 
@@ -171,75 +168,62 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
           <ImageWithFallback src={imgRoboticArmPlacingChipCircuitBoard1} className="w-full h-full object-cover" />
         </div>
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 text-start">
           <h2 className="font-['Geist'] font-medium text-[24px] md:text-[28px] text-white tracking-tight">
-            Building future-ready manufacturing environments
+            {t.content.h2_3}
           </h2>
           <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
-            <p>
-              To fully realize the benefits of smart manufacturing, organizations must adopt integrated platforms that connect data, systems, and processes. Solutions like manufacturing intelligence platforms, energy monitoring systems, and pipeline safety technologies enable a unified approach to industrial operations.
-            </p>
-            <p>
-              As industries evolve, the ability to adapt quickly and operate efficiently will define long-term success. Smart manufacturing provides the foundation for that transformation—combining technology, data, and strategy to drive measurable impact.
-            </p>
+            <p>{t.content.p7}</p>
+            <p>{t.content.p8}</p>
           </div>
         </div>
 
         {/* Author Details */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-12 border-t border-white/10">
-           <div className="flex items-center gap-4">
-              <div className="w-[60px] h-[60px] rounded-[7px] overflow-hidden">
-                <ImageWithFallback src={imgAuthorImage} className="w-full h-full object-cover" />
-              </div>
-              <div className="flex flex-col">
-                 <span className="font-['Geist'] text-[12px] text-white/50 uppercase tracking-widest">Written by:</span>
-                 <span className="font-['Geist'] text-[16px] text-white uppercase font-medium">Flowtech Team</span>
-              </div>
-           </div>
-           
-           {/* <div className="flex items-center gap-6">
-              <span className="font-['Geist'] text-[14px] text-white/50 uppercase tracking-widest">Let's keep in touch</span>
-              <div className="flex gap-4">
-                 {[imgGroup, imgGroup1, imgGroup2].map((icon, i) => (
-                    <div key={i} className="w-5 h-5 bg-white/10 hover:bg-white transition-colors cursor-pointer" style={{ maskImage: `url('${icon}')`, maskSize: 'contain' }} />
-                 ))}
-              </div>
-           </div> */}
-        <div className="flex items-center gap-6">
-  <span className="font-['Geist'] text-[14px] text-white/50 uppercase tracking-widest">
-    Let's keep in touch
-  </span>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-12 border-t border-white/10 text-start">
+          <div className="flex items-center gap-4">
+            <div className="w-[60px] h-[60px] rounded-[7px] overflow-hidden">
+              <ImageWithFallback src={imgAuthorImage} className="w-full h-full object-cover" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-['Geist'] text-[12px] text-white/50 uppercase tracking-widest">{t.author.label}</span>
+              <span className="font-['Geist'] text-[16px] text-white uppercase font-medium">{t.author.name}</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-6">
+            <span className="font-['Geist'] text-[14px] text-white/50 uppercase tracking-widest">
+              {t.author.keep_in_touch}
+            </span>
 
-  <div className="flex gap-3">
-    {socialIcons.map(({ Icon, href, label }) => (
-      <a
-        key={label}
-        href={href}
-        className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all duration-300"
-        aria-label={label}
-      >
-        <Icon size={18} />
-      </a>
-    ))}
-  </div>
-</div>
+            <div className="flex gap-3">
+              {socialIcons.map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all duration-300"
+                  aria-label={label}
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Related Posts */}
       <section className="w-full -mt-25 py-16 px-6 flex flex-col items-center">
-         <div className="max-w-[1260px] w-full">
-            <div className="flex flex-col gap-6 items-center text-center mb-20">
-               <div className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit">
-                 <div className="w-4 h-4 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG3}')`, maskSize: 'contain' }} />
-                 <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">latest news</span>
-               </div>
-               <h2 className="flex flex-col gap-2">
-                 <span className="font-['Geist'] font-medium text-[44px] text-white leading-tight">Latest industry <span className="font-['Playfair_Display'] italic text-white/70">trends and</span></span>
-                 <span className="font-['Playfair_Display'] italic font-normal text-[44px] text-white/80 leading-tight">expert <span className="font-['Geist'] font-medium not-italic text-white">insights from our team</span></span>
-               </h2>
-               <div className="mt-4">
-                     <button className="     relative overflow-hidden
+        <div className="max-w-[1260px] w-full">
+          <div className="flex flex-col gap-6 items-center text-center mb-20">
+            <div className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit">
+              <div className="w-4 h-4 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG3}')`, maskSize: 'contain' }} />
+              <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">{t.related.badge}</span>
+            </div>
+            <h2 className="flex flex-col gap-2">
+              <span className="font-['Geist'] font-medium text-[30px] md:text-[44px] text-white leading-tight">{t.related.title_p1} <span className="font-['Playfair_Display'] italic text-white/70">{t.related.title_p2}</span></span>
+              <span className="font-['Playfair_Display'] italic font-normal text-[30px] md:text-[44px] text-white/80 leading-tight">{t.related.title_p3} <span className="font-['Geist'] font-medium not-italic text-white">{t.related.title_p4}</span></span>
+            </h2>
+            <div className="mt-4">
+              <Link to="/insights" className="     relative overflow-hidden
               flex items-center justify-center
               w-full sm:w-auto
               px-8 py-4
@@ -251,33 +235,38 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM" }) => (
               cursor-pointer
               transition-all duration-300 
               hover:scale-105 active:scale-95 
-              glare-btn
-">
-                  See All News
-                </button>
-               </div>
+              glare-btn">
+                {t.related.cta}
+              </Link>
             </div>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <BlogCard 
-                title="The future of energy monitoring and sustainable operations"
-                image={imgBrettJordanAfbBhcXeEiUnsplash1}
-              />
-              <BlogCard 
-                title="Enhancing pipeline safety with real-time fiber optic sensing"
-                image={imgVictorUoIiVYka3VyUnsplash1}
-              />
-              <BlogCard 
-                title="Real-time monitoring: the future of industrial operations"
-                image={imgFuturisticTechnologyConcept1}
-              />
-            </div>
-         </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <BlogCard
+              title={insightsT.posts[1].title}
+              image={imgBrettJordanAfbBhcXeEiUnsplash1}
+              isRtl={isRtl}
+              t={t}
+            />
+            <BlogCard
+              title={insightsT.posts[2].title}
+              image={imgVictorUoIiVYka3VyUnsplash1}
+              isRtl={isRtl}
+              t={t}
+            />
+            <BlogCard
+              title={insightsT.posts[6].title}
+              image={imgFuturisticTechnologyConcept1}
+              isRtl={isRtl}
+              t={t}
+            />
+          </div>
+        </div>
       </section>
 
       {/* Newsletter Section */}
 
-        <NewsletterSection />
+      <NewsletterSection />
 
       <FooterSection />
     </div>

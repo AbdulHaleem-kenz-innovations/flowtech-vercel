@@ -1,405 +1,20 @@
-// import React, { useState } from 'react';
-// import { Link } from 'react-router';
-// import svgPaths from "../../imports/svg-w7xqzyo252";
-// import { ServicesDropdown } from './services-dropdown';
-
-// export const Navbar = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [isServicesOpen, setIsServicesOpen] = useState(false);
-
-//   return (
-//     <>
-//       <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] md:w-[calc(100%-64px)] max-w-[1260px] z-50">
-//         <div className="backdrop-blur-[25px] bg-black/40 md:bg-white/5 border border-white/20 rounded-2xl md:rounded-full px-6 md:px-8 py-3 md:py-4 flex items-center justify-between relative">
-//           {/* Logo */}
-//           <Link to="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
-//             <svg width="27" height="24" viewBox="0 0 27 24" fill="none">
-//               <path d={svgPaths.p375f8780} fill="white" />
-//               <path d={svgPaths.p313b85c0} fill="white" />
-//               <path d={svgPaths.p263bfa00} fill="white" />
-//               <path d={svgPaths.p32dad680} fill="white" />
-//               <path d={svgPaths.p26351200} fill="white" />
-//               <path d={svgPaths.p669ed00} fill="white" />
-//               <path d={svgPaths.p2a5f400} fill="white" />
-//               <path d={svgPaths.p3532ea00} fill="white" />
-//               <path d={svgPaths.p81a6080} fill="white" />
-//               <path d={svgPaths.pcf94600} fill="white" />
-//               <path d={svgPaths.p5dec380} fill="white" />
-//             </svg>
-//             <span className="font-['Geist'] font-extrabold text-white tracking-tighter text-lg md:text-xl uppercase italic">
-//               FLOWTECH
-//             </span>
-//           </Link>
-
-//           {/* Menu Items - Desktop */}
-//           <div className="hidden lg:flex items-center gap-8">
-//             <Link to="/" className="font-['Geist'] font-semibold text-white text-[16px] md:text-[18px]">Home</Link>
-//             <Link to="/about" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">About</Link>
-//             <div className="flex items-center gap-1 group cursor-pointer relative"
-//               onMouseEnter={() => setIsServicesOpen(true)}
-//               onMouseLeave={() => setIsServicesOpen(false)}
-//             >
-//               <span className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] group-hover:text-white transition-colors">Services</span>
-//               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={`opacity-70 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`}>
-//                 <path d="M4 6L8 10L12 6" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33" />
-//               </svg>
-
-//               <ServicesDropdown
-//                 isOpen={isServicesOpen}
-//                 onClose={() => setIsServicesOpen(false)}
-//               />
-//             </div>
-//             <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Industries</Link>
-//             <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Products</Link>
-//             <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Insights</Link>
-//           </div>
-
-//           {/* Right Section */}
-//           <div className="flex items-end gap-4">
-//             {/* Mobile Menu Toggle */}
-//             <button
-//               className="lg:hidden p-2 text-white"
-//               onClick={() => setIsOpen(!isOpen)}
-//             >
-//               <div className="w-6 h-5 relative flex flex-col justify-between">
-//                 <span className={`w-full h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
-//                 <span className={`w-full h-0.5 bg-white transition-opacity ${isOpen ? 'opacity-0' : ''}`} />
-//                 <span className={`w-full h-0.5 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
-//               </div>
-//             </button>
-//           </div>
-
-//           {/* Mobile Menu Overlay */}
-//           {isOpen && (
-//             <div className="absolute top-full left-0 right-0 mt-2 p-6 bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl lg:hidden flex flex-col gap-6 items-start z-[60]">
-//               <Link to="/" className="font-['Geist'] font-semibold text-white text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Home</Link>
-//               <Link to="/about" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>About</Link>
-//               <Link to="/#services" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Services</Link>
-//               <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Industries</Link>
-//               <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Products</Link>
-//               <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Insights</Link>
-//               <Link
-//                 to="/contact"
-//                 className="sm:hidden w-full bg-gradient-to-tr from-[#001ca9] to-[#046ce4] py-4 rounded-xl text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase text-center"
-//                 onClick={() => setIsOpen(false)}
-//               >
-//                 LET'S CONNECT
-//               </Link>
-//             </div>
-//           )}
-//         </div>
-//       </nav>
-
-//       <div className="fixed top-5 md:top-13 right-8 md:right-15 z-50 hidden sm:block">
-//         <Link
-//           to="/contact"
-//           className="bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-4 md:px-9 py-2 md:py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase hover:opacity-90 transition-opacity"
-//         >
-//           LET'S CONNECT
-//         </Link>
-//       </div>
-//     </>
-//   );
-// };
-
-
-// import React, { useState } from 'react';
-// import { Link, useNavigate } from 'react-router';
-// import svgPaths from "../../imports/svg-w7xqzyo252";
-// // import { ServicesDropdown } from './services-dropdown';
-// import { ServicesDropdown } from './services-dropdown';
-
-// export const Navbar = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [isServicesOpen, setIsServicesOpen] = useState(false);
-//   const onNavigate = useNavigate();
-
-//   return (
-//     <>
-//       <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] md:w-[calc(100%-64px)] max-w-[1260px] z-50">
-//         <div className="backdrop-blur-[25px] bg-black/40 md:bg-white/5 border border-white/20 rounded-2xl md:rounded-full px-6 md:px-8 py-3 md:py-4 flex items-center justify-between relative">
-//           {/* Logo */}
-//           <Link to="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
-//             <svg width="27" height="24" viewBox="0 0 27 24" fill="none">
-//               <path d={svgPaths.p375f8780} fill="white" />
-//               <path d={svgPaths.p313b85c0} fill="white" />
-//               <path d={svgPaths.p263bfa00} fill="white" />
-//               <path d={svgPaths.p32dad680} fill="white" />
-//               <path d={svgPaths.p26351200} fill="white" />
-//               <path d={svgPaths.p669ed00} fill="white" />
-//               <path d={svgPaths.p2a5f400} fill="white" />
-//               <path d={svgPaths.p3532ea00} fill="white" />
-//               <path d={svgPaths.p81a6080} fill="white" />
-//               <path d={svgPaths.pcf94600} fill="white" />
-//               <path d={svgPaths.p5dec380} fill="white" />
-//             </svg>
-//             <span className="font-['Geist'] font-extrabold text-white tracking-tighter text-lg md:text-xl uppercase italic">
-//               FLOWTECH
-//             </span>
-//           </Link>
-
-//           {/* Menu Items - Desktop */}
-//           <div className="hidden lg:flex items-center gap-8">
-//             <Link to="/" className="font-['Geist'] font-semibold text-white text-[16px] md:text-[18px]">Home</Link>
-//             <Link to="/about" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">About</Link>
-//             <div className="flex items-center gap-1 group cursor-pointer relative"
-//               onMouseEnter={() => setIsServicesOpen(true)}
-//               onMouseLeave={() => setIsServicesOpen(false)}>
-//             <ServicesDropdown
-//               isOpen={isServicesOpen}
-//               onClose={() => setIsServicesOpen(false)}
-//             />
-//           </div>
-//           <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Industries</Link>
-//           <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Products</Link>
-//           <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Insights</Link>
-//           <Link to="/insights/blogs" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Blogs</Link>
-//           <Link to="/careers" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Careers</Link>
-//           <Link to="/contact" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Contact Us</Link>
-//         </div>
-
-//         {/* Right Section */}
-//         {/* <div className="flex items-end gap-4">
-//           <Link
-//             to="/contact"
-//             className="hidden sm:block bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-4 md:px-6 py-2 md:py-3 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase hover:opacity-90 transition-opacity">
-//             LET'S CONNECT
-//           </Link> */}
-
-//           {/* Mobile Menu Toggle */}
-//           {/* <button
-//             className="lg:hidden p-2 text-white"
-//             onClick={() => setIsOpen(!isOpen)}
-//           >
-//             <div className="w-6 h-5 relative flex flex-col justify-between">
-//               <span className={`w-full h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
-//               <span className={`w-full h-0.5 bg-white transition-opacity ${isOpen ? 'opacity-0' : ''}`} />
-//               <span className={`w-full h-0.5 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
-//             </div>
-//           </button>
-//         </div> */}
-
-//         {/* Mobile Menu Overlay */}
-//         {isOpen && (
-//           <div className="absolute top-full left-0 right-0 mt-2 p-6 bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl lg:hidden flex flex-col gap-6 items-start z-[60]">
-//             <Link to="/" className="font-['Geist'] font-semibold text-white text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Home</Link>
-//             <Link to="/about" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>About</Link>
-//             <Link to="/#services" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Services</Link>
-//             <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Industries</Link>
-//             <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Products</Link>
-//             <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Insights</Link>
-//             <Link to="/insights/blogs" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Blogs</Link>
-//             <Link to="/careers" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Careers</Link>
-//             <Link to="/contact" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Contact</Link>
-//             <Link
-//               to="/contact"
-//               className="sm:hidden w-full bg-gradient-to-tr from-[#001ca9] to-[#046ce4] py-4 rounded-xl text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase text-center"
-//               onClick={() => setIsOpen(false)}
-//             />
-//             <span className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] group-hover:text-white transition-colors">Services</span>
-//             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={`opacity-70 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`}>
-//               <path d="M4 6L8 10L12 6" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33" />
-//             </svg>
-
-//             <ServicesDropdown
-//               isOpen={isServicesOpen}
-//               onClose={() => setIsServicesOpen(false)}
-//             />
-//             {/* </div> */}
-//             <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Industries</Link>
-//             <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Products</Link>
-//             <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-[16px] md:text-[18px] hover:text-white transition-colors">Insights</Link>
-//           </div>
-//         )}
-
-//         {/* Right Section */}
-//         <div className="flex items-end gap-4">
-//           {/* Mobile Menu Toggle */}
-//           <button
-//             className="lg:hidden p-2 text-white"
-//             onClick={() => setIsOpen(!isOpen)}
-//           >
-//             <div className="w-6 h-5 relative flex flex-col justify-between">
-//               <span className={`w-full h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
-//               <span className={`w-full h-0.5 bg-white transition-opacity ${isOpen ? 'opacity-0' : ''}`} />
-//               <span className={`w-full h-0.5 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
-//             </div>
-//           </button>
-//         </div>
-
-//         {/* Mobile Menu Overlay */}
-//         {isOpen && (
-//           <div className="absolute top-full left-0 right-0 mt-2 p-6 bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl lg:hidden flex flex-col gap-6 items-start z-[60]">
-//             <Link to="/" className="font-['Geist'] font-semibold text-white text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Home</Link>
-//             <Link to="/about" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>About</Link>
-//             <Link to="/#services" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Services</Link>
-//             <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Industries</Link>
-//             <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Products</Link>
-//             <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/5" onClick={() => setIsOpen(false)}>Insights</Link>
-//             <Link
-//               to="/contact"
-//               className="w-full bg-gradient-to-tr from-[#001ca9] to-[#046ce4] py-4 rounded-xl text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase text-center"
-//               onClick={() => setIsOpen(false)}
-//             >
-//               LET'S CONNECT
-//             </Link>
-//           </div>
-//         )}
-//         </div>
-//       </nav >
-
-
-//       {/* Outer CTA Button - only visible on desktop (lg+) where hamburger is gone */}
-//       < div className="fixed top-5 lg:top-13 right-8 lg:right-15 z-50 hidden lg:block" >
-//         <Link
-//           to="/contact"
-//           className="bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-9 py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase hover:opacity-90 transition-opacity"
-//         >
-//           LET'S CONNECT
-//         </Link>
-//       </div >
-//     </>
-//   );
-// };
-
-
-//ORIGINAL CODE
-// import React, { useState } from 'react';
-// import { Link, useNavigate } from 'react-router';
-// import svgPaths from "../../imports/svg-w7xqzyo252";
-// import { ServicesDropdown } from './services-dropdown';
-
-// export const Navbar = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [isServicesOpen, setIsServicesOpen] = useState(false);
-//   const onNavigate = useNavigate();
-
-//   return (
-//     <>
-//       <nav className="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] md:w-[calc(100%-64px)] max-w-[1260px] z-50">
-//         <div className="backdrop-blur-[25px] bg-black/40 md:bg-white/5 border border-white/20 rounded-2xl md:rounded-full px-6 md:px-8 py-3 md:py-4 flex items-center justify-between relative">
-
-//           {/* Logo */}
-//           <Link to="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
-//             <svg width="27" height="24" viewBox="0 0 27 24" fill="none">
-//               <path d={svgPaths.p375f8780} fill="white" />
-//               <path d={svgPaths.p313b85c0} fill="white" />
-//               <path d={svgPaths.p263bfa00} fill="white" />
-//               <path d={svgPaths.p32dad680} fill="white" />
-//               <path d={svgPaths.p26351200} fill="white" />
-//               <path d={svgPaths.p669ed00} fill="white" />
-//               <path d={svgPaths.p2a5f400} fill="white" />
-//               <path d={svgPaths.p3532ea00} fill="white" />
-//               <path d={svgPaths.p81a6080} fill="white" />
-//               <path d={svgPaths.pcf94600} fill="white" />
-//               <path d={svgPaths.p5dec380} fill="white" />
-//             </svg>
-//             <span className="font-['Geist'] font-extrabold text-white tracking-tighter text-lg md:text-xl uppercase italic">
-//               FLOWTECH
-//             </span>
-//           </Link>
-
-//           {/* Menu Items - Desktop */}
-//           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-//             <Link to="/" className="font-['Geist'] font-semibold text-white text-[15px] xl:text-[17px]">Home</Link>
-//             <Link to="/about" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">About</Link>
-
-//             {/* Services with Dropdown */}
-//             <div
-//               className="flex items-center gap-1 group cursor-pointer relative"
-//               onMouseEnter={() => setIsServicesOpen(true)}
-//               onMouseLeave={() => setIsServicesOpen(false)}
-//             >
-//               <span className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] group-hover:text-white transition-colors">Services</span>
-//               <svg
-//                 width="16" height="16" viewBox="0 0 16 16" fill="none"
-//                 className={`opacity-70 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`}
-//               >
-//                 <path d="M4 6L8 10L12 6" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33" />
-//               </svg>
-//               <ServicesDropdown isOpen={isServicesOpen} onClose={() => setIsServicesOpen(false)} />
-//             </div>
-
-//             <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Industries</Link>
-//             <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Products</Link>
-//             <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Insights</Link>
-//             {/*   <Link to="/insights/blogs" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Blogs</Link>
-//             <Link to="/careers" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Careers</Link>
-//             <Link to="/contact" className="font-['Geist'] font-semibold text-white/75 text-[15px] xl:text-[17px] hover:text-white transition-colors">Contact Us</Link> */}
-//           </div>
-
-//           {/* Right Section — CTA (md only) + Hamburger */}
-//           <div className="flex items-center gap-3">
-//             {/* Show CTA inline inside navbar only on medium screens (md-lg) */}
-//             <Link
-//               to="/contact"
-//               className="hidden md:flex lg:hidden bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-4 py-2 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs tracking-[0.5px] uppercase hover:opacity-90 transition-opacity whitespace-nowrap"
-//             >
-//               LET'S CONNECT
-//             </Link>
-
-//             {/* Mobile/Tablet Hamburger */}
-//             <button
-//               className="lg:hidden p-2 text-white"
-//               onClick={() => setIsOpen(!isOpen)}
-//             >
-//               <div className="w-6 h-5 relative flex flex-col justify-between">
-//                 <span className={`w-full h-0.5 bg-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
-//                 <span className={`w-full h-0.5 bg-white transition-opacity duration-300 ${isOpen ? 'opacity-0' : ''}`} />
-//                 <span className={`w-full h-0.5 bg-white transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
-//               </div>
-//             </button>
-//           </div>
-
-//           {/* Mobile Menu Overlay — single, clean */}
-//           {isOpen && (
-//             <div className="absolute top-full left-0 right-0 mt-2 p-6 bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl lg:hidden flex flex-col gap-4 items-start z-[60]">
-//               <Link to="/" className="font-['Geist'] font-semibold text-white text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Home</Link>
-//               <Link to="/about" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>About</Link>
-//               <Link to="/#services" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Services</Link>
-//               <Link to="/industries" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Industries</Link>
-//               <Link to="/products" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Products</Link>
-//               {/* <Link to="/insights" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Insights</Link>
-//               <Link to="/insights/blogs" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Blogs</Link>
-//               <Link to="/careers" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Careers</Link>
-//               <Link to="/contact" className="font-['Geist'] font-semibold text-white/75 text-lg w-full py-2 border-b border-white/10" onClick={() => setIsOpen(false)}>Contact Us</Link> */}
-//               <Link
-//                 to="/contact"
-//                 className="w-full bg-gradient-to-tr from-[#001ca9] to-[#046ce4] py-4 rounded-xl text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase text-center mt-2"
-//                 onClick={() => setIsOpen(false)}
-//               >
-//                 LET'S CONNECT
-//               </Link>
-//             </div>
-//           )}
-//         </div>
-//       </nav>
-
-//       {/* Floating CTA — only on large screens (lg+) */}
-//       <div className="fixed top-5 lg:top-10 mt-3 right-6 lg:right-12 z-50 hidden lg:block">
-//         <Link
-//           to="/contact"
-//           className="bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-6 xl:px-9 py-3 xl:py-4 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase hover:opacity-90 transition-opacity whitespace-nowrap"
-//         >
-//           LET'S CONNECT
-//         </Link>
-//       </div>
-//     </>
-//   );
-// };
-
 //DAWARR BHAI CODE
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router';
 import svgPaths from "../../imports/svg-w7xqzyo252";
 import { ServicesDropdown } from './services-dropdown';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const { pathname } = useLocation();
   const servicesAnchorRef = useRef(null);
+  const { language, toggleLanguage } = useLanguage();
+  
+  const currentLangData = langData[language.toLowerCase()].navbar;
 
   useEffect(() => {
     if (isOpen) {
@@ -422,7 +37,7 @@ export const Navbar = () => {
       <div className="backdrop-blur-[25px] bg-black/40 md:bg-white/5  rounded-2xl md:rounded-full px-6 md:px-4 py-3 md:py-3 flex items-center justify-between relative isolate">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" viewBox="0 0 130 20" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" viewBox="0 0 130 20" fill="none">
             <path d="M67.5337 5.27264C68.5392 5.36532 70.3588 5.30527 71.4235 5.29405C71.4986 6.27976 71.4816 7.45565 71.4982 8.46379C71.5358 10.3839 71.5559 12.3043 71.5583 14.2249C71.9875 13.3021 72.6965 11.0962 73.0343 10.091C73.5846 8.48329 74.1523 6.88148 74.7374 5.28598C75.7285 5.32352 76.8896 5.29801 77.8942 5.30124C77.7542 6.60089 77.3983 8.29376 77.1822 9.63939C76.8428 11.9143 76.1771 12.5362 75.3787 14.474C74.7182 16.0772 73.8496 17.9843 73.2562 19.578C71.7533 19.6226 70.0845 19.5922 68.5686 19.5936L68.4134 11.2163C67.7755 12.8503 67.2144 14.5483 66.5914 16.1927C66.2034 17.2169 65.5188 18.5471 65.2531 19.5818C63.7346 19.6201 62.0608 19.5923 60.5315 19.5947L59.543 5.29244C60.846 5.2906 62.4748 5.0988 63.4219 6.15379C63.7296 6.50169 63.9445 6.92167 64.0469 7.37471C64.2462 8.25498 64.1487 13.2179 64.0769 14.3322C64.6689 12.9529 65.1133 11.4091 65.6792 10.043C66.368 8.38013 66.9502 6.9749 67.5337 5.27264Z" fill="white" />
             <path fill-rule="evenodd" clip-rule="evenodd" d="M54.2364 4.87633C55.9631 4.71723 57.0901 4.93925 58.6378 5.63512C58.8334 7.15421 58.908 8.87146 59.0089 10.4095L59.4679 16.7611C57.8081 19.2037 54.2725 20.212 51.4552 19.9457C48.7048 19.6449 46.6656 17.9773 46.1886 15.1898C45.8272 13.0779 46.8212 10.1408 48.0118 8.41051C49.392 6.4047 51.8834 5.25351 54.2364 4.87633ZM55.5909 15.1654C57.0121 13.3514 57.9696 8.15646 54.2638 8.39098C51.5858 8.92487 50.5596 12.368 50.9698 14.7611C51.2018 16.1134 52.2967 16.5506 53.5421 16.514C54.6106 16.3035 54.9032 16.043 55.5909 15.1654Z" fill="white" />
             <path d="M124.251 10.1882C124.357 9.02083 124.755 6.90909 125.599 6.07413C126.637 5.04758 128.54 5.2869 129.961 5.29372C129.357 8.30127 128.786 10.9966 128.312 14.0624C128.127 15.2604 127.648 18.4746 127.361 19.5289C127.148 19.6347 126.852 19.6033 126.604 19.5998C125.277 19.6009 123.951 19.5943 122.624 19.5803C122.959 17.736 123.239 15.8649 123.592 14.0282C122.096 14.0183 120.599 14.0175 119.102 14.0257C118.781 15.888 118.544 17.7389 118.163 19.6061C116.61 19.5795 114.994 19.5957 113.436 19.5922C113.647 18.3987 113.848 17.2047 114.056 16.0107C114.68 12.4187 115.445 8.8901 116.06 5.29188C117.55 5.33851 119.276 5.302 120.783 5.30435C120.573 6.66288 120.179 8.86305 119.818 10.1925C121.24 10.1537 122.837 10.1113 124.251 10.1882Z" fill="white" />
@@ -447,8 +62,8 @@ export const Navbar = () => {
 
         {/* Menu Items - Desktop */}
         <div className="hidden lg:flex items-center gap-8">
-          <Link to="/" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/') ? 'text-white' : 'text-white/75 hover:text-white'}`}>Home</Link>
-          <Link to="/about" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/about') ? 'text-white' : 'text-white/75 hover:text-white'}`}>About</Link>
+          <Link to="/" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/') ? 'text-white' : 'text-white/75 hover:text-white'}`}>{currentLangData.home}</Link>
+          <Link to="/about" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/about') ? 'text-white' : 'text-white/75 hover:text-white'}`}>{currentLangData.about}</Link>
             {/* Services trigger — attach the ref here */}
           <div
             ref={servicesAnchorRef}                        // ← attach ref
@@ -460,7 +75,7 @@ export const Navbar = () => {
               to="/services"
               className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/services') ? 'text-white' : 'text-white/75 group-hover:text-white'}`}
             >
-              Services
+              {currentLangData.services}
             </Link>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
               className={`opacity-70 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''} ${isActive('/services') ? 'opacity-100' : ''}`}
@@ -475,18 +90,24 @@ export const Navbar = () => {
               anchorRef={servicesAnchorRef}               // ← pass ref
             />
           </div>
-          <Link to="/industries" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/industries') ? 'text-white' : 'text-white/75 hover:text-white'}`}>Industries</Link>
-          <Link to="/products" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/products') ? 'text-white' : 'text-white/75 hover:text-white'}`}>Products</Link>
-          <Link to="/insights" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/insights') ? 'text-white' : 'text-white/75 hover:text-white'}`}>Insights</Link>
+          <Link to="/industries" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/industries') ? 'text-white' : 'text-white/75 hover:text-white'}`}>{currentLangData.industries}</Link>
+          <Link to="/products" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/products') ? 'text-white' : 'text-white/75 hover:text-white'}`}>{currentLangData.products}</Link>
+          <Link to="/insights" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/insights') ? 'text-white' : 'text-white/75 hover:text-white'}`}>{currentLangData.insights}</Link>
         </div>
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
+          <button
+            onClick={toggleLanguage}
+            className="px-3 py-1 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm hover:bg-white/10 transition-colors"
+          >
+            {language === 'EN' ? 'AR' : 'EN'}
+          </button>
           <Link
             to="/contact"
             className=" hidden sm:block bg-gradient-to-tr from-[#001ca9] to-[#046ce4] px-2 md:px-4 py-2 md:py-2 rounded-full border border-white/20 text-white font-['Geist'] font-medium text-xs md:text-sm tracking-[0.5px] uppercase hover:opacity-90 transition-opacity"
           >
-            LET'S CONNECT
+            {currentLangData.connect}
           </Link>
 
           {/* Mobile Menu Toggle */}
@@ -552,12 +173,12 @@ export const Navbar = () => {
                 {/* Navigation Links */}
                 <div className="flex flex-col gap-2">
                   {[
-                    { name: 'Home', path: '/' },
-                    { name: 'About', path: '/about' },
-                    { name: 'Services', path: '/services' },
-                    { name: 'Industries', path: '/industries' },
-                    { name: 'Products', path: '/products' },
-                    { name: 'Insights', path: '/insights' },
+                    { name: currentLangData.home, path: '/' },
+                    { name: currentLangData.about, path: '/about' },
+                    { name: currentLangData.services, path: '/services' },
+                    { name: currentLangData.industries, path: '/industries' },
+                    { name: currentLangData.products, path: '/products' },
+                    { name: currentLangData.insights, path: '/insights' },
                   ].map((link, index) => (
                     <motion.div
                       key={link.path}
@@ -591,7 +212,7 @@ export const Navbar = () => {
                       className="w-full bg-gradient-to-tr from-[#001ca9] to-[#046ce4] py-4 rounded-xl text-white font-['Geist'] font-medium text-sm tracking-[0.5px] uppercase text-center flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                       onClick={() => setIsOpen(false)}
                     >
-                      LET'S CONNECT
+                      {currentLangData.connect}
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>

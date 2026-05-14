@@ -6,19 +6,21 @@ import imgImage from "../../assets/49208a0f068229058add6f6c6c1d9a3f7c59ffa5.png"
 import { imgDivFramerIu4QG } from "../../imports/svg-dmk14";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
 function DivFramerIu4QGMaskGroup() {
   return (
-    <div className="absolute bottom-[20px] left-[20px] size-[20px]" data-name="div.framer-IU4qG:mask-group">
-      <div className="absolute bg-white bottom-0 left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 size-full" style={{ maskImage: `url('${imgDivFramerIu4QG}')` }} data-name="div.framer-IU4qG" />
+    <div className="absolute bottom-[20px] start-[20px] size-[20px]" data-name="div.framer-IU4qG:mask-group">
+      <div className="absolute bg-white bottom-0 start-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 size-full" style={{ maskImage: `url('${imgDivFramerIu4QG}')` }} data-name="div.framer-IU4qG" />
     </div>
   );
 }
 
 function DivFramerIu4QGMaskGroup1() {
   return (
-    <div className="absolute right-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
-      <div className="absolute bg-white mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 right-0 size-full top-0" style={{ maskImage: `url('${imgDivFramerIu4QG}')` }} data-name="div.framer-IU4qG" />
+    <div className="absolute end-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
+      <div className="absolute bg-white mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 end-0 size-full top-0" style={{ maskImage: `url('${imgDivFramerIu4QG}')` }} data-name="div.framer-IU4qG" />
     </div>
   );
 }
@@ -45,7 +47,7 @@ function Component2W5TYAp7Kvu2COjxLNhiNawYuSvg() {
 
 function Shape() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start justify-center left-0 opacity-16 overflow-clip top-0 w-full h-full" data-name="Shape">
+    <div className="absolute content-stretch flex flex-col items-start justify-center start-0 opacity-16 overflow-clip top-0 w-full h-full" data-name="Shape">
       <Component2W5TYAp7Kvu2COjxLNhiNawYuSvg />
     </div>
   );
@@ -102,13 +104,15 @@ function Group() {
 }
 
 function HeadingWrap() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].contact_section;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.01px] relative shrink-0 w-full" data-name="Heading Wrap">
-      <div className="bg-clip-text flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-88.8553deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>
-        <p>Share the details of</p>
+      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-88.8553deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>
+        <p>{t.title_p1}</p>
       </div>
       <div className="flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-white/70 tracking-[-0.4px] whitespace-nowrap">
-        <p>your operations with us</p>
+        <p>{t.title_italic}</p>
       </div>
     </div>
   );
@@ -119,12 +123,14 @@ function Line() {
 }
 
 function TItleWrap() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].contact_section;
   return (
     <div className="content-stretch flex flex-col gap-8 md:gap-[50px] items-center justify-center overflow-clip relative shrink-0 w-full" data-name="TItle Wrap">
       <HeadingWrap />
       <Line />
-      <p className="font-['Geist:Regular',sans-serif] font-normal text-[14px] md:text-[18px] text-white/70 uppercase leading-[1.4] md:leading-[27px] w-full">
-        Planning a DIGITAL OR INDUSTRIAL TRANSFORMATION? We’d love to hear what you’ve got in mind.
+      <p className="font-['Geist'] font-normal text-[14px] md:text-[18px] text-white/70 uppercase leading-[1.4] md:leading-[27px] w-full">
+        {t.description}
       </p>
     </div>
   );
@@ -147,17 +153,19 @@ function Feature({ icon, title, description }) {
 }
 
 function Lists() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].contact_section;
   return (
     <div className="content-stretch flex flex-col sm:flex-row gap-8 sm:gap-[45px] items-start overflow-clip relative shrink-0 w-full" data-name="Lists">
       <Feature
         icon={<ImageWithFallback src={img1S32PRd3OwUHmTftJi70Y6SFfcMPng} alt="" className="size-full object-contain" />}
-        title="Timely response"
-        description={<p>We prioritize timely responses to ensure smooth communication</p>}
+        title={t.feature1_title}
+        description={<p>{t.feature1_desc}</p>}
       />
       <Feature
         icon={<ImageWithFallback src={imgIcon} alt="" className="size-full object-contain" />}
-        title="Guided next steps"
-        description={<p>We don’t leave you guessing — every phase is supported</p>}
+        title={t.feature2_title}
+        description={<p>{t.feature2_desc}</p>}
       />
     </div>
   );
@@ -174,6 +182,8 @@ function ContentWrapper() {
 }
 
 function FormWrapper() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].contact_section;
   return (
     <div className="bg-white content-stretch flex flex-col gap-8 md:gap-[27px] items-start justify-center max-w-[500px] overflow-clip pb-10 md:pb-[45px] pt-10 md:pt-[30px] px-6 md:px-[30px] relative rounded-[7px] shrink-0 w-full md:w-[500px]" data-name="Form Wrapper">
       <div className="flex flex-col gap-4 items-start w-full">
@@ -181,32 +191,32 @@ function FormWrapper() {
           <div className="size-[12px] flex items-center justify-center">
             <ImageWithFallback src={imgImage} alt="" className="size-full object-contain" />
           </div>
-          <span className="font-['Geist:SemiBold'] font-semibold text-[10px] text-[#0f9101] uppercase tracking-wide">get in touch</span>
+          <span className="font-['Geist'] font-semibold text-[10px] text-[#0f9101] uppercase tracking-wide">{t.form_badge}</span>
         </div>
         <div className="flex flex-wrap gap-x-2 items-center">
-          <span className="bg-clip-text font-['Geist'] font-medium text-[20px] md:text-[23px] text-black/40" style={{ backgroundImage: "linear-gradient(-88.8998deg, rgba(0, 0, 0, 0.4) 5%, rgb(0, 0, 0) 50%)" }}>Have a</span>
-          <span className="font-['Playfair_Display'] italic text-[20px] md:text-[23px] text-black/60">solution in mind?</span>
+          <span className="bg-clip-text font-['Geist'] font-medium text-[20px] md:text-[23px] text-black/40" style={{ backgroundImage: "linear-gradient(-88.8998deg, rgba(0, 0, 0, 0.4) 5%, rgb(0, 0, 0) 50%)" }}>{t.form_title_p1}</span>
+          <span className="font-['Playfair_Display'] italic text-[20px] md:text-[23px] text-black/60">{t.form_title_italic}</span>
         </div>
       </div>
 
       <form className="content-stretch flex flex-col gap-4 items-center justify-center relative shrink-0 w-full" onSubmit={(e) => e.preventDefault()}>
         <div className="w-full flex flex-col gap-1.5">
-          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">Name</label>
-          <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30" placeholder="John Doe" />
+          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">{t.label_name}</label>
+          <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30" placeholder={t.placeholder_name} />
         </div>
         <div className="w-full flex flex-col gap-1.5">
-          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">Email Address*</label>
-          <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30" placeholder="hello@website.com" type="email" />
+          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">{t.label_email}</label>
+          <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30" placeholder={t.placeholder_email} type="email" />
         </div>
         <div className="w-full flex flex-col gap-1.5">
-          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">message</label>
-          <textarea className="w-full bg-[#f5f5f5] rounded-[7px] p-4 h-[100px] outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30 resize-none" placeholder="Tell us about your requirements" />
+          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">{t.label_message}</label>
+          <textarea className="w-full bg-[#f5f5f5] rounded-[7px] p-4 h-[100px] outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30 resize-none" placeholder={t.placeholder_message} />
         </div>
 
         <div className="flex gap-3 items-start w-full py-2">
           <input type="checkbox" className="mt-1" id="terms" />
           <label htmlFor="terms" className="font-['Geist'] text-[13px] text-black/60 leading-tight">
-            I have read and agree to the <span className="text-[#110fdf] font-semibold cursor-pointer">Terms and Conditions</span>
+            {t.terms_p1} <span className="text-[#110fdf] font-semibold cursor-pointer">{t.terms_link}</span>
           </label>
         </div>
         <button
@@ -230,12 +240,8 @@ function FormWrapper() {
     hover:scale-105 active:scale-95 
     glare-btn"
         >
-          SEND MESSAGE
+          {t.send_button}
         </button>
-
-        {/* <button type="submit" className="w-full bg-gradient-to-r from-[#001ca9] to-[#046ce4] py-4 rounded-full text-white font-['Geist:Medium'] text-[14px] uppercase tracking-wider hover:scale-[1.02] active:scale-[0.98] transition-all">
-          Send Message
-        </button> */}
       </form>
     </div>
   );

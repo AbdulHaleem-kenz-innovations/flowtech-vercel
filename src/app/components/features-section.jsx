@@ -6,6 +6,11 @@ import imgIcon1 from "../../assets/798b5019ccb03e7937fe35631b20dcdefae3cefc.png"
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDivFramerIu4QG2, imgDiv, imgDiv1, imgDiv2, imgDiv3, imgDiv4, imgDiv5, imgDiv6, imgDiv7 } from "../../imports/svg-4ugef";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { servicesData } from "../../lib/servicesData";
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
+import { useState, useEffect } from "react";
+import ScrollFadeIn from '../../components/ScrollFadeIn';
+
 
 function DivFramerIu4QGMaskGroup() {
   return (
@@ -16,10 +21,12 @@ function DivFramerIu4QGMaskGroup() {
 }
 
 function PFramerText() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start left-0 pb-[0.59px] right-0 top-[calc(50%-0.5px)]" data-name="p.framer-text">
+    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start start-0 pb-[0.59px] end-0 top-[calc(50%-0.5px)]" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-        <p className="leading-[17.6px]">CORE SERVICES</p>
+        <p className="leading-[17.6px]">{t.core_services}</p>
       </div>
     </div>
   );
@@ -51,10 +58,12 @@ function DivFramerWgfo5JContainer() {
 }
 
 function Heading2Projects() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 2 → Projects">
       <div className="bg-clip-text bg-gradient-to-l flex flex-col font-['Geist'] font-medium from-[5%] from-[rgba(255,255,255,0.4)] justify-center leading-[0] relative shrink-0 text-[40px] md:text-[60px]  tracking-[-0.4px] whitespace-nowrap">
-        <p className="leading-[1.1]">Services</p>
+        <p className="leading-[1.1]">{t.services_title}</p>
       </div>
     </div>
   );
@@ -70,10 +79,12 @@ function Title() {
 }
 
 function PFramerText1() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
-    <div className="md:-translate-y-1/2 md:absolute content-stretch flex flex-col items-start left-0 right-0 md:top-2/8" data-name="p.framer-text">
+    <div className="md:-translate-y-1/2 md:absolute content-stretch flex flex-col items-start start-0 end-0 md:top-2/8" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[16px] text-white uppercase w-full max-w-[418px]">
-        <p className="leading-[1.4] md:leading-[22.4px]">FROM DATA TO INFRASTRUCTURE, WE DELIVER END-TO-END DIGITAL AND INDUSTRIAL SOLUTIONS BUILT FOR SCALE AND IMPACT</p>
+        <p className="leading-[1.4] md:leading-[22.4px]">{t.services_description}</p>
       </div>
     </div>
   );
@@ -114,7 +125,7 @@ function Frame1({ description }) {
   return (
     <div
       className="
-        absolute bottom-4 left-4 right-4 md:left-[27.98px] md:right-[27.98px]
+        absolute bottom-4 start-4 end-4 md:start-[27.98px] md:end-[27.98px]
         backdrop-blur-[25px]  md:bg-[rgba(255,255,255,0.05)]
          p-6 rounded-lg
         rounded-[7px] p-5 md:p-6 flex items-center z-20
@@ -161,7 +172,7 @@ function TitleWrapCard({ title, subtitle }) {
             </div>
           </div>
           <div className="flex-[1_0_0] md:h-[22.41px] min-w-px opacity-70 relative w-full">
-            <div className="md:-translate-y-1/2 md:absolute content-stretch flex flex-col items-start left-0 right-[0.48px] md:top-[calc(50%-0.7px)]">
+            <div className="md:-translate-y-1/2 md:absolute content-stretch flex flex-col items-start start-0 end-[0.48px] md:top-[calc(50%-0.7px)]">
               <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white uppercase whitespace-nowrap">
                 <p className="leading-[1.2] md:leading-[22.4px]">{subtitle}</p>
               </div>
@@ -173,11 +184,11 @@ function TitleWrapCard({ title, subtitle }) {
   );
 }
 
-import { useState, useEffect } from "react";
-import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 function ServiceCard({ item }) {
   const Wrapper = item.link ? Link : "div";
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
 
   const [isMobile, setIsMobile] = useState(false);
   const [mobileHover, setMobileHover] = useState(false);
@@ -188,6 +199,8 @@ function ServiceCard({ item }) {
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
+
+  const translatedItem = t.services[item.id] || item;
 
   return (
     <Wrapper
@@ -211,16 +224,16 @@ function ServiceCard({ item }) {
           >
             <ImageWithFallback
               src={item.hoverImg || item.img}
-              alt={item.title}
+              alt={translatedItem.title}
               className="w-full h-full object-cover"
             />
           </div>
 
-          <Frame1 description={item.description} />
+          <Frame1 description={translatedItem.description} />
         </div>
       </div>
 
-      <TitleWrapCard title={item.title} subtitle={item.subtitle} />
+      <TitleWrapCard title={translatedItem.title} subtitle={translatedItem.subtitle} />
     </Wrapper>
   );
 }
@@ -236,8 +249,9 @@ function ServiceCard({ item }) {
 }
 
 function DivFramer13M6KicContainer({ serviceButton }) {
-  const onNavigate = useNavigate()
-    if (!serviceButton) return null;
+  const onNavigate = useNavigate();
+  const { language } = useLanguage();
+  if (!serviceButton) return null;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="div.framer-13m6kic-container">
       <button
@@ -260,7 +274,7 @@ function DivFramer13M6KicContainer({ serviceButton }) {
     transition-all duration-300 
     hover:scale-105 active:scale-95 
     glare-btn">
-         View All Services
+         {langData[language.toLowerCase()].features.view_all_services}
       </button>
     </div>
   );
@@ -289,14 +303,14 @@ export function ContainerServices({ services, serviceButton }) {
       <ContentWrapper />
       <WorkCardWrapper services={services} serviceButton={serviceButton} />
       {/* Floating Gear */}
-      <div className="max-[1100px]:hidden absolute h-[150px] md:h-[273.493px] right-[-10px] md:right-[-19.75px] top-[-10px] md:top-[-14.76px] w-[140px] md:w-[265.865px] opacity-30 md:opacity-100">
+      <div className="max-[1100px]:hidden absolute h-[150px] md:h-[273.493px] end-[-10px] md:end-[-19.75px] top-[-10px] md:top-[-14.76px] w-[140px] md:w-[265.865px] opacity-30 md:opacity-100">
         <ImageWithFallback alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full animate-[spin_20s_linear_infinite]" src={imgFrame1139} />
       </div>
       {/* Corner Icons */}
-      <div className="absolute left-[10px] md:left-[20px] top-[10px] md:top-[20px]"><DivFramerIu4QGMaskGroupSmall /></div>
-      <div className="absolute bottom-[10px] md:bottom-[20.11px] left-[10px] md:left-[20px]"><DivFramerIu4QGMaskGroupSmall /></div>
-      <div className="absolute bottom-[10px] md:bottom-[20.11px] right-[10px] md:right-[20px]"><DivFramerIu4QGMaskGroupSmall /></div>
-      <div className="absolute right-[10px] md:right-[20px] top-[10px] md:top-[20px]">
+      <div className="absolute start-[10px] md:start-[20px] top-[10px] md:top-[20px]"><DivFramerIu4QGMaskGroupSmall /></div>
+      <div className="absolute bottom-[10px] md:bottom-[20.11px] start-[10px] md:start-[20px]"><DivFramerIu4QGMaskGroupSmall /></div>
+      <div className="absolute bottom-[10px] md:bottom-[20.11px] end-[10px] md:end-[20px]"><DivFramerIu4QGMaskGroupSmall /></div>
+      <div className="absolute end-[10px] md:end-[20px] top-[10px] md:top-[20px]">
         <div className="size-[16px] md:size-[20px]">
           <div className="bg-white mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 size-full" style={{ maskImage: `url('${imgDivFramerIu4QG2}')` }} />
         </div>
@@ -323,6 +337,8 @@ function BlurOverlays() {
 }
 
 function VideoSection() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].features;
   return (
     <div className="h-[400px] md:h-[630px] relative shrink-0 w-full max-w-[1260px] overflow-clip rounded-[7px]">
       {/* Background Image */}
@@ -333,16 +349,16 @@ function VideoSection() {
 
       <BlurOverlays />
 
-      <div className="absolute content-stretch flex flex-col items-start justify-center right-[20px] md:right-[2.7%] top-[20px] md:top-[28px] max-w-[145px]">
-        <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[18px] md:text-[23px] text-[transparent] tracking-[-0.4px] whitespace-nowrap text-right md:text-left" style={{ backgroundImage: "linear-gradient(-87.6189deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)" }}>
-          <p className="leading-[1.2] mb-0 whitespace-pre">{`Our expertise, `}</p>
-          <p className="leading-[1.2] whitespace-pre">in data analysis.</p>
+      <div className="absolute content-stretch flex flex-col items-start justify-center end-[20px] md:end-[2.7%] top-[20px] md:top-[28px] max-w-[145px]">
+        <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[18px] md:text-[23px] text-[transparent] tracking-[-0.4px] whitespace-nowrap text-end md:text-start" style={{ backgroundImage: "linear-gradient(-87.6189deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)" }}>
+          <p className="leading-[1.2] mb-0 whitespace-pre">{t.video_expertise_p1}</p>
+          <p className="leading-[1.2] whitespace-pre">{t.video_expertise_p2}</p>
         </div>
       </div>
 
-      <div className="absolute backdrop-blur-[20px] bottom-[20px] md:bottom-[40px] h-[34px] md:h-[38px] left-0 rounded-br-[30px] rounded-tr-[30px] w-[90px] md:w-[105px] overflow-clip" data-name="Time">
+      <div className="absolute backdrop-blur-[20px] bottom-[20px] md:bottom-[40px] h-[34px] md:h-[38px] start-0 rounded-be-[30px] rounded-te-[30px] w-[90px] md:w-[105px] overflow-clip" data-name="Time">
         <ImageWithFallback alt="" className="absolute inset-0 h-full w-full object-cover" src={imgIcon} />
-        <div className="absolute right-[15px] md:right-[20.95px] top-[8px] md:top-[9px]">
+        <div className="absolute end-[15px] md:end-[20.95px] top-[8px] md:top-[9px]">
           <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[9px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
             <p className="leading-[17.6px]">4:14 min</p>
           </div>
@@ -356,7 +372,7 @@ function VideoSection() {
           </div>
         </div>
         <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[20px] md:text-[28px] text-white tracking-[-0.4px] whitespace-nowrap">
-          <p className="leading-[29.96px] cta-shine cta-shine-primary">View Video</p>
+          <p className="leading-[29.96px] cta-shine cta-shine-primary">{t.view_video}</p>
         </div>
       </div>
     </div>

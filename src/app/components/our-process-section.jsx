@@ -5,39 +5,26 @@ import ScrollFadeIn from "../../components/ScrollFadeIn";
 import { sub } from "date-fns";
 import { PlusIcon } from "lucide-react";
 import clsx from "clsx";
+import { useLanguage } from "../../context/LanguageContext";
+import { langData } from "../../langData/data";
 
-const steps = [
-  {
-    title: "Assessment",
-    subtitle: "Discovery",
-    desc: "We begin by analysing your operations, systems, and data landscape. Through audits and workshops, we identify gaps, risks, and opportunities.",
-  },
-  {
-    title: "Solution Design ",
-    subtitle: "Integration",
-    desc: "Our team designs tailored solutions and integrates them seamlessly with your existing infrastructure, ensuring minimal disruption and maximum efficiency.",
-  },
-  {
-    title: "Deployment",
-    subtitle: "Implementation",
-    desc: "We implement and fine-tune systems across environments—leveraging real-time data, automation, and continuous performance monitoring.",
-  },
-  {
-    title: "Insights ",
-    subtitle: "Continuous Support",
-    desc: "WE DELIVER ACTIONABLE INSIGHTS, PREDICTIVE ANALYTICS, AND ONGOING SUPPORT TO HELP YOU SCALE, IMPROVE SAFETY, AND DRIVE LONG-TERM GROWTH.",
-  },
-];
-const Badge = () => (
-  <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] content-stretch flex gap-[5px] items-center justify-center overflow-clip pl-[7px] pr-[11px] py-[5px] relative rounded-[5px] shrink-0">
-    <PlusIcon size={16} />
-    <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-      <p className="leading-[17.6px]">Our process</p>
+const Badge = () => {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].our_process;
+  return (
+    <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] content-stretch flex gap-[5px] items-center justify-center overflow-clip ps-[7px] pe-[11px] py-[5px] relative rounded-[5px] shrink-0">
+      <PlusIcon size={16} />
+      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+        <p className="leading-[17.6px]">{t.badge}</p>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export const OurProcessSection = () => {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].our_process;
+
   return (
     <ScrollFadeIn>
       <section className="relative w-full  py-10 md:py-16 ">
@@ -48,15 +35,15 @@ export const OurProcessSection = () => {
             <div className="flex flex-col gap-5 items-start">
               <Badge />
               <div className="flex flex-wrap items-center">
-                <span className="bg-clip-text font-['Geist'] font-medium text-[36px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-88.9328deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>Our&nbsp;</span>
-                <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[36px] md:text-[44px] tracking-[-0.4px] leading-tight">four-step</span>
-                <span className="bg-clip-text font-['Geist'] font-medium text-[36px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-87.7687deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>&nbsp;process</span>
+                <span className="bg-clip-text font-['Geist'] font-medium text-[36px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-88.9328deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{t.title_p1}&nbsp;</span>
+                <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[36px] md:text-[44px] tracking-[-0.4px] leading-tight">{t.title_italic}</span>
+                <span className="bg-clip-text font-['Geist'] font-medium text-[36px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-87.7687deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>&nbsp;{t.title_p2}</span>
               </div>
             </div>
 
 
             <div className="opacity-70 mt-10 mb-12">
-              <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white uppercase leading-[1.4] md:leading-[27px]">ENSURING EVERY SOLUTION IS SCALABLE, DATA-DRIVEN, AND BUILT TO DELIVER REAL OPERATIONAL IMPACT.</p>
+              <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white uppercase leading-[1.4] md:leading-[27px]">{t.description}</p>
             </div>
 
             <button
@@ -80,13 +67,13 @@ export const OurProcessSection = () => {
     glare-btn
 "
             >
-              SCHEDULE A CONSULTATION
+              {t.cta}
             </button>
           </div>
 
           {/* ✅ RIGHT SIDE (SCROLLING CARDS) */}
           <div className="flex flex-col gap-10">
-            {steps.map((item, i) => (
+            {t.steps.map((item, i) => (
               <div
                 key={i}
                 className={clsx(
@@ -114,7 +101,7 @@ export const OurProcessSection = () => {
                   {/* Title */}
                   <div className="content-center flex flex-wrap gap-x-2 gap-y-1 items-center overflow-clip relative">
                     <span className="bg-clip-text font-['Geist'] font-medium text-[20px] md:text-[23px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-87.3379deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{item.title}</span>
-                    <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[20px] md:text-[23px] leading-none">&</span>
+                    <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[20px] md:text-[23px] leading-none">{language === "AR" ? "و" : "&"}</span>
                     <span className="bg-clip-text font-['Geist'] font-medium text-[20px] md:text-[23px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-87.3379deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{item.subtitle}</span>
                   </div>
                 </div>
@@ -124,8 +111,8 @@ export const OurProcessSection = () => {
                   {item.desc.toUpperCase()}
                 </p>
 
-                <PlusIcon size={20} opacity={0.4} className="absolute bottom-[15px] left-[15px] md:bottom-[20px] md:left-[20px]" />
-                <PlusIcon size={20} opacity={0.4} className="absolute top-[15px] right-[15px] md:top-[20px] md:right-[20px]" />
+                <PlusIcon size={20} opacity={0.4} className="absolute bottom-[15px] start-[15px] md:bottom-[20px] md:start-[20px]" />
+                <PlusIcon size={20} opacity={0.4} className="absolute top-[15px] end-[15px] md:top-[20px] md:end-[20px]" />
               </div>
             ))}
           </div>

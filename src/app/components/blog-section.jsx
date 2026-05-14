@@ -6,6 +6,8 @@ import { imgDivFramerIu4QG, imgDivFramerYVnZo, imgDivFramerFoIvU, imgDivFramerIu
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 import { Link } from 'react-router';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
 function PlusIcon({ size = 16, className = "" }) {
   return (
@@ -26,6 +28,8 @@ function Badge({ icon, text }) {
 }
 
 function BlogCard({ date, category, title, author, image, categoryIcon }) {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].blog_section;
   return (
     <div className="relative w-full aspect-[4/3] sm:aspect-[620/450] rounded-[7px] overflow-hidden group cursor-pointer">
       {/* Background Image */}
@@ -53,14 +57,14 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
         <div className="flex flex-col gap-4 md:gap-5 items-start">
           <div className="flex flex-col gap-2 md:gap-3">
             <div className="flex gap-1 items-center opacity-50 font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white uppercase">
-              <span>Written by:</span>
+              <span>{t.written_by}</span>
               <span className="opacity-100">{author}</span>
             </div>
             <h3 className="font-['Geist'] font-medium text-[20px] md:text-[26px] text-white leading-tight max-w-[440px]">
               {title}
             </h3>
           </div>
-          <div className=" p-2 md:p-2 rounded-[6.4px] transition-transform group-hover:translate-x-2">
+          <div className=" p-2 md:p-2 rounded-[6.4px] transition-transform group-hover:translate-x-2 rtl:group-hover:-translate-x-2">
             {/* <ImageWithFallback src={imgIcon} alt="arrow" className="size-[16px] md:size-[20px]" /> */}
             <div
               className="bg-black p-3 rounded-lg flex items-center gap-2
@@ -73,13 +77,13 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
               <span className="
       text-white whitespace-nowrap
       max-w-0 opacity-0
-      -translate-x-2
+      -translate-x-2 rtl:translate-x-2
       group-hover:max-w-[80px]
       group-hover:opacity-100
       group-hover:translate-x-0
       transition-all duration-300 ease-in-out
     ">
-                VIEW
+                {t.view}
               </span>
 
               {/* Arrow (always visible, but slides) */}
@@ -87,7 +91,7 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
                 className="
         size-5 bg-white shrink-0
         transition-all duration-300 ease-in-out
-        group-hover:translate-x-1
+        group-hover:translate-x-1 rtl:group-hover:-translate-x-1
       "
                 style={{
                   maskImage: `url('${imgIcon}')`,
@@ -107,54 +111,48 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
 }
 
 export const BlogSection = () => {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].blog_section;
+
   return (
     <ScrollFadeIn>
       <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8 bg-transparent">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-20 items-center">
           {/* Header Section */}
-          <div className="flex flex-col gap-5 items-start md:items-center text-left md:text-center self-start md:self-auto max-w-[700px]">
+          <div className="flex flex-col gap-5 items-start md:items-center text-start md:text-center self-start md:self-auto max-w-[700px]">
             <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] flex gap-[5px] items-center px-[11px] py-[5px] rounded-[5px]">
               <PlusIcon size={16} />
-              <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">Recent News</span>
+              <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">{t.badge}</span>
             </div>
 
             <h2 className="flex flex-col items-start md:items-center">
               <span className="bg-clip-text font-['Geist'] font-medium text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight"
-                style={{ backgroundImage: "linear-gradient(91.1511deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>Latest industry trends and experts</span>
+                style={{ backgroundImage: "linear-gradient(91.1511deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>{t.title_p1}</span>
               <div className="flex flex-wrap gap-x-2 items-start md:items-center justify-start md:justify-center">
-                {/* <span className="bg-clip-text font-['Geist'] font-medium text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight"
-                  style={{ backgroundImage: "linear-gradient(91.1032deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
-                  expert
-                </span> */}
                 <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[32px] sm:text-[40px] md:text-[44px] tracking-[-0.4px] leading-tight">
-                  insights from our team
+                  {t.title_italic}
                 </span>
               </div>
             </h2>
 
             <p className="font-['Geist'] font-normal text-[14px] md:text-[18px] text-white opacity-70 uppercase leading-[1.5] md:leading-[27px] tracking-tight max-w-[600px]">
-              STAY UPDATED WITH THE LATEST IN INDUSTRIAL AUTOMATION, AI SOLUTIONS, ENERGY MANAGEMENT, AND DIGITAL TRANSFORMATION
+              {t.description}
             </p>
           </div>
 
           {/* Blog Cards Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-[20px] w-full">
-            <BlogCard
-              date="Jul 23, 2025"
-              category="INDUSTRY"
-              categoryIcon={imgDivFramerFoIvU}
-              title="How manufacturing intelligence is transforming modern operations"
-              author="FLOWTECH TEAM"
-              image={imgImageBlogImage}
-            />
-            <BlogCard
-              date="Jul 23, 2025"
-              category="TECHNOLOGY"
-              categoryIcon={imgDivFramerFoIvU}
-              title="From data to decisions: turning insights into operational efficiency"
-              author="FLOWTECH TEAM"
-              image={imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg}
-            />
+            {t.posts.map((post, i) => (
+              <BlogCard
+                key={i}
+                date={post.date}
+                category={post.category}
+                categoryIcon={imgDivFramerFoIvU}
+                title={post.title}
+                author={post.author}
+                image={i === 0 ? imgImageBlogImage : imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg}
+              />
+            ))}
           </div>
         </div>
       </section>

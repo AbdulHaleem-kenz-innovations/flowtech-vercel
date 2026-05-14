@@ -5,20 +5,37 @@ import { imgDivFramerIu4QG } from "../../imports/svg-bx13w";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import OrbitImages from './OrbitImages';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
-import image1 from "../../assets/brand-images/image 1.png";
-import image2 from "../../assets/brand-images/image 2.png";
-import image3 from "../../assets/brand-images/image 3.png";
-import image4 from "../../assets/brand-images/image 4.png";
-import image5 from "../../assets/brand-images/image 5.png";
-import image6 from "../../assets/brand-images/image 6.png";
-import image7 from "../../assets/brand-images/image 7.png";
-import image8 from "../../assets/brand-images/image 8.png";
-import image9 from "../../assets/brand-images/image 9.png";
-import image10 from "../../assets/brand-images/image 10.png";
-import image11 from "../../assets/brand-images/image 11.png";
-import image12 from "../../assets/brand-images/image 12.png";
-import image13 from "../../assets/brand-images/image 13.png";
+import image1 from "../../assets/Rotation-images/1.jpeg"
+import image2 from "../../assets/Rotation-images/2.jpeg"
+import image3 from "../../assets/Rotation-images/3.jpeg"
+import image4 from "../../assets/Rotation-images/4.jpeg"
+import image5 from "../../assets/Rotation-images/5.jpeg"
+import image6 from "../../assets/Rotation-images/6.jpeg"
+import image7 from "../../assets/Rotation-images/7.jpeg"
+import image8 from "../../assets/Rotation-images/8.jpeg"
+import image9 from "../../assets/Rotation-images/9.jpeg"
+import image10 from "../../assets/Rotation-images/10.jpeg"
+import image11 from "../../assets/Rotation-images/11.jpeg"
+import image12 from "../../assets/Rotation-images/12.jpeg"
+import image13 from "../../assets/Rotation-images/13.jpeg"
+import image14 from "../../assets/Rotation-images/14.jpeg"
+
+// import image1 from "../../assets/brand-images/image 1.png";
+// import image2 from "../../assets/brand-images/image 2.png";
+// import image3 from "../../assets/brand-images/image 3.png";
+// import image4 from "../../assets/brand-images/image 4.png";
+// import image5 from "../../assets/brand-images/image 5.png";
+// import image6 from "../../assets/brand-images/image 6.png";
+// import image7 from "../../assets/brand-images/image 7.png";
+// import image8 from "../../assets/brand-images/image 8.png";
+// import image9 from "../../assets/brand-images/image 9.png";
+// import image10 from "../../assets/brand-images/image 10.png";
+// import image11 from "../../assets/brand-images/image 11.png";
+// import image12 from "../../assets/brand-images/image 12.png";
+// import image13 from "../../assets/brand-images/image 13.png";
 
 const images1 = [
   image1,
@@ -33,7 +50,8 @@ const images1 = [
   image10,
   image11,
   image12,
-  image13
+  image13,
+  image14
 ];
 
 function Component2W5TYAp7Kvu2COjxLNhiNawYuSvg() {
@@ -57,25 +75,34 @@ function Component2W5TYAp7Kvu2COjxLNhiNawYuSvg() {
 }
 
 function Shape() {
+  const { language } = useLanguage();
+  const isRtl = language === 'AR';
+
   return (
-    <div className="absolute content-stretch flex flex-col inset-[0_-2.5%_-100%_-2.5%] items-start justify-center opacity-12 overflow-hidden pointer-events-none" data-name="Shape">
+    <div className={`absolute aspect-[323/348] h-[348.43px] ${isRtl ? 'right-[-125.13px]' : 'left-[-125.13px]'} top-[-109.91px] w-[323.47px] z-[5]`} data-name="Shape">
       <Component2W5TYAp7Kvu2COjxLNhiNawYuSvg />
     </div>
   );
 }
 
 function DivFramerIu4QGMaskGroup() {
+  const { language } = useLanguage();
+  const isRtl = language === 'AR';
+
   return (
-    <div className="absolute left-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
-      <div className="absolute bg-white left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 size-full top-0" style={{ maskImage: `url('${imgDivFramerIu4QG}')` }} data-name="div.framer-IU4qG" />
+    <div className={`absolute h-[25px] ${isRtl ? 'right-[20px]' : 'left-[20px]'} top-[20px] w-[25px] z-[5]`} data-name="div.framer-IU4qG:mask-group">
+      <div className="absolute bg-white mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 size-full top-0" style={{ maskImage: `url('${imgDivFramerIu4QG}')` }} data-name="div.framer-IU4qG" />
     </div>
   );
 }
 
 function DivFramerIu4QGMaskGroup1() {
+  const { language } = useLanguage();
+  const isRtl = language === 'AR';
+
   return (
-    <div className="absolute right-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
-      <div className="absolute bg-white mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 right-0 size-full top-0" style={{ maskImage: `url('${imgDivFramerIu4QG}')` }} data-name="div.framer-IU4qG" />
+    <div className={`absolute h-[25px] ${isRtl ? 'left-[20px]' : 'right-[20px]'} top-[20px] w-[25px] z-[5]`} data-name="div.framer-IU4qG:mask-group">
+      <div className="absolute bg-white mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 size-full top-0" style={{ maskImage: `url('${imgDivFramerIu4QG}')` }} data-name="div.framer-IU4qG" />
     </div>
   );
 }
@@ -150,15 +177,6 @@ function YoureUpNext() {
   );
 }
 
-function HeadingWrap() {
-  return (
-    <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full gap-2">
-      <WeElevateBrands />
-      <YoureUpNext />
-    </div>
-  );
-}
-
 function Title() {
   return (
     <div className="content-stretch flex flex-col gap-6 md:gap-[30px] items-center justify-center overflow-clip relative shrink-0 w-full" data-name="Title">
@@ -168,32 +186,45 @@ function Title() {
   );
 }
 
+function HeadingWrap() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].rotation_section;
+  return (
+    <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full gap-2">
+      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[48px] md:text-[60px] text-[transparent] tracking-[-0.4px] whitespace-nowrap text-center w-full" style={{ backgroundImage: "linear-gradient(-88.7258deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>
+        <p>{t.title_p1}</p>
+      </div>
+      <div className="flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[48px] md:text-[60px] text-center text-white/70 tracking-[-0.4px] whitespace-nowrap">
+        <p>{t.title_italic}</p>
+      </div>
+    </div>
+  );
+}
+
 function WeCraftBoldFutureReadyBrandsThatBreakThroughTheNoiseReadyToStandOutAndLeadTheMarket() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].rotation_section;
   return (
     <div className="relative shrink-0 w-full" data-name="We craft bold, future-ready brands that break through the noise. Ready to stand out and lead the market">
       <div className="flex flex-col items-center justify-center size-full px-6">
-        <p className="font-['Geist:Regular',sans-serif] font-normal text-[14px] md:text-[18px] text-center text-white/70 uppercase leading-[1.4] md:leading-[27px] max-w-[600px]">
-          WE BUILD INTELLIGENT, DATA-DRIVEN SOLUTIONS THAT OPTIMIZE OPERATIONS, IMPROVE SAFETY, AND DRIVE SCALABLE GROWTH ACROSS INDUSTRIES
+        <p className="font-['Geist'] font-normal text-[14px] md:text-[18px] text-center text-white/70 uppercase leading-[1.4] md:leading-[27px] max-w-[600px]">
+          {t.description}
         </p>
       </div>
     </div>
   );
 }
 
-function PFramerText() {
-  return (
-    <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text ">
-      <div className="flex flex-col  font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-white text-[12px] md:text-[14px] tracking-[0.5px]  uppercase whitespace-nowrap ">
-        <p className="leading-[19.6px] ml-[20px] mt-[4px] ">Let’s talk</p>
-      </div>
-    </div>
-  );
-}
-
 function SeePricing() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].rotation_section;
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-[90px] md:w-[113px]" data-name="See Pricing">
-      <PFramerText />
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-fit" data-name="See Pricing">
+      <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text ">
+        <div className="flex flex-col  font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-white text-[12px] md:text-[14px] tracking-[0.5px]  uppercase whitespace-nowrap ">
+          <p className="leading-[19.6px] mt-[4px] ">{t.cta_talk}</p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -211,20 +242,16 @@ function DivFramerUg2SfvContainer() {
   );
 }
 
-function PFramerText1() {
-  return (
-    <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#035fda] text-[12px] md:text-[14px] tracking-[0.5px] uppercase whitespace-nowrap">
-        <p className="leading-[19.6px] mt-[4px]">See Our SOLUTIONS</p>
-      </div>
-    </div>
-  );
-}
-
 function SeePricing1() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].rotation_section;
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-[130px] md:w-[149px]" data-name="See Pricing">
-      <PFramerText1 />
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-fit" data-name="See Pricing">
+      <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
+        <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[#035fda] text-[12px] md:text-[14px] tracking-[0.5px] uppercase whitespace-nowrap">
+          <p className="leading-[19.6px] mt-[4px]">{t.cta_solutions}</p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -273,6 +300,8 @@ function ContentWrapper() {
 }
 
 function HeroSection() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].rotation_section;
   return (
     <section className="
       w-full min-h-screen
@@ -316,10 +345,10 @@ function HeroSection() {
         {/* Heading */}
         <h1 className="
           bg-clip-text flex flex-col font-['Geist:Medium',sans-serif] font-medium justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-88.8553deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>
-          We power industries.
+          {t.title_p1}
           <br />
          <span className="italic font-['Playfair_Display'] font-light text-white/80">
-            You’re up next.
+            {t.title_italic}
           </span>
         </h1>
 
@@ -330,9 +359,7 @@ function HeroSection() {
           max-w-2xl
           leading-relaxed
         ">
-          WE BUILD INTELLIGENT, DATA-DRIVEN SOLUTIONS THAT OPTIMIZE
-          OPERATIONS, IMPROVE SAFETY, AND DRIVE SCALABLE GROWTH
-          ACROSS INDUSTRIES
+          {t.description}
         </p>
 
         {/* Buttons */}
@@ -355,7 +382,7 @@ function HeroSection() {
   glare-btn
 
           ">
-            LET’S TALK
+            {t.cta_talk}
           </button>
 
           {/* Secondary */}
@@ -370,7 +397,7 @@ function HeroSection() {
   hover:scale-105 active:scale-95 
   glare-btn
           ">
-            SEE OUR SOLUTIONS
+            {t.cta_solutions}
           </button>
 
         </div>
@@ -407,7 +434,7 @@ export function RotationalContainer() {
   return (
     <div className="backdrop-blur-[25px] bg-gradient-to-t from-[rgba(17,15,223,0.5)] h-[600px] md:h-[778.591px] overflow-hidden relative rounded-2xl md:rounded-[20px] to-[rgba(17,15,223,0)] w-full max-w-[1260px]" data-name="Container">
       <div className="absolute aspect-[1106/1134] bottom-[-20%] md:bottom-[-386.56px] left-[5%] right-[5%] opacity-40 md:opacity-100" data-name="Image Wrap 1">
-        <div className="absolute inset-0 flex items-center justify-center ">
+        <div className="absolute inset-0 ">
           <OrbitImages
             images={images1}
             shape="circle"

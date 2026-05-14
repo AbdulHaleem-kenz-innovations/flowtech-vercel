@@ -3,18 +3,20 @@ import svgPaths from "../../imports/svg-hf28r9pj1o";
 import imgImage from "../../assets/a6762a8cc056345d446f61fffcf640811f2a8f05.png";
 import { imgDivFramerIu4QG } from "../../imports/svg-y09t6";
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
 function DivFramerIu4QGMaskGroup() {
   return (
-    <div className="absolute bottom-[20px] left-[20px] size-[20px]" data-name="div.framer-IU4qG:mask-group">
-      <div className="absolute bg-white bottom-0 left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 size-full" style={{ maskImage: `url('${imgDivFramerIu4QG}')` }} data-name="div.framer-IU4qG" />
+    <div className="absolute bottom-[20px] start-[20px] size-[20px]" data-name="div.framer-IU4qG:mask-group">
+      <div className="absolute bg-white bottom-0 start-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 size-full" style={{ maskImage: `url('${imgDivFramerIu4QG}')` }} data-name="div.framer-IU4qG" />
     </div>
   );
 }
 
 function DivFramerIu4QGMaskGroup1() {
   return (
-    <div className="absolute right-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
+    <div className="absolute end-[20px] size-[20px] top-[20px]" data-name="div.framer-IU4qG:mask-group">
       <div className="absolute bg-white mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0px_0px] mask-size-full opacity-40 size-full top-0" style={{ maskImage: `url('${imgDivFramerIu4QG}')` }} data-name="div.framer-IU4qG" />
     </div>
   );
@@ -42,7 +44,7 @@ function Component2W5TYAp7Kvu2COjxLNhiNawYuSvg() {
 
 function Shape() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start justify-center left-0 opacity-12 overflow-clip top-0 w-full h-full" data-name="Shape">
+    <div className="absolute content-stretch flex flex-col items-start justify-center start-0 opacity-12 overflow-clip top-0 w-full h-full" data-name="Shape">
       <Component2W5TYAp7Kvu2COjxLNhiNawYuSvg />
     </div>
   );
@@ -99,20 +101,24 @@ function Group() {
 }
 
 function LetsBuildSomething() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].cta_section;
   return (
     <div className="h-auto relative shrink-0 w-full" data-name="Let’s build something">
       <div className="bg-clip-text bg-gradient-to-l flex flex-col font-['Geist'] font-medium from-[5%] from-[rgba(255,255,255,0.6)] justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] to-1/2 to-white tracking-[-0.4px] whitespace-nowrap">
-        <p className="leading-[1.1]">Let’s build smarter,</p>
+        <p className="leading-[1.1]">{t.title_p1}</p>
       </div>
     </div>
   );
 }
 
 function GreatTogether() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].cta_section;
   return (
     <div className="h-auto relative shrink-0 w-full" data-name="great together.">
       <div className="bg-clip-text bg-gradient-to-r flex flex-col font-['Playfair_Display'] font-normal from-[#d9d9d9] from-[49%] italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] to-[rgba(255,255,255,0.6)] tracking-[-0.4px] whitespace-nowrap">
-        <p className="leading-[1.1]">future-ready systems.</p>
+        <p className="leading-[1.1]">{t.title_p2}</p>
       </div>
     </div>
   );
@@ -137,11 +143,13 @@ function TitleWrap() {
 }
 
 function TellUsWhatYouNeedWellHandleTheRestFromStrategyToExecution() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].cta_section;
   return (
     <div className="content-stretch flex flex-col items-start justify-center min-w-[200px] opacity-70 relative shrink-0 w-full" data-name="Tell us what you need — we’ll handle the rest, from strategy to execution.">
       <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
         <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[18px] text-white uppercase w-full">
-          <p className="leading-[1.4] md:leading-[27px]">Turn your data into action — we design, deploy, and scale intelligent solutions that drive efficiency, safety, and growth.</p>
+          <p className="leading-[1.4] md:leading-[27px]">{t.description}</p>
         </div>
       </div>
     </div>
@@ -149,6 +157,8 @@ function TellUsWhatYouNeedWellHandleTheRestFromStrategyToExecution() {
 }
 
 function GetStartedButton() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].cta_section;
   return (
 
     <button
@@ -171,7 +181,7 @@ function GetStartedButton() {
     hover:scale-105 active:scale-95 
     glare-btn"
     >
-      GET STARTED
+      {t.get_started}
     </button>
   );
 }
@@ -268,7 +278,7 @@ function VrImage() {
       <DivFramerIu4QGMaskGroup1 />
       <Shape />
 
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-[100px] items-center relative z-10 lg:pl-[60px] w-full">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-[100px] items-center relative z-10 lg:ps-[60px] w-full">
 
         <ContentWrapper />
 
@@ -286,16 +296,17 @@ function VrImage() {
               transform: isMobile ? "none" : `translateY(${offset}px)`
             }}
             className={`
-              w-full h-full origin-bottom-right
+              w-full h-full origin-bottom-end
               transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
 
               ${visible ? "opacity-100" : "opacity-0"}
               
               /* Desktop Final Position (Big by Default) */
               md:translate-x-[-10px] md:translate-y-[40px] md:scale-100
+              rtl:md:translate-x-[10px]
 
               /* Mobile Interaction */
-              ${isMobile && mobileHover ? "translate-x-[-20px] translate-y-[-20px]" : ""}
+              ${isMobile && mobileHover ? "translate-x-[-20px] translate-y-[-20px] rtl:translate-x-[20px]" : ""}
             `}
           >
             <ImageWithFallback

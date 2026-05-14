@@ -10,9 +10,11 @@ import ScrollFadeIn from '../../components/ScrollFadeIn';
 import serviceHero from "../../assets/serviceHero.jpg"
 import { ContainerServices } from '../components/features-section';
 import { NewsletterSection } from '../components/newsletter-section';
-import {servicesData} from '../../lib/servicesData'
+import { servicesData } from '../../lib/servicesData';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
-const HeroSection = () => {
+const HeroSection = ({ t, isRtl }) => {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Dark Overlay */}
@@ -31,10 +33,10 @@ const HeroSection = () => {
         >
           <h1 className="flex flex-col">
             <span className="bg-clip-text text-transparent bg-gradient-to-l from-white/40 via-white to-white font-['Geist'] font-medium text-[40px] sm:text-[30px] md:text-[60px] leading-[1.1] tracking-[-0.4px]">
-              Engineering smarter operations,
+              {t.hero.title_p1}
             </span>
             <span className="bg-clip-text text-transparent bg-gradient-to-l from-white/40 via-white to-white font-['Playfair_Display'] italic font-normal text-[40px] sm:text-[30px] md:text-[65px] leading-[1.1] tracking-[-2px] md:tracking-[-4px]">
-              through connected intelligence.
+              {t.hero.title_italic}
             </span>
           </h1>
         </motion.div>
@@ -45,7 +47,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
-          Flowtech delivers advanced solutions across manufacturing intelligence, energy monitoring, and pipeline safety—enabling real-time visibility, predictive insights, and optimized performance across industrial ecosystems.
+          {t.hero.description}
         </motion.p>
       </div>
     </section>
@@ -53,13 +55,25 @@ const HeroSection = () => {
 };
 
 const Services = () => {
+  const { language } = useLanguage();
+  const isRtl = language === 'AR';
+  const t = langData[language.toLowerCase()].services_page;
+  const services_t = langData[language.toLowerCase()].features?.services || {};
+
+  const localizedServices = servicesData.map(service => ({
+    ...service,
+    title: services_t[service.id]?.title || service.title,
+    subtitle: services_t[service.id]?.subtitle || service.subtitle,
+    description: services_t[service.id]?.description || service.description,
+  }));
+
   return (
-    <div className="w-full flex flex-col">
-        <HeroSection />
+    <div className="w-full flex flex-col" dir={isRtl ? 'rtl' : 'ltr'}>
+        <HeroSection t={t} isRtl={isRtl} />
 
        <div className="w-full flex justify-center pt-20 md:pt-32 px-6 md:px-8">
       <div className="max-w-[1260px] w-full flex flex-col gap-20 md:gap-32 items-center justify-center relative" data-name="Features">
-              <ContainerServices services={servicesData} />
+              <ContainerServices services={localizedServices} />
               <Container />
               {/* <RotationCardSection /> */}
               <RotationalContainer/>

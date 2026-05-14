@@ -5,6 +5,8 @@ import imgStar from "../../assets/4ae90066ce736d93921e8efb9fccf9d15d69f41b.png";
 import imgImage1 from "../../assets/66a6c590d9a3e3624c6c7830890ce0029158f939.png";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
 function StarRating() {
   return (
@@ -29,13 +31,15 @@ function ReviewHeader() {
 }
 
 function QuoteSection() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].hero_testimonial;
   return (
     <div className="flex flex-col gap-[18px] items-start shrink-0 w-full">
       <p className="bg-clip-text bg-gradient-to-l font-['Geist'] font-medium from-[rgba(255,255,255,0.4)] text-[18px] md:text-[23px] text-[transparent] to-white tracking-[-0.4px] leading-tight">
-        “Flowtech transformed our operations from day one. The implementation was seamless, and we now have complete visibility, control, and confidence in our systems.”
+        {language === "AR" ? `”${t.quote}“` : `“${t.quote}”`}
       </p>
       <div className="h-[40px] md:h-[63.8px] relative w-[100px] md:w-[145px] shrink-0 opacity-80">
-        <ImageWithFallback alt="Brand Logo" className="h-full w-full object-contain object-left" src={imgImage1} />
+        <ImageWithFallback alt="Brand Logo" className="h-full w-full object-contain object-start" src={imgImage1} />
       </div>
     </div>
   );
@@ -56,7 +60,7 @@ export const HeroTestimonialSection = () => {
         </div>
 
         {/* Floating UI/Dashboard Image Layer - Hidden on mobile or smaller */}
-        <div className="hidden lg:block absolute h-[449px] right-[-50px] top-[180px] w-[598px] rounded-[20px] shadow-2xl transition-transform duration-700 group-hover:translate-y-[-10px]">
+        <div className="hidden lg:block absolute h-[449px] end-[-50px] top-[180px] w-[598px] rounded-[20px] shadow-2xl transition-transform duration-700 group-hover:translate-y-[-10px]">
           <ImageWithFallback 
             alt="Dashboard Interface" 
             className="w-full h-full object-cover rounded-[20px]" 
@@ -65,7 +69,7 @@ export const HeroTestimonialSection = () => {
         </div>
 
         {/* Translucent Review Card */}
-        <div className="absolute inset-x-[20px] bottom-[20px] md:inset-auto md:bottom-[30px] md:left-[30px] backdrop-blur-[50px] bg-black/50 flex flex-col gap-8 md:gap-[48px] items-start justify-center max-w-[500px] overflow-hidden p-6 md:p-[35px] rounded-[7px] shadow-xl border border-white/10">
+        <div className="absolute inset-x-[20px] bottom-[20px] md:inset-auto md:bottom-[30px] md:start-[30px] backdrop-blur-[50px] bg-black/50 flex flex-col gap-8 md:gap-[48px] items-start justify-center max-w-[500px] overflow-hidden p-6 md:p-[35px] rounded-[7px] shadow-xl border border-white/10">
           <ReviewHeader />
           <QuoteSection />
         </div>

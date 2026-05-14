@@ -10,6 +10,11 @@ import { imgDivFramerIu4QG } from "../../imports/svg-aiype";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import OrbitImages from './OrbitImages';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
+import aibizzColored from "../../assets/AI-Bizz-App-colour.png";
+import smartIDPColored from "../../assets/Smart-IDP-colour.png";
+import kenvoiceColored from "../../assets/Ken-Voice-colour.png";
 
 const images1 = [
   "https://picsum.photos/300/300?grayscale&random=1",
@@ -19,21 +24,23 @@ const images1 = [
   "https://picsum.photos/300/300?grayscale&random=5",
   "https://picsum.photos/300/300?grayscale&random=6",
 ];
+// const images2 = [
+//   "https://picsum.photos/300/300?grayscale&random=1",
+//   "https://picsum.photos/300/300?grayscale&random=2",
+//   "https://picsum.photos/300/300?grayscale&random=3",
+//   "https://picsum.photos/300/300?grayscale&random=4",
+//   "https://picsum.photos/300/300?grayscale&random=5",
+//   "https://picsum.photos/300/300?grayscale&random=6",
+// ];
 const images2 = [
-  "https://picsum.photos/300/300?grayscale&random=1",
-  "https://picsum.photos/300/300?grayscale&random=2",
-  "https://picsum.photos/300/300?grayscale&random=3",
-  "https://picsum.photos/300/300?grayscale&random=4",
-  "https://picsum.photos/300/300?grayscale&random=5",
-  "https://picsum.photos/300/300?grayscale&random=6",
+  kenvoiceColored,
+  smartIDPColored,
+  aibizzColored,
 ];
 const images3 = [
-  "https://picsum.photos/300/300?grayscale&random=1",
-  "https://picsum.photos/300/300?grayscale&random=2",
-  "https://picsum.photos/300/300?grayscale&random=3",
-  "https://picsum.photos/300/300?grayscale&random=4",
-  "https://picsum.photos/300/300?grayscale&random=5",
-  "https://picsum.photos/300/300?grayscale&random=6",
+  kenvoiceColored,
+  smartIDPColored,
+  aibizzColored,,
 ];
 
 function PlusIcon() {
@@ -45,24 +52,28 @@ function PlusIcon() {
 }
 
 function Badge() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].ecosystem;
   return (
-    <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] content-stretch flex gap-[5px] items-center justify-center overflow-clip pl-[7px] pr-[11px] py-[5px] relative rounded-[5px] shrink-0 w-[95px] md:w-[102px]">
+    <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] content-stretch flex gap-[5px] items-center justify-center overflow-clip ps-[7px] pe-[11px] py-[5px] relative rounded-[5px] shrink-0 w-[95px] md:w-[102px]">
       <PlusIcon />
       <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-        <p className="leading-[17.6px]">PARTNERS</p>
+        <p className="leading-[17.6px]">{t.partners}</p>
       </div>
     </div>
   );
 }
 
 function Heading() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].ecosystem;
   return (
     <div className="h-auto relative shrink-0 w-full flex flex-col gap-1">
-      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-88.5374deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>
-        <p className="leading-[1.1]">Collaborate with your</p>
+      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-88.5374deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)" }}>
+        <p className="leading-[1.1]">{t.title_p1}</p>
       </div>
       <div className="flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-white/70 tracking-[-0.4px] whitespace-nowrap">
-        <p className="leading-[1.1]">innovation ecosystem</p>
+        <p className="leading-[1.1]">{t.title_p2}</p>
       </div>
     </div>
   );
@@ -70,7 +81,7 @@ function Heading() {
 
 function LogoItem({ src, size, className, isCustom = false, children }) {
   return (
-    <div className={`absolute backdrop-blur-[20px] rounded-full overflow-hidden flex items-center justify-center border border-white/10 ${className}`} style={{ width: size, height: size }}>
+    <div className={`absolute backdrop-blur-[20px] rounded-full overflow-hidden flex items-center justify-center border border-white/10  ${className}`} style={{ width: size, height: size }}>
       {isCustom ? children : <ImageWithFallback alt="" className="size-1/2 object-contain" src={src} />}
     </div>
   );
@@ -98,6 +109,8 @@ function FlowtechCenterLogo() {
 
 
 export const EcosystemSection = () => {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].ecosystem;
   const getValues = () => {
     if (typeof window === "undefined") {
       return { radius: 180, itemSize: 50 };
@@ -141,7 +154,7 @@ export const EcosystemSection = () => {
         <div className="max-w-[1260px] w-full flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-[120px] items-center relative">
 
           {/* LEFT CONTENT */}
-          <div className="w-full lg:w-[500px] flex flex-col gap-6 md:gap-8 text-left items-start">
+          <div className="w-full lg:w-[500px] flex flex-col gap-6 md:gap-8 text-start items-start">
 
             <div className="flex flex-col gap-4 md:gap-5 items-start">
               <Badge />
@@ -150,7 +163,7 @@ export const EcosystemSection = () => {
 
             <div className="opacity-70 max-w-[500px]">
               <p className="font-['Geist'] text-[14px] sm:text-[16px] md:text-[18px] text-white uppercase leading-[1.5]">
-                PARTNER WITH FLOWTECH TO DELIVER ADVANCED INDUSTRIAL AND AI SOLUTIONS—ENABLING SEAMLESS INTEGRATION, SCALABLE DEPLOYMENTS, AND MUTUAL BUSINESS GROWTH.
+                {t.description}
               </p>
             </div>
             <button
@@ -174,7 +187,7 @@ export const EcosystemSection = () => {
     glare-btn
 "
             >
-              BECOME A PARTNER
+              {t.become_partner}
             </button>
           </div>
 
@@ -184,7 +197,7 @@ export const EcosystemSection = () => {
             {/* CENTER LOGO */}
             <LogoItem
               isCustom
-              size={window.innerWidth < 640 ? 70 : 110}
+              size={typeof window !== 'undefined' && window.innerWidth < 640 ? 70 : 110}
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#191919]"
             >
               <FlowtechCenterLogo />
@@ -193,7 +206,7 @@ export const EcosystemSection = () => {
             {/* OUTER ORBIT */}
 
             {/* MIDDLE ORBIT */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <OrbitImages
                 images={images2}
                 shape="circle"
@@ -211,7 +224,7 @@ export const EcosystemSection = () => {
             </div>
 
             {/* INNER ORBIT */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <OrbitImages
                 images={images3}
                 shape="circle"

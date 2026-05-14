@@ -6,6 +6,8 @@ import imgImage from "../../assets/28664606051f8506026c69bed106cd92d3ebbb23.png"
 import imgImage1 from "../../assets/e09f50796c0c219089d5e485139d5e1a48d9d1d2.png";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
 function OmYb20Xx2MTnlMbaSnLEmaqisAuMp() {
   return <div className="h-[300px] md:h-[400px] shrink-0 w-full bg-white/5 animate-pulse" data-name="omYB20xx2MTnlMbaSnLEmaqisAU.mp4" />;
@@ -20,10 +22,12 @@ function DivFramerXw3IahContainer() {
 }
 
 function PFramerText() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-        <p className="leading-[17.6px]">Integration</p>
+        <p className="leading-[17.6px]">{t.integration}</p>
       </div>
     </div>
   );
@@ -72,10 +76,12 @@ function Icon() {
 }
 
 function PFramerText1() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
-        <p className="leading-[19.6px]">SENSORS</p>
+        <p className="leading-[19.6px]">{t.sensors}</p>
       </div>
     </div>
   );
@@ -165,10 +171,12 @@ function Icon2() {
 }
 
 function PFramerText2() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
-        <p className="leading-[19.6px]">SYSTEMS</p>
+        <p className="leading-[19.6px]">{t.systems}</p>
       </div>
     </div>
   );
@@ -258,10 +266,12 @@ function Icon4() {
 }
 
 function PFramerText3() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
-        <p className="leading-[19.6px]">DATA FLOW</p>
+        <p className="leading-[19.6px]">{t.data_flow}</p>
       </div>
     </div>
   );
@@ -358,10 +368,12 @@ function IntegrationCard() {
 }
 
 function PFramerText4() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[16px] md:text-[18px] text-white uppercase w-full">
-        <p className="leading-[24px] md:leading-[27px]">“WORKING WITH FLOWTECH WAS A GAME-CHANGER — THEY BROUGHT REAL-TIME VISIBILITY TO OUR OPERATIONS AND ENABLED SMARTER, DATA-DRIVEN DECISIONS ACROSS OUR BUSINESS.”</p>
+        <p className="leading-[24px] md:leading-[27px]">{t.quote}</p>
       </div>
     </div>
   );
@@ -394,10 +406,12 @@ function Image() {
 }
 
 function PFramerText5() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white uppercase whitespace-nowrap">
-        <p className="leading-[19.6px]">Rachel Adams</p>
+        <p className="leading-[19.6px]">{t.author}</p>
       </div>
     </div>
   );
@@ -405,17 +419,19 @@ function PFramerText5() {
 
 function RachelAdams() {
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start justify-center left-0 top-[calc(50%-10px)] md:top-[calc(50%-11.8px)] w-[100px] md:w-[107px]" data-name="Rachel Adams">
+    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start justify-center start-0 top-[calc(50%-10px)] md:top-[calc(50%-11.8px)] w-[100px] md:w-[107px]" data-name="Rachel Adams">
       <PFramerText5 />
     </div>
   );
 }
 
 function PFramerText6() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Playfair_Display'] font-normal justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white uppercase whitespace-nowrap">
-        <p className="leading-[19.6px]">OPERATIONS HEAD</p>
+        <p className="leading-[19.6px]">{t.role}</p>
       </div>
     </div>
   );
@@ -423,7 +439,7 @@ function PFramerText6() {
 
 function Founder() {
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start justify-center left-0 opacity-70 top-[calc(50%+10px)] md:top-[calc(50%+11.5px)] w-[110px] md:w-[127px]" data-name="Founder">
+    <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start justify-center start-0 opacity-70 top-[calc(50%+10px)] md:top-[calc(50%+11.5px)] w-[110px] md:w-[127px]" data-name="Founder">
       <PFramerText6 />
     </div>
   );
@@ -488,10 +504,12 @@ function DivFramerUlj() {
 }
 
 function PFramerText7() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-        <p className="leading-[17.6px]">AI SYSTEMS</p>
+        <p className="leading-[17.6px]">{t.ai_systems}</p>
       </div>
     </div>
   );
@@ -539,10 +557,12 @@ function TextWrap3() {
 }
 
 function PFramerText8() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-        <p className="leading-[17.6px]">DATA PLATFORM</p>
+        <p className="leading-[17.6px]">{t.data_platform}</p>
       </div>
     </div>
   );
@@ -612,7 +632,7 @@ function LineWrapper() {
 
 function Card1() {
   return (
-    <div className="backdrop-blur-[25px] bg-white/5 absolute bg-[rgba(255,255,255,0.3)] bottom-[15px] content-stretch flex flex-col gap-[15px] md:gap-[20px] items-center justify-center left-[10%] md:left-[22.98%] max-w-[290px] px-[20px] md:px-[24px] py-[20px] md:py-[25px] right-[5%] md:right-[3.79%] rounded-[6px]" data-name="Card">
+    <div className="backdrop-blur-[25px] bg-white/5 absolute bg-[rgba(255,255,255,0.3)] bottom-[15px] content-stretch flex flex-col gap-[15px] md:gap-[20px] items-center justify-center start-[10%] md:start-[22.98%] max-w-[290px] px-[20px] md:px-[24px] py-[20px] md:py-[25px] end-[5%] md:end-[3.79%] rounded-[6px]" data-name="Card">
       <TextWrapper />
       <LineWrapper />
     </div>

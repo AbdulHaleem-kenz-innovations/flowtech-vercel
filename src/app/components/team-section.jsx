@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import ScrollFadeIn from "../../components/ScrollFadeIn";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-34ssx";
+import { useLanguage } from "../../context/LanguageContext";
+import { langData } from "../../langData/data";
 import imgTeamImage from "../../assets/25593f754374bc769956c2480da019422fc09dd7.png";
 import imgTeamImage1 from "../../assets/28664606051f8506026c69bed106cd92d3ebbb23.png";
 import imgTeamImage2 from "../../assets/a85c1f3a6e2999097b681b0543e4f8c40a594808.png";
@@ -94,7 +96,7 @@ const TeamGallery = ({ members }) => {
     <div className=" grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-5">
 
       {/* 🔹 LEFT GRID */}
-      <div className="w-full grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 gap-3 sm:gap-4">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
         {members.map((member) => (
           <button
             key={member.id}
@@ -123,7 +125,7 @@ const TeamGallery = ({ members }) => {
               }`} />
 
             {/* Plus icon */}
-            <div className="absolute top-2 right-2 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center text-white text-sm">
+            <div className="absolute top-2 end-2 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center text-white text-sm">
               +
             </div>
           </button>
@@ -141,7 +143,7 @@ const TeamGallery = ({ members }) => {
         />
 
         {/* Info Card */}
-        <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-lg">
+        <div className="absolute bottom-4 start-4 end-4 bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-lg">
           <h2 className="text-lg font-semibold text-black">
             {selected.name}
           </h2>
@@ -169,6 +171,16 @@ const TeamGallery = ({ members }) => {
 
 /* 🔹 Section Wrapper */
 export function TeamSection() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].team_section;
+
+  // Combine static member data with translations
+  const localizedMembers = members.map((member, index) => ({
+    ...member,
+    name: t.members[index]?.name || member.name,
+    role: t.members[index]?.role || member.role
+  }));
+
   return (
     <ScrollFadeIn>
       <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8 ">
@@ -177,16 +189,16 @@ export function TeamSection() {
             <div className="flex flex-col gap-5 items-start">
               <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] flex gap-[5px] items-center px-[11px] py-[5px] rounded-[5px]">
                 <PlusIcon size={16} />
-                <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">Team Member</span>
+                <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">{t.badge}</span>
               </div>
               <div className="flex items-center">
-                <span className="bg-clip-text font-['Geist'] font-medium text-[40px] md:text-[60px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(268.918deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>Our&nbsp;</span>
-                <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[40px] md:text-[60px] tracking-[-0.4px] leading-tight">team</span>
+                <span className="bg-clip-text font-['Geist'] font-medium text-[40px] md:text-[60px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(268.918deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{t.title_p1}&nbsp;</span>
+                <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[40px] md:text-[60px] tracking-[-0.4px] leading-tight">{t.title_italic}</span>
               </div>
             </div>
             <div className="max-w-[400px] opacity-70">
               <p className="font-['Geist'] font-normal text-[14px] md:text-[16px] text-white uppercase leading-[1.4] md:leading-[22.4px]">
-                FROM ENGINEERS TO DATA EXPERTS, OUR TEAM BUILDS SCALABLE, INTELLIGENT SOLUTIONS THAT DRIVE REAL-WORLD IMPACT ACROSS INDUSTRIES
+                {t.description}
               </p>
             </div>
             <button
@@ -210,10 +222,10 @@ export function TeamSection() {
     glare-btn
 "
             >
-              JOIN US
+              {t.join_us}
             </button>
           </div>
-          <TeamGallery members={members} />
+          <TeamGallery members={localizedMembers} />
         </div>
       </section>
     </ScrollFadeIn>

@@ -206,7 +206,7 @@ export default function OrbitImages({
         style={{
           width: responsive ? baseWidth : '100%',
           height: responsive ? baseWidth : '100%',
-          transform: responsive ? `translate(-50%, -50%) scale(${scale})` : undefined,
+          transform: `translate(-50%, -50%) scale(${responsive ? scale : 1})`,
           transformOrigin: 'center center',
         }}
       >

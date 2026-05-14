@@ -1,10 +1,12 @@
 import React from 'react';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { motion } from 'motion/react';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 import { ContactSection } from '../components/contact-section';
 import { RotationCardSection } from '../components/rotation-card-section';
 import { BlogSection } from '../components/blog-section';
 import { FooterSection } from '../components/footer-section';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { motion } from 'motion/react';
 
 // Images from Industries.tsx
 import imgLalitKumarHpPmiduLdc0Unsplash1 from "../../assets/fa82f8211887771169b077207fe2277e6dcae80a.png";
@@ -23,14 +25,18 @@ import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-8em4t";
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 
 const HeroSection = () => {
+  const { language } = useLanguage();
+  const isRtl = language === 'AR';
+  const t = langData[language.toLowerCase()].industries_page.hero;
+
   const images = [
-    { src: imgScreenshot20260420At25442Pm2, className: "absolute top-[8%] left-[2%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
-    { src: imgScreenshot20260420At25442Pm5, className: "absolute top-[2%] left-[68%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
-    { src: imgScreenshot20260420At25442Pm4, className: "absolute top-[12%] right-[1%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
-    { src: imgScreenshot20260420At25442Pm1, className: "absolute bottom-[8%] left-[-2%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
-    { src: imgScreenshot20260420At30329Pm1, className: "absolute top-[2%] left-[28%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
-    { src: imgScreenshot20260420At25442Pm3, className: "absolute bottom-[8%] right-[-2%] w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0" },
-     { src: imgScreenshot20260420At30549Pm1, className: "absolute bottom-[-10%] left-[20%] md:right-[10%] w-[20%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px]" },
+    { src: imgScreenshot20260420At25442Pm2, className: `absolute top-[8%] ${isRtl ? 'end-[2%]' : 'start-[2%]'} w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0` },
+    { src: imgScreenshot20260420At25442Pm5, className: `absolute top-[2%] ${isRtl ? 'end-[68%]' : 'start-[68%]'} w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0` },
+    { src: imgScreenshot20260420At25442Pm4, className: `absolute top-[12%] ${isRtl ? 'start-[1%]' : 'end-[1%]'} w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0` },
+    { src: imgScreenshot20260420At25442Pm1, className: `absolute bottom-[8%] ${isRtl ? 'end-[-2%]' : 'start-[-2%]'} w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0` },
+    { src: imgScreenshot20260420At30329Pm1, className: `absolute top-[2%] ${isRtl ? 'end-[28%]' : 'start-[28%]'} w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0` },
+    { src: imgScreenshot20260420At25442Pm3, className: `absolute bottom-[8%] ${isRtl ? 'start-[-2%]' : 'end-[-2%]'} w-[22%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px] z-0` },
+     { src: imgScreenshot20260420At30549Pm1, className: `absolute bottom-[-10%] ${isRtl ? 'end-[20%]' : 'start-[20%]'} md:${isRtl ? 'start-[10%]' : 'end-[10%]'} w-[20%] md:w-[14%] aspect-[3/4] rounded-2xl blur-[4px]` },
   ];
 
   return (
@@ -59,7 +65,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
         >
           <div className="w-4 h-4 bg-white/40" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
-          <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white uppercase tracking-widest">Industries we serve</span>
+          <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white uppercase tracking-widest">{t.badge}</span>
         </motion.div>
 
         <motion.h1
@@ -69,10 +75,10 @@ const HeroSection = () => {
           transition={{ delay: 0.1 }}
         >
           <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent tracking-tight leading-[1.1]">
-            Industries we power,
+            {t.title_p1}
           </span>
           <span className="font-['Playfair_Display'] italic font-normal text-[36px] sm:text-[48px] md:text-[60px] text-white/70 tracking-tight leading-[1.1]">
-            with intelligent solutions.
+            {t.title_italic}
           </span>
         </motion.h1>
 
@@ -82,70 +88,80 @@ const HeroSection = () => {
           animate={{ opacity: 0.7 }}
           transition={{ delay: 0.2 }}
         >
-          FLOWTECH ENABLES MANUFACTURING, ENERGY, AND PIPELINE OPERATIONS WITH REAL-TIME MONITORING, PREDICTIVE INSIGHTS, AND ADVANCED ANALYTICS SYSTEMS.
+          {t.description}
         </motion.p>
       </section>
     </div>
   );
 };
 
-const IndustryCard = ({ title, intro, image, capabilities, outcome, icon: IconComponent }) => (
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-[1260px] mb-6">
-    {/* Image Side */}
-    <div className="rounded-[7px] overflow-hidden min-h-[350px] md:min-h-[400px] lg:min-h-[620px] relative border border-white/10">
-      <ImageWithFallback src={image} className="absolute inset-0 size-full object-cover" />
-    </div>
+const IndustryCard = ({ title, intro, image, capabilities, outcome, icon: IconComponent }) => {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].industries_page.cards;
 
-    {/* Content Side */}
-    <div className="backdrop-blur-[25px] bg-white/10 p-6 md:p-12 rounded-[7px] flex flex-col gap-8 md:gap-10 text-left border border-white/5">
-      {/* Category Header */}
-      <div className="flex flex-col gap-6">
-        <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-md flex gap-2 items-center w-fit border border-white/10">
-          <div className="size-[18px] text-white">
-            {IconComponent && <IconComponent />}
-          </div>
-          <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">{title}</span>
-        </div>
-        <div className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[20px] md:text-[22px] text-transparent leading-relaxed tracking-tight">
-          {intro}
-        </div>
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-[1260px] mb-6">
+      {/* Image Side */}
+      <div className="rounded-[7px] overflow-hidden min-h-[350px] md:min-h-[400px] lg:min-h-[620px] relative border border-white/10">
+        <ImageWithFallback src={image} className="absolute inset-0 size-full object-cover" />
       </div>
 
-      {/* Key Capabilities */}
-      <div className="flex flex-col gap-6">
-        <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-md flex gap-2 items-center w-fit border border-white/10">
-          <div className="size-[15px] bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain' }} />
-          <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">Key Capabilities</span>
-        </div>
-        <div className="flex flex-col gap-4">
-          {capabilities.map((cap, i) => (
-            <div key={i} className="flex gap-3 items-center">
-              <div className="size-[16px] text-white/60">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0268 1.1331C11.5535 0.501432 12.5793 0.933098 12.496 1.75143L11.9077 7.49976H16.6668C16.8252 7.49982 16.9802 7.545 17.1138 7.62999C17.2474 7.71499 17.3541 7.83629 17.4212 7.97969C17.4884 8.12309 17.5133 8.28265 17.493 8.4397C17.4728 8.59674 17.4082 8.74476 17.3068 8.86643L8.97351 18.8664C8.44684 19.4981 7.42101 19.0664 7.50434 18.2481L8.09268 12.4998H3.33351C3.17516 12.4997 3.02011 12.4545 2.88651 12.3695C2.75291 12.2845 2.64629 12.1632 2.57914 12.0198C2.51199 11.8764 2.48708 11.7169 2.50733 11.5598C2.52759 11.4028 2.59217 11.2548 2.69351 11.1331L11.0268 1.1331Z" fill="white"/>
-</svg>
-              </div>
-              <span className="font-['Geist'] font-semibold text-[14px] md:text-[16px] text-white uppercase tracking-wide">{cap}</span>
+      {/* Content Side */}
+      <div className="backdrop-blur-[25px] bg-white/10 p-6 md:p-12 rounded-[7px] flex flex-col gap-8 md:gap-10 text-start border border-white/5">
+        {/* Category Header */}
+        <div className="flex flex-col gap-6">
+          <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-md flex gap-2 items-center w-fit border border-white/10">
+            <div className="size-[18px] text-white">
+              {IconComponent && <IconComponent />}
             </div>
-          ))}
+            <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">{title}</span>
+          </div>
+          <div className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[20px] md:text-[22px] text-transparent leading-relaxed tracking-tight">
+            {intro}
+          </div>
         </div>
-      </div>
 
-      {/* Outcome */}
-      <div className="mt-auto flex flex-col gap-4">
-        <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-md flex gap-2 items-center w-fit border border-white/10">
-          <div className="size-[15px] bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain' }} />
-          <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">Outcome</span>
+        {/* Key Capabilities */}
+        <div className="flex flex-col gap-6">
+          <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-md flex gap-2 items-center w-fit border border-white/10">
+            <div className="size-[15px] bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain' }} />
+            <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">{t.key_capabilities}</span>
+          </div>
+          <div className="flex flex-col gap-4">
+            {capabilities.map((cap, i) => (
+              <div key={i} className="flex gap-3 items-center">
+                <div className="size-[16px] text-white/60">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M11.0268 1.1331C11.5535 0.501432 12.5793 0.933098 12.496 1.75143L11.9077 7.49976H16.6668C16.8252 7.49982 16.9802 7.545 17.1138 7.62999C17.2474 7.71499 17.3541 7.83629 17.4212 7.97969C17.4884 8.12309 17.5133 8.28265 17.493 8.4397C17.4728 8.59674 17.4082 8.74476 17.3068 8.86643L8.97351 18.8664C8.44684 19.4981 7.42101 19.0664 7.50434 18.2481L8.09268 12.4998H3.33351C3.17516 12.4997 3.02011 12.4545 2.88651 12.3695C2.75291 12.2845 2.64629 12.1632 2.57914 12.0198C2.51199 11.8764 2.48708 11.7169 2.50733 11.5598C2.52759 11.4028 2.59217 11.2548 2.69351 11.1331L11.0268 1.1331Z" fill="white" />
+                  </svg>
+                </div>
+                <span className="font-['Geist'] font-semibold text-[14px] md:text-[16px] text-white uppercase tracking-wide">{cap}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="font-['Geist'] font-semibold text-[14px] md:text-[16px] text-white uppercase tracking-wide">
-          {outcome}
+
+        {/* Outcome */}
+        <div className="mt-auto flex flex-col gap-4">
+          <div className="backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-md flex gap-2 items-center w-fit border border-white/10">
+            <div className="size-[15px] bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG1}')`, maskSize: 'contain' }} />
+            <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">{t.outcome_label}</span>
+          </div>
+          <div className="font-['Geist'] font-semibold text-[14px] md:text-[16px] text-white uppercase tracking-wide">
+            {outcome}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const ContentSection = () => {
+  const { language } = useLanguage();
+  const isRtl = language === 'AR';
+  const t = langData[language.toLowerCase()].industries_page.content;
+  const cards = langData[language.toLowerCase()].industries_page.cards;
+
   return (
     <section className="flex flex-col items-center px-6 py-10 md:py-20 gap-10">
       
@@ -162,19 +178,19 @@ const ContentSection = () => {
         }}
       />
       <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">
-        CORE Industries
+        {t.badge}
       </span>
     </div>
 
     <h2 className="bg-clip-text bg-gradient-to-l from-white/40 to-white font-['Geist'] font-medium text-[40px] md:text-[60px] text-transparent tracking-tight leading-tight">
-      Industries
+      {t.title}
     </h2>
   </div>
 
   {/* Right aligned paragraph */}
-  <div className="max-w-[420px] opacity-70 ml-auto lg:absolute lg:right-0 lg:bottom-0">
-    <p className="font-['Geist'] text-white text-[14px] md:text-[16px] uppercase leading-relaxed md:text-right">
-      FROM DATA TO INFRASTRUCTURE, WE DELIVER END-TO-END DIGITAL AND INDUSTRIAL SOLUTIONS BUILT FOR SCALE AND IMPACT
+  <div className={`max-w-[420px] opacity-70 ${isRtl ? 'me-auto lg:absolute lg:left-0 lg:bottom-0' : 'ms-auto lg:absolute lg:right-0 lg:bottom-0'}`}>
+    <p className={`font-['Geist'] text-white text-[14px] md:text-[16px] uppercase leading-relaxed ${isRtl ? 'md:text-start' : 'md:text-end'}`}>
+      {t.description}
     </p>
   </div>
 
@@ -184,68 +200,53 @@ const ContentSection = () => {
       <div className="w-full -mt-10 flex flex-col items-center justify-center">
         <ScrollFadeIn>
         <IndustryCard
-          title="Manufacturing"
+          title={cards.manufacturing.title}
           icon={() => (
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M3.31258 17.5001V15.0001H5.89591L3.77091 8.04179C3.39591 7.83346 3.08703 7.5279 2.84425 7.12513C2.60147 6.72235 2.4798 6.29179 2.47925 5.83346C2.47925 5.13901 2.7223 4.54874 3.20841 4.06263C3.69453 3.57651 4.2848 3.33346 4.97925 3.33346C5.52091 3.33346 6.00369 3.48985 6.42758 3.80263C6.85147 4.1154 7.14647 4.51457 7.31258 5.00013H9.97925V4.16679C9.97925 3.93068 10.0592 3.7329 10.2192 3.57346C10.3792 3.41401 10.577 3.33401 10.8126 3.33346C10.9376 3.33346 11.0592 3.36124 11.1776 3.41679C11.2959 3.47235 11.3965 3.55568 11.4792 3.66679L12.8959 2.33346C13.0209 2.20846 13.1704 2.12846 13.3442 2.09346C13.5181 2.05846 13.6881 2.0829 13.8542 2.16679L17.1042 3.66679C17.2709 3.75013 17.3856 3.87179 17.4484 4.03179C17.5112 4.19179 17.5076 4.3479 17.4376 4.50013C17.3542 4.66679 17.2329 4.77457 17.0734 4.82346C16.914 4.87235 16.7576 4.86179 16.6042 4.79179L13.6042 3.41679L11.6459 5.25013V6.41679L13.6042 8.20846L16.6042 6.83346C16.757 6.76401 16.9167 6.75707 17.0834 6.81263C17.2501 6.86818 17.3681 6.97235 17.4376 7.12513C17.5209 7.29179 17.5279 7.45151 17.4584 7.60429C17.389 7.75707 17.2709 7.87513 17.1042 7.95846L13.8542 9.50013C13.6876 9.58346 13.5176 9.60763 13.3442 9.57263C13.1709 9.53763 13.0215 9.4579 12.8959 9.33346L11.4792 8.00013C11.3959 8.08346 11.2954 8.15985 11.1776 8.22929C11.0598 8.29874 10.9381 8.33346 10.8126 8.33346C10.5765 8.33346 10.3787 8.25374 10.2192 8.09429C10.0598 7.93485 9.9798 7.73679 9.97925 7.50013V6.66679H7.31258C7.27091 6.7779 7.22591 6.88207 7.17758 6.97929C7.12925 7.07651 7.06314 7.18068 6.97925 7.29179L11.1459 15.0001H14.1459V17.5001H3.31258ZM5.57341 6.42679C5.73286 6.26735 5.81258 6.06957 5.81258 5.83346C5.81258 5.59735 5.73286 5.39957 5.57341 5.24013C5.41397 5.08068 5.21591 5.00068 4.97925 5.00013C4.74258 4.99957 4.5448 5.07957 4.38591 5.24013C4.22703 5.40068 4.14703 5.59846 4.14591 5.83346C4.1448 6.06846 4.2248 6.26651 4.38591 6.42763C4.54703 6.58874 4.7448 6.66846 4.97925 6.66679C5.21369 6.66513 5.41175 6.58512 5.57341 6.42679Z" fill="white"/>
-</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3.31258 17.5001V15.0001H5.89591L3.77091 8.04179C3.39591 7.83346 3.08703 7.5279 2.84425 7.12513C2.60147 6.72235 2.4798 6.29179 2.47925 5.83346C2.47925 5.13901 2.7223 4.54874 3.20841 4.06263C3.69453 3.57651 4.2848 3.33346 4.97925 3.33346C5.52091 3.33346 6.00369 3.48985 6.42758 3.80263C6.85147 4.1154 7.14647 4.51457 7.31258 5.00013H9.97925V4.16679C9.97925 3.93068 10.0592 3.7329 10.2192 3.57346C10.3792 3.41401 10.577 3.33401 10.8126 3.33346C10.9376 3.33346 11.0592 3.36124 11.1776 3.41679C11.2959 3.47235 11.3965 3.55568 11.4792 3.66679L12.8959 2.33346C13.0209 2.20846 13.1704 2.12846 13.3442 2.09346C13.5181 2.05846 13.6881 2.0829 13.8542 2.16679L17.1042 3.66679C17.2709 3.75013 17.3856 3.87179 17.4484 4.03179C17.5112 4.19179 17.5076 4.3479 17.4376 4.50013C17.3542 4.66679 17.2329 4.77457 17.0734 4.82346C16.914 4.87235 16.7576 4.86179 16.6042 4.79179L13.6042 3.41679L11.6459 5.25013V6.41679L13.6042 8.20846L16.6042 6.83346C16.757 6.76401 16.9167 6.75707 17.0834 6.81263C17.2501 6.86818 17.3681 6.97235 17.4376 7.12513C17.5209 7.29179 17.5279 7.45151 17.4584 7.60429C17.389 7.75707 17.2709 7.87513 17.1042 7.95846L13.8542 9.50013C13.6876 9.58346 13.5176 9.60763 13.3442 9.57263C13.1709 9.53763 13.0215 9.4579 12.8959 9.33346L11.4792 8.00013C11.3959 8.08346 11.2954 8.15985 11.1776 8.22929C11.0598 8.29874 10.9381 8.33346 10.8126 8.33346C10.5765 8.33346 10.3787 8.25374 10.2192 8.09429C10.0598 7.93485 9.9798 7.73679 9.97925 7.50013V6.66679H7.31258C7.27091 6.7779 7.22591 6.88207 7.17758 6.97929C7.12925 7.07651 7.06314 7.18068 6.97925 7.29179L11.1459 15.0001H14.1459V17.5001H3.31258ZM5.57341 6.42679C5.73286 6.26735 5.81258 6.06957 5.81258 5.83346C5.81258 5.59735 5.73286 5.39957 5.57341 5.24013C5.41397 5.08068 5.21591 5.00068 4.97925 5.00013C4.74258 4.99957 4.5448 5.07957 4.38591 5.24013C4.22703 5.40068 4.14703 5.59846 4.14591 5.83346C4.1448 6.06846 4.2248 6.26651 4.38591 6.42763C4.54703 6.58874 4.7448 6.66846 4.97925 6.66679C5.21369 6.66513 5.41175 6.58512 5.57341 6.42679Z" fill="white" />
+            </svg>
           )}
-          intro="Flowtech’s Manufacturing Intelligence solution enables complete visibility across production lines, helping teams optimise performance, reduce downtime, and improve decision-making through real-time dashboards and analytics."
+          intro={cards.manufacturing.intro}
           image={imgLalitKumarHpPmiduLdc0Unsplash1}
-          capabilities={[
-            "Real-time production monitoring",
-            "Predictive insights for operations",
-            "Centralized dashboards",
-            "End-to-end operational visibility"
-          ]}
-          outcome="Improved efficiency, reduced downtime, and data-driven production control."
+          capabilities={cards.manufacturing.capabilities}
+          outcome={cards.manufacturing.outcome}
         />
         </ScrollFadeIn>
            
           <ScrollFadeIn>
         <IndustryCard
-          title="Energy & Utilities"
+          title={cards.energy.title}
           icon={() => (
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M9.02075 13.6042L12.8541 10.1875C12.9791 10.0764 13.0138 9.94449 12.9583 9.79171C12.9027 9.63893 12.7916 9.54865 12.6249 9.52087L9.62492 9.22921L11.4166 6.75004C11.4583 6.6806 11.4827 6.61449 11.4899 6.55171C11.4971 6.48893 11.4727 6.43004 11.4166 6.37504C11.361 6.3056 11.2916 6.27449 11.2083 6.28171C11.1249 6.28893 11.0485 6.32004 10.9791 6.37504L7.16659 9.79171C7.04159 9.90282 7.00686 10.0348 7.06242 10.1875C7.11797 10.3403 7.22909 10.4306 7.39575 10.4584L10.3958 10.75L8.58325 13.2292C8.54159 13.2987 8.52075 13.3645 8.52075 13.4267C8.52075 13.4889 8.54853 13.5481 8.60408 13.6042C8.65964 13.6603 8.72575 13.6881 8.80242 13.6875C8.87909 13.687 8.95186 13.6592 9.02075 13.6042ZM9.99992 16.6667C9.22214 16.6667 8.48964 16.545 7.80242 16.3017C7.1152 16.0584 6.48659 15.7148 5.91659 15.2709L4.77075 16.4167C4.68742 16.5 4.59381 16.5625 4.48992 16.6042C4.38603 16.6459 4.27825 16.6667 4.16659 16.6667C3.93047 16.6667 3.7327 16.5867 3.57325 16.4267C3.41381 16.2667 3.33381 16.0689 3.33325 15.8334C3.33325 15.7223 3.35409 15.6148 3.39575 15.5109C3.43742 15.407 3.49992 15.3131 3.58325 15.2292L4.72909 14.0834C4.28464 13.5139 3.94103 12.8856 3.69825 12.1984C3.45547 11.5112 3.33381 10.7784 3.33325 10C3.33325 8.13893 3.97909 6.56254 5.27075 5.27087C6.56242 3.97921 8.13881 3.33337 9.99992 3.33337H16.6666V10C16.6666 11.8612 16.0208 13.4375 14.7291 14.7292C13.4374 16.0209 11.861 16.6667 9.99992 16.6667Z" fill="white"/>
-</svg>
+              <path d="M9.02075 13.6042L12.8541 10.1875C12.9791 10.0764 13.0138 9.94449 12.9583 9.79171C12.9027 9.63893 12.7916 9.54865 12.6249 9.52087L9.62492 9.22921L11.4166 6.75004C11.4583 6.6806 11.4827 6.61449 11.4899 6.55171C11.4971 6.48893 11.4727 6.43004 11.4166 6.37504C11.361 6.3056 11.2916 6.27449 11.2083 6.28171C11.1249 6.28893 11.0485 6.32004 10.9791 6.37504L7.16659 9.79171C7.04159 9.90282 7.00686 10.0348 7.06242 10.1875C7.11797 10.3403 7.22909 10.4306 7.39575 10.4584L10.3958 10.75L8.58325 13.2292C8.54159 13.2987 8.52075 13.3645 8.52075 13.4267C8.52075 13.4889 8.54853 13.5481 8.60408 13.6042C8.65964 13.6603 8.72575 13.6881 8.80242 13.6875C8.87909 13.687 8.95186 13.6592 9.02075 13.6042ZM9.99992 16.6667C9.22214 16.6667 8.48964 16.545 7.80242 16.3017C7.1152 16.0584 6.48659 15.7148 5.91659 15.2709L4.77075 16.4167C4.68742 16.5 4.59381 16.5625 4.48992 16.6042C4.38603 16.6459 4.27825 16.6667 4.16659 16.6667C3.93047 16.6667 3.7327 16.5867 3.57325 16.4267C3.41381 16.2667 3.33381 16.0689 3.33325 15.8334C3.33325 15.7223 3.35409 15.6148 3.39575 15.5109C3.43742 15.407 3.49992 15.3131 3.58325 15.2292L4.72909 14.0834C4.28464 13.5139 3.94103 12.8856 3.69825 12.1984C3.45547 11.5112 3.33381 10.7784 3.33325 10C3.33325 8.13893 3.97909 6.56254 5.27075 5.27087C6.56242 3.97921 8.13881 3.33337 9.99992 3.33337H16.6666V10C16.6666 11.8612 16.0208 13.4375 14.7291 14.7292C13.4374 16.0209 11.861 16.6667 9.99992 16.6667Z" fill="white" />
+            </svg>
           )}
-          intro="The Energy Monitoring System (EMS) provides real-time visibility into energy usage, enabling organizations to track consumption, identify inefficiencies, and optimize performance across facilities."
+          intro={cards.energy.intro}
           image={imgAmericanPublicPowerAssociationTwF1stZFz8Unsplash1}
-          capabilities={[
-            "Real-time energy tracking",
-            "Efficienciy analytics and insights",
-            "Alerts for anomalies",
-            "Sustainability reporting"
-          ]}
-          outcome="Reduced energy costs, improved efficiency, and better sustainability management."
+          capabilities={cards.energy.capabilities}
+          outcome={cards.energy.outcome}
         />
         </ScrollFadeIn>
 
           <ScrollFadeIn>
         <IndustryCard
-          title="Oil & Gas"
+          title={cards.oil_gas.title}
           icon={() => (
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <g clip-path="url(#clip0_937_1568)">
-    <path d="M12.0004 10.9333L13.3337 18.6666H15.3337C16.0004 18.6666 16.0004 19.9999 15.3337 19.9999H4.66706C4.00039 19.9999 4.00039 18.6666 4.66706 18.6666H6.66706L8.00039 10.9333C9.33373 11.8399 10.6671 11.8399 12.0004 10.9333ZM11.2004 15.9999H8.80039L8.40039 18.6666H11.6004L11.2004 15.9999ZM10.6671 12.3333H9.33373L9.00039 14.6666H11.0004L10.6671 12.3333ZM13.0004 8.83992C12.9737 9.33325 12.7471 10.1199 12.3337 10.5333L17.3337 12.5066V19.5066C17.3337 20.1733 18.6671 20.1733 18.6671 19.5066V12.9999C19.6671 13.3333 20.3337 11.5999 19.3337 11.2666L13.0004 8.83992ZM4.66706 1.33325C0.000392273 1.33325 -1.33294 12.6666 1.66706 12.6666C2.66706 12.6666 4.32039 7.46659 4.32039 7.46659L7.00039 8.46659C7.00039 7.91992 7.33373 7.17325 7.69373 6.78659L4.94706 5.74659C4.94706 5.74659 6.00039 2.46659 6.00039 1.99992C6.00039 1.66659 5.33373 1.33325 4.66706 1.33325ZM10.0004 10.6666C11.1737 10.6666 12.0004 9.83992 12.0004 8.66659C12.0004 7.50659 11.1737 6.66659 10.0004 6.66659C8.84039 6.66659 8.00039 7.51992 8.00039 8.69325C8.00039 9.85325 8.84039 10.6666 10.0004 10.6666Z" fill="white"/>
-  </g>
-  <defs>
-    <clipPath id="clip0_937_1568">
-      <rect width="20" height="20" fill="white"/>
-    </clipPath>
-  </defs>
-</svg>
+              <g clipPath="url(#clip0_937_1568)">
+                <path d="M12.0004 10.9333L13.3337 18.6666H15.3337C16.0004 18.6666 16.0004 19.9999 15.3337 19.9999H4.66706C4.00039 19.9999 4.00039 18.6666 4.66706 18.6666H6.66706L8.00039 10.9333C9.33373 11.8399 10.6671 11.8399 12.0004 10.9333ZM11.2004 15.9999H8.80039L8.40039 18.6666H11.6004L11.2004 15.9999ZM10.6671 12.3333H9.33373L9.00039 14.6666H11.0004L10.6671 12.3333ZM13.0004 8.83992C12.9737 9.33325 12.7471 10.1199 12.3337 10.5333L17.3337 12.5066V19.5066C17.3337 20.1733 18.6671 20.1733 18.6671 19.5066V12.9999C19.6671 13.3333 20.3337 11.5999 19.3337 11.2666L13.0004 8.83992ZM4.66706 1.33325C0.000392273 1.33325 -1.33294 12.6666 1.66706 12.6666C2.66706 12.6666 4.32039 7.46659 4.32039 7.46659L7.00039 8.46659C7.00039 7.91992 7.33373 7.17325 7.69373 6.78659L4.94706 5.74659C4.94706 5.74659 6.00039 2.46659 6.00039 1.99992C6.00039 1.66659 5.33373 1.33325 4.66706 1.33325ZM10.0004 10.6666C11.1737 10.6666 12.0004 9.83992 12.0004 8.66659C12.0004 7.50659 11.1737 6.66659 10.0004 6.66659C8.84039 6.66659 8.00039 7.51992 8.00039 8.69325C8.00039 9.85325 8.84039 10.6666 10.0004 10.6666Z" fill="white" />
+              </g>
+              <defs>
+                <clipPath id="clip0_937_1568">
+                  <rect width="20" height="20" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
           )}
-          intro="Flowtech’s Pipeline Safety solution uses distributed fiber optic sensing (DFOS) to detect leaks, intrusions, and anomalies in real-time, ensuring operational safety and minimizing risks."
+          intro={cards.oil_gas.intro}
           image={imgScreenshot20260420At25442Pm3}
-          capabilities={[
-            "Real-time leak detection",
-            "Intrusion monitoring",
-            "Continuous pipeline surveillance",
-            "Advanced analytics"
-          ]}
-          outcome="Enhanced safety, faster response times, and reduced operational risks."
+          capabilities={cards.oil_gas.capabilities}
+          outcome={cards.oil_gas.outcome}
         />
         </ScrollFadeIn>
       </div>
@@ -271,15 +272,18 @@ const ContentSection = () => {
     hover:scale-105 active:scale-95 
     glare-btn
             ">
-        Contact US
+        {t.cta_contact}
       </button>
     </section>
   );
 };
 
 export const IndustriesPage = () => {
+  const { language } = useLanguage();
+  const isRtl = language === 'AR';
+
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col" dir={isRtl ? 'rtl' : 'ltr'}>
       <ScrollFadeIn>
       <HeroSection />
       <ContentSection />

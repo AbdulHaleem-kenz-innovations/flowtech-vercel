@@ -3,6 +3,8 @@ import svgPaths from "../../imports/svg-60x66umvnj";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDivFramerIu4QG2 } from "../../imports/svg-emg7m";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 import productimg1 from "../../assets/products-img1.png";
 import productimg2 from "../../assets/products-img2.png";
 import productimg3 from "../../assets/products-img3.png";
@@ -19,10 +21,12 @@ function DivFramerIu4QGMaskGroup() {
 }
 
 function PFramerText() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].work_section;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
       <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-        <p className="leading-[17.6px]">CORE PRODUCTS</p>
+        <p className="leading-[17.6px]">{t.core_products}</p>
       </div>
     </div>
   );
@@ -54,10 +58,12 @@ function DivFramer1IzgjdsContainer() {
 }
 
 function H2FramerText() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].work_section;
   return (
     <div className="content-stretch flex flex-col items-start md:items-center relative shrink-0 w-full" data-name="h2.framer-text">
-      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-left md:text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.4672deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
-        <p className="leading-[1.1]">Intelligent products.</p>
+      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-start md:text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.4672deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
+        <p className="leading-[1.1]">{t.title_p1}</p>
       </div>
     </div>
   );
@@ -72,10 +78,12 @@ function InnovationPoweredBy() {
 }
 
 function H2FramerText1() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].work_section;
   return (
     <div className="content-stretch flex flex-col items-start md:items-center relative shrink-0 w-full" data-name="h2.framer-text">
-      <div className="bg-clip-text flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-left md:text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1354deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
-        <p className="leading-[1.1]">Built for scale.</p>
+      <div className="bg-clip-text flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-start md:text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1354deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
+        <p className="leading-[1.1]">{t.title_p2}</p>
       </div>
     </div>
   );
@@ -108,12 +116,14 @@ function TitleWrap() {
 }
 
 function Description() {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].work_section;
   return (
     <div className="relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-start md:justify-center size-full">
         <div className="content-stretch flex items-start md:items-center justify-start md:justify-center md:p-[10px] relative size-full">
-          <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[18px] text-left md:text-center text-white uppercase w-full max-w-[780px]">
-            <p className="leading-[1.4] md:leading-[27px]">POWERING ENTERPRISES WITH AI-DRIVEN PLATFORMS THAT AUTOMATE PROCESSES, IMPROVE DECISION-MAKING, AND DRIVE OPERATIONAL EFFICIENCY</p>
+          <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[18px] text-start md:text-center text-white uppercase w-full max-w-[780px]">
+            <p className="leading-[1.4] md:leading-[27px]">{t.description}</p>
           </div>
         </div>
       </div>
@@ -189,36 +199,39 @@ function KenvoiceLogo() {
 }
 
 export const WorkSection = () => {
+  const { language } = useLanguage();
+  const t = langData[language.toLowerCase()].work_section;
+
   return (
     <ScrollFadeIn>
       <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8 ">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[64px] items-center justify-center p-6 md:py-30 relative  backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] content-stretch " data-name="Work ">
-          <div className="absolute -left-3 md:left-[20px] -top-3 md:top-[20px]"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
-          <div className="absolute -right-3 md:-right-[-20px] -top-3 md:-top-[-20px] rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
+          <div className="absolute -start-3 md:start-[20px] -top-3 md:top-[20px]"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
+          <div className="absolute -end-3 md:-end-[-20px] -top-3 md:-top-[-20px] rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
           <HeaderArea />
 
           <div className="w-full relative  flex flex-col gap-12 md:gap-[64px] items-center justify-center" data-name="Product Card Container">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-[24px] w-full">
               <ProductCard
                 number="01"
-                title={<KenvoiceLogo />}
-                description="STREAMLINE INVOICING AND FINANCIAL OPERATIONS WITH AUTOMATED BILLING, REAL-TIME TRACKING, AND SMART REPORTING."
+                title={language === "AR" ? <p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">{t.products.kenvoice.title}</p> : <KenvoiceLogo />}
+                description={t.products.kenvoice.description}
                 image={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 195 171'%3E%3Cpath d='${svgPaths.pda184c0}' fill='%23959595'/%3E%3C/svg%3E`}
                 normalImage={normalimg1}
                 hoverImage={productimg1}
               />
               <ProductCard
                 number="02"
-                title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">Smart IDP</p>}
-                description="AUTOMATE DOCUMENT PROCESSING USING AI TO EXTRACT, VALIDATE, AND ORGANISE DATA FROM COMPLEX BUSINESS DOCUMENTS."
+                title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">{t.products.smart_idp.title}</p>}
+                description={t.products.smart_idp.description}
                 normalImage={normalimg2}
                 hoverImage={productimg2}
                 isCustomImage={true}
               />
               <ProductCard
                 number="03"
-                title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">AI BizzApp</p>}
-                description="BUILD AND DEPLOY CUSTOM AI-POWERED BUSINESS APPLICATIONS TO AUTOMATE WORKFLOWS AND IMPROVE PRODUCTIVITY."
+                title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">{t.products.ai_bizzapp.title}</p>}
+                description={t.products.ai_bizzapp.description}
                 normalImage={normalimg3}
                 hoverImage={productimg3}
                 isCustomImage={true}
@@ -248,11 +261,11 @@ export const WorkSection = () => {
     glare-btn
 "
             >
-              VIEW ALL
+              {t.view_all}
             </button>
           </div>
-          <div className="absolute -left-3 md:left-[20px] -bottom-3 md:-bottom-[-20px] -rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
-          <div className="absolute -right-3 md:-right-[-20px] -bottom-3 md:-bottom-[-20px] rotate-180"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
+          <div className="absolute -start-3 md:start-[20px] -bottom-3 md:-bottom-[-20px] -rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
+          <div className="absolute -end-3 md:-end-[-20px] -bottom-3 md:-bottom-[-20px] rotate-180"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
         </div>
       </section>
     </ScrollFadeIn>

@@ -18,8 +18,10 @@ import imgIcon4 from "../../assets/0a5aa46c4dced89013f2a2a5b9b8353e09cd6368.png"
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-0ayib";
 import { FooterSection } from '../components/footer-section';
 import { NewsletterSection } from '../components/newsletter-section';
+import { useLanguage } from '../../context/LanguageContext';
+import { langData } from '../../langData/data';
 
-const HeroSection = () => (
+const HeroSection = ({ t }) => (
   <section className="w-full max-w-[1260px] mx-auto pt-[140px] md:pt-[200px] mb-[80px] md:mb-[110px] px-6 flex flex-col items-center gap-10 text-center relative z-10">
     <motion.div 
       className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit"
@@ -27,7 +29,7 @@ const HeroSection = () => (
       animate={{ opacity: 1, y: 0 }}
     >
       <div className="w-4 h-4 bg-white/40" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
-      <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">careers</span>
+      <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">{t.hero.badge}</span>
     </motion.div>
 
     <motion.h1 
@@ -37,10 +39,10 @@ const HeroSection = () => (
       transition={{ delay: 0.1 }}
     >
       <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[32px] sm:text-[48px] md:text-[60px] text-transparent tracking-tight leading-[1.1]">
-        Build the future.
+        {t.hero.title_p1}
       </span>
       <span className="font-['Playfair_Display'] italic font-normal text-[32px] sm:text-[48px] md:text-[60px] text-white/70 tracking-tight leading-[1.1]">
-        Industrial intelligence.
+        {t.hero.title_italic}
       </span>
     </motion.h1>
 
@@ -50,7 +52,7 @@ const HeroSection = () => (
       animate={{ opacity: 0.7 }}
       transition={{ delay: 0.2 }}
     >
-      JOIN FLOWTECH AND WORK ON REAL-WORLD SYSTEMS POWERED BY DATA, AI, AND ADVANCED MONITORING TECHNOLOGIES ACROSS INDUSTRIES.
+      {t.hero.description}
     </motion.p>
     
        <button className="     relative overflow-hidden
@@ -67,12 +69,12 @@ const HeroSection = () => (
               hover:scale-105 active:scale-95 
               glare-btn
 ">
-                  View Open Roles
+                  {t.hero.cta}
                 </button>
   </section>
 );
 
-const WhyJoinSection = () => (
+const WhyJoinSection = ({ t }) => (
   <section className="w-full max-w-[1260px] mx-auto mb-[80px] md:mb-[150px] px-6 relative z-10">
      <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-6 md:p-10 flex flex-col justify-between">
     <div className="flex flex-col gap-10">
@@ -80,14 +82,14 @@ const WhyJoinSection = () => (
         <div className="flex flex-col gap-6">
            <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit">
             <div className="size-4 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain' }} />
-            <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">The big why</span>
+            <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">{t.why_join.badge}</span>
           </div>
           <h2 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[48px] md:text-[60px] text-transparent leading-tight">
-            Why join Flowtech
+            {t.why_join.title}
           </h2>
         </div>
-        <p className="max-w-[420px] text-white font-['Geist'] text-[16px] uppercase leading-relaxed text-left">
-          We solve complex operational challenges across manufacturing, energy, and infrastructure—creating real impact at scale.
+        <p className="max-w-[420px] text-white font-['Geist'] text-[16px] uppercase leading-relaxed text-start">
+          {t.why_join.description}
         </p>
       </div>
 
@@ -101,21 +103,16 @@ const WhyJoinSection = () => (
               <div className="size-4">
                 <ImageWithFallback src={imgIcon} className="size-full object-contain" />
               </div>
-              <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">Our vision</span>
+              <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">{t.why_join.vision.badge}</span>
             </div>
             <h3 className="font-['Geist'] font-medium text-[22px] text-white leading-tight uppercase">
-              To enable industries with intelligent, connected technologies that drive operational excellence, sustainability, and long-term growth.
+              {t.why_join.vision.text}
             </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mt-10">
-            {[
-              { title: "Real-World Impact", desc: "Work on solutions deployed across critical industries and live environments" },
-              { title: "Cutting-Edge Technology", desc: "Build with AI, analytics, IoT, and advanced monitoring systems" },
-              { title: "Growth & Ownership", desc: "Take ownership of products and grow with high-impact responsibilities" },
-              { title: "Collaborative Culture", desc: "Work with cross-functional teams solving meaningful problems together" }
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col gap-1">
+            {t.why_join.values.map((item, i) => (
+              <div key={i} className="flex flex-col gap-1 text-start">
                 <span className="font-['Geist'] font-semibold text-[16px] text-white uppercase">{item.title}</span>
                 <p className="font-['Geist'] font-normal text-[14px] text-white/70 uppercase">{item.desc}</p>
               </div>
@@ -124,14 +121,14 @@ const WhyJoinSection = () => (
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px] items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px] items-center text-start">
          <div className=" rounded-[7px] p-6 md:p-10 flex h-full flex-col justify-between">
         <div className="flex flex-col gap-6 order-2 md:order-1">
           <h3 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[24px] md:text-[32px] text-transparent tracking-tight">
-            Different Minds, One Vision
+            {t.why_join.section2.title}
           </h3>
           <p className="text-white/70 font-['Geist'] text-[16px] md:text-[20px] leading-relaxed uppercase">
-            Our team brings together engineers, analysts, and problem-solvers building intelligent systems for real-world industries. We value ownership, collaboration, and the belief that impactful solutions come from strong thinking. Here, you’ll learn, build, and grow with people shaping the future of operations.
+            {t.why_join.section2.text}
           </p>
         </div>
         </div>
@@ -140,17 +137,17 @@ const WhyJoinSection = () => (
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px] items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px] items-center text-start">
         <div className="h-[300px] md:h-[500px] rounded-[7px] overflow-hidden border border-white/10">
           <ImageWithFallback src={imgBusinessHandshakeContract1} className="size-full object-cover" />
         </div>
          <div className=" h-full rounded-[7px] p-6 md:p-10 flex flex-col justify-center">
         <div className="flex flex-col gap-6">
           <h3 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[24px] md:text-[32px] text-transparent tracking-tight">
-            Work That Leaves a Mark
+            {t.why_join.section3.title}
           </h3>
           <p className="text-white/70 font-['Geist'] text-[16px] md:text-[20px] leading-relaxed uppercase">
-            We don’t just build technology—we deliver systems that transform how industries operate. You’ll work on solutions you can point to and say, “I helped build that.”
+            {t.why_join.section3.text}
           </p>
         </div>
         </div>
@@ -160,39 +157,34 @@ const WhyJoinSection = () => (
   </section>
 );
 
-const JobOpenings = () => (
+const JobOpenings = ({ t, isRtl }) => (
   <section className="w-full max-w-[1260px] mx-auto mb-16 md:mb-[86px] px-6 relative z-10">
     <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-6 md:p-16 flex flex-col gap-12 md:gap-20">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 text-start">
           <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit">
             <div className="size-4 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain' }} />
-            <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">Careers</span>
+            <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">{t.jobs.badge}</span>
           </div>
           <h2 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] md:text-[60px] text-transparent leading-tight">
-            Job openings
+            {t.jobs.title}
           </h2>
         </div>
-        <p className="max-w-[420px] text-white/70 font-['Geist'] text-[16px] uppercase leading-relaxed text-left">
-          We’re always looking for driven people to build and scale impactful solutions.
+        <p className="max-w-[420px] text-white/70 font-['Geist'] text-[16px] uppercase leading-relaxed text-start">
+          {t.jobs.description}
         </p>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-20">
-        <div className="flex flex-col gap-8 w-full lg:w-[400px]">
+        <div className="flex flex-col gap-8 w-full lg:w-[400px] text-start">
           <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit">
             <svg className="size-4" viewBox="0 0 20 20" fill="white">
               <path d={svgPaths.p2ead8e80} />
             </svg>
-            <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">Benefits</span>
+            <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">{t.jobs.benefits_title}</span>
           </div>
           <div className="flex flex-col gap-4">
-            {[
-              "Competitive Salary + Performance bonus",
-              "Flexible Work Environment & Hours",
-              "High-Impact Industrial Projects",
-              "Continuous Learning & Growth"
-            ].map((benefit, i) => (
+            {t.jobs.benefits_list.map((benefit, i) => (
               <div key={i} className="flex items-center gap-3">
                 <svg className="size-5 shrink-0" viewBox="0 0 20 20" fill="white">
                   <path d={svgPaths.p9ebcb80} />
@@ -205,14 +197,8 @@ const JobOpenings = () => (
           </div>
         </div>
 
-        <div className="flex-1 flex flex-col gap-4">
-          {[
-            { title: "Industrial Solutions Project Manager", loc: "ON-SITE (INDIA) / FULL-TIME / ₹18L – ₹28L" },
-            { title: "AI & Data Engineer", loc: "REMOTE / FULL-TIME / ₹12L – ₹22L" },
-            { title: "Energy Systems Analyst (EMS)", loc: "ON-SITE (UAE) / CONTRACT / ₹15L – ₹25L" },
-            { title: "Software Engineer – Backend", loc: "REMOTE / FULL-TIME / ₹10L – ₹20L" },
-            { title: "Product Designer – Industrial Platforms", loc: "ON-SITE (INDIA) / FULL-TIME / ₹12L – ₹18L" }
-          ].map((job, i) => (
+        <div className="flex-1 flex flex-col gap-4 text-start">
+          {t.jobs.listings.map((job, i) => (
             <div key={i} className="backdrop-blur-[25px] bg-white/10 border border-white/10 rounded-[7px] p-6 group cursor-pointer hover:bg-white/20 transition-colors">
               <div className="flex justify-between items-center">
                 <div className="flex flex-col gap-2">
@@ -223,7 +209,7 @@ const JobOpenings = () => (
                     {job.loc}
                   </p>
                 </div>
-                <div className="size-11 rounded-full bg-white/10 flex items-center justify-center rotate-45 group-hover:bg-white group-hover:text-black transition-colors">
+                <div className={`size-11 rounded-full bg-white/10 flex items-center justify-center ${isRtl ? '-rotate-45' : 'rotate-45'} group-hover:bg-white group-hover:text-black transition-colors`}>
                    <svg className="size-6" viewBox="0 0 44 44" fill="currentColor">
                       <path d={svgPaths.p39f6a080} />
                    </svg>
@@ -286,11 +272,15 @@ const InsightsSection = () => (
 );
 
 export const CareersPage = () => {
+  const { language } = useLanguage();
+  const isRtl = language === 'AR';
+  const t = langData[language.toLowerCase()].careers_page;
+
   return (
-    <div className="w-full relative">
-      <HeroSection />
-      <WhyJoinSection />
-      <JobOpenings />
+    <div className="w-full relative" dir={isRtl ? 'rtl' : 'ltr'}>
+      <HeroSection t={t} />
+      <WhyJoinSection t={t} />
+      <JobOpenings t={t} isRtl={isRtl} />
       {/* <InsightsSection /> */}
       <div className="mb-[86px]">
         <NewsletterSection />
