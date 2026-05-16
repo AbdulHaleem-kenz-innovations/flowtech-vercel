@@ -5,6 +5,13 @@ import { createPortal } from 'react-dom';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useLanguage } from '../../context/LanguageContext';
 import { langData } from '../../langData/data';
+import mesIntro from "../../assets/service-images/MES/1.jpeg"
+import emsIntro from "../../assets/service-images/EMS/1.jpeg"
+import pipelineIntro from "../../assets/service-images/Pipelines/1.jpeg"
+import aiIntro from "../../assets/service-images/Ai-Analytics/1.jpeg"
+import cloudIntro from "../../assets/service-images/Cloud/1.jpeg"
+import sapIntro from "../../assets/service-images/SAP/1.jpeg"
+import oracleIntro from "../../assets/service-images/Oracle/1.jpeg"
 
 import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../../assets/12f90a2a24f7e3315caa72708e6722575a13d825.png";
 
@@ -22,38 +29,38 @@ export const ServicesDropdown = ({ isOpen, onClose, anchorRef }) => {
       id: 8,
       name: "Manufacturing Intelligence",
       href: "/services/manufacturing",
-      image: imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg
+      image: mesIntro
     },
     {
       id: 2,
       name: "Energy Monitoring System",
       href: "/services/energy-monitoring",
-      image: "https://images.unsplash.com/photo-1768839727824-28d6f0dcd1d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbmVyZ3klMjBtb25pdG9yaW5nJTIwcG93ZXIlMjBncmlkJTIwc29sYXIlMjBwYW5lbHxlbnwxfHx8fDE3NzY3NjQ0MDV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: emsIntro
     },
     {
       id: 3,
       name: "Pipeline Safety",
       href: "/services/pipeline-safety",
-      image: "https://images.unsplash.com/photo-1673423601254-776e7a40afe0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvaWwlMjBnYXMlMjBwaXBlbGluZSUyMGluZnJhc3RydWN0dXJlJTIwaW5kdXN0cmlhbCUyMHNlbnNvcnxlbnwxfHx8fDE3NzY3NjQ0MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: pipelineIntro
     },
     {
       id: 5,
       name: "Artificial Intelligence & Analytics",
       href: "/services/ai-analytics",
-      image: "https://images.unsplash.com/photo-1677442135732-00cab8f454e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwZGF0YSUyMGFuYWx5dGljcyUyMHZpc3VhbGl6YXRpb24lMjBtYWNoaW5lJTIwbGVhcm5pbmd8ZW58MXx8fHwxNzc2NzY0NDA2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: aiIntro
     },
     {
       id: 4,
       name: "Cloud & Data Platforms",
       href: "/services/cloud-services",
-      image: "https://images.unsplash.com/photo-1667984390553-7f439e6ae401?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZyUyMHNlcnZlciUyMHJvb20lMjBkYXRhJTIwcGxhdGZvcm18ZW58MXx8fHwxNzc2NzY0NDA1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: cloudIntro
     },
     {
       id: 6,
       name: "SAP Services",
       href: "/services/sap-services",
-      image: "https://images.unsplash.com/photo-1662947774668-e2ca450802df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwc29mdHdhcmUlMjBzYXAlMjBvcmFjbGUlMjBidXNpbmVzcyUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NzY3NjQ0MDV8MA&ixlib=rb-4.1.0&q=80&w=1080"
-    }
+      image: sapIntro
+      }
   ];
 
   const localizedServices = services.map(service => ({
