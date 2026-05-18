@@ -15,6 +15,7 @@ import { langData } from '../../langData/data';
 import aibizzColored from "../../assets/AI-Bizz-App-colour.png";
 import smartIDPColored from "../../assets/Smart-IDP-colour.png";
 import kenvoiceColored from "../../assets/Ken-Voice-colour.png";
+import { Link } from 'react-router';
 
 const images1 = [
   "https://picsum.photos/300/300?grayscale&random=1",
@@ -166,7 +167,7 @@ export const EcosystemSection = () => {
                 {t.description}
               </p>
             </div>
-            <button
+            <Link to="/contact"
               className=" relative overflow-hidden
     flex items-center justify-center
 
@@ -188,7 +189,7 @@ export const EcosystemSection = () => {
 "
             >
               {t.become_partner}
-            </button>
+            </Link>
           </div>
 
           {/* RIGHT ORBIT VISUAL */}

@@ -21,7 +21,7 @@ import { NewsletterSection } from '../components/newsletter-section';
 import { useLanguage } from '../../context/LanguageContext';
 import { langData } from '../../langData/data';
 
-const HeroSection = ({ t }) => (
+const HeroSection = ({ t, onCtaClick }) => (
   <section className="w-full max-w-[1260px] mx-auto pt-[140px] md:pt-[200px] mb-[80px] md:mb-[110px] px-6 flex flex-col items-center gap-10 text-center relative z-10">
     <motion.div 
       className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit"
@@ -55,7 +55,9 @@ const HeroSection = ({ t }) => (
       {t.hero.description}
     </motion.p>
     
-       <button className="     relative overflow-hidden
+       <button
+         onClick={onCtaClick}
+         className="     relative overflow-hidden
               flex items-center justify-center
               w-full sm:w-auto
               px-8 py-4
@@ -68,9 +70,10 @@ const HeroSection = ({ t }) => (
               transition-all duration-300 
               hover:scale-105 active:scale-95 
               glare-btn
-">
-                  {t.hero.cta}
-                </button>
+"
+       >
+         {t.hero.cta}
+       </button>
   </section>
 );
 
@@ -157,8 +160,8 @@ const WhyJoinSection = ({ t }) => (
   </section>
 );
 
-const JobOpenings = ({ t, isRtl }) => (
-  <section className="w-full max-w-[1260px] mx-auto mb-16 md:mb-[86px] px-6 relative z-10">
+const JobOpenings = ({ t, isRtl, sectionRef }) => (
+  <section ref={sectionRef} className="w-full max-w-[1260px] mx-auto mb-16 md:mb-[86px] px-6 relative z-10">
     <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-6 md:p-16 flex flex-col gap-12 md:gap-20">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
         <div className="flex flex-col gap-6 text-start">
@@ -275,12 +278,17 @@ export const CareersPage = () => {
   const { language } = useLanguage();
   const isRtl = language === 'AR';
   const t = langData[language.toLowerCase()].careers_page;
+  const jobsSectionRef = React.useRef(null);
+
+  const scrollToJobs = () => {
+    jobsSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="w-full relative" dir={isRtl ? 'rtl' : 'ltr'}>
-      <HeroSection t={t} />
+      <HeroSection t={t} onCtaClick={scrollToJobs} />
       <WhyJoinSection t={t} />
-      <JobOpenings t={t} isRtl={isRtl} />
+      <JobOpenings t={t} isRtl={isRtl} sectionRef={jobsSectionRef} />
       {/* <InsightsSection /> */}
       <div className="mb-[86px]">
         <NewsletterSection />

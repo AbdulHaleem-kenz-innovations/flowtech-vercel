@@ -22,6 +22,7 @@ import Background from '../components/background';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 import { Scroll } from 'lucide-react';
 import { NewsletterSection } from '../components/newsletter-section';
+import { WorkSection } from '../components/work-section';
 
 const products = [
   {
@@ -59,12 +60,16 @@ const ProductsPage = () => {
     cta: t.list[i].cta
   }));
   return (
-    <div className="w-full flex flex-col items-center" dir={isRtl ? 'rtl' : 'ltr'}>
+    <section className="w-full items-center" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* <Background /> */}
-      <div className="relative z-10 w-full flex flex-col items-center">
+      {/* <Background /> */}
+      <div className='mt-20'>
+       <WorkSection />
+      </div>
+      <div className="w-full flex flex-col items-center">
         {/* Hero Section */}
         <ScrollFadeIn>
-          <section className="pt-[100px] md:pt-[160px] pb-8 md:pb-16 px-6 text-center max-w-[1260px] w-full flex flex-col items-center gap-6 md:gap-10">
+          {/* <section className="pt-[100px] md:pt-[160px] pb-8 md:pb-16 px-6 text-center max-w-[1260px] w-full flex flex-col items-center gap-6 md:gap-10">
             <motion.div
               className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit"
               initial={{ opacity: 0, y: 10 }}
@@ -96,37 +101,36 @@ const ProductsPage = () => {
             >
               {t.hero.description}
             </motion.p>
-          </section>
-
+          </section> */}
 
           {/* Product Grid - Zig Zag Layout */}
-          <section className="px-6 w-full max-w-[1260px] flex flex-col gap-6 md:gap-10 mb-16 md:mb-24">
+          {/* <section className="px-6 w-full max-w-[1260px] flex flex-col gap-6 md:gap-10 mb-16 md:mb-24">
             {localizedProducts.map((product, index) => (
               <ScrollFadeIn key={index}>
                 <div className={`flex flex-col lg:flex-row gap-6 items-stretch group ${(index % 2 !== 0) ? (isRtl ? 'lg:flex-row' : 'lg:flex-row-reverse') : (isRtl ? 'lg:flex-row-reverse' : 'lg:flex-row')}`}>
                   {/* Image Side - Now first in markup for mobile ordering */}
-                  <a
+                          {/* <a
                     href={product.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 rounded-[20px] overflow-hidden min-h-[300px] lg:h-[400px] relative cursor-pointer block group/img"
-                  >
-                    {/* Gradient Overlay for Text Readability */}
-                    <div className="absolute inset-0 backdrop-blur-[15px] bg-white/5 border border-white/10" />
+                  > */}
+                              {/* Gradient Overlay for Text Readability */}
+                              {/* <div className="absolute inset-0 backdrop-blur-[15px] bg-white/5 border border-white/10" /> */}
 
-                    {/* Default Image (Desktop only, hidden on hover) */}
-                    <div className="absolute inset-0 transition-opacity duration-700 opacity-100 group-hover:lg:opacity-0 hidden lg:block">
+                              {/* Default Image (Desktop only, hidden on hover) */}
+                              {/* <div className="absolute inset-0 transition-opacity duration-700 opacity-100 group-hover:lg:opacity-0 hidden lg:block">
                       <ImageWithFallback src={product.defaultImage} className="w-full h-full object-contain" />
-                    </div>
+                    </div> */}
 
-                    {/* Hover Image (Visible on Mobile by default, and Desktop on hover) */}
-                    <div className="absolute inset-0 transition-opacity duration-700 opacity-100 lg:opacity-0 group-hover:lg:opacity-100">
+                              {/* Hover Image (Visible on Mobile by default, and Desktop on hover) */}
+                              {/* <div className="absolute inset-0 transition-opacity duration-700 opacity-100 lg:opacity-0 group-hover:lg:opacity-100">
                       <ImageWithFallback src={product.hoverImage} className="w-full h-full object-contain" />
                     </div>
-                  </a>
+                  </a> */}
 
-                  {/* Description Side */}
-                  <div className="flex-1 backdrop-blur-[15px] bg-white/5 border border-white/10 p-8 md:p-12 rounded-[20px] flex flex-col justify-start gap-6 transition-all duration-500 group-hover:bg-white/[0.08]">
+                          {/* Description Side */}
+                          {/* <div className="flex-1 backdrop-blur-[15px] bg-white/5 border border-white/10 p-8 md:p-12 rounded-[20px] flex flex-col justify-start gap-6 transition-all duration-500 group-hover:bg-white/[0.08]">
                     <div className="flex flex-col gap-2">
                       <span className="font-['Geist'] font-semibold text-[24px] md:text-[32px] text-white tracking-tight">
                         {product.name}
@@ -135,9 +139,9 @@ const ProductsPage = () => {
                     </div>
                     <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white/80 uppercase leading-relaxed tracking-wider">
                       {product.description}
-                    </p>
+                    </p> */}
 
-                    {/* <a
+                              {/* <a
                       href={product.url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -161,11 +165,11 @@ const ProductsPage = () => {
                     >
                       {product.cta}
                     </a> */}
-                  </div>
+                          {/* </div>
                 </div>
               </ScrollFadeIn>
-            ))}
-          </section>
+            ))} */}
+          {/* </section>  */}
 
           {/* Form Section */}
           <section className="w-full max-w-[1260px] px-6 py-12 md:py-12 flex flex-col lg:flex-row gap-12 md:gap-20">
@@ -290,16 +294,16 @@ const ProductsPage = () => {
           <FooterSection />
         </ScrollFadeIn>
 
-        {/* Industries Section */}
-        {/* <RotationCardSection /> */}
+        {/* Industries Section */ }
+  {/* <RotationCardSection /> */ }
 
-        {/* Newsletter Section */}
-        {/* <EarlyAccessSection /> */}
+  {/* Newsletter Section */ }
+  {/* <EarlyAccessSection /> */ }
 
-        {/* Footer */}
-        {/* <FooterSection /> */}
-      </div>
-    </div>
+  {/* Footer */ }
+  {/* <FooterSection /> */ }
+      </div >
+    </section >
   );
 };
 export default ProductsPage;

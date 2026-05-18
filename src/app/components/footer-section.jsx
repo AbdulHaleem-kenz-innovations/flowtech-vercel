@@ -163,7 +163,7 @@ export const FooterSection = () => {
                   <nav className="flex flex-col gap-2">
                     <NavLink label={t.our_team} to="/about" />
                     <NavLink label={nav.insights} to="/insights" />
-                    <NavLink label={nav.connect} to="/contact" />
+                    {/* <NavLink label={nav.connect} to="/contact" /> */}
                   </nav>
                 </div>
 

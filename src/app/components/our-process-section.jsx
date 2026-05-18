@@ -7,6 +7,7 @@ import { PlusIcon } from "lucide-react";
 import clsx from "clsx";
 import { useLanguage } from "../../context/LanguageContext";
 import { langData } from "../../langData/data";
+import { Link } from "react-router";
 
 const Badge = () => {
   const { language } = useLanguage();
@@ -46,7 +47,7 @@ export const OurProcessSection = () => {
               <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white uppercase leading-[1.4] md:leading-[27px]">{t.description}</p>
             </div>
 
-            <button
+            <Link to="/contact"
               className=" relative overflow-hidden
     flex items-center justify-center
 
@@ -68,7 +69,7 @@ export const OurProcessSection = () => {
 "
             >
               {t.cta}
-            </button>
+            </Link>
           </div>
 
           {/* ✅ RIGHT SIDE (SCROLLING CARDS) */}

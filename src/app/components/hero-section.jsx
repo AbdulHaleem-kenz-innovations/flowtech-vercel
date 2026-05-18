@@ -6,6 +6,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 import { useLanguage } from '../../context/LanguageContext';
 import { langData } from '../../langData/data';
+import { Link } from 'react-router';
 
 export const HeroSection = () => {
   const [rotation, setRotation] = useState(290);
@@ -62,7 +63,7 @@ export const HeroSection = () => {
             </p>
 
             {/* CTA */}
-            <button
+            <Link to="/services" 
               className="
                 relative overflow-hidden
                 flex items-center justify-center
@@ -81,7 +82,7 @@ export const HeroSection = () => {
               "
             >
               {currentLangData.cta}
-            </button>
+            </Link>
           </div>
 
           {/* Right Content (Sphere) */}

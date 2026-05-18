@@ -22,6 +22,7 @@ import image11 from "../../assets/Rotation-images/11.jpeg"
 import image12 from "../../assets/Rotation-images/12.jpeg"
 import image13 from "../../assets/Rotation-images/13.jpeg"
 import image14 from "../../assets/Rotation-images/14.jpeg"
+import { Link } from 'react-router';
 
 // import image1 from "../../assets/brand-images/image 1.png";
 // import image2 from "../../assets/brand-images/image 2.png";
@@ -366,7 +367,7 @@ function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 mt-4">
 
           {/* Primary */}
-          <button className="
+          <Link to="/contact" className="
            relative overflow-hidden
   flex items-center justify-center
   w-full sm:w-fit
@@ -383,10 +384,10 @@ function HeroSection() {
 
           ">
             {t.cta_talk}
-          </button>
+          </Link>
 
           {/* Secondary */}
-          <button className="
+          <Link to="/industries" className="
                 relative overflow-hidden
             px-6 md:px-8 py-3 md:py-4
             rounded-full
@@ -398,7 +399,7 @@ function HeroSection() {
   glare-btn
           ">
             {t.cta_solutions}
-          </button>
+          </Link>
 
         </div>
       </div>

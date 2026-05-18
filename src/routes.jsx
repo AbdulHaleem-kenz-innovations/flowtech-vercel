@@ -13,6 +13,7 @@ import BlogDetailPage from "./app/pages/blog-detail-page";
 import ProductsPage from "./app/pages/products-page";
 import ContactPage from "./app/pages/contact-page";
 import Services from "./app/pages/Services";  
+import PartnersDetailPage from "./app/pages/partners-detail-page";
 
 
 const Root = () => {
@@ -77,7 +78,16 @@ export const router = createBrowserRouter([
       },
       {
         path: "products",
-        Component: ProductsPage,
+        children: [
+          {
+            index: true,
+            Component: ProductsPage,
+          },
+          {
+            path: ":slug",
+            Component: PartnersDetailPage,
+          },
+        ],
       },
       {
         path: "contact",

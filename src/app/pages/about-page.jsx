@@ -34,6 +34,10 @@ import img3 from "../../assets/About-page-imgvids/3.jpeg"
 import img4 from "../../assets/About-page-imgvids/4.jpeg"
 import vid1 from "../../assets/About-page-imgvids/video1.mp4"
 import vid2 from "../../assets/About-page-imgvids/video2.mp4"
+import img5 from "../../assets/About-page-imgvids/img-5.jpeg"
+import img6 from "../../assets/About-page-imgvids/img-6.jpeg"
+import vid3 from "../../assets/About-page-imgvids/vid-3.mp4"
+import vid4 from "../../assets/About-page-imgvids/vid-4.mp4"
 
 
 // SVGs
@@ -99,6 +103,7 @@ const AboutPage = () => {
   const { language } = useLanguage();
   const isRtl = language === 'AR';
   const t = langData[language.toLowerCase()].about_page;
+  const teamSectionRef = React.useRef(null);
 
   return (
     <div className="w-full flex flex-col items-center" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -167,7 +172,7 @@ const AboutPage = () => {
                 >
                   {[...Array(2)].map((_, i) => (
                     <React.Fragment key={i}>
-                      {[img1, vid1, img2, vid2, img3, img4].map((item, index) => {
+                      {[img1, vid3, img5, vid4, img6].map((item, index) => {
                         const isVideo = typeof item === 'string' && item.includes('.mp4');
                         return (
                           <div key={`${i}-${index}`} className="w-full h-[420px] rounded-[7px] overflow-hidden">
@@ -235,17 +240,25 @@ const AboutPage = () => {
                   </svg>
                 </div>
                 <h2 className="font-['Geist'] font-medium text-[24px] md:text-[32px] text-white leading-tight max-w-[527px]">
-                  {t.overview.text.split('&').map((part, index, array) => (
-                    <React.Fragment key={index}>
-                      {part}
-                      {index < array.length - 1 && <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[20px] md:text-[23px] leading-none">&</span>}
-                    </React.Fragment>
-                  ))}
+                  {t.overview.text.split('*').map((part, index) => {
+                    const isItalic = index % 2 !== 0;
+                    if (isItalic) {
+                      return (
+                        <span key={index} className="font-['Playfair_Display'] italic font-normal text-white/95">
+                          {part}
+                        </span>
+                      );
+                    }
+                    return <React.Fragment key={index}>{part}</React.Fragment>;
+                  })}
                 </h2>
               </div>
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-10 md:mt-12 relative z-10">
-                <button className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-['Geist'] cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn">
+                <button
+                  onClick={() => teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                  className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-['Geist'] cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn"
+                >
                   {t.overview.cta_team}
                 </button>
                 <span className={`text-white/60 font-['Geist'] text-[16px] md:text-[18px] text-center ${isRtl ? 'sm:text-right' : 'sm:text-left'}`}>Hello@flowtech.com</span>
@@ -307,9 +320,9 @@ const AboutPage = () => {
                   <p className="text-white/70 font-['Geist'] text-[12px] md:text-[14px] uppercase tracking-wide mt-1">{t.support.description}</p>
                 </div>
               </div>
-              <button className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-['Geist'] cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn">
+              <Link to="/contact" className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-['Geist'] cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn">
                 {t.support.cta}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -327,7 +340,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Team Section */}
-      <section className="px-6 w-full max-w-[1310px] mx-auto mb-[80px]">
+      <section ref={teamSectionRef} className="px-6 w-full max-w-[1310px] mx-auto mb-[80px]">
         <ScrollFadeIn>
           <div className="flex flex-col gap-20">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 md:gap-10">
@@ -344,9 +357,9 @@ const AboutPage = () => {
               <p className="max-w-[450px] lg:max-w-[345px] text-white/70 font-['Geist'] text-[14px] md:text-[16px] uppercase leading-relaxed">
                 {t.team.description}
               </p>
-              <button className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-['Geist'] cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn">
+              <Link to="/careers" className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-['Geist'] cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn">
                 {t.team.cta_join}
-              </button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-[30px]">

@@ -282,7 +282,7 @@ export const langData = {
       title_italic: "You’re up next.",
       description: "WE BUILD INTELLIGENT, DATA-DRIVEN SOLUTIONS THAT OPTIMIZE OPERATIONS, IMPROVE SAFETY, AND DRIVE SCALABLE GROWTH ACROSS INDUSTRIES",
       cta_talk: "LET’S TALK",
-      cta_solutions: "SEE OUR SOLUTIONS"
+      cta_solutions: "View Industries"
     },
     newsletter_section: {
       name: "Daniel",
@@ -328,7 +328,7 @@ export const langData = {
         mission_text: "To deliver advanced AI, analytics, and industrial solutions that enhance efficiency, ensure safety, and empower data-driven decision-making across every operation."
       },
       overview: {
-        text: "Flowtech is a technology first solutions company built on one clear principle: Intelligence should always drive operations forward. We deliver real time AI, data, & industrial systems designed to improve efficiency, safety, & performance across modern enterprises.",
+        text: "Flowtech is a *technology first solutions* company built on one clear principle: *Intelligence should always drive operations forward.* We deliver real time AI, data, *&* industrial systems designed to improve efficiency, safety, *&* performance *across modern enterprises.*",
         cta_team: "Meet the team"
       },
       values: {
@@ -416,6 +416,107 @@ export const langData = {
           ],
           outcome: "Enhanced safety, faster response times, and reduced operational risks."
         }
+      }
+    },
+    partners_detail: {
+      kenvoice: {
+        slug: "kenvoice",
+        badge1: "PARTNER PRODUCT",
+        badge2: "AI VOICE AGENT PLATFORM",
+        title: "Kenvoice",
+        description: "AI VOICE AGENTS AUTOMATING CUSTOMER CONVERSATIONS, WORKFLOWS, SUPPORT, AND BUSINESS OPERATIONS SEAMLESSLY.",
+        heroTagline: ["Let AI Handle Your Calls.", "You Focus on Growing."],
+        productOverview: [
+          "KENVOICE IS AN AI-POWERED VOICE AGENT PLATFORM DESIGNED TO AUTOMATE CUSTOMER COMMUNICATIONS THROUGH INTELLIGENT CONVERSATIONAL EXPERIENCES.",
+          "THE PLATFORM ENABLES BUSINESSES TO HANDLE INBOUND AND OUTBOUND CALLS, AUTOMATE SUPPORT WORKFLOWS, INTEGRATE WITH BUSINESS SYSTEMS, AND DELIVER REAL-TIME CUSTOMER ASSISTANCE THROUGH NATURAL AI VOICE INTERACTIONS.",
+        ],
+        keyFeatures: [
+          "AI-POWERED VOICE AGENTS",
+          "SMART CALL ROUTING & TRANSFERS",
+          "KNOWLEDGE BASE MANAGEMENT",
+          "CRM & WEB-HOOK INTEGRATIONS",
+          "AUTOMATED EMAIL & FOLLOW-UP WORKFLOWS",
+          "REAL-TIME CALL ANALYTICS & MONITORING",
+        ],
+        useCases: [
+          "CUSTOMER SUPPORT AUTOMATION",
+          "APPOINTMENT BOOKING & CONFIRMATIONS",
+          "LEAD QUALIFICATION & SALES ASSISTANCE",
+          "ORDER STATUS & CUSTOMER QUERY HANDLING",
+          "TICKET CREATION & ESCALATION MANAGEMENT",
+          "MULTI-LOCATION BUSINESS CALL MANAGEMENT",
+        ],
+        resultsAndImpact: [
+          "KENVOICE HELPS BUSINESSES REDUCE MANUAL SUPPORT OPERATIONS, IMPROVE CUSTOMER RESPONSE TIMES, AND SCALE COMMUNICATIONS THROUGH AI-DRIVEN AUTOMATION.",
+          "THE PLATFORM ENHANCES CUSTOMER EXPERIENCE, IMPROVES OPERATIONAL EFFICIENCY, AND PROVIDES ACTIONABLE INSIGHTS THROUGH REAL-TIME CALL ANALYTICS.",
+        ],
+        conclusion: "KENVOICE COMBINES AI VOICE TECHNOLOGY, BUSINESS AUTOMATION, AND SEAMLESS INTEGRATIONS TO HELP MODERN BUSINESSES DELIVER SMARTER, FASTER, AND MORE EFFICIENT CUSTOMER COMMUNICATION EXPERIENCES.",
+      },
+      "smart-idp": {
+        slug: "smart-idp",
+        badge1: "PARTNER PRODUCT",
+        badge2: "AI DOCUMENT PLATFORM",
+        title: "Smart IDP",
+        description: "AI-powered document automation streamlining workflows, approvals, extraction, and enterprise operations.",
+        heroTagline: ["Automate Documents.", "Focus on Decisions."],
+        productOverview: [
+          "SMARTIDP IS AN AI-POWERED INTELLIGENT DOCUMENT PROCESSING PLATFORM DESIGNED TO AUTOMATE DOCUMENT EXTRACTION, VALIDATION, WORKFLOWS, AND BUSINESS TRANSACTIONS. ",
+          "THE PLATFORM COMBINES OCR, AI, MACHINE LEARNING, AND GENERATIVE AI TO PROCESS STRUCTURED, SEMI-STRUCTURED, AND UNSTRUCTURED DOCUMENTS WITH HIGH ACCURACY AND OPERATIONAL EFFICIENCY",
+        ],
+        keyFeatures: [
+          "AI-POWERED DOCUMENT EXTRACTION & CLASSIFICATION",
+          "OCR, AI & MACHINE LEARNING AUTOMATION",
+          "DOCUMENT VALIDATION & APPROVAL WORKFLOWS",
+          "ERP & CLOUD PLATFORM INTEGRATIONS",
+          "DIGITAL SIGNATURE & DOCUMENT ARCHIVING",
+          "REAL-TIME TRACKING, ANALYTICS & PROCESS AUTOMATION",
+        ],
+        useCases: [
+          "VENDOR INVOICE AUTOMATION",
+          "DOCUMENT MANAGEMENT & ARCHIVING",
+          "BUSINESS TRAVEL & EXPENSE MANAGEMENT",
+          "INBOUND MAIL AUTOMATION",
+          "FINANCIAL DOCUMENT PROCESSING",
+          "HR DOCUMENT & EMPLOYEE RECORD AUTOMATION",
+        ],
+        resultsAndImpact: [
+          "SMARTIDP HELPS BUSINESSES REDUCE MANUAL DOCUMENT PROCESSING, IMPROVE DATA ACCURACY, AND ACCELERATE BUSINESS OPERATIONS THROUGH AI-POWERED AUTOMATION.",
+          "THE PLATFORM ENHANCES OPERATIONAL EFFICIENCY, REDUCES PROCESSING COSTS, IMPROVES COMPLIANCE, AND ENABLES SCALABLE DOCUMENT-CENTRIC WORKFLOWS ACROSS ENTERPRISES. ",
+        ],
+        conclusion: "SMARTIDP COMBINES AI, OCR, AUTOMATION, AND WORKFLOW ORCHESTRATION TO DELIVER A MODERN DOCUMENT PROCESSING PLATFORM THAT STREAMLINES BUSINESS TRANSACTIONS AND DIGITAL OPERATIONS. ",
+      },
+      "ai-bizzapp": {
+        slug: "ai-bizzapp",
+        badge1: "PARTNER PRODUCT",
+        badge2: "AI BUSINESS APPLICATION PLATFORM",
+        title: "AI BizzApp",
+        description: "Integrated ERP platform simplifying finance, operations, inventory, HR, and business management.",
+        heroTagline: ["Build Smarter Apps.", "Deploy Faster."],
+        productOverview: [
+          "AIBIZZAPP IS AN ENTERPRISE BUSINESS MANAGEMENT PLATFORM DESIGNED TO STREAMLINE OPERATIONS, AUTOMATE BUSINESS PROCESSES, AND CENTRALIZE ORGANIZATIONAL WORKFLOWS. ",
+          "THE PLATFORM PROVIDES END-TO-END ERP CAPABILITIES INCLUDING FINANCE, CRM, SALES, INVENTORY, HUMAN RESOURCES, PROJECT MANAGEMENT, ANALYTICS, AND INDUSTRY-SPECIFIC SOLUTIONS. ",
+        ],
+        keyFeatures: [
+          "FINANCIAL MANAGEMENT & ACCOUNTING",
+          "SALES, CRM & CUSTOMER MANAGEMENT",
+          "INVENTORY, PROCUREMENT & PRODUCTION MANAGEMENT ",
+          "HUMAN RESOURCE & PAYROLL MANAGEMENT ",
+          "PROJECT CONTROL & ANALYTICS DASHBOARDS ",
+          "E-INVOICING, RENTAL & INDUSTRY-SPECIFIC MODULES ",
+        ],
+        useCases: [
+          "ENTERPRISE RESOURCE PLANNING & BUSINESS AUTOMATION ",
+          "SALES PIPELINE & CUSTOMER RELATIONSHIP MANAGEMENT",
+          "INVENTORY, WAREHOUSE & SUPPLY CHAIN MANAGEMENT",
+          "HR, PAYROLL & EMPLOYEE LIFECYCLE MANAGEMENT",
+          "PROJECT CONTROL & RESOURCE PLANNING ",
+          "EQUIPMENT RENTAL, CAMP MANAGEMENT & MANPOWER OPERATIONS ",
+        ],
+        resultsAndImpact: [
+          "AIBIZZAPP ENABLES BUSINESSES TO IMPROVE OPERATIONAL EFFICIENCY, REDUCE MANUAL WORKFLOWS, AND GAIN REAL-TIME VISIBILITY ACROSS BUSINESS FUNCTIONS. ",
+          "THE PLATFORM STREAMLINES ENTERPRISE OPERATIONS, ENHANCES DECISION-MAKING THROUGH ANALYTICS, AND PROVIDES SCALABLE BUSINESS MANAGEMENT SOLUTIONS FOR MULTIPLE INDUSTRIES. ",
+        ],
+        conclusion: "AIBIZZAPP DELIVERS A COMPREHENSIVE ERP ECOSYSTEM THAT COMBINES BUSINESS AUTOMATION, OPERATIONAL CONTROL, AND INDUSTRY-SPECIFIC SOLUTIONS TO HELP ORGANIZATIONS SCALE EFFICIENTLY. ",
       }
     },
     products_page: {
@@ -1820,7 +1921,7 @@ export const langData = {
         mission_text: "تقديم حلول متقدمة في الذكاء الاصطناعي والتحليلات والصناعة تعزز الكفاءة وتضمن السلامة وتمكن من اتخاذ القرارات القائمة على البيانات في كل عملية."
       },
       overview: {
-        text: "فلوتيك هي شركة حلول تقنية رائدة تقوم على مبدأ واحد واضح: يجب أن يقود الذكاء العمليات دائماً نحو الأمام. نحن نقدم أنظمة ذكاء اصطناعي وبيانات وأنظمة صناعية في الوقت الفعلي مصممة لتحسين الكفاءة والسلامة والأداء عبر المؤسسات الحديثة.",
+        text: "فلوتيك هي شركة *حلول تقنية رائدة* تقوم على مبدأ واحد واضح: *يجب أن يقود الذكاء العمليات دائماً نحو الأمام.* نحن نقدم أنظمة ذكاء اصطناعي وبيانات *و* أنظمة صناعية في الوقت الفعلي مصممة لتحسين الكفاءة والسلامة *و* الأداء *عبر المؤسسات الحديثة.*",
         cta_team: "تعرف على الفريق"
       },
       values: {
@@ -1908,6 +2009,107 @@ export const langData = {
           ],
           outcome: "تعزيز السلامة، أوقات استجابة أسرع، وتقليل المخاطر التشغيلية."
         }
+      }
+    },
+    partners_detail: {
+      kenvoice: {
+        slug: "kenvoice",
+        badge1: "منتج شريك",
+        badge2: "منصة وكيل صوتي بالذكاء الاصطناعي",
+        title: "كينفويس",
+        description: "وكلاء صوتيون مدعومون بالذكاء الاصطناعي لأتمتة محادثات العملاء وسير العمل والدعم والعمليات التجارية بسلاسة.",
+        heroTagline: ["دع الذكاء الاصطناعي يتعامل مع مكالماتك.", "وركز أنت على النمو."],
+        productOverview: [
+          "كينفويس هي منصة وكيل صوتي مدعومة بالذكاء الاصطناعي مصممة لأتمتة اتصالات العملاء من خلال تجارب حوارية ذكية.",
+          "تمكّن المنصة الشركات من التعامل مع المكالمات الواردة والصادرة، وأتمتة سير عمل الدعم، والتكامل مع أنظمة الأعمال، وتقديم مساعدة للعملاء في الوقت الفعلي من خلال تفاعلات صوتية طبيعية للذكاء الاصطناعي."
+        ],
+        keyFeatures: [
+          "وكلاء صوتيون مدعومون بالذكاء الاصطناعي",
+          "توجيه وتحويل ذكي للمكالمات",
+          "إدارة قاعدة المعرفة",
+          "تكامل مع إدارة علاقات العملاء (CRM) والخطافات البرمجية (Web-hooks)",
+          "أتمتة البريد الإلكتروني وسير عمل المتابعة",
+          "تحليلات ومراقبة المكالمات في الوقت الفعلي"
+        ],
+        useCases: [
+          "أتمتة دعم العملاء",
+          "حجز المواعيد وتأكيدها",
+          "تأهيل العملاء المحتملين والمساعدة في المبيعات",
+          "حالة الطلب والتعامل مع استفسارات العملاء",
+          "إنشاء التذاكر وإدارة التصعيد",
+          "إدارة مكالمات الأعمال متعددة المواقع"
+        ],
+        resultsAndImpact: [
+          "تساعد كينفويس الشركات على تقليل عمليات الدعم اليدوية، وتحسين أوقات استجابة العملاء، وتوسيع نطاق الاتصالات من خلال الأتمتة المدفوعة بالذكاء الاصطناعي.",
+          "تعزز المنصة تجربة العملاء، وتحسن الكفاءة التشغيلية، وتقدم رؤى قابلة للتنفيذ من خلال تحليلات المكالمات في الوقت الفعلي."
+        ],
+        conclusion: "تجمع كينفويس بين تكنولوجيا الصوت المدعومة بالذكاء الاصطناعي وأتمتة الأعمال والتكامل السلس لمساعدة الشركات الحديثة على تقديم تجارب اتصال أسرع وأكثر ذكاءً وكفاءة مع العملاء."
+      },
+      "smart-idp": {
+        slug: "smart-idp",
+        badge1: "منتج شريك",
+        badge2: "منصة مستندات بالذكاء الاصطناعي",
+        title: "سمارت آي دي بي",
+        description: "أتمتة المستندات المدعومة بالذكاء الاصطناعي لتبسيط سير العمل والموافقات والاستخراج وعمليات المؤسسة.",
+        heroTagline: ["أتمتة المستندات.", "التركيز على القرارات."],
+        productOverview: [
+          "سمارت آي دي بي هي منصة معالجة مستندات ذكية مدعومة بالذكاء الاصطناعي مصممة لأتمتة استخراج المستندات والتحقق من صحتها وسير العمل ومعاملات الأعمال.",
+          "تجمع المنصة بين التعرف البصري على الحروف (OCR) والذكاء الاصطناعي والتعلم الآلي والذكاء الاصطناعي التوليدي لمعالجة المستندات المنظمة وشبه المنظمة وغير المنظمة بدقة عالية وكفاءة تشغيلية."
+        ],
+        keyFeatures: [
+          "استخراج وتصنيف المستندات المدعوم بالذكاء الاصطناعي",
+          "أتمتة التعرف البصري على الحروف (OCR) والذكاء الاصطناعي والتعلم الآلي",
+          "سير عمل التحقق والموافقة على المستندات",
+          "تكامل منصات تخطيط موارد المؤسسات (ERP) والسحابة",
+          "التوقيع الرقمي وأرشفة المستندات",
+          "التتبع في الوقت الفعلي والتحليلات وأتمتة العمليات"
+        ],
+        useCases: [
+          "أتمتة فواتير الموردين",
+          "إدارة وأرشفة المستندات",
+          "إدارة السفر ونفقات الأعمال",
+          "أتمتة البريد الوارد",
+          "معالجة المستندات المالية",
+          "أتمتة مستندات الموارد البشرية وسجلات الموظفين"
+        ],
+        resultsAndImpact: [
+          "تساعد سمارت آي دي بي الشركات على تقليل المعالجة اليدوية للمستندات، وتحسين دقة البيانات، وتسريع العمليات التجارية من خلال الأتمتة المدعومة بالذكاء الاصطناعي.",
+          "تعزز المنصة الكفاءة التشغيلية، وتقلل من تكاليف المعالجة، وتحسن الامتثال، وتتيح سير عمل قابل للتطوير يتمحور حول المستندات عبر المؤسسات."
+        ],
+        conclusion: "تجمع سمارت آي دي بي بين الذكاء الاصطناعي والتعرف البصري على الحروف والأتمتة وتنظيم سير العمل لتقديم منصة حديثة لمعالجة المستندات تبسط المعاملات التجارية والعمليات الرقمية."
+      },
+      "ai-bizzapp": {
+        slug: "ai-bizzapp",
+        badge1: "منتج شريك",
+        badge2: "منصة تطبيقات أعمال بالذكاء الاصطناعي",
+        title: "آي بيز آب",
+        description: "منصة متكاملة لتخطيط موارد المؤسسات (ERP) تبسط التمويل والعمليات والمخزون والموارد البشرية وإدارة الأعمال.",
+        heroTagline: ["بناء تطبيقات أكثر ذكاءً.", "نشر أسرع."],
+        productOverview: [
+          "آي بيز آب هي منصة لإدارة أعمال المؤسسات مصممة لتبسيط العمليات وأتمتة العمليات التجارية ومركزة سير العمل التنظيمي.",
+          "توفر المنصة قدرات متكاملة لتخطيط موارد المؤسسات بما في ذلك التمويل، وإدارة علاقات العملاء (CRM)، والمبيعات، والمخزون، والموارد البشرية، وإدارة المشاريع، والتحليلات، والحلول الخاصة بالصناعة."
+        ],
+        keyFeatures: [
+          "الإدارة المالية والمحاسبة",
+          "المبيعات وإدارة علاقات العملاء (CRM) وإدارة العملاء",
+          "إدارة المخزون والمشتريات والإنتاج",
+          "إدارة الموارد البشرية والرواتب",
+          "التحكم في المشاريع ولوحات معلومات التحليلات",
+          "الفوترة الإلكترونية والتأجير والوحدات الخاصة بالصناعة"
+        ],
+        useCases: [
+          "تخطيط موارد المؤسسات وأتمتة الأعمال",
+          "مسار المبيعات وإدارة علاقات العملاء",
+          "إدارة المخزون والمستودعات وسلسلة التوريد",
+          "إدارة الموارد البشرية والرواتب ودورة حياة الموظف",
+          "التحكم في المشاريع وتخطيط الموارد",
+          "تأجير المعدات وإدارة المعسكرات وعمليات القوى العاملة"
+        ],
+        resultsAndImpact: [
+          "تُمكّن آي بيز آب الشركات من تحسين الكفاءة التشغيلية، وتقليل سير العمل اليدوي، والحصول على رؤية في الوقت الفعلي عبر وظائف الأعمال.",
+          "تبسط المنصة عمليات المؤسسة، وتعزز اتخاذ القرار من خلال التحليلات، وتوفر حلول إدارة أعمال قابلة للتطوير لصناعات متعددة."
+        ],
+        conclusion: "تقدم آي بيز آب نظاماً بيئياً شاملاً لتخطيط موارد المؤسسات (ERP) يجمع بين أتمتة الأعمال والرقابة التشغيلية والحلول الخاصة بالصناعة لمساعدة المؤسسات على التوسع بكفاءة."
       }
     },
     products_page: {

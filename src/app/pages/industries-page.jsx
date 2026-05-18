@@ -23,6 +23,7 @@ import imgScreenshot20260420At30329Pm1 from "../../assets/5c7764e5d6b12c3141895d
 // SVGs
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-8em4t";
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { Link } from 'react-router';
 
 const HeroSection = () => {
   const { language } = useLanguage();
@@ -252,7 +253,7 @@ const ContentSection = () => {
       </div>
 
       {/* Connect Button */}
-     <button className="
+     <Link to="/contact" className="
                relative overflow-hidden
     flex items-center justify-center -mt-10
 
@@ -273,7 +274,7 @@ const ContentSection = () => {
     glare-btn
             ">
         {t.cta_contact}
-      </button>
+      </Link>
     </section>
   );
 };

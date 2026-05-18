@@ -22,6 +22,7 @@ import imgVector from "../../assets/7f8f7db1b24bd3f3db04f6c6928d30f25bc8e3f5.png
 import imgVector1 from "../../assets/f9904e1428f23b9e83ae11dd28353beb0bbd42fc.png";
 import imgVector2 from "../../assets/52dbe64cfeea740ffa579ab7ca8d3b864a141982.png";
 import imgVector3 from "../../assets/8359590f5a074bbac33ab163e573171201184996.png";
+import { Link } from "react-router";
 
 
 
@@ -201,7 +202,7 @@ export function TeamSection() {
                 {t.description}
               </p>
             </div>
-            <button
+            <Link to="/careers"
               className=" relative overflow-hidden
     flex items-center justify-center
 
@@ -223,7 +224,7 @@ export function TeamSection() {
 "
             >
               {t.join_us}
-            </button>
+            </Link>
           </div>
           <TeamGallery members={localizedMembers} />
         </div>

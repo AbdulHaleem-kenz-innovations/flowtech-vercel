@@ -7,6 +7,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 import { useLanguage } from '../../context/LanguageContext';
 import { langData } from '../../langData/data';
+import { Link } from 'react-router';
 
 function DivFramerIu4QGMaskGroup() {
   return (
@@ -178,7 +179,7 @@ function CardFact() {
               </div>
             </div>
             <div className="content-stretch flex flex-col items-start relative shrink-0 w-full sm:w-auto">
-              <button
+              <Link to="/contact"
                 className=" relative overflow-hidden
     flex items-center justify-center
 
@@ -200,7 +201,7 @@ function CardFact() {
 "
               >
                 {t.get_started}
-              </button>
+              </Link>
             </div>
           </div>
         </div>

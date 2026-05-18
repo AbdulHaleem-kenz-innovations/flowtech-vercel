@@ -161,7 +161,7 @@ function GetStartedButton() {
   const t = langData[language.toLowerCase()].cta_section;
   return (
 
-    <button
+    <Link to="/contact"
       className=" relative overflow-hidden
     flex items-center justify-center
 
@@ -182,7 +182,7 @@ function GetStartedButton() {
     glare-btn"
     >
       {t.get_started}
-    </button>
+    </Link>
   );
 }
 
@@ -219,6 +219,7 @@ function ContentWrapper() {
 import { useEffect, useRef, useState } from "react";
 
 import ScrollFadeIn from '../../components/ScrollFadeIn';
+import { Link } from 'react-router';
 
 function VrImage() {
   const ref = useRef(null);
