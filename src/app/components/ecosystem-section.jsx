@@ -34,14 +34,14 @@ const images1 = [
 //   "https://picsum.photos/300/300?grayscale&random=6",
 // ];
 const images2 = [
-  kenvoiceColored,
+  // kenvoiceColored,
   smartIDPColored,
   aibizzColored,
 ];
 const images3 = [
   kenvoiceColored,
-  smartIDPColored,
-  aibizzColored,,
+  // smartIDPColored,
+  // aibizzColored,,
 ];
 
 function PlusIcon() {
@@ -149,13 +149,13 @@ export const EcosystemSection = () => {
 
   return (
     <ScrollFadeIn>
-      <section className="w-full flex justify-center  overflow-hidden py-10 md:py-16 px-4 sm:px-6 md:px-8 ">
+      <section className="w-full  flex justify-center overflow-hidden py-10 md:py-16 px-4 sm:px-6 md:px-8 ">
         {/* //py-16 md:py-32 px-4 sm:px-6 md:px-8 */}
 
-        <div className="max-w-[1260px] w-full flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-[120px] items-center relative">
+        <div className="max-w-[1260px] w-full flex flex-col md:flex-row gap-12 md:gap-6 lg:gap-[120px] items-center relative">
 
           {/* LEFT CONTENT */}
-          <div className="w-full lg:w-[500px] flex flex-col gap-6 md:gap-8 text-start items-start">
+          <div className="w-full md:w-[45%] lg:w-[500px] flex flex-col gap-6 md:gap-8 text-start items-start">
 
             <div className="flex flex-col gap-4 md:gap-5 items-start">
               <Badge />
@@ -193,7 +193,7 @@ export const EcosystemSection = () => {
           </div>
 
           {/* RIGHT ORBIT VISUAL */}
-          <div className="w-full h-[320px] sm:h-[520px] md:h-[600px] flex items-center justify-center relative ">
+          <div className="w-full md:w-full h-[320px] sm:h-[520px] md:h-[600px] flex items-center justify-center relative ">
 
             {/* CENTER LOGO */}
             <LogoItem

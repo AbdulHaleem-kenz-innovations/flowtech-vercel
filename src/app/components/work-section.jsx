@@ -239,7 +239,7 @@ function KenvoiceLogo() {
   );
 }
 
-export const  WorkSection = () => {
+export const WorkSection = ({ showButton = false }) => {
   const { language } = useLanguage();
   const t = langData[language.toLowerCase()].work_section;
 
@@ -282,29 +282,31 @@ export const  WorkSection = () => {
 
             {/* Decorative Corner Icons for the Container */}
 
-            <Link to="/products" 
-              className=" relative overflow-hidden
-    flex items-center justify-center
+            {showButton && (
+              <Link to="/products" 
+                className=" relative overflow-hidden
+      flex items-center justify-center
 
-    w-fit mx-auto sm:mx-0   /* 👈 key change */
+      w-fit mx-auto sm:mx-0   /* 👈 key change */
 
-    px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
-    text-[13px] sm:text-[14px] md:text-[16px]
+      px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
+      text-[13px] sm:text-[14px] md:text-[16px]
 
-    rounded-full
-    bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
-    border border-white/20
-    text-white uppercase whitespace-nowrap
-    font-['Geist']
+      rounded-full
+      bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
+      border border-white/20
+      text-white uppercase whitespace-nowrap
+      font-['Geist']
 
-    cursor-pointer
-    transition-all duration-300 
-    hover:scale-105 active:scale-95 
-    glare-btn
-"
-            >
-              {t.view_all}
-            </Link>
+      cursor-pointer
+      transition-all duration-300 
+      hover:scale-105 active:scale-95 
+      glare-btn
+  "
+              >
+                {t.view_all}
+              </Link>
+            )}
           </div>
           <div className="absolute -start-3 md:start-[20px] -bottom-3 md:-bottom-[-20px] -rotate-90"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>
           <div className="absolute -end-3 md:-end-[-20px] -bottom-3 md:-bottom-[-20px] rotate-180"><div className="size-[20px] md:size-[24px] opacity-40 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG2}')`, maskSize: 'contain' }} /></div>

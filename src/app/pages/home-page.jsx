@@ -28,7 +28,7 @@ export const HomePage = () => {
       <IntroducingSection />
       <FeaturesSection />
       <FunFactsSection />
-      <WorkSection />
+      <WorkSection showButton={true} />
       <CtaSection />
       <OurProcessSection />
       <EcosystemSection />
