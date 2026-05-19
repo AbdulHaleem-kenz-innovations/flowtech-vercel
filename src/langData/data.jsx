@@ -64,37 +64,37 @@ export const langData = {
         },
         2: {
           title: "Energy Management System",
-          subtitle: "ENERGY, SUSTAINABILITY",
+          subtitle: "ENERGY MONITORING, ESG TRACKING",
           description: "Real-time energy monitoring that tracks consumption across utilities, equipment, and sites through a centralized dashboard."
         },
         3: {
           title: "Pipeline Safety",
-          subtitle: "REAL-TIME ANALYTICS, DASHBOARDS",
+          subtitle: " FIBER SENSING",
           description: "Turn complex data into actionable insights with advanced analytics, real-time dashboards, and predictive modelling."
         },
         4: {
           title: "Cloud Services",
-          subtitle: "REAL-TIME ANALYTICS, DASHBOARDS",
+          subtitle: "CLOUD INFRASTRUCTURE, SCALABLE PLATFORMS",
           description: "Monitor pipelines in real time using distributed fiber optic sensing to detect leaks, temperature changes, and intrusions across long distances."
         },
         5:{
           title: "Ai Analytics",
-          subtitle:"AI-POWERED ANALYTICS, PREDICTIVE INSIGHTS",
+          subtitle:"PREDICTIVE AI, INTELLIGENT AUTOMATION",
           description:"Transform shop floor operations with real-time data integration, monitoring, and intelligent dashboards. Leverage predictive analytics to reduce downtime, optimise production, and improve quality."
         },
         6:{
           title: "SAP Solutions",
-          subtitle: "SAP SOLUTIONS, INTEGRATIONS",
+          subtitle: "SAP ANALYTICS, ENTERPRISE TRANSFORMATION",
           description: "Real-time energy monitoring that tracks consumption across utilities, equipment, and sites through a centralized dashboard."
         },
         7:{
           title: "Oracle Solutions",
-          subtitle:"REAL-TIME ANALYTICS, DASHBOARDS",
+          subtitle:"ORACLE CLOUD, BUSINESS INTEGRATION",
           description: "Turn complex data into actionable insights with advanced analytics, real-time dashboards, and predictive modelling."
         },
         8:{
           title:"Manufacturing Execution System",
-          subtitle:"",
+          subtitle:"SMART MANUFACTURING, LIVE MONITORING",
           description: "Monitor pipelines in real time using distributed fiber optic sensing to detect leaks, temperature changes, and intrusions across long distances."
         }
       }
@@ -419,6 +419,13 @@ export const langData = {
       }
     },
     partners_detail: {
+      labels: {
+        productOverview: "Product Overview",
+        keyFeatures: "Key Features",
+        useCases: "Use Cases",
+        resultsAndImpact: "Results & Impact",
+        conclusion: "Conclusion"
+      },
       kenvoice: {
         slug: "kenvoice",
         badge1: "PARTNER PRODUCT",
@@ -1652,42 +1659,42 @@ export const langData = {
       services: {
         1: {
           title: "التحليلات",
-          subtitle: "تحليلات الوقت الفعلي، لوحات المعلومات",
+          subtitle: "التحليلات الفورية، لوحات المعلومات",
           description: "حول عمليات المصنع بتكامل البيانات في الوقت الفعلي والمراقبة ولوحات المعلومات الذكية. استفد من التحليلات التنبؤية لتقليل وقت التوقف عن العمل وتحسين الإنتاج وتحسين الجودة."
         },
         2: {
           title: "نظام إدارة الطاقة",
-          subtitle: "الطاقة، الاستدامة",
+          subtitle:"مراقبة الطاقة، تتبع معايير ESG",
           description: "مراقبة الطاقة في الوقت الفعلي التي تتبع الاستهلاك عبر المرافق والمعدات والمواقع من خلال لوحة معلومات مركزية."
         },
         3: {
           title: "سلامة خطوط الأنابيب",
-          subtitle: "تحليلات الوقت الفعلي، لوحات المعلومات",
+          subtitle: "استشعار الألياف الضوئية",
           description: "حول البيانات المعقدة إلى رؤى قابلة للتنفيذ باستخدام التحليلات المتقدمة ولوحات المعلومات في الوقت الفعلي والنمذجة التنبؤية."
         },
         4: {
           title: "خدمات السحابة",
-          subtitle: "تحليلات الوقت الفعلي، لوحات المعلومات",
+          subtitle:  "البنية التحتية السحابية، المنصات القابلة للتوسع",
           description: "راقب خطوط الأنابيب في الوقت الفعلي باستخدام الاستشعار الموزع بالألياف الضوئية للكشف عن التسريبات وتغيرات درجات الحرارة والتطفل عبر المسافات الطويلة."
         },
         5: {
           title: "تحليلات الذكاء الاصطناعي",
-          subtitle: "تحليلات مدعومة بالذكاء الاصطناعي، رؤى تنبؤية",
+          subtitle: "الذكاء الاصطناعي التنبؤي، الأتمتة الذكية",
           description: "حول عمليات المصنع بتكامل البيانات في الوقت الفعلي والمراقبة ولوحات المعلومات الذكية. استفد من التحليلات التنبؤية لتقليل وقت التوقف عن العمل وتحسين الإنتاج وتحسين الجودة."
         },
         6: {
           title: "حلول SAP",
-          subtitle: "حلول SAP، التكاملات",
+          subtitle: "تحليلات SAP، التحول المؤسسي",
           description: "مراقبة الطاقة في الوقت الفعلي التي تتبع الاستهلاك عبر المرافق والمعدات والمواقع من خلال لوحة معلومات مركزية."
         },
         7: {
           title: "حلول Oracle",
-          subtitle: "تحليلات الوقت الفعلي، لوحات المعلومات",
+          subtitle: "سحابة Oracle، تكامل الأعمال",
           description: "حول البيانات المعقدة إلى رؤى قابلة للتنفيذ باستخدام التحليلات المتقدمة ولوحات المعلومات في الوقت الفعلي والنمذجة التنبؤية."
         },
         8: {
           title: "نظام تنفيذ التصنيع",
-          subtitle: "",
+          subtitle: "المراقبة المباشرة",
           description: "راقب خطوط الأنابيب في الوقت الفعلي باستخدام الاستشعار الموزع بالألياف الضوئية للكشف عن التسريبات وتغيرات درجات الحرارة والتطفل عبر المسافات الطويلة."
         }
       }
@@ -2012,6 +2019,13 @@ export const langData = {
       }
     },
     partners_detail: {
+      labels: {
+        productOverview: "نظرة عامة على المنتج",
+        keyFeatures: "الميزات الرئيسية",
+        useCases: "حالات الاستخدام",
+        resultsAndImpact: "النتائج والأثر",
+        conclusion: "الخاتمة"
+      },
       kenvoice: {
         slug: "kenvoice",
         badge1: "منتج شريك",

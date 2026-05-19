@@ -7,18 +7,22 @@ import { NewsletterSection } from '../components/newsletter-section';
 import { useLanguage } from '../../context/LanguageContext';
 import { langData } from '../../langData/data';
 
-import heroImg1 from "../../assets/products-img1.png";
-import heroImg2 from "../../assets/products-img2.png";
-import heroImg3 from "../../assets/products-img3.png";
+import AibizzImg1 from "../../assets/AI-Bizz-App-1.png";
+import AibizzImg2 from "../../assets/Ai-Bizz-App-2.png";
+import kenvoiceImg1 from "../../assets/Kenvoice-1.png";
+import kenvoiceImg2 from "../../assets/Kenvoice-2.png";
+import smartidp1 from "../../assets/Smart-IDP-1.png";
+import smartidp2 from "../../assets/Smart-IDP-2.png";
+
 
 // Badge SVG icons (reused from blog-detail-page)
 import { imgDivFramerYVnZo, imgDivFramerFoIvU } from '../../imports/svg-7bw06';
 import { ContactSection } from '../components/contact-section';
 
 const partnerImages = {
-  kenvoice: { heroImage: heroImg1, secondImage: heroImg1 },
-  "smart-idp": { heroImage: heroImg2, secondImage: heroImg2 },
-  "ai-bizzapp": { heroImage: heroImg3, secondImage: heroImg3 },
+  kenvoice: { heroImage: kenvoiceImg1, secondImage: kenvoiceImg2 },
+  "smart-idp": { heroImage: smartidp1, secondImage: smartidp2 },
+  "ai-bizzapp": { heroImage: AibizzImg1, secondImage: AibizzImg2 },
 };
 
 const PartnersDetailPage = () => {
@@ -28,6 +32,14 @@ const PartnersDetailPage = () => {
   const partnerData = langData[language.toLowerCase()].partners_detail?.[slug];
   const images = partnerImages[slug];
   const partner = partnerData && images ? { ...partnerData, ...images } : null;
+
+  const labels = langData[language.toLowerCase()].partners_detail?.labels || {
+    productOverview: "Product Overview",
+    keyFeatures: "Key Features",
+    useCases: "Use Cases",
+    resultsAndImpact: "Results & Impact",
+    conclusion: "Conclusion"
+  };
 
   // 404-style fallback
   if (!partner) {
@@ -114,9 +126,9 @@ const PartnersDetailPage = () => {
             className="w-full h-full object-cover"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-black/20" />
           {/* Tagline */}
-          <div className="absolute inset-0 flex items-center justify-center px-6">
+          {/* <div className="absolute inset-0 flex items-center justify-center px-6">
             <h2 className="font-['Geist'] font-medium text-[28px] md:text-[52px] text-white text-center leading-tight tracking-[-0.5px] max-w-[800px]">
               {partner.heroTagline.map((line, i) => (
                 <React.Fragment key={i}>
@@ -125,7 +137,7 @@ const PartnersDetailPage = () => {
                 </React.Fragment>
               ))}
             </h2>
-          </div>
+          </div> */}
         </motion.div>
       </section>
 
@@ -140,7 +152,7 @@ const PartnersDetailPage = () => {
           viewport={{ once: true }}
         >
           <h2 className="font-['Geist'] font-medium text-[22px] md:text-[26px] text-white tracking-tight">
-            Product Overview
+            {labels.productOverview}
           </h2>
           <div className="flex flex-col gap-3">
             {partner.productOverview.map((para, i) => (
@@ -162,7 +174,7 @@ const PartnersDetailPage = () => {
           viewport={{ once: true }}
         >
           <h2 className="font-['Geist'] font-medium text-[22px] md:text-[26px] text-white tracking-tight">
-            Key Features
+            {labels.keyFeatures}
           </h2>
           <ol className="flex flex-col gap-[10px]">
             {partner.keyFeatures.map((feat, i) => (
@@ -190,8 +202,8 @@ const PartnersDetailPage = () => {
             className="w-full h-full object-cover"
           />
           {/* same overlay + tagline on second image */}
-          <div className="absolute inset-0 bg-black/55" />
-          <div className="absolute inset-0 flex items-center justify-center px-6">
+          <div className="absolute inset-0 bg-black/20" />
+          {/* <div className="absolute inset-0 flex items-center justify-center px-6">
             <h2 className="font-['Geist'] font-medium text-[28px] md:text-[52px] text-white text-center leading-tight tracking-[-0.5px] max-w-[800px]">
               {partner.heroTagline.map((line, i) => (
                 <React.Fragment key={i}>
@@ -200,7 +212,7 @@ const PartnersDetailPage = () => {
                 </React.Fragment>
               ))}
             </h2>
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Use Cases */}
@@ -211,7 +223,7 @@ const PartnersDetailPage = () => {
           viewport={{ once: true }}
         >
           <h2 className="font-['Geist'] font-medium text-[22px] md:text-[26px] text-white tracking-tight">
-            Use Cases
+            {labels.useCases}
           </h2>
           <ol className="flex flex-col gap-[10px]">
             {partner.useCases.map((uc, i) => (
@@ -233,7 +245,7 @@ const PartnersDetailPage = () => {
           viewport={{ once: true }}
         >
           <h2 className="font-['Geist'] font-medium text-[22px] md:text-[26px] text-white tracking-tight">
-            Results &amp; Impact
+            {labels.resultsAndImpact}
           </h2>
           <div className="flex flex-col gap-3">
             {partner.resultsAndImpact.map((para, i) => (
@@ -255,7 +267,7 @@ const PartnersDetailPage = () => {
           viewport={{ once: true }}
         >
           <h2 className="font-['Geist'] font-medium text-[22px] md:text-[26px] text-white tracking-tight">
-            Conclusion
+            {labels.conclusion}
           </h2>
           <p className="font-['Geist'] font-normal text-[13px] md:text-[14px] text-white/70 uppercase leading-[1.8] tracking-[0.05em]">
             {partner.conclusion}

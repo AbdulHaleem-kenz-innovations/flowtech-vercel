@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { FooterSection } from '../components/footer-section';
 import { NewsletterSection } from '../components/newsletter-section';
@@ -101,9 +101,19 @@ const ValueCard = ({ title, description, icon }) => (
 
 const AboutPage = () => {
   const { language } = useLanguage();
+  const { hash } = useLocation();
   const isRtl = language === 'AR';
   const t = langData[language.toLowerCase()].about_page;
   const teamSectionRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (hash === '#our-team') {
+      const timer = setTimeout(() => {
+        teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [hash]);
 
   return (
     <div className="w-full flex flex-col items-center" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -340,7 +350,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Team Section */}
-      <section ref={teamSectionRef} className="px-6 w-full max-w-[1310px] mx-auto mb-[80px]">
+      <section ref={teamSectionRef} id="our-team" className="px-6 w-full max-w-[1310px] mx-auto mb-[80px]">
         <ScrollFadeIn>
           <div className="flex flex-col gap-20">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 md:gap-10">

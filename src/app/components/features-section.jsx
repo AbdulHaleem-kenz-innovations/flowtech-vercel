@@ -164,19 +164,15 @@ function Image({ src, children }) {
 function TitleWrapCard({ title, subtitle }) {
   return (
     <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.15)] relative rounded-[7px] shrink-0 w-full" data-name="Title Wrap">
-      <div className="flex flex-row items-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col sm:flex-row gap-2 sm:gap-[26.18px] items-start sm:items-center px-[20px] py-[15px] relative size-full">
-          <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-full sm:w-[252px]">
-            <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[18px] md:text-[20px] text-white whitespace-nowrap">
-              <p className="leading-[1.2]">{title}</p>
-            </div>
+      <div className="flex flex-row items-center overflow-clip rounded-[inherit] w-full">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-between items-start sm:items-center px-[20px] py-[15px] w-full">
+          <div className="flex flex-col font-['Geist'] font-medium text-[18px] md:text-[20px] text-white shrink-0 sm:w-[240px] max-w-full">
+            <p className="leading-[1.2]">{title}</p>
           </div>
-          <div className="flex-[1_0_0] md:h-[22.41px] min-w-px opacity-70 relative w-full">
-            <div className="md:-translate-y-1/2 md:absolute content-stretch flex flex-col items-start start-0 end-[0.48px] md:top-[calc(50%-0.7px)]">
-              <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white uppercase whitespace-nowrap">
-                <p className="leading-[1.2] md:leading-[22.4px]">{subtitle}</p>
-              </div>
-            </div>
+          <div className="opacity-70 text-start sm:text-end w-full sm:w-auto flex-[1_0_0] min-h-[36px] sm:min-h-[48px] flex items-center justify-start sm:justify-end">
+            <p className="font-['Geist'] font-normal text-[12px] md:text-[14px] text-white uppercase leading-[1.2] md:leading-[1.4] w-full">
+              {subtitle}
+            </p>
           </div>
         </div>
       </div>

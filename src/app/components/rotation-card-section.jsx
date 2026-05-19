@@ -388,7 +388,7 @@ function HeroSection() {
 
           {/* Secondary */}
           <Link to="/industries" className="
-                relative overflow-hidden
+                relative overflow-hidden 
             px-6 md:px-8 py-3 md:py-4
             rounded-full
             text-blue-700 text-sm font-medium uppercase tracking-wide
