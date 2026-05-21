@@ -131,9 +131,9 @@ function CardFact() {
   const { language } = useLanguage();
   const t = langData[language.toLowerCase()].fun_facts;
   return (
-    <div className="bg-white h-auto md:h-full max-w-[436px] relative rounded-[7px] shrink-0 w-full sm:w-[436px] " data-name="Card 02">
+    <div className="bg-white h-auto md:h-full max-w-[436px] relative rounded-[7px] shrink-0 w-full" data-name="Card 02">
       <div className="flex flex-col items-center max-w-[inherit] overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col gap-12 md:gap-[194px] items-center max-w-[inherit] p-[25px] relative size-full min-h-[400px] md:min-h-0">
+        <div className="content-stretch flex flex-col gap-12 justify-between items-center max-w-[inherit] p-[25px] relative size-full min-h-[400px] md:min-h-0">
           {/* Background Shape */}
           <div className="absolute content-stretch flex flex-col items-start justify-center start-0 opacity-80 overflow-clip top-0 w-full">
             <div className="h-[600px] md:h-[1000px] relative shrink-0 w-full">
@@ -158,7 +158,7 @@ function CardFact() {
             <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full">
               <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-full">
                 <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-                  <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[20px] md:text-[23px] text-black tracking-[-0.4px] w-full" style={{ backgroundImage: "linear-gradient(-85.5893deg, rgba(0, 0, 0, 0.4) 5%, rgb(0, 0, 0) 50%)" }}>
+                  <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[20px] lg:text-[20px] xl:text-[23px] text-black tracking-[-0.4px] w-full" style={{ backgroundImage: "linear-gradient(-85.5893deg, rgba(0, 0, 0, 0.4) 5%, rgb(0, 0, 0) 50%)" }}>
                     <p className="text-black">
                       <span className="leading-[1.2]">{t.fact_text_p1}</span>
                       <span className="font-['Playfair_Display'] font-normal italic leading-[1.2] text-black tracking-[-0.4px]">{t.fact_text_italic1}</span>

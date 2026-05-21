@@ -172,7 +172,7 @@ const ProductsPage = () => {
           {/* </section>  */}
 
           {/* Form Section */}
-          <section className="w-full max-w-[1260px] px-6 py-12 md:py-12 flex flex-col lg:flex-row gap-12 md:gap-20">
+          <section className="w-full max-w-[1260px] px-6 py-12 md:py-12 sm:px-9 flex flex-col lg:flex-row gap-12 md:gap-20">
             <div className="flex-1 flex flex-col gap-8 md:gap-12">
               <div className="flex flex-col gap-6">
                 <h2 className="flex flex-col">

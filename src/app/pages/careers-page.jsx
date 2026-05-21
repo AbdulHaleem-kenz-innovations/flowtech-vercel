@@ -78,7 +78,7 @@ const HeroSection = ({ t, onCtaClick }) => (
 );
 
 const WhyJoinSection = ({ t }) => (
-  <section className="w-full max-w-[1260px] mx-auto mb-[80px] md:mb-[150px] px-6 relative z-10">
+  <section className="w-full max-w-[1310px] sm:w-[98%] mx-auto mb-[80px] md:mb-[150px] px-6 relative z-10">
      <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-6 md:p-10 flex flex-col justify-between">
     <div className="flex flex-col gap-10">
       <div className="flex flex-col md:flex-row justify-between items-end gap-10">
@@ -161,7 +161,7 @@ const WhyJoinSection = ({ t }) => (
 );
 
 const JobOpenings = ({ t, isRtl, sectionRef }) => (
-  <section ref={sectionRef} className="w-full max-w-[1260px] mx-auto mb-16 md:mb-[86px] px-6 relative z-10">
+  <section ref={sectionRef} className="w-full sm:w-[98%] max-w-[1310px] mx-auto mb-16 md:mb-[86px] px-6 relative z-10">
     <div className="backdrop-blur-[25px] bg-white/5 border border-white/10 rounded-[7px] p-6 md:p-16 flex flex-col gap-12 md:gap-20">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
         <div className="flex flex-col gap-6 text-start">

@@ -238,13 +238,13 @@ function VrImage() {
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  // 👇 Scroll reveal
+  // 👇 Scroll reveal - trigger when half of this component is in viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setVisible(true);
       },
-      { threshold: 0.4 }
+      { threshold: 0.5 }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -283,9 +283,15 @@ function VrImage() {
 
         <ContentWrapper />
 
-        {/* Image */}
+        {/* Image wrapper with scroll-triggered slide-in from right & scale-up animation */}
         <div
-          className="aspect-[600/641] w-full lg:w-[600px] relative overflow-hidden rounded-[7px]"
+          className={`
+            aspect-[600/641] w-full lg:w-[600px] relative overflow-hidden rounded-[7px]
+            transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] origin-right
+            ${visible 
+              ? "opacity-100 translate-x-0 scale-100" 
+              : "opacity-0 translate-x-[100px] md:translate-x-[150px] scale-[0.8]"}
+          `}
           onClick={() => {
             if (isMobile) {
               setMobileHover((prev) => !prev);

@@ -9,7 +9,7 @@ export const NewsletterSection = () => {
   const t = langData[language.toLowerCase()].newsletter_section;
 
   return (
-    <section className="w-full max-w-[1260px] px-6 py-10 md:py-16 flex flex-col lg:flex-row gap-20 items-center mx-auto" dir={isRtl ? 'rtl' : 'ltr'}>
+    <section className="w-full max-w-[1260px] sm:w-[98%] px-6 py-10 md:py-16 flex flex-col lg:flex-row gap-20 items-center mx-auto" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="flex-1 relative">
          <div className="aspect-[364/470] max-w-[364px] rounded-[7px] overflow-hidden relative group">
            <ImageWithFallback src={imgImage} className="w-full h-full object-cover" />

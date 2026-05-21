@@ -61,7 +61,7 @@ function H2FramerText() {
   const t = langData[language.toLowerCase()].introducing;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="h2.framer-text">
-      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1485deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
+      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1485deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
         <p className="leading-[1.1]">{t.heading_p1}</p>
       </div>
     </div>
@@ -81,7 +81,7 @@ function H2FramerText1() {
   const t = langData[language.toLowerCase()].introducing;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="h2.framer-text">
-      <div className="bg-clip-text flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1425deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
+      <div className="bg-clip-text flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1425deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
         <p className="leading-[1.1]">{t.heading_p2}</p>
       </div>
     </div>
@@ -116,7 +116,7 @@ function TitleWrap() {
 
 function ImageAvatar({ src }) {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative rounded-[6px] shrink-0 size-[45px] md:size-[55px]" data-name="Image">
+    <div className="content-stretch flex flex-col items-start justify-center relative rounded-[6px] shrink-0 size-[45px] md:size-[55px] lg:size-[45px] xl:size-[55px]" data-name="Image">
       <div className="flex-[1_0_0] min-h-px relative rounded-[6px] w-full">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[6px]">
           <ImageWithFallback alt="" className="absolute left-0 max-w-none size-full top-0 object-cover" src={src} />
@@ -142,7 +142,7 @@ function BecomeCustomer1001AndStartWinningWithUs() {
   const t = langData[language.toLowerCase()].introducing;
   return (
     <div className="content-stretch flex items-center justify-center opacity-70 relative shrink-0" data-name="Become customer #1,001 and start winning with us">
-      <div className="flex flex-col font-['Geist'] font-normal md:h-[40px] justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white uppercase w-[180px] md:w-[214.76px]">
+      <div className="flex flex-col font-['Geist'] font-normal md:h-[40px] justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] lg:text-[12px] xl:text-[14px] text-white uppercase w-[180px] md:w-[214.76px] lg:w-[170px] xl:w-[214.76px]">
         <p className="leading-[1.2] md:leading-[19.6px]">{t.trust_text}</p>
       </div>
     </div>
@@ -163,7 +163,7 @@ function DesignYourWayWithOptunsSmartToolsAndFullElementControl() {
   const t = langData[language.toLowerCase()].introducing;
   return (
     <div className="content-stretch flex flex-col items-start opacity-70 relative shrink-0 w-full" data-name="Design your way with Optun’s smart tools and full element control">
-      <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[16px] md:text-[18px] text-white uppercase w-full">
+      <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[16px] md:text-[18px] lg:text-[16px] xl:text-[18px] text-white uppercase w-full">
         <p className="leading-[24px] md:leading-[27px]">{t.description}</p>
       </div>
     </div>
@@ -181,7 +181,7 @@ function TextWrap() {
 
 function ContentWrapper() {
   return (
-    <div className="content-stretch flex flex-col gap-[40px] md:gap-[50px] items-start justify-center max-w-[500px] overflow-clip md:pe-[23px] relative shrink-0 w-full md:w-[500px]" data-name="Content Wrapper">
+    <div className="content-stretch flex flex-col gap-[40px] md:gap-[50px] items-start justify-center max-w-[500px] overflow-clip md:pe-[23px] relative shrink-0 w-full md:w-[500px] lg:w-[400px] xl:w-[500px]" data-name="Content Wrapper">
       <TitleWrap />
       <TextWrap />
     </div>
@@ -303,7 +303,7 @@ function ImageWrapper() {
 
           /* desktop exact */
           md:absolute md:h-full
-          md:start-0 md:end-[443px]
+          md:start-0 md:w-[239px]
           md:top-62 md:-translate-y-1/2
           md:z-10
         "
@@ -357,7 +357,7 @@ export const IntroducingSection = () => {
     <ScrollFadeIn>
     <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8">
       <div className="max-w-[1260px] w-full flex items-center justify-center relative" data-name="Introducing Section">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-[78px] items-center lg:items-start max-w-[1260px] relative w-full">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 xl:gap-[78px] items-center lg:items-start max-w-[1260px] relative w-full">
           <ContentWrapper />
           <ImageWrapper />
         </div>

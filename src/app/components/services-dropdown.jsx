@@ -12,10 +12,11 @@ import aiIntro from "../../assets/service-images/Ai-Analytics/1.jpeg"
 import cloudIntro from "../../assets/service-images/Cloud/1.jpeg"
 import sapIntro from "../../assets/service-images/SAP/1.jpeg"
 import oracleIntro from "../../assets/service-images/Oracle/1.jpeg"
+import analyticsIntro from "../../assets/service-images/Analytics/1.jpeg"
 
 import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../../assets/12f90a2a24f7e3315caa72708e6722575a13d825.png";
 
-export const ServicesDropdown = ({ isOpen, onClose, anchorRef }) => {
+export const ServicesDropdown = ({ isOpen, onClose, onOpen, anchorRef }) => {
   const [hoveredIndex, setHoveredIndex] = useState(0);
   const [position, setPosition] = useState({ top: 0 });
   const { language } = useLanguage();
@@ -25,6 +26,12 @@ export const ServicesDropdown = ({ isOpen, onClose, anchorRef }) => {
   const services_t = langData[currentLang]?.features?.services || {};
 
   const services = [
+    {
+      id: 1,
+      name: "Analytics",
+      href: "/services/analytics",
+      image: analyticsIntro
+    },
     {
       id: 8,
       name: "Manufacturing Intelligence",
@@ -60,7 +67,13 @@ export const ServicesDropdown = ({ isOpen, onClose, anchorRef }) => {
       name: "SAP Services",
       href: "/services/sap-services",
       image: sapIntro
-      }
+      },
+       {
+      id: 7,
+      name: "Oracle Solutions",
+      href: "/services/oracle-services",
+      image: oracleIntro
+    }
   ];
 
   const localizedServices = services.map(service => ({
@@ -99,10 +112,11 @@ export const ServicesDropdown = ({ isOpen, onClose, anchorRef }) => {
         transition: 'opacity 0.25s cubic-bezier(0.23, 1, 0.32, 1), transform 0.25s cubic-bezier(0.23, 1, 0.32, 1)',
         transform: isOpen ? 'translateX(-50%) translateY(0) scale(1)' : 'translateX(-50%) translateY(-12px) scale(0.97)',
       }}
+      onMouseEnter={onOpen}
       onMouseLeave={onClose}
       dir={isRtl ? 'rtl' : 'ltr'}
     >
-      <div className={`backdrop-blur-[25px] md:bg-white/5 bg-black/40 border border-white/20 rounded-[20px] w-[640px] h-[400px] overflow-hidden flex shadow-2xl ${isRtl ? 'flex-row-reverse' : ''}`}>
+      <div className={`backdrop-blur-[25px] md:bg-white/5 bg-black/40 border border-white/20 rounded-[20px] w-[790px] h-[400px] overflow-hidden flex shadow-2xl ${isRtl ? 'flex-row-reverse' : ''}`}>
         
         {/* Services List */}
         <div className={`flex-1 p-8 flex flex-col justify-center gap-4 ${isRtl ? 'text-right' : 'text-left'}`}>
@@ -121,7 +135,7 @@ export const ServicesDropdown = ({ isOpen, onClose, anchorRef }) => {
         </div>
 
         {/* Dynamic Image */}
-        <div className="w-[300px] m-4 relative overflow-hidden rounded-[15px]">
+        <div className="w-[400px] h-[350px] m-4 relative overflow-hidden rounded-[15px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={hoveredIndex}

@@ -12,6 +12,7 @@ import { EcosystemSection } from '../components/ecosystem-section';
 import { TestimonialSection } from '../components/testimonial-section';
 import { HeroTestimonialSection } from '../components/hero-testimonial-section';
 import { TeamSection } from '../components/team-section';
+import { TeamSection2 } from '../components/team-section2';
 import { BlogSection } from '../components/blog-section';
 import { ContactSection } from '../components/contact-section';
 import { RotationCardSection } from '../components/rotation-card-section';
@@ -28,13 +29,15 @@ export const HomePage = () => {
       <IntroducingSection />
       <FeaturesSection />
       <FunFactsSection />
-      <WorkSection showButton={true} />
+      {/* <WorkSection showButton={true} /> */}
+      <WorkSection />
       <CtaSection />
       <OurProcessSection />
       <EcosystemSection />
       <TestimonialSection />
       <HeroTestimonialSection />
-      <TeamSection />
+       <div className="block md:hidden"><TeamSection2 /></div>
+       <div className="hidden md:block"><TeamSection /></div>
       <BlogSection />
       <ContactSection />
       <RotationCardSection />

@@ -108,10 +108,10 @@ function HeadingWrap() {
   const t = langData[language.toLowerCase()].contact_section;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.01px] relative shrink-0 w-full" data-name="Heading Wrap">
-      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-88.8553deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>
+      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-88.8553deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>
         <p>{t.title_p1}</p>
       </div>
-      <div className="flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-white/70 tracking-[-0.4px] whitespace-nowrap">
+      <div className="flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-white/70 tracking-[-0.4px] whitespace-nowrap">
         <p>{t.title_italic}</p>
       </div>
     </div>
@@ -129,7 +129,7 @@ function TItleWrap() {
     <div className="content-stretch flex flex-col gap-8 md:gap-[50px] items-center justify-center overflow-clip relative shrink-0 w-full" data-name="TItle Wrap">
       <HeadingWrap />
       <Line />
-      <p className="font-['Geist'] font-normal text-[14px] md:text-[18px] text-white/70 uppercase leading-[1.4] md:leading-[27px] w-full">
+      <p className="font-['Geist'] font-normal text-[14px] md:text-[18px] lg:text-[16px] xl:text-[18px] text-white/70 uppercase leading-[1.4] md:leading-[27px] w-full">
         {t.description}
       </p>
     </div>
@@ -138,7 +138,7 @@ function TItleWrap() {
 
 function Feature({ icon, title, description }) {
   return (
-    <div className="flex flex-col gap-4 items-start w-full sm:w-[200px]">
+    <div className="flex flex-col gap-4 items-start w-full sm:w-[200px] lg:w-[180px] xl:w-[200px]">
       <div className="flex gap-2 items-center">
         <div className="size-[18px] flex items-center justify-center">
           {typeof icon === 'string' ? <ImageWithFallback src={icon} alt="" className="size-full object-contain" /> : icon}
@@ -156,7 +156,7 @@ function Lists() {
   const { language } = useLanguage();
   const t = langData[language.toLowerCase()].contact_section;
   return (
-    <div className="content-stretch flex flex-col sm:flex-row gap-8 sm:gap-[45px] items-start overflow-clip relative shrink-0 w-full" data-name="Lists">
+    <div className="content-stretch flex flex-col sm:flex-row gap-8 sm:gap-[45px] lg:gap-6 xl:gap-[45px] items-start overflow-clip relative shrink-0 w-full" data-name="Lists">
       <Feature
         icon={<ImageWithFallback src={img1S32PRd3OwUHmTftJi70Y6SFfcMPng} alt="" className="size-full object-contain" />}
         title={t.feature1_title}
@@ -173,7 +173,7 @@ function Lists() {
 
 function ContentWrapper() {
   return (
-    <div className="content-stretch flex flex-col gap-10 md:gap-[40px] items-start justify-center max-w-[480px] overflow-clip relative shrink-0 w-full md:w-[480px]" data-name="Content Wrapper">
+    <div className="content-stretch flex flex-col gap-10 md:gap-[40px] items-start justify-center max-w-[480px] overflow-clip relative shrink-0 w-full md:w-[480px] lg:w-[400px] xl:w-[480px]" data-name="Content Wrapper">
       <Group />
       <TItleWrap />
       <Lists />
@@ -185,7 +185,7 @@ function FormWrapper() {
   const { language } = useLanguage();
   const t = langData[language.toLowerCase()].contact_section;
   return (
-    <div className="bg-white content-stretch flex flex-col gap-8 md:gap-[27px] items-start justify-center max-w-[500px] overflow-clip pb-10 md:pb-[45px] pt-10 md:pt-[30px] px-6 md:px-[30px] relative rounded-[7px] shrink-0 w-full md:w-[500px]" data-name="Form Wrapper">
+    <div className="bg-white content-stretch flex flex-col gap-8 md:gap-[27px] items-start justify-center max-w-[500px] overflow-clip pb-10 md:pb-[45px] pt-10 md:pt-[30px] px-6 md:px-[30px] relative rounded-[7px] shrink-0 w-full md:w-[500px] lg:w-[420px] xl:w-[500px]" data-name="Form Wrapper">
       <div className="flex flex-col gap-4 items-start w-full">
         <div className="bg-[#2df9a7]/15 px-3 py-1.5 rounded-full flex gap-2 items-center">
           <div className="size-[12px] flex items-center justify-center">
@@ -249,7 +249,7 @@ function FormWrapper() {
 
 export function Container() {
   return (
-    <div className="bg-gradient-to-b backdrop-blur-[25px] content-stretch flex flex-col lg:flex-row from-[#110fdf] to-blue-900/50 items-center justify-between max-w-[1260px] overflow-hidden px-8 md:px-[60px] py-16 md:py-[100px] relative rounded-2xl md:rounded-[7px] w-full gap-16 md:gap-20" data-name="Container">
+    <div className="bg-gradient-to-b backdrop-blur-[25px] content-stretch flex flex-col lg:flex-row from-[#110fdf] to-blue-900/50 items-center justify-between max-w-[1260px] overflow-hidden px-8 lg:px-8 xl:px-[60px] py-16 md:py-[100px] relative rounded-2xl md:rounded-[7px] w-full gap-16 lg:gap-8 xl:gap-20" data-name="Container">
       <DivFramerIu4QGMaskGroup />
       <DivFramerIu4QGMaskGroup1 />
       <Shape />

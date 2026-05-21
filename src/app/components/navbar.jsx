@@ -10,8 +10,11 @@ import { langData } from '../../langData/data';
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isAnchorHovered, setIsAnchorHovered] = useState(false);
+  const [isDropdownHovered, setIsDropdownHovered] = useState(false);
   const { pathname } = useLocation();
   const servicesAnchorRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
   const { language, toggleLanguage } = useLanguage();
   
   const currentLangData = langData[language.toLowerCase()].navbar;
@@ -27,6 +30,58 @@ export const Navbar = () => {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (isAnchorHovered || isDropdownHovered) {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+        closeTimeoutRef.current = null;
+      }
+      setIsServicesOpen(true);
+      return;
+    }
+
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+      closeTimeoutRef.current = null;
+    }, 150);
+
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, [isAnchorHovered, isDropdownHovered]);
+
+  const handleAnchorEnter = () => {
+    setIsAnchorHovered(true);
+  };
+
+  const handleAnchorLeave = () => {
+    setIsAnchorHovered(false);
+  };
+
+  const handleDropdownEnter = () => {
+    setIsDropdownHovered(true);
+  };
+
+  const handleDropdownLeave = () => {
+    setIsDropdownHovered(false);
+  };
+
+  const closeServices = () => {
+    setIsAnchorHovered(false);
+    setIsDropdownHovered(false);
+    setIsServicesOpen(false);
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
+
   const isActive = (path) => {
     if (path === '/') return pathname === '/';
     return pathname.startsWith(path);
@@ -34,7 +89,7 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed top-4 md:top-5 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] md:w-[calc(100%-64px)] max-w-[1260px] z-50">
-      <div className="backdrop-blur-[25px] bg-black/40 md:bg-white/5  rounded-2xl md:rounded-full px-6 md:px-4 py-3 md:py-3 flex items-center justify-between relative isolate">
+      <div className="backdrop-blur-[25px] bg-black/80 md:bg-black/50  rounded-2xl md:rounded-full px-6 md:px-4 py-3 md:py-3 flex items-center justify-between relative isolate">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
         <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" viewBox="0 0 130 20" fill="none">
@@ -65,29 +120,29 @@ export const Navbar = () => {
           <Link to="/" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/') ? 'text-white' : 'text-white/75 hover:text-white'}`}>{currentLangData.home}</Link>
           <Link to="/about" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/about') ? 'text-white' : 'text-white/75 hover:text-white'}`}>{currentLangData.about}</Link>
             {/* Services trigger — attach the ref here */}
-          <div
-            ref={servicesAnchorRef}                        // ← attach ref
-            className="flex items-center gap-1 group cursor-pointer relative"
-            onMouseEnter={() => setIsServicesOpen(true)}
-            onMouseLeave={() => setIsServicesOpen(false)}
-          >
+          <div ref={servicesAnchorRef} className="flex items-center gap-1 group relative">
             <Link
               to="/services"
               className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/services') ? 'text-white' : 'text-white/75 group-hover:text-white'}`}
+              onMouseEnter={handleAnchorEnter}
+              onMouseLeave={handleAnchorLeave}
             >
-              {currentLangData.services}
+              <span className="inline-flex items-center gap-1">
+                <span>{currentLangData.services}</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                  className={`opacity-70 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''} ${isActive('/services') ? 'opacity-100' : ''}`}
+                >
+                  <path d="M4 6L8 10L12 6" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33" />
+                </svg>
+              </span>
             </Link>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-              className={`opacity-70 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''} ${isActive('/services') ? 'opacity-100' : ''}`}
-            >
-              <path d="M4 6L8 10L12 6" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33" />
-            </svg>
 
             {/* Dropdown is now portalled to document.body — pass anchorRef */}
             <ServicesDropdown
               isOpen={isServicesOpen}
-              onClose={() => setIsServicesOpen(false)}
-              anchorRef={servicesAnchorRef}               // ← pass ref
+              onClose={handleDropdownLeave}
+              onOpen={handleDropdownEnter}
+              anchorRef={servicesAnchorRef}
             />
           </div>
           <Link to="/industries" className={`font-['Geist'] font-semibold text-[16px] md:text-[18px] transition-colors ${isActive('/industries') ? 'text-white' : 'text-white/75 hover:text-white'}`}>{currentLangData.industries}</Link>

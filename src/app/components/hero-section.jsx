@@ -101,7 +101,7 @@ export const HeroSection = () => {
         </div>
 
         {/* Floating Elements (Bottom Sphere/Spear) */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none md:-mt-30 sm:mt-20">
           <div className="relative max-w-[1260px] mx-auto h-full w-full">
             <div
               className="

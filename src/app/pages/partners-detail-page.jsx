@@ -112,7 +112,7 @@ const PartnersDetailPage = () => {
       </section>
 
       {/* ── HERO IMAGE with tagline overlay ────────────────────── */}
-      <section className="px-6 w-full max-w-[1260px] mb-20">
+      <section className="px-6 w-full max-w-[1260px] sm:w-[98%] mb-20">
         <motion.div
           className="relative rounded-[7px] overflow-hidden"
           style={{ aspectRatio: '16/9' }}
@@ -142,7 +142,7 @@ const PartnersDetailPage = () => {
       </section>
 
       {/* ── CONTENT AREA ──────────────────────────────────────── */}
-      <section className="px-6 w-full max-w-[850px] flex flex-col gap-14 mb-32">
+      <section className="px-6 w-full max-w-[850px] sm:w-[98%] flex flex-col gap-14 mb-32">
 
         {/* Product Overview */}
         <motion.div
@@ -276,8 +276,10 @@ const PartnersDetailPage = () => {
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────── */}
+       <div className='w-full'>
        <ContactSection />
       <NewsletterSection />
+      </div>
       <FooterSection />
     </div>
   );

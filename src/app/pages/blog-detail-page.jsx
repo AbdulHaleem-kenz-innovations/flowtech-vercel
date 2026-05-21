@@ -116,14 +116,14 @@ const BlogDetailPage = () => {
       </section>
 
       {/* Main Image */}
-      <section className="px-6 w-full max-w-[1260px] mb-10 md:mb-20">
+      <section className="px-6 w-full max-w-[1260px] sm:w-[98%] mb-10 md:mb-20">
         <div className="aspect-[1260/681] rounded-[7px] overflow-hidden">
           <ImageWithFallback src={imgSimonKadula8Gr6BObQloiUnsplash1} className="w-full h-full object-cover" />
         </div>
       </section>
 
       {/* Blog Content */}
-      <section className="px-6 w-full max-w-[850px] flex flex-col gap-12 mb-32">
+      <section className="px-6 w-full max-w-[850px] sm:w-[98%] flex flex-col gap-12 mb-32">
         <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist'] text-start">
           <p>{t.content.p1}</p>
           <p>{t.content.p2}</p>
@@ -211,7 +211,7 @@ const BlogDetailPage = () => {
       </section>
 
       {/* Related Posts */}
-      <section className="w-full -mt-25 py-16 px-6 flex flex-col items-center">
+      <section className="w-full sm:w-[98%] -mt-25 py-16 px-6 flex flex-col items-center">
         <div className="max-w-[1260px] w-full">
           <div className="flex flex-col gap-6 items-center text-center mb-20">
             <div className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit">

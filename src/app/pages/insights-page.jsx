@@ -86,7 +86,7 @@ const InsightsPage = () => {
 
       {/* Filter Tabs & Search */}
       <ScrollFadeIn>
-        <section className="px-6 w-full max-w-[1260px] flex flex-col gap-10 md:gap-16 items-start justify-center mt-12 md:mt-5">
+        <section className="px-6 w-full md:max-w-[1323px] sm:px-8 flex flex-col gap-10 md:gap-16 items-start justify-center mt-12 md:mt-5">
           {/* Categories Header */}
 
           <div className="flex flex-col md:flex-row gap-6 items-center justify-center w-full text-center">
@@ -312,9 +312,11 @@ const InsightsPage = () => {
       </ScrollFadeIn>
 
       {/* Newsletter Section */}
+      <div className='w-full'>
       <ScrollFadeIn>
         <NewsletterSection />
       </ScrollFadeIn>
+      </div>
 
       <FooterSection />
     </div>

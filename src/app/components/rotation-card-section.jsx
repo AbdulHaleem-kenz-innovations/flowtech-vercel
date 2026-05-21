@@ -412,19 +412,37 @@ export function RotationalContainer() {
 
   const [radius, setRadius] = useState(200);
   const [itemSize, setItemSize] = useState(60);
+  const [bottomOffset, setBottomOffset] = useState(-386.56);
 
   // ✅ Responsive control
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setRadius(0);//110
+      const width = window.innerWidth;
+      if (width < 900) {
+        // Hide rotating images on mobile and portrait tablets (like iPad Mini 744px, iPad Air 820px)
+        setRadius(0);
         setItemSize(0);
-      } else if (window.innerWidth < 1024) {
-        setRadius(250);//160
-        setItemSize(55);
+        setBottomOffset(-386.56);
       } else {
+        // Desktop & Landscape tablets / iPad Pro Portrait
         setRadius(600);
         setItemSize(160);
+
+        // Calculate dynamic bottom offset to keep the top of the orbit aligned (around 112px from top)
+        // Parent container height (H) is 778.591px for md: screen widths
+        const H = 778.591;
+        const topTarget = 112;
+        
+        // Parent container width has margins px-6 (on mobile) and md:px-[30px] (on md+), so we subtract 60px padding total
+        const parentWidth = Math.min(width - 60, 1260);
+        // Orbit container width is 90% of parent width (left-[5%] right-[5%])
+        const orbitWidth = parentWidth * 0.9;
+        // scale is orbitWidth / baseWidth (1400)
+        const scale = orbitWidth / 1400;
+
+        // bottom_offset = H - top_target - scale * (700 + radius)
+        const calculatedOffset = H - topTarget - scale * (700 + 600);
+        setBottomOffset(calculatedOffset);
       }
     };
 
@@ -434,7 +452,11 @@ export function RotationalContainer() {
   }, []);
   return (
     <div className="backdrop-blur-[25px] bg-gradient-to-t from-[rgba(17,15,223,0.5)] h-[600px] md:h-[778.591px] overflow-hidden relative rounded-2xl md:rounded-[20px] to-[rgba(17,15,223,0)] w-full max-w-[1260px]" data-name="Container">
-      <div className="absolute aspect-[1106/1134] bottom-[-20%] md:bottom-[-386.56px] left-[5%] right-[5%] opacity-40 md:opacity-100" data-name="Image Wrap 1">
+      <div 
+        className="absolute aspect-[1106/1134] left-[5%] right-[5%] opacity-40 md:opacity-100" 
+        style={{ bottom: `${bottomOffset}px` }}
+        data-name="Image Wrap 1"
+      >
         <div className="absolute inset-0 ">
           <OrbitImages
             images={images1}

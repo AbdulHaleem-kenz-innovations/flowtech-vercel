@@ -216,8 +216,8 @@ export default function OrbitImages({
       ${
         useGlassContainer
           ? `
-            backdrop-blur-[20px]
-            bg-[rgba(255,255,255,0.05)]
+            backdrop-blur-[25px]
+            bg-white/20
             border border-white/10
             shadow-[0_0_1px_rgba(255,255,255,0.2)]
           `

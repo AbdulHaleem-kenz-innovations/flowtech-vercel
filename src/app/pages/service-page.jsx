@@ -14,6 +14,7 @@ import { imgDivFramerIu4QG } from "../../imports/svg-wzgzr";
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 import { useLanguage } from '../../context/LanguageContext';
 import { langData } from '../../langData/data';
+import { NewsletterSection } from '../components/newsletter-section';
 
 
 const RichContent = ({ content, isRtl }) => {
@@ -181,7 +182,7 @@ const ServiceDetailsModal = ({ isOpen, onClose, data, isRtl }) => {
 
 function TopSection({ data, onReadMore, isRtl, labels, images }) {
   return (
-    <section className="flex flex-col gap-10 md:gap-32 items-center text-center pt-24 md:pt-60 px-6 overflow-hidden" dir={isRtl ? 'rtl' : 'ltr'}>
+    <section className="flex flex-col sm:w-[98%] gap-10 md:gap-32 items-center text-center pt-24 md:pt-60 px-6 overflow-hidden" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Title Area */}
       <ScrollFadeIn>
         <div className="max-w-[1222px] w-full flex flex-col gap-8 items-center">
@@ -455,7 +456,7 @@ export const ServicePage = () => {
       <div className="w-full mt-10 md:mt-20">
         <ContactSection />
         <RotationCardSection />
-        <BlogSection />
+        <NewsletterSection />
         <FooterSection />
       </div>
     </div>

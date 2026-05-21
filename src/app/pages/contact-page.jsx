@@ -123,11 +123,11 @@ const ContactPage = () => {
           </div>
 
           <div className="flex flex-col gap-4 opacity-60">
-            <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white uppercase tracking-wider hover:text-white transition-colors cursor-pointer">
-              info@flowtech.com
+            <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white  tracking-wider hover:text-white transition-colors cursor-pointer">
+              info@flowtechdigitalsolutions.com
             </p>
             <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white uppercase tracking-wider hover:text-white transition-colors cursor-pointer" dir="ltr">
-              +1 345 000 678
+              +966 55 877 1132
             </p>
           </div>
         </div>
@@ -218,7 +218,7 @@ const ContactPage = () => {
       {/* FAQ Section */}
       <ScrollFadeIn>
       <section className="w-full md:mb-[150px] mb-[80px] px-4">
-        <div className="max-w-[1260px] mx-auto backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] rounded-xl p-6 md:p-12 flex flex-col lg:flex-row gap-10 text-start">
+        <div className="max-w-[1260px] sm:w-[96%] mx-auto backdrop-blur-[25px] bg-[rgba(255,255,255,0.05)] rounded-xl p-6 md:p-12 flex flex-col lg:flex-row gap-10 text-start">
 
           {/* LEFT CONTENT */}
           <div className="w-full lg:w-[40%] flex flex-col gap-6">

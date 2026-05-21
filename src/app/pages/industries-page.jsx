@@ -164,7 +164,7 @@ const ContentSection = () => {
   const cards = langData[language.toLowerCase()].industries_page.cards;
 
   return (
-    <section className="flex flex-col items-center px-6 py-10 md:py-20 gap-10">
+    <section className="flex flex-col w-full items-center  px-6 py-10 md:py-20 gap-10">
       
   <div className="relative max-w-[1260px] w-full flex flex-col lg:flex-row items-start lg:items-end gap-7 mb-6 md:mb-10">
 
@@ -198,7 +198,7 @@ const ContentSection = () => {
 </div>
 
       {/* Cards */}
-      <div className="w-full -mt-10 flex flex-col items-center justify-center">
+      <div className="w-full sm:w-[98%] -mt-10 flex flex-col items-center justify-center">
         <ScrollFadeIn>
         <IndustryCard
           title={cards.manufacturing.title}
