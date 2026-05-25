@@ -26,14 +26,14 @@ import cloudFinal from "./Cloud/5.jpeg";
 import emsIntro from "./EMS/1.jpeg";
 import emsFull1 from "./EMS/EMS-2.png";
 import emsSolution from "./EMS/3.jpeg";
-import emsFull2 from "./EMS/ems-4.png";
+import emsFull2 from "./EMS/EMS-4.png";
 import emsFinal from "./EMS/5.jpeg";
 
 //Manufacturing Specific Images
 import mesIntro from "./MES/1.jpeg";
-import mesFull1 from "./MES/mes-2.png";
+import mesFull1 from "./MES/MES-2.png";
 import mesSolution from "./MES/3.jpeg";
-import mesFull2 from "./MES/mes-4.png";
+import mesFull2 from "./MES/MES-4.png";
 import mesFinal from "./MES/5.jpeg";
 
 //Oracle Specific Images
@@ -52,9 +52,9 @@ import pipelineFinal from "./Pipelines/5.jpeg";
 
 //SAP Specific Images
 import sapIntro from "./SAP/1.jpeg";
-import sapFull1 from "./SAP/SAP-2.png";
+import sapFull1 from "./SAP/sap-2.png";
 import sapSolution from "./SAP/3.jpeg";
-import sapFull2 from "./SAP/SAP-4.png";
+import sapFull2 from "./SAP/sap-4.png";
 import sapFinal from "./SAP/5.jpeg";
 
 const defaultSet = {
