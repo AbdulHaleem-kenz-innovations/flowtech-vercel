@@ -1,7 +1,7 @@
 import React from 'react';
-import imgIcon from "../../assets/878ab7586464211c9cca0e864b99b685e0640f88.png";
-import imgVector from "../../assets/a8a001b3e1c51c574310104fb16dc124d706ab52.png";
-import imgVector1 from "../../assets/c5871f97ee8804575fa98ffe2a3b6affd22b5cee.png";
+import Sensor from "../../assets/Sensor.png";
+import System from "../../assets/System.png";
+import Dataflow from "../../assets/Dataflow.png"
 import imgImage from "../../assets/28664606051f8506026c69bed106cd92d3ebbb23.png";
 import imgImage1 from "../../assets/e09f50796c0c219089d5e485139d5e1a48d9d1d2.png";
 import { ImageWithFallback } from './figma/ImageWithFallback';
@@ -61,7 +61,7 @@ function Icon1() {
   return (
     <div className="flex-[1_0_0] min-h-px relative w-full" data-name="Icon">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <ImageWithFallback alt="" className="absolute left-0 max-w-none size-full top-0" src={imgIcon} />
+        <ImageWithFallback alt="" className="absolute left-0 max-w-none size-full top-0" src={Sensor} />
       </div>
     </div>
   );
@@ -155,7 +155,7 @@ function Icon3() {
     <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip relative w-full" data-name="Icon">
       <div className="h-[30px] md:h-[36.051px] overflow-clip relative shrink-0 w-[32px] md:w-[38px]" data-name="Component 1">
         <div className="absolute inset-[1.11%_1.59%_1.08%_0.97%]" data-name="Vector">
-          <ImageWithFallback alt="" className="absolute block inset-0 max-w-none size-full" height="35.262" src={imgVector} width="37.026" />
+          <ImageWithFallback alt="" className="absolute block inset-0 max-w-none size-full" height="35.262" src={System} width="37.026" />
         </div>
       </div>
     </div>
@@ -250,7 +250,7 @@ function Icon5() {
     <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip relative w-full" data-name="Icon">
       <div className="overflow-clip relative shrink-0 size-[30px] md:size-[38px]" data-name="Component 1">
         <div className="absolute inset-[1.28%_1.59%_1.28%_0.97%]" data-name="Vector">
-          <ImageWithFallback alt="" className="absolute block inset-0 max-w-none size-full" height="37.026" src={imgVector1} width="37.026" />
+          <ImageWithFallback alt="" className="absolute block inset-0 max-w-none size-full" height="37.026" src={Dataflow} width="37.026" />
         </div>
       </div>
     </div>
