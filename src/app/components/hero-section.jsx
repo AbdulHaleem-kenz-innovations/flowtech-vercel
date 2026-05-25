@@ -241,7 +241,7 @@ export const HeroSection = () => {
               />
 
               {/* Static Logo Overlay */}
-              {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 23 20"
@@ -266,7 +266,7 @@ export const HeroSection = () => {
   <path d="M0.25362 6.06963C0.7618 6.0617 1.1579 6.46578 0.595281 6.80034C0.40105 6.85677 0.197111 6.84551 0.0673586 6.66555C0.00907487 6.58375 -0.0126948 6.48146 0.00719197 6.38304C0.0392498 6.2163 0.123179 6.15791 0.25362 6.06963Z" fill="white"/>
   <path d="M4.90147 1.87234C5.4045 1.86582 5.66017 2.22813 5.20614 2.61728C4.62019 2.69664 4.43172 2.18806 4.90147 1.87234Z" fill="white"/>
                 </svg>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
