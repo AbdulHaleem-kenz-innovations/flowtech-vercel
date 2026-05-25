@@ -14,6 +14,7 @@ import ProductsPage from "./app/pages/products-page";
 import ContactPage from "./app/pages/contact-page";
 import Services from "./app/pages/Services";  
 import PartnersDetailPage from "./app/pages/partners-detail-page";
+import { FloatingAIBot } from "./components/FloatingAIBot";
 
 
 const Root = () => {
@@ -26,6 +27,7 @@ const Root = () => {
   return (
     <main className="relative min-h-screen bg-black text-white selection:bg-blue-500/10 flex flex-col">
       <Background />
+      <FloatingAIBot/>
       <Navbar />
       <div className="relative z-10 flex-grow">
         <Outlet />

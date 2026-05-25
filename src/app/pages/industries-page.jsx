@@ -12,13 +12,13 @@ import { FooterSection } from '../components/footer-section';
 import imgLalitKumarHpPmiduLdc0Unsplash1 from "../../assets/fa82f8211887771169b077207fe2277e6dcae80a.png";
 import imgAmericanPublicPowerAssociationTwF1stZFz8Unsplash1 from "../../assets/42db079a7d9725eb489d9c367fff57137c3c427a.png";
 import img1S32PRd3OwUHmTftJi70Y6SFfcMPng from "../../assets/1854d22b3cfc3914f9f5575395a6f05e77832a69.png";
-import imgScreenshot20260420At25442Pm1 from "../../assets/e1dcc9e435ab91cb6be407673593b96ed5fd1213.png";
-import imgScreenshot20260420At25442Pm2 from "../../assets/bd2be405207692b19a3fbcf74fd73eccb16aa347.png";
-import imgScreenshot20260420At25442Pm3 from "../../assets/5dea89e4b32d1afe7d1c09a0148d826f2f577105.png";
-import imgScreenshot20260420At25442Pm4 from "../../assets/320dbf97e1f517151385ea112c3589c32dc6353f.png";
-import imgScreenshot20260420At25442Pm5 from "../../assets/4d405b4ec4ef680019b7738f7299edba20336f08.png";
-import imgScreenshot20260420At30549Pm1 from "../../assets/185ee89b3533193961a3174492c77257e876a775.png";
-import imgScreenshot20260420At30329Pm1 from "../../assets/5c7764e5d6b12c3141895d7864aae81197b07c90.png";
+import imgScreenshot20260420At25442Pm1 from "../../assets/e1dcc9e435ab91cb6be407673593b96ed5fd1213.webp";
+import imgScreenshot20260420At25442Pm2 from "../../assets/bd2be405207692b19a3fbcf74fd73eccb16aa347.webp";
+import imgScreenshot20260420At25442Pm3 from "../../assets/5dea89e4b32d1afe7d1c09a0148d826f2f577105.webp";
+import imgScreenshot20260420At25442Pm4 from "../../assets/320dbf97e1f517151385ea112c3589c32dc6353f.webp";
+import imgScreenshot20260420At25442Pm5 from "../../assets/4d405b4ec4ef680019b7738f7299edba20336f08.webp";
+import imgScreenshot20260420At30549Pm1 from "../../assets/185ee89b3533193961a3174492c77257e876a775.webp";
+import imgScreenshot20260420At30329Pm1 from "../../assets/5c7764e5d6b12c3141895d7864aae81197b07c90.webp";
 
 // SVGs
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-8em4t";

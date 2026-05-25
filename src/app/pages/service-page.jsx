@@ -244,7 +244,7 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
         {/* Category Image Wrap - Full Width */}
         <ScrollFadeIn>
           <div className="w-full aspect-video md:aspect-[1260/630] rounded-[7px] overflow-hidden relative">
-            <ImageWithFallback alt="Service Dashboard" className="absolute inset-0 size-full object-cover" src={images?.fullWidth1} />
+            <ImageWithFallback alt="Service Dashboard" className="absolute inset-0 size-full object-fit" src={images?.fullWidth1} />
           </div>
 
           {/* Solution Section: Image & Text */}
@@ -290,7 +290,7 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
         <ScrollFadeIn>
           {/* Full width Image */}
           <div className="w-full aspect-video md:aspect-[1260/630] rounded-[7px] overflow-hidden relative ">
-            <ImageWithFallback alt="Service Visualization" className="absolute inset-0 size-full object-cover" src={images?.fullWidth2} />
+            <ImageWithFallback alt="Service Visualization" className="absolute inset-0 size-full object-fit" src={images?.fullWidth2} />
           </div>
         </ScrollFadeIn>
         <ScrollFadeIn>

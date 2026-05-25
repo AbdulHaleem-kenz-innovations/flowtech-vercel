@@ -72,7 +72,7 @@ const ContactBox = () => {
           </span>
         </div>
         <span className="font-['Geist'] text-[15px] md:text-[16px] text-black font-medium break-all">
-          hello@flowtech.com
+          info@flowtechdigitalsolutions.com
         </span>
       </div>
 
