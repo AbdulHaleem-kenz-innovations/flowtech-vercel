@@ -3,58 +3,58 @@ import imgImage2 from "../13a5123d147560e0b029827bd35b00c4ff90b646.png";
 
 // AI Analytics Specific Images
 import aiIntro from "./Ai-Analytics/1.jpeg";
-import aiFull1 from "./Ai-Analytics/ai-analytics-2.jpeg";
+import aiFull1 from "./Ai-Analytics/ai-analytics-2.png";
 import aiSolution from "./Ai-Analytics/3.jpeg";
-import aiFull2 from "./Ai-Analytics/ai-analytics-4.jpeg";
+import aiFull2 from "./Ai-Analytics/ai-analytics-4.png";
 import aiFinal from "./Ai-Analytics/5.jpeg";
 
 // Analytics Specific Images
 import analyticsIntro from "./Analytics/1.jpeg";
-import analyticsFull1 from "./Analytics/analytics-2.jpeg";
+import analyticsFull1 from "./Analytics/analytics-2.png";
 import analyticsSolution from "./Analytics/3.jpeg";
-import analyticsFull2 from "./Analytics/analytics-4.jpeg";
+import analyticsFull2 from "./Analytics/analytics-4.png";
 import analyticsFinal from "./Analytics/5.jpeg";
 
 //Cloud Specific Images
 import cloudIntro from "./Cloud/1.jpeg";
-import cloudFull1 from "./Cloud/cloud-2.jpeg";
+import cloudFull1 from "./Cloud/cloud-service-2.png";
 import cloudSolution from "./Cloud/3.jpeg";
-import cloudFull2 from "./Cloud/cloud-4.jpeg";
+import cloudFull2 from "./Cloud/cloud-service-4.png";
 import cloudFinal from "./Cloud/5.jpeg";
 
 //EMS Specific Images
 import emsIntro from "./EMS/1.jpeg";
-import emsFull1 from "./EMS/ems-2.jpeg";
+import emsFull1 from "./EMS/EMS-2.png";
 import emsSolution from "./EMS/3.jpeg";
-import emsFull2 from "./EMS/ems-4.jpeg";
+import emsFull2 from "./EMS/ems-4.png";
 import emsFinal from "./EMS/5.jpeg";
 
 //Manufacturing Specific Images
 import mesIntro from "./MES/1.jpeg";
-import mesFull1 from "./MES/mes-2.jpeg";
+import mesFull1 from "./MES/mes-2.png";
 import mesSolution from "./MES/3.jpeg";
-import mesFull2 from "./MES/mes-4.jpeg";
+import mesFull2 from "./MES/mes-4.png";
 import mesFinal from "./MES/5.jpeg";
 
 //Oracle Specific Images
 import oracleIntro from "./Oracle/1.jpeg";
-import oracleFull1 from "./Oracle/oracle-2.jpeg";
+import oracleFull1 from "./Oracle/oracle-2.png";
 import oracleSolution from "./Oracle/3.jpeg";
-import oracleFull2 from "./Oracle/oracle-4.jpeg";
+import oracleFull2 from "./Oracle/oracle-4.png";
 import oracleFinal from "./Oracle/5.jpeg";
 
 //Pipline Specific Images
 import pipelineIntro from "./Pipelines/1.jpeg";
-import pipelineFull1 from "./Pipelines/pipeline-2.jpeg";
+import pipelineFull1 from "./Pipelines/pipeline-safety-2.png";
 import pipelineSolution from "./Pipelines/3.jpeg";
-import pipelineFull2 from "./Pipelines/pipeline-4.jpeg";
+import pipelineFull2 from "./Pipelines/pipeline-safety-4.png";
 import pipelineFinal from "./Pipelines/5.jpeg";
 
 //SAP Specific Images
 import sapIntro from "./SAP/1.jpeg";
-import sapFull1 from "./SAP/SAP-2.jpeg";
+import sapFull1 from "./SAP/SAP-2.png";
 import sapSolution from "./SAP/3.jpeg";
-import sapFull2 from "./SAP/SAP-4.jpeg";
+import sapFull2 from "./SAP/SAP-4.png";
 import sapFinal from "./SAP/5.jpeg";
 
 const defaultSet = {
