@@ -20,6 +20,7 @@ import {
   PhoneCall,
   CheckCircle,
 } from "lucide-react";
+import axios from "axios";
 function BotIcon({ size = 28, bodyColor = "white", featureColor = "#0052FF" }) {
   const [blinking, setBlinking] = useState(false);
 
@@ -197,7 +198,11 @@ export function FloatingAIBot() {
   const [isOtpSent, setIsOtpSent] = useState(false);
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [otpSuccess, setOtpSuccess] = useState(false);
-
+  const [selectedCountry, setSelectedCountry] = useState({
+    code: "US",
+    dial: "+1",
+    name: "USA",
+  });
   const messagesEndRef = useRef(null);
   const voiceTranscriptEndRef = useRef(null);
   const inputRef = useRef(null);
@@ -217,29 +222,29 @@ export function FloatingAIBot() {
     }
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    const errors = {};
-    if (!callFormData.name.trim()) errors.name = "Name is required";
-    if (!callFormData.email.trim()) {
-      errors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(callFormData.email)) {
-      errors.email = "Please enter a valid email";
-    }
-    if (!callFormData.phone.trim()) {
-      errors.phone = "Phone number is required";
-    } else if (!/^\+?[0-9\s-]{8,20}$/.test(callFormData.phone)) {
-      errors.phone = "Please enter a valid phone number";
-    }
-    if (!callFormData.message.trim()) errors.message = "Message is required";
+  // const handleFormSubmit = (e) => {
+  //   e.preventDefault();
+  //   const errors = {};
+  //   if (!callFormData.name.trim()) errors.name = "Name is required";
+  //   if (!callFormData.email.trim()) {
+  //     errors.email = "Email is required";
+  //   } else if (!/\S+@\S+\.\S+/.test(callFormData.email)) {
+  //     errors.email = "Please enter a valid email";
+  //   }
+  //   if (!callFormData.phone.trim()) {
+  //     errors.phone = "Phone number is required";
+  //   } else if (!/^\+?[0-9\s-]{8,20}$/.test(callFormData.phone)) {
+  //     errors.phone = "Please enter a valid phone number";
+  //   }
+  //   if (!callFormData.message.trim()) errors.message = "Message is required";
 
-    if (Object.keys(errors).length > 0) {
-      setFormErrors(errors);
-      return;
-    }
+  //   if (Object.keys(errors).length > 0) {
+  //     setFormErrors(errors);
+  //     return;
+  //   }
 
-    setIsOtpSent(true);
-  };
+  //   setIsOtpSent(true);
+  // };
 
   const handleOtpChange = (value, index) => {
     if (value && isNaN(Number(value))) return;
@@ -267,20 +272,246 @@ export function FloatingAIBot() {
       }
     }
   };
+  // ================= 1. FORM SUBMIT (TRIGGERS GENERATE OTP) =================
+  const generateOTP = async (email) => {
+    try {
+      const response = await axios.post(
+        `https://api.kenvoice.ai/v1/otp/generate-otp`,
+        { email },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${import.meta.env.VITE_APP_JWT_SECRET_KEY}`,
+          },
+        },
+      );
 
-  const handleOtpVerify = () => {
-    const otpCode = otp.join("");
-    if (otpCode.length < 6) return;
+      return response.data;
+    } catch (error) {
+      console.error("Generate OTP Error:", error);
+    }
+  };
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    const errors = {};
+    if (!callFormData.name.trim()) errors.name = "Name is required";
 
-    setOtpSuccess(true);
+    // Email Validation
+    if (!callFormData.email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(callFormData.email)) {
+      errors.email = "Please enter a valid email";
+    }
+
+    // Country Rules & Phone validation combined from your simulateCall logic
+    const digitsOnly = callFormData.phone.replace(/\D/g, "");
+    const countryCode = selectedCountry?.code;
+    const phoneRules = {
+      IN: { min: 10, max: 10 },
+      SA: { min: 9, max: 9 },
+      AE: { min: 9, max: 9 },
+      US: { min: 10, max: 10 },
+      CA: { min: 10, max: 10 },
+      GB: { min: 10, max: 11 },
+    };
+    const rule = phoneRules[countryCode];
+
+    if (!rule) {
+      console.log("Unsupported country selected.");
+      return;
+    }
+
+    if (digitsOnly.length < rule.min || digitsOnly.length > rule.max) {
+      errors.phone = `Valid ${rule.min}${rule.min !== rule.max ? `-${rule.max}` : ""} digits required for ${selectedCountry.name}.`;
+    }
+
+    if (!callFormData.message.trim()) errors.message = "Message is required";
+
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      return;
+    }
+
+    // Validation passed! Generate & Send OTP via API
+    try {
+      const otpResponse = await generateOTP(callFormData.email);
+      // Assuming successful response structure contains a success flag or data
+      if (otpResponse) {
+        setIsOtpSent(true);
+        // toast.success("Verification code sent to your email!");
+        console.log("Verification code sent to your email!");
+      } else {
+        console.log("Failed to send OTP. Please try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      console.log("An error occurred while sending OTP.");
+    }
+  };
+  const verifyOTP = async (email, otp) => {
+    try {
+      const response = await axios.post(
+        `https://api.kenvoice.ai/v1/otp/verify-otp`,
+        { email, otp },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${import.meta.env.VITE_APP_JWT_SECRET_KEY}`,
+          },
+        },
+      );
+
+      return response.data;
+    } catch (error) {
+      console.error("Verify OTP Error:", error);
+    }
+  };
+  // ================= 2. VERIFY OTP & EXECUTE PIPELINE =================
+  const handleOtpVerify = async () => {
+    const enteredOtp = otp.join("");
+    if (enteredOtp.length < 6) return;
+
+    try {
+      const verificationResponse = await verifyOTP(
+        callFormData.email,
+        enteredOtp,
+      );
+
+      // Proceeding assuming verification matches
+      if (verificationResponse) {
+        setOtpSuccess(true);
+        // toast.success("OTP Verified Successfully!");
+        console.log("OTP Verified Successfully!");
+
+        // Trigger next phase: Create Lead & Fire Main Call API
+        await handleLeadAndCallGeneration();
+      } else {
+        console.log("Invalid verification code. Please check and retry.");
+      }
+    } catch (err) {
+      console.error(err);
+      console.log("Verification failed.");
+    }
+  };
+
+  // ================= 3. LEADS CREATION & CALL GENERATION PIPELINE =================
+  const handleLeadAndCallGeneration = async () => {
+    try {
+      // Step A: Build Payload (Calls internal Lead API first)
+      const payload = await buildPayload();
+
+      if (!payload) {
+        console.log("Failed to compile layout data.");
+        return;
+      }
+
+      // Step B: Fire Core Calling Engine System
+      const apiResponse = await callAPI(payload);
+
+      if (apiResponse) {
+        // Step C: Trigger UI Simulator Experience
+        triggerCallSimulation();
+      } else {
+        console.log("Call router service failed to initiate.");
+      }
+    } catch (error) {
+      console.error("Pipeline failure:", error);
+    }
+  };
+
+  // ================= 4. PAYLOAD BUILDER API (UNIFIED) =================
+  const buildPayload = async () => {
+    try {
+      const cleanNumber = callFormData.phone.replace(/\D/g, "");
+
+      // Send Request to create lead profile
+      const leadResponse = await axios.post(
+        `https://api.kenvoice.ai${import.meta.env.VITE_LEAD_API}`,
+        {
+          name: callFormData.name,
+          email: callFormData.email,
+          phone_number: cleanNumber,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${import.meta.env.VITE_APP_JWT_SECRET_KEY}`,
+          },
+        },
+      );
+      const plainTextContext = `You are calling: Name: ${callFormData.name}, Company Email: ${callFormData.email}, Phone: ${selectedCountry.dial}${cleanNumber}, Regarding Flow tech and its offerings and their Products.`;
+      // Map Final Engine Context
+      const finalPayload = {
+        phone: `${selectedCountry.dial}${cleanNumber}`, // Combines countrycode securely
+        type: 0,
+        email: callFormData.email,
+        language: "en-IN",
+        context: plainTextContext,
+      };
+
+      console.log(
+        "FINAL GENERATED PAYLOAD:",
+        JSON.stringify(finalPayload, null, 2),
+      );
+      return finalPayload;
+    } catch (error) {
+      console.error("BUILD PAYLOAD ERROR:", error.response?.data || error);
+      return null;
+    }
+  };
+
+  // ================= 5. CALL ENGINE ROUTER =================
+  const callAPI = async (payload) => {
+    try {
+      const response = await axios.post(import.meta.env.VITE_API, payload, {
+        headers: {
+          "Content-Type": "application/json",
+          Authentication: `${import.meta.env.VITE_API_TOKEN}`, // Fixed spelling typo from "Authentication" -> "Authorization"
+        },
+      });
+      console.log("CALL API RESPONSE:", response);
+      // Clean local form input entries
+      setCallFormData({ name: "", email: "", phone: "", message: "" });
+      return response.data;
+    } catch (error) {
+      console.error("Main API Execution Error:", error);
+      return null;
+    }
+  };
+
+  // ================= 6. CALL STATE SIMULATOR UI =================
+  const triggerCallSimulation = () => {
+    setCallState("dialing");
+
+    setTimeout(() => setCallState("connected"), 2200);
+
     setTimeout(() => {
+      setCallState("ended");
+      console.log("Demo call complete!");
+    }, 7000);
+
+    setTimeout(() => {
+      setCallState("idle");
+      // Close Modal windows smoothly at execution complete
       setShowCallForm(false);
       setIsOtpSent(false);
       setOtp(["", "", "", "", "", ""]);
       setOtpSuccess(false);
-      setCallFormData({ name: "", email: "", phone: "", message: "" });
-    }, 2000);
+    }, 10000);
   };
+  // const handleOtpVerify = () => {
+  //   const otpCode = otp.join("");
+  //   if (otpCode.length < 6) return;
+
+  //   setOtpSuccess(true);
+  //   setTimeout(() => {
+  //     setShowCallForm(false);
+  //     setIsOtpSent(false);
+  //     setOtp(["", "", "", "", "", ""]);
+  //     setOtpSuccess(false);
+  //     setCallFormData({ name: "", email: "", phone: "", message: "" });
+  //   }, 2000);
+  // };
 
   // Detect dark mode
   useEffect(() => {
@@ -562,7 +793,6 @@ export function FloatingAIBot() {
                 </div>
               </div>
             </div>
-
 
             <div className="flex-1 overflow-hidden flex flex-col bg-[#0A1128] dark:bg-[#050B1A]">
               <AnimatePresence mode="wait">
@@ -896,7 +1126,12 @@ export function FloatingAIBot() {
                 initial={{ opacity: 0, y: 15, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 15, scale: 0.8 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25, delay: 0.1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 25,
+                  delay: 0.1,
+                }}
                 className="flex items-center gap-3 group cursor-pointer"
                 onClick={() => {
                   setShowCallForm(true);
@@ -906,9 +1141,7 @@ export function FloatingAIBot() {
                 <span className="text-xs bg-[#0A1128]/95 backdrop-blur-md border border-[#1856FF]/30 text-white/90 font-medium px-3 py-1.5 rounded-lg shadow-lg select-none whitespace-nowrap group-hover:border-[#1856FF]/60 group-hover:text-white transition-all">
                   Call Assistant
                 </span>
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center border border-[#1856FF]/30 bg-[#0A1128]/90 backdrop-blur-md text-white group-hover:bg-[#1856FF] group-hover:border-transparent group-hover:shadow-[0_0_15px_rgba(24,86,255,0.4)] transition-all shadow-lg"
-                >
+                <div className="w-12 h-12 rounded-full flex items-center justify-center border border-[#1856FF]/30 bg-[#0A1128]/90 backdrop-blur-md text-white group-hover:bg-[#1856FF] group-hover:border-transparent group-hover:shadow-[0_0_15px_rgba(24,86,255,0.4)] transition-all shadow-lg">
                   <PhoneCall size={20} />
                 </div>
               </Motion.div>
@@ -918,7 +1151,12 @@ export function FloatingAIBot() {
                 initial={{ opacity: 0, y: 15, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 15, scale: 0.8 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25, delay: 0.05 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 25,
+                  delay: 0.05,
+                }}
                 className="flex items-center gap-3 group cursor-pointer"
                 onClick={() => {
                   setActiveTab("chat");
@@ -929,9 +1167,7 @@ export function FloatingAIBot() {
                 <span className="text-xs bg-[#0A1128]/95 backdrop-blur-md border border-[#1856FF]/30 text-white/90 font-medium px-3 py-1.5 rounded-lg shadow-lg select-none whitespace-nowrap group-hover:border-[#1856FF]/60 group-hover:text-white transition-all">
                   Chat Assistant
                 </span>
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center border border-[#1856FF]/30 bg-[#0A1128]/90 backdrop-blur-md text-white group-hover:bg-[#1856FF] group-hover:border-transparent group-hover:shadow-[0_0_15px_rgba(24,86,255,0.4)] transition-all shadow-lg"
-                >
+                <div className="w-12 h-12 rounded-full flex items-center justify-center border border-[#1856FF]/30 bg-[#0A1128]/90 backdrop-blur-md text-white group-hover:bg-[#1856FF] group-hover:border-transparent group-hover:shadow-[0_0_15px_rgba(24,86,255,0.4)] transition-all shadow-lg">
                   <MessageCircle size={20} />
                 </div>
               </Motion.div>
@@ -941,7 +1177,12 @@ export function FloatingAIBot() {
                 initial={{ opacity: 0, y: 15, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 15, scale: 0.8 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25, delay: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 25,
+                  delay: 0,
+                }}
                 className="flex items-center gap-3 group cursor-pointer"
                 onClick={() => {
                   setActiveTab("voice");
@@ -952,9 +1193,7 @@ export function FloatingAIBot() {
                 <span className="text-xs bg-[#0A1128]/95 backdrop-blur-md border border-[#1856FF]/30 text-white/90 font-medium px-3 py-1.5 rounded-lg shadow-lg select-none whitespace-nowrap group-hover:border-[#1856FF]/60 group-hover:text-white transition-all">
                   Voice Assistant
                 </span>
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center border border-[#1856FF]/30 bg-[#0A1128]/90 backdrop-blur-md text-white group-hover:bg-[#1856FF] group-hover:border-transparent group-hover:shadow-[0_0_15px_rgba(24,86,255,0.4)] transition-all shadow-lg"
-                >
+                <div className="w-12 h-12 rounded-full flex items-center justify-center border border-[#1856FF]/30 bg-[#0A1128]/90 backdrop-blur-md text-white group-hover:bg-[#1856FF] group-hover:border-transparent group-hover:shadow-[0_0_15px_rgba(24,86,255,0.4)] transition-all shadow-lg">
                   <Phone size={20} />
                 </div>
               </Motion.div>
@@ -1030,7 +1269,12 @@ export function FloatingAIBot() {
                 setIsOtpSent(false);
                 setOtp(["", "", "", "", "", ""]);
                 setOtpSuccess(false);
-                setCallFormData({ name: "", email: "", phone: "", message: "" });
+                setCallFormData({
+                  name: "",
+                  email: "",
+                  phone: "",
+                  message: "",
+                });
               }}
             />
 
@@ -1053,7 +1297,12 @@ export function FloatingAIBot() {
                   setIsOtpSent(false);
                   setOtp(["", "", "", "", "", ""]);
                   setOtpSuccess(false);
-                  setCallFormData({ name: "", email: "", phone: "", message: "" });
+                  setCallFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    message: "",
+                  });
                 }}
                 className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors cursor-pointer"
               >
@@ -1088,13 +1337,19 @@ export function FloatingAIBot() {
                         onChange={handleFormChange}
                         placeholder="John Doe"
                         className={`w-full bg-white/5 border ${
-                          formErrors.name ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#1856FF]"
+                          formErrors.name
+                            ? "border-red-500/50 focus:border-red-500"
+                            : "border-white/10 focus:border-[#1856FF]"
                         } rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 outline-none focus:ring-2 ${
-                          formErrors.name ? "focus:ring-red-500/20" : "focus:ring-[#1856FF]/20"
+                          formErrors.name
+                            ? "focus:ring-red-500/20"
+                            : "focus:ring-[#1856FF]/20"
                         } transition-all`}
                       />
                       {formErrors.name && (
-                        <p className="text-red-400 text-xs mt-1 font-medium">{formErrors.name}</p>
+                        <p className="text-red-400 text-xs mt-1 font-medium">
+                          {formErrors.name}
+                        </p>
                       )}
                     </div>
 
@@ -1110,18 +1365,24 @@ export function FloatingAIBot() {
                         onChange={handleFormChange}
                         placeholder="john@example.com"
                         className={`w-full bg-white/5 border ${
-                          formErrors.email ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#1856FF]"
+                          formErrors.email
+                            ? "border-red-500/50 focus:border-red-500"
+                            : "border-white/10 focus:border-[#1856FF]"
                         } rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 outline-none focus:ring-2 ${
-                          formErrors.email ? "focus:ring-red-500/20" : "focus:ring-[#1856FF]/20"
+                          formErrors.email
+                            ? "focus:ring-red-500/20"
+                            : "focus:ring-[#1856FF]/20"
                         } transition-all`}
                       />
                       {formErrors.email && (
-                        <p className="text-red-400 text-xs mt-1 font-medium">{formErrors.email}</p>
+                        <p className="text-red-400 text-xs mt-1 font-medium">
+                          {formErrors.email}
+                        </p>
                       )}
                     </div>
 
                     {/* Phone Number */}
-                    <div>
+                    {/* <div>
                       <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wider">
                         Phone Number
                       </label>
@@ -1132,16 +1393,112 @@ export function FloatingAIBot() {
                         onChange={handleFormChange}
                         placeholder="+1 (555) 000-0000"
                         className={`w-full bg-white/5 border ${
-                          formErrors.phone ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#1856FF]"
+                          formErrors.phone
+                            ? "border-red-500/50 focus:border-red-500"
+                            : "border-white/10 focus:border-[#1856FF]"
                         } rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 outline-none focus:ring-2 ${
-                          formErrors.phone ? "focus:ring-red-500/20" : "focus:ring-[#1856FF]/20"
+                          formErrors.phone
+                            ? "focus:ring-red-500/20"
+                            : "focus:ring-[#1856FF]/20"
                         } transition-all`}
                       />
                       {formErrors.phone && (
-                        <p className="text-red-400 text-xs mt-1 font-medium">{formErrors.phone}</p>
+                        <p className="text-red-400 text-xs mt-1 font-medium">
+                          {formErrors.phone}
+                        </p>
+                      )}
+                    </div> */}
+                    <div>
+                      <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wider">
+                        Phone Number
+                      </label>
+
+                      {/* Flex container grouping the Country Dropdown and Phone Input together */}
+                      <div
+                        className={`flex items-center w-full bg-white/5 border ${
+                          formErrors.phone
+                            ? "border-red-500/50 focus-within:border-red-500 focus-within:ring-red-500/20"
+                            : "border-white/10 focus-within:border-[#1856FF] focus-within:ring-[#1856FF]/20"
+                        } rounded-xl transition-all focus-within:ring-2`}
+                      >
+                        {/* Country Selector Dropdown */}
+                        <div className="relative border-r border-white/10 px-3 flex items-center justify-center">
+                          <select
+                            value={selectedCountry?.code || "US"}
+                            onChange={(e) => {
+                              const selected = [
+                                { code: "IN", dial: "+91", name: "India" },
+                                {
+                                  code: "SA",
+                                  dial: "+966",
+                                  name: "Saudi Arabia",
+                                },
+                                { code: "AE", dial: "+971", name: "UAE" },
+                                { code: "US", dial: "+1", name: "USA" },
+                                { code: "CA", dial: "+1", name: "Canada" },
+                                { code: "GB", dial: "+44", name: "UK" },
+                              ].find((c) => c.code === e.target.value);
+                              setSelectedCountry(selected);
+                            }}
+                            className="bg-transparent text-white text-sm outline-none cursor-pointer pr-1 py-3 font-medium appearance-none select-none"
+                            style={{ colorScheme: "dark" }} // Ensures the native popup options look good in dark mode
+                          >
+                            <option
+                              value="IN"
+                              className="bg-[#0A1128] text-white"
+                            >
+                              🇮🇳 +91
+                            </option>
+                            <option
+                              value="SA"
+                              className="bg-[#0A1128] text-white"
+                            >
+                              🇸🇦 +966
+                            </option>
+                            <option
+                              value="AE"
+                              className="bg-[#0A1128] text-white"
+                            >
+                              🇦🇪 +971
+                            </option>
+                            <option
+                              value="US"
+                              className="bg-[#0A1128] text-white"
+                            >
+                              🇺🇸 +1
+                            </option>
+                            <option
+                              value="CA"
+                              className="bg-[#0A1128] text-white"
+                            >
+                              🇨🇦 +1
+                            </option>
+                            <option
+                              value="GB"
+                              className="bg-[#0A1128] text-white"
+                            >
+                              🇬🇧 +44
+                            </option>
+                          </select>
+                        </div>
+
+                        {/* Actual Phone Input Fields */}
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={callFormData.phone}
+                          onChange={handleFormChange}
+                          placeholder="555-000-0000"
+                          className="w-full bg-transparent px-4 py-3 text-white text-sm placeholder:text-white/30 outline-none"
+                        />
+                      </div>
+
+                      {formErrors.phone && (
+                        <p className="text-red-400 text-xs mt-1 font-medium">
+                          {formErrors.phone}
+                        </p>
                       )}
                     </div>
-
                     {/* Message */}
                     <div>
                       <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wider">
@@ -1154,13 +1511,19 @@ export function FloatingAIBot() {
                         placeholder="How can we assist you?"
                         rows={3}
                         className={`w-full bg-white/5 border ${
-                          formErrors.message ? "border-red-500/50 focus:border-red-500" : "border-white/10 focus:border-[#1856FF]"
+                          formErrors.message
+                            ? "border-red-500/50 focus:border-red-500"
+                            : "border-white/10 focus:border-[#1856FF]"
                         } rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 outline-none resize-none focus:ring-2 ${
-                          formErrors.message ? "focus:ring-red-500/20" : "focus:ring-[#1856FF]/20"
+                          formErrors.message
+                            ? "focus:ring-red-500/20"
+                            : "focus:ring-[#1856FF]/20"
                         } transition-all`}
                       />
                       {formErrors.message && (
-                        <p className="text-red-400 text-xs mt-1 font-medium">{formErrors.message}</p>
+                        <p className="text-red-400 text-xs mt-1 font-medium">
+                          {formErrors.message}
+                        </p>
                       )}
                     </div>
                   </div>
@@ -1184,7 +1547,9 @@ export function FloatingAIBot() {
                       )}
                     </div>
                     <h3 className="text-xl font-bold text-white tracking-wide">
-                      {otpSuccess ? "Verification Successful" : "Enter Verification Code"}
+                      {otpSuccess
+                        ? "Verification Successful"
+                        : "Enter Verification Code"}
                     </h3>
                     <p className="text-xs text-white/60 mt-1 max-w-[280px] mx-auto leading-relaxed">
                       {otpSuccess
@@ -1204,7 +1569,9 @@ export function FloatingAIBot() {
                             type="text"
                             maxLength={2}
                             value={digit}
-                            onChange={(e) => handleOtpChange(e.target.value, idx)}
+                            onChange={(e) =>
+                              handleOtpChange(e.target.value, idx)
+                            }
                             onKeyDown={(e) => handleOtpKeyDown(e, idx)}
                             className="w-11 h-12 sm:w-12 sm:h-12 bg-white/5 border border-white/10 rounded-xl text-center text-lg sm:text-xl font-bold text-white focus:border-[#1856FF] focus:ring-2 focus:ring-[#1856FF]/20 outline-none transition-all"
                           />
