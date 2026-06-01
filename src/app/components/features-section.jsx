@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router';
 import imgFrame1139 from "../../assets/c4ae983d71bcd81ac6bc3423a3f716a541328ebf.png";
-import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../../assets/12f90a2a24f7e3315caa72708e6722575a13d825.png";
+// import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../../assets/12f90a2a24f7e3315caa72708e6722575a13d825.png";
+import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../../assets/ytVideo-thumbnail.webp";
 import imgIcon from "../../assets/41ff2d725380255d23878aa7c6fb39c5f6bd3adc.png";
 import imgIcon1 from "../../assets/798b5019ccb03e7937fe35631b20dcdefae3cefc.png";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1, imgDivFramerIu4QG2, imgDiv, imgDiv1, imgDiv2, imgDiv3, imgDiv4, imgDiv5, imgDiv6, imgDiv7 } from "../../imports/svg-4ugef";
