@@ -6,14 +6,14 @@ import imgRectangle2 from "../assets/ed6ab4e2d6429f0d554d61b64ceec65f98cbdf2e.pn
 // import image2 from "../assets/services/image 2.png";
 // import image3 from "../assets/services/image 3.png";
 // import image4 from "../assets/services/image 4.png";
-import image1 from "../assets/service-images/Analytics/1.jpeg";
-import image2 from "../assets/service-images/EMS/1.jpeg";
-import image3 from "../assets/service-images/Pipelines/1.jpeg";
-import image4 from "../assets/service-images/Cloud/1.jpeg";
-import image5 from "../assets/service-images/Ai-Analytics/1.jpeg";
-import image6 from "../assets/service-images/SAP/1.jpeg";
-import image7 from "../assets/service-images/Oracle/1.jpeg";
-import image8 from "../assets/service-images/MES/1.jpeg";
+import image1 from "../assets/service-images/Analytics/1.webp";
+import image2 from "../assets/service-images/EMS/1.webp";
+import image3 from "../assets/service-images/Pipelines/1.webp";
+import image4 from "../assets/service-images/Cloud/1.webp";
+import image5 from "../assets/service-images/Ai-Analytics/1.webp";
+import image6 from "../assets/service-images/SAP/1.webp";
+import image7 from "../assets/service-images/Oracle/1.webp";
+import image8 from "../assets/service-images/MES/1.webp";
 
 export const servicesData = [
     {

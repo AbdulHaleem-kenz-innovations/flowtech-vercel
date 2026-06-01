@@ -2,60 +2,60 @@ import img3DGraph from "../b7bbe33d51abd92f96d7d654afdf841ed7a3aceb.png";
 import imgImage2 from "../13a5123d147560e0b029827bd35b00c4ff90b646.png";
 
 // AI Analytics Specific Images
-import aiIntro from "./Ai-Analytics/1.jpeg";
-import aiFull1 from "./Ai-Analytics/ai-analytics-2.png";
-import aiSolution from "./Ai-Analytics/3.jpeg";
-import aiFull2 from "./Ai-Analytics/ai-analytics-4.png";
-import aiFinal from "./Ai-Analytics/5.jpeg";
+import aiIntro from "./Ai-Analytics/1.webp";
+import aiFull1 from "./Ai-Analytics/ai-analytics-2.webp";
+import aiSolution from "./Ai-Analytics/3.webp";
+import aiFull2 from "./Ai-Analytics/ai-analytics-4.webp";
+import aiFinal from "./Ai-Analytics/5.webp";
 
 // Analytics Specific Images
-import analyticsIntro from "./Analytics/1.jpeg";
-import analyticsFull1 from "./Analytics/analytics-2.png";
-import analyticsSolution from "./Analytics/3.jpeg";
-import analyticsFull2 from "./Analytics/analytics-4.png";
-import analyticsFinal from "./Analytics/5.jpeg";
+import analyticsIntro from "./Analytics/1.webp";
+import analyticsFull1 from "./Analytics/analytics-2.webp";
+import analyticsSolution from "./Analytics/3.webp";
+import analyticsFull2 from "./Analytics/analytics-4.webp";
+import analyticsFinal from "./Analytics/5.webp";
 
 //Cloud Specific Images
-import cloudIntro from "./Cloud/1.jpeg";
-import cloudFull1 from "./Cloud/cloud-service-2.png";
-import cloudSolution from "./Cloud/3.jpeg";
-import cloudFull2 from "./Cloud/cloud-service-4.png";
-import cloudFinal from "./Cloud/5.jpeg";
+import cloudIntro from "./Cloud/1.webp";
+import cloudFull1 from "./Cloud/cloud-service-2.webp";
+import cloudSolution from "./Cloud/3.webp";
+import cloudFull2 from "./Cloud/cloud-service-4.webp";
+import cloudFinal from "./Cloud/5.webp";
 
 //EMS Specific Images
-import emsIntro from "./EMS/1.jpeg";
-import emsFull1 from "./EMS/EMS-2.png";
-import emsSolution from "./EMS/3.jpeg";
-import emsFull2 from "./EMS/EMS-4.png";
-import emsFinal from "./EMS/5.jpeg";
+import emsIntro from "./EMS/1.webp";
+import emsFull1 from "./EMS/EMS-2.webp";
+import emsSolution from "./EMS/3.webp";
+import emsFull2 from "./EMS/EMS-4.webp";
+import emsFinal from "./EMS/5.webp";
 
 //Manufacturing Specific Images
-import mesIntro from "./MES/1.jpeg";
-import mesFull1 from "./MES/MES-2.png";
-import mesSolution from "./MES/3.jpeg";
-import mesFull2 from "./MES/MES-4.png";
-import mesFinal from "./MES/5.jpeg";
+import mesIntro from "./MES/1.webp";
+import mesFull1 from "./MES/MES-2.webp";
+import mesSolution from "./MES/3.webp";
+import mesFull2 from "./MES/MES-4.webp";
+import mesFinal from "./MES/5.webp";
 
 //Oracle Specific Images
-import oracleIntro from "./Oracle/1.jpeg";
-import oracleFull1 from "./Oracle/oracle-2.png";
-import oracleSolution from "./Oracle/3.jpeg";
-import oracleFull2 from "./Oracle/oracle-4.png";
-import oracleFinal from "./Oracle/5.jpeg";
+import oracleIntro from "./Oracle/1.webp";
+import oracleFull1 from "./Oracle/oracle-2.webp";
+import oracleSolution from "./Oracle/3.webp";
+import oracleFull2 from "./Oracle/oracle-4.webp";
+import oracleFinal from "./Oracle/5.webp";
 
 //Pipline Specific Images
-import pipelineIntro from "./Pipelines/1.jpeg";
-import pipelineFull1 from "./Pipelines/pipeline-safety-2.png";
-import pipelineSolution from "./Pipelines/3.jpeg";
-import pipelineFull2 from "./Pipelines/pipeline-safety-4.png";
-import pipelineFinal from "./Pipelines/5.jpeg";
+import pipelineIntro from "./Pipelines/1.webp";
+import pipelineFull1 from "./Pipelines/pipeline-safety-2.webp";
+import pipelineSolution from "./Pipelines/3.webp";
+import pipelineFull2 from "./Pipelines/pipeline-safety-4.webp";
+import pipelineFinal from "./Pipelines/5.webp";
 
 //SAP Specific Images
-import sapIntro from "./SAP/1.jpeg";
-import sapFull1 from "./SAP/sap-2.png";
-import sapSolution from "./SAP/3.jpeg";
-import sapFull2 from "./SAP/sap-4.png";
-import sapFinal from "./SAP/5.jpeg";
+import sapIntro from "./SAP/1.webp";
+import sapFull1 from "./SAP/sap-2.webp";
+import sapSolution from "./SAP/3.webp";
+import sapFull2 from "./SAP/sap-4.webp";
+import sapFinal from "./SAP/5.webp";
 
 const defaultSet = {
   intro: img3DGraph,

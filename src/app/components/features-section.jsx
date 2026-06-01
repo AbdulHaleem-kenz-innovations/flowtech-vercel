@@ -332,45 +332,137 @@ function BlurOverlays() {
   );
 }
 
+// function VideoSection() {
+//   const { language } = useLanguage();
+//   const t = langData[language.toLowerCase()].features;
+//   return (
+//     <div className="h-[400px] md:h-[630px] relative shrink-0 w-full max-w-[1260px] overflow-clip rounded-[7px]">
+//       {/* Background Image */}
+//       <div className="absolute inset-0 overflow-clip">
+//         <ImageWithFallback alt="" className="absolute h-full w-full object-cover" src={imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg} />
+//         <div className="absolute bg-[rgba(21,21,21,0.3)] inset-0" />
+//       </div>
+
+//       <BlurOverlays />
+
+//       <div className="absolute content-stretch flex flex-col items-start justify-center end-[20px] md:end-[2.7%] top-[20px] md:top-[28px] max-w-[145px]">
+//         <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[18px] md:text-[23px] text-[transparent] tracking-[-0.4px] whitespace-nowrap text-end md:text-start" style={{ backgroundImage: "linear-gradient(-87.6189deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)" }}>
+//           <p className="leading-[1.2] mb-0 whitespace-pre">{t.video_expertise_p1}</p>
+//           <p className="leading-[1.2] whitespace-pre">{t.video_expertise_p2}</p>
+//         </div>
+//       </div>
+
+//       <div className="absolute backdrop-blur-[20px] bottom-[20px] md:bottom-[40px] h-[34px] md:h-[38px] start-0 rounded-be-[30px] rounded-te-[30px] w-[90px] md:w-[105px] overflow-clip" data-name="Time">
+//         <ImageWithFallback alt="" className="absolute inset-0 h-full w-full object-cover" src={imgIcon} />
+//         <div className="absolute end-[15px] md:end-[20.95px] top-[8px] md:top-[9px]">
+//           <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[9px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+//             <p className="leading-[17.6px]">4:14 min</p>
+//           </div>
+//         </div>
+//       </div>
+
+//       <div className="absolute inset-0 flex flex-col gap-[10px] md:gap-[14px] items-center justify-center pointer-events-none">
+//         <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.15)] content-stretch flex items-center justify-center overflow-clip relative rounded-[7px] shrink-0 size-[60px] md:size-[80px] pointer-events-auto cursor-pointer hover:scale-110 transition-transform">
+//           <div className="size-[10px] md:size-[12px]">
+//             <ImageWithFallback alt="" className="size-full" src={imgIcon1} />
+//           </div>
+//         </div>
+//         <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[20px] md:text-[28px] text-white tracking-[-0.4px] whitespace-nowrap">
+//           <p className="leading-[29.96px] cta-shine cta-shine-primary">{t.view_video}</p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
 function VideoSection() {
   const { language } = useLanguage();
   const t = langData[language.toLowerCase()].features;
+
+  const [playVideo, setPlayVideo] = useState(false);
+
   return (
-    <div className="h-[400px] md:h-[630px] relative shrink-0 w-full max-w-[1260px] overflow-clip rounded-[7px]">
-      {/* Background Image */}
-      <div className="absolute inset-0 overflow-clip">
-        <ImageWithFallback alt="" className="absolute h-full w-full object-cover" src={imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg} />
-        <div className="absolute bg-[rgba(21,21,21,0.3)] inset-0" />
-      </div>
-
-      <BlurOverlays />
-
-      <div className="absolute content-stretch flex flex-col items-start justify-center end-[20px] md:end-[2.7%] top-[20px] md:top-[28px] max-w-[145px]">
-        <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[18px] md:text-[23px] text-[transparent] tracking-[-0.4px] whitespace-nowrap text-end md:text-start" style={{ backgroundImage: "linear-gradient(-87.6189deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)" }}>
-          <p className="leading-[1.2] mb-0 whitespace-pre">{t.video_expertise_p1}</p>
-          <p className="leading-[1.2] whitespace-pre">{t.video_expertise_p2}</p>
-        </div>
-      </div>
-
-      <div className="absolute backdrop-blur-[20px] bottom-[20px] md:bottom-[40px] h-[34px] md:h-[38px] start-0 rounded-be-[30px] rounded-te-[30px] w-[90px] md:w-[105px] overflow-clip" data-name="Time">
-        <ImageWithFallback alt="" className="absolute inset-0 h-full w-full object-cover" src={imgIcon} />
-        <div className="absolute end-[15px] md:end-[20.95px] top-[8px] md:top-[9px]">
-          <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[9px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
-            <p className="leading-[17.6px]">4:14 min</p>
+    <div className="h-[400px] md:h-[630px] relative shrink-0 w-full max-w-[1260px] overflow-hidden rounded-[7px]">
+      {playVideo ? (
+        <iframe
+          className="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/Z43cPk_pmC0?autoplay=1"
+          title="YouTube Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      ) : (
+        <>
+          {/* Background Image */}
+          <div className="absolute inset-0 overflow-hidden">
+            <ImageWithFallback
+              alt=""
+              className="absolute h-full w-full object-cover"
+              src={imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg}
+            />
+            <div className="absolute bg-[rgba(21,21,21,0.3)] inset-0" />
           </div>
-        </div>
-      </div>
 
-      <div className="absolute inset-0 flex flex-col gap-[10px] md:gap-[14px] items-center justify-center pointer-events-none">
-        <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.15)] content-stretch flex items-center justify-center overflow-clip relative rounded-[7px] shrink-0 size-[60px] md:size-[80px] pointer-events-auto cursor-pointer hover:scale-110 transition-transform">
-          <div className="size-[10px] md:size-[12px]">
-            <ImageWithFallback alt="" className="size-full" src={imgIcon1} />
+          <BlurOverlays />
+
+          {/* Top Right Text */}
+          <div className="absolute content-stretch flex flex-col items-start justify-center end-[20px] md:end-[2.7%] top-[20px] md:top-[28px] max-w-[145px]">
+            <div
+              className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[18px] md:text-[23px] text-[transparent] tracking-[-0.4px] whitespace-nowrap text-end md:text-start"
+              style={{
+                backgroundImage:
+                  "linear-gradient(-87.6189deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)",
+              }}
+            >
+              <p className="leading-[1.2] mb-0 whitespace-pre">
+                {t.video_expertise_p1}
+              </p>
+              <p className="leading-[1.2] whitespace-pre">
+                {t.video_expertise_p2}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[20px] md:text-[28px] text-white tracking-[-0.4px] whitespace-nowrap">
-          <p className="leading-[29.96px] cta-shine cta-shine-primary">{t.view_video}</p>
-        </div>
-      </div>
+
+          {/* Time Badge */}
+          <div
+            className="absolute backdrop-blur-[20px] bottom-[20px] md:bottom-[40px] h-[34px] md:h-[38px] start-0 rounded-be-[30px] rounded-te-[30px] w-[90px] md:w-[105px] overflow-hidden"
+            data-name="Time"
+          >
+            <ImageWithFallback
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover"
+              src={imgIcon}
+            />
+            <div className="absolute end-[15px] md:end-[20.95px] top-[8px] md:top-[9px]">
+              <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[9px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+                <p className="leading-[17.6px]">4:14 min</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Play Button & CTA */}
+          <div className="absolute inset-0 flex flex-col gap-[10px] md:gap-[14px] items-center justify-center">
+            <div
+              onClick={() => setPlayVideo(true)}
+              className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.15)] content-stretch flex items-center justify-center overflow-hidden relative rounded-[7px] shrink-0 size-[60px] md:size-[80px] cursor-pointer hover:scale-110 transition-transform duration-300"
+            >
+              <div className="size-[10px] md:size-[12px]">
+                <ImageWithFallback
+                  alt="Play Video"
+                  className="size-full"
+                  src={imgIcon1}
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[20px] md:text-[28px] text-white tracking-[-0.4px] whitespace-nowrap">
+              <p className="leading-[29.96px] ">
+                {t.view_video}
+              </p>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

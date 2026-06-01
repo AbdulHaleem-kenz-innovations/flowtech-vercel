@@ -25,7 +25,7 @@ export const HomePage = () => {
     <>
       <HeroSection />
       <AboutSection />
-      <BrandSection />
+      {/* <BrandSection /> */}
       <IntroducingSection />
       <FeaturesSection />
       <FunFactsSection />
@@ -34,10 +34,10 @@ export const HomePage = () => {
       <CtaSection />
       <OurProcessSection />
       <EcosystemSection />
-      <TestimonialSection />
-      <HeroTestimonialSection />
-       <div className="block md:hidden"><TeamSection2 /></div>
-       <div className="hidden md:block"><TeamSection /></div>
+      {/* <TestimonialSection /> */}
+      {/* <HeroTestimonialSection /> */}
+       {/* <div className="block md:hidden"><TeamSection2 /></div>
+       <div className="hidden md:block"><TeamSection /></div> */}
       <BlogSection />
       <ContactSection />
       <RotationCardSection />

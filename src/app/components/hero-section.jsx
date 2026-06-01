@@ -129,8 +129,9 @@
 // };
 
 import React, { useEffect, useState } from "react";
-import imgHEroImage from "../../assets/48517710623739daa711816a992836288eaf350d.png";
-import imgImage from "../../assets/14a520dccf727ce258eeb22631612c2347519bfe.png";
+import imgHEroImage from "../../assets/fullSphere.webp";
+// import imgImage from "../../assets/14a520dccf727ce258eeb22631612c2347519bfe.png";
+import imgImage from "../../assets/halfSphere.webp";
 import { imgDivFramerIu4QG } from "../../imports/svg-hryyo";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import ScrollFadeIn from "../../components/ScrollFadeIn";
@@ -243,7 +244,7 @@ export const HeroSection = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 23 20"
                   className="
-                    w-[90%]
+                    w-[80%]
                     h-auto
                     opacity-50
                     md:opacity-50

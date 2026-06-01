@@ -7,12 +7,12 @@ import { NewsletterSection } from '../components/newsletter-section';
 import { useLanguage } from '../../context/LanguageContext';
 import { langData } from '../../langData/data';
 
-import AibizzImg1 from "../../assets/AI-Bizz-App-1.png";
-import AibizzImg2 from "../../assets/Ai-Bizz-App-2.png";
-import kenvoiceImg1 from "../../assets/Kenvoice-1.png";
-import kenvoiceImg2 from "../../assets/Kenvoice-2.png";
-import smartidp1 from "../../assets/Smart-IDP-1.png";
-import smartidp2 from "../../assets/Smart-IDP-2.png";
+import AibizzImg1 from "../../assets/AI-Bizz-App-1.webp";
+import AibizzImg2 from "../../assets/Ai-Bizz-App-2.webp";
+import kenvoiceImg1 from "../../assets/Kenvoice-1.webp";
+import kenvoiceImg2 from "../../assets/Kenvoice-2.webp";
+import smartidp1 from "../../assets/Smart-IDP-1.webp";
+import smartidp2 from "../../assets/Smart-IDP-2.webp";
 
 
 // Badge SVG icons (reused from blog-detail-page)

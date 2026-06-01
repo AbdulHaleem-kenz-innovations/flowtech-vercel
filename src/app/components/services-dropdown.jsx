@@ -5,14 +5,14 @@ import { createPortal } from 'react-dom';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useLanguage } from '../../context/LanguageContext';
 import { langData } from '../../langData/data';
-import mesIntro from "../../assets/service-images/MES/1.jpeg"
-import emsIntro from "../../assets/service-images/EMS/1.jpeg"
-import pipelineIntro from "../../assets/service-images/Pipelines/1.jpeg"
-import aiIntro from "../../assets/service-images/Ai-Analytics/1.jpeg"
-import cloudIntro from "../../assets/service-images/Cloud/1.jpeg"
-import sapIntro from "../../assets/service-images/SAP/1.jpeg"
-import oracleIntro from "../../assets/service-images/Oracle/1.jpeg"
-import analyticsIntro from "../../assets/service-images/Analytics/1.jpeg"
+import mesIntro from "../../assets/service-images/MES/1.webp"
+import emsIntro from "../../assets/service-images/EMS/1.webp"
+import pipelineIntro from "../../assets/service-images/Pipelines/1.webp"
+import aiIntro from "../../assets/service-images/Ai-Analytics/1.webp"
+import cloudIntro from "../../assets/service-images/Cloud/1.webp"
+import sapIntro from "../../assets/service-images/SAP/1.webp"
+import oracleIntro from "../../assets/service-images/Oracle/1.webp"
+import analyticsIntro from "../../assets/service-images/Analytics/1.webp"
 
 import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../../assets/12f90a2a24f7e3315caa72708e6722575a13d825.png";
 

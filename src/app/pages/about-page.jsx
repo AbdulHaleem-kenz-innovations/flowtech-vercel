@@ -223,13 +223,13 @@ const AboutPage = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-10 md:mt-12 relative z-10">
-                <button
+                {/* <button
                   onClick={() => teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' })}
                   className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-['Geist'] cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn"
                 >
                   {t.overview.cta_team}
-                </button>
-                <span className={`text-white/60 font-['Geist'] text-[16px] md:text-[18px] text-center ${isRtl ? 'sm:text-right' : 'sm:text-left'}`}>Hello@flowtech.com</span>
+                </button> */}
+                <span className={`text-white/60 font-['Geist'] text-[16px] md:text-[18px] text-center ${isRtl ? 'sm:text-right' : 'sm:text-left'}`}>info@flowtechdigitalsolutions.com</span>
               </div>
             </div>
           </div>
@@ -308,7 +308,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Team Section */}
-      <TeamSection2 ref={teamSectionRef} />
+      {/* <TeamSection2 ref={teamSectionRef} /> */}
 
 
       {/* Industrial Power Section */}

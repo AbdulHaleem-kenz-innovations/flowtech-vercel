@@ -132,7 +132,7 @@ export const langData = {
       products: {
         kenvoice: {
           title: "Kenvoice",
-          description: "STREAMLINE INVOICING AND FINANCIAL OPERATIONS WITH AUTOMATED BILLING, REAL-TIME TRACKING, AND SMART REPORTING."
+          description: "Kenvoice is an AI-powered voice automation platform enabling intelligent customer interactions, workflow integrations, analytics, and scalable support."
         },
         smart_idp: {
           title: "Smart IDP",
@@ -140,7 +140,7 @@ export const langData = {
         },
         ai_bizzapp: {
           title: "AI BizzApp",
-          description: "BUILD AND DEPLOY CUSTOM AI-POWERED BUSINESS APPLICATIONS TO AUTOMATE WORKFLOWS AND IMPROVE PRODUCTIVITY."
+          description: "AI BizApp streamlines business operations through AI-powered automation, customer engagement, analytics, and intelligent workflow management."
         }
       },
       view_all: "VIEW ALL"
@@ -302,8 +302,8 @@ export const langData = {
       call_us: "call us",
       our_location: "Our Location",
       address_title: "Flow Technology General Contracting Co,",
-      address_p1: "P.O. Box 32655, Adh Dhahran Al Jubail Br. Rd,",
-      address_p2: "Al Badi Dst. Al Qatif, KSA",
+      address_p1: " Adh Dhahran Al Jubail Br. Rd,",
+      address_p2: " KSA",
       tagline: "Empowering industries through data, AI, and intelligent systems.",
       company: "company",
       info: "info",
@@ -1673,7 +1673,7 @@ export const langData = {
           description: "حول البيانات المعقدة إلى رؤى قابلة للتنفيذ باستخدام التحليلات المتقدمة ولوحات المعلومات في الوقت الفعلي والنمذجة التنبؤية."
         },
         4: {
-          title: "خدمات السحابة",
+          title: "الخدمات السحابية",
           subtitle:  "البنية التحتية السحابية، المنصات القابلة للتوسع",
           description: "راقب خطوط الأنابيب في الوقت الفعلي باستخدام الاستشعار الموزع بالألياف الضوئية للكشف عن التسريبات وتغيرات درجات الحرارة والتطفل عبر المسافات الطويلة."
         },
@@ -1865,8 +1865,8 @@ export const langData = {
       feature2_title: "خطوات تالية موجهة",
       feature2_desc: "نحن لا نتركك للتخمين - كل مرحلة مدعومة بالتوجيه",
       form_badge: "تواصل معنا",
-      form_title_p1: "هل لديك",
-      form_title_italic: "حل في ذهنك؟",
+      form_title_p1: "لديك احتياج",
+      form_title_italic: " اخر شاركه معنا هل ",
       label_name: "الاسم",
       label_email: "البريد الإلكتروني*",
       label_message: "الرسالة",
@@ -1902,8 +1902,8 @@ export const langData = {
       call_us: "اتصل بنا",
       our_location: "موقعنا",
       address_title: "شركة فلو للتكنولوجيا للمقاولات العامة،",
-      address_p1: "ص.ب 32655، طريق الظهران الجبيل السريع،",
-      address_p2: "حي البادي، القطيف، المملكة العربية السعودية",
+      address_p1: "طريق الظهران الجبيل السريع،",
+      address_p2: "المملكة العربية السعودية",
       tagline: "تمكين الصناعات من خلال البيانات والذكاء الاصطناعي والأنظمة الذكية.",
       company: "الشركة",
       info: "معلومات",
