@@ -157,12 +157,12 @@ function VoiceWaveform({ active }) {
           transition={
             active
               ? {
-                  duration: config.duration,
-                  repeat: Infinity,
-                  repeatType: "mirror",
-                  delay: config.delay,
-                  ease: "easeInOut",
-                }
+                duration: config.duration,
+                repeat: Infinity,
+                repeatType: "mirror",
+                delay: config.delay,
+                ease: "easeInOut",
+              }
               : { duration: 0.4, ease: "easeOut" }
           }
         />
@@ -815,11 +815,10 @@ export function FloatingAIBot() {
                           className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
                         >
                           <div
-                            className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm shadow-md ${
-                              msg.sender === "user"
+                            className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm shadow-md ${msg.sender === "user"
                                 ? "bg-gradient-to-r from-[#1856FF] to-[#3A7BFF] text-white rounded-tr-none"
                                 : "bg-white/10 backdrop-blur-md border border-white/10 text-white rounded-tl-none"
-                            }`}
+                              }`}
                           >
                             {msg.type === "pdf" ? (
                               <div className="flex items-center gap-3 bg-black/20 p-3 rounded-lg border border-white/10 max-w-[260px]">
@@ -947,13 +946,12 @@ export function FloatingAIBot() {
                             whileTap={
                               !voiceActive ? { scale: 0.92 } : undefined
                             }
-                            className={`relative w-14 h-14 rounded-full flex items-center justify-center transition-all ${
-                              voiceActive
+                            className={`relative w-14 h-14 rounded-full flex items-center justify-center transition-all ${voiceActive
                                 ? isMuted
                                   ? "bg-amber-500/20 text-amber-400 border border-amber-500/40"
                                   : "bg-gradient-to-r from-[#1856FF] to-[#3A7BFF] text-white shadow-[0_0_20px_rgba(24,86,255,0.5)]"
                                 : "bg-white/10 border border-white/10 text-white hover:bg-white/20 cursor-pointer"
-                            }`}
+                              }`}
                           >
                             {voiceActive && isMuted ? (
                               <MicOff size={22} />
@@ -971,15 +969,14 @@ export function FloatingAIBot() {
                               animate={{ opacity: 1, y: 0 }}
                               exit={{ opacity: 0, y: -4 }}
                               transition={{ duration: 0.15 }}
-                              className={`text-xs mb-1.5 font-semibold ${
-                                voiceStatus === "listening"
+                              className={`text-xs mb-1.5 font-semibold ${voiceStatus === "listening"
                                   ? isMuted
                                     ? "text-amber-400"
                                     : "text-[#00D4FF]"
                                   : voiceStatus === "speaking"
                                     ? "text-[#00FF66]"
                                     : "text-white/50"
-                              }`}
+                                }`}
                             >
                               {voiceStatus === "idle" && "Tap mic to start"}
                               {voiceStatus === "listening" &&
@@ -1048,11 +1045,10 @@ export function FloatingAIBot() {
                               className={`flex ${entry.sender === "user" ? "justify-end" : "justify-start"}`}
                             >
                               <div
-                                className={`max-w-[82%] rounded-2xl px-4 py-2.5 text-sm ${
-                                  entry.sender === "user"
+                                className={`max-w-[82%] rounded-2xl px-4 py-2.5 text-sm ${entry.sender === "user"
                                     ? "bg-[#1856FF] text-white rounded-br-none"
                                     : "bg-white/10 border border-white/10 text-white rounded-bl-none"
-                                }`}
+                                  }`}
                               >
                                 <div className="text-[10px] opacity-50 mb-0.5">
                                   {entry.sender === "bot" ? "Ken AI" : "You"}
@@ -1079,11 +1075,10 @@ export function FloatingAIBot() {
                           >
                             <button
                               onClick={toggleMute}
-                              className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-medium transition-all cursor-pointer border ${
-                                isMuted
+                              className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-medium transition-all cursor-pointer border ${isMuted
                                   ? "bg-amber-500/20 text-amber-400 border-amber-500/30"
                                   : "bg-white/5 border-white/10 text-white hover:bg-white/10"
-                              }`}
+                                }`}
                             >
                               {isMuted ? (
                                 <VolumeX size={16} />
@@ -1336,15 +1331,13 @@ export function FloatingAIBot() {
                         value={callFormData.name}
                         onChange={handleFormChange}
                         placeholder="John Doe"
-                        className={`w-full bg-white/5 border ${
-                          formErrors.name
+                        className={`w-full bg-white/5 border ${formErrors.name
                             ? "border-red-500/50 focus:border-red-500"
                             : "border-white/10 focus:border-[#1856FF]"
-                        } rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 outline-none focus:ring-2 ${
-                          formErrors.name
+                          } rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 outline-none focus:ring-2 ${formErrors.name
                             ? "focus:ring-red-500/20"
                             : "focus:ring-[#1856FF]/20"
-                        } transition-all`}
+                          } transition-all`}
                       />
                       {formErrors.name && (
                         <p className="text-red-400 text-xs mt-1 font-medium">
@@ -1364,15 +1357,13 @@ export function FloatingAIBot() {
                         value={callFormData.email}
                         onChange={handleFormChange}
                         placeholder="john@example.com"
-                        className={`w-full bg-white/5 border ${
-                          formErrors.email
+                        className={`w-full bg-white/5 border ${formErrors.email
                             ? "border-red-500/50 focus:border-red-500"
                             : "border-white/10 focus:border-[#1856FF]"
-                        } rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 outline-none focus:ring-2 ${
-                          formErrors.email
+                          } rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 outline-none focus:ring-2 ${formErrors.email
                             ? "focus:ring-red-500/20"
                             : "focus:ring-[#1856FF]/20"
-                        } transition-all`}
+                          } transition-all`}
                       />
                       {formErrors.email && (
                         <p className="text-red-400 text-xs mt-1 font-medium">
@@ -1415,11 +1406,10 @@ export function FloatingAIBot() {
 
                       {/* Flex container grouping the Country Dropdown and Phone Input together */}
                       <div
-                        className={`flex items-center w-full bg-white/5 border ${
-                          formErrors.phone
+                        className={`flex items-center w-full bg-white/5 border ${formErrors.phone
                             ? "border-red-500/50 focus-within:border-red-500 focus-within:ring-red-500/20"
                             : "border-white/10 focus-within:border-[#1856FF] focus-within:ring-[#1856FF]/20"
-                        } rounded-xl transition-all focus-within:ring-2`}
+                          } rounded-xl transition-all focus-within:ring-2`}
                       >
                         {/* Country Selector Dropdown */}
                         <div className="relative border-r border-white/10 px-3 flex items-center justify-center">
@@ -1510,15 +1500,13 @@ export function FloatingAIBot() {
                         onChange={handleFormChange}
                         placeholder="How can we assist you?"
                         rows={3}
-                        className={`w-full bg-white/5 border ${
-                          formErrors.message
+                        className={`w-full bg-white/5 border ${formErrors.message
                             ? "border-red-500/50 focus:border-red-500"
                             : "border-white/10 focus:border-[#1856FF]"
-                        } rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 outline-none resize-none focus:ring-2 ${
-                          formErrors.message
+                          } rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/30 outline-none resize-none focus:ring-2 ${formErrors.message
                             ? "focus:ring-red-500/20"
                             : "focus:ring-[#1856FF]/20"
-                        } transition-all`}
+                          } transition-all`}
                       />
                       {formErrors.message && (
                         <p className="text-red-400 text-xs mt-1 font-medium">
@@ -1581,7 +1569,7 @@ export function FloatingAIBot() {
                       <button
                         onClick={handleOtpVerify}
                         disabled={otp.join("").length < 6}
-                        className="w-full bg-gradient-to-r from-[#1856FF] to-[#3A7BFF] hover:from-[#1245DD] hover:to-[#2F65DF] text-white py-3.5 rounded-xl font-semibold tracking-wide shadow-lg hover:shadow-[#1856FF]/30 disabled:opacity-40 disabled:hover:from-[#1856FF] disabled:hover:to-[#3A7BFF] transition-all cursor-pointer flex items-center justify-center gap-2"
+                        className="w-full bg-gradient-to-r from-[#1856FF] to-[#3A7BFF] hover:from-[#1245DD] hover:to-[#2F65DF] text-white py-3.5 rounded-xl font-semibold tracking-wide shadow-lg hover:shadow-[#1856FF]/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-40 disabled:pointer-events-none disabled:hover:from-[#1856FF] disabled:hover:to-[#3A7BFF]"
                       >
                         Verify & Submit
                       </button>
@@ -1589,7 +1577,7 @@ export function FloatingAIBot() {
                       <div className="text-center">
                         <button
                           onClick={() => {
-                            alert("Dummy OTP Resent successfully!");
+                            alert("OTP Resent successfully!");
                           }}
                           className="text-xs text-[#3A7BFF] hover:text-[#1856FF] font-medium transition-colors cursor-pointer"
                         >
