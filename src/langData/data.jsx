@@ -3,7 +3,7 @@ export const langData = {
     navbar: {
       home: "Home",
       about: "About",
-      services: "Services",
+      services: "Solutions",
       industries: "Industries",
       products: "Products",
       insights: "Insights",
@@ -22,7 +22,7 @@ export const langData = {
       sensors: "SENSORS",
       systems: "SYSTEMS",
       data_flow: "DATA FLOW",
-      quote: "“WORKING WITH FLOWTECH WAS A GAME-CHANGER — THEY BROUGHT REAL-TIME VISIBILITY TO OUR OPERATIONS AND ENABLED SMARTER, DATA-DRIVEN DECISIONS ACROSS OUR BUSINESS.”",
+      quote: "“FLOWTECH HELPS ENTERPRISES ACCELERATE DIGITAL TRANSFORMATION — DELIVERING REAL-TIME INSIGHTS, SMART AUTOMATION, AND CONNECTED OPERATIONS THAT ENABLE FASTER, MORE INFORMED DECISION-MAKING.”",
       author: "Rachel Adams",
       role: "OPERATIONS HEAD",
       ai_systems: "AI SYSTEMS",
@@ -42,7 +42,7 @@ export const langData = {
     },
     features: {
       core_services: "CORE SERVICES",
-      services_title: "Services",
+      services_title: "Solution",
       services_description: "FROM DATA TO INFRASTRUCTURE, WE DELIVER END-TO-END DIGITAL AND INDUSTRIAL SOLUTIONS BUILT FOR SCALE AND IMPACT",
       view_all_services: "View All Services",
       video_expertise_p1: "Our expertise, ",
@@ -73,7 +73,7 @@ export const langData = {
           description: "Turn complex data into actionable insights with advanced analytics, real-time dashboards, and predictive modelling."
         },
         4: {
-          title: "Cloud Services",
+          title: "Cloud Solution",
           subtitle: "CLOUD INFRASTRUCTURE, SCALABLE PLATFORMS",
           description: "Monitor pipelines in real time using distributed fiber optic sensing to detect leaks, temperature changes, and intrusions across long distances."
         },
@@ -108,9 +108,9 @@ export const langData = {
     },
     fun_facts: {
       key_impact: "KEY IMPACT",
-      proven_results: "Proven results,",
-      every_time: " every time",
-      description: "DELIVERING MEASURABLE RESULTS ACROSS INDUSTRIES THROUGH DATA, AI, AND INTELLIGENT SYSTEMS",
+      proven_results: "Expected results,",
+      every_time: "every step",
+      description: "BUILT TO SUPPORT OPERATIONAL IMPROVEMENT THROUGH DATA, AI, AUTOMATION, AND INTELLIGENT MONITORING SYSTEMS",
       card1_title: "75% faster",
       card1_desc: "REDUCE OPERATIONAL DELAYS WITH REAL-TIME MONITORING AND AUTOMATED DECISION SYSTEMS",
       fact_label: "fact 01",
@@ -861,37 +861,37 @@ export const langData = {
         ]
       },
       'cloud-services': {
-        title: 'Cloud Services',
+        title: 'Cloud Solution',
         description: 'Scalable cloud infrastructure and robust data lakes for secure, high-performance industrial data management.',
-        intro: 'Flowtech Cloud Services enable organizations to build, migrate, and operate scalable, secure cloud environments that support modern data, AI, and enterprise workloads.',
+        intro: 'Flowtech Cloud Solution enable organizations to build, migrate, and operate scalable, secure cloud environments that support modern data, AI, and enterprise workloads.',
         technology: 'AWS, Azure, Cloud-Native Architecture',
         concept: 'Cloud Transformation, Scalable Infrastructure',
         industry: 'Enterprise, Technology, Manufacturing',
         solution: 'We design and implement cloud strategies, migrate workloads, and build cloud-native platforms for data and AI. With DevOps automation and secure architectures, organizations achieve faster deployments and optimized performance.',
-        finalThoughts: 'Cloud Services provide the foundation for scalable, future-ready digital operations.',
+        finalThoughts: 'Cloud Solution provide the foundation for scalable, future-ready digital operations.',
         keyBenefits: [
           { title: 'OPERATIONAL IMPACT', text: 'Improves agility, reduces infrastructure costs, and accelerates innovation.' },
           { title: 'SCALABLE FOUNDATION', text: 'Enables flexible, secure environments that scale with business growth.' }
         ]
       },
       'sap-services': {
-        title: 'SAP Services',
+        title: 'SAP Solution',
         description: 'Seamless integration of industrial IoT data with ERP systems for unified business and operational visibility.',
-        intro: 'Flowtech SAP Services help organizations maximize the value of their SAP investments by enabling real-time analytics, seamless integration, and intelligent enterprise operations.',
+        intro: 'Flowtech SAP Solution help organizations maximize the value of their SAP investments by enabling real-time analytics, seamless integration, and intelligent enterprise operations.',
         technology: 'SAP SAC, BW/4HANA, S/4HANA',
         concept: 'Enterprise Intelligence, Integrated Business Systems',
         industry: 'Manufacturing, Energy, Enterprise',
         solution: 'We implement and optimize SAP systems, integrating them with analytics platforms and operational systems. From data warehousing to real-time dashboards, we enable end-to-end enterprise visibility and performance management.',
-        finalThoughts: 'SAP Services transform enterprise systems into intelligent, insight-driven platforms.',
+        finalThoughts: 'SAP Solution transform enterprise systems into intelligent, insight-driven platforms.',
         keyBenefits: [
           { title: 'OPERATIONAL IMPACT', text: 'Improves visibility, planning, and operational efficiency across business functions.' },
           { title: 'SCALABLE FOUNDATION', text: 'Supports enterprise-wide integration with flexible and future-ready SAP architectures.' }
         ]
       },
       'oracle-services': {
-        title: 'Oracle Services',
+        title: 'Oracle Solution',
         description: 'Seamless integration of industrial IoT data with ERP systems for unified business and operational visibility.',
-        intro: 'Flowtech Oracle Services enable organizations to modernize enterprise systems, integrate data, and optimize performance using Oracle’s cloud, database, and analytics solutions.',
+        intro: 'Flowtech Oracle Solution enable organizations to modernize enterprise systems, integrate data, and optimize performance using Oracle’s cloud, database, and analytics solutions.',
         technology: 'Oracle Cloud, Oracle ERP, Oracle DB',
         concept: 'Oracle Cloud, Oracle ERP, Oracle DB',
         industry: 'Enterprise, Finance, Manufacturing',
@@ -1382,7 +1382,7 @@ export const langData = {
         ]
       },
       'cloud-services': {
-        title: "Cloud Services",
+        title: "Cloud Solution",
         subtitle: "Accelerate. Scale. Innovate — Without Limits.",
         technology: "AWS, Azure, Cloud-Native Architecture",
         concept: "Cloud Transformation, Scalable Infrastructure",
@@ -1390,7 +1390,7 @@ export const langData = {
         intro: "The cloud is no longer a destination — it is the foundation upon which every competitive enterprise is built. Flowtech IT's Cloud Services practice helps organizations design, migrate, and operate cloud environments that are secure, scalable, and optimized for the AI-driven workloads defining the next decade of business.\n\nWhether you are beginning your cloud journey, modernizing a legacy infrastructure, or building cloud-native AI applications, our team brings the architecture expertise, vendor partnerships, and operational discipline to deliver outcomes that matter.",
         sections: [
           {
-            title: "Our Cloud Service Areas",
+            title: "Our Cloud Solution Areas",
             subsections: [
               {
                 title: "Cloud Strategy & Migration",
@@ -1622,7 +1622,7 @@ export const langData = {
       sensors: "أجهزة الاستشعار",
       systems: "الأنظمة",
       data_flow: "تدفق البيانات",
-      quote: "“كان العمل مع فلوتيك نقطة تحول حقيقية — لقد وفروا لنا رؤية شاملة لعملياتنا في الوقت الفعلي ومكنونا من اتخاذ قرارات أكثر ذكاءً تعتمد على البيانات عبر أعمالنا.”",
+      quote: "تساعد فلوتيك المؤسسات على تسريع التحول الرقمي — من خلال تقديم رؤى في الوقت الفعلي، وأتمتة ذكية، وعمليات مترابطة تُمكّن من اتخاذ قرارات أسرع وأكثر استنارة.",
       author: "راشيل آدمز",
       role: "مدير العمليات",
       ai_systems: "أنظمة الذكاء الاصطناعي",
@@ -1709,8 +1709,8 @@ export const langData = {
     fun_facts: {
       key_impact: "تأثير رئيسي",
       proven_results: "نتائج مثبتة،",
-      every_time: " في كل مرة",
-      description: "تقديم نتائج قابلة للقياس عبر الصناعات من خلال البيانات والذكاء الاصطناعي والأنظمة الذكية",
+      every_time: "في كل مرة",
+      description: "مُصمَّم لدعم تحسين العمليات التشغيلية من خلال البيانات، والذكاء الاصطناعي، والأتمتة، وأنظمة المراقبة الذكية",
       card1_title: "75٪ أسرع",
       card1_desc: "تقليل التأخيرات التشغيلية من خلال المراقبة في الوقت الفعلي وأنظمة القرار الآلية",
       fact_label: "حقيقة 01",

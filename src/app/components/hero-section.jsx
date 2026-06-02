@@ -36,14 +36,14 @@
 //                 className="w-[14px] h-[14px] bg-white"
 //                 style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain', WebkitMaskImage: `url('${imgDivFramerIu4QG}')`, WebkitMaskSize: 'contain' }}
 //               />
-//               <span className="font-['Geist'] font-semibold text-[9px] md:text-[10px] text-white tracking-[0.18px] uppercase">
+//               <span className="font-geist font-semibold text-[9px] md:text-[10px] text-white tracking-[0.18px] uppercase">
 //                 {currentLangData.badge}
 //               </span>
 //             </div>
 
 //             {/* Headline */}
 //             <div className="flex flex-col">
-//               <h1 className="font-['Geist'] font-medium text-[36px] sm:text-[44px] md:text-[54px] lg:text-[64px] leading-[1.1] tracking-tight">
+//               <h1 className="font-geist font-medium text-[36px] sm:text-[44px] md:text-[54px] lg:text-[64px] leading-[1.1] tracking-tight">
 //                 <span className="bg-gradient-to-l from-white/60 to-white bg-clip-text text-transparent block sm:inline">
 //                   {currentLangData.headline_p1}
 //                 </span>
@@ -51,14 +51,14 @@
 //                 <span className="bg-gradient-to-l from-white/60 to-white bg-clip-text text-transparent">
 //                   {currentLangData.headline_p2}
 //                 </span>
-//                 <span className="font-['Playfair_Display'] italic font-normal text-[#d9d9d9] ms-2 sm:ms-4">
+//                 <span className="font-playfair italic font-normal text-[#d9d9d9] ms-2 sm:ms-4">
 //                   {currentLangData.headline_p3}
 //                 </span>
 //               </h1>
 //             </div>
 
 //             {/* Description */}
-//             <p className="font-['Geist'] text-white/70 text-sm md:text-base uppercase leading-relaxed tracking-wide max-w-[500px]">
+//             <p className="font-geist text-white/70 text-sm md:text-base uppercase leading-relaxed tracking-wide max-w-[500px]">
 //               {currentLangData.description}
 //             </p>
 
@@ -74,7 +74,7 @@
 //                 bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
 //                 border border-white/20
 //                 text-white uppercase whitespace-nowrap
-//                 font-['Geist']
+//                 font-geist
 //                 cursor-pointer
 //                 transition-all duration-300
 //                 hover:scale-105 active:scale-95
@@ -172,14 +172,14 @@ export const HeroSection = () => {
                 }}
               />
 
-              <span className="font-['Geist'] font-semibold text-[9px] md:text-[10px] text-white tracking-[0.18px] uppercase">
+              <span className="font-geist font-semibold text-[9px] md:text-[10px] text-white tracking-[0.18px] uppercase">
                 {currentLangData.badge}
               </span>
             </div>
 
             {/* Headline */}
             <div className="flex flex-col">
-              <h1 className="font-['Geist'] font-medium text-[36px] sm:text-[44px] md:text-[54px] lg:text-[64px] leading-[1.1] tracking-tight">
+              <h1 className="font-geist font-medium text-[36px] sm:text-[44px] md:text-[54px] lg:text-[64px] leading-[1.1] tracking-tight">
                 <span className="bg-gradient-to-l from-white/60 to-white bg-clip-text text-transparent block sm:inline">
                   {currentLangData.headline_p1}
                 </span>
@@ -190,14 +190,14 @@ export const HeroSection = () => {
                   {currentLangData.headline_p2}
                 </span>
 
-                <span className="font-['Playfair_Display'] italic font-normal text-[#d9d9d9] ms-2 sm:ms-4">
+                <span className="font-playfair italic font-normal text-[#d9d9d9] ms-2 sm:ms-4">
                   {currentLangData.headline_p3}
                 </span>
               </h1>
             </div>
 
             {/* Description */}
-            <p className="font-['Geist'] text-white/70 text-sm md:text-base uppercase leading-relaxed tracking-wide max-w-[500px]">
+            <p className="font-geist text-white/70 text-sm md:text-base uppercase leading-relaxed tracking-wide max-w-[500px]">
               {currentLangData.description}
             </p>
 
@@ -214,7 +214,7 @@ export const HeroSection = () => {
                 bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
                 border border-white/20
                 text-white uppercase whitespace-nowrap
-                font-['Geist']
+                font-geist
                 cursor-pointer
                 transition-all duration-300 
                 hover:scale-105 active:scale-95 

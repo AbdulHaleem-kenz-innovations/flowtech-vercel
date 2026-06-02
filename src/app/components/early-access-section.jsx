@@ -229,7 +229,7 @@ function FormFramer1B3R0N() {
     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
     border border-white/20
     text-white uppercase whitespace-nowrap
-    font-['Geist']
+    font-geist
 
     cursor-pointer
     transition-all duration-300 

@@ -1,6 +1,7 @@
 import React from 'react';
 import svgPaths from "../../imports/svg-hf28r9pj1o";
-import imgImage from "../../assets/a6762a8cc056345d446f61fffcf640811f2a8f05.png";
+// import imgImage from "../../assets/a6762a8cc056345d446f61fffcf640811f2a8f05.png";
+import imgImage from "../../assets/cta-img1.webp";
 import { imgDivFramerIu4QG } from "../../imports/svg-y09t6";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useLanguage } from '../../context/LanguageContext';
@@ -105,7 +106,7 @@ function LetsBuildSomething() {
   const t = langData[language.toLowerCase()].cta_section;
   return (
     <div className="h-auto relative shrink-0 w-full" data-name="Let’s build something">
-      <div className="bg-clip-text bg-gradient-to-l flex flex-col font-['Geist'] font-medium from-[5%] from-[rgba(255,255,255,0.6)] justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] to-1/2 to-white tracking-[-0.4px] whitespace-nowrap">
+      <div className="bg-clip-text bg-gradient-to-l flex flex-col font-geist font-medium from-[5%] from-[rgba(255,255,255,0.6)] justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] to-1/2 to-white tracking-[-0.4px] whitespace-nowrap">
         <p className="leading-[1.1]">{t.title_p1}</p>
       </div>
     </div>
@@ -117,7 +118,7 @@ function GreatTogether() {
   const t = langData[language.toLowerCase()].cta_section;
   return (
     <div className="h-auto relative shrink-0 w-full" data-name="great together.">
-      <div className="bg-clip-text bg-gradient-to-r flex flex-col font-['Playfair_Display'] font-normal from-[#d9d9d9] from-[49%] italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] to-[rgba(255,255,255,0.6)] tracking-[-0.4px] whitespace-nowrap">
+      <div className="bg-clip-text bg-gradient-to-r flex flex-col font-playfair font-normal from-[#d9d9d9] from-[49%] italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] to-[rgba(255,255,255,0.6)] tracking-[-0.4px] whitespace-nowrap">
         <p className="leading-[1.1]">{t.title_p2}</p>
       </div>
     </div>
@@ -148,7 +149,7 @@ function TellUsWhatYouNeedWellHandleTheRestFromStrategyToExecution() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center min-w-[200px] opacity-70 relative shrink-0 w-full" data-name="Tell us what you need — we’ll handle the rest, from strategy to execution.">
       <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
-        <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[18px] text-white uppercase w-full">
+        <div className="flex flex-col font-geist font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[18px] text-white uppercase w-full">
           <p className="leading-[1.4] md:leading-[27px]">{t.description}</p>
         </div>
       </div>
@@ -174,7 +175,7 @@ function GetStartedButton() {
     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
     border border-white/20
     text-white uppercase whitespace-nowrap
-    font-['Geist']
+    font-geist
 
     cursor-pointer
     transition-all duration-300 
@@ -288,8 +289,8 @@ function VrImage() {
           className={`
             aspect-[600/641] w-full lg:w-[600px] relative overflow-hidden rounded-[7px]
             transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] origin-right
-            ${visible 
-              ? "opacity-100 translate-x-0 scale-100" 
+            ${visible
+              ? "opacity-100 translate-x-0 scale-100"
               : "opacity-0 translate-x-[100px] md:translate-x-[150px] scale-[0.8]"}
           `}
           onClick={() => {
@@ -309,7 +310,7 @@ function VrImage() {
               ${visible ? "opacity-100" : "opacity-0"}
               
               /* Desktop Final Position (Big by Default) */
-              md:translate-x-[-10px] md:translate-y-[40px] md:scale-100
+              md:translate-x-[-10px] md:scale-100
               rtl:md:translate-x-[10px]
 
               /* Mobile Interaction */
@@ -319,7 +320,7 @@ function VrImage() {
             <ImageWithFallback
               alt=""
               src={imgImage}
-              className="w-full h-full object-cover rounded-[7px]"
+              className="w-full h-full object-cover object-top rounded-[7px]"
             />
           </div>
         </div>

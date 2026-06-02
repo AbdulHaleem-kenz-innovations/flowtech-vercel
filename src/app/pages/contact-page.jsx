@@ -21,7 +21,7 @@ const InputField = ({ label, placeholder, type = "text", isRtl }) => (
   <div className="content-stretch flex flex-col gap-[5px] items-start relative shrink-0 w-full" data-name={`label.framer-${label.toLowerCase()}`}>
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="div.framer-label">
       <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full">
-        <div className={`flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[11px] text-black tracking-[0.2px] uppercase whitespace-nowrap ${isRtl ? 'text-start' : ''}`}>
+        <div className={`flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[11px] text-black tracking-[0.2px] uppercase whitespace-nowrap ${isRtl ? 'text-start' : ''}`}>
           <p className="leading-[17.6px]">{label}</p>
         </div>
       </div>
@@ -34,7 +34,7 @@ const InputField = ({ label, placeholder, type = "text", isRtl }) => (
               <input
                 type={type}
                 placeholder={placeholder}
-                className={`bg-transparent border-none outline-none flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-black text-[16px] w-full placeholder:text-[#999] ${isRtl ? 'text-start' : ''}`}
+                className={`bg-transparent border-none outline-none flex flex-col font-geist font-medium justify-center leading-[0] relative shrink-0 text-black text-[16px] w-full placeholder:text-[#999] ${isRtl ? 'text-start' : ''}`}
               />
             </div>
           </div>
@@ -48,7 +48,7 @@ const TextAreaField = ({ label, placeholder, isRtl }) => (
   <div className="content-stretch flex flex-col gap-[5px] items-start relative shrink-0 w-full">
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="div.framer-label">
       <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full">
-        <div className={`flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[11px] text-black tracking-[0.2px] uppercase whitespace-nowrap ${isRtl ? 'text-start' : ''}`}>
+        <div className={`flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[11px] text-black tracking-[0.2px] uppercase whitespace-nowrap ${isRtl ? 'text-start' : ''}`}>
           <p className="leading-[17.6px]">{label}</p>
         </div>
       </div>
@@ -56,7 +56,7 @@ const TextAreaField = ({ label, placeholder, isRtl }) => (
     <div className="bg-[#f5f5f5] content-stretch flex h-[120px] items-start justify-center overflow-clip relative rounded-[7px] shrink-0 w-full">
       <textarea
         placeholder={placeholder}
-        className={`bg-transparent border-none outline-none p-[14px] flex-[1_0_0] h-full min-w-px overflow-x-clip overflow-y-auto relative font-['Geist'] font-medium text-black text-[16px] placeholder:text-[#999] resize-none ${isRtl ? 'text-start' : ''}`}
+        className={`bg-transparent border-none outline-none p-[14px] flex-[1_0_0] h-full min-w-px overflow-x-clip overflow-y-auto relative font-geist font-medium text-black text-[16px] placeholder:text-[#999] resize-none ${isRtl ? 'text-start' : ''}`}
       />
     </div>
   </div>
@@ -78,23 +78,23 @@ const ContactPage = () => {
               <div className="relative size-4" data-name="div.framer-IU4qG:mask-group">
                 <div className="absolute inset-0 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} data-name="div.framer-IU4qG" />
               </div>
-              <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-widest uppercase">
+              <span className="font-geist font-semibold text-[11px] text-white tracking-widest uppercase">
                 {t.hero.badge}
               </span>
             </div>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-3 text-center w-full" data-name="Heading Wrap">
             <h1 className="flex flex-wrap items-center justify-center gap-x-3">
-              <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[40px] md:text-[60px] text-transparent tracking-tighter leading-tight">
+              <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-geist font-medium text-[40px] md:text-[60px] text-transparent tracking-tighter leading-tight">
                 {t.hero.title_p1}
               </span>
-              <span className="font-['Playfair_Display'] italic font-normal text-[40px] md:text-[60px] text-white/70 tracking-tighter leading-tight">
+              <span className="font-playfair italic font-normal text-[40px] md:text-[60px] text-white/70 tracking-tighter leading-tight">
                 {t.hero.title_italic}
               </span>
             </h1>
           </div>
           <div className="flex flex-col items-center opacity-70 w-full max-w-[800px]" data-name="Questions, ideas, or just saying hi">
-            <p className="font-['Geist'] font-normal text-[14px] md:text-[18px] text-center text-white uppercase tracking-widest leading-relaxed">
+            <p className="font-geist font-normal text-[14px] md:text-[18px] text-center text-white uppercase tracking-widest leading-relaxed">
               {t.hero.description}
             </p>
           </div>
@@ -111,23 +111,23 @@ const ContactPage = () => {
                 <div className="p-6 md:p-8 flex flex-col gap-12 h-full justify-between">
                   <div className="flex flex-col gap-6">
                     <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-full w-fit">
-                      <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-widest uppercase">{t.info_cards.hire_us.badge}</span>
+                      <span className="font-geist font-semibold text-[11px] text-white tracking-widest uppercase">{t.info_cards.hire_us.badge}</span>
                     </div>
                     <div className="flex flex-col gap-1">
-                      <h5 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[23px] text-transparent tracking-tight leading-tight">
+                      <h5 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-geist font-medium text-[23px] text-transparent tracking-tight leading-tight">
                         {t.info_cards.hire_us.title}
                       </h5>
-                      <p className="font-['Playfair_Display'] italic font-normal text-[23px] text-white/70 tracking-tight leading-tight">
+                      <p className="font-playfair italic font-normal text-[23px] text-white/70 tracking-tight leading-tight">
                         {t.info_cards.hire_us.italic}
                       </p>
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-4 opacity-60">
-                    <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white tracking-wider hover:text-white transition-colors cursor-pointer break-words">
+                    <p className="font-geist font-normal text-[16px] md:text-[18px] text-white tracking-wider hover:text-white transition-colors cursor-pointer break-words">
                       info@flowtechdigitalsolutions.com
                     </p>
-                    <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white uppercase tracking-wider hover:text-white transition-colors cursor-pointer" dir="ltr">
+                    <p className="font-geist font-normal text-[16px] md:text-[18px] text-white uppercase tracking-wider hover:text-white transition-colors cursor-pointer" dir="ltr">
                       +966 55 877 1132
                     </p>
                   </div>
@@ -144,14 +144,14 @@ const ContactPage = () => {
               <div className="flex flex-col gap-6 w-full">
                 <div className="bg-[#2df9a7]/10 px-4 py-2 rounded-full w-fit flex items-center gap-2">
                   <div className="size-3 bg-[#0f9101]" style={{ maskImage: `url('${imgImage1}')`, maskSize: 'contain' }} />
-                  <span className="font-['Geist'] font-semibold text-[11px] text-[#0f9101] tracking-widest uppercase">{t.form.badge}</span>
+                  <span className="font-geist font-semibold text-[11px] text-[#0f9101] tracking-widest uppercase">{t.form.badge}</span>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-x-2">
-                  <h5 className="bg-clip-text bg-gradient-to-r from-black to-black/60 font-['Geist'] font-medium text-[23px] text-transparent tracking-tight">
+                  <h5 className="bg-clip-text bg-gradient-to-r from-black to-black/60 font-geist font-medium text-[23px] text-transparent tracking-tight">
                     {t.form.title_p1}
                   </h5>
-                  <p className="font-['Playfair_Display'] italic font-normal text-[23px] text-black/60 tracking-tight">
+                  <p className="font-playfair italic font-normal text-[23px] text-black/60 tracking-tight">
                     {t.form.title_italic}
                   </p>
                 </div>
@@ -173,19 +173,19 @@ const ContactPage = () => {
                       </svg>
                     </div>
                   </div>
-                  <p className="font-['Geist'] font-medium text-[13px] md:text-[14px] text-black/70 leading-relaxed">
+                  <p className="font-geist font-medium text-[13px] md:text-[14px] text-black/70 leading-relaxed">
                     {t.form.terms_p1} <span className="text-blue-700 font-semibold cursor-pointer hover:underline">{t.form.terms_link}</span>
                   </p>
                 </div>
 
                 <button className="relative rounded-full overflow-hidden w-full h-14 group shadow-lg shadow-blue-900/20">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-500 transition-opacity group-hover:opacity-90" />
-                  <span className="relative z-10 font-['Geist'] font-semibold text-[14px] text-white tracking-widest uppercase">{t.form.cta}</span>
+                  <span className="relative z-10 font-geist font-semibold text-[14px] text-white tracking-widest uppercase">{t.form.cta}</span>
                 </button>
               </form>
             </div> */}
 
-            <FormWrapper/>
+            <FormWrapper />
 
             {/* Right Column - Support Cards */}
             <div className="flex flex-col gap-5 lg:max-w-[305px] lg:flex-1 w-full" data-name="Lists">
@@ -197,9 +197,9 @@ const ContactPage = () => {
                 <div className="p-6 md:p-8 flex flex-col gap-10 h-full justify-between">
                   <div className="flex flex-col gap-6">
                     <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-full w-fit">
-                      <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-widest uppercase">{t.info_cards.support.badge}</span>
+                      <span className="font-geist font-semibold text-[11px] text-white tracking-widest uppercase">{t.info_cards.support.badge}</span>
                     </div>
-                    <h5 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[23px] text-transparent tracking-tight leading-tight">
+                    <h5 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-geist font-medium text-[23px] text-transparent tracking-tight leading-tight">
                       {t.info_cards.support.title}
                     </h5>
                   </div>
@@ -234,7 +234,7 @@ const ContactPage = () => {
                   {t.faq.title_p1}
                 </h2>
 
-                <h3 className="text-2xl font-['Playfair_Display'] md:text-4xl text-gray-300 italic">
+                <h3 className="text-2xl font-playfair md:text-4xl text-gray-300 italic">
                   {t.faq.title_italic}
                 </h3>
               </div>
@@ -251,7 +251,7 @@ const ContactPage = () => {
               bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
               border border-white/20
               text-white uppercase whitespace-nowrap
-              font-['Geist'] text-[16px]
+              font-geist text-[16px]
               cursor-pointer
               transition-all duration-300 
               hover:scale-105 active:scale-95 

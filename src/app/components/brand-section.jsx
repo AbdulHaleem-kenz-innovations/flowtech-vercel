@@ -50,7 +50,7 @@ export const BrandSection = () => {
           style={{ maxWidth: "1240px", margin: "0 auto" }}
         >
           {/* TEXT */}
-          <div className="font-['Geist'] text-[12px] md:text-[16px] text-white uppercase tracking-[0.18px] md:whitespace-nowrap md:shrink-0">
+          <div className="font-geist text-[12px] md:text-[16px] text-white uppercase tracking-[0.18px] md:whitespace-nowrap md:shrink-0">
             {currentLangData.trusted_by}
           </div>
 

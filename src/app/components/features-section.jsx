@@ -26,7 +26,7 @@ function PFramerText() {
   const t = langData[language.toLowerCase()].features;
   return (
     <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-start start-0 pb-[0.59px] end-0 top-[calc(50%-0.5px)]" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
         <p className="leading-[17.6px]">{t.core_services}</p>
       </div>
     </div>
@@ -63,7 +63,7 @@ function Heading2Projects() {
   const t = langData[language.toLowerCase()].features;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 2 → Projects">
-      <div className="bg-clip-text bg-gradient-to-l flex flex-col font-['Geist'] font-medium from-[5%] from-[rgba(255,255,255,0.4)] justify-center leading-[0] relative shrink-0 text-[40px] md:text-[60px]  tracking-[-0.4px] whitespace-nowrap">
+      <div className="bg-clip-text bg-gradient-to-l flex flex-col font-geist font-medium from-[5%] from-[rgba(255,255,255,0.4)] justify-center leading-[0] relative shrink-0 text-[40px] md:text-[60px]  tracking-[-0.4px] whitespace-nowrap">
         <p className="leading-[1.1]">{t.services_title}</p>
       </div>
     </div>
@@ -84,7 +84,7 @@ function PFramerText1() {
   const t = langData[language.toLowerCase()].features;
   return (
     <div className="md:-translate-y-1/2 md:absolute content-stretch flex flex-col items-start start-0 end-0 md:top-2/8" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[16px] text-white uppercase w-full max-w-[418px]">
+      <div className="flex flex-col font-geist font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[16px] text-white uppercase w-full max-w-[418px]">
         <p className="leading-[1.4] md:leading-[22.4px]">{t.services_description}</p>
       </div>
     </div>
@@ -109,7 +109,7 @@ function TitleWrap() {
 }
 
 function Component2025() {
-  return <div className="h-[27px] opacity-70 shrink-0 w-[70px] text-[12px] text-white font-['Geist'] hidden sm:block" data-name="(2025©)">(2025©)</div>;
+  return <div className="h-[27px] opacity-70 shrink-0 w-[70px] text-[12px] text-white font-geist hidden sm:block" data-name="(2025©)">(2025©)</div>;
 }
 
 function ContentWrapper() {
@@ -144,7 +144,7 @@ function Frame1({ description }) {
         md:group-hover:opacity-100
       "
     >
-      <div className="flex flex-col font-['Geist'] font-medium text-[14px] md:text-[20px] text-white w-full">
+      <div className="flex flex-col font-geist font-medium text-[14px] md:text-[20px] text-white w-full">
         <p className="leading-[1.4]">{description}</p>
       </div>
     </div>
@@ -167,11 +167,11 @@ function TitleWrapCard({ title, subtitle }) {
     <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.15)] relative rounded-[7px] shrink-0 w-full" data-name="Title Wrap">
       <div className="flex flex-row items-center overflow-clip rounded-[inherit] w-full">
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-between items-start sm:items-center px-[20px] py-[15px] w-full">
-          <div className="flex flex-col font-['Geist'] font-medium text-[18px] md:text-[20px] text-white shrink-0 sm:w-[240px] max-w-full">
+          <div className="flex flex-col font-geist font-medium text-[18px] md:text-[20px] text-white shrink-0 sm:w-[240px] max-w-full">
             <p className="leading-[1.2]">{title}</p>
           </div>
           <div className="opacity-70 text-start sm:text-end w-full sm:w-auto flex-[1_0_0] min-h-[36px] sm:min-h-[48px] flex items-center justify-start sm:justify-end">
-            <p className="font-['Geist'] font-normal text-[12px] md:text-[14px] text-white uppercase leading-[1.2] md:leading-[1.4] w-full">
+            <p className="font-geist font-normal text-[12px] md:text-[14px] text-white uppercase leading-[1.2] md:leading-[1.4] w-full">
               {subtitle}
             </p>
           </div>
@@ -235,7 +235,7 @@ function ServiceCard({ item }) {
   );
 }
 
- function WorkCardWrap({ services }) {
+function WorkCardWrap({ services }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[40px] md:gap-[15px] w-full">
       {services.map((item) => (
@@ -265,19 +265,19 @@ function DivFramer13M6KicContainer({ serviceButton }) {
     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
     border border-white/20
     text-white uppercase whitespace-nowrap
-    font-['Geist']
+    font-geist
 
     cursor-pointer
     transition-all duration-300 
     hover:scale-105 active:scale-95 
     glare-btn">
-         {langData[language.toLowerCase()].features.view_all_services}
+        {langData[language.toLowerCase()].features.view_all_services}
       </button>
     </div>
   );
 }
 
- function WorkCardWrapper({ services, serviceButton }) {
+function WorkCardWrapper({ services, serviceButton }) {
   return (
     <div className="content-stretch flex flex-col gap-12 md:gap-[50px] items-center justify-center overflow-clip relative shrink-0 w-full" data-name="Work Card Wrapper">
       <WorkCardWrap services={services} />
@@ -347,7 +347,7 @@ function BlurOverlays() {
 //       <BlurOverlays />
 
 //       <div className="absolute content-stretch flex flex-col items-start justify-center end-[20px] md:end-[2.7%] top-[20px] md:top-[28px] max-w-[145px]">
-//         <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[18px] md:text-[23px] text-[transparent] tracking-[-0.4px] whitespace-nowrap text-end md:text-start" style={{ backgroundImage: "linear-gradient(-87.6189deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)" }}>
+//         <div className="bg-clip-text flex flex-col font-geist font-medium justify-center leading-[0] relative shrink-0 text-[18px] md:text-[23px] text-[transparent] tracking-[-0.4px] whitespace-nowrap text-end md:text-start" style={{ backgroundImage: "linear-gradient(-87.6189deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)" }}>
 //           <p className="leading-[1.2] mb-0 whitespace-pre">{t.video_expertise_p1}</p>
 //           <p className="leading-[1.2] whitespace-pre">{t.video_expertise_p2}</p>
 //         </div>
@@ -356,7 +356,7 @@ function BlurOverlays() {
 //       <div className="absolute backdrop-blur-[20px] bottom-[20px] md:bottom-[40px] h-[34px] md:h-[38px] start-0 rounded-be-[30px] rounded-te-[30px] w-[90px] md:w-[105px] overflow-clip" data-name="Time">
 //         <ImageWithFallback alt="" className="absolute inset-0 h-full w-full object-cover" src={imgIcon} />
 //         <div className="absolute end-[15px] md:end-[20.95px] top-[8px] md:top-[9px]">
-//           <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[9px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+//           <div className="flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[9px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
 //             <p className="leading-[17.6px]">4:14 min</p>
 //           </div>
 //         </div>
@@ -368,7 +368,7 @@ function BlurOverlays() {
 //             <ImageWithFallback alt="" className="size-full" src={imgIcon1} />
 //           </div>
 //         </div>
-//         <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[20px] md:text-[28px] text-white tracking-[-0.4px] whitespace-nowrap">
+//         <div className="flex flex-col font-geist font-medium justify-center leading-[0] relative shrink-0 text-[20px] md:text-[28px] text-white tracking-[-0.4px] whitespace-nowrap">
 //           <p className="leading-[29.96px] cta-shine cta-shine-primary">{t.view_video}</p>
 //         </div>
 //       </div>
@@ -409,7 +409,7 @@ function VideoSection() {
           {/* Top Right Text */}
           <div className="absolute content-stretch flex flex-col items-start justify-center end-[20px] md:end-[2.7%] top-[20px] md:top-[28px] max-w-[145px]">
             <div
-              className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[18px] md:text-[23px] text-[transparent] tracking-[-0.4px] whitespace-nowrap text-end md:text-start"
+              className="bg-clip-text flex flex-col font-geist font-medium justify-center leading-[0] relative shrink-0 text-[18px] md:text-[23px] text-[transparent] tracking-[-0.4px] whitespace-nowrap text-end md:text-start"
               style={{
                 backgroundImage:
                   "linear-gradient(-87.6189deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)",
@@ -435,7 +435,7 @@ function VideoSection() {
               src={imgIcon}
             />
             <div className="absolute end-[15px] md:end-[20.95px] top-[8px] md:top-[9px]">
-              <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[9px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+              <div className="flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[9px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
                 <p className="leading-[17.6px]">4:14 min</p>
               </div>
             </div>
@@ -456,7 +456,7 @@ function VideoSection() {
               </div>
             </div>
 
-            <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[20px] md:text-[28px] text-white tracking-[-0.4px] whitespace-nowrap">
+            <div className="flex flex-col font-geist font-medium justify-center leading-[0] relative shrink-0 text-[20px] md:text-[28px] text-white tracking-[-0.4px] whitespace-nowrap">
               <p className="leading-[29.96px] ">
                 {t.view_video}
               </p>
@@ -473,10 +473,10 @@ export const FeaturesSection = () => {
     <ScrollFadeIn>
       <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8">
         <div className="max-w-[1260px] w-full flex flex-col gap-12 md:gap-[20px] items-center justify-center relative" data-name="Features">
-          <ContainerServices services={servicesData.slice(0, 4)}  serviceButton={{
-    // text: "VIEW ALL SERVICES",
-    link: "/services"
-  }} />
+          <ContainerServices services={servicesData.slice(0, 4)} serviceButton={{
+            // text: "VIEW ALL SERVICES",
+            link: "/services"
+          }} />
           <VideoSection />
         </div>
       </section>

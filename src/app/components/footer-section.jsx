@@ -44,14 +44,14 @@ const NavBadge = ({ label }) => (
         style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }}
       />
     </div>
-    <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-widest uppercase">
+    <span className="font-geist font-semibold text-[10px] md:text-[11px] text-white tracking-widest uppercase">
       {label}
     </span>
   </div>
 );
 
 const NavLink = ({ label, to = "/" }) => (
-  <Link to={to} className="font-['Geist'] text-[16px] md:text-[18px] text-white/60 hover:text-white transition-colors py-1">
+  <Link to={to} className="font-geist text-[16px] md:text-[18px] text-white/60 hover:text-white transition-colors py-1">
     {label}
   </Link>
 );
@@ -67,11 +67,11 @@ const ContactBox = () => {
           <div className="size-3">
             <ImageWithFallback src={imgImage} alt="" className="size-full object-contain" />
           </div>
-          <span className="font-['Geist'] font-bold text-[#0f9101] text-[10px] tracking-[0.1em] uppercase">
+          <span className="font-geist font-bold text-[#0f9101] text-[10px] tracking-[0.1em] uppercase">
             {t.email_us}
           </span>
         </div>
-        <span className="font-['Geist'] text-[15px] md:text-[16px] text-black font-medium break-all">
+        <span className="font-geist text-[15px] md:text-[16px] text-black font-medium break-all">
           info@flowtechdigitalsolutions.com
         </span>
       </div>
@@ -81,11 +81,11 @@ const ContactBox = () => {
           <div className="size-3">
             <ImageWithFallback src={imgImage1} alt="" className="size-full object-contain" />
           </div>
-          <span className="font-['Geist'] font-bold text-[#110fdf] text-[10px] tracking-[0.1em] uppercase">
+          <span className="font-geist font-bold text-[#110fdf] text-[10px] tracking-[0.1em] uppercase">
             {t.call_us}
           </span>
         </div>
-        <span className="font-['Geist'] text-[15px] md:text-[16px] text-black font-medium" dir="ltr">
+        <span className="font-geist text-[15px] md:text-[16px] text-black font-medium" dir="ltr">
           +966 55 877 1132
         </span>
       </div>
@@ -95,11 +95,11 @@ const ContactBox = () => {
           <div className="size-3 flex items-center justify-center">
             <MapPinned className="size-full text-[#7c3aed]" />
           </div>
-          <span className="font-['Geist'] font-bold text-[#7c3aed] text-[10px] tracking-[0.1em] uppercase">
+          <span className="font-geist font-bold text-[#7c3aed] text-[10px] tracking-[0.1em] uppercase">
             {t.our_location}
           </span>
         </div>
-        <div className="font-['Geist'] text-[12px] md:text-[13px] text-black/70 leading-snug max-w-[280px]">
+        <div className="font-geist text-[12px] md:text-[13px] text-black/70 leading-snug max-w-[280px]">
           <div className="font-bold text-black mb-0.5">{t.address_title}</div>
           <div className="opacity-80">{t.address_p1}</div>
           <div className="opacity-80">
@@ -138,10 +138,10 @@ export const FooterSection = () => {
             <div className="flex flex-col md:flex-row gap-12 md:gap-20 lg:gap-24 flex-1">
               <div className="flex flex-col gap-6">
                 <Logo />
-                <p className="font-['Geist'] text-[14px] text-white/40 max-w-[200px] uppercase leading-relaxed">
+                <p className="font-geist text-[14px] text-white/40 max-w-[200px] uppercase leading-relaxed">
                   {t.tagline}
                 </p>
-                <div className="font-['Geist'] text-[13px] sm:text-[14px] text-white/40 max-w-[220px] sm:max-w-[260px] uppercase leading-relaxed space-y-1">
+                <div className="font-geist text-[13px] sm:text-[14px] text-white/40 max-w-[220px] sm:max-w-[260px] uppercase leading-relaxed space-y-1">
                 </div>
               </div>
 
@@ -183,7 +183,7 @@ export const FooterSection = () => {
           {/* Bottom Section */}
           <div className="flex flex-col lg:flex-row justify-between items-center gap-10 pt-10 border-t border-white/10">
             <div className="max-w-[700px] text-center lg:text-start">
-              <p className="font-['Geist'] text-[12px] md:text-[14px] text-white/30 uppercase leading-relaxed tracking-wider">
+              <p className="font-geist text-[12px] md:text-[14px] text-white/30 uppercase leading-relaxed tracking-wider">
                 {t.copyright}
               </p>
             </div>
@@ -211,7 +211,7 @@ export const FooterSection = () => {
     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
     border border-white/20
     text-white uppercase whitespace-nowrap
-    font-['Geist']
+    font-geist
 
     cursor-pointer
     transition-all duration-300 

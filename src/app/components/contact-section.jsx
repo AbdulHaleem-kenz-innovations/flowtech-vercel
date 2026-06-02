@@ -242,7 +242,7 @@ function HeadingWrap() {
       data-name="Heading Wrap"
     >
       <div
-        className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap"
+        className="bg-clip-text flex flex-col font-geist font-medium justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap"
         style={{
           backgroundImage:
             "linear-gradient(-88.8553deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)",
@@ -250,7 +250,7 @@ function HeadingWrap() {
       >
         <p>{t.title_p1}</p>
       </div>
-      <div className="flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-white/70 tracking-[-0.4px] whitespace-nowrap">
+      <div className="flex flex-col font-playfair font-normal italic justify-center leading-[1.1] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-white/70 tracking-[-0.4px] whitespace-nowrap">
         <p>{t.title_italic}</p>
       </div>
     </div>
@@ -276,7 +276,7 @@ function TItleWrap() {
     >
       <HeadingWrap />
       <Line />
-      <p className="font-['Geist'] font-normal text-[14px] md:text-[18px] lg:text-[16px] xl:text-[18px] text-white/70 uppercase leading-[1.4] md:leading-[27px] w-full">
+      <p className="font-geist font-normal text-[14px] md:text-[18px] lg:text-[16px] xl:text-[18px] text-white/70 uppercase leading-[1.4] md:leading-[27px] w-full">
         {t.description}
       </p>
     </div>
@@ -366,31 +366,31 @@ function ContentWrapper() {
 //           <div className="size-[12px] flex items-center justify-center">
 //             <ImageWithFallback src={imgImage} alt="" className="size-full object-contain" />
 //           </div>
-//           <span className="font-['Geist'] font-semibold text-[10px] text-[#0f9101] uppercase tracking-wide">{t.form_badge}</span>
+//           <span className="font-geist font-semibold text-[10px] text-[#0f9101] uppercase tracking-wide">{t.form_badge}</span>
 //         </div>
 //         <div className="flex flex-wrap gap-x-2 items-center">
-//           <span className="bg-clip-text font-['Geist'] font-medium text-[20px] md:text-[23px] text-black/40" style={{ backgroundImage: "linear-gradient(-88.8998deg, rgba(0, 0, 0, 0.4) 5%, rgb(0, 0, 0) 50%)" }}>{t.form_title_p1}</span>
-//           <span className="font-['Playfair_Display'] italic text-[20px] md:text-[23px] text-black/60">{t.form_title_italic}</span>
+//           <span className="bg-clip-text font-geist font-medium text-[20px] md:text-[23px] text-black/40" style={{ backgroundImage: "linear-gradient(-88.8998deg, rgba(0, 0, 0, 0.4) 5%, rgb(0, 0, 0) 50%)" }}>{t.form_title_p1}</span>
+//           <span className="font-playfair italic text-[20px] md:text-[23px] text-black/60">{t.form_title_italic}</span>
 //         </div>
 //       </div>
 
 //       <form className="content-stretch flex flex-col gap-4 items-center justify-center relative shrink-0 w-full" onSubmit={(e) => e.preventDefault()}>
 //         <div className="w-full flex flex-col gap-1.5">
-//           <label className="font-['Geist'] text-[10px] text-black/60 uppercase">{t.label_name}</label>
-//           <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30" placeholder={t.placeholder_name} />
+//           <label className="font-geist text-[10px] text-black/60 uppercase">{t.label_name}</label>
+//           <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-geist text-[16px] text-black placeholder:text-black/30" placeholder={t.placeholder_name} />
 //         </div>
 //         <div className="w-full flex flex-col gap-1.5">
-//           <label className="font-['Geist'] text-[10px] text-black/60 uppercase">{t.label_email}</label>
-//           <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30" placeholder={t.placeholder_email} type="email" />
+//           <label className="font-geist text-[10px] text-black/60 uppercase">{t.label_email}</label>
+//           <input className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-geist text-[16px] text-black placeholder:text-black/30" placeholder={t.placeholder_email} type="email" />
 //         </div>
 //         <div className="w-full flex flex-col gap-1.5">
-//           <label className="font-['Geist'] text-[10px] text-black/60 uppercase">{t.label_message}</label>
-//           <textarea className="w-full bg-[#f5f5f5] rounded-[7px] p-4 h-[100px] outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30 resize-none" placeholder={t.placeholder_message} />
+//           <label className="font-geist text-[10px] text-black/60 uppercase">{t.label_message}</label>
+//           <textarea className="w-full bg-[#f5f5f5] rounded-[7px] p-4 h-[100px] outline-none font-geist text-[16px] text-black placeholder:text-black/30 resize-none" placeholder={t.placeholder_message} />
 //         </div>
 
 //         <div className="flex gap-3 items-start w-full py-2">
 //           <input type="checkbox" className="mt-1" id="terms" />
-//           <label htmlFor="terms" className="font-['Geist'] text-[13px] text-black/60 leading-tight">
+//           <label htmlFor="terms" className="font-geist text-[13px] text-black/60 leading-tight">
 //             {t.terms_p1} <span className="text-[#110fdf] font-semibold cursor-pointer">{t.terms_link}</span>
 //           </label>
 //         </div>
@@ -408,7 +408,7 @@ function ContentWrapper() {
 //     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
 //     border border-white/20
 //     text-white uppercase whitespace-nowrap
-//     font-['Geist']
+//     font-geist
 
 //     cursor-pointer
 //     transition-all duration-300
@@ -583,13 +583,13 @@ export default function FormWrapper() {
               className="size-full object-contain"
             />
           </div>
-          <span className="font-['Geist'] font-semibold text-[10px] text-[#0f9101] uppercase tracking-wide">
+          <span className="font-geist font-semibold text-[10px] text-[#0f9101] uppercase tracking-wide">
             {t.form_badge}
           </span>
         </div>
         <div className="flex flex-wrap gap-x-2 items-center">
           <span
-            className="bg-clip-text font-['Geist'] font-medium text-[20px] md:text-[23px] text-black/40"
+            className="bg-clip-text font-geist font-medium text-[20px] md:text-[23px] text-black/40"
             style={{
               backgroundImage:
                 "linear-gradient(-88.8998deg, rgba(0, 0, 0, 0.4) 5%, rgb(0, 0, 0) 50%)",
@@ -597,7 +597,7 @@ export default function FormWrapper() {
           >
             {t.form_title_p1}
           </span>
-          <span className="font-['Playfair_Display'] italic text-[20px] md:text-[23px] text-black/60">
+          <span className="font-playfair italic text-[20px] md:text-[23px] text-black/60">
             {t.form_title_italic}
           </span>
         </div>
@@ -607,7 +607,7 @@ export default function FormWrapper() {
       {/* Shows success or error message after submission */}
       {status === "success" && (
         <div className="w-full bg-green-50 border border-green-200 rounded-[7px] px-4 py-3">
-          <p className="font-['Geist'] text-[13px] text-green-700 leading-snug">
+          <p className="font-geist text-[13px] text-green-700 leading-snug">
             ✅ {feedbackMsg}
           </p>
         </div>
@@ -615,7 +615,7 @@ export default function FormWrapper() {
 
       {status === "error" && (
         <div className="w-full bg-red-50 border border-red-200 rounded-[7px] px-4 py-3">
-          <p className="font-['Geist'] text-[13px] text-red-600 leading-snug">
+          <p className="font-geist text-[13px] text-red-600 leading-snug">
             ⚠️ {feedbackMsg}
           </p>
         </div>
@@ -627,11 +627,11 @@ export default function FormWrapper() {
       >
         {/* Name Field */}
         <div className="w-full flex flex-col gap-1.5">
-          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">
+          <label className="font-geist text-[10px] text-black/60 uppercase">
             {t.label_name}
           </label>
           <input
-            className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30"
+            className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-geist text-[16px] text-black placeholder:text-black/30"
             placeholder={t.placeholder_name}
             name="name"
             value={formData.name}
@@ -642,11 +642,11 @@ export default function FormWrapper() {
 
         {/* Email Field */}
         <div className="w-full flex flex-col gap-1.5">
-          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">
+          <label className="font-geist text-[10px] text-black/60 uppercase">
             {t.label_email}
           </label>
           <input
-            className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30"
+            className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-geist text-[16px] text-black placeholder:text-black/30"
             placeholder={t.placeholder_email}
             type="email"
             name="email"
@@ -658,7 +658,7 @@ export default function FormWrapper() {
 
         {/* Phone Number Field */}
         <div className="w-full flex flex-col gap-1.5">
-          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">
+          <label className="font-geist text-[10px] text-black/60 uppercase">
             Phone Number
           </label>
           <div className="flex gap-2 w-full">
@@ -668,7 +668,7 @@ export default function FormWrapper() {
               value={formData.countryCode}
               onChange={handleChange}
               disabled={loading}
-              className="bg-[#f5f5f5] rounded-[7px] px-3 py-4 outline-none font-['Geist'] text-[14px] text-black shrink-0 cursor-pointer"
+              className="bg-[#f5f5f5] rounded-[7px] px-3 py-4 outline-none font-geist text-[14px] text-black shrink-0 cursor-pointer"
             >
               {countryCodes.map((c) => (
                 <option key={c.value} value={c.value}>
@@ -679,7 +679,7 @@ export default function FormWrapper() {
 
             {/* Phone Number Input */}
             <input
-              className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30"
+              className="w-full bg-[#f5f5f5] rounded-[7px] p-4 outline-none font-geist text-[16px] text-black placeholder:text-black/30"
               placeholder="5 XXXXXXX"
               type="tel"
               name="phoneNumber"
@@ -692,11 +692,11 @@ export default function FormWrapper() {
 
         {/* Message Field */}
         <div className="w-full flex flex-col gap-1.5">
-          <label className="font-['Geist'] text-[10px] text-black/60 uppercase">
+          <label className="font-geist text-[10px] text-black/60 uppercase">
             {t.label_message}
           </label>
           <textarea
-            className="w-full bg-[#f5f5f5] rounded-[7px] p-4 h-[100px] outline-none font-['Geist'] text-[16px] text-black placeholder:text-black/30 resize-none"
+            className="w-full bg-[#f5f5f5] rounded-[7px] p-4 h-[100px] outline-none font-geist text-[16px] text-black placeholder:text-black/30 resize-none"
             placeholder={t.placeholder_message}
             name="message"
             value={formData.message}
@@ -717,7 +717,7 @@ export default function FormWrapper() {
           />
           <label
             htmlFor="terms"
-            className="font-['Geist'] text-[13px] text-black/60 leading-tight"
+            className="font-geist text-[13px] text-black/60 leading-tight"
           >
             {t.terms_p1}{" "}
             <span className="text-[#110fdf] font-semibold cursor-pointer">
@@ -738,13 +738,12 @@ export default function FormWrapper() {
             bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
             border border-white/20
             text-white uppercase whitespace-nowrap
-            font-['Geist']
+            font-geist
             transition-all duration-300
             glare-btn
-            ${
-              loading
-                ? "opacity-60 cursor-not-allowed scale-100"
-                : "cursor-pointer hover:scale-105 active:scale-95"
+            ${loading
+              ? "opacity-60 cursor-not-allowed scale-100"
+              : "cursor-pointer hover:scale-105 active:scale-95"
             }`}
         >
           {loading ? "Sending..." : t.send_button}

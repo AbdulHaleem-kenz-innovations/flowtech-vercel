@@ -45,26 +45,26 @@ export default function RotationCard() {
     <div className="relative w-full max-w-[1260px] mx-auto h-[600px] md:h-[780px] rounded-[20px] overflow-hidden backdrop-blur-[25px] bg-gradient-to-t from-[rgba(17,15,223,0.5)] to-transparent flex items-center justify-center" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Background Image - The Gears/Mechanical parts */}
       <div className="absolute inset-0 z-0 opacity-40 md:opacity-100">
-        <ImageWithFallback 
-          src={imgImageWrap1} 
-          className="w-full h-full object-cover object-bottom" 
+        <ImageWithFallback
+          src={imgImageWrap1}
+          className="w-full h-full object-cover object-bottom"
         />
       </div>
 
       {/* Content Overlay */}
       <div className="relative z-10 flex flex-col items-center gap-6 md:gap-8 px-6 text-center max-w-[700px]">
         <LogoGroup />
-        
+
         <div className="flex flex-col gap-2">
-          <h2 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent leading-tight tracking-tight">
+          <h2 className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-geist font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent leading-tight tracking-tight">
             {t.title_p1}
           </h2>
-          <p className="font-['Playfair_Display'] italic font-normal text-[36px] sm:text-[48px] md:text-[60px] text-white/70 leading-tight">
+          <p className="font-playfair italic font-normal text-[36px] sm:text-[48px] md:text-[60px] text-white/70 leading-tight">
             {t.title_italic}
           </p>
         </div>
 
-        <p className="font-['Geist'] text-white/70 text-[14px] md:text-[18px] uppercase tracking-widest leading-relaxed">
+        <p className="font-geist text-white/70 text-[14px] md:text-[18px] uppercase tracking-widest leading-relaxed">
           {t.description}
         </p>
 
@@ -81,7 +81,7 @@ export default function RotationCard() {
     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
     border border-white/20
     text-white uppercase whitespace-nowrap
-    font-['Geist']
+    font-geist
 
     cursor-pointer
     transition-all duration-300 
@@ -90,7 +90,7 @@ export default function RotationCard() {
             {t.cta_talk}
           </button>
           <button className="w-full w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4
-    text-[13px] sm:text-[14px] md:text-[16px] bg-white px-10 py-4 rounded-full text-[#035fda] font-['Geist'] font-medium text-[14px] uppercase tracking-widest hover:bg-white/90 transition-colors">
+    text-[13px] sm:text-[14px] md:text-[16px] bg-white px-10 py-4 rounded-full text-[#035fda] font-geist font-medium text-[14px] uppercase tracking-widest hover:bg-white/90 transition-colors">
             {t.cta_solutions}
           </button>
         </div>

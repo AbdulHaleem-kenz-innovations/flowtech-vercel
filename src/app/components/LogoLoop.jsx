@@ -5,7 +5,7 @@
 // function PFramerText() {
 //   return (
 //     <div className="-translate-y-1/2 absolute content-stretch flex flex-col items-center left-0 right-0 top-2/8" data-name="p.framer-text">
-//       <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0]  relative shrink-0 text-[13px] md:text-[13px] text-white uppercase whitespace-nowrap">
+//       <div className="flex flex-col font-geist font-normal justify-center leading-[0]  relative shrink-0 text-[13px] md:text-[13px] text-white uppercase whitespace-nowrap">
 //         <p className="leading-[22.4px]">TRUSTED BY LEADING ENTERPRISES:</p>
 //       </div>
 //     </div>
@@ -1000,24 +1000,24 @@ export const LogoLoop = memo(
       //   onMouseLeave={handleMouseLeave}
       // >
       <div
-  ref={containerRef}
-  className={rootClasses}
-  style={{
-    ...containerStyle,
-    ...(fadeOut && !isVertical && {
-      WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
-      maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
-    }),
-    ...(fadeOut && isVertical && {
-      WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
-      maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
-    }),
-  }}
-  role="region"
-  aria-label={ariaLabel}
-  onMouseEnter={handleMouseEnter}
-  onMouseLeave={handleMouseLeave}
->
+        ref={containerRef}
+        className={rootClasses}
+        style={{
+          ...containerStyle,
+          ...(fadeOut && !isVertical && {
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+            maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+          }),
+          ...(fadeOut && isVertical && {
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+            maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+          }),
+        }}
+        role="region"
+        aria-label={ariaLabel}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         {/* {fadeOut && (
           <>
             {isVertical ? (

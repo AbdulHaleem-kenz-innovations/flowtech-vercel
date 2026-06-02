@@ -15,7 +15,7 @@ const Badge = () => {
   return (
     <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] content-stretch flex gap-[5px] items-center justify-center overflow-clip ps-[7px] pe-[11px] py-[5px] relative rounded-[5px] shrink-0">
       <PlusIcon size={16} />
-      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
         <p className="leading-[17.6px]">{t.badge}</p>
       </div>
     </div>
@@ -36,15 +36,15 @@ export const OurProcessSection = () => {
             <div className="flex flex-col gap-5 items-start">
               <Badge />
               <div className="flex flex-wrap items-center">
-                <span className="bg-clip-text font-['Geist'] font-medium text-[36px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-88.9328deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{t.title_p1}&nbsp;</span>
-                <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[36px] md:text-[44px] tracking-[-0.4px] leading-tight">{t.title_italic}</span>
-                <span className="bg-clip-text font-['Geist'] font-medium text-[36px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-87.7687deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>&nbsp;{t.title_p2}</span>
+                <span className="bg-clip-text font-geist font-medium text-[36px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-88.9328deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{t.title_p1}&nbsp;</span>
+                <span className="font-playfair italic text-[#d9d9d9] text-[36px] md:text-[44px] tracking-[-0.4px] leading-tight">{t.title_italic}</span>
+                <span className="bg-clip-text font-geist font-medium text-[36px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-87.7687deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>&nbsp;{t.title_p2}</span>
               </div>
             </div>
 
 
             <div className="opacity-70 mt-10 mb-12">
-              <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white uppercase leading-[1.4] md:leading-[27px]">{t.description}</p>
+              <p className="font-geist font-normal text-[16px] md:text-[18px] text-white uppercase leading-[1.4] md:leading-[27px]">{t.description}</p>
             </div>
 
             <Link to="/contact"
@@ -60,7 +60,7 @@ export const OurProcessSection = () => {
     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
     border border-white/20
     text-white uppercase whitespace-nowrap
-    font-['Geist']
+    font-geist
 
     cursor-pointer
     transition-all duration-300 
@@ -93,7 +93,7 @@ export const OurProcessSection = () => {
         w-10 h-10 md:w-12 md:h-12
         flex items-center justify-center
         rounded-full bg-white/10 text-white
-        font-semibold font-['Playfair_Display'] italic
+        font-semibold font-playfair italic
         text-[16px] md:text-[23px]
       ">
                     {String(i + 1).padStart(2, "0")}
@@ -101,9 +101,9 @@ export const OurProcessSection = () => {
 
                   {/* Title */}
                   <div className="content-center flex flex-wrap gap-x-2 gap-y-1 items-center overflow-clip relative">
-                    <span className="bg-clip-text font-['Geist'] font-medium text-[20px] md:text-[23px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-87.3379deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{item.title}</span>
-                    <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[20px] md:text-[23px] leading-none">{language === "AR" ? "و" : "&"}</span>
-                    <span className="bg-clip-text font-['Geist'] font-medium text-[20px] md:text-[23px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-87.3379deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{item.subtitle}</span>
+                    <span className="bg-clip-text font-geist font-medium text-[20px] md:text-[23px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-87.3379deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{item.title}</span>
+                    <span className="font-playfair italic text-[#d9d9d9] text-[20px] md:text-[23px] leading-none">{language === "AR" ? "و" : "&"}</span>
+                    <span className="bg-clip-text font-geist font-medium text-[20px] md:text-[23px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(-87.3379deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{item.subtitle}</span>
                   </div>
                 </div>
 

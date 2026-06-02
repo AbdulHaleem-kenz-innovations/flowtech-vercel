@@ -49,9 +49,9 @@ const ValueCard = ({ title, description, icon }) => (
       <div className="size-[18px]">
         <ImageWithFallback src={icon} className="size-full object-contain" />
       </div>
-      <span className="font-['Geist'] font-medium text-[16px] text-white uppercase">{title}</span>
+      <span className="font-geist font-medium text-[16px] text-white uppercase">{title}</span>
     </div>
-    <p className="font-['Geist'] font-normal text-[14px] text-white/75 uppercase leading-relaxed">
+    <p className="font-geist font-normal text-[14px] text-white/75 uppercase leading-relaxed">
       {description}
     </p>
   </motion.div>
@@ -89,15 +89,15 @@ const AboutPage = () => {
               <div className="flex flex-col gap-6">
                 <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit">
                   <div className="size-4 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain' }} />
-                  <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">{t.hero.badge}</span>
+                  <span className="font-geist font-semibold text-[11px] text-white uppercase tracking-widest">{t.hero.badge}</span>
                 </div>
                 <h1 className="flex flex-wrap items-end gap-x-3">
-                  <span className="font-['Geist'] font-medium text-[48px] md:text-[60px] text-white leading-tight">{t.hero.title_p1}</span>
-                  <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Playfair_Display'] italic font-normal text-[48px] md:text-[60px] text-transparent leading-tight tracking-tight">{t.hero.title_italic}</span>
+                  <span className="font-geist font-medium text-[48px] md:text-[60px] text-white leading-tight">{t.hero.title_p1}</span>
+                  <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-playfair italic font-normal text-[48px] md:text-[60px] text-transparent leading-tight tracking-tight">{t.hero.title_italic}</span>
                 </h1>
               </div>
 
-              <div className="flex flex-col gap-4 text-white/75 font-['Geist'] text-[16px] uppercase leading-relaxed">
+              <div className="flex flex-col gap-4 text-white/75 font-geist text-[16px] uppercase leading-relaxed">
                 <p>{t.hero.description_1}</p>
                 <p>{t.hero.description_2}</p>
               </div>
@@ -108,18 +108,18 @@ const AboutPage = () => {
                     <div className="size-[18px]">
                       <ImageWithFallback src={imgIcon} className="size-full object-contain" />
                     </div>
-                    <span className="font-['Geist'] font-medium text-[16px] text-white uppercase">{t.hero.vision_title}</span>
+                    <span className="font-geist font-medium text-[16px] text-white uppercase">{t.hero.vision_title}</span>
                   </div>
-                  <p className="text-white/75 text-[16px] uppercase leading-relaxed font-['Geist']">{t.hero.vision_text}</p>
+                  <p className="text-white/75 text-[16px] uppercase leading-relaxed font-geist">{t.hero.vision_text}</p>
                 </div>
                 <div className="flex flex-col gap-4 max-w-[330px]">
                   <div className="flex items-center gap-3">
                     <div className="size-[18px]">
                       <ImageWithFallback src={imgIcon1} className="size-full object-contain" />
                     </div>
-                    <span className="font-['Geist'] font-medium text-[16px] text-white uppercase">{t.hero.mission_title}</span>
+                    <span className="font-geist font-medium text-[16px] text-white uppercase">{t.hero.mission_title}</span>
                   </div>
-                  <p className="text-white/75 text-[16px] uppercase leading-relaxed font-['Geist']">{t.hero.mission_text}</p>
+                  <p className="text-white/75 text-[16px] uppercase leading-relaxed font-geist">{t.hero.mission_text}</p>
                 </div>
               </div>
             </div>
@@ -207,12 +207,12 @@ const AboutPage = () => {
                     <path d="M19.9776 7.43182C20.0547 7.47906 20.1612 7.64822 20.2054 7.73302C20.7477 8.77999 21.4026 9.77321 21.9105 10.8357C22.0474 11.1213 22.1441 11.583 22.0007 11.8819C21.1853 13.5779 20.1688 15.1838 19.2241 16.809C18.7771 17.5778 18.3961 18.3537 17.9195 19.0943C17.3484 19.9818 16.0911 19.7747 15.152 19.7731L12.3225 19.7704L9.98057 19.7736C9.53723 19.774 9.06213 19.7823 8.62089 19.7531C8.35117 19.7352 7.99599 19.5585 7.72656 19.4527C7.93804 19.1965 8.04779 19.021 8.22257 18.7364C8.31186 18.5976 8.3883 18.4523 8.46607 18.3069C8.95838 17.3858 9.48268 16.483 10.0012 15.5765C10.9261 15.5333 11.971 15.6615 12.8671 15.4369C14.1123 15.1248 14.5482 13.8732 15.1291 12.8496C14.0375 12.8937 12.6568 12.852 11.5425 12.8506C11.8913 12.4284 12.6632 10.6709 13.1228 10.5977C14.381 10.3974 15.7799 10.6472 17.0823 10.4868C18.9706 10.2542 19.0644 8.65498 19.9776 7.43182Z" fill="white" />
                   </svg>
                 </div>
-                <h2 className="font-['Geist'] font-medium text-[24px] md:text-[32px] text-white leading-tight max-w-[527px]">
+                <h2 className="font-geist font-medium text-[24px] md:text-[32px] text-white leading-tight max-w-[527px]">
                   {t.overview.text.split('*').map((part, index) => {
                     const isItalic = index % 2 !== 0;
                     if (isItalic) {
                       return (
-                        <span key={index} className="font-['Playfair_Display'] italic font-normal text-white/95">
+                        <span key={index} className="font-playfair italic font-normal text-white/95">
                           {part}
                         </span>
                       );
@@ -225,11 +225,11 @@ const AboutPage = () => {
               <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-10 md:mt-12 relative z-10">
                 {/* <button
                   onClick={() => teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' })}
-                  className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-['Geist'] cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn"
+                  className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-geist cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn"
                 >
                   {t.overview.cta_team}
                 </button> */}
-                <span className={`text-white/60 font-['Geist'] text-[16px] md:text-[18px] text-center ${isRtl ? 'sm:text-right' : 'sm:text-left'}`}>info@flowtechdigitalsolutions.com</span>
+                <span className={`text-white/60 font-geist text-[16px] md:text-[18px] text-center ${isRtl ? 'sm:text-right' : 'sm:text-left'}`}>info@flowtechdigitalsolutions.com</span>
               </div>
             </div>
           </div>
@@ -242,10 +242,10 @@ const AboutPage = () => {
           <div className="flex flex-col gap-[39px]">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
               <h2 className="flex flex-wrap items-center gap-x-3">
-                <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[48px] md:text-[60px] text-transparent leading-tight">{t.values.title_p1}</span>
-                <span className="font-['Playfair_Display'] italic font-normal text-[48px] md:text-[60px] text-white/70 leading-tight">{t.values.title_italic}</span>
+                <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-geist font-medium text-[48px] md:text-[60px] text-transparent leading-tight">{t.values.title_p1}</span>
+                <span className="font-playfair italic font-normal text-[48px] md:text-[60px] text-white/70 leading-tight">{t.values.title_italic}</span>
               </h2>
-              <p className="max-w-[345px] text-white/70 font-['Geist'] text-[16px] uppercase leading-relaxed">
+              <p className="max-w-[345px] text-white/70 font-geist text-[16px] uppercase leading-relaxed">
                 {t.values.description}
               </p>
             </div>
@@ -281,14 +281,14 @@ const AboutPage = () => {
                 </div>
                 <div className="flex flex-col">
                   <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-2 gap-y-0.5">
-                    <span className="font-['Geist'] font-medium text-[20px] md:text-[23px] text-white">{t.support.greeting}</span>
-                    <span className="font-['Geist'] font-medium text-[20px] md:text-[23px] text-white">{t.support.name}</span>
-                    <span className="font-['Playfair_Display'] italic text-[18px] md:text-[23px] text-white/60 italic leading-none">{t.support.team}</span>
+                    <span className="font-geist font-medium text-[20px] md:text-[23px] text-white">{t.support.greeting}</span>
+                    <span className="font-geist font-medium text-[20px] md:text-[23px] text-white">{t.support.name}</span>
+                    <span className="font-playfair italic text-[18px] md:text-[23px] text-white/60 italic leading-none">{t.support.team}</span>
                   </div>
-                  <p className="text-white/70 font-['Geist'] text-[12px] md:text-[14px] uppercase tracking-wide mt-1">{t.support.description}</p>
+                  <p className="text-white/70 font-geist text-[12px] md:text-[14px] uppercase tracking-wide mt-1">{t.support.description}</p>
                 </div>
               </div>
-              <Link to="/contact" className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-['Geist'] cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn">
+              <Link to="/contact" className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-geist cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn">
                 {t.support.cta}
               </Link>
             </div>

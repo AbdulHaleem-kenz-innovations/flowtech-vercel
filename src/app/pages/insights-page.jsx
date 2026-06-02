@@ -44,7 +44,7 @@ const InsightsPage = () => {
                 <div className="relative size-4">
                   <div className="absolute inset-0 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
                 </div>
-                <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">
+                <span className="font-geist font-semibold text-[11px] text-white tracking-[0.2px] uppercase">
                   {t.hero.badge}
                 </span>
               </motion.div>
@@ -57,11 +57,11 @@ const InsightsPage = () => {
                 transition={{ delay: 0.1 }}
               >
                 <h1 className="flex flex-col items-center gap-1 md:gap-2 text-center">
-                  <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent tracking-[-0.04em] leading-[1.1]">
+                  <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-geist font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent tracking-[-0.04em] leading-[1.1]">
                     {t.hero.title_p1}
                   </span>
                   <span className="flex flex-wrap items-center justify-center gap-x-4">
-                    <span className="font-['Playfair_Display'] italic font-normal text-[36px] sm:text-[48px] md:text-[60px] text-white/70 tracking-[-0.04em] leading-[1.1]">
+                    <span className="font-playfair italic font-normal text-[36px] sm:text-[48px] md:text-[60px] text-white/70 tracking-[-0.04em] leading-[1.1]">
                       {t.hero.title_italic}
                     </span>
                   </span>
@@ -76,7 +76,7 @@ const InsightsPage = () => {
               animate={{ opacity: 0.7 }}
               transition={{ delay: 0.2 }}
             >
-              <p className="font-['Geist'] font-normal text-[14px] md:text-[18px] text-center text-white uppercase tracking-wider leading-relaxed">
+              <p className="font-geist font-normal text-[14px] md:text-[18px] text-center text-white uppercase tracking-wider leading-relaxed">
                 {t.hero.description}
               </p>
             </motion.div>
@@ -93,17 +93,17 @@ const InsightsPage = () => {
 
             {/* Title */}
             <div className="flex items-center gap-2 opacity-80 justify-center">
-              <span className="font-['Geist'] font-medium text-[20px] md:text-[23px] text-white tracking-tight">
+              <span className="font-geist font-medium text-[20px] md:text-[23px] text-white tracking-tight">
                 {t.search.title}
               </span>
-              <span className="font-['Playfair_Display'] italic font-normal text-[20px] md:text-[23px] text-white tracking-tight">
+              <span className="font-playfair italic font-normal text-[20px] md:text-[23px] text-white tracking-tight">
                 {t.search.by_categories}
               </span>
             </div>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-2 md:gap-3 items-center justify-center">
-              {[ 
+              {[
                 { id: 'ALL', label: t.categories.all },
                 { id: 'MANUFACTURING', label: t.categories.manufacturing },
                 { id: 'ENERGY', label: t.categories.energy },
@@ -111,7 +111,7 @@ const InsightsPage = () => {
               ].map((cat, i) => (
                 <button
                   key={cat.id}
-                  className={`px-5 backdrop-blur-[25px] md:px-6 py-2.5 md:py-3 rounded-full text-[12px] md:text-[14px] font-['Geist'] font-medium uppercase tracking-wider transition-all cursor-pointer
+                  className={`px-5 backdrop-blur-[25px] md:px-6 py-2.5 md:py-3 rounded-full text-[12px] md:text-[14px] font-geist font-medium uppercase tracking-wider transition-all cursor-pointer
         ${i === 0
                       ? "bg-gradient-to-r from-[#001ca9] to-[#046ce4] text-white shadow-[0_7px_40px_-10px_rgba(17,15,223,0.6)]"
                       : "bg-white/5 text-white/70 hover:bg-white/10 border border-white/10"
@@ -147,10 +147,10 @@ const InsightsPage = () => {
                     <div className="flex flex-col gap-6">
                       <div className="flex flex-col gap-3">
                         <div className="flex items-center gap-1.5 opacity-50">
-                          <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.written_by}</span>
-                          <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.team_name}</span>
+                          <span className="font-geist font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.written_by}</span>
+                          <span className="font-geist font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.team_name}</span>
                         </div>
-                        <h3 className="font-['Geist'] font-medium text-[20px] text-black leading-tight">
+                        <h3 className="font-geist font-medium text-[20px] text-black leading-tight">
                           {post.title}
                         </h3>
                       </div>
@@ -197,7 +197,7 @@ const InsightsPage = () => {
                   <div className="flex justify-between items-start w-full">
                     <div className="backdrop-blur-md bg-white/10 border border-white/20 px-4 py-2 rounded-full flex items-center gap-2">
                       <div className="size-3.5 bg-white" style={{ maskImage: `url('${imgCalendarIcon}')`, maskSize: 'contain' }} />
-                      <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">Jul 23, 2025</span>
+                      <span className="font-geist font-semibold text-[11px] text-white uppercase tracking-wider">Jul 23, 2025</span>
                     </div>
                     <div className="size-5 opacity-40 bg-white" style={{ maskImage: `url('${imgPlusIcon}')`, maskSize: 'contain' }} />
                   </div>
@@ -205,10 +205,10 @@ const InsightsPage = () => {
                   <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div className="flex flex-col gap-4 max-w-[700px]">
                       <div className="flex items-center gap-2 opacity-60">
-                        <span className="font-['Geist'] font-medium text-[12px] text-white uppercase">{t.ui.written_by}</span>
-                        <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-wider">{t.ui.team_name}</span>
+                        <span className="font-geist font-medium text-[12px] text-white uppercase">{t.ui.written_by}</span>
+                        <span className="font-geist font-semibold text-[11px] text-white uppercase tracking-wider">{t.ui.team_name}</span>
                       </div>
-                      <h2 className="font-['Geist'] font-medium text-[28px] md:text-[36px] text-white leading-tight">
+                      <h2 className="font-geist font-medium text-[28px] md:text-[36px] text-white leading-tight">
                         {t.posts[3].title}
                       </h2>
                     </div>
@@ -262,10 +262,10 @@ const InsightsPage = () => {
                       <div className="flex flex-col gap-6">
                         <div className="flex flex-col gap-3">
                           <div className="flex items-center gap-1.5 opacity-50">
-                            <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.written_by}</span>
-                            <span className="font-['Geist'] font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.team_name}</span>
+                            <span className="font-geist font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.written_by}</span>
+                            <span className="font-geist font-semibold text-[10px] text-black uppercase tracking-widest">{t.ui.team_name}</span>
                           </div>
-                          <h3 className="font-['Geist'] font-medium text-[20px] text-black leading-tight">
+                          <h3 className="font-geist font-medium text-[20px] text-black leading-tight">
                             {post.title}
                           </h3>
                         </div>
@@ -303,7 +303,7 @@ const InsightsPage = () => {
               <div className="flex justify-center w-full">
                 <button className="relative px-10 py-4 rounded-full overflow-hidden group cursor-pointer transition-transform hover:scale-105 shadow-[0_10px_40px_-10px_rgba(17,15,223,0.5)]">
                   <div className="absolute inset-0 bg-gradient-to-r from-[#001ca9] to-[#046ce4] transition-all duration-300 hover:scale-105 active:scale-95 glare-btn" />
-                  <span className="relative z-10 font-['Geist'] font-medium text-white uppercase tracking-widest text-sm">{t.ui.load_more}</span>
+                  <span className="relative z-10 font-geist font-medium text-white uppercase tracking-widest text-sm">{t.ui.load_more}</span>
                 </button>
               </div>
             </div>
@@ -313,9 +313,9 @@ const InsightsPage = () => {
 
       {/* Newsletter Section */}
       <div className='w-full'>
-      <ScrollFadeIn>
-        <NewsletterSection />
-      </ScrollFadeIn>
+        <ScrollFadeIn>
+          <NewsletterSection />
+        </ScrollFadeIn>
       </div>
 
       <FooterSection />

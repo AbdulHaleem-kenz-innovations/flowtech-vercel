@@ -23,7 +23,7 @@ const RichContent = ({ content, isRtl }) => {
   return (
     <div className={`flex flex-col gap-10 ${isRtl ? 'text-right' : 'text-left'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       {content.intro && (
-        <p className="font-['Geist'] text-[16px] md:text-[18px] text-white/80 leading-relaxed whitespace-pre-line">
+        <p className="font-geist text-[16px] md:text-[18px] text-white/80 leading-relaxed whitespace-pre-line">
           {content.intro}
         </p>
       )}
@@ -31,13 +31,13 @@ const RichContent = ({ content, isRtl }) => {
       {content.sections?.map((section, idx) => (
         <div key={idx} className="flex flex-col gap-6">
           {section.title && (
-            <h3 className="font-['Geist'] font-semibold text-[24px] md:text-[28px] text-white tracking-tight border-b border-white/10 pb-4">
+            <h3 className="font-geist font-semibold text-[24px] md:text-[28px] text-white tracking-tight border-b border-white/10 pb-4">
               {section.title}
             </h3>
           )}
-          
+
           {section.content && (
-            <p className="font-['Geist'] text-[15px] md:text-[16px] text-white/70 leading-relaxed">
+            <p className="font-geist text-[15px] md:text-[16px] text-white/70 leading-relaxed">
               {section.content}
             </p>
           )}
@@ -47,7 +47,7 @@ const RichContent = ({ content, isRtl }) => {
               {section.bullets.map((bullet, i) => (
                 <li key={i} className="flex gap-3 items-start group">
                   <div className={`size-[6px] rounded-full bg-blue-500 mt-[9px] shrink-0 group-hover:scale-125 transition-transform ${isRtl ? 'ml-3' : 'mr-0'}`} />
-                  <span className="font-['Geist'] text-[14px] md:text-[15px] text-white/70 group-hover:text-white transition-colors">
+                  <span className="font-geist text-[14px] md:text-[15px] text-white/70 group-hover:text-white transition-colors">
                     {bullet}
                   </span>
                 </li>
@@ -61,7 +61,7 @@ const RichContent = ({ content, isRtl }) => {
                 <thead>
                   <tr className="bg-white/10">
                     {section.table.headers.map((header, i) => (
-                      <th key={i} className={`p-4 font-['Geist'] font-semibold text-white uppercase tracking-wider border-b border-white/10 ${isRtl ? 'text-right' : 'text-left'}`}>
+                      <th key={i} className={`p-4 font-geist font-semibold text-white uppercase tracking-wider border-b border-white/10 ${isRtl ? 'text-right' : 'text-left'}`}>
                         {header}
                       </th>
                     ))}
@@ -71,7 +71,7 @@ const RichContent = ({ content, isRtl }) => {
                   {section.table.rows.map((row, i) => (
                     <tr key={i} className="hover:bg-white/5 transition-colors">
                       {row.map((cell, j) => (
-                        <td key={j} className="p-4 font-['Geist'] text-white/70 border-b border-white/5 align-top">
+                        <td key={j} className="p-4 font-geist text-white/70 border-b border-white/5 align-top">
                           {cell}
                         </td>
                       ))}
@@ -84,11 +84,11 @@ const RichContent = ({ content, isRtl }) => {
 
           {section.subsections?.map((sub, i) => (
             <div key={i} className={`flex flex-col gap-4 ${isRtl ? 'pr-0 md:pr-6 border-r-2' : 'pl-0 md:pl-6 border-l-2'} border-white/5 hover:border-blue-500/30 transition-colors`}>
-              <h4 className="font-['Geist'] font-medium text-[18px] md:text-[20px] text-white/90">
+              <h4 className="font-geist font-medium text-[18px] md:text-[20px] text-white/90">
                 {sub.title}
               </h4>
               {sub.content && (
-                <p className="font-['Geist'] text-[14px] md:text-[15px] text-white/60 leading-relaxed">
+                <p className="font-geist text-[14px] md:text-[15px] text-white/60 leading-relaxed">
                   {sub.content}
                 </p>
               )}
@@ -97,7 +97,7 @@ const RichContent = ({ content, isRtl }) => {
                   {sub.bullets.map((bullet, k) => (
                     <li key={k} className="flex gap-3 items-start group">
                       <div className={`size-[5px] rounded-full bg-blue-400/50 mt-[8px] shrink-0 ${isRtl ? 'ml-3' : ''}`} />
-                      <span className="font-['Geist'] text-[13px] md:text-[14px] text-white/60 group-hover:text-white transition-colors">
+                      <span className="font-geist text-[13px] md:text-[14px] text-white/60 group-hover:text-white transition-colors">
                         {bullet}
                       </span>
                     </li>
@@ -124,7 +124,7 @@ const ServiceDetailsModal = ({ isOpen, onClose, data, isRtl }) => {
       if (navbar) navbar.style.opacity = '1';
       if (navbar) navbar.style.pointerEvents = 'auto';
     }
-    return () => { 
+    return () => {
       document.body.style.overflow = 'unset';
       if (navbar) {
         navbar.style.opacity = '1';
@@ -144,7 +144,7 @@ const ServiceDetailsModal = ({ isOpen, onClose, data, isRtl }) => {
             onClick={onClose}
             className="absolute inset-0 bg-black/80 backdrop-blur-md"
           />
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -154,10 +154,10 @@ const ServiceDetailsModal = ({ isOpen, onClose, data, isRtl }) => {
             {/* Header */}
             <div className={`flex items-center justify-between p-6 md:p-8 border-b border-white/10 bg-white/5 ${isRtl ? 'flex-row-reverse' : ''}`}>
               <div className={`flex flex-col gap-1 ${isRtl ? 'text-right' : 'text-left'}`}>
-                <h2 className="font-['Geist'] font-bold text-[24px] md:text-[32px] text-white leading-tight">
+                <h2 className="font-geist font-bold text-[24px] md:text-[32px] text-white leading-tight">
                   {data.title}
                 </h2>
-                <p className="font-['Playfair_Display'] italic text-[16px] md:text-[18px] text-blue-400">
+                <p className="font-playfair italic text-[16px] md:text-[18px] text-blue-400">
                   {data.subtitle}
                 </p>
               </div>
@@ -187,14 +187,16 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
       <ScrollFadeIn>
         <div className="max-w-[1222px] w-full flex flex-col gap-8 items-center">
           <div
-            className="bg-clip-text flex flex-col font-['Geist'] font-medium text-[40px] sm:text-[52px] md:text-[64px] text-transparent tracking-[-0.4px] leading-[1.1]"
-            style={{ backgroundImage: isRtl 
-              ? "linear-gradient(90deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" 
-              : "linear-gradient(270deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}
+            className="bg-clip-text flex flex-col font-geist font-medium text-[40px] sm:text-[52px] md:text-[64px] text-transparent tracking-[-0.4px] leading-[1.1]"
+            style={{
+              backgroundImage: isRtl
+                ? "linear-gradient(90deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)"
+                : "linear-gradient(270deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)"
+            }}
           >
             <p>{data.title}</p>
           </div>
-          <div className="flex flex-col font-['Geist'] font-normal text-[14px] md:text-[18px] text-white/70 uppercase max-w-[741px]">
+          <div className="flex flex-col font-geist font-normal text-[14px] md:text-[18px] text-white/70 uppercase max-w-[741px]">
             <p className="leading-relaxed">{data.description}</p>
           </div>
         </div>
@@ -208,14 +210,16 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
             <div className={`backdrop-blur-[25px] bg-white/10 flex-1 p-8 md:p-[50px] rounded-[7px] flex flex-col gap-10 ${isRtl ? 'text-right' : 'text-left'} relative overflow-hidden`}>
               <div className={`backdrop-blur-[20px] bg-white/10 px-3 py-1.5 rounded-full flex gap-2 items-center w-fit ${isRtl ? 'mr-0 ml-auto' : ''}`}>
                 <div className="size-[16px] bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain' }} />
-                <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white uppercase tracking-wider">{labels.introduction}</span>
+                <span className="font-geist font-semibold text-[10px] md:text-[11px] text-white uppercase tracking-wider">{labels.introduction}</span>
               </div>
 
               <div
-                className="bg-clip-text flex flex-col font-['Geist'] font-medium text-[20px] md:text-[23px] text-transparent tracking-tight leading-relaxed"
-                style={{ backgroundImage: isRtl 
-                  ? "linear-gradient(90.464deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)"
-                  : "linear-gradient(269.536deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}
+                className="bg-clip-text flex flex-col font-geist font-medium text-[20px] md:text-[23px] text-transparent tracking-tight leading-relaxed"
+                style={{
+                  backgroundImage: isRtl
+                    ? "linear-gradient(90.464deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)"
+                    : "linear-gradient(269.536deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)"
+                }}
               >
                 <p className="whitespace-pre-line">{data.intro}</p>
               </div>
@@ -227,8 +231,8 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
                   { label: labels.industry, value: data.industry }
                 ].map((item, i) => (
                   <div key={i} className={`flex flex-col sm:flex-row sm:items-center justify-between py-5 border-b border-white/10 ${isRtl ? 'sm:flex-row-reverse' : ''}`}>
-                    <span className="font-['Geist'] text-[14px] md:text-[16px] text-white/60 uppercase">{item.label}</span>
-                    <span className={`font-['Geist'] text-[14px] md:text-[16px] text-white mt-1 sm:mt-0 ${isRtl ? 'text-right sm:text-left' : 'text-left sm:text-right'}`}>{item.value}</span>
+                    <span className="font-geist text-[14px] md:text-[16px] text-white/60 uppercase">{item.label}</span>
+                    <span className={`font-geist text-[14px] md:text-[16px] text-white mt-1 sm:mt-0 ${isRtl ? 'text-right sm:text-left' : 'text-left sm:text-right'}`}>{item.value}</span>
                   </div>
                 ))}
               </div>
@@ -265,7 +269,7 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
                     maskSize: 'contain'
                   }}
                 />
-                <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white uppercase tracking-wider">
+                <span className="font-geist font-semibold text-[10px] md:text-[11px] text-white uppercase tracking-wider">
                   {labels.the_solution}
                 </span>
               </div>
@@ -273,7 +277,7 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
               {/* Centered Content */}
               <div className="flex flex-col justify-center flex-1">
                 <div
-                  className="bg-clip-text flex flex-col font-['Geist'] font-medium text-[20px] md:text-[23px] text-transparent tracking-tight leading-relaxed"
+                  className="bg-clip-text flex flex-col font-geist font-medium text-[20px] md:text-[23px] text-transparent tracking-tight leading-relaxed"
                   style={{
                     backgroundImage: isRtl
                       ? "linear-gradient(90.709deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)"
@@ -307,7 +311,7 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
                     maskSize: 'contain'
                   }}
                 />
-                <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white uppercase tracking-wider">
+                <span className="font-geist font-semibold text-[10px] md:text-[11px] text-white uppercase tracking-wider">
                   {labels.final_thoughts}
                 </span>
               </div>
@@ -316,7 +320,7 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
               <div className="flex flex-col justify-center flex-1 gap-10">
 
                 <div
-                  className="bg-clip-text flex flex-col font-['Geist'] font-medium text-[20px] md:text-[23px] text-transparent tracking-tight leading-relaxed"
+                  className="bg-clip-text flex flex-col font-geist font-medium text-[20px] md:text-[23px] text-transparent tracking-tight leading-relaxed"
                   style={{
                     backgroundImage: isRtl
                       ? "linear-gradient(90.823deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)"
@@ -338,12 +342,12 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
                         />
                       </div>
 
-                      <span className="font-['Geist'] font-medium text-[14px] md:text-[16px] text-white uppercase whitespace-nowrap">
+                      <span className="font-geist font-medium text-[14px] md:text-[16px] text-white uppercase whitespace-nowrap">
                         {data.keyBenefits?.[0]?.title}
                       </span>
                     </div>
 
-                    <p className={`font-['Geist'] text-[12px] md:text-[14px] text-white/70 uppercase leading-relaxed ${isRtl ? 'text-right' : 'text-left'}`}>
+                    <p className={`font-geist text-[12px] md:text-[14px] text-white/70 uppercase leading-relaxed ${isRtl ? 'text-right' : 'text-left'}`}>
                       {data.keyBenefits?.[0]?.text}
                     </p>
                   </div>
@@ -358,12 +362,12 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
                         />
                       </div>
 
-                      <span className="font-['Geist'] font-medium text-[14px] md:text-[16px] text-white uppercase whitespace-nowrap">
+                      <span className="font-geist font-medium text-[14px] md:text-[16px] text-white uppercase whitespace-nowrap">
                         {data.keyBenefits?.[1]?.title}
                       </span>
                     </div>
 
-                    <p className={`font-['Geist'] text-[12px] md:text-[14px] text-white/70 uppercase leading-relaxed ${isRtl ? 'text-right' : 'text-left'}`}>
+                    <p className={`font-geist text-[12px] md:text-[14px] text-white/70 uppercase leading-relaxed ${isRtl ? 'text-right' : 'text-left'}`}>
                       {data.keyBenefits?.[1]?.text}
                     </p>
                   </div>
@@ -375,11 +379,11 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
               <ImageWithFallback alt="Interface" className="absolute inset-0 size-full object-cover" src={images?.finalThoughts} />
             </div>
           </div>
-          </ScrollFadeIn>
+        </ScrollFadeIn>
         {/* Read More Section */}
         <ScrollFadeIn>
           <div className="flex justify-center md:mt-10 ">
-              <button
+            <button
               onClick={onReadMore}
               className="
     relative overflow-hidden
@@ -394,7 +398,7 @@ function TopSection({ data, onReadMore, isRtl, labels, images }) {
     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
     border border-white/20
     text-white uppercase whitespace-nowrap
-    font-['Geist']
+    font-geist
 
     cursor-pointer
     transition-all duration-300 
@@ -415,22 +419,22 @@ export const ServicePage = () => {
   const { serviceId } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { language } = useLanguage();
-  
+
   const currentLang = language.toLowerCase();
   const isRtl = currentLang === 'ar';
-  
+
   const labels = langData[currentLang]?.service_labels || {};
   const serviceDetailData = langData[currentLang]?.service_detail_page || {};
   const fullServiceDetailsData = langData[currentLang]?.full_service_details || {};
 
   // Fetch current service data from langData
-  const currentService = (serviceId && serviceDetailData[serviceId]) 
-    ? serviceDetailData[serviceId] 
+  const currentService = (serviceId && serviceDetailData[serviceId])
+    ? serviceDetailData[serviceId]
     : serviceDetailData['analytics'];
-  
+
   // Fetch detailed service data for modal from langData
-  const detailedService = (serviceId && fullServiceDetailsData[serviceId]) 
-    ? fullServiceDetailsData[serviceId] 
+  const detailedService = (serviceId && fullServiceDetailsData[serviceId])
+    ? fullServiceDetailsData[serviceId]
     : fullServiceDetailsData['analytics'];
 
   // Fetch current images from serviceImages registry
@@ -438,18 +442,18 @@ export const ServicePage = () => {
 
   return (
     <div className="relative z-10 w-full flex flex-col items-center">
-      <TopSection 
-        data={currentService} 
-        onReadMore={() => setIsModalOpen(true)} 
-        isRtl={isRtl} 
+      <TopSection
+        data={currentService}
+        onReadMore={() => setIsModalOpen(true)}
+        isRtl={isRtl}
         labels={labels}
         images={images}
       />
-      
-      <ServiceDetailsModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        data={detailedService} 
+
+      <ServiceDetailsModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        data={detailedService}
         isRtl={isRtl}
       />
 

@@ -3,7 +3,7 @@ import Sensor from "../../assets/Sensor.png";
 import System from "../../assets/System.png";
 import Dataflow from "../../assets/Dataflow.png"
 import imgImage from "../../assets/28664606051f8506026c69bed106cd92d3ebbb23.png";
-import imgImage1 from "../../assets/e09f50796c0c219089d5e485139d5e1a48d9d1d2.png";
+import imgImage1 from "../../assets/about-img1.webp";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
 import { useLanguage } from '../../context/LanguageContext';
@@ -26,7 +26,7 @@ function PFramerText() {
   const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
         <p className="leading-[17.6px]">{t.integration}</p>
       </div>
     </div>
@@ -80,7 +80,7 @@ function PFramerText1() {
   const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
         <p className="leading-[19.6px]">{t.sensors}</p>
       </div>
     </div>
@@ -175,7 +175,7 @@ function PFramerText2() {
   const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
         <p className="leading-[19.6px]">{t.systems}</p>
       </div>
     </div>
@@ -270,7 +270,7 @@ function PFramerText3() {
   const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-medium justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white tracking-[0.5px] uppercase whitespace-nowrap">
         <p className="leading-[19.6px]">{t.data_flow}</p>
       </div>
     </div>
@@ -372,7 +372,7 @@ function PFramerText4() {
   const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[16px] md:text-[18px] text-white uppercase w-full">
+      <div className="flex flex-col font-geist font-normal justify-center leading-[0] relative shrink-0 text-[16px] md:text-[18px] text-white uppercase w-full">
         <p className="leading-[24px] md:leading-[27px]">{t.quote}</p>
       </div>
     </div>
@@ -410,7 +410,7 @@ function PFramerText5() {
   const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-normal justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white uppercase whitespace-nowrap">
         <p className="leading-[19.6px]">{t.author}</p>
       </div>
     </div>
@@ -430,7 +430,7 @@ function PFramerText6() {
   const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Playfair_Display'] font-normal justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white uppercase whitespace-nowrap">
+      <div className="flex flex-col font-playfair font-normal justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] text-white uppercase whitespace-nowrap">
         <p className="leading-[19.6px]">{t.role}</p>
       </div>
     </div>
@@ -471,7 +471,7 @@ function TestimonialCard() {
     >
       <div className="content-stretch flex flex-col gap-[60px] md:gap-[153px] items-start max-w-[inherit] p-[20px] md:p-[30px] relative size-full">
         <WorkingWithThemWasAGameChangerTheyBroughtClarityToOurMessagingAndGaveUsABrandWereTrulyProudOf />
-        <AuthorInformation />
+        {/* <AuthorInformation /> */}
       </div>
     </div>
   );
@@ -508,7 +508,7 @@ function PFramerText7() {
   const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
         <p className="leading-[17.6px]">{t.ai_systems}</p>
       </div>
     </div>
@@ -561,7 +561,7 @@ function PFramerText8() {
   const t = langData[language.toLowerCase()].aboutSection;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
         <p className="leading-[17.6px]">{t.data_platform}</p>
       </div>
     </div>

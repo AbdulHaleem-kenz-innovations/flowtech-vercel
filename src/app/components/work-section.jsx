@@ -32,7 +32,7 @@ function PFramerText() {
   const t = langData[language.toLowerCase()].work_section;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
         <p className="leading-[17.6px]">{t.core_products}</p>
       </div>
     </div>
@@ -69,7 +69,7 @@ function H2FramerText() {
   const t = langData[language.toLowerCase()].work_section;
   return (
     <div className="content-stretch flex flex-col items-start md:items-center relative shrink-0 w-full" data-name="h2.framer-text">
-      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-start md:text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.4672deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
+      <div className="bg-clip-text flex flex-col font-geist font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-start md:text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.4672deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
         <p className="leading-[1.1]">{t.title_p1}</p>
       </div>
     </div>
@@ -89,7 +89,7 @@ function H2FramerText1() {
   const t = langData[language.toLowerCase()].work_section;
   return (
     <div className="content-stretch flex flex-col items-start md:items-center relative shrink-0 w-full" data-name="h2.framer-text">
-      <div className="bg-clip-text flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-start md:text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1354deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
+      <div className="bg-clip-text flex flex-col font-playfair font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] text-start md:text-center tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1354deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.6) 100%)" }}>
         <p className="leading-[1.1]">{t.title_p2}</p>
       </div>
     </div>
@@ -129,7 +129,7 @@ function Description() {
     <div className="relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-start md:justify-center size-full">
         <div className="content-stretch flex items-start md:items-center justify-start md:justify-center md:p-[10px] relative size-full">
-          <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[18px] text-start md:text-center text-white uppercase w-full max-w-[780px]">
+          <div className="flex flex-col font-geist font-normal justify-center leading-[0] relative shrink-0 text-[14px] md:text-[18px] text-start md:text-center text-white uppercase w-full max-w-[780px]">
             <p className="leading-[1.4] md:leading-[27px]">{t.description}</p>
           </div>
         </div>
@@ -203,13 +203,13 @@ function ProductCard({ number, title, description, image, normalImage, hoverImag
       >
         {/* Row: number + icon */}
         <div className="flex items-center justify-between mb-2">
-          <span className="font-['Geist'] font-normal text-white/60 text-[13px] tracking-[0.05em]">
+          <span className="font-geist font-normal text-white/60 text-[13px] tracking-[0.05em]">
             {number}
           </span>
-          <span className="font-['Geist'] font-light text-white/60 text-[20px] leading-none">+</span>
+          <span className="font-geist font-light text-white/60 text-[20px] leading-none">+</span>
         </div>
         {/* Title */}
-        <div className="font-['Geist'] font-semibold text-white text-[17px] md:text-[19px] leading-tight">
+        <div className="font-geist font-semibold text-white text-[17px] md:text-[19px] leading-tight">
           {title}
         </div>
       </div>
@@ -221,7 +221,7 @@ function ProductCard({ number, title, description, image, normalImage, hoverImag
           background: 'linear-gradient(to top, rgba(15,15,15,1) 55%, rgba(15,15,15,0) 100%)',
         }}
       >
-        <p className="font-['Geist'] font-normal text-white uppercase leading-[1.55] text-[13px] md:text-[14px] tracking-[0.02em]">
+        <p className="font-geist font-normal text-white uppercase leading-[1.55] text-[13px] md:text-[14px] tracking-[0.02em]">
           {description}
         </p>
       </div>
@@ -256,7 +256,7 @@ export const WorkSection = ({ showButton = false }) => {
               <ProductCard
                 number="01"
                 slug="kenvoice"
-                title={language === "AR" ? <p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">{t.products.kenvoice.title}</p> : <KenvoiceLogo />}
+                title={language === "AR" ? <p className="capitalize font-geist font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">{t.products.kenvoice.title}</p> : <KenvoiceLogo />}
                 description={t.products.kenvoice.description}
                 image={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 195 171'%3E%3Cpath d='${svgPaths.pda184c0}' fill='%23959595'/%3E%3C/svg%3E`}
                 normalImage={kenvoiceDefault}
@@ -265,7 +265,7 @@ export const WorkSection = ({ showButton = false }) => {
               <ProductCard
                 number="02"
                 slug="smart-idp"
-                title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">{t.products.smart_idp.title}</p>}
+                title={<p className="capitalize font-geist font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">{t.products.smart_idp.title}</p>}
                 description={t.products.smart_idp.description}
                 normalImage={idpDefault}
                 hoverImage={idpColor}
@@ -273,7 +273,7 @@ export const WorkSection = ({ showButton = false }) => {
               <ProductCard
                 number="03"
                 slug="ai-bizzapp"
-                title={<p className="capitalize font-['Geist'] font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">{t.products.ai_bizzapp.title}</p>}
+                title={<p className="capitalize font-geist font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">{t.products.ai_bizzapp.title}</p>}
                 description={t.products.ai_bizzapp.description}
                 normalImage={aibizzDefault}
                 hoverImage={aibizzColor}
@@ -283,7 +283,7 @@ export const WorkSection = ({ showButton = false }) => {
             {/* Decorative Corner Icons for the Container */}
 
             {showButton && (
-              <Link to="/products" 
+              <Link to="/products"
                 className=" relative overflow-hidden
       flex items-center justify-center
 
@@ -296,7 +296,7 @@ export const WorkSection = ({ showButton = false }) => {
       bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
       border border-white/20
       text-white uppercase whitespace-nowrap
-      font-['Geist']
+      font-geist
 
       cursor-pointer
       transition-all duration-300 

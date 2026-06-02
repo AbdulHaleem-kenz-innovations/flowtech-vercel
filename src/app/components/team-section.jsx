@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { 
-  Instagram, 
-  Twitter, 
-  Github, 
-  Linkedin, 
-  Dribbble, 
-  PlusIcon 
+import {
+  Instagram,
+  Twitter,
+  Github,
+  Linkedin,
+  Dribbble,
+  PlusIcon
 } from "lucide-react";
 import ScrollFadeIn from "../../components/ScrollFadeIn";
 import { imgDivFramerIu4QG, imgDivFramerIu4QG1 } from "../../imports/svg-34ssx";
@@ -190,15 +190,15 @@ export function TeamSection() {
             <div className="flex flex-col gap-5 items-start">
               <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] flex gap-[5px] items-center px-[11px] py-[5px] rounded-[5px]">
                 <PlusIcon size={16} />
-                <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">{t.badge}</span>
+                <span className="font-geist font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">{t.badge}</span>
               </div>
               <div className="flex items-center">
-                <span className="bg-clip-text font-['Geist'] font-medium text-[40px] md:text-[60px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(268.918deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{t.title_p1}&nbsp;</span>
-                <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[40px] md:text-[60px] tracking-[-0.4px] leading-tight">{t.title_italic}</span>
+                <span className="bg-clip-text font-geist font-medium text-[40px] md:text-[60px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(268.918deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{t.title_p1}&nbsp;</span>
+                <span className="font-playfair italic text-[#d9d9d9] text-[40px] md:text-[60px] tracking-[-0.4px] leading-tight">{t.title_italic}</span>
               </div>
             </div>
             <div className="max-w-[400px] opacity-70">
-              <p className="font-['Geist'] font-normal text-[14px] md:text-[16px] text-white uppercase leading-[1.4] md:leading-[22.4px]">
+              <p className="font-geist font-normal text-[14px] md:text-[16px] text-white uppercase leading-[1.4] md:leading-[22.4px]">
                 {t.description}
               </p>
             </div>
@@ -215,7 +215,7 @@ export function TeamSection() {
     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
     border border-white/20
     text-white uppercase whitespace-nowrap
-    font-['Geist']
+    font-geist
 
     cursor-pointer
     transition-all duration-300 

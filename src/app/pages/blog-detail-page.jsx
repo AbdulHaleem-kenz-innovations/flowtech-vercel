@@ -38,10 +38,10 @@ const BlogCard = ({ title, image, author = "FLOWTECH TEAM", isRtl, t }) => (
 
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-1.5 opacity-50">
-        <span className="font-['Geist'] font-semibold text-[11px] text-black uppercase tracking-wider">{t.author.label}</span>
-        <span className="font-['Geist'] font-semibold text-[11px] text-black uppercase tracking-wider">{author}</span>
+        <span className="font-geist font-semibold text-[11px] text-black uppercase tracking-wider">{t.author.label}</span>
+        <span className="font-geist font-semibold text-[11px] text-black uppercase tracking-wider">{author}</span>
       </div>
-      <h3 className="font-['Geist'] font-medium text-[20px] text-black leading-tight">
+      <h3 className="font-geist font-medium text-[20px] text-black leading-tight">
         {title}
       </h3>
       <div className="group inline-flex items-center cursor-pointer overflow-hidden">
@@ -83,7 +83,7 @@ const BlogDetailPage = () => {
   const isRtl = language === 'AR';
   const t = langData[language.toLowerCase()].blog_detail;
   const insightsT = langData[language.toLowerCase()].insights_page;
-  
+
   const socialIcons = [
     { Icon: Twitter, href: "#", label: "X (Twitter)" },
     { Icon: Instagram, href: "#", label: "Instagram" },
@@ -98,19 +98,19 @@ const BlogDetailPage = () => {
         <div className="flex gap-[5px] items-center justify-center">
           <div className="backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)] flex gap-[5px] items-center justify-center px-[13px] py-[6px] rounded-[30px]">
             <div className="w-[13px] h-[13px] bg-white" style={{ maskImage: `url('${imgDivFramerYVnZo}')`, maskSize: 'contain' }} />
-            <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">{t.meta.date}</span>
+            <span className="font-geist font-semibold text-[11px] text-white tracking-[0.2px] uppercase">{t.meta.date}</span>
           </div>
           <div className="backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)] flex gap-[5px] items-center justify-center px-[13px] py-[6px] rounded-[30px]">
             <div className="w-[13px] h-[13px] bg-white" style={{ maskImage: `url('${imgDivFramerFoIvU}')`, maskSize: 'contain' }} />
-            <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">{t.meta.category}</span>
+            <span className="font-geist font-semibold text-[11px] text-white tracking-[0.2px] uppercase">{t.meta.category}</span>
           </div>
         </div>
 
-        <h1 className="font-['Geist'] font-medium text-[30px] md:text-[60px] text-center text-white tracking-[-0.4px] max-w-[1000px] leading-tight">
+        <h1 className="font-geist font-medium text-[30px] md:text-[60px] text-center text-white tracking-[-0.4px] max-w-[1000px] leading-tight">
           {t.title}
         </h1>
 
-        <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-center text-white/70 uppercase tracking-widest max-w-[800px]">
+        <p className="font-geist font-normal text-[16px] md:text-[18px] text-center text-white/70 uppercase tracking-widest max-w-[800px]">
           {t.subtitle}
         </p>
       </section>
@@ -124,35 +124,35 @@ const BlogDetailPage = () => {
 
       {/* Blog Content */}
       <section className="px-6 w-full max-w-[850px] sm:w-[98%] flex flex-col gap-12 mb-32">
-        <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist'] text-start">
+        <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-geist text-start">
           <p>{t.content.p1}</p>
           <p>{t.content.p2}</p>
         </div>
 
         <div className="flex flex-col gap-6 text-start">
-          <h2 className="font-['Geist'] font-medium text-[24px] md:text-[28px] text-white tracking-tight">
+          <h2 className="font-geist font-medium text-[24px] md:text-[28px] text-white tracking-tight">
             {t.content.h2_1}
           </h2>
-          <p className="text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
+          <p className="text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-geist">
             {t.content.p3}
           </p>
         </div>
 
         <div className="ps-6 border-s-2 border-white/20 text-start">
-          <blockquote className="font-['Playfair_Display'] italic text-[24px] md:text-[32px] text-white leading-tight">
+          <blockquote className="font-playfair italic text-[24px] md:text-[32px] text-white leading-tight">
             “{t.content.quote}”
           </blockquote>
         </div>
 
-        <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist'] text-start">
+        <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-geist text-start">
           <p>{t.content.p4}</p>
         </div>
 
         <div className="flex flex-col gap-8 text-start">
-          <h2 className="font-['Geist'] font-medium text-[24px] md:text-[28px] text-white tracking-tight">
+          <h2 className="font-geist font-medium text-[24px] md:text-[28px] text-white tracking-tight">
             {t.content.h2_2}
           </h2>
-          <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
+          <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-geist">
             <p>{t.content.p5}</p>
             <ul className="list-disc ps-6 flex flex-col gap-4">
               {t.content.list.map((item, i) => (
@@ -169,10 +169,10 @@ const BlogDetailPage = () => {
         </div>
 
         <div className="flex flex-col gap-8 text-start">
-          <h2 className="font-['Geist'] font-medium text-[24px] md:text-[28px] text-white tracking-tight">
+          <h2 className="font-geist font-medium text-[24px] md:text-[28px] text-white tracking-tight">
             {t.content.h2_3}
           </h2>
-          <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-['Geist']">
+          <div className="flex flex-col gap-6 text-[16px] md:text-[18px] text-white/75 uppercase leading-relaxed font-geist">
             <p>{t.content.p7}</p>
             <p>{t.content.p8}</p>
           </div>
@@ -185,12 +185,12 @@ const BlogDetailPage = () => {
               <ImageWithFallback src={imgAuthorImage} className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
-              <span className="font-['Geist'] text-[12px] text-white/50 uppercase tracking-widest">{t.author.label}</span>
-              <span className="font-['Geist'] text-[16px] text-white uppercase font-medium">{t.author.name}</span>
+              <span className="font-geist text-[12px] text-white/50 uppercase tracking-widest">{t.author.label}</span>
+              <span className="font-geist text-[16px] text-white uppercase font-medium">{t.author.name}</span>
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <span className="font-['Geist'] text-[14px] text-white/50 uppercase tracking-widest">
+            <span className="font-geist text-[14px] text-white/50 uppercase tracking-widest">
               {t.author.keep_in_touch}
             </span>
 
@@ -216,11 +216,11 @@ const BlogDetailPage = () => {
           <div className="flex flex-col gap-6 items-center text-center mb-20">
             <div className="backdrop-blur-md bg-white/5 px-4 py-2 rounded-md border border-white/10 flex items-center gap-2 w-fit">
               <div className="w-4 h-4 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG3}')`, maskSize: 'contain' }} />
-              <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">{t.related.badge}</span>
+              <span className="font-geist font-semibold text-[11px] text-white uppercase tracking-widest">{t.related.badge}</span>
             </div>
             <h2 className="flex flex-col gap-2">
-              <span className="font-['Geist'] font-medium text-[30px] md:text-[44px] text-white leading-tight">{t.related.title_p1} <span className="font-['Playfair_Display'] italic text-white/70">{t.related.title_p2}</span></span>
-              <span className="font-['Playfair_Display'] italic font-normal text-[30px] md:text-[44px] text-white/80 leading-tight">{t.related.title_p3} <span className="font-['Geist'] font-medium not-italic text-white">{t.related.title_p4}</span></span>
+              <span className="font-geist font-medium text-[30px] md:text-[44px] text-white leading-tight">{t.related.title_p1} <span className="font-playfair italic text-white/70">{t.related.title_p2}</span></span>
+              <span className="font-playfair italic font-normal text-[30px] md:text-[44px] text-white/80 leading-tight">{t.related.title_p3} <span className="font-geist font-medium not-italic text-white">{t.related.title_p4}</span></span>
             </h2>
             <div className="mt-4">
               <Link to="/insights" className="     relative overflow-hidden
@@ -231,7 +231,7 @@ const BlogDetailPage = () => {
               bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
               border border-white/20
               text-white uppercase whitespace-nowrap
-              font-['Geist'] text-[16px]
+              font-geist text-[16px]
               cursor-pointer
               transition-all duration-300 
               hover:scale-105 active:scale-95 

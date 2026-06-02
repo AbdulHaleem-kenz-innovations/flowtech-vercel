@@ -22,7 +22,7 @@ export const ServicesDropdown = ({ isOpen, onClose, onOpen, anchorRef }) => {
   const { language } = useLanguage();
   const currentLang = language.toLowerCase();
   const isRtl = currentLang === 'ar';
-  
+
   const services_t = langData[currentLang]?.features?.services || {};
 
   const services = [
@@ -67,8 +67,8 @@ export const ServicesDropdown = ({ isOpen, onClose, onOpen, anchorRef }) => {
       name: "SAP Services",
       href: "/services/sap-services",
       image: sapIntro
-      },
-       {
+    },
+    {
       id: 7,
       name: "Oracle Solutions",
       href: "/services/oracle-services",
@@ -117,14 +117,14 @@ export const ServicesDropdown = ({ isOpen, onClose, onOpen, anchorRef }) => {
       dir={isRtl ? 'rtl' : 'ltr'}
     >
       <div className={`backdrop-blur-[25px] md:bg-white/5 bg-black/40 border border-white/20 rounded-[20px] w-[790px] h-[400px] overflow-hidden flex shadow-2xl ${isRtl ? 'flex-row-reverse' : ''}`}>
-        
+
         {/* Services List */}
         <div className={`flex-1 p-8 flex flex-col justify-center gap-4 ${isRtl ? 'text-right' : 'text-left'}`}>
           {localizedServices.map((service, index) => (
             <Link
               key={index}
               to={service.href}
-              className={`font-['Geist'] font-semibold text-[18px] transition-colors duration-200 capitalize leading-[27px]
+              className={`font-geist font-semibold text-[18px] transition-colors duration-200 capitalize leading-[27px]
                 ${hoveredIndex === index ? 'text-white' : 'text-white/75 hover:text-white/90'}`}
               onMouseEnter={() => setHoveredIndex(index)}
               onClick={onClose}

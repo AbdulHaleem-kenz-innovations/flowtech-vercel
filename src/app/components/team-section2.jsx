@@ -37,10 +37,10 @@ const TeamCard = ({ name, role, image, socialIcons = [imgVector, imgVector1, img
         <div className="bg-white rounded-[7px] p-[20px] flex flex-col gap-[17px]">
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-1">
-              <span className="font-['Geist'] font-semibold text-[18px] text-black">{name.split(' ')[0]}</span>
-              <span className="font-['Geist'] font-normal text-[18px] text-[#838383]">{name.split(' ').slice(1).join(' ')}</span>
+              <span className="font-geist font-semibold text-[18px] text-black">{name.split(' ')[0]}</span>
+              <span className="font-geist font-normal text-[18px] text-[#838383]">{name.split(' ').slice(1).join(' ')}</span>
             </div>
-            <span className="font-['Playfair_Display'] font-normal text-[14px] text-black/80 uppercase">{role}</span>
+            <span className="font-playfair font-normal text-[14px] text-black/80 uppercase">{role}</span>
           </div>
           <div className="flex gap-3 items-center opacity-50">
             {socialIcons.map((icon, i) => (
@@ -67,17 +67,17 @@ export const TeamSection2 = React.forwardRef((props, ref) => {
             <div className="flex flex-col gap-4 md:gap-6 w-full lg:max-w-[320px]">
               <div className="backdrop-blur-[20px] bg-white/5 border border-white/10 px-3 py-1.5 rounded-md flex items-center gap-2 w-fit">
                 <div className="size-4 bg-white" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain' }} />
-                <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white uppercase tracking-widest">{t.team.badge}</span>
+                <span className="font-geist font-semibold text-[10px] md:text-[11px] text-white uppercase tracking-widest">{t.team.badge}</span>
               </div>
               <h2 className="flex flex-wrap items-center gap-x-3">
-                <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent leading-tight">{t.team.title_p1}</span>
-                <span className="font-['Playfair_Display'] italic font-normal text-[36px] sm:text-[48px] md:text-[60px] text-white/70 leading-tight">{t.team.title_italic}</span>
+                <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-geist font-medium text-[36px] sm:text-[48px] md:text-[60px] text-transparent leading-tight">{t.team.title_p1}</span>
+                <span className="font-playfair italic font-normal text-[36px] sm:text-[48px] md:text-[60px] text-white/70 leading-tight">{t.team.title_italic}</span>
               </h2>
             </div>
-            <p className="max-w-[450px] lg:max-w-[345px] text-white/70 font-['Geist'] text-[14px] md:text-[16px] uppercase leading-relaxed">
+            <p className="max-w-[450px] lg:max-w-[345px] text-white/70 font-geist text-[14px] md:text-[16px] uppercase leading-relaxed">
               {t.team.description}
             </p>
-            <Link to="/careers" className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-['Geist'] cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn">
+            <Link to="/careers" className="relative overflow-hidden flex items-center justify-center w-fit mx-auto sm:mx-0 px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 text-[13px] sm:text-[14px] md:text-[16px] rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase whitespace-nowrap font-geist cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 glare-btn">
               {t.team.cta_join}
             </Link>
           </div>

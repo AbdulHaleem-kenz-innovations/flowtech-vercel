@@ -34,8 +34,8 @@ const TestimonialCard = ({ rating, name, role, quote, image, isCentered = false 
       <div className="flex justify-between items-end mb-10 md:mb-[64px]">
         <div className="flex flex-col gap-1">
           <div className="flex items-end gap-1">
-            <span className="font-['Geist'] font-normal text-[40px] md:text-[50px] text-white leading-none">{rating}</span>
-            <span className="font-['Geist'] font-normal text-[16px] md:text-[20px] text-white/30 leading-none mb-1 md:mb-2">/5</span>
+            <span className="font-geist font-normal text-[40px] md:text-[50px] text-white leading-none">{rating}</span>
+            <span className="font-geist font-normal text-[16px] md:text-[20px] text-white/30 leading-none mb-1 md:mb-2">/5</span>
           </div>
           <StarRating />
         </div>
@@ -45,10 +45,10 @@ const TestimonialCard = ({ rating, name, role, quote, image, isCentered = false 
       </div>
 
       <div className="flex flex-col gap-[17px]">
-        <p className="font-['Geist'] font-medium text-[20px] md:text-[23px] text-white tracking-[-0.4px] leading-tight line-clamp-3">
+        <p className="font-geist font-medium text-[20px] md:text-[23px] text-white tracking-[-0.4px] leading-tight line-clamp-3">
           {language === "AR" ? `”${quote}“` : `“${quote}”`}
         </p>
-        <div className="flex flex-col opacity-80 uppercase font-['Geist'] font-normal text-[12px] md:text-[14px] text-white tracking-tight">
+        <div className="flex flex-col opacity-80 uppercase font-geist font-normal text-[12px] md:text-[14px] text-white tracking-tight">
           <span>{name}</span>
           <span className="text-white/70">{role}</span>
         </div>
@@ -73,15 +73,15 @@ export const TestimonialSection = () => {
             <div className="flex flex-col gap-5 items-start">
               <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] content-stretch flex gap-[5px] items-center justify-center overflow-clip ps-[7px] pe-[11px] py-[5px] relative rounded-[5px]">
                 <PlusIcon size={16} />
-                <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">{t.badge}</span>
+                <span className="font-geist font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">{t.badge}</span>
               </div>
               <div className="flex flex-wrap items-center">
-                <span className="bg-clip-text font-['Geist'] font-medium text-[36px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(268.908deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{t.title_p1}&nbsp;</span>
-                <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[36px] md:text-[44px] tracking-[-0.4px] leading-tight">{t.title_italic}</span>
+                <span className="bg-clip-text font-geist font-medium text-[36px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight" style={{ backgroundImage: "linear-gradient(268.908deg, rgba(255, 255, 255, 0.4) 5%, rgb(255, 255, 255) 50%)" }}>{t.title_p1}&nbsp;</span>
+                <span className="font-playfair italic text-[#d9d9d9] text-[36px] md:text-[44px] tracking-[-0.4px] leading-tight">{t.title_italic}</span>
               </div>
             </div>
             <div className="max-w-[420px] opacity-70">
-              <p className="font-['Geist'] font-normal text-[14px] md:text-[16px] text-white uppercase leading-[1.4] md:leading-[22.4px]">
+              <p className="font-geist font-normal text-[14px] md:text-[16px] text-white uppercase leading-[1.4] md:leading-[22.4px]">
                 {t.description}
               </p>
             </div>

@@ -64,7 +64,7 @@ const ProductsPage = () => {
       {/* <Background /> */}
       {/* <Background /> */}
       <div className='mt-20'>
-       <WorkSection />
+        <WorkSection />
       </div>
       <div className="w-full flex flex-col items-center">
         {/* Hero Section */}
@@ -76,7 +76,7 @@ const ProductsPage = () => {
               animate={{ opacity: 1, y: 0 }}
             >
               <div className="w-4 h-4 bg-white/40" style={{ maskImage: `url('${imgDivFramerIu4QG}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }} />
-              <span className="font-['Geist'] font-semibold text-[11px] text-white uppercase tracking-widest">{t.hero.badge}</span>
+              <span className="font-geist font-semibold text-[11px] text-white uppercase tracking-widest">{t.hero.badge}</span>
             </motion.div>
 
             <motion.h1
@@ -85,16 +85,16 @@ const ProductsPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[36px] md:text-[60px] text-transparent tracking-tight leading-[1.1]">
+              <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-geist font-medium text-[36px] md:text-[60px] text-transparent tracking-tight leading-[1.1]">
                 {t.hero.title_p1}
               </span>
-              <span className="font-['Playfair_Display'] italic font-normal text-[36px] md:text-[60px] text-white/70 tracking-tight leading-[1.1]">
+              <span className="font-playfair italic font-normal text-[36px] md:text-[60px] text-white/70 tracking-tight leading-[1.1]">
                 {t.hero.title_italic}
               </span>
             </motion.h1>
 
             <motion.p
-              className="font-['Geist'] text-white/70 text-[14px] md:text-[16px] uppercase tracking-widest max-w-[800px] leading-relaxed"
+              className="font-geist text-white/70 text-[14px] md:text-[16px] uppercase tracking-widest max-w-[800px] leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.7 }}
               transition={{ delay: 0.2 }}
@@ -109,39 +109,39 @@ const ProductsPage = () => {
               <ScrollFadeIn key={index}>
                 <div className={`flex flex-col lg:flex-row gap-6 items-stretch group ${(index % 2 !== 0) ? (isRtl ? 'lg:flex-row' : 'lg:flex-row-reverse') : (isRtl ? 'lg:flex-row-reverse' : 'lg:flex-row')}`}>
                   {/* Image Side - Now first in markup for mobile ordering */}
-                          {/* <a
+          {/* <a
                     href={product.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 rounded-[20px] overflow-hidden min-h-[300px] lg:h-[400px] relative cursor-pointer block group/img"
                   > */}
-                              {/* Gradient Overlay for Text Readability */}
-                              {/* <div className="absolute inset-0 backdrop-blur-[15px] bg-white/5 border border-white/10" /> */}
+          {/* Gradient Overlay for Text Readability */}
+          {/* <div className="absolute inset-0 backdrop-blur-[15px] bg-white/5 border border-white/10" /> */}
 
-                              {/* Default Image (Desktop only, hidden on hover) */}
-                              {/* <div className="absolute inset-0 transition-opacity duration-700 opacity-100 group-hover:lg:opacity-0 hidden lg:block">
+          {/* Default Image (Desktop only, hidden on hover) */}
+          {/* <div className="absolute inset-0 transition-opacity duration-700 opacity-100 group-hover:lg:opacity-0 hidden lg:block">
                       <ImageWithFallback src={product.defaultImage} className="w-full h-full object-contain" />
                     </div> */}
 
-                              {/* Hover Image (Visible on Mobile by default, and Desktop on hover) */}
-                              {/* <div className="absolute inset-0 transition-opacity duration-700 opacity-100 lg:opacity-0 group-hover:lg:opacity-100">
+          {/* Hover Image (Visible on Mobile by default, and Desktop on hover) */}
+          {/* <div className="absolute inset-0 transition-opacity duration-700 opacity-100 lg:opacity-0 group-hover:lg:opacity-100">
                       <ImageWithFallback src={product.hoverImage} className="w-full h-full object-contain" />
                     </div>
                   </a> */}
 
-                          {/* Description Side */}
-                          {/* <div className="flex-1 backdrop-blur-[15px] bg-white/5 border border-white/10 p-8 md:p-12 rounded-[20px] flex flex-col justify-start gap-6 transition-all duration-500 group-hover:bg-white/[0.08]">
+          {/* Description Side */}
+          {/* <div className="flex-1 backdrop-blur-[15px] bg-white/5 border border-white/10 p-8 md:p-12 rounded-[20px] flex flex-col justify-start gap-6 transition-all duration-500 group-hover:bg-white/[0.08]">
                     <div className="flex flex-col gap-2">
-                      <span className="font-['Geist'] font-semibold text-[24px] md:text-[32px] text-white tracking-tight">
+                      <span className="font-geist font-semibold text-[24px] md:text-[32px] text-white tracking-tight">
                         {product.name}
                       </span>
                       <div className={`h-px w-12 bg-blue-500 transition-all duration-500 group-hover:w-20 ${isRtl ? 'mr-0' : 'ml-0'}`} />
                     </div>
-                    <p className="font-['Geist'] font-normal text-[16px] md:text-[18px] text-white/80 uppercase leading-relaxed tracking-wider">
+                    <p className="font-geist font-normal text-[16px] md:text-[18px] text-white/80 uppercase leading-relaxed tracking-wider">
                       {product.description}
                     </p> */}
 
-                              {/* <a
+          {/* <a
                       href={product.url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -155,7 +155,7 @@ const ProductsPage = () => {
                       bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
                       border border-white/20
                       text-white uppercase whitespace-nowrap
-                      font-['Geist']
+                      font-geist
                       cursor-pointer
                       transition-all duration-300 
                       hover:scale-105 active:scale-95 
@@ -165,7 +165,7 @@ const ProductsPage = () => {
                     >
                       {product.cta}
                     </a> */}
-                          {/* </div>
+          {/* </div>
                 </div>
               </ScrollFadeIn>
             ))} */}
@@ -176,15 +176,15 @@ const ProductsPage = () => {
             <div className="flex-1 flex flex-col gap-8 md:gap-12">
               <div className="flex flex-col gap-6">
                 <h2 className="flex flex-col">
-                  <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-['Geist'] font-medium text-[44px] text-transparent tracking-tight leading-tight">
+                  <span className="bg-clip-text bg-gradient-to-r from-white to-white/40 font-geist font-medium text-[44px] text-transparent tracking-tight leading-tight">
                     {t.form_section.title_p1}
                   </span>
-                  <span className="font-['Playfair_Display'] italic font-normal text-[44px] text-white/70 tracking-tight leading-tight">
+                  <span className="font-playfair italic font-normal text-[44px] text-white/70 tracking-tight leading-tight">
                     {t.form_section.title_italic}
                   </span>
                 </h2>
                 <div className="h-px w-full bg-white/20" />
-                <p className="font-['Geist'] text-white/70 text-[18px] uppercase tracking-wider leading-relaxed">
+                <p className="font-geist text-white/70 text-[18px] uppercase tracking-wider leading-relaxed">
                   {t.form_section.description}
                 </p>
               </div>
@@ -197,9 +197,9 @@ const ProductsPage = () => {
                         <path d="M2.5 6L4.5 8L9.5 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                    <span className="font-['Geist'] font-medium text-white uppercase text-[16px] tracking-wider">{t.form_section.features[0].title}</span>
+                    <span className="font-geist font-medium text-white uppercase text-[16px] tracking-wider">{t.form_section.features[0].title}</span>
                   </div>
-                  <p className="font-['Geist'] text-white/50 text-[14px] uppercase leading-relaxed">
+                  <p className="font-geist text-white/50 text-[14px] uppercase leading-relaxed">
                     {t.form_section.features[0].desc}
                   </p>
                 </div>
@@ -210,9 +210,9 @@ const ProductsPage = () => {
                         <path d="M2.5 6L4.5 8L9.5 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                    <span className="font-['Geist'] font-medium text-white uppercase text-[16px] tracking-wider">{t.form_section.features[1].title}</span>
+                    <span className="font-geist font-medium text-white uppercase text-[16px] tracking-wider">{t.form_section.features[1].title}</span>
                   </div>
-                  <p className="font-['Geist'] text-white/50 text-[14px] uppercase leading-relaxed">
+                  <p className="font-geist text-white/50 text-[14px] uppercase leading-relaxed">
                     {t.form_section.features[1].desc}
                   </p>
                 </div>
@@ -229,30 +229,30 @@ const ProductsPage = () => {
                 <div className="flex flex-col gap-2">
                   <div className="bg-[#2df9a7]/15 px-3 py-1 rounded-full w-fit flex items-center gap-2">
                     <div className="w-2 h-2 bg-[#0f9101] rounded-full" />
-                    <span className="font-['Geist'] font-semibold text-[#0f9101] text-[11px] uppercase tracking-wider">{t.form.badge}</span>
+                    <span className="font-geist font-semibold text-[#0f9101] text-[11px] uppercase tracking-wider">{t.form.badge}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="font-['Geist'] font-medium text-black text-[23px]">{t.form.title_p1}</span>
-                    <span className="font-['Playfair_Display'] italic text-black/60 text-[23px]">{t.form.title_italic}</span>
+                    <span className="font-geist font-medium text-black text-[23px]">{t.form.title_p1}</span>
+                    <span className="font-playfair italic text-black/60 text-[23px]">{t.form.title_italic}</span>
                   </div>
                 </div>
 
                 <form className="flex flex-col gap-6">
                   <div className="flex flex-col gap-2">
-                    <label className="font-['Geist'] font-semibold text-black text-[11px] uppercase tracking-wider">{t.form.labels.name}</label>
+                    <label className="font-geist font-semibold text-black text-[11px] uppercase tracking-wider">{t.form.labels.name}</label>
                     <input type="text" placeholder={t.form.placeholders.name} className="bg-[#f5f5f5] p-4 rounded-[7px] text-black focus:outline-none focus:ring-1 focus:ring-blue-500" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="font-['Geist'] font-semibold text-black text-[11px] uppercase tracking-wider">{t.form.labels.email}</label>
+                    <label className="font-geist font-semibold text-black text-[11px] uppercase tracking-wider">{t.form.labels.email}</label>
                     <input type="email" placeholder={t.form.placeholders.email} className="bg-[#f5f5f5] p-4 rounded-[7px] text-black focus:outline-none focus:ring-1 focus:ring-blue-500" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="font-['Geist'] font-semibold text-black text-[11px] uppercase tracking-wider">{t.form.labels.message}</label>
+                    <label className="font-geist font-semibold text-black text-[11px] uppercase tracking-wider">{t.form.labels.message}</label>
                     <textarea placeholder={t.form.placeholders.message} className="bg-[#f5f5f5] p-4 rounded-[7px] text-black h-32 focus:outline-none focus:ring-1 focus:ring-blue-500" />
                   </div>
                   <div className="flex items-center gap-2">
                     <input type="checkbox" id="terms" className="w-4 h-4" />
-                    <label htmlFor="terms" className="font-['Geist'] text-[12px] text-black/60">{t.form.labels.terms}</label>
+                    <label htmlFor="terms" className="font-geist text-[12px] text-black/60">{t.form.labels.terms}</label>
                   </div>
                   <button className=" relative overflow-hidden
     flex items-center justify-center
@@ -266,7 +266,7 @@ const ProductsPage = () => {
     bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
     border border-white/20
     text-white uppercase whitespace-nowrap
-    font-['Geist']
+    font-geist
 
     cursor-pointer
     transition-all duration-300 
@@ -294,14 +294,14 @@ const ProductsPage = () => {
           <FooterSection />
         </ScrollFadeIn>
 
-        {/* Industries Section */ }
-  {/* <RotationCardSection /> */ }
+        {/* Industries Section */}
+        {/* <RotationCardSection /> */}
 
-  {/* Newsletter Section */ }
-  {/* <EarlyAccessSection /> */ }
+        {/* Newsletter Section */}
+        {/* <EarlyAccessSection /> */}
 
-  {/* Footer */ }
-  {/* <FooterSection /> */ }
+        {/* Footer */}
+        {/* <FooterSection /> */}
       </div >
     </section >
   );

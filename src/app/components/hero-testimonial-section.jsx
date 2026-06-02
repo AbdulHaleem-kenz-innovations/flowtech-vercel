@@ -22,8 +22,8 @@ function ReviewHeader() {
   return (
     <div className="flex flex-col gap-[2px] items-start shrink-0 w-full">
       <div className="flex items-end gap-1">
-        <span className="font-['Geist'] font-normal text-[40px] md:text-[50px] text-white leading-none">5.0</span>
-        <span className="font-['Geist'] font-normal text-[18px] md:text-[20px] text-white/30 leading-none mb-1 md:mb-2">/5</span>
+        <span className="font-geist font-normal text-[40px] md:text-[50px] text-white leading-none">5.0</span>
+        <span className="font-geist font-normal text-[18px] md:text-[20px] text-white/30 leading-none mb-1 md:mb-2">/5</span>
       </div>
       <StarRating />
     </div>
@@ -35,7 +35,7 @@ function QuoteSection() {
   const t = langData[language.toLowerCase()].hero_testimonial;
   return (
     <div className="flex flex-col gap-[18px] items-start shrink-0 w-full">
-      <p className="bg-clip-text bg-gradient-to-l font-['Geist'] font-medium from-[rgba(255,255,255,0.4)] text-[18px] md:text-[23px] text-[transparent] to-white tracking-[-0.4px] leading-tight">
+      <p className="bg-clip-text bg-gradient-to-l font-geist font-medium from-[rgba(255,255,255,0.4)] text-[18px] md:text-[23px] text-[transparent] to-white tracking-[-0.4px] leading-tight">
         {language === "AR" ? `”${t.quote}“` : `“${t.quote}”`}
       </p>
       <div className="h-[40px] md:h-[63.8px] relative w-[100px] md:w-[145px] shrink-0 opacity-80">
@@ -48,33 +48,33 @@ function QuoteSection() {
 export const HeroTestimonialSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8 overflow-hidden -mt-15">
-      <div className="max-w-[1260px] w-full aspect-[1/1.2] sm:aspect-[1260/630] min-h-[450px] md:min-h-[480px] relative rounded-[7px] overflow-hidden group">
-        {/* Background Main Image */}
-        <div className="absolute inset-0 bg-[#3d2a45]">
-          <ImageWithFallback 
-            alt="Client Representative" 
-            className="w-full h-full object-cover opacity-60 md:opacity-100" 
-            src={imgImage} 
-          />
-        </div>
+      <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8 overflow-hidden -mt-15">
+        <div className="max-w-[1260px] w-full aspect-[1/1.2] sm:aspect-[1260/630] min-h-[450px] md:min-h-[480px] relative rounded-[7px] overflow-hidden group">
+          {/* Background Main Image */}
+          <div className="absolute inset-0 bg-[#3d2a45]">
+            <ImageWithFallback
+              alt="Client Representative"
+              className="w-full h-full object-cover opacity-60 md:opacity-100"
+              src={imgImage}
+            />
+          </div>
 
-        {/* Floating UI/Dashboard Image Layer - Hidden on mobile or smaller */}
-        <div className="hidden lg:block absolute h-[449px] end-[-50px] top-[180px] w-[598px] rounded-[20px] shadow-2xl transition-transform duration-700 group-hover:translate-y-[-10px]">
-          <ImageWithFallback 
-            alt="Dashboard Interface" 
-            className="w-full h-full object-cover rounded-[20px]" 
-            src={imgImage2} 
-          />
-        </div>
+          {/* Floating UI/Dashboard Image Layer - Hidden on mobile or smaller */}
+          <div className="hidden lg:block absolute h-[449px] end-[-50px] top-[180px] w-[598px] rounded-[20px] shadow-2xl transition-transform duration-700 group-hover:translate-y-[-10px]">
+            <ImageWithFallback
+              alt="Dashboard Interface"
+              className="w-full h-full object-cover rounded-[20px]"
+              src={imgImage2}
+            />
+          </div>
 
-        {/* Translucent Review Card */}
-        <div className="absolute inset-x-[20px] bottom-[20px] md:inset-auto md:bottom-[30px] md:start-[30px] backdrop-blur-[50px] bg-black/50 flex flex-col gap-8 md:gap-[48px] items-start justify-center max-w-[500px] overflow-hidden p-6 md:p-[35px] rounded-[7px] shadow-xl border border-white/10">
-          <ReviewHeader />
-          <QuoteSection />
+          {/* Translucent Review Card */}
+          <div className="absolute inset-x-[20px] bottom-[20px] md:inset-auto md:bottom-[30px] md:start-[30px] backdrop-blur-[50px] bg-black/50 flex flex-col gap-8 md:gap-[48px] items-start justify-center max-w-[500px] overflow-hidden p-6 md:p-[35px] rounded-[7px] shadow-xl border border-white/10">
+            <ReviewHeader />
+            <QuoteSection />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </ScrollFadeIn>
   );
 };

@@ -22,7 +22,7 @@ function Badge({ icon, text }) {
   return (
     <div className="backdrop-blur-[15px] bg-[rgba(255,255,255,0.1)] flex gap-[5px] items-center px-[10px] py-[5px] rounded-[30px] shrink-0 border border-white/5">
       <div className="size-[12px] md:size-[14px] bg-white mask-alpha mask-no-repeat mask-center" style={{ maskImage: `url('${icon}')`, maskSize: 'contain' }} />
-      <span className="font-['Geist'] font-semibold text-[9px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">{text}</span>
+      <span className="font-geist font-semibold text-[9px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">{text}</span>
     </div>
   );
 }
@@ -53,28 +53,28 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
           </div>
           <PlusIcon size={18} className="opacity-40 md:size-[20px]" />
         </div>
-         <Link to={`/insights`} >
-        <div className="flex flex-col gap-4 md:gap-5 items-start">
-          <div className="flex flex-col gap-2 md:gap-3">
-            <div className="flex gap-1 items-center opacity-50 font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white uppercase">
-              <span>{t.written_by}</span>
-              <span className="opacity-100">{author}</span>
+        <Link to={`/insights`} >
+          <div className="flex flex-col gap-4 md:gap-5 items-start">
+            <div className="flex flex-col gap-2 md:gap-3">
+              <div className="flex gap-1 items-center opacity-50 font-geist font-semibold text-[10px] md:text-[11px] text-white uppercase">
+                <span>{t.written_by}</span>
+                <span className="opacity-100">{author}</span>
+              </div>
+              <h3 className="font-geist font-medium text-[20px] md:text-[26px] text-white leading-tight max-w-[440px]">
+                {title}
+              </h3>
             </div>
-            <h3 className="font-['Geist'] font-medium text-[20px] md:text-[26px] text-white leading-tight max-w-[440px]">
-              {title}
-            </h3>
-          </div>
-          <div className=" p-2 md:p-2 rounded-[6.4px] transition-transform group-hover:translate-x-2 rtl:group-hover:-translate-x-2">
-            {/* <ImageWithFallback src={imgIcon} alt="arrow" className="size-[16px] md:size-[20px]" /> */}
-            <div
-              className="bg-black p-3 rounded-lg flex items-center gap-2
+            <div className=" p-2 md:p-2 rounded-[6.4px] transition-transform group-hover:translate-x-2 rtl:group-hover:-translate-x-2">
+              {/* <ImageWithFallback src={imgIcon} alt="arrow" className="size-[16px] md:size-[20px]" /> */}
+              <div
+                className="bg-black p-3 rounded-lg flex items-center gap-2
     transition-all duration-300 ease-in-out
     group-hover:bg-gradient-to-r
     group-hover:from-[#001CA9]
     group-hover:to-[#046CE4]"
-            >
-              {/* Text (hidden initially) */}
-              <span className="
+              >
+                {/* Text (hidden initially) */}
+                <span className="
       text-white whitespace-nowrap
       max-w-0 opacity-0
       -translate-x-2 rtl:translate-x-2
@@ -83,27 +83,27 @@ function BlogCard({ date, category, title, author, image, categoryIcon }) {
       group-hover:translate-x-0
       transition-all duration-300 ease-in-out
     ">
-                {t.view}
-              </span>
+                  {t.view}
+                </span>
 
-              {/* Arrow (always visible, but slides) */}
-              <div
-                className="
+                {/* Arrow (always visible, but slides) */}
+                <div
+                  className="
         size-5 bg-white shrink-0
         transition-all duration-300 ease-in-out
         group-hover:translate-x-1 rtl:group-hover:-translate-x-1
       "
-                style={{
-                  maskImage: `url('${imgIcon}')`,
-                  maskSize: 'contain',
-                  WebkitMaskImage: `url('${imgIcon}')`,
-                  WebkitMaskSize: 'contain',
-                }}
-              />
+                  style={{
+                    maskImage: `url('${imgIcon}')`,
+                    maskSize: 'contain',
+                    WebkitMaskImage: `url('${imgIcon}')`,
+                    WebkitMaskSize: 'contain',
+                  }}
+                />
 
+              </div>
             </div>
           </div>
-        </div>
         </Link>
       </div>
     </div>
@@ -122,20 +122,20 @@ export const BlogSection = () => {
           <div className="flex flex-col gap-5 items-start md:items-center text-start md:text-center self-start md:self-auto max-w-[700px]">
             <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] flex gap-[5px] items-center px-[11px] py-[5px] rounded-[5px]">
               <PlusIcon size={16} />
-              <span className="font-['Geist'] font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">{t.badge}</span>
+              <span className="font-geist font-semibold text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase">{t.badge}</span>
             </div>
 
             <h2 className="flex flex-col items-start md:items-center">
-              <span className="bg-clip-text font-['Geist'] font-medium text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight"
+              <span className="bg-clip-text font-geist font-medium text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] leading-tight"
                 style={{ backgroundImage: "linear-gradient(91.1511deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>{t.title_p1}</span>
               <div className="flex flex-wrap gap-x-2 items-start md:items-center justify-start md:justify-center">
-                <span className="font-['Playfair_Display'] italic text-[#d9d9d9] text-[32px] sm:text-[40px] md:text-[44px] tracking-[-0.4px] leading-tight">
+                <span className="font-playfair italic text-[#d9d9d9] text-[32px] sm:text-[40px] md:text-[44px] tracking-[-0.4px] leading-tight">
                   {t.title_italic}
                 </span>
               </div>
             </h2>
 
-            <p className="font-['Geist'] font-normal text-[14px] md:text-[18px] text-white opacity-70 uppercase leading-[1.5] md:leading-[27px] tracking-tight max-w-[600px]">
+            <p className="font-geist font-normal text-[14px] md:text-[18px] text-white opacity-70 uppercase leading-[1.5] md:leading-[27px] tracking-tight max-w-[600px]">
               {t.description}
             </p>
           </div>

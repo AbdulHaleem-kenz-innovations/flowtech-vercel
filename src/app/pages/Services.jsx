@@ -32,17 +32,17 @@ const HeroSection = ({ t, isRtl }) => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="flex flex-col">
-            <span className="bg-clip-text text-transparent bg-gradient-to-l from-white/40 via-white to-white font-['Geist'] font-medium text-[40px] sm:text-[30px] md:text-[60px] leading-[1.1] tracking-[-0.4px]">
+            <span className="bg-clip-text text-transparent bg-gradient-to-l from-white/40 via-white to-white font-geist font-medium text-[40px] sm:text-[30px] md:text-[60px] leading-[1.1] tracking-[-0.4px]">
               {t.hero.title_p1}
             </span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-l from-white/40 via-white to-white font-['Playfair_Display'] italic font-normal text-[40px] sm:text-[30px] md:text-[65px] leading-[1.1] tracking-[-2px] md:tracking-[-4px]">
+            <span className="bg-clip-text text-transparent bg-gradient-to-l from-white/40 via-white to-white font-playfair italic font-normal text-[40px] sm:text-[30px] md:text-[65px] leading-[1.1] tracking-[-2px] md:tracking-[-4px]">
               {t.hero.title_italic}
             </span>
           </h1>
         </motion.div>
 
         <motion.p
-          className="font-['Geist'] font-normal text-[12px] md:text-[14px] text-white/80 leading-[1.6] text-center uppercase max-w-[800px]"
+          className="font-geist font-normal text-[12px] md:text-[14px] text-white/80 leading-[1.6] text-center uppercase max-w-[800px]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -69,18 +69,18 @@ const Services = () => {
 
   return (
     <div className="w-full flex flex-col" dir={isRtl ? 'rtl' : 'ltr'}>
-        <HeroSection t={t} isRtl={isRtl} />
+      <HeroSection t={t} isRtl={isRtl} />
 
-       <div className="w-full flex justify-center pt-20 md:pt-32 px-6 md:px-8">
-      <div className="max-w-[1260px] w-full flex flex-col gap-20 md:gap-32 items-center justify-center relative" data-name="Features">
-              <ContainerServices services={localizedServices} />
-              <Container />
-              {/* <RotationCardSection /> */}
-              <RotationalContainer/>
-              <NewsletterSection />
-              <FooterSection />
-              </div>
- </div>
+      <div className="w-full flex justify-center pt-20 md:pt-32 px-6 md:px-8">
+        <div className="max-w-[1260px] w-full flex flex-col gap-20 md:gap-32 items-center justify-center relative" data-name="Features">
+          <ContainerServices services={localizedServices} />
+          <Container />
+          {/* <RotationCardSection /> */}
+          <RotationalContainer />
+          <NewsletterSection />
+          <FooterSection />
+        </div>
+      </div>
     </div>
   );
 };

@@ -63,7 +63,7 @@ function Badge() {
   return (
     <div className="backdrop-blur-[20px] bg-[rgba(255,255,255,0.07)] content-stretch flex gap-[5px] items-center justify-center overflow-clip ps-[7px] pe-[11px] py-[5px] relative rounded-[5px] shrink-0 w-[95px] md:w-[102px]">
       <PlusIcon />
-      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
         <p className="leading-[17.6px]">{t.partners}</p>
       </div>
     </div>
@@ -75,10 +75,10 @@ function Heading() {
   const t = langData[language.toLowerCase()].ecosystem;
   return (
     <div className="h-auto relative shrink-0 w-full flex flex-col gap-1">
-      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-88.5374deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)" }}>
+      <div className="bg-clip-text flex flex-col font-geist font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(-88.5374deg, rgba(255, 255, 255, 0.6) 5%, rgb(255, 255, 255) 50%)" }}>
         <p className="leading-[1.1]">{t.title_p1}</p>
       </div>
-      <div className="flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-white/70 tracking-[-0.4px] whitespace-nowrap">
+      <div className="flex flex-col font-playfair font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] text-white/70 tracking-[-0.4px] whitespace-nowrap">
         <p className="leading-[1.1]">{t.title_p2}</p>
       </div>
     </div>
@@ -174,7 +174,7 @@ export const EcosystemSection = () => {
             </div>
 
             <div className="opacity-70 max-w-[500px]">
-              <p className="font-['Geist'] text-[14px] sm:text-[16px] md:text-[18px] text-white uppercase leading-[1.5]">
+              <p className="font-geist text-[14px] sm:text-[16px] md:text-[18px] text-white uppercase leading-[1.5]">
                 {t.description}
               </p>
             </div>
@@ -189,7 +189,7 @@ export const EcosystemSection = () => {
                 bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)]
                 border border-white/20
                 text-white uppercase whitespace-nowrap
-                font-['Geist']
+                font-geist
                 cursor-pointer
                 transition-all duration-300
                 hover:scale-105 active:scale-95

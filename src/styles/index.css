@@ -103,3 +103,17 @@
     transform: rotate(360deg);
   }
 }
+
+/* Arabic typography override */
+.font-geist {
+  font-family: "Geist";
+}
+
+.font-playfair {
+  font-family: "Playfair Display";
+}
+
+html[lang="ar"] .font-geist,
+html[lang="ar"] .font-playfair {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}

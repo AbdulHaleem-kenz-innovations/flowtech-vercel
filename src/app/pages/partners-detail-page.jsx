@@ -28,7 +28,7 @@ const partnerImages = {
 const PartnersDetailPage = () => {
   const { slug } = useParams();
   const { language } = useLanguage();
-  
+
   const partnerData = langData[language.toLowerCase()].partners_detail?.[slug];
   const images = partnerImages[slug];
   const partner = partnerData && images ? { ...partnerData, ...images } : null;
@@ -45,13 +45,13 @@ const PartnersDetailPage = () => {
   if (!partner) {
     return (
       <div className="w-full min-h-screen flex flex-col items-center justify-center gap-6 pt-[180px] pb-40">
-        <h1 className="font-['Geist'] font-medium text-[48px] text-white">Product not found</h1>
-        <p className="font-['Geist'] text-white/50 uppercase text-[14px] tracking-widest">
+        <h1 className="font-geist font-medium text-[48px] text-white">Product not found</h1>
+        <p className="font-geist text-white/50 uppercase text-[14px] tracking-widest">
           The product you're looking for doesn't exist.
         </p>
         <Link
           to="/products"
-          className="mt-4 px-8 py-4 rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase font-['Geist'] text-[14px] hover:scale-105 transition-all duration-300"
+          className="mt-4 px-8 py-4 rounded-full bg-[linear-gradient(78deg,#001CA9_0%,#046CE4_100%)] border border-white/20 text-white uppercase font-geist text-[14px] hover:scale-105 transition-all duration-300"
         >
           Back to Products
         </Link>
@@ -75,7 +75,7 @@ const PartnersDetailPage = () => {
               className="w-[13px] h-[13px] bg-white"
               style={{ maskImage: `url('${imgDivFramerYVnZo}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }}
             />
-            <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">
+            <span className="font-geist font-semibold text-[11px] text-white tracking-[0.2px] uppercase">
               {partner.badge1}
             </span>
           </div>
@@ -84,7 +84,7 @@ const PartnersDetailPage = () => {
               className="w-[13px] h-[13px] bg-white"
               style={{ maskImage: `url('${imgDivFramerFoIvU}')`, maskSize: 'contain', maskRepeat: 'no-repeat' }}
             />
-            <span className="font-['Geist'] font-semibold text-[11px] text-white tracking-[0.2px] uppercase">
+            <span className="font-geist font-semibold text-[11px] text-white tracking-[0.2px] uppercase">
               {partner.badge2}
             </span>
           </div>
@@ -92,7 +92,7 @@ const PartnersDetailPage = () => {
 
         {/* Title */}
         <motion.h1
-          className="font-['Geist'] font-medium text-[48px] md:text-[80px] text-white tracking-[-1px] leading-tight"
+          className="font-geist font-medium text-[48px] md:text-[80px] text-white tracking-[-1px] leading-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
@@ -102,7 +102,7 @@ const PartnersDetailPage = () => {
 
         {/* Description */}
         <motion.p
-          className="font-['Geist'] font-normal text-[13px] md:text-[14px] text-white/60 uppercase tracking-[0.15em] max-w-[700px] leading-relaxed"
+          className="font-geist font-normal text-[13px] md:text-[14px] text-white/60 uppercase tracking-[0.15em] max-w-[700px] leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -129,7 +129,7 @@ const PartnersDetailPage = () => {
           <div className="absolute inset-0 bg-black/20" />
           {/* Tagline */}
           {/* <div className="absolute inset-0 flex items-center justify-center px-6">
-            <h2 className="font-['Geist'] font-medium text-[28px] md:text-[52px] text-white text-center leading-tight tracking-[-0.5px] max-w-[800px]">
+            <h2 className="font-geist font-medium text-[28px] md:text-[52px] text-white text-center leading-tight tracking-[-0.5px] max-w-[800px]">
               {partner.heroTagline.map((line, i) => (
                 <React.Fragment key={i}>
                   {line}
@@ -151,14 +151,14 @@ const PartnersDetailPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-['Geist'] font-medium text-[22px] md:text-[26px] text-white tracking-tight">
+          <h2 className="font-geist font-medium text-[22px] md:text-[26px] text-white tracking-tight">
             {labels.productOverview}
           </h2>
           <div className="flex flex-col gap-3">
             {partner.productOverview.map((para, i) => (
               <p
                 key={i}
-                className="font-['Geist'] font-normal text-[13px] md:text-[14px] text-white/70 uppercase leading-[1.8] tracking-[0.05em]"
+                className="font-geist font-normal text-[13px] md:text-[14px] text-white/70 uppercase leading-[1.8] tracking-[0.05em]"
               >
                 {para}
               </p>
@@ -173,14 +173,14 @@ const PartnersDetailPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-['Geist'] font-medium text-[22px] md:text-[26px] text-white tracking-tight">
+          <h2 className="font-geist font-medium text-[22px] md:text-[26px] text-white tracking-tight">
             {labels.keyFeatures}
           </h2>
           <ol className="flex flex-col gap-[10px]">
             {partner.keyFeatures.map((feat, i) => (
               <li
                 key={i}
-                className="font-['Geist'] font-normal text-[13px] md:text-[14px] text-white/70 uppercase tracking-[0.05em] leading-snug"
+                className="font-geist font-normal text-[13px] md:text-[14px] text-white/70 uppercase tracking-[0.05em] leading-snug"
               >
                 {i + 1}. {feat}
               </li>
@@ -204,7 +204,7 @@ const PartnersDetailPage = () => {
           {/* same overlay + tagline on second image */}
           <div className="absolute inset-0 bg-black/20" />
           {/* <div className="absolute inset-0 flex items-center justify-center px-6">
-            <h2 className="font-['Geist'] font-medium text-[28px] md:text-[52px] text-white text-center leading-tight tracking-[-0.5px] max-w-[800px]">
+            <h2 className="font-geist font-medium text-[28px] md:text-[52px] text-white text-center leading-tight tracking-[-0.5px] max-w-[800px]">
               {partner.heroTagline.map((line, i) => (
                 <React.Fragment key={i}>
                   {line}
@@ -222,14 +222,14 @@ const PartnersDetailPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-['Geist'] font-medium text-[22px] md:text-[26px] text-white tracking-tight">
+          <h2 className="font-geist font-medium text-[22px] md:text-[26px] text-white tracking-tight">
             {labels.useCases}
           </h2>
           <ol className="flex flex-col gap-[10px]">
             {partner.useCases.map((uc, i) => (
               <li
                 key={i}
-                className="font-['Geist'] font-normal text-[13px] md:text-[14px] text-white/70 uppercase tracking-[0.05em] leading-snug"
+                className="font-geist font-normal text-[13px] md:text-[14px] text-white/70 uppercase tracking-[0.05em] leading-snug"
               >
                 {i + 1}. {uc}
               </li>
@@ -244,14 +244,14 @@ const PartnersDetailPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-['Geist'] font-medium text-[22px] md:text-[26px] text-white tracking-tight">
+          <h2 className="font-geist font-medium text-[22px] md:text-[26px] text-white tracking-tight">
             {labels.resultsAndImpact}
           </h2>
           <div className="flex flex-col gap-3">
             {partner.resultsAndImpact.map((para, i) => (
               <p
                 key={i}
-                className="font-['Geist'] font-normal text-[13px] md:text-[14px] text-white/70 uppercase leading-[1.8] tracking-[0.05em]"
+                className="font-geist font-normal text-[13px] md:text-[14px] text-white/70 uppercase leading-[1.8] tracking-[0.05em]"
               >
                 {para}
               </p>
@@ -266,19 +266,19 @@ const PartnersDetailPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-['Geist'] font-medium text-[22px] md:text-[26px] text-white tracking-tight">
+          <h2 className="font-geist font-medium text-[22px] md:text-[26px] text-white tracking-tight">
             {labels.conclusion}
           </h2>
-          <p className="font-['Geist'] font-normal text-[13px] md:text-[14px] text-white/70 uppercase leading-[1.8] tracking-[0.05em]">
+          <p className="font-geist font-normal text-[13px] md:text-[14px] text-white/70 uppercase leading-[1.8] tracking-[0.05em]">
             {partner.conclusion}
           </p>
         </motion.div>
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────── */}
-       <div className='w-full'>
-       <ContactSection />
-      <NewsletterSection />
+      <div className='w-full'>
+        <ContactSection />
+        <NewsletterSection />
       </div>
       <FooterSection />
     </div>

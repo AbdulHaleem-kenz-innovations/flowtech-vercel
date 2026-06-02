@@ -4,7 +4,8 @@ import imgImage1 from "../../assets/8250f59f5c6822dae8923f1eacf0caee475b2e6b.png
 import imgImage2 from "../../assets/6aac6e50972325bf714b38089a03d3afd0bf55af.png";
 import imgImage3 from "../../assets/d8e8171aa3a799053bc44f2b1266a8f4769866a8.png";
 import imgImage4 from "../../assets/a5da9837d04c1f6e98c1c7fd56a5d508ff2b1170.png";
-import imgImage5 from "../../assets/b695d7219dbe15bacb682a0df03b4d343585e4d0.png";
+// import imgImage5 from "../../assets/b695d7219dbe15bacb682a0df03b4d343585e4d0.png";
+import imgImage5 from "../../assets/intro-main-img1.webp";
 import { imgDivFramerIu4QG } from "../../imports/svg-7zyoe";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
@@ -24,7 +25,7 @@ function PFramerText() {
   const t = langData[language.toLowerCase()].introducing;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
         <p className="leading-[17.6px]">{t.badge_text}</p>
       </div>
     </div>
@@ -61,7 +62,7 @@ function H2FramerText() {
   const t = langData[language.toLowerCase()].introducing;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="h2.framer-text">
-      <div className="bg-clip-text flex flex-col font-['Geist'] font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1485deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
+      <div className="bg-clip-text flex flex-col font-geist font-medium justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1485deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
         <p className="leading-[1.1]">{t.heading_p1}</p>
       </div>
     </div>
@@ -81,7 +82,7 @@ function H2FramerText1() {
   const t = langData[language.toLowerCase()].introducing;
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="h2.framer-text">
-      <div className="bg-clip-text flex flex-col font-['Playfair_Display'] font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1425deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
+      <div className="bg-clip-text flex flex-col font-playfair font-normal italic justify-center leading-[0] relative shrink-0 text-[32px] sm:text-[40px] md:text-[44px] lg:text-[38px] xl:text-[44px] text-[transparent] tracking-[-0.4px] whitespace-nowrap" style={{ backgroundImage: "linear-gradient(91.1425deg, rgb(255, 255, 255) 56.306%, rgba(255, 255, 255, 0.4) 100%)" }}>
         <p className="leading-[1.1]">{t.heading_p2}</p>
       </div>
     </div>
@@ -142,7 +143,7 @@ function BecomeCustomer1001AndStartWinningWithUs() {
   const t = langData[language.toLowerCase()].introducing;
   return (
     <div className="content-stretch flex items-center justify-center opacity-70 relative shrink-0" data-name="Become customer #1,001 and start winning with us">
-      <div className="flex flex-col font-['Geist'] font-normal md:h-[40px] justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] lg:text-[12px] xl:text-[14px] text-white uppercase w-[180px] md:w-[214.76px] lg:w-[170px] xl:w-[214.76px]">
+      <div className="flex flex-col font-geist font-normal md:h-[40px] justify-center leading-[0] relative shrink-0 text-[12px] md:text-[14px] lg:text-[12px] xl:text-[14px] text-white uppercase w-[180px] md:w-[214.76px] lg:w-[170px] xl:w-[214.76px]">
         <p className="leading-[1.2] md:leading-[19.6px]">{t.trust_text}</p>
       </div>
     </div>
@@ -163,7 +164,7 @@ function DesignYourWayWithOptunsSmartToolsAndFullElementControl() {
   const t = langData[language.toLowerCase()].introducing;
   return (
     <div className="content-stretch flex flex-col items-start opacity-70 relative shrink-0 w-full" data-name="Design your way with Optun’s smart tools and full element control">
-      <div className="flex flex-col font-['Geist'] font-normal justify-center leading-[0] relative shrink-0 text-[16px] md:text-[18px] lg:text-[16px] xl:text-[18px] text-white uppercase w-full">
+      <div className="flex flex-col font-geist font-normal justify-center leading-[0] relative shrink-0 text-[16px] md:text-[18px] lg:text-[16px] xl:text-[18px] text-white uppercase w-full">
         <p className="leading-[24px] md:leading-[27px]">{t.description}</p>
       </div>
     </div>
@@ -193,7 +194,7 @@ function PFramerText1() {
   const t = langData[language.toLowerCase()].introducing;
   return (
     <div className="content-stretch flex flex-col items-start pb-[0.59px] relative shrink-0 w-full" data-name="p.framer-text">
-      <div className="flex flex-col font-['Geist'] font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
+      <div className="flex flex-col font-geist font-semibold justify-center leading-[0] relative shrink-0 text-[10px] md:text-[11px] text-white tracking-[0.2px] uppercase whitespace-nowrap">
         <p className="leading-[17.6px]">{t.card_badge}</p>
       </div>
     </div>
@@ -272,7 +273,7 @@ function Card() {
           md:top-[calc(50%-36.91px)]
         "
       >
-        <p className="font-['Geist'] font-medium text-white text-[16px] md:text-[23px] leading-[1.4] md:leading-[25.99px] tracking-[-0.4px]">
+        <p className="font-geist font-medium text-white text-[16px] md:text-[23px] leading-[1.4] md:leading-[25.99px] tracking-[-0.4px]">
           {t.card_text}
         </p>
       </div>
@@ -355,14 +356,14 @@ function ImageWrapper() {
 export const IntroducingSection = () => {
   return (
     <ScrollFadeIn>
-    <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8">
-      <div className="max-w-[1260px] w-full flex items-center justify-center relative" data-name="Introducing Section">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 xl:gap-[78px] items-center lg:items-start max-w-[1260px] relative w-full">
-          <ContentWrapper />
-          <ImageWrapper />
+      <section className="w-full flex justify-center py-10 md:py-16 px-6 md:px-8">
+        <div className="max-w-[1260px] w-full flex items-center justify-center relative" data-name="Introducing Section">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 xl:gap-[78px] items-center lg:items-start max-w-[1260px] relative w-full">
+            <ContentWrapper />
+            <ImageWrapper />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </ScrollFadeIn>
   );
 }
