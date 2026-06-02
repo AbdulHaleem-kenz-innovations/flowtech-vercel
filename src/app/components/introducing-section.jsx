@@ -346,7 +346,7 @@ function ImageWrapper() {
         <ImageWithFallback
           alt=""
           src={imgImage5}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-none"
         />
       </div>
     </div>

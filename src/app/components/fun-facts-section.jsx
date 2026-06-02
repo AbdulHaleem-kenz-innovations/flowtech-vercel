@@ -254,7 +254,7 @@ export const FunFactsSection = () => {
             {/* Right Column */}
             <div className="content-stretch flex flex-col gap-6 md:gap-[15px] items-center justify-center w-full max-w-[436px] mx-auto h-full">
               <div className="content-stretch flex-[1_0_0] items-center justify-center overflow-clip relative rounded-[7px] w-full aspect-square sm:aspect-video lg:aspect-auto">
-                <ImageWithFallback alt="" className="absolute inset-0 size-full object-cover" src={imgImage} />
+                <ImageWithFallback alt="" className="absolute inset-0 size-full object-fit" src={imgImage} />
               </div>
               <CardHours />
             </div>

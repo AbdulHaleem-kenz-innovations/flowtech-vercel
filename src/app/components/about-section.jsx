@@ -632,7 +632,7 @@ function LineWrapper() {
 
 function Card1() {
   return (
-    <div className="backdrop-blur-[25px] bg-white/5 absolute bg-[rgba(255,255,255,0.3)] bottom-[15px] content-stretch flex flex-col gap-[15px] md:gap-[20px] items-center justify-center start-[10%] md:start-[22.98%] max-w-[290px] px-[20px] md:px-[24px] py-[20px] md:py-[25px] end-[5%] md:end-[3.79%] rounded-[6px]" data-name="Card">
+    <div className="backdrop-blur-[25px] bg-white/5 absolute bg-[rgba(255,255,255,0.3)] bottom-[15px] content-stretch flex flex-col gap-[15px] md:gap-[20px] items-center justify-center left-1/2 -translate-x-1/2 w-[85%] max-w-[290px] px-[20px] md:px-[24px] py-[20px] md:py-[25px] rounded-[6px]" data-name="Card">
       <TextWrapper />
       <LineWrapper />
     </div>
