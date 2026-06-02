@@ -14,7 +14,7 @@ export const NewsletterSection = () => {
       <div className="flex-1 relative">
         <div className="aspect-[364/470] max-w-[364px] rounded-[7px] overflow-hidden relative group">
           <ImageWithFallback src={imgImage} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 " />
 
           {/* <div className="absolute bottom-6 start-6 text-start">
             <div className="flex items-center gap-2">
