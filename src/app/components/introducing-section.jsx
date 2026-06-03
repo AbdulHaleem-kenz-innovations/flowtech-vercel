@@ -337,7 +337,7 @@ function ImageWrapper() {
           order-2
 
           /* ✅ MOBILE */
-          w-200px h-[260px]  rounded-[7px] overflow-hidden
+          w-200px h-[340px]  rounded-[7px] overflow-hidden
 
           /* ✅ DESKTOP (original exact) */
           md:absolute md:inset-y-0 md:end-0 md:start-[254px] md:h-full
@@ -346,7 +346,7 @@ function ImageWrapper() {
         <ImageWithFallback
           alt=""
           src={imgImage5}
-          className="w-full h-full object-fit md:object-cover"
+          className="w-full h-full object-contain md:object-cover lg:object-cover"
         />
       </div>
     </div>
