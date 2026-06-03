@@ -320,7 +320,7 @@ function VrImage() {
             <ImageWithFallback
               alt=""
               src={imgImage}
-              className="w-full h-full object-cover object-[15%_45%] mt-20 rounded-[7px]"
+              className="w-full h-full object-contain md:object-cover md:mt-10 md:object-[15%_45%] rounded-[7px]"
             />
           </div>
         </div>

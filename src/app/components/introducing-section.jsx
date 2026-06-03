@@ -5,7 +5,7 @@ import imgImage2 from "../../assets/6aac6e50972325bf714b38089a03d3afd0bf55af.png
 import imgImage3 from "../../assets/d8e8171aa3a799053bc44f2b1266a8f4769866a8.png";
 import imgImage4 from "../../assets/a5da9837d04c1f6e98c1c7fd56a5d508ff2b1170.png";
 // import imgImage5 from "../../assets/b695d7219dbe15bacb682a0df03b4d343585e4d0.png";
-import imgImage5 from "../../assets/intro-main-img1.webp";
+import imgImage5 from "../../assets/intro-main-img2.webp";
 import { imgDivFramerIu4QG } from "../../imports/svg-7zyoe";
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import ScrollFadeIn from '../../components/ScrollFadeIn';
@@ -346,7 +346,7 @@ function ImageWrapper() {
         <ImageWithFallback
           alt=""
           src={imgImage5}
-          className="w-full h-full object-none"
+          className="w-full h-full object-cover"
         />
       </div>
     </div>
