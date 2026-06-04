@@ -3,7 +3,7 @@ export const langData = {
     navbar: {
       home: "Home",
       about: "About",
-      services: "Solutions",
+      services: "Services",
       industries: "Industries",
       products: "Products",
       insights: "Insights",
@@ -42,7 +42,7 @@ export const langData = {
     },
     features: {
       core_services: "CORE SERVICES",
-      services_title: "Solution",
+      services_title: "Services",
       services_description: "FROM DATA TO INFRASTRUCTURE, WE DELIVER END-TO-END DIGITAL AND INDUSTRIAL SOLUTIONS BUILT FOR SCALE AND IMPACT",
       view_all_services: "View All Services",
       video_expertise_p1: "Our expertise, ",
@@ -73,7 +73,7 @@ export const langData = {
           description: "Turn complex data into actionable insights with advanced analytics, real-time dashboards, and predictive modelling."
         },
         4: {
-          title: "Cloud Solution",
+          title: "Cloud Services",
           subtitle: "CLOUD INFRASTRUCTURE, SCALABLE PLATFORMS",
           description: "Monitor pipelines in real time using distributed fiber optic sensing to detect leaks, temperature changes, and intrusions across long distances."
         },
@@ -83,12 +83,12 @@ export const langData = {
           description:"Transform shop floor operations with real-time data integration, monitoring, and intelligent dashboards. Leverage predictive analytics to reduce downtime, optimise production, and improve quality."
         },
         6:{
-          title: "SAP Solutions",
+          title: "SAP Services",
           subtitle: "SAP ANALYTICS, ENTERPRISE TRANSFORMATION",
           description: "Real-time energy monitoring that tracks consumption across utilities, equipment, and sites through a centralized dashboard."
         },
         7:{
-          title: "Oracle Solutions",
+          title: "Oracle Services",
           subtitle:"ORACLE CLOUD, BUSINESS INTEGRATION",
           description: "Turn complex data into actionable insights with advanced analytics, real-time dashboards, and predictive modelling."
         },
@@ -861,23 +861,23 @@ export const langData = {
         ]
       },
       'cloud-services': {
-        title: 'Cloud Solution',
+        title: 'Cloud Services',
         description: 'Scalable cloud infrastructure and robust data lakes for secure, high-performance industrial data management.',
-        intro: 'Flowtech Cloud Solution enable organizations to build, migrate, and operate scalable, secure cloud environments that support modern data, AI, and enterprise workloads.',
+        intro: 'Flowtech Cloud Services enable organizations to build, migrate, and operate scalable, secure cloud environments that support modern data, AI, and enterprise workloads.',
         technology: 'AWS, Azure, Cloud-Native Architecture',
         concept: 'Cloud Transformation, Scalable Infrastructure',
         industry: 'Enterprise, Technology, Manufacturing',
         solution: 'We design and implement cloud strategies, migrate workloads, and build cloud-native platforms for data and AI. With DevOps automation and secure architectures, organizations achieve faster deployments and optimized performance.',
-        finalThoughts: 'Cloud Solution provide the foundation for scalable, future-ready digital operations.',
+        finalThoughts: 'Cloud Services provide the foundation for scalable, future-ready digital operations.',
         keyBenefits: [
           { title: 'OPERATIONAL IMPACT', text: 'Improves agility, reduces infrastructure costs, and accelerates innovation.' },
           { title: 'SCALABLE FOUNDATION', text: 'Enables flexible, secure environments that scale with business growth.' }
         ]
       },
       'sap-services': {
-        title: 'SAP Solution',
+        title: 'SAP Services',
         description: 'Seamless integration of industrial IoT data with ERP systems for unified business and operational visibility.',
-        intro: 'Flowtech SAP Solution help organizations maximize the value of their SAP investments by enabling real-time analytics, seamless integration, and intelligent enterprise operations.',
+        intro: 'Flowtech SAP Services help organizations maximize the value of their SAP investments by enabling real-time analytics, seamless integration, and intelligent enterprise operations.',
         technology: 'SAP SAC, BW/4HANA, S/4HANA',
         concept: 'Enterprise Intelligence, Integrated Business Systems',
         industry: 'Manufacturing, Energy, Enterprise',
@@ -889,9 +889,9 @@ export const langData = {
         ]
       },
       'oracle-services': {
-        title: 'Oracle Solution',
+        title: 'Oracle Services',
         description: 'Seamless integration of industrial IoT data with ERP systems for unified business and operational visibility.',
-        intro: 'Flowtech Oracle Solution enable organizations to modernize enterprise systems, integrate data, and optimize performance using Oracle’s cloud, database, and analytics solutions.',
+        intro: 'Flowtech Oracle Services enable organizations to modernize enterprise systems, integrate data, and optimize performance using Oracle’s cloud, database, and analytics solutions.',
         technology: 'Oracle Cloud, Oracle ERP, Oracle DB',
         concept: 'Oracle Cloud, Oracle ERP, Oracle DB',
         industry: 'Enterprise, Finance, Manufacturing',
