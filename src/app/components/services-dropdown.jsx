@@ -13,6 +13,7 @@ import cloudIntro from "../../assets/service-images/Cloud/1.webp"
 import sapIntro from "../../assets/service-images/SAP/1.webp"
 import oracleIntro from "../../assets/service-images/Oracle/1.webp"
 import analyticsIntro from "../../assets/service-images/Analytics/1.webp"
+import cyberIntro from "../../assets/service-images/Cybersecurity/cyber1.webp"
 
 import imgEvkKKiT34ZFcqnJwjmciV1OT2CuJpg from "../../assets/12f90a2a24f7e3315caa72708e6722575a13d825.png";
 
@@ -73,6 +74,12 @@ export const ServicesDropdown = ({ isOpen, onClose, onOpen, anchorRef }) => {
       name: "Oracle Solutions",
       href: "/services/oracle-services",
       image: oracleIntro
+    },
+    {
+      id: 9,
+      name: "Cyber Security",
+      href: "/services/cybersecurity",
+      image: cyberIntro
     }
   ];
 

@@ -96,6 +96,11 @@ export const langData = {
           title:"Manufacturing Execution System",
           subtitle:"SMART MANUFACTURING, LIVE MONITORING",
           description: "Monitor pipelines in real time using distributed fiber optic sensing to detect leaks, temperature changes, and intrusions across long distances."
+        },
+        9:{
+          title:"Cyber Security",
+          subtitle:"CYBERSECURITY, Data Protection",
+          description: "Protect critical assets with advanced cybersecurity solutions that continuously monitor threats, secure identities, protect data, and ensure compliance across enterprise and cloud environments."
         }
       }
     },
@@ -312,7 +317,7 @@ export const langData = {
       our_team: "Our team",
       privacy: "Privacy policy",
       terms: "Terms of use",
-      copyright: "© FLOWTECH, 2025. ALL RIGHTS RESERVED. FLOWTECH IS A TECHNOLOGY COMPANY SPECIALISING IN INDUSTRIAL AUTOMATION, AI SOLUTIONS, AND ENERGY MANAGEMENT. DESIGNED FOR THE FUTURE OF OPERATIONS.",
+      copyright: "© FLOWTECH, 2026. ALL RIGHTS RESERVED. FLOWTECH IS A TECHNOLOGY COMPANY SPECIALISING IN INDUSTRIAL AUTOMATION, AI SOLUTIONS, AND ENERGY MANAGEMENT. DESIGNED FOR THE FUTURE OF OPERATIONS.",
       need_help: "NEED HELP?",
     },
     about_page: {
@@ -900,6 +905,20 @@ export const langData = {
         keyBenefits: [
           { title: 'OPERATIONAL IMPACT', text: 'Oracle Services help organizations modernize and streamline enterprise operations.' },
           { title: 'SCALABLE FOUNDATION', text: 'Oracle Services help organizations modernize and streamline enterprise operations.' }
+        ]
+      },
+      'cybersecurity': {
+        title: 'Cyber Security',
+        description: 'PROTECTING ENTERPRISES WITH PROACTIVE DEFENSE, REGULATORY COMPLIANCE, AND 24/7 THREAT MONITORING',
+        intro: 'Cyber Security safeguards business operations through risk management, threat detection, and Zero Trust security frameworks that protect networks, data, and identities while ensuring continuous compliance and resilience.',
+        technology: 'Zero Trust, SIEM, EDR, IAM, SOC',
+        concept: 'Threat Prevention, Risk Management, Compliance',
+        industry: 'Finance, Government, Energy, Enterprise',
+        solution: 'We deliver end-to-end cybersecurity solutions that continuously assess risks, strengthen defenses, and monitor threats across your enterprise. From compliance frameworks and Zero Trust architectures to SOC operations and threat hunting, our services help organizations stay secure, resilient, and audit-ready in an evolving threat landscape.',
+        finalThoughts: 'Cyber Security enables organizations to move from reactive defense to proactive and resilient security operations.',
+        keyBenefits: [
+          { title: 'OPERATIONAL IMPACT', text: 'REDUCES CYBER RISK, PREVENTS SECURITY BREACHES, AND IMPROVES BUSINESS CONTINUITY THROUGH CONTINUOUS THREAT MONITORING.' },
+          { title: 'SCALABLE FOUNDATION', text: 'IMPLEMENTS SECURITY CONTROLS AND GOVERNANCE FRAMEWORKS THAT SUPPORT REGULATORY COMPLIANCE AND AUDIT PREPAREDNESS.' }
         ]
       },
       ui: {
@@ -1596,6 +1615,237 @@ export const langData = {
             ]
           }
         ]
+      },
+      'cybersecurity': {
+        title: "Cyber Security Services",
+        subtitle: "End-to-End Protection Built for the Kingdom’s Digital Future",
+        technology: "Zero Trust, SIEM, EDR, IAM, GRC, SOC",
+        concept: "Threat Prevention, Risk Management, Regulatory Compliance",
+        industry: "Finance, Government, Energy, Enterprise",
+        intro: "Flowtech delivers enterprise-grade cybersecurity solutions tailored to Saudi Arabia’s evolving threat landscape. We move beyond technology deployment to deliver measurable security outcomes—reducing risk exposure, ensuring regulatory compliance, and maintaining 24/7 operational resilience.\n\n“Our certified professionals integrate seamlessly with your team, converting complex mandates (SAMA, NCA, PDPL) into practical, enforceable technical safeguards.”",
+        sections: [
+          {
+            title: "Our Execution Framework: A Three-Phase Security Lifecycle",
+            content: "We follow a systematic, iterative approach designed for continuous security enhancement. Each phase feeds into the next, creating a perpetual cycle of security improvement.",
+            bullets: [
+              "Phase 1: Evaluate – Comprehensive risk profiling and regulatory gap analysis against NCA and SAMA benchmarks.",
+              "Phase 2: Deploy – Zero Trust architecture integration, solution hardening, and seamless system implementation.",
+              "Phase 3: Operate – 24/7 SOC surveillance, proactive threat hunting, and ongoing performance tuning."
+            ]
+          },
+          {
+            title: "Core Service Lines",
+            content: "Foundational security pillars covering the entire enterprise ecosystem.",
+            subsections: [
+              {
+                title: "1. Governance, Risk & Compliance (GRC)",
+                content: "Regulatory navigation simplified. We demystify Saudi Arabia’s overlapping regulatory frameworks, helping you automate and streamline compliance efforts across multiple mandates.",
+                bullets: [
+                  "Regulatory Coverage: SAMA CSF, NCA-ECC (2:2024), NCA-CCC (2:2024), PDPL",
+                  "International Benchmarks: ISO 27001, ISO 27701 (Privacy), ISO 42001 (AI Management Systems)",
+                  "Specialized Services: VAPT (Vulnerability Assessment & Penetration Testing), Third-Party Risk Management aligned with Aramco SACS-002",
+                  "Technology Integration: OneTrust for automated control monitoring and audit-ready dashboards"
+                ]
+              },
+              {
+                title: "2. Network Security",
+                content: "Defending the perimeter, the cloud, and every connection between them. With Saudi enterprises rapidly migrating to hybrid environments, we secure the edge and everything beyond.",
+                bullets: [
+                  "NGFW Solutions: Next-Generation Firewall deployment and rule-set optimization across Palo Alto, Fortinet, and Cisco platforms",
+                  "SASE Architecture: Secure Access Service Edge implementation for low-latency, secure remote operations",
+                  "Email Protection: Advanced threat filtering to neutralize phishing, BEC, and malware campaigns",
+                  "Supporting Technologies: NIPS, Secure Web Gateway, and Vulnerability Management Software"
+                ]
+              },
+              {
+                title: "3. Data Security",
+                content: "Discover, protect, and govern your most critical digital assets. With PDPL enforcement now active and fines reaching SAR 5 million per violation, data sovereignty is non-negotiable.",
+                bullets: [
+                  "EDR & Threat Hunting: Endpoint Detection and Response with 24/7 proactive hunting",
+                  "DLP & DRM: Data Loss Prevention and Enterprise Digital Rights Management for persistent document control",
+                  "Integrity Monitoring: File Integrity Management (FIM) ensuring NCA-ECC compliance",
+                  "Encryption Infrastructure: HSM (Hardware Security Module) and centralized Key Management for data-at-rest protection"
+                ]
+              },
+              {
+                title: "4. Identity & Access Management (IAM)",
+                content: "Zero Trust starts and ends with identity. In 2026, the perimeter is no longer physical—it is identity. We implement identity-first security models to eliminate implicit trust.",
+                bullets: [
+                  "MFA/SSO: Phishing-resistant Multi-Factor Authentication and seamless Single Sign-On",
+                  "PAM: Privileged Access Management for critical systems and service accounts",
+                  "Zero Trust Architecture: ZTNA implementation to block lateral movement and contain breaches",
+                  "IGA: Identity Governance and Administration for complete audit readiness"
+                ]
+              }
+            ]
+          },
+          {
+            title: "Governance, Risk & Compliance (GRC) Details",
+            subtitle: "Navigating Saudi Arabia’s Regulatory Landscape with Confidence",
+            content: "Flowtech empowers Saudi enterprises to transform regulatory complexity into strategic advantage. We provide end-to-end GRC services that go beyond checkbox compliance—delivering measurable risk reduction, audit-ready documentation, and operational resilience across overlapping mandates.\n\n“With the KSA cybersecurity market projected to reach $7.81 billion by 2031, regulatory compliance is no longer optional—it is a competitive differentiator.”"
+          },
+          {
+            title: "The Regulatory Imperative: Why GRC Matters in Saudi Arabia Today",
+            content: "Saudi Arabia’s regulatory environment has evolved rapidly under Vision 2030. Organizations face overlapping requirements from multiple authorities, each with distinct mandates and enforcement mechanisms. Non-compliance carries serious consequences: SAMA has penalized 30 financial institutions simultaneously for compliance violations, and PDPL violations can reach SAR 5 million.\n\nFlowtech bridges the gap between regulation and execution. Our certified professionals translate legal text into actionable technical controls, ensuring your organization stays audit-ready year-round.",
+            bullets: [
+              "Digital transformation acceleration – Smart cities (NEOM), fintech expansion, and cloud adoption create new risk surfaces",
+              "Talent shortages – The Kingdom faces a 47% cybersecurity skills gap, making automated GRC solutions essential",
+              "Regulatory maturity – Frameworks like NCA ECC-2:2024 and SAMA CSF now require demonstrated control effectiveness, not just policy documentation"
+            ]
+          },
+          {
+            title: "Our GRC Framework Coverage",
+            content: "We cover the full spectrum of Saudi and international standards applicable to your sector.",
+            table: {
+              headers: ["Framework", "Applicability", "Key Focus"],
+              rows: [
+                ["SAMA CSF", "All SAMA-regulated financial institutions (banks, insurers, fintechs, payment providers)", "Four control domains requiring Level 3 maturity minimum; mandatory GRC tool for compliance"],
+                ["NCA ECC (Essential Cybersecurity Controls)", "Government entities, critical infrastructure operators, government contractors", "Vulnerability management, penetration testing, and continuous control monitoring"],
+                ["NCA CCC (Critical Systems Cybersecurity)", "Operators of national critical infrastructure", "Enhanced controls for systems whose disruption would impact national security or essential services"],
+                ["PDPL (Personal Data Protection Law)", "Any entity processing personal data of Saudi residents", "Data sovereignty, breach notification, DSAR automation, consent management"],
+                ["Aramco SACS-002", "Third-party vendors and contractors serving Saudi Aramco", "Supply chain cybersecurity requirements for energy sector"]
+              ]
+            }
+          },
+          {
+            title: "International Standards & Sector-Specific Coverage",
+            subsections: [
+              {
+                title: "International Standards",
+                bullets: [
+                  "ISO/IEC 27001 – Information Security Management Systems (ISMS)",
+                  "ISO/IEC 27701 – Privacy Information Management (PII controller/processor framework)",
+                  "ISO/IEC 42001:2023 – AI Management Systems (First global AI governance standard; SDAIA became world’s first ISO 42001-certified entity in 2024)"
+                ]
+              },
+              {
+                title: "Sector-Specific Coverage",
+                bullets: [
+                  "Financial Sector → SAMA CSF full compliance",
+                  "Government & Critical Infrastructure → NCA ECC/CCC mandates",
+                  "Data Protection → PDPL readiness and enforcement",
+                  "Third-Party Vendors → Supply chain risk management"
+                ]
+              }
+            ]
+          },
+          {
+            title: "Core GRC Services: What We Deliver",
+            subsections: [
+              {
+                title: "Compliance Gap Assessments",
+                content: "Comprehensive evaluation against SAMA, NCA, or PDPL requirements",
+                bullets: [
+                  "Prioritized remediation roadmap with effort estimates",
+                  "Evidence gap analysis identifying missing documentation or controls"
+                ]
+              },
+              {
+                title: "Risk Management & Internal Audit",
+                content: "Enterprise risk register aligned with ISO 31000 and NCA frameworks",
+                bullets: [
+                  "Internal audit programs for SAMA CSF Domain 2 compliance",
+                  "Risk treatment planning with executive dashboards"
+                ]
+              },
+              {
+                title: "VAPT (Vulnerability Assessment & Penetration Testing)",
+                content: "Regulatory requirement – Mandatory under NCA ECC and SAMA CSF; required at least annually or after significant infrastructure changes",
+                bullets: [
+                  "Vulnerability Assessment – Systematic scanning of networks, servers, and applications to identify known weaknesses",
+                  "Penetration Testing – Simulated real-world attacks to validate whether vulnerabilities can be exploited"
+                ]
+              },
+              {
+                title: "Third-Party Risk Management (TPRM)",
+                bullets: [
+                  "Vendor assessment frameworks aligned with SAMA Domain 4 and Aramco SACS-002",
+                  "Continuous vendor monitoring through automated tools",
+                  "Contractual flow-down of cybersecurity requirements"
+                ]
+              },
+              {
+                title: "GRC Technology Enablement",
+                bullets: [
+                  "Integrated GRC platform implementation (OneTrust, similar tools)",
+                  "Automated control monitoring for real-time compliance visibility",
+                  "Audit-ready dashboards and evidence repositories"
+                ]
+              },
+              {
+                title: "AI Governance & ISO 42001 Readiness",
+                bullets: [
+                  "AI asset inventory and risk classification",
+                  "Control mapping to ISO 42001 and NIST AI RMF",
+                  "AI review board establishment and governance framework design"
+                ]
+              }
+            ]
+          },
+          {
+            title: "Our GRC Methodology",
+            content: "From Assessment to Audit-Ready Operations",
+            subsections: [
+              {
+                title: "Phase 1: Discovery & Gap Analysis",
+                bullets: [
+                  "Regulatory scoping based on your sector and data types",
+                  "Current state assessment against applicable frameworks",
+                  "Gap prioritization by risk severity and compliance deadline"
+                ]
+              },
+              {
+                title: "Phase 2: Framework Implementation",
+                bullets: [
+                  "Policy and procedure development aligned to control requirements",
+                  "Technical control deployment (encryption, access management, logging)",
+                  "GRC tool configuration and integration"
+                ]
+              },
+              {
+                title: "Phase 3: Validation & Testing",
+                bullets: [
+                  "VAPT execution by certified testers",
+                  "Internal audit against control objectives",
+                  "Remediation tracking and re-testing"
+                ]
+              },
+              {
+                title: "Phase 4: Continuous Compliance",
+                bullets: [
+                  "24/7 automated control monitoring",
+                  "Quarterly risk assessments",
+                  "Semi-annual compliance reporting (per SAMA requirements)"
+                ]
+              }
+            ]
+          },
+          {
+            title: "Why Flowtech?",
+            subtitle: "Market Context & Our Advantage",
+            content: "The Saudi cybersecurity market is projected to grow from USD 2.42 billion in 2026 to USD 4.02 billion by 2031, driven by mandatory compliance frameworks and Vision 2030 digitization. However, a persistent shortage of Tier-3/4 incident-response talent is forcing organizations to rethink their security operating models. We bridge this gap.",
+            bullets: [
+              "The Talent Solution: Flowtech provides Managed Detection & Response (MDR) as a service, functioning as your virtual CISO and extended SOC team—compensating for the Kingdom’s 47% cybersecurity skills shortage.",
+              "Data Sovereignty Assurance: All operations strictly adhere to PDPL data residency clauses and NCA’s updated CCC-2:2024 localization requirements.",
+              "Proactive Compliance: With ECC-2-2024 now mandatory for all entities handling national infrastructure and PDPL enforcement actively issuing decisions, we ensure you are audit-ready, not just checkbox-compliant."
+            ]
+          },
+          {
+            title: "Technology Ecosystem: Certified Partnerships",
+            content: "We maintain a vendor-agnostic approach and are partnered with industry leaders to ensure best-of-breed solutions.",
+            bullets: [
+              "Network Security: Palo Alto Networks, Cisco, Fortinet",
+              "Cloud & Identity: Microsoft Security, HySecure (ZTNA)",
+              "Data & GRC: OneTrust, VIPRE",
+              "Endpoint Protection: Trend Micro, CrowdStrike"
+            ]
+          },
+          // {
+          //   title: "Call to Action",
+          //   subtitle: "Secure Your Digital Trajectory",
+          //   content: "Whether you require an urgent SAMA compliance audit or a complete Zero Trust architecture overhaul, Flowtech is your local partner in resilience.\n\nContact us for any cybersecurty requirements and compliance gap assessment. Email: info@flowtechdigitalservices.com"
+          // }
+        ]
       }
     }
   },
@@ -1696,6 +1946,11 @@ export const langData = {
           title: "نظام تنفيذ التصنيع",
           subtitle: "المراقبة المباشرة",
           description: "راقب خطوط الأنابيب في الوقت الفعلي باستخدام الاستشعار الموزع بالألياف الضوئية للكشف عن التسريبات وتغيرات درجات الحرارة والتطفل عبر المسافات الطويلة."
+        },
+        9: {
+          title: "الأمن السيبراني",
+          subtitle: "الأمن السيبراني، حماية البيانات",
+          description: "احمِ الأصول الحيوية من خلال حلول أمن سيبراني متقدمة تقوم بمراقبة التهديدات بشكل مستمر، وتأمين الهويات، وحماية البيانات، وضمان الامتثال عبر بيئات المؤسسات والبيئات السحابية."
         }
       }
     },
@@ -1912,7 +2167,7 @@ export const langData = {
       our_team: "فريقنا",
       privacy: "سياسة الخصوصية",
       terms: "شروط الاستخدام",
-      copyright: "© فلوتيك، 2025. جميع الحقوق محفوظة. فلوتيك هي شركة تكنولوجيا متخصصة في الأتمتة الصناعية وحلول الذكاء الاصطناعي وإدارة الطاقة. مصممة لمستقبل العمليات.",
+      copyright: "© فلوتيك، 2026. جميع الحقوق محفوظة. فلوتيك هي شركة تكنولوجيا متخصصة في الأتمتة الصناعية وحلول الذكاء الاصطناعي وإدارة الطاقة. مصممة لمستقبل العمليات.",
       need_help: "هل تحتاج مساعدة؟",
     },
     about_page: {
@@ -2500,6 +2755,20 @@ export const langData = {
         keyBenefits: [
           { title: 'التأثير التشغيلي', text: 'تساعد خدمات Oracle المؤسسات على تحديث وتبسيط عمليات المؤسسة.' },
           { title: 'أساس قابل للتوسع', text: 'تساعد خدمات Oracle المؤسسات على تحديث وتبسيط عمليات المؤسسة.' }
+        ]
+      },
+      'cybersecurity': {
+        title: 'الأمن السيبراني',
+        description: 'حماية المؤسسات من خلال الدفاع الاستباقي، والامتثال التنظيمي، ومراقبة التهديدات على مدار الساعة',
+        intro: 'يعمل الأمن السيبراني على حماية العمليات التجارية من خلال إدارة المخاطر، واكتشاف التهديدات، وأطر عمل الأمن القائمة على مبدأ الثقة الصفرية، مما يحمي الشبكات والبيانات والهويات مع ضمان الامتثال المستمر والمرونة التشغيلية.',
+        technology: 'Zero Trust, SIEM, EDR, IAM, SOC',
+        concept: 'منع التهديدات، إدارة المخاطر، الامتثال',
+        industry: 'المالية، الحكومة، الطاقة، المؤسسات',
+        solution: 'نقدم حلولاً متكاملة للأمن السيبراني تقوم بتقييم المخاطر بشكل مستمر، وتعزيز الدفاعات الأمنية، ومراقبة التهديدات عبر مؤسستك بالكامل. بدءاً من أطر الامتثال وهندسة الثقة الصفرية وصولاً إلى عمليات مركز العمليات الأمنية (SOC) وصيد التهديدات، تساعد خدماتنا المؤسسات على الحفاظ على الأمن والمرونة والاستعداد للتدقيق في بيئة تهديدات متطورة باستمرار.',
+        finalThoughts: 'يمكّن الأمن السيبراني المؤسسات من الانتقال من الدفاع التفاعلي إلى عمليات أمنية استباقية ومرنة.',
+        keyBenefits: [
+          { title: 'التأثير التشغيلي', text: 'يقلل من المخاطر السيبرانية، ويمنع الخروقات الأمنية، ويعزز استمرارية الأعمال من خلال المراقبة المستمرة للتهديدات.' },
+          { title: 'أساس قابل للتوسع', text: 'يطبق ضوابط أمنية وأطر حوكمة تدعم الامتثال التنظيمي والاستعداد لعمليات التدقيق والمراجعة.' }
         ]
       },
       ui: {
@@ -3186,15 +3455,237 @@ export const langData = {
               ]
             }
           },
+        ]
+      },
+      'cybersecurity': {
+        title: "خدمات الأمن السيبراني",
+        subtitle: "حماية شاملة مبنية للمستقبل الرقمي للمملكة",
+        technology: "الثقة الصفرية (Zero Trust)، SIEM، EDR، إدارة الهوية والوصول (IAM)، GRC، SOC",
+        concept: "منع التهديدات، إدارة المخاطر، الامتثال التنظيمي",
+        industry: "المالية، الحكومية، الطاقة، المؤسسات",
+        intro: "تقدم فلوتيك حلول أمن سيبراني على مستوى المؤسسات ومخصصة لمشهد التهديدات المتطور في المملكة العربية السعودية. نحن نتجاوز مجرد نشر التكنولوجيا لنقدم نتائج أمنية قابلة للقياس - مما يقلل من التعرض للمخاطر، ويضمن الامتثال التنظيمي، ويحافظ على المرونة التشغيلية على مدار الساعة طوال أيام الأسبوع.\n\n«يتكامل مهنيونا المعتمدون بسلاسة مع فريقك، محولين التفويضات المعقدة (SAMA، NCA، PDPL) إلى ضمانات تقنية عملية وقابلة للتنفيذ.»",
+        sections: [
           {
-            title: "النتائج",
+            title: "إطار التنفيذ الخاص بنا: دورة حياة أمنية من ثلاث مراحل",
+            content: "نتبع نهجاً منهجياً وتكرارياً مصمماً للتحسين الأمني المستمر. تغذي كل مرحلة المرحلة التالية، مما يخلق دورة دائمة من تحسين الأمن.",
             bullets: [
-              "رؤية مالية وتشغيلية موحدة عبر المؤسسة",
-              "إلغاء التسوية اليدوية وصوامع البيانات بين الأنظمة",
-              "تقليل التكلفة الإجمالية للملكية من خلال ترحيل ودمج سحابة Oracle",
-              "تعزيز الامتثال والقدرة على التدقيق والحوكمة من خلال نظام Oracle ERP المركزي"
+              "المرحلة الأولى: التقييم – تحديد شامل لملف المخاطر وتحليل فجوة الامتثال التنظيمي مقابل معايير الهيئة الوطنية للأمن السيبراني (NCA) والبنك المركزي السعودي (SAMA).",
+              "المرحلة الثانية: النشر – دمج بنية الثقة الصفرية، وتقوية الحلول، والتنفيذ السلس للأنظمة.",
+              "المرحلة الثالثة: التشغيل – مراقبة مركز العمليات الأمنية (SOC) على مدار الساعة طوال أيام الأسبوع، والبحث الاستباقي عن التهديدات، وضبط الأداء المستمر."
             ]
-          }
+          },
+          {
+            title: "خطوط الخدمة الأساسية",
+            content: "ركائز الأمن الأساسية التي تغطي النظام البيئي للمؤسسة بالكامل.",
+            subsections: [
+              {
+                title: "1. الحوكمة والمخاطر والامتثال (GRC)",
+                content: "تسهيل التنقل التنظيمي. نحن نوضح الأطر التنظيمية المتداخلة في المملكة العربية السعودية، مما يساعدك على أتمتة وتبسيط جهود الامتثال عبر ولايات متعددة.",
+                bullets: [
+                  "التغطية التنظيمية: SAMA CSF, NCA-ECC (2:2024), NCA-CCC (2:2024), PDPL",
+                  "المعايير الدولية: ISO 27001, ISO 27701 (الخصوصية), ISO 42001 (أنظمة إدارة الذكاء الاصطناعي)",
+                  "الخدمات المتخصصة: VAPT (تقييم نقاط الضعف واختبار الاختراق)، إدارة مخاطر الطرف الثالث المتوافقة مع أرامكو SACS-002",
+                  "تكامل التكنولوجيا: OneTrust لمراقبة الضوابط الآلية ولوحات المعلومات الجاهزة للتدقيق"
+                ]
+              },
+              {
+                title: "2. أمن الشبكات",
+                content: "الدفاع عن المحيط، والسحاب، وكل اتصال بينهما. مع الهجرة السريعة للمؤسسات السعودية إلى البيئات الهجينة، نقوم بتأمين الحافة وكل ما وراءها.",
+                bullets: [
+                  "حلول NGFW: نشر جدار الحماية من الجيل التالي وتحسين مجموعة القواعد عبر منصات Palo Alto و Fortinet و Cisco",
+                  "بنية SASE: تنفيذ حافة خدمة الوصول الآمن للعمليات عن بعد آمنة ومنخفضة زمن الانتقال",
+                  "حماية البريد الإلكتروني: تصفية متقدمة للتهديدات لتحييد حملات التصيد الاحتيالي و BEC والبرامج الضارة",
+                  "التقنيات الداعمة: NIPS، بوابة الويب الآمنة، وبرمجيات إدارة نقاط الضعف"
+                ]
+              },
+              {
+                title: "3. أمن البيانات",
+                content: "اكتشف أصولك الرقمية الأكثر أهمية واحمهما واحكمها. مع تفعيل إنفاذ نظام حماية البيانات الشخصية (PDPL) الآن ووصول الغرامات إلى 5 ملايين ريال سعودي لكل انتهاك، فإن سيادة البيانات غير قابلة للتفاوض.",
+                bullets: [
+                  "EDR والبحث عن التهديدات: الكشف عن نقاط النهاية والاستجابة لها مع البحث الاستباقي على مدار الساعة طوال أيام الأسبوع",
+                  "DLP و DRM: منع فقدان البيانات وإدارة الحقوق الرقمية للمؤسسات للتحكم المستمر في المستندات",
+                  "مراقبة السلامة: إدارة سلامة الملفات (FIM) لضمان الامتثال لـ NCA-ECC",
+                  "بنية التشفير التحتية: HSM (وحدة أمن الأجهزة) وإدارة المفاتيح المركزية لحماية البيانات أثناء السكون"
+                ]
+              },
+              {
+                title: "4. إدارة الهوية والوصول (IAM)",
+                content: "تبدأ الثقة الصفرية وتنتهي بالهوية. في عام 2026، لم يعد المحيط مادياً بل هو الهوية. نحن ننفذ نماذج أمنية تركز على الهوية لإلغاء الثقة الضمنية.",
+                bullets: [
+                  "MFA/SSO: مصادقة متعددة العوامل مقاومة للتصيد وتسجيل دخول موحد سلس",
+                  "PAM: إدارة الوصول المميز للأنظمة الحيوية وحسابات الخدمة",
+                  "بنية الثقة الصفرية: تنفيذ ZTNA لمنع الحركة الجانبية واحتواء الاختراقات",
+                  "IGA: حوكمة الهوية وإدارتها للاستعداد الكامل للتدقيق"
+                ]
+              }
+            ]
+          },
+          {
+            title: "تفاصيل الحوكمة والمخاطر والامتثال (GRC)",
+            subtitle: "تسهيل التنقل التنظيمي في المملكة العربية السعودية بثقة",
+            content: "تمكن فلوتيك المؤسسات السعودية من تحويل التعقيد التنظيمي إلى ميزة استراتيجية. نحن نقدم خدمات GRC شاملة تتجاوز الامتثال التقليدي - ونقدم حداً ملموساً من المخاطر، ووثائق جاهزة للتدقيق، ومرونة تشغيلية عبر ولايات متداخلة.\n\n«مع توقع وصول سوق الأمن السيبراني في المملكة العربية السعودية إلى 7.81 مليار دولار بحلول عام 2031، لم يعد الامتثال التنظيمي اختيارياً - بل هو ميزة تنافسية.»"
+          },
+          {
+            title: "الضرورة التنظيمية: لماذا تهم GRC في المملكة العربية السعودية اليوم",
+            content: "تطورت البيئة التنظيمية في المملكة العربية السعودية بسرعة بموجب رؤية 2030. تواجه المؤسسات متطلبات متداخلة من سلطات متعددة، لكل منها ولايات وآليات إنفاذ متميزة. يحمل عدم الامتثال عواقب وخيمة: عاقب البنك المركزي السعودي 30 مؤسسة مالية في وقت واحد لانتهاكات الامتثال، ويمكن أن تصل انتهاكات PDPL إلى 5 ملايين ريال سعودي.\n\nتجسد فلوتيك الفجوة بين التنظيم والتنفيذ. يترجم مهنيونا المعتمدون النصوص القانونية إلى ضوابط فنية قابلة للتنفيذ، مما يضمن بقاء مؤسستك جاهزة للتدقيق على مدار العام.",
+            bullets: [
+              "تسارع التحول الرقمي – المدن الذكية (نيوم)، والتوسع في التكنولوجيا المالية، واعتماد السحاب يخلق أسطح مخاطر جديدة",
+              "نقص المواهب – تواجه المملكة فجوة بنسبة 47٪ في مهارات الأمن السيبراني، مما يجعل حلول GRC المؤتمتة ضرورية",
+              "النضج التنظيمي – تتطلب الأطر مثل NCA ECC-2:2024 و SAMA CSF الآن فعالية مثبتة للضوابط، وليس فقط توثيق السياسة"
+            ]
+          },
+          {
+            title: "تغطية إطار عمل GRC الخاص بنا",
+            content: "نحن نغطي الطيف الكامل للمعايير السعودية والدولية المطبقة على قطاعك.",
+            table: {
+              headers: ["الإطار", "قابلية التطبيق", "التركيز الرئيسي"],
+              rows: [
+                ["SAMA CSF", "جميع المؤسسات المالية الخاضعة لرقابة البنك المركزي السعودي (البنوك، شركات التأمين، شركات التكنولوجيا المالية، مقدمو خدمات الدفع)", "أربعة مجالات تحكم تتطلب نضجاً بحد أدنى من المستوى 3؛ أداة GRC إلزامية للامتثال"],
+                ["NCA ECC (ضوابط الأمن السيبراني الأساسية)", "الجهات الحكومية، مشغلو البنية التحتية الحيوية، مقاولو الحكومة", "إدارة نقاط الضعف، واختبار الاختراق، والمراقبة المستمرة للضوابط"],
+                ["NCA CCC (الأمن السيبراني للأنظمة الحساسة)", "مشغلو البنية التحتية الوطنية الحيوية", "ضوابط معززة للأنظمة التي قد يؤثر تعطيلها على الأمن الوطني أو الخدمات الأساسية"],
+                ["PDPL (نظام حماية البيانات الشخصية)", "أي جهة تعالج البيانات الشخصية للمقيمين في السعودية", "سيادة البيانات، والإخطار بالاختراق، وأتمتة DSAR، وإدارة الموافقة"],
+                ["Aramco SACS-002", "موردو ومقاولوا الطرف الثالث الذين يخدمون أرامكو السعودية", "متطلبات الأمن السيبراني لسلسلة التوريد لقطاع الطاقة"]
+              ]
+            }
+          },
+          {
+            title: "المعايير الدولية والتغطية الخاصة بالقطاع",
+            subsections: [
+              {
+                title: "المعايير الدولية",
+                bullets: [
+                  "ISO/IEC 27001 – أنظمة إدارة أمن المعلومات (ISMS)",
+                  "ISO/IEC 27701 – إدارة معلومات الخصوصية (إطار عمل مراقب/معالج PII)",
+                  "ISO/IEC 42001:2023 – أنظمة إدارة الذكاء الاصطناعي (أول معيار عالمي لحوكمة الذكاء الاصطناعي؛ أصبحت سدايا أول كيان معتمد من ISO 42001 في العالم في عام 2024)"
+                ]
+              },
+              {
+                title: "التغطية الخاصة بالقطاع",
+                bullets: [
+                  "القطاع المالي ← امتثال كامل لـ SAMA CSF",
+                  "الحكومة والبنية التحتية الحيوية ← ولايات NCA ECC/CCC",
+                  "حماية البيانات ← جاهزية وإنفاذ PDPL",
+                  "موردو الطرف الثالث ← إدارة مخاطر سلسلة التوريد"
+                ]
+              }
+            ]
+          },
+          {
+            title: "خدمات GRC الأساسية: ما نقدمه",
+            subsections: [
+              {
+                title: "تقييمات فجوة الامتثال",
+                content: "تقييم شامل لمتطلبات SAMA أو NCA أو PDPL",
+                bullets: [
+                  "خارطة طريق علاجية ذات أولوية مع تقديرات الجهد",
+                  "تحليل فجوة الأدلة الذي يحدد الوثائق أو الضوابط المفقودة"
+                ]
+              },
+              {
+                title: "إدارة المخاطر والتدقيق الداخلي",
+                content: "سجل مخاطر المؤسسة متوافق مع أطر ISO 31000 و NCA",
+                bullets: [
+                  "برامج التدقيق الداخلي للامتثال للمجال 2 من SAMA CSF",
+                  "تخطيط معالجة المخاطر مع لوحات المعلومات التنفيذية"
+                ]
+              },
+              {
+                title: "VAPT (تقييم نقاط الضعف واختبار الاختراق)",
+                content: "متطلب تنظيمي – إلزامي بموجب NCA ECC و SAMA CSF؛ مطلوب سنوياً على الأقل أو بعد تغييرات البنية التحتية الهامة",
+                bullets: [
+                  "تقييم نقاط الضعف – مسح منهجي للشبكات والخوادم والتطبيقات لتحديد نقاط الضعف المعروفة",
+                  "اختبار الاختراق – هجمات حقيقية محاكاة للتحقق مما إذا كان يمكن استغلال نقاط الضعف"
+                ]
+              },
+              {
+                title: "إدارة مخاطر الطرف الثالث (TPRM)",
+                bullets: [
+                  "أطر تقييم الموردين المتوافقة مع المجال 4 من SAMA وأرامكو SACS-002",
+                  "مراقبة مستمرة للموردين من خلال الأدوات المؤتمتة",
+                  "التدفق التعاقدي لمتطلبات الأمن السيبراني"
+                ]
+              },
+              {
+                title: "تمكين تكنولوجيا GRC",
+                bullets: [
+                  "تنفيذ منصة GRC المتكاملة (OneTrust، وأدوات مماثلة)",
+                  "مراقبة آليّة للضوابط لرؤية الامتثال في الوقت الفعلي",
+                  "لوحات معلومات جاهزة للتدقيق ومستودعات الأدلة"
+                ]
+              },
+              {
+                title: "حوكمة الذكاء الاصطناعي وجاهزية ISO 42001",
+                bullets: [
+                  "جرد أصول الذكاء الاصطناعي وتصنيف المخاطر",
+                  "رسم خرائط التحكم إلى ISO 42001 وإطار عمل إدارة مخاطر الذكاء الاصطناعي من NIST",
+                  "تأسيس مجلس مراجعة الذكاء الاصطناعي وتصميم إطار عمل الحوكمة"
+                ]
+              }
+            ]
+          },
+          {
+            title: "منهجية GRC الخاصة بنا",
+            content: "من التقييم إلى العمليات الجاهزة للتدقيق",
+            subsections: [
+              {
+                title: "المرحلة الأولى: الاكتشاف وتحليل الفجوات",
+                bullets: [
+                  "النطاق التنظيمي بناءً على قطاعك وأنواع بياناتك",
+                  "تقييم الحالة الحالية مقابل الأطر المعمول بها",
+                  "تحديد أولويات الفجوات حسب شدة الخطر والموعد النهائي للامتثال"
+                ]
+              },
+              {
+                title: "المرحلة الثانية: تنفيذ إطار العمل",
+                bullets: [
+                  "تطوير السياسات والإجراءات المتوافقة مع متطلبات الرقابة",
+                  "نشر الضوابط الفنية (التشفير، إدارة الوصول، التسجيل)",
+                  "تكوين ودمج أداة GRC"
+                ]
+              },
+              {
+                title: "المرحلة الثالثة: التحقق والاختبار",
+                bullets: [
+                  "تنفيذ VAPT بواسطة مختبرين معتمدين",
+                  "التدقيق الداخلي مقابل أهداف الرقابة",
+                  "تتبع العلاج وإعادة الاختبار"
+                ]
+              },
+              {
+                title: "المرحلة الرابعة: الامتثال المستمر",
+                bullets: [
+                  "مراقبة الضوابط الآلية على مدار الساعة طوال أيام الأسبوع",
+                  "تقييمات المخاطر الربع سنوية",
+                  "تقارير الامتثال نصف السنوية (وفقاً لمتطلبات SAMA)"
+                ]
+              }
+            ]
+          },
+          {
+            title: "لماذا فلوتيك؟",
+            subtitle: "سياق السوق وميزتنا",
+            content: "من المتوقع أن ينمو سوق الأمن السيبراني السعودي من 2.42 مليار دولار أمريكي في عام 2026 إلى 4.02 مليار دولار أمريكي بحلول عام 2031، مدفوعاً بأطر الامتثال الإلزامية ورقمنة رؤية 2030. ومع ذلك، فإن النقص المستمر في مواهب الاستجابة للحوادث من المستوى 3/4 يجبر المؤسسات على إعادة التفكير في نماذج التشغيل الأمنية الخاصة بها. نحن نسد هذه الفجوة.",
+            bullets: [
+              "حل المواهب: تقدم فلوتيك خدمة الكشف والاستجابة المدارة (MDR) كخدمة، وتعمل كمسؤول أمن معلومات افتراضي (CISO) وفريق SOC الممتد - لتعويض نقص مهارات الأمن السيبراني في المملكة البالغ 47٪.",
+              "ضمان سيادة البيانات: تلتزم جميع العمليات بشكل صارم ببنود إقامة البيانات في PDPL ومتطلبات التوطين المحدثة لـ CCC-2:2024 من الهيئة الوطنية للأمن السيبراني.",
+              "الامتثال الاستباقي: مع جعل ECC-2-2024 إلزامياً الآن لجميع الجهات التي تتعامل مع البنية التحتية الوطنية وإصدار قرارات إنفاذ PDPL بنشاط، فإننا نضمن أنك جاهز للتدقيق، وليس فقط ممتثلاً شكلياً."
+            ]
+          },
+          {
+            title: "النظام البيئي للتكنولوجيا: شراكات معتمدة",
+            content: "نحن نحافظ على نهج مستقل عن البائعين ونشارك مع قادة الصناعة لضمان أفضل الحلول في فئتها.",
+            bullets: [
+              "أمن الشبكات: Palo Alto Networks, Cisco, Fortinet",
+              "السحاب والهوية: Microsoft Security, HySecure (ZTNA)",
+              "البيانات و GRC: OneTrust, VIPRE",
+              "حماية نقاط النهاية: Trend Micro, CrowdStrike"
+            ]
+          },
+          // {
+          //   title: "دعوة للعمل",
+          //   subtitle: "تأمين مسارك الرقمي",
+          //   content: "سواء كنت بحاجة إلى تدقيق عاجل للامتثال لـ SAMA أو إصلاح شامل لبنية الثقة الصفرية، فإن فلوتيك هي شريكك المحلي في المرونة.\n\nتواصل معنا لأي متطلبات للأمن السيبراني وتقييم فجوة الامتثال. البريد الإلكتروني: info@flowtechdigitalservices.com"
+          // }
         ]
       }
     }

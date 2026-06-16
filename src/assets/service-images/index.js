@@ -57,6 +57,14 @@ import sapSolution from "./SAP/3.webp";
 import sapFull2 from "./SAP/sap-4.webp";
 import sapFinal from "./SAP/5.webp";
 
+//Cyber-Security
+import cyberIntro from "./Cybersecurity/cyber1.webp";
+import cyberFull1 from "./Cybersecurity/cyber2.webp";
+import cyberSolution from "./Cybersecurity/cyber3.webp";
+import cyberFull2 from "./Cybersecurity/cyber4.webp";
+import cyberFinal from "./Cybersecurity/cyber-5.webp";
+
+
 const defaultSet = {
   intro: img3DGraph,
   fullWidth1: img3DGraph,
@@ -121,6 +129,13 @@ export const serviceImages = {
     solution: oracleSolution,
     fullWidth2: oracleFull2,
     finalThoughts: oracleFinal,
+  },
+  "cybersecurity": {
+    intro: cyberIntro,
+    fullWidth1: cyberFull1,
+    solution: cyberSolution,
+    fullWidth2: cyberFull2,
+    finalThoughts: cyberFinal,
   },
 };
 

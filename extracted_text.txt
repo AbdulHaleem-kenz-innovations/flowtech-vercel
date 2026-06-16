@@ -1,0 +1,146 @@
+Cyber Security Services
+End-to-End Protection Built for the Kingdom’s Digital Future
+Flowtech delivers enterprise-grade cybersecurity solutions tailored to Saudi Arabia’s evolving threat landscape. We move beyond technology deployment to deliver measurable security outcomes—reducing risk exposure, ensuring regulatory compliance, and maintaining 24/7 operational resilience.
+“Our certified professionals integrate seamlessly with your team, converting complex mandates (SAMA, NCA, PDPL) into practical, enforceable technical safeguards.”
+Section 1: Our Execution Framework
+A Three-Phase Security Lifecycle
+We follow a systematic, iterative approach designed for continuous security enhancement.
+ - Phase 1: Evaluate – Comprehensive risk profiling and regulatory gap analysis against NCA and SAMA benchmarks.
+ - Phase 2: Deploy – Zero Trust architecture integration, solution hardening, and seamless system implementation.
+ - Phase 3: Operate – 24/7 SOC surveillance, proactive threat hunting, and ongoing performance tuning.
+Each phase feeds into the next, creating a perpetual cycle of security improvement.
+Section 2: Core Service Lines
+Foundational security pillars covering the entire enterprise ecosystem.
+1. Governance, Risk &amp; Compliance (GRC)
+Regulatory navigation simplified.
+We demystify Saudi Arabia’s overlapping regulatory frameworks, helping you automate and streamline compliance efforts across multiple mandates.
+ - Regulatory Coverage: SAMA CSF, NCA-ECC (2:2024), NCA-CCC (2:2024), PDPL 
+ - International Benchmarks: ISO 27001, ISO 27701 (Privacy), ISO 42001 (AI Management Systems)
+ - Specialized Services: VAPT (Vulnerability Assessment &amp; Penetration Testing), Third-Party Risk Management aligned with Aramco SACS-002
+ - Technology Integration: OneTrust for automated control monitoring and audit-ready dashboards
+2. Network Security
+Defending the perimeter, the cloud, and every connection between them.
+With Saudi enterprises rapidly migrating to hybrid environments, we secure the edge and everything beyond.
+ - NGFW Solutions: Next-Generation Firewall deployment and rule-set optimization across Palo Alto, Fortinet, and Cisco platforms
+ - SASE Architecture: Secure Access Service Edge implementation for low-latency, secure remote operations
+ - Email Protection: Advanced threat filtering to neutralize phishing, BEC, and malware campaigns
+ - Supporting Technologies: NIPS, Secure Web Gateway, and Vulnerability Management Software
+3. Data Security
+Discover, protect, and govern your most critical digital assets.
+With PDPL enforcement now active and fines reaching SAR 5 million per violation, data sovereignty is non-negotiable .
+ - EDR &amp; Threat Hunting: Endpoint Detection and Response with 24/7 proactive hunting
+ - DLP &amp; DRM: Data Loss Prevention and Enterprise Digital Rights Management for persistent document control
+ - Integrity Monitoring: File Integrity Management (FIM) ensuring NCA-ECC compliance
+ - Encryption Infrastructure: HSM (Hardware Security Module) and centralized Key Management for data-at-rest protection
+4. Identity &amp; Access Management (IAM)
+Zero Trust starts and ends with identity.
+In 2026, the perimeter is no longer physical—it is identity. We implement identity-first security models to eliminate implicit trust .
+ - MFA/SSO: Phishing-resistant Multi-Factor Authentication and seamless Single Sign-On
+ - PAM: Privileged Access Management for critical systems and service accounts
+ - Zero Trust Architecture: ZTNA implementation to block lateral movement and contain breaches 
+ - IGA: Identity Governance and Administration for complete audit readiness
+5. Governance, Risk &amp; Compliance (GRC)
+Navigating Saudi Arabia’s Regulatory Landscape with Confidence
+Flowtech empowers Saudi enterprises to transform regulatory complexity into strategic advantage. We provide end-to-end GRC services that go beyond checkbox compliance—delivering measurable risk reduction, audit-ready documentation, and operational resilience across overlapping mandates.
+“With the KSA cybersecurity market projected to reach $7.81 billion by 2031, regulatory compliance is no longer optional—it is a competitive differentiator.” 
+5.1 The Regulatory Imperative
+Why GRC Matters in Saudi Arabia Today
+Saudi Arabia’s regulatory environment has evolved rapidly under Vision 2030. Organizations face overlapping requirements from multiple authorities, each with distinct mandates and enforcement mechanisms. Non-compliance carries serious consequences: SAMA has penalized 30 financial institutions simultaneously for compliance violations, and PDPL violations can reach SAR 5 million . 
+Key drivers pushing GRC to the boardroom agenda: 
+ - Digital transformation acceleration – Smart cities (NEOM), fintech expansion, and cloud adoption create new risk surfaces
+ - Talent shortages – The Kingdom faces a 47% cybersecurity skills gap, making automated GRC solutions essential 
+ - Regulatory maturity – Frameworks like NCA ECC-2:2024 and SAMA CSF now require demonstrated control effectiveness, not just policy documentation
+Flowtech bridges the gap between regulation and execution. Our certified professionals translate legal text into actionable technical controls, ensuring your organization stays audit-ready year-round.
+5.2 Our GRC Framework Coverage
+Complete Regulatory Alignment
+We cover the full spectrum of Saudi and international standards applicable to your sector.
+Saudi Regulatory Frameworks
+Framework
+Applicability
+Key Focus
+SAMA CSF
+All SAMA-regulated financial institutions (banks, insurers, fintechs, payment providers)
+Four control domains requiring Level 3 maturity minimum; mandatory GRC tool for compliance 
+NCA ECC (Essential Cybersecurity Controls)
+Government entities, critical infrastructure operators, government contractors
+Vulnerability management, penetration testing, and continuous control monitoring 
+NCA CCC (Critical Systems Cybersecurity)
+Operators of national critical infrastructure
+Enhanced controls for systems whose disruption would impact national security or essential services
+PDPL (Personal Data Protection Law)
+Any entity processing personal data of Saudi residents
+Data sovereignty, breach notification, DSAR automation, consent management
+Aramco SACS-002
+Third-party vendors and contractors serving Saudi Aramco
+Supply chain cybersecurity requirements for energy sector
+International Standards
+ - ISO/IEC 27001 – Information Security Management Systems (ISMS)
+ - ISO/IEC 27701 – Privacy Information Management (PII controller/processor framework)
+ - ISO/IEC 42001:2023 – AI Management Systems (First global AI governance standard; SDAIA became world’s first ISO 42001-certified entity in 2024) 
+Sector-Specific Coverage
+ - Financial Sector → SAMA CSF full compliance
+ - Government &amp; Critical Infrastructure → NCA ECC/CCC mandates
+ - Data Protection → PDPL readiness and enforcement
+ - Third-Party Vendors → Supply chain risk management
+5.3 Core GRC Services
+What We Deliver
+5.3.1.  Compliance Gap Assessments
+ - Comprehensive evaluation against SAMA, NCA, or PDPL requirements
+ - Prioritized remediation roadmap with effort estimates
+ - Evidence gap analysis identifying missing documentation or controls
+5.3.2. Risk Management &amp; Internal Audit
+ - Enterprise risk register aligned with ISO 31000 and NCA frameworks
+ - Internal audit programs for SAMA CSF Domain 2 compliance
+ - Risk treatment planning with executive dashboards
+5.3.3. VAPT (Vulnerability Assessment &amp; Penetration Testing) 
+ - Vulnerability Assessment – Systematic scanning of networks, servers, and applications to identify known weaknesses
+ - Penetration Testing – Simulated real-world attacks to validate whether vulnerabilities can be exploited
+ - Regulatory requirement – Mandatory under NCA ECC and SAMA CSF; required at least annually or after significant infrastructure changes
+5.3.4. Third-Party Risk Management (TPRM)
+ - Vendor assessment frameworks aligned with SAMA Domain 4 and Aramco SACS-002
+ - Continuous vendor monitoring through automated tools
+ - Contractual flow-down of cybersecurity requirements
+5.3.5. GRC Technology Enablement
+ - Integrated GRC platform implementation (OneTrust, similar tools)
+ - Automated control monitoring for real-time compliance visibility
+ - Audit-ready dashboards and evidence repositories
+5.3.6. AI Governance &amp; ISO 42001 Readiness 
+ - AI asset inventory and risk classification
+ - Control mapping to ISO 42001 and NIST AI RMF
+ - AI review board establishment and governance framework design
+5.4. Our GRC Methodology
+From Assessment to Audit-Ready Operations
+Phase 1: Discovery &amp; Gap Analysis
+ - Regulatory scoping based on your sector and data types
+ - Current state assessment against applicable frameworks
+ - Gap prioritization by risk severity and compliance deadline
+Phase 2: Framework Implementation
+ - Policy and procedure development aligned to control requirements
+ - Technical control deployment (encryption, access management, logging)
+ - GRC tool configuration and integration
+Phase 3: Validation &amp; Testing
+ - VAPT execution by certified testers
+ - Internal audit against control objectives
+ - Remediation tracking and re-testing
+Phase 4: Continuous Compliance
+ - 24/7 automated control monitoring
+ - Quarterly risk assessments
+ - Semi-annual compliance reporting (per SAMA requirements)
+Section 3: Why Flowtech?
+Market Context &amp; Our Advantage
+The Saudi cybersecurity market is projected to grow from USD 2.42 billion in 2026 to USD 4.02 billion by 2031, driven by mandatory compliance frameworks and Vision 2030 digitization. However, a persistent shortage of Tier-3/4 incident-response talent is forcing organizations to rethink their security operating models.
+We bridge this gap.
+ - The Talent Solution: Flowtech provides Managed Detection &amp; Response (MDR) as a service, functioning as your virtual CISO and extended SOC team—compensating for the Kingdom’s 47% cybersecurity skills shortage.
+ - Data Sovereignty Assurance: All operations strictly adhere to PDPL data residency clauses and NCA’s updated CCC-2:2024 localization requirements.
+ - Proactive Compliance: With ECC-2-2024 now mandatory for all entities handling national infrastructure and PDPL enforcement actively issuing decisions, we ensure you are audit-ready, not just checkbox-compliant.
+Section 4: Technology Ecosystem
+Certified Partnerships
+We maintain a vendor-agnostic approach and are partnered with industry leaders to ensure best-of-breed solutions.
+ - Network Security: Palo Alto Networks, Cisco, Fortinet
+ - Cloud &amp; Identity: Microsoft Security, HySecure (ZTNA)
+ - Data &amp; GRC: OneTrust, VIPRE
+ - Endpoint Protection: Trend Micro, CrowdStrike
+Section 5: Call to Action
+Secure Your Digital Trajectory
+Whether you require an urgent SAMA compliance audit or a complete Zero Trust architecture overhaul, Flowtech is your local partner in resilience.
+Contact us for any cybersecurty requirements and compliance gap assessment.Email:  ********@flowtechdigitalservices.com 
