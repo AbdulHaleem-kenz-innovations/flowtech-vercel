@@ -59,7 +59,7 @@ import sapFinal from "./SAP/5.webp";
 
 //Cyber-Security
 import cyberIntro from "./Cybersecurity/cyber1.webp";
-import cyberFull1 from "./Cybersecurity/cyber2.webp";
+import cyberFull1 from "./Cybersecurity/cyberimg2.jpeg";
 import cyberSolution from "./Cybersecurity/cyber3.webp";
 import cyberFull2 from "./Cybersecurity/cyber4.webp";
 import cyberFinal from "./Cybersecurity/cyber-5.webp";
