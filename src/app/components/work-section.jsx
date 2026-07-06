@@ -15,8 +15,10 @@ import aibizzDefault from "../../assets/aibizz-default.png";
 import aibizzColor from "../../assets/aibizz-colord.png";
 import idpDefault from "../../assets/idp-default.png"
 import idpColor from "../../assets/idp-colord.png";
-import kenvoiceDefault from "../../assets/kenvoice-default.png";
-import kenvoiceColor from "../../assets/kenvoice-colord.png";
+// import kenvoiceDefault from "../../assets/kenvoice-default.png";
+// import kenvoiceColor from "../../assets/kenvoice-colord.png";
+import bayanDefault from "../../assets/Bayan-default.png";
+import bayanColor from "../../assets/Bayan-colour.png";
 import { Link } from 'react-router';
 
 function DivFramerIu4QGMaskGroup() {
@@ -256,11 +258,11 @@ export const WorkSection = ({ showButton = false }) => {
               <ProductCard
                 number="01"
                 slug="kenvoice"
-                title={language === "AR" ? <p className="capitalize font-geist font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">{t.products.kenvoice.title}</p> : <KenvoiceLogo />}
+                title={ <p className="capitalize font-geist font-semibold text-[16px] md:text-[18px] text-white leading-[27px]">{t.products.kenvoice.title}</p> }
                 description={t.products.kenvoice.description}
                 image={`data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 195 171'%3E%3Cpath d='${svgPaths.pda184c0}' fill='%23959595'/%3E%3C/svg%3E`}
-                normalImage={kenvoiceDefault}
-                hoverImage={kenvoiceColor}
+                normalImage={bayanDefault}
+                hoverImage={bayanColor}
               />
               <ProductCard
                 number="02"

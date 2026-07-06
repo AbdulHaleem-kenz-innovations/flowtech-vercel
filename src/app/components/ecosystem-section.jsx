@@ -15,6 +15,7 @@ import { langData } from '../../langData/data';
 import aibizzColored from "../../assets/AI-Bizz-App-colour.png";
 import smartIDPColored from "../../assets/Smart-IDP-colour.png";
 import kenvoiceColored from "../../assets/Ken-Voice-colour.png";
+import bayanColored from "../../assets/Bayan-logo.png";
 import { Link } from 'react-router';
 
 const images1 = [
@@ -41,7 +42,8 @@ const images2 = [
   "https://static.vecteezy.com/system/resources/previews/022/100/812/non_2x/microsoft-logo-transparent-free-png.png"
 ];
 const images3 = [
-  kenvoiceColored,
+  bayanColored,
+  // kenvoiceColored,
   // smartIDPColored,
   // aibizzColored,
   "https://logodix.com/logo/88250.png",

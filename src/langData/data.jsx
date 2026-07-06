@@ -136,8 +136,8 @@ export const langData = {
       description: "POWERING ENTERPRISES WITH AI-DRIVEN PLATFORMS THAT AUTOMATE PROCESSES, IMPROVE DECISION-MAKING, AND DRIVE OPERATIONAL EFFICIENCY",
       products: {
         kenvoice: {
-          title: "Kenvoice",
-          description: "Kenvoice is an AI-powered voice automation platform enabling intelligent customer interactions, workflow integrations, analytics, and scalable support."
+          title: "Bayan AI",
+          description: "Bayan AI is an AI-powered voice automation platform enabling intelligent customer interactions, workflow integrations, analytics, and scalable support."
         },
         smart_idp: {
           title: "Smart IDP",
@@ -432,14 +432,14 @@ export const langData = {
         conclusion: "Conclusion"
       },
       kenvoice: {
-        slug: "kenvoice",
+        slug: "Bayan AI",
         badge1: "PARTNER PRODUCT",
         badge2: "AI VOICE AGENT PLATFORM",
-        title: "Kenvoice",
+        title: "Bayan AI",
         description: "AI VOICE AGENTS AUTOMATING CUSTOMER CONVERSATIONS, WORKFLOWS, SUPPORT, AND BUSINESS OPERATIONS SEAMLESSLY.",
         heroTagline: ["Let AI Handle Your Calls.", "You Focus on Growing."],
         productOverview: [
-          "KENVOICE IS AN AI-POWERED VOICE AGENT PLATFORM DESIGNED TO AUTOMATE CUSTOMER COMMUNICATIONS THROUGH INTELLIGENT CONVERSATIONAL EXPERIENCES.",
+          "BAYAN IS AN AI-POWERED VOICE AGENT PLATFORM DESIGNED TO AUTOMATE CUSTOMER COMMUNICATIONS THROUGH INTELLIGENT CONVERSATIONAL EXPERIENCES.",
           "THE PLATFORM ENABLES BUSINESSES TO HANDLE INBOUND AND OUTBOUND CALLS, AUTOMATE SUPPORT WORKFLOWS, INTEGRATE WITH BUSINESS SYSTEMS, AND DELIVER REAL-TIME CUSTOMER ASSISTANCE THROUGH NATURAL AI VOICE INTERACTIONS.",
         ],
         keyFeatures: [
@@ -459,10 +459,10 @@ export const langData = {
           "MULTI-LOCATION BUSINESS CALL MANAGEMENT",
         ],
         resultsAndImpact: [
-          "KENVOICE HELPS BUSINESSES REDUCE MANUAL SUPPORT OPERATIONS, IMPROVE CUSTOMER RESPONSE TIMES, AND SCALE COMMUNICATIONS THROUGH AI-DRIVEN AUTOMATION.",
+          "BAYAN AI HELPS BUSINESSES REDUCE MANUAL SUPPORT OPERATIONS, IMPROVE CUSTOMER RESPONSE TIMES, AND SCALE COMMUNICATIONS THROUGH AI-DRIVEN AUTOMATION.",
           "THE PLATFORM ENHANCES CUSTOMER EXPERIENCE, IMPROVES OPERATIONAL EFFICIENCY, AND PROVIDES ACTIONABLE INSIGHTS THROUGH REAL-TIME CALL ANALYTICS.",
         ],
-        conclusion: "KENVOICE COMBINES AI VOICE TECHNOLOGY, BUSINESS AUTOMATION, AND SEAMLESS INTEGRATIONS TO HELP MODERN BUSINESSES DELIVER SMARTER, FASTER, AND MORE EFFICIENT CUSTOMER COMMUNICATION EXPERIENCES.",
+        conclusion: "BAYAN AI COMBINES AI VOICE TECHNOLOGY, BUSINESS AUTOMATION, AND SEAMLESS INTEGRATIONS TO HELP MODERN BUSINESSES DELIVER SMARTER, FASTER, AND MORE EFFICIENT CUSTOMER COMMUNICATION EXPERIENCES.",
       },
       "smart-idp": {
         slug: "smart-idp",
@@ -1986,8 +1986,9 @@ export const langData = {
       description: "تمكين المؤسسات من خلال منصات مدعومة بالذكاء الاصطناعي تعمل على أتمتة العمليات وتحسين اتخاذ القرار ورفع الكفاءة التشغيلية",
       products: {
         kenvoice: {
-          title: "كين فويس",
-          description: "تبسيط الفواتير والعمليات المالية من خلال الفوترة الآلية والتتبع في الوقت الفعلي والتقارير الذكية."
+           title: "Bayan AI",
+           description: "بيان AI هي منصة لأتمتة المحادثات الصوتية مدعومة بالذكاء الاصطناعي، تُمكّن من إجراء تفاعلات ذكية مع العملاء، والتكامل مع سير العمل، وتوفير التحليلات، وتقديم دعم قابل للتوسع."
+
         },
         smart_idp: {
           title: "Smart IDP",
@@ -2285,11 +2286,11 @@ export const langData = {
         slug: "kenvoice",
         badge1: "منتج شريك",
         badge2: "منصة وكيل صوتي بالذكاء الاصطناعي",
-        title: "كينفويس",
+       title: "بيان AI",
         description: "وكلاء صوتيون مدعومون بالذكاء الاصطناعي لأتمتة محادثات العملاء وسير العمل والدعم والعمليات التجارية بسلاسة.",
         heroTagline: ["دع الذكاء الاصطناعي يتعامل مع مكالماتك.", "وركز أنت على النمو."],
         productOverview: [
-          "كينفويس هي منصة وكيل صوتي مدعومة بالذكاء الاصطناعي مصممة لأتمتة اتصالات العملاء من خلال تجارب حوارية ذكية.",
+          "بيان AI هي منصة وكيل صوتي مدعومة بالذكاء الاصطناعي مصممة لأتمتة اتصالات العملاء من خلال تجارب حوارية ذكية.",
           "تمكّن المنصة الشركات من التعامل مع المكالمات الواردة والصادرة، وأتمتة سير عمل الدعم، والتكامل مع أنظمة الأعمال، وتقديم مساعدة للعملاء في الوقت الفعلي من خلال تفاعلات صوتية طبيعية للذكاء الاصطناعي."
         ],
         keyFeatures: [
@@ -2309,10 +2310,10 @@ export const langData = {
           "إدارة مكالمات الأعمال متعددة المواقع"
         ],
         resultsAndImpact: [
-          "تساعد كينفويس الشركات على تقليل عمليات الدعم اليدوية، وتحسين أوقات استجابة العملاء، وتوسيع نطاق الاتصالات من خلال الأتمتة المدفوعة بالذكاء الاصطناعي.",
+          "تساعد بيان AI الشركات على تقليل عمليات الدعم اليدوية، وتحسين أوقات استجابة العملاء، وتوسيع نطاق الاتصالات من خلال الأتمتة المدفوعة بالذكاء الاصطناعي.",
           "تعزز المنصة تجربة العملاء، وتحسن الكفاءة التشغيلية، وتقدم رؤى قابلة للتنفيذ من خلال تحليلات المكالمات في الوقت الفعلي."
         ],
-        conclusion: "تجمع كينفويس بين تكنولوجيا الصوت المدعومة بالذكاء الاصطناعي وأتمتة الأعمال والتكامل السلس لمساعدة الشركات الحديثة على تقديم تجارب اتصال أسرع وأكثر ذكاءً وكفاءة مع العملاء."
+        conclusion: "تجمع بيان AI بين تكنولوجيا الصوت المدعومة بالذكاء الاصطناعي وأتمتة الأعمال والتكامل السلس لمساعدة الشركات الحديثة على تقديم تجارب اتصال أسرع وأكثر ذكاءً وكفاءة مع العملاء."
       },
       "smart-idp": {
         slug: "smart-idp",
